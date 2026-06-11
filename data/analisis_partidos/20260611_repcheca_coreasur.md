@@ -15,9 +15,6 @@ slug: "repcheca_coreasur"
 poisson: "58-26-16"
 ---
 
-Para darte el análisis más preciso y con base científica, vamos a guiarme al 100% por los gráficos reales. ¡Vamos a analizar este interesante choque entre checos y surcoreanos!
-
----
 
 ## 🇨🇿 República Checa: Análisis Táctico
 
