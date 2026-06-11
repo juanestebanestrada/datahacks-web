@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo E — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo E del Mundial 2026: Alemania, Ecuador, Costa de Marfil, Curazao con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo E</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo E.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="tactical-grid">
+    
+    <!-- ALEMANIA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/de.png" width="40" height="25" alt="Alemania Flag">
+          <h3 class="team-name">Alemania</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoAlemania.png" alt="Perfil Táctico Alemania" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Presión en bloque alto extremo, combinación rápida en zona 14, rotación constante de mediapuntas y amplitud por laterales.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1 / 3-4-2-1</li>
+          <li><strong>xG Promedio:</strong> 2.18 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 7.0)</li>
+          <li><strong>Jugador Clave:</strong> Jamal Musiala</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ECUADOR -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/ec.png" width="40" height="25" alt="Ecuador Flag">
+          <h3 class="team-name">Ecuador</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoEcuador.png" alt="Perfil Táctico Ecuador" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Transición ofensiva-defensiva de altísima potencia física, control del mediocampo por presión intensa y desdoble veloz de carrileros.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 3-4-3 / 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 1.70 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 8.7)</li>
+          <li><strong>Jugador Clave:</strong> Moisés Caicedo</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COSTA DE MARFIL -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/ci.png" width="40" height="25" alt="Costa de Marfil Flag">
+          <h3 class="team-name">Costa de Marfil</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoCostaDeMarfil.png" alt="Perfil Táctico Costa de Marfil" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Físico imponente en duelos de mediocampo, solidez en bloque defensivo coordinado y transiciones rápidas mediante extremos habilidosos.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 1.35 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio (PPDA 9.8)</li>
+          <li><strong>Jugador Clave:</strong> Franck Kessié</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CURAZAO -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/cw.png" width="40" height="25" alt="Curazao Flag">
+          <h3 class="team-name">Curazao</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR / DEBUTANTE</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoCurazao.png" alt="Perfil Táctico Curazao" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Defensa pasiva baja protegiendo carriles centrales y salidas rápidas con balón largo a espaldas de defensores adelantados.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 0.90 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Bajo (PPDA 12.8)</li>
+          <li><strong>Jugador Clave:</strong> Juninho Bacuna</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo E - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo E:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/de.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Alemania</th>
+<th><img src="https://flagcdn.com/w40/ec.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Ecuador</th>
+<th><img src="https://flagcdn.com/w40/ci.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Costa de Marfil</th>
+<th><img src="https://flagcdn.com/w40/cw.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Curazao</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-high">90</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+              <td><span class="stat-badge stat-high">82</span></td>
+              <td><span class="stat-badge stat-high">87</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-high">82</span></td>
+              <td><span class="stat-badge stat-low">68</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-high">97</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-low">61</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-high">86</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-high">93</span></td>
+              <td><span class="stat-badge stat-low">67</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-low">60</span></td>
+              <td><span class="stat-badge stat-low">64</span></td>
+              <td><span class="stat-badge stat-low">58</span></td>
+              <td><span class="stat-badge stat-low">64</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- Alemania -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>ALEMANIA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Potencia Mundial</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Ataque por el Centro (86):</strong> Creatividad extrema con Musiala y volantes.</li>
+              <li><strong>Presión Alta (84):</strong> Recuperación inmediata en zona de salida rival.</li>
+              <li><strong>Volumen de Juego (85):</strong> Posesión dominante con ritmo fluido.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Repliegue a Espaldas (72):</strong> Susceptibilidad a pases largos cuando están adelantados.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Dominar el partido en campo rival, acumular hombres por dentro para combinar rápido y presionar al instante de perder el balón.</p>
+        </div>
+
+        <!-- Ecuador -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>ECUADOR</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Fuerza Sudamericana</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Intensidad Física (86):</strong> Potencia descomunal en duelos de mediocampo.</li>
+              <li><strong>Salida en Transición (80):</strong> Carrileros veloces que llegan a línea de fondo.</li>
+              <li><strong>Compacto Defensivo (81):</strong> Tres centrales de gran nivel asociativo.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Finalización Fina (71):</strong> Inconsistencias ocasionales en la definición en el área.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Ejercer una marca muy asfixiante sobre el mediocentro rival, recuperar el esférico y verticalizar rápidamente por carriles externos.</p>
+        </div>
+
+        <!-- Costa de Marfil -->
+        <div class="analysis-card">
+          <h4>COSTA DE MARFIL</h4>
+          <div class="profile-type">Perfil: Retador Africano / Físico</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Mediocampo Físico (82):</strong> Kessié y acompañantes ganan muchos duelos.</li>
+              <li><strong>Velocidad en Bandas (77):</strong> Extremos rápidos que encaran 1 contra 1.</li>
+              <li><strong>Eficacia en Balón Parado (76):</strong> Centrales con gran presencia física.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Control de Ritmo (68):</strong> Sufrimiento cuando el rival baja el balón y toca lento.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Establecer una muralla en mediocampo, cortar y salir rápido por los costados aprovechando desequilibrios individuales.</p>
+        </div>
+
+        <!-- Curazao -->
+        <div class="analysis-card">
+          <h4>CURAZAO</h4>
+          <div class="profile-type">Perfil: Retador Caribeño / Repliegue</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Repliegue Cerrado (74):</strong> Defienden juntos en los últimos 30 metros.</li>
+              <li><strong>Transición Directa (71):</strong> Balones largos a espaldas de centrales.</li>
+              <li><strong>Entusiasmo Debutante (75):</strong> Sin presión, motivados al máximo.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Organización Bajo Presión (60):</strong> Propensión al error si los presionan en su área.</li>
+              <li><strong>Falta de Recambios (58):</strong> Plantilla con poca profundidad para torneos cortos.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Esperar en campo propio compactando las líneas y lanzar pelotazos a los costados para desbordar por sorpresa.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">Alemania vs Ecuador</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> El gran choque del grupo. El dominio técnico y combinación de Alemania frente a la potencia física y repliegue de Ecuador.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Control de Caicedo en el mediocampo alemán.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Alemania vs Costa de Marfil</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorabilidad a Alemania, aunque los contragolpes de Costa de Marfil serán sumamente peligrosos.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Velocidad de repliegue de los centrales alemanes.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Ecuador vs Costa de Marfil</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Batalla física tremenda en el círculo central. El que gane los duelos individuales se llevará el partido.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Efectividad ofensiva en jugadas a balón parado.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Alemania/Ecuador vs Curazao</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Superioridad notable para las potencias. Curazao buscará resistir el embate inicial.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Paciencia para mover el bloque bajo caribeño.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Alemania</div>
+                <div class="projection-desc">Su volumen creativo y nivel técnico los consolidan como favoritos.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Ecuador</div>
+                <div class="projection-desc">Su intensidad física e inteligencia táctica aseguran el segundo puesto.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Costa de Marfil</div>
+                <div class="projection-desc">Peleará fuerte por el pase pero sufrirá contra el control alemán e intensidad ecuatoriana.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Curazao</div>
+                <div class="projection-desc">Aprenderá del nivel pero tiene muy pocas opciones matemáticas.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta un análisis técnico y cuantitativo del **Grupo E** para el Mundial de Fútbol 2026, evaluando las virtudes, debilidades y el enfoque estratégico de cada selección a partir de sus perfiles estadísticos.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Alemania</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar el archivo `PerfilTacticoAlemania.png`, el combinado europeo se consolida como el núcleo monopolizador del balón en este sector.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un absoluto y extraordinario control del ritmo de juego a través de la circulación (<strong>97</strong> en Posesión), complementado por una línea ofensiva de élite (<strong>90</strong> en Ataque) y un notable sustento atlético (<strong>83</strong> en Físico).</li>
+              <li><strong>Área de mejora:</strong> El equilibrio defensivo y la templanza. Su registro en Defensa (<strong>72</strong>) y su baja Disciplina (<strong>60</strong>) sugieren un equipo que arriesga demasiado al adelantar líneas, lo que podría dejarlos vulnerables ante contragolpes letales.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Costa de Marfil</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con los datos del archivo `PerfilTacticoCostaDeMarfil.png`, la escuadra africana propone un fútbol de altísima intensidad, poder de choque y transiciones dinámicas.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un despliegue atlético descomunal (<strong>93</strong> en Físico), muy bien acompañado por un equilibrio perfecto en ambas áreas (<strong>82</strong> tanto en Ataque como en Defensa) y una gran inventiva en tres cuartos de cancha (<strong>84</strong> en Creatividad).</li>
+              <li><strong>Área de mejora:</strong> El control del partido. Con una Posesión de <strong>61</strong> y una alarmante falta de Disciplina (<strong>58</strong>, la más baja del grupo), es un equipo propenso a caer en el caos táctico, cometer faltas constantes en zonas críticas o sufrir expulsiones.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. Ecuador</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El desglose del archivo `PerfilTacticoEcuador.png` revela a la selección sudamericana como el conjunto conceptualmente más equilibrado, asociativo y versátil del sector.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su fluidez de ideas en la generación de juego (<strong>86</strong> en Creatividad) apoyada por una excelente capacidad para resguardar y distribuir la pelota (<strong>84</strong> en Posesión). Además, cuentan con un bloque físico robusto (<strong>83</strong>).</li>
+              <li><strong>Área de mejora:</strong> La falta de una métrica marcadamente dominante. Aunque rozan el notable en casi todas sus facetas (como su <strong>80</strong> en Ataque y <strong>78</strong> en Defensa), carecen de un rasgo "extremo" que rompa partidos por pura inercia.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. Curazao</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al analizar el archivo `PerfilTacticoCurazao.png`, el conjunto caribeño se planta en la justa mundialista con un perfil marcadamente ofensivo, directo y sin complejos al atacar.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un arsenal ofensivo sumamente respetable (<strong>87</strong> en Ataque) potenciado por buenos niveles de imaginación (<strong>80</strong> en Creatividad) y un aseado trato del balón (<strong>77</strong> en Posesión).</li>
+              <li><strong>Área de mejora:</strong> Su estructura de contención. Con la Defensa más endeble del grupo (<strong>68</strong>) y un fondo físico limitado (<strong>67</strong>), sostener la intensidad defensiva durante los 90 minutos ante potencias físicas o de posesión será su reto más complejo.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">El Grupo E exigirá pizarras flexibles debido a la marcada oposición de estilos:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El choque por el ritmo:</strong> Alemania intentará asfixiar a sus rivales durmiendo el partido con secuencias largas de pases. Costa de Marfil buscará todo lo contrario: saltar líneas rápidamente, forzar el error en la salida alemana y aprovechar su superioridad en los duelos individuales para castigar la zaga germana.
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>La zona de clasificación:</strong> Ecuador parte con una ventaja táctica invisible: su equilibrio estructural. Puede jugarle de igual a igual en la posesión a Alemania o aguantar el rigor físico de Costa de Marfil. Curazao, por su parte, actuará como el elemento impredecible; si sus rivales se descuidan en las vigilancias defensivas por volcarse al ataque, su contundente pegada (<strong>87</strong>) podría costar muy de prisa un partido.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+{
+  "México": {
+    "fotmob_id": 6710,
+    "fotmob_name": "Mexico"
+  },
+  "Sudáfrica": {
+    "fotmob_id": 6316,
+    "fotmob_name": "South Africa"
+  },
+  "Corea del Sur": {
+    "fotmob_id": 7804,
+    "fotmob_name": "South Korea"
+  },
+  "Bosnia": {
+    "fotmob_id": 10106,
+    "fotmob_name": "Bosnia and Herzegovina"
+  },
+  "Canadá": {
+    "fotmob_id": 5810,
+    "fotmob_name": "Canada"
+  },
+  "Qatar": {
+    "fotmob_id": 5902,
+    "fotmob_name": "Qatar"
+  },
+  "Suiza": {
+    "fotmob_id": 6717,
+    "fotmob_name": "Switzerland"
+  },
+  "Brasil": {
+    "fotmob_id": 8256,
+    "fotmob_name": "Brazil"
+  },
+  "Marruecos": {
+    "fotmob_id": 6262,
+    "fotmob_name": "Morocco"
+  },
+  "Haití": {
+    "fotmob_id": 5934,
+    "fotmob_name": "Haiti"
+  },
+  "Escocia": {
+    "fotmob_id": 8498,
+    "fotmob_name": "Scotland"
+  },
+  "Turquía": {
+    "fotmob_id": 6595,
+    "fotmob_name": "Turkiye"
+  },
+  "USA": {
+    "fotmob_id": 6713,
+    "fotmob_name": "USA"
+  },
+  "Paraguay": {
+    "fotmob_id": 6724,
+    "fotmob_name": "Paraguay"
+  },
+  "Australia": {
+    "fotmob_id": 6716,
+    "fotmob_name": "Australia"
+  },
+  "Alemania": {
+    "fotmob_id": 8570,
+    "fotmob_name": "Germany"
+  },
+  "Curazao": {
+    "fotmob_id": 287981,
+    "fotmob_name": "Curacao"
+  },
+  "Costa de Marfil": {
+    "fotmob_id": 6709,
+    "fotmob_name": "Ivory Coast"
+  },
+  "Ecuador": {
+    "fotmob_id": 6707,
+    "fotmob_name": "Ecuador"
+  },
+  "Suecia": {
+    "fotmob_id": 8520,
+    "fotmob_name": "Sweden"
+  },
+  "Países Bajos": {
+    "fotmob_id": 6708,
+    "fotmob_name": "Netherlands"
+  },
+  "Japón": {
+    "fotmob_id": 6715,
+    "fotmob_name": "Japan"
+  },
+  "Túnez": {
+    "fotmob_id": 6719,
+    "fotmob_name": "Tunisia"
+  },
+  "Bélgica": {
+    "fotmob_id": 8263,
+    "fotmob_name": "Belgium"
+  },
+  "Egipto": {
+    "fotmob_id": 10255,
+    "fotmob_name": "Egypt"
+  },
+  "Irán": {
+    "fotmob_id": 6711,
+    "fotmob_name": "Iran"
+  },
+  "Nueva Zelanda": {
+    "fotmob_id": 5820,
+    "fotmob_name": "New Zealand"
+  },
+  "España": {
+    "fotmob_id": 6720,
+    "fotmob_name": "Spain"
+  },
+  "Cabo Verde": {
+    "fotmob_id": 5888,
+    "fotmob_name": "Cape Verde"
+  },
+  "Arabia Saudí": {
+    "fotmob_id": 7795,
+    "fotmob_name": "Saudi Arabia"
+  },
+  "Uruguay": {
+    "fotmob_id": 5796,
+    "fotmob_name": "Uruguay"
+  },
+  "Irak": {
+    "fotmob_id": 5819,
+    "fotmob_name": "Iraq"
+  },
+  "Francia": {
+    "fotmob_id": 6723,
+    "fotmob_name": "France"
+  },
+  "Senegal": {
+    "fotmob_id": 6395,
+    "fotmob_name": "Senegal"
+  },
+  "Noruega": {
+    "fotmob_id": 8492,
+    "fotmob_name": "Norway"
+  },
+  "Argentina": {
+    "fotmob_id": 6706,
+    "fotmob_name": "Argentina"
+  },
+  "Argelia": {
+    "fotmob_id": 6317,
+    "fotmob_name": "Algeria"
+  },
+  "Austria": {
+    "fotmob_id": 8255,
+    "fotmob_name": "Austria"
+  },
+  "Jordania": {
+    "fotmob_id": 5816,
+    "fotmob_name": "Jordan"
+  },
+  "RD Congo": {
+    "fotmob_id": 6321,
+    "fotmob_name": "DR Congo"
+  },
+  "Portugal": {
+    "fotmob_id": 8361,
+    "fotmob_name": "Portugal"
+  },
+  "Uzbekistán": {
+    "fotmob_id": 8700,
+    "fotmob_name": "Uzbekistan"
+  },
+  "Colombia": {
+    "fotmob_id": 8258,
+    "fotmob_name": "Colombia"
+  },
+  "Inglaterra": {
+    "fotmob_id": 8491,
+    "fotmob_name": "England"
+  },
+  "Croacia": {
+    "fotmob_id": 10155,
+    "fotmob_name": "Croatia"
+  },
+  "Ghana": {
+    "fotmob_id": 6714,
+    "fotmob_name": "Ghana"
+  },
+  "Panamá": {
+    "fotmob_id": 5922,
+    "fotmob_name": "Panama"
+  }
+}

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo H — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo H del Mundial 2026: España, Uruguay, Arabia Saudí, Cabo Verde con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo H</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo H.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="tactical-grid">
+    
+    <!-- ESPAÑA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/es.png" width="40" height="25" alt="España Flag">
+          <h3 class="team-name">España</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoEspana.png" alt="Perfil Táctico España" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Juego de posición con alto volumen de pases, circulación rápida buscando desorganizar al rival y presión alta inmediata.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 2.20 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 6.8)</li>
+          <li><strong>Jugador Clave:</strong> Rodri</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- URUGUAY -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/uy.png" width="40" height="25" alt="Uruguay Flag">
+          <h3 class="team-name">Uruguay</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoUruguay.png" alt="Perfil Táctico Uruguay" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Presión tras pérdida ultrasónica de alta intensidad física, verticalidad en transición y excelente volumen de disparo.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3 / 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.92 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 7.2)</li>
+          <li><strong>Jugador Clave:</strong> Federico Valverde</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ARABIA SAUDÍ -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/sa.png" width="40" height="25" alt="Arabia Saudí Flag">
+          <h3 class="team-name">Arabia Saudí</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoArabiaSaudita.png" alt="Perfil Táctico Arabia Saudí" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Defensa coordinada con bloque de presión intermedio, salida limpia en corto asociativa y transiciones veloces.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-1-4-1</li>
+          <li><strong>xG Promedio:</strong> 1.18 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio (PPDA 10.8)</li>
+          <li><strong>Jugador Clave:</strong> Salem Al-Dawsari</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CABO VERDE -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/cv.png" width="40" height="25" alt="Cabo Verde Flag">
+          <h3 class="team-name">Cabo Verde</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR / DEBUTANTE</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoCaboVerde.png" alt="Perfil Táctico Cabo Verde" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Bloque muy bajo, marcaje concentrado en el embudo central y contraataques directos aislados buscando velocidad.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-5-1</li>
+          <li><strong>xG Promedio:</strong> 0.92 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Bajo (PPDA 12.5)</li>
+          <li><strong>Jugador Clave:</strong> Ryan Mendes</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo H - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo H:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/es.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> España</th>
+<th><img src="https://flagcdn.com/w40/uy.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Uruguay</th>
+<th><img src="https://flagcdn.com/w40/sa.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Arabia Saudí</th>
+<th><img src="https://flagcdn.com/w40/cv.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Cabo Verde</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-high">89</span></td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-mid">73</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+              <td><span class="stat-badge stat-mid">75</span></td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-low">69</span></td>
+              <td><span class="stat-badge stat-low">68</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-low">61</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+              <td><span class="stat-badge stat-high">82</span></td>
+              <td><span class="stat-badge stat-mid">73</span></td>
+              <td><span class="stat-badge stat-low">65</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-low">66</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+              <td><span class="stat-badge stat-high">97</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+              <td><span class="stat-badge stat-low">69</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- España -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>ESPAÑA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Candidato al Título</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Volumen Asociativo (88):</strong> Dominio absoluto de posesión y pases.</li>
+              <li><strong>Presión Tras Pérdida (85):</strong> PPDA extremadamente bajo y coordinado.</li>
+              <li><strong>Equilibrio con Rodri (87):</strong> Control del mediocentro posicional.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Contras Espacios Libres (74):</strong> Vulnerabilidad si no hay presión tras pérdida efectiva.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Mover el balón de lado a lado con velocidad, fijar defensores por dentro y habilitar extremos en 1v1.</p>
+        </div>
+
+        <!-- Uruguay -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>URUGUAY</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Garra e Intensidad</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Intensidad Física (87):</strong> Despliegue atlético extraordinario de Valverde.</li>
+              <li><strong>Transición Rápida (82):</strong> Salidas verticales veloces y directas.</li>
+              <li><strong>Disparo de Media Distancia (78):</strong> Gran capacidad de remate exterior.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Control de Ritmos Lentos (72):</strong> Ansiedad ocasional que desordena el bloque.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Presión asfixiante en campo rival, transiciones rápidas verticales y finalización de jugadas sin demora.</p>
+        </div>
+
+        <!-- Arabia Saudí -->
+        <div class="analysis-card">
+          <h4>ARABIA SAUDÍ</h4>
+          <div class="profile-type">Perfil: Retador Asiático / Posesión Corta</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Salida en Corto (76):</strong> Buen trato del esférico bajo presión media.</li>
+              <li><strong>Amplitud por Bandas (74):</strong> Extremos veloces en repliegue.</li>
+              <li><strong>Experiencia en Bloque (75):</strong> Trabajo coordinado en línea defensiva.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Pegada Física en Áreas (66):</strong> Sufren defensivamente contra delanteros físicos.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Bloque medio agrupado, mantener posesiones cortas para enfriar el partido y contraatacar rápido por los costados.</p>
+        </div>
+
+        <!-- Cabo Verde -->
+        <div class="analysis-card">
+          <h4>CABO VERDE</h4>
+          <div class="profile-type">Perfil: Retador Africano / Sorpresa</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Densidad en Embudo Central (77):</strong> Defienden el centro con muchos apoyos.</li>
+              <li><strong>Velocidad de Mendes (73):</strong> Capacidad de escapada individual en contra.</li>
+              <li><strong>Cero Presión (74):</strong> Juegan motivados por el logro histórico.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>xG Generado (60):</strong> Dificultades extremas para generar tiros limpios.</li>
+              <li><strong>Falta de Fondo Físico (62):</strong> Sufrimiento en los minutos finales del partido.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Mantener replegado el bloque de 5 volantes, tapar líneas de pase centrales y explotar contras directas.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">España vs Uruguay</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Duelo estelar. La posesión total de España contra la intensidad física vertical de Uruguay.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Capacidad de Rodri para controlar el mediocampo de Valverde.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">España vs Arabia Saudí</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorable a España. El juego de posición español someterá el bloque medio saudí.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Precisión y velocidad en la entrega española.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Uruguay vs Arabia Saudí</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorable a Uruguay por ritmo físico e intensidad alta en el robo de balón.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Presión alta de Valverde sobre la salida saudí.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">España/Uruguay vs Cabo Verde</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Marcada ventaja de los favoritos frente al replegado Cabo Verde.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Eficacia en romper la línea defensiva cabo-verdiana.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">España</div>
+                <div class="projection-desc">Su dominio de posesión y control del ritmo los posiciona líderes.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Uruguay</div>
+                <div class="projection-desc">Clasificará debido a su tremenda intensidad y calidad individual.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Arabia Saudí</div>
+                <div class="projection-desc">Luchará bien los partidos pero sufrirá contra el poderío físico de Uruguay y técnico de España.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Cabo Verde</div>
+                <div class="projection-desc">Esfuerzo defensivo respetable pero insuficiente a este nivel.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta un análisis técnico y cuantitativo del **Grupo H** para el Mundial de Fútbol 2026, evaluando las fortalezas, debilidades y las propuestas tácticas de cada selección a partir de sus respectivos perfiles estadísticos.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Uruguay</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar el archivo `PerfilTacticoUruguay.png`, la escuadra charrúa se erige como el conjunto más equilibrado y tácticamente completo de todo el sector.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un balance de élite entre su propuesta ofensiva (<strong>83</strong> en Ataque), solvencia en su propia área (<strong>80</strong> en Defensa) y una sobresaliente capacidad de generación (<strong>82</strong> en Creatividad). Es un equipo maduro, capaz de dominar diferentes fases del juego.</li>
+              <li><strong>Área de mejora:</strong> El control posicional del partido. Su registro de <strong>68</strong> en Posesión indica que no priorizan la tenencia lenta del balón, optando en su lugar por ataques más directos y dinámicos tras la recuperación.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Arabia Saudita</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con los datos del archivo `PerfilTacticoArabiaSaudita.png`, el combinado asiático presenta una identidad sumamente marcada por el control conceptual del esférico.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un extraordinario manejo del ritmo del encuentro por medio de la circulación (<strong>84</strong> en Posesión, el más alto del grupo) apoyado por un excelente comportamiento estratégico (<strong>79</strong> en Disciplina).</li>
+              <li><strong>Área de mejora:</strong> La profundidad y la contundencia. A pesar de monopolizar la pelota, sus valores en Ataque (<strong>74</strong>) y Creatividad (<strong>73</strong>) sugieren que les cuesta transformar esa tenencia en ocasiones manifiestas de gol ante bloques defensivos cerrados.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. Cabo Verde</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El desglose del archivo `PerfilTacticoCaboVerde.png` revela un ecosistema táctico basado por completo en el rigor atlético extremo y la verticalidad.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un poderío físico fuera de serie (<strong>97</strong> en Físico), siendo el equipo más dominante del grupo en disputas individuales, juego aéreo y repliegues veloces. Su pegada (<strong>78</strong> en Ataque) is bastante respetable.</li>
+              <li><strong>Área de mejora:</strong> La elaboración en la zona medular. Al registrar un <strong>61</strong> en Posesión y un <strong>65</strong> en Creatividad, son un equipo reactivo que sufre si se le obliga a diseñar circuitos de pases elaborados o lentos.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. España</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al analizar el archivo `PerfilTacticoEspana.png`, "La Roja" exhibe una evolución en su modelo histórico, convirtiéndose en un cuadro eminentemente volcado al área rival.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un potencial ofensivo devastador (<strong>89</strong> en Ataque), liderando el grupo en efectividad en el último tercio. Sorprende su registro de Posesión (<strong>69</strong>), lo que delata una transición hacia un fútbol mucho más vertical, punzante y de transiciones veloces.</li>
+              <li><strong>Área de mejora:</strong> El desgaste y la contención en duelos directos. Su nivel más bajo radica en el apartado Físico (<strong>66</strong>), lo que combinado con una Defensa regular (<strong>73</strong>) los expone seriamente frente a rivales de gran despliegue atlético.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">La configuración del Grupo H asegura encuentros de alto voltaje estratégico debido a la incompatibilidad de sus propuestas:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El duelo por el control de la medular:</strong> El enfrentamiento entre España y Arabia Saudita romperá la lógica habitual. Con Arabia Saudita registrando una altísima posesión (<strong>84</strong>) y España un ataque directo muy letal (<strong>89</strong>), se prevé un choque donde los saudíes asumen el balón, pero se expongan a las feroces y efectivas arremetidas al espacio de los españoles.
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>La prueba física contra el equilibrio:</strong> Cabo Verde intentará convertir sus compromisos en batallas físicas de ida y vuelta constante para explotar su <strong>97</strong> en Físico. Esta estrategia chocará directamente contra el orden y la solidez colectiva de Uruguay, un equipo preparado con argumentos tanto creativos (<strong>82</strong>) como defensivos (<strong>80</strong>) para enfriar la intensidad africana y castigar los espacios que dejen en su repliegue.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

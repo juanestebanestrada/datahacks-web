@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo F — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo F del Mundial 2026: Países Bajos, Japón, Suecia, Túnez con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo F</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo F.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="tactical-grid">
+    
+    <!-- PAÍSES BAJOS -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/nl.png" width="40" height="25" alt="Países Bajos Flag">
+          <h3 class="team-name">Países Bajos</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoHolanda.png" alt="Perfil Táctico Países Bajos" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Construcción elaborada desde atrás (salida de 3), progresión por carriles interiores, presión tras pérdida y dominio de posesión.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 3-4-3 / 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 2.05 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 7.9)</li>
+          <li><strong>Jugador Clave:</strong> Virgil van Dijk</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JAPÓN -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/jp.png" width="40" height="25" alt="Japón Flag">
+          <h3 class="team-name">Japón</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoJapon.png" alt="Perfil Táctico Japón" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Transición ofensiva ultrasónica, asfixiante presión tras pérdida grupal, rotaciones dinámicas y excelente técnica asociativa.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.78 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 8.4)</li>
+          <li><strong>Jugador Clave:</strong> Kaoru Mitoma</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SUECIA -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/se.png" width="40" height="25" alt="Suecia Flag">
+          <h3 class="team-name">Suecia</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoSuecia.png" alt="Perfil Táctico Suecia" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Presión coordinada en bloque medio, verticalidad en ataque buscando desmarques de ruptura y solidez en estructura.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-4-2 / 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.45 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio (PPDA 9.6)</li>
+          <li><strong>Jugador Clave:</strong> Alexander Isak</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TÚNEZ -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/tn.png" width="40" height="25" alt="Túnez Flag">
+          <h3 class="team-name">Túnez</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoTunez.png" alt="Perfil Táctico Túnez" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Repliegue defensivo de alta fricción física, marcaje en zona congestionada y transiciones calculadas minimizando pérdidas.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-1-4-1</li>
+          <li><strong>xG Promedio:</strong> 1.05 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Bajo (PPDA 12.0)</li>
+          <li><strong>Jugador Clave:</strong> Ellyes Skhiri</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo F - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo F:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/nl.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Países Bajos</th>
+<th><img src="https://flagcdn.com/w40/jp.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Japón</th>
+<th><img src="https://flagcdn.com/w40/se.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Suecia</th>
+<th><img src="https://flagcdn.com/w40/tn.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Túnez</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-high">82</span></td>
+              <td><span class="stat-badge stat-low">68</span></td>
+              <td><span class="stat-badge stat-high">90</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-high">87</span></td>
+              <td><span class="stat-badge stat-mid">70</span></td>
+              <td><span class="stat-badge stat-low">67</span></td>
+              <td><span class="stat-badge stat-low">61</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-mid">76</span></td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+              <td><span class="stat-badge stat-mid">71</span></td>
+              <td><span class="stat-badge stat-low">66</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-mid">75</span></td>
+              <td><span class="stat-badge stat-low">66</span></td>
+              <td><span class="stat-badge stat-low">68</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-low">60</span></td>
+              <td><span class="stat-badge stat-low">66</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+              <td><span class="stat-badge stat-high">89</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-high">80</span></td>
+              <td><span class="stat-badge stat-high">86</span></td>
+              <td><span class="stat-badge stat-mid">71</span></td>
+              <td><span class="stat-badge stat-low">69</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- Países Bajos -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>PAÍSES BAJOS</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Dominio Táctico</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Línea de 3 con Salida (85):</strong> Van Dijk y acompañantes limpian la salida.</li>
+              <li><strong>Carrileros Ofensivos (82):</strong> Mucha profundidad exterior.</li>
+              <li><strong>Presión Organizada (81):</strong> PPDA bajo de recuperación efectiva.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Defensa contra Extremos Veloces (74):</strong> Sufrimiento ocasional en bandas en 1v1.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Posesión estructurada, atraer presión en salida y filtrar pases interiores rompiendo líneas defensivas.</p>
+        </div>
+
+        <!-- Japón -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>JAPÓN</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Dinamismo</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Velocidad Colectiva (86):</strong> Dinamismo extremo en ataques rápidos.</li>
+              <li><strong>Mitoma en Banda (84):</strong> Regate y profundidad de élite mundial.</li>
+              <li><strong>Presión Asfixiante (82):</strong> Trabajo colectivo incansable en fase defensiva.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Estatura Física (68):</strong> Sufrimiento en centros y balón parado defensivo.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Ritmo alto, marca agresiva tras pérdida y salidas veloces buscando a Mitoma en el uno contra uno.</p>
+        </div>
+
+        <!-- Suecia -->
+        <div class="analysis-card">
+          <h4>SUECIA</h4>
+          <div class="profile-type">Perfil: Retador Europeo / Potencia Ofensiva</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Ataque con Isak (82):</strong> Delantero en ruptura de alta definición.</li>
+              <li><strong>Estructura Ordenada (78):</strong> Dos líneas de 4 muy disciplinadas.</li>
+              <li><strong>Duelos Aéreos (79):</strong> Gran porte físico en defensa.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Creación en Estático (70):</strong> Dificultades frente a bloques bajos muy ordenados.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Mantener bloque medio compacto, forzar pérdida rival y lanzar pases profundos buscando desmarques de Isak.</p>
+        </div>
+
+        <!-- Túnez -->
+        <div class="analysis-card">
+          <h4>TÚNEZ</h4>
+          <div class="profile-type">Perfil: Retador Africano / Fricción</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Fricción Defensiva (80):</strong> Juego de mucha marca y cortes constantes.</li>
+              <li><strong>Orden en Bloque Bajo (78):</strong> Muy difíciles de superar por carriles centrales.</li>
+              <li><strong>Disciplina de Skhiri (79):</strong> Equilibrio posicional constante.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Generación Ofensiva (62):</strong> Poca fluidez en campo contrario.</li>
+              <li><strong>Falta de Estrellas (64):</strong> Dependencia del orden colectivo para sumar.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Ensuciar el juego rival acumulando futbolistas atrás, defender el área chica y aprovechar balones parados.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">Países Bajos vs Japón</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Partidazo táctico. Salida limpia neerlandesa frente a la asfixiante presión japonesa.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Eficacia de Japón al robar en salida holandesa.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Países Bajos vs Suecia</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Clásico europeo. Holanda buscará dominar posesión, Suecia buscará romper con Isak.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Duelo individual Isak contra Van Dijk.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Japón vs Suecia</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorabilidad a Japón por ritmo de juego y velocidad de transiciones.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Habilidad japonesa de Mitoma contra la zaga sueca.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Países Bajos/Japón vs Túnez</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorable a los favoritos, aunque deberán tener paciencia contra el bloque bajo de Túnez.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Romper el bloque bajo tunecino temprano en el partido.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Países Bajos</div>
+                <div class="projection-desc">Su salida limpia y variantes tácticas los ponen como ganadores del grupo.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Japón</div>
+                <div class="projection-desc">Su dinámica, velocidad colectiva y técnica aseguran la clasificación.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Suecia</div>
+                <div class="projection-desc">Luchará el puesto con Isak en ataque, pero sufrirá contra la presión de Japón.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Túnez</div>
+                <div class="projection-desc">Resistencia fuerte pero falto de volumen para aspirar a pasar.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta un análisis técnico y cuantitativo del **Grupo F** para el Mundial de Fútbol 2026, evaluando las virtudes, debilidades y el enfoque estratégico de cada selección a partir de sus perfiles estadísticos.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Suecia</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar el archivo `PerfilTacticoSuecia.png`, el combinado escandinavo se consolida como la fuerza ofensiva más letal y directa del sector.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un poder de fuego devastador en el último tercio (<strong>90</strong> en Ataque), sólidamente respaldado por una estructura atlética imponente (<strong>80</strong> en Físico). Es un equipo preparado para dañar mediante transiciones rápidas y juego directo.</li>
+              <li><strong>Área de mejora:</strong> Su vulnerabilidad defensiva. Un registro de <strong>67</strong> en Defensa indica que suelen conceder ventajas o sufrir ante transiciones rápidas del rival si quedan mal parados tras volcarse al ataque.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Túnez</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con los datos del archivo `PerfilTacticoTunez.png`, la escuadra africana propone un fútbol sumamente intenso, físico y de chispazos de enorme inventiva.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su brutal despliegue atlético y de choque (<strong>89</strong> en Físico), muy bien acompañado por una sorprendente claridad en la zona de definición (<strong>80</strong> en Creatividad y <strong>80</strong> en Ataque).</li>
+              <li><strong>Área de mejora:</strong> Su retaguardia estructural. Al registrar un bajo <strong>61</strong> en Defensa, se posicionan como la zaga más frágil del grupo, lo que les exigirá redoblar esfuerzos en el mediocampo para evitar que los rivales encaren directamente a sus centrales.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. Países Bajos</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El desglose del archivo `PerfilTacticoHolanda.png` revela a la "Oranje" como el conjunto conceptualmente mejor estructurado y el rival a vencer en las fases de control.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Una línea defensiva de élite (<strong>87</strong> en Defensa) y un manejo pulcro de los hilos del encuentro (<strong>76</strong> en Posesión), complementado por un alto sentido del orden (<strong>80</strong> en Disciplina) y contundencia (<strong>82</strong> en Ataque).</li>
+              <li><strong>Área de mejora:</strong> El ritmo e intensidad en disputas prolongadas. Su métrica más baja se encuentra en el apartado físico (<strong>60</strong>), lo que sugiere que prefieren temporizar con el balón en lugar de ir a un juego de desgaste o fricción constante.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. Japón</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al analizar el archivo `PerfilTacticoJapon.png`, el conjunto nipón se planta en la cita mundialista con una propuesta colectiva milimétrica, fundamentada en la concentración y el sacrificio grupal.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su impecable nivel de concentración táctica y juego limpio (<strong>86</strong> en Disciplina). Es un equipo que asimila las órdenes a la perfección, minimiza los errores no forzados y mantiene una circulación muy equilibrada (<strong>72</strong> en Posesión).</li>
+              <li><strong>Área de mejora:</strong> La falta de peso específico en las áreas. Al registrar un <strong>68</strong> en Ataque y un <strong>70</strong> en Defensa, carecen de individualidades explosivas o de una fuerza física determinante (<strong>66</strong>) para resolver partidos por peso propio cuando el diseño asociativo se bloquea.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">Las características de los integrantes del Grupo F vaticinan un desarrollo estratégico de alta tensión posicional y transiciones salvajes:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El choque por el liderato:</strong> Países Bajos intentará monopolizar el balón y dictar el tempo de los partidos. Sin embargo, se cruzará con la verticalidad extrema de Suecia, configurando un duelo de tablero ajedrecístico: el control y orden holandés contra la pegada y desparpajo escandinavo.
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>La resistencia disciplinada frente al caos físico:</strong> El duelo entre Japón y Túnez será un monumento a los contrastes de la escuela futbolística. Mientras los tunecinos buscarán forzar un juego caótico, de alta fricción física e individualismo creativo, los japoneses intentarán neutralizarlos durmiendo el juego con su impecable disciplina posicional y combinaciones en corto.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

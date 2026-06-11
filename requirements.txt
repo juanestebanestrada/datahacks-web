@@ -1,0 +1,15 @@
+streamlit>=1.32.0
+statsbombpy
+LanusStats
+pandas
+numpy
+mplsoccer
+matplotlib
+openpyxl
+requests
+scipy==1.15.1
+scikit-learn==1.6.1
+tweepy==4.14.0
+dataframe_image==0.2.7
+soccerdata==1.9.0
+google-generativeai>=0.7.0

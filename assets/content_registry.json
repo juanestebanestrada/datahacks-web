@@ -1,0 +1,23 @@
+[
+    {
+        "id": 3,
+        "timestamp": "2026-05-11 16:21:43",
+        "tipo": "Generación CF",
+        "titulo": "Content Factory - Impacto de una lesión de últim",
+        "contenido": "Paquete completo generado"
+    },
+    {
+        "id": 2,
+        "timestamp": "2026-05-05 16:19:15",
+        "tipo": "Generación CF",
+        "titulo": "Content Factory - El impacto de Luis Dias en la ",
+        "contenido": "Paquete completo generado"
+    },
+    {
+        "id": 1,
+        "timestamp": "2026-05-05 16:07:17",
+        "tipo": "Generación CF",
+        "titulo": "Content Factory - Expectativas del encuentro ent",
+        "contenido": "Paquete completo generado"
+    }
+]

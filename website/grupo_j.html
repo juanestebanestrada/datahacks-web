@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo J — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo J del Mundial 2026: Argentina, Austria, Argelia, Jordania con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo J</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo J.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="tactical-grid">
+    
+    <!-- ARGENTINA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/ar.png" width="40" height="25" alt="Argentina Flag">
+          <h3 class="team-name">Argentina</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoArgentina.png" alt="Perfil Táctico Argentina" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Posesión asociativa hiper-técnica con rotación en carril central, pases filtrados milimétricos y presión tras pérdida coordinada.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3 / 4-4-2 (Rombo)</li>
+          <li><strong>xG Promedio:</strong> 2.30 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 7.5)</li>
+          <li><strong>Jugador Clave:</strong> Lionel Messi</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AUSTRIA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/at.png" width="40" height="25" alt="Austria Flag">
+          <h3 class="team-name">Austria</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoAustria.png" alt="Perfil Táctico Austria" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Presión agresiva inmediata (Gegenpressing) en salida rival, intensidad extrema y transiciones ultra-directas.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-2-2 / 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.72 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 6.5 - El más agresivo)</li>
+          <li><strong>Jugador Clave:</strong> Marcel Sabitzer</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ARGELIA -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/dz.png" width="40" height="25" alt="Argelia Flag">
+          <h3 class="team-name">Argelia</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoAlgeria.png" alt="Perfil Táctico Argelia" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Ataque posicional basado en desequilibrio de sus extremos en banda y cambios de juego rápidos cruzados.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 1.38 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio (PPDA 9.8)</li>
+          <li><strong>Jugador Clave:</strong> Riyad Mahrez</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JORDANIA -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/jo.png" width="40" height="25" alt="Jordania Flag">
+          <h3 class="team-name">Jordania</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR / DEBUTANTE</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoJordania.png" alt="Perfil Táctico Jordania" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Repliegue profundo en campo propio tapando pasillos interiores, juego defensivo rústico y contras rápidas.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 5-4-1</li>
+          <li><strong>xG Promedio:</strong> 0.90 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Bajo (PPDA 12.8)</li>
+          <li><strong>Jugador Clave:</strong> Mousa Al-Tamari</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo J - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo J:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/ar.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Argentina</th>
+<th><img src="https://flagcdn.com/w40/at.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Austria</th>
+<th><img src="https://flagcdn.com/w40/dz.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Argelia</th>
+<th><img src="https://flagcdn.com/w40/jo.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Jordania</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+              <td><span class="stat-badge stat-mid">73</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-low">68</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-high">85</span></td>
+              <td><span class="stat-badge stat-high">83</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-high">95</span></td>
+              <td><span class="stat-badge stat-low">63</span></td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-high">80</span></td>
+              <td><span class="stat-badge stat-high">92</span></td>
+              <td><span class="stat-badge stat-low">63</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-low">65</span></td>
+              <td><span class="stat-badge stat-low">60</span></td>
+              <td><span class="stat-badge stat-high">92</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-low">55</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+              <td><span class="stat-badge stat-low">65</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- Argentina -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>ARGENTINA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Campeón Defensor</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Genio de Messi (89):</strong> Visión de juego y pases filtrados incomparables.</li>
+              <li><strong>Posesión Asociativa (87):</strong> Gran fluidez y triangulaciones rápidas.</li>
+              <li><strong>Presión tras Pérdida (82):</strong> PPDA coordinado de recuperación.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Vulnerabilidad a Transición Aérea (74):</strong> Dificultades ocasionales ante centros llovidos rápidos.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Rotaciones interiores en corto, atraer defensores hacia Messi y habilitar rupturas rápidas por fuera.</p>
+        </div>
+
+        <!-- Austria -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>AUSTRIA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Gegenpressing</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Gegenpressing de Élite (88):</strong> El equipo con la presión alta más intensa.</li>
+              <li><strong>Transición Directa (80):</strong> Ataques verticales en menos de 3 toques.</li>
+              <li><strong>Despliegue de Sabitzer (82):</strong> Gran manejo del recorrido defensivo.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Exposición de Línea (70):</strong> Línea de defensa adelantada expuesta a balones largos.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Gegenpressing inmediato, forzar pérdidas en salida enemiga y enfilar directo hacia el arco en vertical.</p>
+        </div>
+
+        <!-- Argelia -->
+        <div class="analysis-card">
+          <h4>ARGELIA</h4>
+          <div class="profile-type">Perfil: Retador Africano / Desequilibrio</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Calidad de Mahrez (83):</strong> Habilidad individual en banda derecha.</li>
+              <li><strong>Cambios de Juego (78):</strong> Pases largos precisos cruzados.</li>
+              <li><strong>Pegada Ofensiva (76):</strong> Gran poder de disparo en el área.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Repliegue Físico (68):</strong> Sufren si el oponente les impone un ritmo de ida y vuelta constante.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Aislar a los extremos en banda, generar el uno contra uno, y realizar cambios rápidos de banda.</p>
+        </div>
+
+        <!-- Jordania -->
+        <div class="analysis-card">
+          <h4>JORDANIA</h4>
+          <div class="profile-type">Perfil: Retador Asiático / Repliegue Extremo</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Rigor Defensivo (78):</strong> Línea de 5 replegada muy junta.</li>
+              <li><strong>Contras de Al-Tamari (75):</strong> Velocidad desequilibrante en escapadas.</li>
+              <li><strong>Compromiso sin Balón (74):</strong> Gran sacrificio colectivo de sus futbolistas.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Salida Asociativa (60):</strong> Propensión a regalar el esférico bajo presión alta.</li>
+              <li><strong>Dependencia del Contraataque (58):</strong> Incapacidad para proponer fútbol ofensivo.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Cerrar los pasillos centrales, defender en bloque bajo en área propia y lanzar balones a Al-Tamari.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">Argentina vs Austria</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Choque de estilos fascinante. La posesión asociativa de Argentina frente al Gegenpressing asfixiante de Austria.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Capacidad de Argentina para limpiar la salida ante la presión austriaca.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Argentina vs Argelia</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorable a Argentina. Su calidad y pases filtrados romperán el bloque defensivo de Argelia.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Control de los cambios de juego cruzados de Mahrez.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Austria vs Argelia</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorable a Austria. La presión asfixiante austriaca forzará pérdidas en la zaga argelina.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Intensidad austriaca en los primeros 30 minutos.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Argentina/Austria vs Jordania</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Clara ventaja para los favoritos. Jordania buscará cerrarse con su línea de 5.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Paciencia para abrir pasillos en la densa zaga jordana.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Argentina</div>
+                <div class="projection-desc">Su calidad técnica, control asociativo y Messi aseguran el primer puesto.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Austria</div>
+                <div class="projection-desc">Su Gegenpressing de élite les dará una ventaja clara para clasificar.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Argelia</div>
+                <div class="projection-desc">Luchará bien pero sufrirá ante la intensidad extrema de Austria y la técnica de Argentina.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Jordania</div>
+                <div class="projection-desc">Buen bloque defensivo bajo pero muy falto de variantes ofensivas.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta un análisis técnico y cuantitativo del **Grupo J** para el Mundial de Fútbol 2026, evaluando las virtudes, debilidades y los enfoques estratégicos de cada selección a partir de sus perfiles estadísticos.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Jordania</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar el archivo `PerfilTacticoJordania.png`, la selección jordana se descubre como un bloque bastante equilibrado y con un fuerte sustento en las fases sin balón.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Una retaguardia muy sólida (<strong>83</strong> en Defensa) apuntalada por un buen tono atlético (<strong>80</strong> en Físico). Esto configura un equipo incómodo de enfrentar, capaz de resistir embates continuos.</li>
+              <li><strong>Área de mejora:</strong> Su comportamiento reglamentario. Un registro de <strong>65</strong> en Disciplina indica que suelen recurrir con demasiada frecuencia a la falta táctica o a la fricción excesiva, lo que puede condicionar partidos por amonestaciones rápidas.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Argelia</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con los datos extraídos del archivo `PerfilTacticoAlgeria.png`, el combinado africano propone un ecosistema táctico hiper-físico y de máxima seguridad defensiva.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un despliegue corporal e intensidad en duelos descomunal (<strong>92</strong> en Físico), protegiendo la mejor zona posterior del sector (<strong>85</strong> en Defensa). Tienen una respetable contundencia en transiciones (<strong>79</strong> en Ataque).</li>
+              <li><strong>Área de mejora:</strong> La fluidez constructiva. Al registrar un <strong>63</strong> tanto en Posesión como en Creatividad, se autodefinen como un equipo puramente reactivo y vertical que sufre si debe realizar posesiones largas.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. Argentina</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al analizar el archivo `PerfilTacticoArgentina.png`, la escuadra sudamericana muestra un perfil marcadamente ofensivo e imaginativo, pero con serias grietas en su balance estructural.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> El volumen en tres cuartos de cancha (<strong>80</strong> en Creatividad) y una delantera punzante (<strong>78</strong> en Ataque) combinada con buen trato de balón (<strong>78</strong> en Posesión).</li>
+              <li><strong>Área de mejora:</strong> Un balance sumamente frágil. Presentan una alarmante carencia de Disciplina (<strong>55</strong>) e irregularidad en su última línea (<strong>68</strong> en Defensa), lo que los hace propensos a sufrir desatenciones fatales o quedar mal parados ante la pérdida de la pelota.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. Austria</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El desglose analítico del archivo `PerfilTacticoAustria.png` posiciona a la selección europea como el gigante asociativo indiscutible y el rival a vencer en el apartado estratégico.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un monopolio absoluto y pulcro del ritmo de partido (<strong>95</strong> en Posesión) impulsado por una inventiva de élite mundial (<strong>92</strong> en Creatividad), todo gestionado bajo un excelente orden (<strong>84</strong> en Disciplina).</li>
+              <li><strong>Área de mejora:</strong> El ritmo y la resistencia en partidos de alta fricción. Su métrica más baja se encuentra en el apartado Físico (<strong>60</strong>), lo que delata problemas para sostener presiones asfixiantes o ganar segundas jugadas.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">Las métricas del Grupo J vaticinan enfrentamientos con una enorme carga de ajedrez táctico:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El monólogo del balón frente al muro de contención:</strong> El choque entre Austria y Argelia será una obra de arte conceptual. Austria impondrá sus secuencias eternas de pases (<strong>95</strong>), intentando resquebrajar mediante pura creatividad (<strong>92</strong>) a una Argelia que los esperará en bloque bajo con un muro defensivo (<strong>85</strong>) e hiper-físico (<strong>92</strong>) diseñado para destrozar cualquier intento de juego interior.
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>La volatilidad ofensiva contra el orden:</strong> El partido entre Argentina y Jordania será de pronóstico reservado. Argentina atacará con fluidez, pero su fragilidad defensiva (<strong>68</strong>) y baja disciplina (<strong>55</strong>) jugarán directo en favor de la ordenada estructura jordana (<strong>83</strong> en Defensa), la cual con transiciones limpias puede castigar fuertemente el desorden albeleste.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
