@@ -414,6 +414,10 @@ def build_all_pages():
                         return 'shotmap'
                     if 'reddepases' in name or 'pases' in name:
                         return 'pases'
+                    if 'conducciones' in name:
+                        return 'conducciones'
+                    if 'asistencias' in name:
+                        return 'asistencias'
                     return name.strip()
 
                 # Agrupar en parejas
@@ -633,26 +637,26 @@ def build_all_pages():
             code_away = FLAGS_MAP.get(m['away'], 'un')
             
             card_hist_html = f"""
-      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 15px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted);">
-          <span class="badge" style="background: rgba(0, 240, 255, 0.1); color: var(--cyan); border: none; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">{m['grupo']}</span>
+      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--muted);">
+          <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">{m['grupo']}</span>
           <span>📅 {m['fecha']}</span>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <img src="https://flagcdn.com/w40/{code_home}.png" alt="{m['home']}" style="width: 22px; height: auto; border-radius: 2px;">
-            <span style="font-size: 0.95rem;">{m['home']}</span>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <img src="https://flagcdn.com/w40/{code_home}.png" alt="{m['home']}" style="width: 20px; height: auto; border-radius: 2px;">
+            <span style="font-size: 0.85rem;">{m['home']}</span>
           </div>
-          <div style="background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 6px; color: var(--green); font-size: 1.1rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.08);">
+          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
             {m['display_score']}
           </div>
-          <div style="display: flex; align-items: center; gap: 8px; justify-content: flex-end;">
-            <span style="font-size: 0.95rem;">{m['away']}</span>
-            <img src="https://flagcdn.com/w40/{code_away}.png" alt="{m['away']}" style="width: 22px; height: auto; border-radius: 2px;">
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
+            <span style="font-size: 0.85rem;">{m['away']}</span>
+            <img src="https://flagcdn.com/w40/{code_away}.png" alt="{m['away']}" style="width: 20px; height: auto; border-radius: 2px;">
           </div>
         </div>
         <div style="margin-top: auto; display: flex; justify-content: flex-end;">
-          <a href="{m['link']}" style="color: var(--cyan); text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
+          <a href="{m['link']}" style="color: var(--cyan); text-decoration: none; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
         </div>
       </div>
 """

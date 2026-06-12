@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canadá vs Bosnia: Velocidad contra Resistencia en el Grupo B // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Canadá vs Bosnia del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_b.html" class="back-link">← Volver al Grupo B</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo B</span>
+    <h2>Canadá vs Bosnia</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-12 · 🕒 14:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team">Canadá</div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div class="score-box">1 - 2</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team">Bosnia</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇨🇦 Canadá: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Estructura y Presión Defensiva de Élite:</strong> Canadá muestra una superioridad defensiva en el radar inicial (78 vs 71). Esto se refleja en su mapa defensivo con una presión masiva, ordenada y agresiva en la zona media y de recuperación, logrando sostener un índice de recuperación de balones (Resco) muy alto (86).</li>
+<li><strong>Creatividad y Complejidad en la Circulación:</strong> Con una valoración de creatividad superior de 83 (frente a 65 de Bosnia), Canadá teje una red de pases sumamente compleja con más de 10 actores principales (liderados por Miller, Johnston y Hutchinson). Esto les otorga múltiples líneas de pase y dinamismo ofensivo.</li>
+<li><strong>Coordinación y Disciplina:</strong> Su disciplina táctica (63 vs 55) les permite replegarse de forma coordinada, defendiendo en bloque bajo y cerrando espacios para evitar ser vulnerados en contragolpes.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Efectividad Ofensiva Catastrófica:</strong> A pesar de su volumen creativo, la efectividad de Canadá de cara al arco es sumamente crítica (2.9%), registrando apenas 1 gol en 34 disparos.</li>
+<li><strong>Baja Amenaza en Zona de Remate (xT):</strong> Su índice de peligro esperado (xT) es muy bajo (máximo 0.8 acumulado) y se encuentra demasiado recostado sobre la banda derecha, careciendo de presencia centralizada en el área.</li>
+<li><strong>Falta de Control Territorial:</strong> Registran una menor posesión promedio (61% frente al 79% de Bosnia), lo que los obliga a ceder el balón y depender en exceso de la recuperación defensiva y de contraataques aislados.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇧🇦 Bosnia: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Contundencia y Efectividad Letal:</strong> Bosnia es letal en el último tercio del campo. Registra una altísima efectividad del 13.8%, acumulando 12 goles en 87 disparos (12 veces más goles que Canadá).</li>
+<li><strong>Dominio Territorial y de Posesión:</strong> Con un promedio de posesión proyectado del 79%, Bosnia adormece y controla el juego desde el círculo central, concentrando la mayor parte de su presencia en territorio rival.</li>
+<li><strong>Red de Pases Simple y Directa:</strong> Su circuito de juego es muy concentrado (apenas 4 hubs: Pjanic en la distribución, Denic de apoyo, y Džeko como gran referente aéreo y de pivote junto con Kljaaievic), lo que les otorga una transición muy veloz de atrás hacia adelante.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Fragilidad y Vulnerabilidad Defensiva:</strong> Bosnia muestra una defensa bastante desorganizada en su mapa táctico, con poca densidad de presiones y concesión de espacios en las bandas que un rival veloz podría explotar.</li>
+<li><strong>Disciplina Terriblemente Baja:</strong> Su baja puntuación de disciplina (55) se traduce en faltas recurrentes en zonas de transición que cortan el juego y los exponen a amonestaciones tempranas.</li>
+<li><strong>Ofensiva Centralizada y Predecible:</strong> La generación de peligro esperado (xT) se concentra casi en su totalidad en el callejón central y el área penal buscando a Džeko, lo que facilita el trabajo si la defensa rival logra anular el juego aéreo.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚔️ ¿Cómo puede superar cada equipo a su adversario?</h2>
+<h3>¿Qué debe hacer Canadá para ganarle a Bosnia?</h3>
+<p><strong>1.</strong> <strong>Explotar las bandas en transiciones rápidas:</strong> Aprovechar que la defensa bosnia es lenta y desorganizada para lanzar contragolpes veloces por los carriles exteriores usando su alta creatividad (83).</p>
+<p><strong>2.</strong> <strong>Asfixiar el circuito Pjanic-Džeko:</strong> Utilizar su presión defensiva masiva para tapar la salida limpia de Pjanic y evitar que Bosnia conecte en largo con su delantero de referencia.</p>
+<p><strong>3.</strong> <strong>Calidad sobre cantidad en la definición:</strong> Mitigar su alarmante 2.9% de efectividad buscando mejores posiciones de tiro en lugar de rematar incómodos desde la periferia.</p>
+<h3>¿Qué debe hacer Bosnia para ganarle a Canadá?</h3>
+<p><strong>1.</strong> <strong>Mantener el control a través de la posesión:</strong> Desgastar físicamente a los jugadores canadienses obligándolos a correr tras el balón mediante su circuito de pases liderado por Pjanic y Denic.</p>
+<p><strong>2.</strong> <strong>Explotar la espalda del bloque defensivo:</strong> Atraer la presión alta y masiva de Canadá para luego lanzar pases al espacio buscando la potencia de Edin Džeko.</p>
+<p><strong>3.</strong> <strong>Evitar la indisciplina táctica:</strong> Cuidar las pérdidas en salida que fuercen faltas y tiros libres en contra, donde la compacidad defensiva de Canadá podría penalizarlos.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🏆 Pronóstico: ¿Quién ganaría?</h2>
+<p>> <strong>Predicción:</strong> Victoria de <strong>Bosnia</strong> 2-1.</p>
+<p>El partido presentará un choque clásico de propuestas: <strong>el bloque defensivo agresivo de Canadá frente a la contundencia goleadora de Bosnia.</strong></p>
+<p>Las probabilidades del modelo Poisson bivariado otorgan una ventaja del <strong>70% a Bosnia</strong>, frente a un <strong>20% a Canadá</strong> y un <strong>10% de empate</strong>. Aunque Canadá defiende de forma excepcional y compacta, la alarmante ineficacia ofensiva de los norteamericanos (2.9% frente al 13.8% de Bosnia) inclinará la balanza. El control territorial bosnio (79%) y la contundencia para convertir ocasiones en gol terminarán por romper la resistencia defensiva de Canadá para sellar un triunfo ajustado de 2-1 en favor de los europeos.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Canadá)</h4>
+                      <img src="../assets/Analisis_Canadá_MapaDefensivo_horizontal_20260612.png" alt="Mapa Defensivo (Canadá)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Bosnia)</h4>
+                      <img src="../assets/Analisis_Bosnia_MapaDefensivo_Equipo_Completo_horizontal_20260612.png" alt="Mapa Defensivo (Bosnia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Canadá)</h4>
+                      <img src="../assets/Analisis_Canadá_ExpectedThreatxT_horizontal_20260612.png" alt="Amenaza Esperada xT (Canadá)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Bosnia)</h4>
+                      <img src="../assets/Analisis_Bosnia_ExpectedThreatxT_Equipo_Completo_horizontal_20260612.png" alt="Amenaza Esperada xT (Bosnia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Canadá)</h4>
+                      <img src="../assets/Analisis_Canadá_MapadeCalor_horizontal_20260612.png" alt="Mapa de Calor (Canadá)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Bosnia)</h4>
+                      <img src="../assets/Mapa_Calor_Bosnia_Equipo_Completo_horizontal_20260612.png" alt="Mapa de Calor (Bosnia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Canadá)</h4>
+                      <img src="../assets/ShotMap_Canadá_horizontal_20260612.png" alt="Mapa de Tiros (Canadá)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Bosnia)</h4>
+                      <img src="../assets/ShotMap_Bosnia_horizontal_20260612.png" alt="Mapa de Tiros (Bosnia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Canadá)</h4>
+                      <img src="../assets/Analisis_Canadá_ReddePases_horizontal_20260612.png" alt="Red de Pases (Canadá)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Bosnia)</h4>
+                      <img src="../assets/Analisis_Bosnia_ReddePases_Equipo_Completo_horizontal_20260612.png" alt="Red de Pases (Bosnia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Canadá)</h4>
+                      <img src="../assets/Analisis_Canadá_ConduccionesProgresivas_horizontal_20260612.png" alt="Conducciones Progresivas (Canadá)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Bosnia)</h4>
+                      <img src="../assets/Analisis_Bosnia_ConduccionesProgresivas_Equipo_Completo_horizontal_20260612.png" alt="Conducciones Progresivas (Bosnia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Canadá)</h4>
+                      <img src="../assets/Analisis_Canadá_MapadeAsistencias_horizontal_20260612.png" alt="Mapa de Asistencias (Canadá)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Bosnia)</h4>
+                      <img src="../assets/Analisis_Bosnia_MapadeAsistencias_Equipo_Completo_horizontal_20260612.png" alt="Mapa de Asistencias (Bosnia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ window.addEventListener('scroll', () => {
 
 // ─── COUNTDOWN ───────────────────────────────
 function updateCountdown() {
-  const worldCup = new Date('2026-06-11T00:00:00');
+  const worldCup = new Date('2026-07-19T15:00:00');
   const now = new Date();
   const diff = worldCup - now;
 
