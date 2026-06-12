@@ -25,6 +25,7 @@
       <ul class="nav-links">
         <li><a href="#plataforma">Plataforma</a></li>
         <li><a href="#mundial2026">Mundial 2026</a></li>
+        <li><a href="#historial">Historial</a></li>
         <li><a href="#contenido">Contenido</a></li>
         <li><a href="#social">Social</a></li>
       </ul>
@@ -695,6 +696,71 @@
     </div>
   </div>
 </section>
+
+<!-- MATCH_HISTORY_START -->
+<section class="match-history" id="historial" style="padding: 80px 0; background: linear-gradient(180deg, #070d19 0%, #040914 100%); border-top: 1px solid rgba(255,255,255,0.05);">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="badge" style="margin-bottom:16px">Historial de Partidos</span>
+      <h2>Archivo de <span style="color:var(--cyan)">Crónicas Tácticas</span></h2>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto; font-size: 1rem;">Explora el análisis detallado, predicciones Poisson y pizarras tácticas de los encuentros del Mundial 2026.</p>
+    </div>
+    
+    <div class="history-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; width: 100%;">
+      <!-- HISTORIAL_CARDS_START -->
+        
+      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 15px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted);">
+          <span class="badge" style="background: rgba(0, 240, 255, 0.1); color: var(--cyan); border: none; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">Grupo A</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="https://flagcdn.com/w40/cz.png" alt="Rep. Checa" style="width: 22px; height: auto; border-radius: 2px;">
+            <span style="font-size: 0.95rem;">Rep. Checa</span>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 6px; color: var(--green); font-size: 1.1rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.08);">
+            1 - 2
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; justify-content: flex-end;">
+            <span style="font-size: 0.95rem;">Corea del Sur</span>
+            <img src="https://flagcdn.com/w40/kr.png" alt="Corea del Sur" style="width: 22px; height: auto; border-radius: 2px;">
+          </div>
+        </div>
+        <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+          <a href="analisis/repcheca_coreasur.html" style="color: var(--cyan); text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
+        </div>
+      </div>
+
+        
+      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 15px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted);">
+          <span class="badge" style="background: rgba(0, 240, 255, 0.1); color: var(--cyan); border: none; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">Grupo A</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="https://flagcdn.com/w40/mx.png" alt="México" style="width: 22px; height: auto; border-radius: 2px;">
+            <span style="font-size: 0.95rem;">México</span>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 6px; color: var(--green); font-size: 1.1rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.08);">
+            1 - 0
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; justify-content: flex-end;">
+            <span style="font-size: 0.95rem;">Sudáfrica</span>
+            <img src="https://flagcdn.com/w40/za.png" alt="Sudáfrica" style="width: 22px; height: auto; border-radius: 2px;">
+          </div>
+        </div>
+        <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+          <a href="analisis/mexico_sudafrica.html" style="color: var(--cyan); text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
+        </div>
+      </div>
+
+        <!-- HISTORIAL_CARDS_END -->
+    </div>
+  </div>
+</section>
+<!-- MATCH_HISTORY_END -->
 
 <div class="section-divider"></div>
 

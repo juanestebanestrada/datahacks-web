@@ -624,18 +624,59 @@ def build_all_pages():
             
         cards_html = "\n        ".join(cards_list)
         
+        # Generar Tarjetas de Historial HTML
+        history_cards = []
+        sorted_matches = sorted(all_compiled_matches, key=lambda x: (x['fecha'], x['hora']), reverse=True)
+        
+        for m in sorted_matches:
+            code_home = FLAGS_MAP.get(m['home'], 'un')
+            code_away = FLAGS_MAP.get(m['away'], 'un')
+            
+            card_hist_html = f"""
+      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 15px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted);">
+          <span class="badge" style="background: rgba(0, 240, 255, 0.1); color: var(--cyan); border: none; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">{m['grupo']}</span>
+          <span>📅 {m['fecha']}</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <img src="https://flagcdn.com/w40/{code_home}.png" alt="{m['home']}" style="width: 22px; height: auto; border-radius: 2px;">
+            <span style="font-size: 0.95rem;">{m['home']}</span>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 6px; color: var(--green); font-size: 1.1rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.08);">
+            {m['display_score']}
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; justify-content: flex-end;">
+            <span style="font-size: 0.95rem;">{m['away']}</span>
+            <img src="https://flagcdn.com/w40/{code_away}.png" alt="{m['away']}" style="width: 22px; height: auto; border-radius: 2px;">
+          </div>
+        </div>
+        <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+          <a href="{m['link']}" style="color: var(--cyan); text-decoration: none; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
+        </div>
+      </div>
+"""
+            history_cards.append(card_hist_html)
+            
+        history_html = "\n        ".join(history_cards)
+        
         # Inyectar en index.html
         with open(index_path, 'r', encoding='utf-8') as f:
             index_content = f.read()
             
-        # Remplazar tarjetas
+        # Remplazar tarjetas del Live Match Center
         pattern_cards = r'(<!-- ANALISIS_CARDS_START -->)(.*?)(<!-- ANALISIS_CARDS_END -->)'
         replacement_cards = f'\\1\n        {cards_html}\n        \\3'
         index_content = re.sub(pattern_cards, replacement_cards, index_content, flags=re.DOTALL)
         
+        # Remplazar tarjetas de Historial
+        pattern_history = r'(<!-- HISTORIAL_CARDS_START -->)(.*?)(<!-- HISTORIAL_CARDS_END -->)'
+        replacement_history = f'\\1\n        {history_html}\n        \\3'
+        index_content = re.sub(pattern_history, replacement_history, index_content, flags=re.DOTALL)
+        
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write(index_content)
-        print(f"Actualizado Live Match Center dinámico en: index.html ({len(today_matches)} partidos agregados)")
+        print(f"Actualizado index.html: Live Match Center ({len(today_matches)} partidos) e Historial ({len(sorted_matches)} partidos)")
         
     print("Compilación finalizada exitosamente.")
     return True
