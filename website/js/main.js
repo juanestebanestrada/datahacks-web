@@ -319,4 +319,92 @@ if (cardAnalisisTactico && modalAnalisisTactico) {
   });
 }
 
+// ─── EVENT LISTENERS: NUEVOS LINKS DEL HUB ───
+const linkMetodologia = document.getElementById('link-metodologia');
+const linkAlgoritmo = document.getElementById('link-algoritmo');
+const linkGlosario = document.getElementById('link-glosario');
+const modalGlosario = document.getElementById('modal-glosario');
+const closeBtnGlosario = document.getElementById('modal-close-glosario-btn');
+
+if (linkMetodologia && modalAnalisisTactico) {
+  linkMetodologia.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalAnalisisTactico.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(initTacticoCharts, 50);
+  });
+}
+
+if (linkAlgoritmo && modalIaDs) {
+  linkAlgoritmo.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalIaDs.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(initCharts, 50);
+  });
+}
+
+if (linkGlosario && modalGlosario) {
+  linkGlosario.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalGlosario.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  if (closeBtnGlosario) {
+    closeBtnGlosario.addEventListener('click', () => {
+      modalGlosario.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  modalGlosario.addEventListener('click', (e) => {
+    if (e.target === modalGlosario) {
+      modalGlosario.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalGlosario.classList.contains('active')) {
+      modalGlosario.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// ─── EVENT LISTENER: MODAL CASO DE ESTUDIO ───
+const linkCasoEstudio = document.getElementById('link-caso-estudio');
+const modalCasoEstudio = document.getElementById('modal-caso-estudio');
+const closeBtnCaso = document.getElementById('modal-close-caso-btn');
+
+if (linkCasoEstudio && modalCasoEstudio) {
+  linkCasoEstudio.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalCasoEstudio.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  if (closeBtnCaso) {
+    closeBtnCaso.addEventListener('click', () => {
+      modalCasoEstudio.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  modalCasoEstudio.addEventListener('click', (e) => {
+    if (e.target === modalCasoEstudio) {
+      modalCasoEstudio.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalCasoEstudio.classList.contains('active')) {
+      modalCasoEstudio.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 // Bar heights are set in HTML for a deliberate chart silhouette
