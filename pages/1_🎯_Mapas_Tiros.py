@@ -143,7 +143,7 @@ for tab, (pais, cfg) in zip(tabs, EQUIPOS.items()):
                         <p style="margin:0; font-size:0.9rem; color:#ff8a8a; line-height:1.5;">
                             <b>Métricas Avanzadas no disponibles vía StatsBomb:</b><br>
                             La fuente oficial gratuita no dispone de datos de evento completos (pases, conducciones) para <b>{pais}</b>.<br>
-                            Como alternativa, puedes ver los datos en tiempo real extraídos o integrados desde <b>SofaScore</b>.
+                            Como alternativa, puedes ver los datos en tiempo real de <b>SofaScore</b>.
                         </p>
                     </div>
                     """, unsafe_allow_html=True)
@@ -155,43 +155,11 @@ for tab, (pais, cfg) in zip(tabs, EQUIPOS.items()):
                         key=f"metodo_alt_{pais}"
                     )
                     
-                    # Definimos IDs de SofaScore y partidos para Bosnia y otros
-                    sofascore_match_ids = {
-                        "Bosnia": {
-                            "Bosnia vs Países Bajos (Nations League 2024)": "UGbsUGb",
-                            "Alemania vs Bosnia (Nations League 2024)": "UdbscUdb"
-                        },
-                        "Noruega": {
-                            "Noruega vs Kazajistán (Nations League 2024)": "vCbsuGb",
-                            "Eslovenia vs Noruega (Nations League 2024)": "vCbsHCb"
-                        },
-                        "Panamá": {
-                            "Costa Rica vs Panamá (CONCACAF Nations League 2024)": "sLbszNb",
-                            "Panamá vs Costa Rica (CONCACAF Nations League 2024)": "sLbsLNb"
-                        }
-                    }
-                    
-                    # Valores por defecto para otros países
-                    current_match_dict = sofascore_match_ids.get(pais, {
-                        f"Último Partido Oficial de {pais}": "generic"
-                    })
-                    
-                    partido_sel = st.selectbox(
-                        "Selecciona Partido para Visualizar:",
-                        list(current_match_dict.keys()),
-                        key=f"match_alt_{pais}"
-                    )
-                    match_id = current_match_dict[partido_sel]
-                    
                     if metodo_alt == "Widget Interactivo Oficial":
-                        # Mostrar el widget oficial de SofaScore en un iframe
-                        if match_id == "generic":
-                            # Usar widget de equipo si no hay partido específico configurado
-                            from utils.data_loaders import FOTMOB_FALLBACK_IDS
-                            team_ss_id = FOTMOB_FALLBACK_IDS.get(pais, 10106)
-                            embed_url = f"https://widgets.sofascore.com/embed/team?id={team_ss_id}&theme=dark"
-                        else:
-                            embed_url = f"https://widgets.sofascore.com/embed/unique-event?id={match_id}&theme=dark"
+                        # Mostrar el widget oficial de SofaScore para el equipo (incluye plantilla y últimos partidos interactivos)
+                        from utils.data_loaders import FOTMOB_FALLBACK_IDS
+                        team_ss_id = FOTMOB_FALLBACK_IDS.get(pais, 10106)
+                        embed_url = f"https://widgets.sofascore.com/embed/team?id={team_ss_id}&theme=dark"
                             
                         st.markdown(f"""
                         <div style="background: rgba(15, 12, 32, 0.35); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); margin-top: 15px;">
@@ -255,7 +223,7 @@ for tab, (pais, cfg) in zip(tabs, EQUIPOS.items()):
                         x = np.clip(x, 2, 118)
                         y = np.clip(y, 2, 78)
                         
-                        pitch = Pitch(pitch_type='statsbomb', pitch_color='#080d1a', line_color='rgba(255,255,255,0.18)')
+                        pitch = Pitch(pitch_type='statsbomb', pitch_color='#080d1a', line_color=(1.0, 1.0, 1.0, 0.18))
                         fig, ax = plt.subplots(figsize=(10, 7))
                         fig.patch.set_facecolor('#080d1a')
                         ax.set_facecolor('#080d1a')
