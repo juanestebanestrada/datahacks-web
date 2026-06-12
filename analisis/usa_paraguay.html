@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estados Unidos vs Paraguay: Intensidad contra Fricción en el Grupo D // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido USA vs Paraguay del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_d.html" class="back-link">← Volver al Grupo D</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo D</span>
+    <h2>USA vs Paraguay</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-12 · 🕒 17:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team">USA</div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div class="score-box">2 - 1</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team">Paraguay</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇺🇸 Estados Unidos: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Generación de Peligro Diversificada (xT):</strong> USA genera amenaza en múltiples zonas del último tercio (alcanzando 0.35–0.40 xT acumulado). El ataque no es predecible, pudiendo hacer daño tanto por el carril derecho profundo como en la zona de ruptura por el perfil izquierdo y desde la segunda línea.</li>
+<li><strong>Circulación Colectiva y Salida Limpia:</strong> Su red de pases muestra un circuito muy conectado y fluido entre Adams (eje de distribución), Ream, McKennie, Dest y Carter-Vickers. No dependen de un solo jugador para progresar, y sus laterales se involucran activamente en la construcción para crear superioridades.</li>
+<li><strong>Intensidad de Presión y Recuperación:</strong> Presentan un mapa defensivo con una densidad de acciones extraordinariamente alta. Aplican un pressing medio-alto muy agresivo en la zona media y de transición, impidiendo la salida cómoda del rival.</li>
+<li><strong>Volumen en Conducciones Progresivas:</strong> Cuentan con una alta cantidad de vectores de avance con el balón desde el centro del campo, lo que les permite romper líneas de presión mediante conducciones individuales rápidas.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Efectividad Justa de Cara al Arco:</strong> Registran una conversión del 7% (3 goles en 43 disparos), lo que refleja cierto desperdicio de oportunidades y una selección de tiros mejorable desde media distancia.</li>
+<li><strong>Exposición en Transición Defensiva:</strong> Al proyectar a los laterales (como Dest) y adelantar la línea de presión, quedan expuestos a espaldas de la defensa ante contraataques rápidos si el rival salta la primera presión.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇵🇾 Paraguay: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Especialización y Peligro por Banda Derecha:</strong> Su mapa de calor y de conducciones revela una asimetría muy clara: el ataque paraguayo es una autopista por la banda derecha ofensiva, logrando un xT local muy alto de hasta 0.60.</li>
+<li><strong>Circuito de Alto Rendimiento en Carril Derecho:</strong> El tándem entre Florentín y Acosta en mediocampo/ataque funciona con gran fluidez, logrando penetraciones profundas y centros precisos hacia la zona de remate.</li>
+<li><strong>Eficiencia en el Área Pequeña:</strong> Logran posicionar con éxito disparos de alta probabilidad (burbujas grandes de xG ~0.35) en la zona del segundo palo y son eficaces capitalizando envíos de banda (7.5% de conversión con 3 goles en 40 disparos).</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Previsibilidad y Unidimensionalidad Táctica:</strong> El perfil izquierdo y el ataque centralizado de Paraguay están sumamente inactivos en el mapa de calor. Si el rival logra taponar y duplicar marcas en su banda derecha, el volumen ofensivo decae drásticamente.</li>
+<li><strong>Defensa Reactiva y Bloque Bajo:</strong> Defensivamente muestran un comportamiento más pasivo que USA. Presentan una zona "fría" en el centro de su campo, lo que denota que conceden metros y tiempo al mediocampo rival en la gestación.</li>
+<li><strong>Construcción Vulnerable desde Atrás:</strong> La alta participación de Acosta en la salida desde atrás puede ser un punto de quiebre peligroso ante presiones altas organizadas.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚔️ ¿Cómo puede superar cada equipo a su adversario?</h2>
+<h3>¿Qué debe hacer Estados Unidos para ganarle a Paraguay?</h3>
+<p><strong>1.</strong> <strong>Doblar marcas y cerrar la banda derecha paraguaya:</strong> Cargar defensivamente su carril izquierdo para anular el tándem Florentín-Acosta y obligar a Paraguay a proponer por su inactiva banda izquierda.</p>
+<p><strong>2.</strong> <strong>Circular rápido para explotar el lado débil:</strong> Atraer el bloque paraguayo hacia una zona y realizar cambios de orientación veloces hacia su lateral derecho (Dest) para aprovechar que el sector izquierdo paraguayo es más pasivo y desprotegido.</p>
+<p><strong>3.</strong> <strong>Presión asfixiante sobre la salida de Acosta:</strong> Activar un pressing alto coordinado cuando Paraguay intente iniciar el juego desde atrás para forzar el error en zona de peligro.</p>
+<h3>¿Qué debe hacer Paraguay para ganarle a Estados Unidos?</h3>
+<p><strong>1.</strong> <strong>Neutralizar la subida de los laterales estadounidenses:</strong> Mantener ocupados defensivamente a los laterales de USA mediante la proyección constante de su banda derecha, evitando que se sumen al mediocampo.</p>
+<p><strong>2.</strong> <strong>Transiciones ofensivas rápidas e hirientes:</strong> Replicar con un bloque medio-bajo compacto para absorber el volumen creativo estadounidense y lanzar contragolpes inmediatos hacia la derecha antes de que el pressing de USA se reorganice.</p>
+<p><strong>3.</strong> <strong>Aprovechar el juego directo en segundas jugadas:</strong> Utilizar balones largos al espacio para saltar la intensa línea media americana y buscar faltas tácticas cerca del área para generar peligro en táctica fija.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🏆 Pronóstico: ¿Quién ganaría?</h2>
+<p>> <strong>Predicción:</strong> Victoria de <strong>Estados Unidos</strong> 2-1 (con alta probabilidad de empate).</p>
+<p>Será un encuentro de alta intensidad física y táctica. <strong>Estados Unidos parte como favorito moderado</strong> debido a que dispone de una estructura colectiva más equilibrada, mayor volumen en conducciones progresivas y un pressing medio-alto muy coordinado capaz de asfixiar la gestación paraguaya.</p>
+<p>Sin embargo, Paraguay es un rival sumamente peligroso que sabe replegarse y golpear con contundencia a través de su autopista por la banda derecha (xT local de 0.60). Si Paraguay logra replegarse de forma sólida y marcar primero en un contragolpe rápido, el partido se le complicará a los norteamericanos. El escenario más probable de acuerdo con los datos es un triunfo ajustado de USA por 2-1 o 1-0, apoyado en su mayor variedad de rutas de ataque.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (USA)</h4>
+                      <img src="../assets/Analisis_USA_MapaDefensivo_horizontal_20260612.png" alt="Mapa Defensivo (USA)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Paraguay)</h4>
+                      <img src="../assets/Analisis_Paraguay_MapaDefensivo_horizontal_20260612.png" alt="Mapa Defensivo (Paraguay)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (USA)</h4>
+                      <img src="../assets/Analisis_USA_ExpectedThreatxT_horizontal_20260612.png" alt="Amenaza Esperada xT (USA)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Paraguay)</h4>
+                      <img src="../assets/Analisis_Paraguay_ExpectedThreatxT_horizontal_20260612.png" alt="Amenaza Esperada xT (Paraguay)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (USA)</h4>
+                      <img src="../assets/Analisis_USA_MapadeCalor_horizontal_20260612.png" alt="Mapa de Calor (USA)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Paraguay)</h4>
+                      <img src="../assets/Analisis_Paraguay_MapadeCalor_horizontal_20260612.png" alt="Mapa de Calor (Paraguay)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (USA)</h4>
+                      <img src="../assets/ShotMap_USA_horizontal_20260612.png" alt="Mapa de Tiros (USA)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Paraguay)</h4>
+                      <img src="../assets/ShotMap_Paraguay_horizontal_20260612.png" alt="Mapa de Tiros (Paraguay)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (USA)</h4>
+                      <img src="../assets/Analisis_USA_ReddePases_horizontal_20260612.png" alt="Red de Pases (USA)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Paraguay)</h4>
+                      <img src="../assets/Analisis_Paraguay_ReddePases_horizontal_20260612.png" alt="Red de Pases (Paraguay)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (USA)</h4>
+                      <img src="../assets/Analisis_USA_ConduccionesProgresivas_horizontal_20260612.png" alt="Conducciones Progresivas (USA)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Paraguay)</h4>
+                      <img src="../assets/Analisis_Paraguay_ConduccionesProgresivas_horizontal_20260612.png" alt="Conducciones Progresivas (Paraguay)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (USA)</h4>
+                      <img src="../assets/Analisis_USA_MapadeAsistencias_horizontal_20260612.png" alt="Mapa de Asistencias (USA)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Paraguay)</h4>
+                      <img src="../assets/Analisis_Paraguay_MapadeAsistencias_horizontal_20260612.png" alt="Mapa de Asistencias (Paraguay)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

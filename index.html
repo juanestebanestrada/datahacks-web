@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataHacks — Sports Data Analytics // Football Metrics</title>
+  <meta name="description" content="Plataforma de análisis de datos deportivos con inteligencia artificial. Métricas tácticas, xG, redes de pases y más para el FIFA World Cup 2026." />
+  <meta property="og:title" content="DataHacks — Sports Data Analytics" />
+  <meta property="og:description" content="Inteligencia artificial aplicada al fútbol. Análisis táctico, podcasts y contenido para TikTok, YouTube y X." />
+  <meta property="og:url" content="https://datahacks.space" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#plataforma">Plataforma</a></li>
+        <li><a href="#mundial2026">Mundial 2026</a></li>
+        <li><a href="#historial">Historial</a></li>
+        <li><a href="#contenido">Contenido</a></li>
+        <li><a href="#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+
+  <!-- Right visual: animated bar chart + ball -->
+  <div class="hero-visual">
+    <div class="hero-chart" aria-hidden="true">
+      <div class="bar" style="height:90px"></div>
+      <div class="bar" style="height:145px"></div>
+      <div class="bar" style="height:210px"></div>
+      <div class="bar" style="height:120px"></div>
+      <div class="bar" style="height:245px"></div>
+      <div class="bar" style="height:175px"></div>
+    </div>
+    <div class="hero-ball" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="soccer-ball-svg">
+        <defs>
+          <clipPath id="ballClip">
+            <circle cx="100" cy="100" r="94"/>
+          </clipPath>
+          <!-- Glow filters -->
+          <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <radialGradient id="ballGrad" cx="38%" cy="35%" r="60%">
+            <stop offset="0%" stop-color="rgba(0,212,255,0.25)"/>
+            <stop offset="60%" stop-color="rgba(0,149,255,0.08)"/>
+            <stop offset="100%" stop-color="rgba(0,80,180,0.05)"/>
+          </radialGradient>
+          <radialGradient id="shineGrad" cx="32%" cy="28%" r="40%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Ball base fill -->
+        <circle cx="100" cy="100" r="94" fill="url(#ballGrad)" stroke="rgba(0,212,255,0.6)" stroke-width="1.5" filter="url(#glow)"/>
+
+        <!-- Soccer ball panels (wireframe style) clipped to circle -->
+        <g clip-path="url(#ballClip)" fill="none" stroke="rgba(0,212,255,0.55)" stroke-width="1.2" filter="url(#glow)">
+          <!-- Central pentagon (top) -->
+          <polygon points="100,14 124,31 115,58 85,58 76,31"/>
+          <!-- Left upper pentagon -->
+          <polygon points="76,31 52,22 38,48 55,68 85,58"/>
+          <!-- Right upper pentagon -->
+          <polygon points="124,31 148,22 162,48 145,68 115,58"/>
+          <!-- Left mid pentagon -->
+          <polygon points="38,48 14,62 18,92 46,98 55,68"/>
+          <!-- Right mid pentagon -->
+          <polygon points="162,48 186,62 182,92 154,98 145,68"/>
+          <!-- Bottom left upper -->
+          <polygon points="46,98 18,92 22,122 52,130 62,110"/>
+          <!-- Bottom right upper -->
+          <polygon points="154,98 182,92 178,122 148,130 138,110"/>
+          <!-- Bottom center area -->
+          <polygon points="62,110 52,130 76,150 100,142 124,150 148,130 138,110 115,102 85,102"/>
+          <!-- Bottom left lower -->
+          <polygon points="22,122 30,152 62,158 76,150 52,130"/>
+          <!-- Bottom right lower -->
+          <polygon points="178,122 170,152 138,158 124,150 148,130"/>
+          <!-- Bottom center -->
+          <polygon points="62,158 76,180 100,186 124,180 138,158 124,150 100,142 76,150"/>
+          <!-- Connecting lines (hexagonal fills) -->
+          <line x1="85" y1="58" x2="85" y2="102"/>
+          <line x1="115" y1="58" x2="115" y2="102"/>
+          <line x1="55" y1="68" x2="46" y2="98"/>
+          <line x1="145" y1="68" x2="154" y2="98"/>
+          <line x1="46" y1="98" x2="62" y2="110"/>
+          <line x1="154" y1="98" x2="138" y2="110"/>
+        </g>
+
+        <!-- Accent nodes at pentagon vertices -->
+        <g fill="rgba(0,230,118,0.9)" filter="url(#glowStrong)">
+          <circle cx="100" cy="14" r="2.5"/>
+          <circle cx="76" cy="31" r="2"/>
+          <circle cx="124" cy="31" r="2"/>
+          <circle cx="55" cy="68" r="2"/>
+          <circle cx="145" cy="68" r="2"/>
+          <circle cx="85" cy="58" r="1.8"/>
+          <circle cx="115" cy="58" r="1.8"/>
+          <circle cx="85" cy="102" r="2"/>
+          <circle cx="115" cy="102" r="2"/>
+          <circle cx="100" cy="142" r="2.2"/>
+        </g>
+
+        <!-- Shine highlight -->
+        <circle cx="100" cy="100" r="94" fill="url(#shineGrad)"/>
+
+        <!-- Outer glow ring -->
+        <circle cx="100" cy="100" r="96" fill="none" stroke="rgba(0,212,255,0.25)" stroke-width="3" filter="url(#glowStrong)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="badge">⚡ FIFA World Cup 2026 · Dossier Táctico</span>
+      </div>
+
+      <h1>
+        <span class="line-blue glow-blue">SPORTS DATA</span><br>
+        <span class="line-green glow-green">ANALYTICS</span><br>
+        <span>FOOTBALL METRICS</span>
+      </h1>
+
+      <p class="hero-sub">
+        Inteligencia aplicada al fútbol. Descubrimos lo que los datos dicen antes que nadie.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#mundial2026" class="btn btn-primary">⚽ Ver Análisis Mundial</a>
+        <a href="#contenido" class="btn btn-ghost">📊 Explorar Contenido</a>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-wrap">
+        <div class="countdown-label">🏆 Cuenta Atrás para la Gran Final del Mundial 2026</div>
+        <div class="countdown">
+          <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-lbl">Días</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-lbl">Horas</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-lbl">Min</span></div>
+          <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-lbl">Seg</span></div>
+        </div>
+      </div>
+
+      <!-- Social Pills -->
+      <div class="social-pills">
+        <span style="font-size:0.78rem;color:var(--muted)">Síguenos en:</span>
+        <a href="https://www.tiktok.com/@datahackssports" target="_blank" class="social-pill" title="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+          TikTok
+        </a>
+        <a href="https://www.youtube.com/@DataHacks001" target="_blank" class="social-pill" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.13C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.13C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.75 15.52V8.48L15.84 12l-6.09 3.52z"/></svg>
+          YouTube
+        </a>
+        <a href="https://x.com/DataHacksSports" target="_blank" class="social-pill" title="X / Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     LIVE MATCH CENTER (WIDGET DE HOY - DINÁMICO)
+     ══════════════════════════════════════════ -->
+<section class="live-match-center" id="live-match">
+  <style>
+    .live-match-center {
+      position: relative;
+      margin-top: -30px;
+      margin-bottom: 60px;
+      z-index: 10;
+      padding: 60px 0;
+      background-color: #040914;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDgwMCIgb3BhY2l0eT0iMC4xMiI+CiAgPHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iOTYwIiBoZWlnaHQ9Ijc2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBmMGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxsaW5lIHgxPSI1MDAiIHkxPSIyMCIgeDI9IjUwMCIgeTI9Ijc4MCIgc3Ryb2tlPSIjMDBmMGZmIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxjaXJjbGUgY3g9IjUwMCIgY3k9IjQwMCIgcj0iMTIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGYwZmYiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iNDAwIiByPSI0IiBmaWxsPSIjMDBmMGZmIi8+CiAgPHJlY3QgeD0iMjAiIHk9IjIwMCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSI0MDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwZjBmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSIyMCIgeT0iMzAwIiB3aWR0aD0iNTAiIGhlaWdodD0iMjAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGYwZmYiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHBhdGggZD0iTSAxNzAgMzQwIEEgMTAwIDEwMCAwIDAgMSAxNzAgNDYwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGYwZmYiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHJlY3QgeD0iODMwIiB5PSIyMDAiIHdpZHRoPSIxNTAiIGhlaWdodD0iNDAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGYwZmYiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHJlY3QgeD0iOTMwIiB5PSIzMDAiIHdpZHRoPSI1MCIgaGVpZ2h0PSIyMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwZjBmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNIDgzMCAzNDAgQSAxMDAgMTAwIDAgMCAwIDgzMCA0NjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwZjBmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KPC9zdmc+"),
+                        radial-gradient(circle at center, rgba(8, 15, 30, 0.45) 0%, #040914 100%);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .match-center-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .match-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+    }
+    .match-widget-card {
+      position: relative;
+      background: #080f1d;
+      border: 1.5px solid transparent;
+      border-radius: 20px;
+      background-image: linear-gradient(#080f1d, #080f1d), linear-gradient(135deg, #00f0ff 0%, #00ff66 100%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.15), 0 12px 40px rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: all 0.3s ease;
+    }
+    .match-widget-card:hover {
+      box-shadow: 0 0 35px rgba(0, 240, 255, 0.25), 0 15px 45px rgba(0, 0, 0, 0.7);
+      transform: translateY(-2px);
+    }
+    .match-widget-badge-top {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #00f0ff;
+      color: #080f1d;
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 900;
+      padding: 5px 16px;
+      border-radius: 20px;
+      letter-spacing: 1.5px;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+      text-transform: uppercase;
+      z-index: 10;
+    }
+    .match-widget-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .team-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+    }
+    .team-block.local {
+      justify-content: flex-end;
+    }
+    .team-block.visitor {
+      justify-content: flex-start;
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .team-flag {
+      width: 42px;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .digital-scoreboard {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #0c1525;
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 12px;
+      padding: 6px 12px;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.08);
+    }
+    .score-box {
+      background: #060c18;
+      border: 1px solid rgba(0, 240, 255, 0.15);
+      border-radius: 8px;
+      width: 42px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .score-box.local {
+      color: #00f0ff;
+      text-shadow: 0 0 12px rgba(0, 240, 255, 0.7);
+      border-color: rgba(0, 240, 255, 0.35);
+    }
+    .score-box.visitor {
+      color: #00ff66;
+      text-shadow: 0 0 12px rgba(0, 255, 102, 0.7);
+      border-color: rgba(0, 255, 102, 0.35);
+    }
+    .score-divider {
+      font-size: 1.8rem;
+      color: #fff;
+      font-weight: 700;
+      opacity: 0.8;
+    }
+    .match-middle-row {
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      margin: 10px 0;
+    }
+    .tactical-field {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      padding: 4px;
+      height: 80px;
+      width: 100px;
+    }
+    .poisson-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .poisson-title {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 10px;
+      text-transform: none;
+      letter-spacing: 0.5px;
+    }
+    .poisson-bar {
+      display: flex;
+      height: 14px;
+      width: 100%;
+      border-radius: 7px;
+      overflow: hidden;
+      margin-bottom: 8px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .bar-segment {
+      height: 100%;
+    }
+    .bar-segment.local {
+      background: #00f0ff;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+    }
+    .bar-segment.draw {
+      background: #ffffff;
+    }
+    .bar-segment.visitor {
+      background: #ff4b4b;
+      box-shadow: 0 0 12px rgba(255, 75, 75, 0.4);
+    }
+    .poisson-labels {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-family: var(--font-head);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0 2px;
+    }
+    .poisson-labels .label-local {
+      color: #00f0ff;
+    }
+    .poisson-labels .label-draw {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .poisson-labels .label-visitor {
+      color: #ff4b4b;
+    }
+    .btn-glow-cyan {
+      display: inline-block;
+      background: #00f0ff;
+      color: #080f1d !important;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.82rem;
+      padding: 10px 22px;
+      border-radius: 20px;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .btn-glow-cyan:hover {
+      background: #fff;
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.8);
+      transform: translateY(-1px);
+    }
+  </style>
+
+  <div class="container">
+    <div class="match-center-wrapper">
+      
+      <!-- Contenedores de Tarjetas de Partido -->
+      <div class="match-cards-container" id="match-cards-container">
+        <!-- ANALISIS_CARDS_START -->
+        
+      <div id="widget-canada_bosnia" class="match-widget-card">
+        <div class="match-widget-badge-top">DOSSIER TÁCTICO</div>
+        
+        <div class="match-widget-header-row">
+          <div class="team-block local">
+            <span class="team-name">Canadá</span>
+            <img src="https://flagcdn.com/w80/ca.png" alt="Canadá" class="team-flag">
+          </div>
+          
+          <div class="digital-scoreboard">
+            <div class="score-box local">1</div>
+            <div class="score-divider">-</div>
+            <div class="score-box visitor">2</div>
+          </div>
+          
+          <div class="team-block visitor">
+            <img src="https://flagcdn.com/w80/ba.png" alt="Bosnia" class="team-flag">
+            <span class="team-name">Bosnia</span>
+          </div>
+        </div>
+        
+        <div class="match-middle-row">
+          <div class="tactical-field local">
+            <svg viewBox="0 0 120 80" class="mini-pitch-svg" style="width: 100px; height: 75px; opacity: 0.85;">
+      <defs>
+        <filter id="glow-cyan-canadá" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <!-- Pitch outline -->
+      <rect x="2" y="2" width="116" height="76" rx="4" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Midfield line -->
+      <line x1="60" y1="2" x2="60" y2="78" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Center circle -->
+      <circle cx="60" cy="40" r="14" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Penalty Area Left -->
+      <rect x="2" y="18" width="18" height="44" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Penalty Area Right -->
+      <rect x="100" y="18" width="18" height="44" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Goal Area Left -->
+      <rect x="2" y="28" width="6" height="24" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Goal Area Right -->
+      <rect x="112" y="28" width="6" height="24" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      
+      <!-- Links (Passing Lines) -->
+      <line x1="30" y1="35" x2="45" y2="25" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="45" y1="25" x2="55" y2="45" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="55" y1="45" x2="40" y2="55" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="40" y1="55" x2="30" y2="35" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="42" y1="40" x2="45" y2="25" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="42" y1="40" x2="30" y2="35" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="42" y1="40" x2="40" y2="55" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="42" y1="40" x2="55" y2="45" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <circle cx="45" cy="25" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-canadá)"/>
+  <circle cx="30" cy="35" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-canadá)"/>
+  <circle cx="40" cy="55" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-canadá)"/>
+  <circle cx="55" cy="45" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-canadá)"/>
+  <circle cx="42" cy="40" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-canadá)"/>
+</svg>
+          </div>
+          
+          <div class="poisson-section">
+            <div class="poisson-title">Poisson probabilites</div>
+            <div class="poisson-bar">
+              <div class="bar-segment local" style="width: 20%" title="Canadá: 20%"></div>
+              <div class="bar-segment draw" style="width: 10%" title="Empate: 10%"></div>
+              <div class="bar-segment visitor" style="width: 70%" title="Bosnia: 70%"></div>
+            </div>
+            <div class="poisson-labels">
+              <span class="label-local">20%</span>
+              <span class="label-draw">Draw 10%</span>
+              <span class="label-visitor">70%</span>
+            </div>
+          </div>
+          
+          <div class="tactical-field visitor">
+            <svg viewBox="0 0 120 80" class="mini-pitch-svg" style="width: 100px; height: 75px; opacity: 0.85;">
+      <defs>
+        <filter id="glow-green-bosnia" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <!-- Pitch outline -->
+      <rect x="2" y="2" width="116" height="76" rx="4" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Midfield line -->
+      <line x1="60" y1="2" x2="60" y2="78" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Center circle -->
+      <circle cx="60" cy="40" r="14" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Penalty Area Left -->
+      <rect x="2" y="18" width="18" height="44" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Penalty Area Right -->
+      <rect x="100" y="18" width="18" height="44" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Goal Area Left -->
+      <rect x="2" y="28" width="6" height="24" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Goal Area Right -->
+      <rect x="112" y="28" width="6" height="24" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      
+      <!-- Links (Passing Lines) -->
+      <line x1="90" y1="35" x2="75" y2="25" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="75" y1="25" x2="65" y2="45" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="65" y1="45" x2="80" y2="55" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="80" y1="55" x2="90" y2="35" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="78" y1="40" x2="75" y2="25" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="78" y1="40" x2="90" y2="35" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="78" y1="40" x2="80" y2="55" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="78" y1="40" x2="65" y2="45" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <circle cx="75" cy="25" r="2.5" fill="#00ff66" filter="url(#glow-green-bosnia)"/>
+  <circle cx="90" cy="35" r="2.5" fill="#00ff66" filter="url(#glow-green-bosnia)"/>
+  <circle cx="80" cy="55" r="2.5" fill="#00ff66" filter="url(#glow-green-bosnia)"/>
+  <circle cx="65" cy="45" r="2.5" fill="#00ff66" filter="url(#glow-green-bosnia)"/>
+  <circle cx="78" cy="40" r="2.5" fill="#00ff66" filter="url(#glow-green-bosnia)"/>
+</svg>
+          </div>
+        </div>
+        
+        <div class="match-widget-footer" style="display: flex; justify-content: flex-end; width: 100%; margin-top: 5px;">
+          <a href="analisis/canada_bosnia.html" class="btn-glow-cyan">Ver Análisis Táctico</a>
+        </div>
+      </div>
+
+        
+      <div id="widget-usa_paraguay" class="match-widget-card">
+        
+        
+        <div class="match-widget-header-row">
+          <div class="team-block local">
+            <span class="team-name">USA</span>
+            <img src="https://flagcdn.com/w80/us.png" alt="USA" class="team-flag">
+          </div>
+          
+          <div class="digital-scoreboard">
+            <div class="score-box local">2</div>
+            <div class="score-divider">-</div>
+            <div class="score-box visitor">1</div>
+          </div>
+          
+          <div class="team-block visitor">
+            <img src="https://flagcdn.com/w80/py.png" alt="Paraguay" class="team-flag">
+            <span class="team-name">Paraguay</span>
+          </div>
+        </div>
+        
+        <div class="match-middle-row">
+          <div class="tactical-field local">
+            <svg viewBox="0 0 120 80" class="mini-pitch-svg" style="width: 100px; height: 75px; opacity: 0.85;">
+      <defs>
+        <filter id="glow-cyan-usa" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <!-- Pitch outline -->
+      <rect x="2" y="2" width="116" height="76" rx="4" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Midfield line -->
+      <line x1="60" y1="2" x2="60" y2="78" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Center circle -->
+      <circle cx="60" cy="40" r="14" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Penalty Area Left -->
+      <rect x="2" y="18" width="18" height="44" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Penalty Area Right -->
+      <rect x="100" y="18" width="18" height="44" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Goal Area Left -->
+      <rect x="2" y="28" width="6" height="24" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Goal Area Right -->
+      <rect x="112" y="28" width="6" height="24" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      
+      <!-- Links (Passing Lines) -->
+      <line x1="30" y1="35" x2="45" y2="25" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="45" y1="25" x2="55" y2="45" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="55" y1="45" x2="40" y2="55" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="40" y1="55" x2="30" y2="35" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="42" y1="40" x2="45" y2="25" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="42" y1="40" x2="30" y2="35" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="42" y1="40" x2="40" y2="55" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="42" y1="40" x2="55" y2="45" stroke="#00f0ff" stroke-opacity="0.45" stroke-width="0.7"/>
+  <circle cx="45" cy="25" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-usa)"/>
+  <circle cx="30" cy="35" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-usa)"/>
+  <circle cx="40" cy="55" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-usa)"/>
+  <circle cx="55" cy="45" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-usa)"/>
+  <circle cx="42" cy="40" r="2.5" fill="#00f0ff" filter="url(#glow-cyan-usa)"/>
+</svg>
+          </div>
+          
+          <div class="poisson-section">
+            <div class="poisson-title">Poisson probabilites</div>
+            <div class="poisson-bar">
+              <div class="bar-segment local" style="width: 42%" title="USA: 42%"></div>
+              <div class="bar-segment draw" style="width: 32%" title="Empate: 32%"></div>
+              <div class="bar-segment visitor" style="width: 26%" title="Paraguay: 26%"></div>
+            </div>
+            <div class="poisson-labels">
+              <span class="label-local">42%</span>
+              <span class="label-draw">Draw 32%</span>
+              <span class="label-visitor">26%</span>
+            </div>
+          </div>
+          
+          <div class="tactical-field visitor">
+            <svg viewBox="0 0 120 80" class="mini-pitch-svg" style="width: 100px; height: 75px; opacity: 0.85;">
+      <defs>
+        <filter id="glow-green-paraguay" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <!-- Pitch outline -->
+      <rect x="2" y="2" width="116" height="76" rx="4" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Midfield line -->
+      <line x1="60" y1="2" x2="60" y2="78" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Center circle -->
+      <circle cx="60" cy="40" r="14" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Penalty Area Left -->
+      <rect x="2" y="18" width="18" height="44" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Penalty Area Right -->
+      <rect x="100" y="18" width="18" height="44" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Goal Area Left -->
+      <rect x="2" y="28" width="6" height="24" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      <!-- Goal Area Right -->
+      <rect x="112" y="28" width="6" height="24" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="0.8"/>
+      
+      <!-- Links (Passing Lines) -->
+      <line x1="90" y1="35" x2="75" y2="25" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="75" y1="25" x2="65" y2="45" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="65" y1="45" x2="80" y2="55" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="80" y1="55" x2="90" y2="35" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="78" y1="40" x2="75" y2="25" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="78" y1="40" x2="90" y2="35" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="78" y1="40" x2="80" y2="55" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <line x1="78" y1="40" x2="65" y2="45" stroke="#00ff66" stroke-opacity="0.45" stroke-width="0.7"/>
+  <circle cx="75" cy="25" r="2.5" fill="#00ff66" filter="url(#glow-green-paraguay)"/>
+  <circle cx="90" cy="35" r="2.5" fill="#00ff66" filter="url(#glow-green-paraguay)"/>
+  <circle cx="80" cy="55" r="2.5" fill="#00ff66" filter="url(#glow-green-paraguay)"/>
+  <circle cx="65" cy="45" r="2.5" fill="#00ff66" filter="url(#glow-green-paraguay)"/>
+  <circle cx="78" cy="40" r="2.5" fill="#00ff66" filter="url(#glow-green-paraguay)"/>
+</svg>
+          </div>
+        </div>
+        
+        <div class="match-widget-footer" style="display: flex; justify-content: flex-end; width: 100%; margin-top: 5px;">
+          <a href="analisis/usa_paraguay.html" class="btn-glow-cyan">Ver Análisis Táctico</a>
+        </div>
+      </div>
+
+        <!-- ANALISIS_CARDS_END -->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MATCH_HISTORY_START -->
+<section class="match-history" id="historial" style="padding: 80px 0; background: linear-gradient(180deg, #070d19 0%, #040914 100%); border-top: 1px solid rgba(255,255,255,0.05);">
+  <div class="container">
+    <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+      <span class="badge" style="margin-bottom:16px">Historial de Partidos</span>
+      <h2>Archivo de <span style="color:var(--cyan)">Crónicas Tácticas</span></h2>
+      <p style="color: var(--muted); max-width: 600px; margin: 0 auto; font-size: 1rem;">Explora el análisis detallado, predicciones Poisson y pizarras tácticas de los encuentros del Mundial 2026.</p>
+    </div>
+    
+    <div class="history-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; width: 100%;">
+      <!-- HISTORIAL_CARDS_START -->
+        
+      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--muted);">
+          <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">Grupo D</span>
+          <span>📅 2026-06-12</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <img src="https://flagcdn.com/w40/us.png" alt="USA" style="width: 20px; height: auto; border-radius: 2px;">
+            <span style="font-size: 0.85rem;">USA</span>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+            2 - 1
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
+            <span style="font-size: 0.85rem;">Paraguay</span>
+            <img src="https://flagcdn.com/w40/py.png" alt="Paraguay" style="width: 20px; height: auto; border-radius: 2px;">
+          </div>
+        </div>
+        <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+          <a href="analisis/usa_paraguay.html" style="color: var(--cyan); text-decoration: none; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
+        </div>
+      </div>
+
+        
+      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--muted);">
+          <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">Grupo B</span>
+          <span>📅 2026-06-12</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <img src="https://flagcdn.com/w40/ca.png" alt="Canadá" style="width: 20px; height: auto; border-radius: 2px;">
+            <span style="font-size: 0.85rem;">Canadá</span>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+            1 - 2
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
+            <span style="font-size: 0.85rem;">Bosnia</span>
+            <img src="https://flagcdn.com/w40/ba.png" alt="Bosnia" style="width: 20px; height: auto; border-radius: 2px;">
+          </div>
+        </div>
+        <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+          <a href="analisis/canada_bosnia.html" style="color: var(--cyan); text-decoration: none; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
+        </div>
+      </div>
+
+        
+      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--muted);">
+          <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">Grupo A</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <img src="https://flagcdn.com/w40/cz.png" alt="Rep. Checa" style="width: 20px; height: auto; border-radius: 2px;">
+            <span style="font-size: 0.85rem;">Rep. Checa</span>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+            1 - 2
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
+            <span style="font-size: 0.85rem;">Corea del Sur</span>
+            <img src="https://flagcdn.com/w40/kr.png" alt="Corea del Sur" style="width: 20px; height: auto; border-radius: 2px;">
+          </div>
+        </div>
+        <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+          <a href="analisis/repcheca_coreasur.html" style="color: var(--cyan); text-decoration: none; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
+        </div>
+      </div>
+
+        
+      <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--muted);">
+          <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">Grupo A</span>
+          <span>📅 2026-06-11</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <img src="https://flagcdn.com/w40/mx.png" alt="México" style="width: 20px; height: auto; border-radius: 2px;">
+            <span style="font-size: 0.85rem;">México</span>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+            1 - 0
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
+            <span style="font-size: 0.85rem;">Sudáfrica</span>
+            <img src="https://flagcdn.com/w40/za.png" alt="Sudáfrica" style="width: 20px; height: auto; border-radius: 2px;">
+          </div>
+        </div>
+        <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+          <a href="analisis/mexico_sudafrica.html" style="color: var(--cyan); text-decoration: none; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
+        </div>
+      </div>
+
+        <!-- HISTORIAL_CARDS_END -->
+    </div>
+  </div>
+</section>
+<!-- MATCH_HISTORY_END -->
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     PLATAFORMA
+══════════════════════════════════════════ -->
+<section class="platform" id="plataforma">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge" style="margin-bottom:16px">La Plataforma</span>
+      <h2>Datos que se convierten en <span style="color:var(--blue)">contenido</span></h2>
+      <p>Un ecosistema completo que transforma datos de fútbol en análisis táctico, podcasts y contenido para redes sociales — todo generado con IA.</p>
+    </div>
+
+    <div class="platform-grid">
+      <div class="card" id="card-ia-ds" style="cursor: pointer; position: relative;">
+        <div class="card-icon icon-blue">📊</div>
+        <h3>IA + Data Science</h3>
+        <p style="margin-bottom: 8px;">Nuestra plataforma utiliza algoritmos de Machine Learning (como <strong>K-Means Clustering</strong>) para identificar arquetipos de rendimiento puro en los futbolistas (Finalizadores, Creadores y Distribuidores) normalizados a 90 minutos.</p>
+        <p style="font-size:0.82rem; color:var(--muted); line-height: 1.5; margin-bottom: 16px;">Evaluamos métricas avanzadas de posesión y peligro esperado como <strong>xG Buildup</strong> y <strong>xG Chain</strong> para detectar sinergias colectivas.</p>
+        <span style="font-family: var(--font-head); font-size: 0.85rem; color: var(--blue); font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">🔍 Ver Caso de Estudio completo →</span>
+      </div>
+      <div class="card" id="card-analisis-tactico" style="cursor: pointer; position: relative;">
+        <div class="card-icon icon-green">🎯</div>
+        <h3>Análisis Táctico</h3>
+        <p style="margin-bottom: 8px;">Desmontamos el juego de cada equipo con métricas avanzadas. Visualizamos el control del espacio con <strong>Diagramas de Voronoi</strong> y <strong>Triangulaciones de Delaunay</strong>.</p>
+        <p style="font-size:0.82rem; color:var(--muted); line-height: 1.5; margin-bottom: 16px;">Analizamos redes de pases dinámicas y la sincronización de bloques para evaluar la consistencia colectiva.</p>
+        <span style="font-family: var(--font-head); font-size: 0.85rem; color: var(--green); font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">🔍 Ver Fundamentos Tácticos →</span>
+      </div>
+      <a href="#social" style="text-decoration: none; color: inherit; display: block;">
+        <div class="card" style="cursor: pointer; position: relative;">
+          <div class="card-icon icon-cyan">🚀</div>
+          <h3>Contenido Multiplataforma</h3>
+          <p style="margin-bottom: 12px;">Transformamos análisis complejos en contenido de alta calidad para TikTok, YouTube, X y artículos de blog — listos para publicar.</p>
+          <span style="font-family: var(--font-head); font-size: 0.85rem; color: var(--cyan); font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">📱 Ver Redes Sociales →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     MUNDIAL 2026
+══════════════════════════════════════════ -->
+<section class="mundial" id="mundial2026">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge" style="margin-bottom:16px">🌍 Cobertura Exclusiva</span>
+      <h2>FIFA World Cup <span style="color:var(--green)">2026</span></h2>
+      <p>Análisis táctico en tiempo real de los 48 equipos del torneo más grande de la historia del fútbol.</p>
+    </div>
+
+    <div class="mundial-hero-card">
+      <div>
+        <div class="mundial-title">🏆 FIFA World Cup 2026</div>
+        <div class="mundial-dates">11 JUN — 19 JUL 2026 · USA / CANADA / MEXICO</div>
+        <p style="color:var(--muted);margin-top:12px;font-size:0.9rem">48 selecciones · 104 partidos · 16 sedes · Primera edición con 3 anfitriones</p>
+      </div>
+      <div style="text-align:center;flex-shrink:0">
+        <div style="font-family:var(--font-head);font-size:3.5rem;font-weight:900;color:var(--blue);line-height:1">48</div>
+        <div style="font-size:0.75rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase">Selecciones</div>
+      </div>
+    </div>
+
+    <!-- Grupos destacados -->
+    <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--muted);margin-bottom:20px;letter-spacing:1px;text-transform:uppercase">GRUPOS ANALIZADOS</h3>
+    <div class="grupos-grid">
+      <!-- Grupo A -->
+      <a href="grupo_a.html" class="grupo-card" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">A</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/cz.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Rep. Checa<br>
+          <img src="https://flagcdn.com/w40/mx.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> México<br>
+          <img src="https://flagcdn.com/w40/za.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Sudáfrica<br>
+          <img src="https://flagcdn.com/w40/kr.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Corea del Sur
+        </div>
+      </a>
+      <!-- Grupo B -->
+      <a href="grupo_b.html" class="grupo-card" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">B</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/ch.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Suiza<br>
+          <img src="https://flagcdn.com/w40/ca.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Canadá<br>
+          <img src="https://flagcdn.com/w40/qa.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Qatar<br>
+          <img src="https://flagcdn.com/w40/ba.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Bosnia
+        </div>
+      </a>
+      <!-- Grupo C (Highlight: Brasil) -->
+      <a href="grupo_c.html" class="grupo-card highlight" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">C</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/br.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Brasil<br>
+          <img src="https://flagcdn.com/w40/ma.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Marruecos<br>
+          <img src="https://flagcdn.com/w40/ht.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Haití<br>
+          <img src="https://flagcdn.com/w40/gb-sct.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Escocia
+        </div>
+        <span class="grupo-badge" style="background: rgba(0,230,118,0.15); color: var(--green);">FAVORITO IA</span>
+      </a>
+      <!-- Grupo D -->
+      <a href="grupo_d.html" class="grupo-card" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">D</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/tr.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Turquía<br>
+          <img src="https://flagcdn.com/w40/us.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> USA<br>
+          <img src="https://flagcdn.com/w40/py.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Paraguay<br>
+          <img src="https://flagcdn.com/w40/au.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Australia
+        </div>
+      </a>
+      <!-- Grupo E (Highlight: Alemania) -->
+      <a href="grupo_e.html" class="grupo-card highlight" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">E</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/de.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Alemania<br>
+          <img src="https://flagcdn.com/w40/cw.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Curazao<br>
+          <img src="https://flagcdn.com/w40/ci.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Costa de Marfil<br>
+          <img src="https://flagcdn.com/w40/ec.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Ecuador
+        </div>
+        <span class="grupo-badge" style="background: rgba(0,230,118,0.15); color: var(--green);">FAVORITO IA</span>
+      </a>
+      <!-- Grupo F (Highlight: Países Bajos) -->
+      <a href="grupo_f.html" class="grupo-card highlight" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">F</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/se.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Suecia<br>
+          <img src="https://flagcdn.com/w40/nl.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Países Bajos<br>
+          <img src="https://flagcdn.com/w40/jp.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Japón<br>
+          <img src="https://flagcdn.com/w40/tn.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Túnez
+        </div>
+        <span class="grupo-badge" style="background: rgba(0,230,118,0.15); color: var(--green);">FAVORITO IA</span>
+      </a>
+      <!-- Grupo G -->
+      <a href="grupo_g.html" class="grupo-card" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">G</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/be.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Bélgica<br>
+          <img src="https://flagcdn.com/w40/eg.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Egipto<br>
+          <img src="https://flagcdn.com/w40/ir.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Irán<br>
+          <img src="https://flagcdn.com/w40/nz.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Nueva Zelanda
+        </div>
+      </a>
+      <!-- Grupo H (Highlight: España) -->
+      <a href="grupo_h.html" class="grupo-card highlight" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">H</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/es.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> España<br>
+          <img src="https://flagcdn.com/w40/cv.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Cabo Verde<br>
+          <img src="https://flagcdn.com/w40/sa.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Arabia Saudí<br>
+          <img src="https://flagcdn.com/w40/uy.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Uruguay
+        </div>
+        <span class="grupo-badge" style="background: rgba(0,230,118,0.15); color: var(--green);">FAVORITO IA</span>
+      </a>
+      <!-- Grupo I (Highlight: Francia) -->
+      <a href="grupo_i.html" class="grupo-card highlight" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">I</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/iq.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Irak<br>
+          <img src="https://flagcdn.com/w40/fr.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Francia<br>
+          <img src="https://flagcdn.com/w40/sn.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Senegal<br>
+          <img src="https://flagcdn.com/w40/no.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Noruega
+        </div>
+        <span class="grupo-badge" style="background: rgba(0,230,118,0.15); color: var(--green);">FAVORITO IA</span>
+      </a>
+      <!-- Grupo J (Highlight: Argentina) -->
+      <a href="grupo_j.html" class="grupo-card highlight" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">J</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/ar.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Argentina<br>
+          <img src="https://flagcdn.com/w40/dz.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Argelia<br>
+          <img src="https://flagcdn.com/w40/at.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Austria<br>
+          <img src="https://flagcdn.com/w40/jo.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Jordania
+        </div>
+        <span class="grupo-badge" style="background: rgba(0,230,118,0.15); color: var(--green);">FAVORITO IA</span>
+      </a>
+      <!-- Grupo K (Highlight: Portugal y Colombia) -->
+      <a href="grupo_k.html" class="grupo-card highlight" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">K</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/pt.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Portugal<br>
+          <img src="https://flagcdn.com/w40/co.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Colombia<br>
+          <img src="https://flagcdn.com/w40/cd.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> RD Congo<br>
+          <img src="https://flagcdn.com/w40/uz.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Uzbekistán
+        </div>
+        <span class="grupo-badge" style="background: rgba(0,230,118,0.15); color: var(--green);">FAVORITO IA</span>
+      </a>
+      <!-- Grupo L (Highlight: Inglaterra) -->
+      <a href="grupo_l.html" class="grupo-card highlight" style="display: block; text-decoration: none; color: inherit;">
+        <div class="grupo-letter">L</div>
+        <div class="grupo-teams">
+          <img src="https://flagcdn.com/w40/gb-eng.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Inglaterra<br>
+          <img src="https://flagcdn.com/w40/hr.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Croacia<br>
+          <img src="https://flagcdn.com/w40/gh.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Ghana<br>
+          <img src="https://flagcdn.com/w40/pa.png" width="18" height="11" style="vertical-align: middle; margin-right: 4px; border-radius: 1px; border: 1px solid rgba(255,255,255,0.15);" /> Panamá
+        </div>
+        <span class="grupo-badge" style="background: rgba(0,230,118,0.15); color: var(--green);">FAVORITO IA</span>
+      </a>
+    </div>
+
+    <!-- Predicción IA a Segunda Ronda (Dieciseisavos de Final) -->
+    <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--muted);margin-top:48px;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase">🏆 Predicción IA a Segunda Ronda (Dieciseisavos de Final)</h3>
+    <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; overflow-x: auto; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+      <table style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="background-color: rgba(0, 149, 255, 0.08); border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px; width: 140px;">Grupo</th>
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px;">Equipos Clasificados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Grupo A -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo A</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/mx.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">México</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/kr.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Corea Del Sur</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/cz.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Rep. Checa</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo B -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo B</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/ch.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Suiza</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/ca.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Canadá</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/ba.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Bosnia</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo C -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo C</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/br.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Brasil</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/ma.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Marruecos</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo D -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo D</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/us.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Usa</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/tr.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Turquía</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/py.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Paraguay</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo E -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo E</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/de.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Alemania</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/ec.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Ecuador</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/ci.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Costa De Marfil</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo F -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo F</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/nl.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Países Bajos</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/jp.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Japón</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo G -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo G</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/be.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Bélgica</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/ir.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Irán</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/eg.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Egipto</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo H -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo H</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/es.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">España</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/uy.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Uruguay</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo I -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo I</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/fr.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Francia</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/sn.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Senegal</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/no.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Noruega</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo J -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo J</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Argentina</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/at.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Austria</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/dz.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Argelia</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo K -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo K</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/pt.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Portugal</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/co.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Colombia</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <!-- Grupo L -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Grupo L</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/gb-eng.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Inglaterra</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/hr.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Croacia</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 6px 14px; border-radius: 30px;">
+                  <img src="https://flagcdn.com/w80/gh.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem;">Ghana</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Predicción IA — Octavos de Final -->
+    <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--muted);margin-top:48px;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase">🏆 Predicción IA — Octavos de Final</h3>
+    <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; overflow-x: auto; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+      <table style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="background-color: rgba(0, 149, 255, 0.08); border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px; width: 120px;">Llave</th>
+            <th style="padding: 12px; text-align: center; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px;">Enfrentamiento y Probabilidades (Poisson)</th>
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px; width: 220px;">Ganador Predictivo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Oct 1 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Oct 1</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/no.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Noruega (36.6%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 22.6%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(40.8%) Suiza</span>
+                  <img src="https://flagcdn.com/w80/ch.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/ch.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Suiza</span>
+              </div>
+            </td>
+          </tr>
+          <!-- Oct 2 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Oct 2</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/br.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Brasil (45.3%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 21.4%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">(33.3%) USA</span>
+                  <img src="https://flagcdn.com/w80/us.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/br.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Brasil</span>
+              </div>
+            </td>
+          </tr>
+          <!-- Oct 3 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Oct 3</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/de.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Alemania (39.4%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 21.3%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">(39.4%) Países Bajos</span>
+                  <img src="https://flagcdn.com/w80/nl.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/de.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Alemania</span>
+              </div>
+            </td>
+          </tr>
+          <!-- Oct 4 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Oct 4</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/be.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Bélgica (34.8%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 20.7%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(44.5%) España</span>
+                  <img src="https://flagcdn.com/w80/es.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/es.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">España</span>
+              </div>
+            </td>
+          </tr>
+          <!-- Oct 5 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Oct 5</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/fr.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Francia (38.2%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 19.9%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(41.9%) Argentina</span>
+                  <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Argentina</span>
+              </div>
+            </td>
+          </tr>
+          <!-- Oct 6 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Oct 6</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/pt.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Portugal (38.6%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 20.8%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(40.6%) Inglaterra</span>
+                  <img src="https://flagcdn.com/w80/gb-eng.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/gb-eng.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Inglaterra</span>
+              </div>
+            </td>
+          </tr>
+          <!-- Oct 7 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Oct 7</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/hr.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Croacia (38.1%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 21.8%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(40.1%) Uruguay</span>
+                  <img src="https://flagcdn.com/w80/uy.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/uy.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Uruguay</span>
+              </div>
+            </td>
+          </tr>
+          <!-- Oct 8 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">Oct 8</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/jp.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Japón (36.8%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 22.3%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(40.9%) Marruecos</span>
+                  <img src="https://flagcdn.com/w80/ma.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/ma.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Marruecos</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Predicción IA — Cuartos de Final -->
+    <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--muted);margin-top:48px;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase">🏆 Predicción IA — Cuartos de Final</h3>
+    <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; overflow-x: auto; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+      <table style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="background-color: rgba(0, 149, 255, 0.08); border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px; width: 120px;">Llave</th>
+            <th style="padding: 12px; text-align: center; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px;">Enfrentamiento y Probabilidades (Poisson)</th>
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px; width: 220px;">Ganador Predictivo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- QF 1 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">QF 1</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/ch.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Suiza (34.4%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 21.3%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(44.3%) Brasil</span>
+                  <img src="https://flagcdn.com/w80/br.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/br.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Brasil</span>
+              </div>
+            </td>
+          </tr>
+          <!-- QF 2 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">QF 2</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/de.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Alemania (35.8%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 20.6%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(43.5%) España</span>
+                  <img src="https://flagcdn.com/w80/es.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/es.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">España</span>
+              </div>
+            </td>
+          </tr>
+          <!-- QF 3 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">QF 3</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Argentina (43.7%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 20.1%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">(36.2%) Inglaterra</span>
+                  <img src="https://flagcdn.com/w80/gb-eng.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Argentina</span>
+              </div>
+            </td>
+          </tr>
+          <!-- QF 4 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">QF 4</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/uy.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Uruguay (40.1%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 21.8%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">(38.1%) Marruecos</span>
+                  <img src="https://flagcdn.com/w80/ma.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/uy.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Uruguay</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Predicción IA — Semifinales -->
+    <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--muted);margin-top:48px;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase">🏆 Predicción IA — Semifinales</h3>
+    <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; overflow-x: auto; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+      <table style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="background-color: rgba(0, 149, 255, 0.08); border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px; width: 120px;">Llave</th>
+            <th style="padding: 12px; text-align: center; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px;">Enfrentamiento y Probabilidades (Poisson)</th>
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: var(--cyan); letter-spacing: 1px; width: 220px;">Ganador Predictivo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- SF 1 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">SF 1</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/br.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">Brasil (37.9%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 20.4%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(41.7%) España</span>
+                  <img src="https://flagcdn.com/w80/es.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/es.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">España</span>
+              </div>
+            </td>
+          </tr>
+          <!-- SF 2 -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: var(--cyan);">SF 2</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">Argentina (46.5%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 20.3%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">(33.2%) Uruguay</span>
+                  <img src="https://flagcdn.com/w80/uy.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); padding: 6px 14px; border-radius: 30px; width: fit-content;">
+                <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 700; font-size: 0.85rem; color: var(--green);">Argentina</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Predicción IA — Gran Final -->
+    <h3 style="font-family:var(--font-head);font-size:1.1rem;color:var(--muted);margin-top:48px;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase">🏆 Predicción IA — Gran Final</h3>
+    <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r); padding: 24px; overflow-x: auto; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+      <table style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="background-color: rgba(255, 215, 0, 0.08); border-bottom: 2px solid var(--border);">
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: #ffd700; letter-spacing: 1px; width: 120px;">Fase</th>
+            <th style="padding: 12px; text-align: center; border: 1px solid var(--border); font-family: var(--font-head); color: #ffd700; letter-spacing: 1px;">Enfrentamiento y Probabilidades (Poisson)</th>
+            <th style="padding: 12px; text-align: left; border: 1px solid var(--border); font-family: var(--font-head); color: #ffd700; letter-spacing: 1px; width: 220px;">Campeón del Mundo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Final -->
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(255, 215, 0, 0.02);">
+            <td style="padding: 14px; border: 1px solid var(--border); font-family: var(--font-head); font-weight: 700; color: #ffd700;">Final</td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 450px;">
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%;">
+                  <img src="https://flagcdn.com/w80/es.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                  <span style="font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.7);">España (38.2%)</span>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--muted); padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border: 1px solid var(--border);">
+                  Empate: 19.9%
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; width: 40%; justify-content: flex-end; text-align: right;">
+                  <span style="font-weight: 600; font-size: 0.85rem; color: #fff;">(41.9%) Argentina</span>
+                  <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                </div>
+              </div>
+            </td>
+            <td style="padding: 14px; border: 1px solid var(--border);">
+              <div style="display: flex; align-items: center; gap: 8px; background: rgba(255, 215, 0, 0.12); border: 1px solid rgba(255, 215, 0, 0.4); padding: 8px 18px; border-radius: 30px; width: fit-content; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);">
+                <img src="https://flagcdn.com/w80/ar.png" width="28" height="18" style="border-radius: 2px; border: 1px solid rgba(255,255,255,0.15);" />
+                <span style="font-weight: 800; font-size: 0.88rem; color: #ffd700; text-shadow: 0 0 8px rgba(255,215,0,0.5);">🏆 Argentina</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     CONTENIDO HUB
+══════════════════════════════════════════ -->
+<section class="content-hub" id="contenido">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge" style="margin-bottom:16px">✨ Generado con IA</span>
+      <h2>Último <span style="color:var(--blue)">Contenido</span></h2>
+      <p>Cada análisis se convierte automáticamente en múltiples formatos listos para consumir y compartir.</p>
+    </div>
+
+    <div class="content-grid">
+      <!-- Modelo Predictivo / Montecarlo -->
+      <div class="content-card">
+        <div class="content-type">
+          <span class="content-tag tag-thread">📊 Modelo Predictivo</span>
+          <span class="ai-badge">⚡ Antigravity AI</span>
+        </div>
+        <div class="content-title">10,000 Simulaciones de Montecarlo: El Pronóstico Maestro del Mundial 2026</div>
+        <div class="content-excerpt">Analizamos el destino de las 48 selecciones del Mundial. ¿Quiénes son los 4 semifinalistas matemáticos? Los datos revelan una sorpresa africana que nadie esperaba en las rondas finales.</div>
+        <div class="content-footer">
+          <span class="content-meta">Mundial 2026 · Simulación Montecarlo</span>
+          <a href="#" class="content-link">Ver Modelo →</a>
+        </div>
+      </div>
+
+      <!-- El Villano -->
+      <div class="content-card">
+        <div class="content-type">
+          <span class="content-tag tag-podcast">🎥 YouTube</span>
+          <span class="ai-badge">⚡ Antigravity AI</span>
+        </div>
+        <div class="content-title">El "Villano" del Grupo K: ¿Por qué su rendimiento es una burbuja de opinión?</div>
+        <div class="content-excerpt">Desmontamos el mito de la prensa y fanaticadas. Analizamos por qué el rendimiento de una de las grandes estrellas del grupo está inflado, mostrando su mapa de calor vacío en peligro.</div>
+        <div class="content-footer">
+          <span class="content-meta">Mundial 2026 · Grupo K</span>
+          <a href="#" class="content-link">Ver Video →</a>
+        </div>
+      </div>
+
+      <!-- Post-Shot xG -->
+      <div class="content-card">
+        <div class="content-type">
+          <span class="content-tag tag-blog">✍️ Artículo Técnico</span>
+          <span class="ai-badge">⚡ Antigravity AI</span>
+        </div>
+        <div class="content-title">🛡️ Muros Estadísticos: ¿Cómo calculamos el Post-Shot xG en DataHacks?</div>
+        <div class="content-excerpt">Un desglose técnico sobre la métrica que separa a los porteros comunes de los que evitan goles imposibles. Cómo el algoritmo mide la efectividad defensiva bajo los tres palos.</div>
+        <div class="content-footer">
+          <span class="content-meta">Mundial 2026 · Data Science</span>
+          <a href="#" class="content-link">Leer Post →</a>
+        </div>
+      </div>
+
+      <!-- Value Betting -->
+      <div class="content-card">
+        <div class="content-type">
+          <span class="content-tag tag-blog">💰 Value Betting</span>
+          <span class="ai-badge">⚡ Antigravity AI</span>
+        </div>
+        <div class="content-title">📈 Matemáticas vs Casas de Apuestas: 3 cuotas con valor para los amistosos</div>
+        <div class="content-excerpt">Aplicamos Poisson Bivariada para encontrar discrepancias de probabilidad entre nuestro algoritmo y las cuotas de mercado de los amistosos previos. Descubre el valor esperado esperado.</div>
+        <div class="content-footer">
+          <span class="content-meta">Mundial 2026 · Sección Premium</span>
+          <a href="#" class="content-link">Ver Cuotas →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     SOCIAL ECOSYSTEM
+══════════════════════════════════════════ -->
+<section class="social-section" id="social">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge" style="margin-bottom:16px">📱 Ecosistema Social</span>
+      <h2>Síguenos en <span style="color:var(--cyan)">todas las plataformas</span></h2>
+      <p>El mismo análisis, tres formatos distintos. Datos del fútbol donde tú los consumes.</p>
+    </div>
+
+    <div class="social-grid">
+      <div class="social-card tiktok">
+        <div class="social-logo">🎵</div>
+        <div class="social-name">TikTok</div>
+        <div class="social-handle">@datahackssports</div>
+        <a href="https://www.tiktok.com/@datahackssports" target="_blank" class="btn btn-ghost" style="width:100%;justify-content:center">Seguir en TikTok</a>
+      </div>
+
+      <div class="social-card youtube">
+        <div class="social-logo">▶️</div>
+        <div class="social-name">YouTube</div>
+        <div class="social-handle">@DataHacks001</div>
+        <a href="https://www.youtube.com/@DataHacks001" target="_blank" class="btn btn-ghost" style="width:100%;justify-content:center">Suscribirse</a>
+      </div>
+
+      <div class="social-card twitter">
+        <div class="social-logo">𝕏</div>
+        <div class="social-name">X (Twitter)</div>
+        <div class="social-handle">@DataHacksSports</div>
+        <a href="https://x.com/DataHacksSports" target="_blank" class="btn btn-ghost" style="width:100%;justify-content:center">Seguir en X</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     NEWSLETTER
+══════════════════════════════════════════ -->
+<section class="newsletter" id="newsletter">
+  <div class="container">
+    <div class="newsletter-box">
+      <h2>Análisis táctico, <span style="color:var(--blue)">cada semana</span></h2>
+      <p>Recibe en tu correo los mejores análisis del Mundial 2026. Gratis, sin spam.</p>
+      <!-- Beehiiv embed form -->
+      <!-- Reemplaza 'datahacks' con tu handle real de Beehiiv -->
+      <form
+        action="https://datahacks.beehiiv.com/subscribe"
+        method="post"
+        target="_blank"
+        class="newsletter-form"
+        id="newsletter-form"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="tucorreo@ejemplo.com"
+          required
+        />
+        <button type="submit" class="btn btn-primary">Suscribirme</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">DATA</span><span style="color:var(--green)">·</span><span class="hack">HACKS</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+      </div>
+      <div class="footer-links">
+        <a href="#plataforma">Plataforma</a>
+        <a href="#mundial2026">Mundial 2026</a>
+        <a href="#contenido">Contenido</a>
+        <a href="#social">Social</a>
+      </div>
+      <div class="footer-domains">
+        <span>datahacks.space</span> · <span>datahacks.co</span>
+        <div style="margin-top:6px;font-size:0.72rem">© 2026 DataHacks. Todos los derechos reservados.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     MODAL IA & DATA SCIENCE (STUDY CASE)
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-ia-ds" aria-hidden="true">
+  <div class="modal-content" style="max-width: 850px;">
+    <button class="modal-close" id="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+    
+    <div class="modal-header">
+      <span class="badge" style="margin-bottom: 12px;">🌍 Inteligencia Artificial aplicada</span>
+      <h2 style="font-family: var(--font-head); font-weight: 900; color: #fff; font-size: 1.8rem; margin-bottom: 8px; line-height: 1.2;">
+        ¿Cómo la Inteligencia Artificial Transforma el Análisis de Fútbol?
+      </h2>
+      <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
+        El análisis de datos y la Inteligencia Artificial (IA) han revolucionado la forma en que los clubes profesionales entienden, gestionan y compiten en el fútbol, abarcando desde lo que ocurre en el campo hasta las finanzas del club. A continuación, te detallo las aplicaciones más poderosas de estas tecnologías en el fútbol profesional:
+      </p>
+    </div>
+
+    <div class="modal-body" style="margin-top: 24px; display: flex; flex-direction: column; gap: 24px;">
+      
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <!-- Left: Text content -->
+        <div style="flex: 1.2; min-width: 280px; display: flex; flex-direction: column; gap: 16px;">
+          <h4 style="font-family: var(--font-head); color: var(--cyan); font-weight: 700; margin-bottom: 4px;">🚀 Aplicaciones en el Fútbol Profesional</h4>
+          
+          <!-- 1. Scouting Inteligente -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--blue);">
+            <strong style="color: var(--blue); font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              🔍 1. Scouting Inteligente y Reclutamiento de Jugadores (El enfoque "Moneyball")
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              La IA permite evaluar a los jugadores más allá de la intuición del ojeador, buscando ineficiencias en el mercado para encontrar talentos de alto rendimiento a bajo costo.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Buscadores de Similitud:</strong> Utilizando algoritmos matemáticos (como la similitud del coseno o los puntajes Z), los clubes pueden cruzar decenas de variables para <strong>encontrar el reemplazo exacto de una estrella</strong> identificando a un jugador con un perfil estadístico idéntico en una liga menor.</li>
+              <li><strong>Perfiles de Rendimiento:</strong> Se crean radares de percentiles e índices personalizados (KPIs) para evaluar visualmente si un jugador es "de élite" al compararlo con todos los de su misma posición en parámetros ofensivos, defensivos o de posesión.</li>
+            </ul>
+          </div>
+
+          <!-- 2. Análisis Táctico -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--green);">
+            <strong style="color: var(--green); font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              📐 2. Análisis Táctico y Geometría Computacional
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              El uso de cámaras y sistemas de <em>tracking</em> o Visión por Computadora extrae las coordenadas de los 22 jugadores y el balón cientos de veces por segundo, produciendo millones de datos por partido.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Control del Espacio:</strong> Entrenadores de élite utilizan estos datos de posicionamiento para generar <strong>diagramas de Voronoi y triangulaciones de Delaunay</strong>, los cuales revelan visual y matemáticamente cómo el equipo divide y conquista el espacio de la cancha (un concepto fundamental del "tiki-taka" del Barcelona).</li>
+              <li><strong>Redes de Pases y Liderazgo:</strong> Los datos permiten crear mapas de flujo de pases para identificar patrones y descubrir a los "líderes ocultos" del equipo: aquellos jugadores que, con movimientos sutiles o pases específicos, inician las jugadas peligrosas a los que el resto del equipo sigue y responde instintivamente.</li>
+            </ul>
+          </div>
+
+          <!-- 3. Métricas Predictivas -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 212, 255, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--cyan);">
+            <strong style="color: var(--cyan); font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              🎯 3. Métricas Predictivas y Evaluación del Mérito (xG, xA, xT)
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              Los modelos de <em>Machine Learning</em> y regresiones logísticas se entrenan con datos de cientos de miles de eventos pasados para evaluar el juego en base a la probabilidad de ocurrencia de un hecho, eliminando el sesgo de la suerte.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Goles Esperados (xG) y Asistencias Esperadas (xA):</strong> Miden matemáticamente la verdadera calidad de una ocasión generada y la eficiencia en la definición de un delantero o la capacidad de asistencia de un mediocampista, más allá de si la jugada terminó en la red o no.</li>
+              <li><strong>Peligro Esperado (xT - Expected Threat):</strong> Es una métrica revolucionaria que divide la cancha en una cuadrícula de probabilidades para evaluar cómo un pase progresivo o una conducción acerca al equipo a meter un gol. <strong>Esto otorga valor real a los defensores y mediocampistas que inician la jugada</strong> desde atrás, visibilizando aportes que la estadística tradicional ignoraba.</li>
+            </ul>
+          </div>
+
+          <!-- 4. Rendimiento Biomecánico -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255, 107, 107, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid #ff6b6b;">
+            <strong style="color: #ff6b6b; font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              🏃‍♂️ 4. Rendimiento Biomecánico y Prevención de Lesiones
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              Mediante chalecos tecnológicos (<em>wearables</em>) que incluyen GPS, acelerómetros y medidores de ritmo cardíaco, se extraen variables como la distancia recorrida, velocidades máximas, estrés físico y desgaste muscular de cada futbolista.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Predicción de Lesiones:</strong> Herramientas informáticas impulsadas por IA, como las que ha probado el AC Milan, monitorean la calidad de los entrenamientos físicos. Al comparar la actividad en tiempo real contra una "línea base" histórica del jugador, el sistema detecta anomalías o caídas de rendimiento que <strong>advierten el riesgo inminente de una lesión</strong> antes de que ocurra.</li>
+            </ul>
+          </div>
+
+          <!-- 5. Simulaciones de Partidos -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(187, 107, 217, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid #bb6bd9;">
+            <strong style="color: #bb6bd9; font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              🎲 5. Simulaciones de Partidos y Toma de Decisiones
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              La informática permite prever escenarios a futuro para que un equipo tome decisiones estratégicas informadas:
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Puntos Esperados (xPts) y Simulaciones:</strong> Usando el método Montecarlo y la Distribución de Poisson, un algoritmo puede jugar un mismo partido 50,000 veces calculando el cruce estadístico de ambos equipos. Esto ayuda a determinar el verdadero lugar que un equipo "merece" en la tabla de posiciones basándose en su rendimiento.</li>
+              <li><strong>Inteligencia y Modelos de Decisión:</strong> Equipos, casas de apuestas y analistas aplican complejos modelos de aprendizaje automático, como <strong>Bosques Aleatorios (Random Forests)</strong>, para pronosticar los resultados de las ligas, evaluar probabilidades precisas de victoria según el contexto o ajustar tácticas de juego durante el entretiempo.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Right Column: Charts Stack -->
+        <div style="flex: 0.8; min-width: 280px; display: flex; flex-direction: column; gap: 20px;">
+          
+          <!-- Radar Chart Card -->
+          <div style="background: rgba(0,149,255,0.02); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-weight: 700; margin-bottom: 8px; font-size: 0.95rem; text-align: center;">📊 Perfil de Arquetipo IA (Radar)</h5>
+            <div style="width: 100%; height: 220px; position: relative;">
+              <canvas id="radarChart"></canvas>
+            </div>
+            <span style="font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 6px; display: block; width: 100%;">Radar comparativo de rendimiento integral normalizado.</span>
+          </div>
+
+          <!-- Bar Chart Card -->
+          <div style="background: rgba(0,230,118,0.03); border: 1px solid rgba(0,230,118,0.2); border-radius: var(--r); padding: 16px 20px;">
+            <h5 style="font-family: var(--font-head); color: var(--green); font-weight: 700; margin-bottom: 6px; font-size: 0.95rem;">📈 Ventaja Estadística: IA vs Tradicional</h5>
+            <p style="color: rgba(255,255,255,0.8); font-size: 0.76rem; line-height: 1.4; margin-bottom: 12px;">
+              Incremento de acierto estratégico al integrar modelos predictivos e inteligencia artificial sobre métricas tradicionales.
+            </p>
+            <div style="width: 100%; height: 160px; position: relative;">
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL ANÁLISIS TÁCTICO (STUDY CASE)
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-analisis-tactico" aria-hidden="true">
+  <div class="modal-content" style="max-width: 850px;">
+    <button class="modal-close" id="modal-close-tactico-btn" aria-label="Cerrar modal">&times;</button>
+    
+    <div class="modal-header">
+      <span class="badge" style="margin-bottom: 12px; background: rgba(0, 230, 118, 0.15); color: var(--green);">📐 Modelos Matemáticos y Geometría</span>
+      <h2 style="font-family: var(--font-head); font-weight: 900; color: #fff; font-size: 1.8rem; margin-bottom: 8px; line-height: 1.2;">
+        ¿Cómo el Análisis Táctico Moderniza el Entendimiento del Juego?
+      </h2>
+      <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
+        El análisis táctico en el fútbol moderno ha evolucionado drásticamente, pasando de la simple observación subjetiva a la aplicación de modelos matemáticos, ciencia de redes y geometría computacional para diseccionar el comportamiento de los equipos. A través de los datos de eventos y de seguimiento espacial (<em>tracking</em>), los analistas extraen mapas y métricas que revelan la verdadera estructura del juego.
+      </p>
+    </div>
+
+    <div class="modal-body" style="margin-top: 24px; display: flex; flex-direction: column; gap: 24px;">
+      
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <!-- Left: Text content -->
+        <div style="flex: 1.2; min-width: 280px; display: flex; flex-direction: column; gap: 16px;">
+          <h4 style="font-family: var(--font-head); color: var(--green); font-weight: 700; margin-bottom: 4px;">🚀 Fundamentos del Análisis Táctico</h4>
+          
+          <!-- 1. Geometría y Control del Espacio -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--green);">
+            <strong style="color: var(--green); font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              📐 1. Geometría y Control del Espacio
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              El uso del espacio es el pilar de las tácticas modernas, y las matemáticas permiten visualizarlo y cuantificarlo con precisión:
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Diagramas de Voronoi y Triangulaciones de Delaunay:</strong> Analizan cómo los equipos dividen el campo. Al unir a los jugadores mediante líneas, se forman redes de triángulos. Equipos como el Barcelona del "tiki-taka" generaban triángulos de ángulos grandes (Delaunay), lo que matemáticamente asegura un control óptimo del espacio (Voronoi) y multiplica las opciones de pase en todas las direcciones.</li>
+              <li><strong>Casco Convexo (Convex Hull):</strong> En fase defensiva, se utiliza esta figura geométrica (el polígono más pequeño que encierra un conjunto de puntos) para mapear el área exacta donde una línea defensiva intercepta el balón o ejerce presión.</li>
+              <li><strong>Minimización del Espacio:</strong> El arte de la defensa consiste en un algoritmo táctico donde los defensores se coordinan (como en el pressing del Bayern Múnich) para achicar rápidamente la zona espacial del atacante rival, limitando sus opciones de movimiento.</li>
+            </ul>
+          </div>
+
+          <!-- 2. Redes de Pases y Campos de Flujo -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 212, 255, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--cyan);">
+            <strong style="color: var(--cyan); font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              🕸️ 2. Redes de Pases y Campos de Flujo
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              La formación de un equipo (ej. 4-3-3 o 4-4-2) no es un sistema estático, sino una red de conexiones:
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Mapas de Pases:</strong> Utilizando librerías como <code>mplsoccer</code> en Python, se grafican redes donde los nodos son las posiciones promedio de los jugadores (el tamaño indica la cantidad de toques o el peligro generado) y las flechas indican el volumen y dirección de los pases completados entre ellos.</li>
+              <li><strong>Campos de Flujo (Flow Fields):</strong> Muestran estadísticamente las tendencias de movimiento del balón de un jugador específico. Por ejemplo, analizando a Andrea Pirlo, un campo de flujo revela la distancia y dirección típica de sus pases según la zona del campo en la que se encuentre, exponiendo su "personalidad" táctica.</li>
+            </ul>
+          </div>
+
+          <!-- 3. Análisis Zonal y Territorial -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255, 107, 107, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid #ff6b6b;">
+            <strong style="color: #ff6b6b; font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              🗺️ 3. Análisis Zonal y Territorial
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              La cancha se segmenta algorítmicamente para estudiar patrones:
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>División por Tercios y Cuadrantes:</strong> Al dividir el campo en áreas específicas (por ejemplo, 18 zonas o en tercios), los analistas cuentan qué porcentaje de las recuperaciones de balón de un equipo o sus saques de arco terminan en cada zona. Esto dictamina si un equipo usa un "bloque bajo" o presiona alto, y si prefiere salidas en corto o balones largos.</li>
+              <li><strong>La "Zona 14":</strong> Es el espacio central justo por delante del área rival (la zona del "enganche"). Cuantificar los toques y pases en esta zona es vital para detectar a los jugadores más creativos de un equipo.</li>
+            </ul>
+          </div>
+
+          <!-- 4. Sincronización y el Equipo como Sistema (Cibernética) -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(187, 107, 217, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid #bb6bd9;">
+            <strong style="color: #bb6bd9; font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              🧬 4. Sincronización y el Equipo como Sistema (Cibernética)
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              Inspirados en el movimiento de los bancos de peces o bandadas de aves, los científicos deportivos evalúan la sincronización del equipo:
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li>Los defensores y mediocampistas presentan el mayor grado de coordinación para mantener líneas compactas, mientras que los delanteros muestran menor sincronización para realizar carreras impredecibles.</li>
+              <li><strong>Actuación Supralineal:</strong> Como introdujo el histórico entrenador Valeriy Lobanovski (pionero de la cibernética en el fútbol), el equipo es un sistema donde la eficiencia total debe ser mayor que la simple suma de los esfuerzos individuales. Los jugadores deben evitar la redundancia táctica y actuar en conjunto.</li>
+            </ul>
+          </div>
+
+          <!-- 5. Narrativa Dinámica (Match Momentum y xT) -->
+          <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--blue);">
+            <strong style="color: var(--blue); font-size: 0.92rem; display: flex; align-items: center; gap: 8px;">
+              📈 5. Narrativa Dinámica (Match Momentum y xT)
+            </strong>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+              En lugar de analizar solo el resultado final, se evalúa la fluctuación táctica durante los 90 minutos:
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Peligro Esperado (xT):</strong> Cuantifica cómo una acción (un pase o una conducción) acerca al equipo al gol, sumando el valor táctico de defensores y volantes que inician la jugada.</li>
+              <li><strong>xG Flowcharts y Medias Móviles:</strong> Se grafican líneas acumulativas para ver los picos de dominio de un equipo en lapsos de 5 minutos. Esto revela en qué momentos exactos un equipo impuso sus condiciones tácticas o cuándo colapsó su estructura.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Right Column: Charts Stack -->
+        <div style="flex: 0.8; min-width: 280px; display: flex; flex-direction: column; gap: 20px;">
+          
+          <!-- Passing Network Card -->
+          <div style="background: rgba(0,230,118,0.02); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-weight: 700; margin-bottom: 8px; font-size: 0.95rem; text-align: center;">🕸️ Red de Pases & Control Espacial</h5>
+            <div style="width: 100%; height: 220px; position: relative; display: flex; align-items: center; justify-content: center;">
+              <!-- Beautiful inline SVG pitch/passing network -->
+              <svg viewBox="0 0 300 200" style="width: 100%; height: 100%; border-radius: 4px; background: rgba(0, 230, 118, 0.02); border: 1px solid rgba(0, 230, 118, 0.1);">
+                <defs>
+                  <filter id="svgGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+                <!-- Pitch markings -->
+                <rect x="10" y="10" width="280" height="180" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+                <line x1="150" y1="10" x2="150" y2="190" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+                <circle cx="150" cy="100" r="30" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.2"/>
+                <rect x="10" y="50" width="45" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <rect x="245" y="50" width="45" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                
+                <!-- Passing Lines -->
+                <path d="M 65 100 L 110 60" stroke="rgba(0, 230, 118, 0.55)" stroke-width="2.5" stroke-dasharray="3 1" filter="url(#svgGlow)"/>
+                <path d="M 65 100 L 120 140" stroke="rgba(0, 230, 118, 0.4)" stroke-width="1.5"/>
+                <path d="M 110 60 L 165 70" stroke="rgba(0, 212, 255, 0.65)" stroke-width="3" filter="url(#svgGlow)"/>
+                <path d="M 120 140 L 175 130" stroke="rgba(0, 212, 255, 0.45)" stroke-width="2"/>
+                <path d="M 165 70 L 225 100" stroke="rgba(0, 230, 118, 0.6)" stroke-width="2.5" filter="url(#svgGlow)"/>
+                <path d="M 175 130 L 225 100" stroke="rgba(0, 230, 118, 0.75)" stroke-width="3.5" filter="url(#svgGlow)"/>
+                <path d="M 110 60 L 120 140" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1" stroke-dasharray="2 2"/>
+                
+                <!-- Player Nodes -->
+                <circle cx="65" cy="100" r="5" fill="#00d4ff" stroke="#fff" stroke-width="1" filter="url(#svgGlow)"/>
+                <text x="65" y="91" fill="rgba(255,255,255,0.8)" font-size="7" font-family="Inter" text-anchor="middle" font-weight="600">PCD (6)</text>
+                
+                <circle cx="110" cy="60" r="5.5" fill="#00e676" stroke="#fff" stroke-width="1" filter="url(#svgGlow)"/>
+                <text x="110" y="51" fill="rgba(255,255,255,0.8)" font-size="7" font-family="Inter" text-anchor="middle" font-weight="600">MC (8)</text>
+                
+                <circle cx="120" cy="140" r="5" fill="#00e676" stroke="#fff" stroke-width="1"/>
+                <text x="120" y="151" fill="rgba(255,255,255,0.8)" font-size="7" font-family="Inter" text-anchor="middle" font-weight="600">MC (10)</text>
+                
+                <circle cx="165" cy="70" r="6" fill="#00d4ff" stroke="#fff" stroke-width="1" filter="url(#svgGlow)"/>
+                <text x="165" y="61" fill="rgba(255,255,255,0.8)" font-size="7" font-family="Inter" text-anchor="middle" font-weight="600">EI (7)</text>
+                
+                <circle cx="175" cy="130" r="6" fill="#00d4ff" stroke="#fff" stroke-width="1" filter="url(#svgGlow)"/>
+                <text x="175" y="141" fill="rgba(255,255,255,0.8)" font-size="7" font-family="Inter" text-anchor="middle" font-weight="600">ED (11)</text>
+                
+                <circle cx="225" cy="100" r="6.5" fill="#00e676" stroke="#fff" stroke-width="1" filter="url(#svgGlow)"/>
+                <text x="225" y="91" fill="rgba(255,255,255,0.8)" font-size="7" font-family="Inter" text-anchor="middle" font-weight="600">DC (9)</text>
+              </svg>
+            </div>
+            <span style="font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 6px; display: block; width: 100%;">Red de flujo y enlaces de posesión colectiva promedio.</span>
+          </div>
+
+          <!-- Match Momentum Card -->
+          <div style="background: rgba(0,149,255,0.03); border: 1px solid rgba(0,149,255,0.2); border-radius: var(--r); padding: 16px 20px;">
+            <h5 style="font-family: var(--font-head); color: var(--blue); font-weight: 700; margin-bottom: 6px; font-size: 0.95rem;">📈 Match Momentum (Dominio xG)</h5>
+            <p style="color: rgba(255,255,255,0.8); font-size: 0.76rem; line-height: 1.4; margin-bottom: 12px;">
+              Fluctuación y acumulación de peligro esperado (xG) a lo largo de los 90 minutos del partido.
+            </p>
+            <div style="width: 100%; height: 160px; position: relative;">
+              <canvas id="momentumChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

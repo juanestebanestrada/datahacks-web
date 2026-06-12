@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo D — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo D del Mundial 2026: Estados Unidos, Turquía, Paraguay, Australia con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo D</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo D.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="tactical-grid">
+    
+    <!-- ESTADOS UNIDOS -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/us.png" width="40" height="25" alt="Estados Unidos Flag">
+          <h3 class="team-name">Estados Unidos</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoUSA.png" alt="Perfil Táctico Estados Unidos" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Presión alta enérgica, amplitud y profundidad generada por laterales atléticos y transiciones dinámicas sumamente rápidas.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 1.85 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 8.2)</li>
+          <li><strong>Jugador Clave:</strong> Christian Pulisic</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TURQUÍA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/tr.png" width="40" height="25" alt="Turquía Flag">
+          <h3 class="team-name">Turquía</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoTurquia.png" alt="Perfil Táctico Turquía" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Juego técnico y fluido desde la base de mediocampo, excelente golpeo de media distancia y juego de posición dinámico.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.60 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio-Alto (PPDA 9.3)</li>
+          <li><strong>Jugador Clave:</strong> Hakan Çalhanoğlu</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PARAGUAY -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/py.png" width="40" height="25" alt="Paraguay Flag">
+          <h3 class="team-name">Paraguay</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoParaguay.png" alt="Perfil Táctico Paraguay" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Rigor defensivo muy agresivo, marca personal estricta, duelos directos por velocidad exterior y peligro constante en ABP.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-4-2</li>
+          <li><strong>xG Promedio:</strong> 1.18 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio-Bajo (PPDA 10.9)</li>
+          <li><strong>Jugador Clave:</strong> Miguel Almirón</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AUSTRALIA -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/au.png" width="40" height="25" alt="Australia Flag">
+          <h3 class="team-name">Australia</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoAustralia.png" alt="Perfil Táctico Australia" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Juego físico estructurado, énfasis en coberturas colectivas, centros laterales constantes y repliegue ordenado tras pérdida.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-1-4-1</li>
+          <li><strong>xG Promedio:</strong> 1.15 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio (PPDA 11.2)</li>
+          <li><strong>Jugador Clave:</strong> Mathew Ryan</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo D - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo D:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/us.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Estados Unidos</th>
+<th><img src="https://flagcdn.com/w40/tr.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Turquía</th>
+<th><img src="https://flagcdn.com/w40/py.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Paraguay</th>
+<th><img src="https://flagcdn.com/w40/au.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Australia</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-high">81</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-high">95</span></td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-mid">76</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-mid">71</span></td>
+              <td><span class="stat-badge stat-mid">71</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-high">88</span></td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+              <td><span class="stat-badge stat-mid">73</span></td>
+              <td><span class="stat-badge stat-high">90</span></td>
+              <td><span class="stat-badge stat-high">82</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-low">0</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+              <td><span class="stat-badge stat-high">85</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-mid">75</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+              <td><span class="stat-badge stat-low">52</span></td>
+              <td><span class="stat-badge stat-high">89</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- Estados Unidos -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>ESTADOS UNIDOS</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Anfitrión</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Intensidad Física (85):</strong> Despliegue atlético constante.</li>
+              <li><strong>Apoyo Local (86):</strong> Estadios llenos a su favor en casa.</li>
+              <li><strong>Amplitud en Ataque (81):</strong> Laterales doblan constantemente por fuera.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Eficacia en Área Propia (74):</strong> Ocasionales desatenciones defensivas en centros.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Asfixiar la salida rival en bloque alto, robar y transicionar rápidamente aprovechando la velocidad de Pulisic.</p>
+        </div>
+
+        <!-- Turquía -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>TURQUÍA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Calidad Técnica</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Calidad Asociativa (83):</strong> Mediocampo muy técnico con Çalhanoğlu.</li>
+              <li><strong>Balón Parado Especializado (82):</strong> Centros y tiros libres de alta precisión.</li>
+              <li><strong>Dinámica Ofensiva (78):</strong> Ataques posicionales elaborados.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Consistencia Mental (70):</strong> Propensión a perder el control si se ven abajo rápido.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Dominar el esférico, circular con paciencia buscando entrelíneas y finalizar con disparos de media distancia o balones parados.</p>
+        </div>
+
+        <!-- Paraguay -->
+        <div class="analysis-card">
+          <h4>PARAGUAY</h4>
+          <div class="profile-type">Perfil: Retador Sudamericano / Agresividad</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Intensidad en Duelos (84):</strong> Marca física asfixiante sobre rivales.</li>
+              <li><strong>Velocidad de Almirón (81):</strong> Transiciones directas rápidas.</li>
+              <li><strong>Fortaleza en Balón Parado (79):</strong> Gran juego aéreo defensivo y ofensivo.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Volumen Asociativo (64):</strong> Dificultades para crear juego fluido en estático.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Interrumpir el juego del oponente con presión física alta y buscar balones largos al espacio para la velocidad de Almirón.</p>
+        </div>
+
+        <!-- Australia -->
+        <div class="analysis-card">
+          <h4>AUSTRALIA</h4>
+          <div class="profile-type">Perfil: Retador Oceánico / Colectivo</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Organización Defensiva (77):</strong> Bloque coordinado sin fisuras evidentes.</li>
+              <li><strong>Juego por Alto (80):</strong> Fortaleza física de sus defensas y delanteros.</li>
+              <li><strong>Espíritu Colectivo (81):</strong> Alto compromiso físico en la marca.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Falta de Desequilibrio 1v1 (65):</strong> Ataques predecibles por la banda.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Mantener las líneas compactas en bloque medio, forzar centros rivales y atacar mediante envíos largos a los extremos.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">USA vs Turquía</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Partido clave por el liderato. La intensidad física de USA frente al control técnico de Turquía.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Presión alta de USA sobre Çalhanoğlu.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">USA vs Paraguay</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Juego sumamente físico y cortado. Paraguay tratará de imponer fricción para desactivar la velocidad de USA.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Paciencia y precisión en la entrega de balón de USA.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Turquía vs Paraguay</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorabilidad ligera a Turquía por riqueza técnica y variantes ofensivas en balón parado.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Eficacia turca ante la marca agresiva paraguaya.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">USA/Turquía vs Australia</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Ventaja para los favoritos. La disciplina de Australia será probada por el desequilibrio ofensivo.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Rotaciones y velocidad de pases para desordenar a Australia.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Estados Unidos</div>
+                <div class="projection-desc">Su localía y dinamismo físico los impulsarán a ganar el grupo.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Turquía</div>
+                <div class="projection-desc">La calidad en mediocampo asegura su clasificación a la ronda final.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Paraguay</div>
+                <div class="projection-desc">Luchará duro, pero la falta de juego asociado limitará sus chances.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Australia</div>
+                <div class="projection-desc">Duro contrincante pero falto de variantes técnicas de peso.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta el análisis técnico y cuantitativo del **Grupo D** para el Mundial de Fútbol 2026, evaluando las características colectivas y los contrastes estilísticos de cada selección a partir de los datos de sus gráficos radiales.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Australia</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar el archivo `PerfilTacticoAustralia.png`, el conjunto oceánico se caracteriza por un bloque colectivo sumamente maduro, donde el orden y la resistencia mitigan la falta de pegada.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un comportamiento ético y táctico impecable (<strong>89</strong> en Disciplina), complementado con un gran soporte atlético (<strong>85</strong> en Físico). Esto los convierte en un equipo muy difícil de desestabilizar o desgastar con el paso de los minutos.</li>
+              <li><strong>Área de mejora:</strong> Su capacidad de resolución en las áreas. Con un <strong>72</strong> en Ataque y un <strong>71</strong> en Defensa, carecen de individualidades diferenciales para definir partidos por peso propio en zonas de castigo.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Paraguay</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con el archivo `PerfilTacticoParaguay.png`, la selección sudamericana rompe moldes históricos al presentarse como una máquina de generar fútbol ofensivo, aunque con una alarmante fragilidad emocional.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un potencial ofensivo devastador (<strong>95</strong> en Ataque) impulsado por una inventiva de élite (<strong>90</strong> en Creatividad) y un excelente criterio para monopolizar el esférico (<strong>83</strong> en Posesión).</li>
+              <li><strong>Área de mejora:</strong> El autocontrol y la concentración. Su bajísimo nivel de disciplina (<strong>52</strong>) es un factor de alto riesgo que suele traducirse en expulsiones, desatenciones defensivas (<strong>71</strong>) o penales en contra.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. Turquía</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El desglose del archivo `PerfilTacticoTurquia.png` sitúa al combinado europeo como el competidor más equilibrado y estructuralmente fuerte en las fases de control.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un dominio total del ritmo de juego mediante la circulación (<strong>88</strong> en Posesión), sólidamente protegido por la mejor línea defensiva del grupo (<strong>84</strong>) y una contundencia en ataque respetable (<strong>84</strong>).</li>
+              <li><strong>Área de mejora:</strong> La imprevisibilidad. Al tener un <strong>73</strong> en Creatividad, su juego puede volverse excesivamente mecanizado u horizontal si el rival les planta un bloque bajo denso y bien escalonado.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. USA</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al analizar el archivo `PerfilTacticoUSA.png`, la escuadra norteamericana muestra un perfil netamente reactivo, cuya principal arma es el despliegue físico por sobre las ideas.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su brutal capacidad atlética (<strong>86</strong> en Físico). Esta condición les permite compensar deficiencias posicionales mediante coberturas veloces, presión en bloque y duelos individuales de alta intensidad.</li>
+              <li><strong>Área de mejora:</strong> La gestación y la definición. Al registrar números muy bajos en Posesión (<strong>57</strong>), Ataque (<strong>60</strong>) y Defensa (<strong>60</strong>), es un equipo que sufrirá demasiado si no logra imponer un contexto de transiciones caóticas.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">El Grupo D expone un escenario de contrastes radicales que desafiará a los estrategas desde la primera jornada:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El choque de titanes por el liderato:</strong> El partido entre Turquía y Paraguay será un deleite táctico. La clave estará en ver si la sólida estructura defensiva y el control de posesión de los turcos logran cortocircuitar el volumen creativo y el feroz ataque paraguayo.
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>La resistencia ante el despliegue:</strong> USA intentará llevar los partidos al terreno físico para asfixiar a los rivales, algo que podría incomodar a Paraguay pero que impactará de frente contra la muralla de disciplina de Australia y el fútbol de control de Turquía, obligando a los norteamericanos a buscar alternativas creativas que estadísticamente no dominan.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

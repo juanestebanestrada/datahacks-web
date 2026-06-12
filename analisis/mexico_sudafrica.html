@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>México vs Sudáfrica: Pulso Táctico en el Debut Mundialista // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido México vs Sudáfrica del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_a.html" class="back-link">← Volver al Grupo A</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo A</span>
+    <h2>México vs Sudáfrica</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-11 · 🕒 14:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team">México</div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div class="score-box">1 - 0</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team">Sudáfrica</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇲🇽 México: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Presión alta asfixiante:</strong> Como se observa en el mapa defensivo, el equipo tiene una gran densidad de acciones defensivas (presiones y recuperaciones) en territorio rival, lo que les permite recuperar el balón muy cerca del arco contrario.</li>
+<li><strong>Peligro hiperlocalizado en banda derecha:</strong> Según el análisis de amenaza esperada (xT), la generación de peligro más alta del equipo (valores superiores a 0.35-0.40) se concentra de manera quirúrgica en el carril derecho del último tercio.</li>
+<li><strong>Volumen de llegada:</strong> El equipo tiene facilidad para generar remates, registrando un total de 39 disparos en el torneo.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Falta de contundencia crónica:</strong> A pesar de los 39 disparos registrados, solo lograron concretar 2 goles. Esto denota una baja eficiencia de cara al arco o una selección de tiro mejorable.</li>
+<li><strong>Asimetría predecible:</strong> Al volcar casi todo su peligro (xT) por la derecha, si el rival logra bloquear ese sector, el equipo puede volverse plano en ataque.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇿🇦 Sudáfrica: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Circuito dominante por izquierda:</strong> El mapa de calor y el ADN de pases de Aubrey Maphosa Modiba demuestran que el equipo posee una banda izquierda sumamente asociativa, profunda y con un volumen altísimo de pases progresivos y centros al área.</li>
+<li><strong>Amplitud en salida:</strong> Tienen zonas de inicio muy claras sobre las bandas tácticas, lo que les permite estirar la cancha en fase de posesión.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Espacios a las espaldas de los laterales:</strong> Al tener un jugador tan profundo y de proyección constante en banda izquierda como Modiba, la transición defensiva en ese costado puede quedar desprotegida si pierden el balón en salida.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚔️ ¿Cómo puede superar cada equipo a su adversario?</h2>
+<h3>¿Qué debe hacer México para ganarle a Sudáfrica?</h3>
+<p><strong>1.</strong> <strong>Explotar el duelo de "Banda vs Banda":</strong> La máxima virtud de México en ataque es la banda derecha, la cual chocará directamente con la banda izquierda de Sudáfrica, que suele proyectarse mucho al ataque por medio de Modiba. México debe lanzar transiciones rápidas a la espalda de Modiba cuando este suba.</p>
+<p><strong>2.</strong> <strong>Activar la presión tras pérdida inmediata:</strong> Utilizar el bloque alto para morder la salida de Sudáfrica antes de que puedan conectar con sus circuitos laterales.</p>
+<h3>¿Qué debe hacer Sudáfrica para ganarle a México?</h3>
+<p><strong>1.</strong> <strong>Atraer y saltar la presión:</strong> Como México presiona de forma muy agresiva en campo rival, Sudáfrica debe usar la buena técnica de Modiba para atraer marcas por izquierda y realizar cambios de orientación rápidos hacia zonas menos congestionadas.</p>
+<p><strong>2.</strong> <strong>Forzar el tiro exterior:</strong> Sabiendo que México tiene un volumen alto de disparos pero baja efectividad, Sudáfrica debe cerrar los pasillos internos dentro del área y forzar a los delanteros mexicanos a rematar incómodos o desde larga distancia.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🏆 Pronóstico: ¿Quién ganaría?</h2>
+<p>El partido se define por un choque directo de propuestas: <strong>la banda derecha de México contra la banda izquierda de Sudáfrica.</strong></p>
+<p>> <strong>Predicción:</strong> Victoria ajustada para <strong>México</strong>.</p>
+<p>La capacidad de México para presionar alto y recuperar balones en campo contrario probablemente penalice el estilo asociativo y pausado de Sudáfrica en salida. Si México logra corregir ligeramente su mala efectividad de cara al arco, la cantidad de peligro acumulado por su costado derecho debería ser suficiente para inclinar la balanza a su favor.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (México)</h4>
+                      <img src="../assets/MéxicoMapaDefensivo.png" alt="Mapa Defensivo (México)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Sudáfrica)</h4>
+                      <img src="../assets/SudáfricaMapaDefensivo.png" alt="Mapa Defensivo (Sudáfrica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (México)</h4>
+                      <img src="../assets/MéxicoExpectedThreatxT.png" alt="Amenaza Esperada xT (México)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Sudáfrica)</h4>
+                      <img src="../assets/SudáfricaExpectedThreatxT.png" alt="Amenaza Esperada xT (Sudáfrica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (México)</h4>
+                      <img src="../assets/MéxicoCalor.png" alt="Mapa de Calor (México)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Sudáfrica)</h4>
+                      <img src="../assets/SudafricaCalor.png" alt="Mapa de Calor (Sudáfrica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (México)</h4>
+                      <img src="../assets/ShotMapMéxico.png" alt="Mapa de Tiros (México)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Sudáfrica)</h4>
+                      <img src="../assets/ShotMapSudáfrica.png" alt="Mapa de Tiros (Sudáfrica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-single" style="width: 100%; max-width: 500px; margin: 0 auto 24px; background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                    <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">ADN de Pases de Modiba (Sudáfrica)</h4>
+                    <img src="../assets/SudáfricaADNPasesKMeans.png" alt="ADN de Pases de Modiba (Sudáfrica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
