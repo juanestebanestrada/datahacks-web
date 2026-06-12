@@ -439,10 +439,27 @@
             <img src="https://flagcdn.com/w80/ca.png" alt="Canadá" class="team-flag">
           </div>
           
-          <div class="digital-scoreboard">
-            <div class="score-box local">1</div>
-            <div class="score-divider">-</div>
-            <div class="score-box visitor">2</div>
+          <div style="display: flex; align-items: center; gap: 12px; margin: 0 10px;">
+            <!-- Predicción -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+              <span style="font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px;">Predicción</span>
+              <div class="digital-scoreboard" style="position: relative; padding: 4px 8px; gap: 6px; opacity: 0.6; border-color: rgba(255,75,75,0.3);">
+                <div class="score-box local" style="width: 30px; height: 38px; font-size: 1.4rem; color: #ff4b4b;">1</div>
+                <div style="font-size: 1.2rem; color: rgba(255,255,255,0.4); font-weight: 700;">-</div>
+                <div class="score-box visitor" style="width: 30px; height: 38px; font-size: 1.4rem; color: #ff4b4b;">2</div>
+                <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(255, 75, 75, 0.85); font-size: 2.2rem; font-weight: 900; pointer-events: none;">✕</span>
+              </div>
+            </div>
+            
+            <!-- Resultado Real -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+              <span style="font-size: 0.65rem; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">Real</span>
+              <div class="digital-scoreboard" style="padding: 4px 8px; gap: 6px; border-color: rgba(0, 230, 118, 0.4); background: rgba(0, 230, 118, 0.02);">
+                <div class="score-box local" style="width: 30px; height: 38px; font-size: 1.4rem; color: var(--green); text-shadow: 0 0 10px rgba(0,230,118,0.5);">1</div>
+                <div style="font-size: 1.2rem; color: #fff; font-weight: 700;">-</div>
+                <div class="score-box visitor" style="width: 30px; height: 38px; font-size: 1.4rem; color: var(--green); text-shadow: 0 0 10px rgba(0,230,118,0.5);">1</div>
+              </div>
+            </div>
           </div>
           
           <div class="team-block visitor">
@@ -711,17 +728,17 @@
           <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">Grupo D</span>
           <span>📅 2026-06-12</span>
         </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <img src="https://flagcdn.com/w40/us.png" alt="USA" style="width: 20px; height: auto; border-radius: 2px;">
-            <span style="font-size: 0.85rem;">USA</span>
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: 100%; font-family: var(--font-head); font-weight: 700; color: #fff; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden;">
+            <img src="https://flagcdn.com/w40/us.png" alt="USA" style="width: 20px; height: auto; border-radius: 2px; flex-shrink: 0;">
+            <span style="font-size: 0.78rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">USA</span>
           </div>
-          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+          <div style="justify-self: center; flex-shrink: 0; background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
             2 - 1
           </div>
-          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
-            <span style="font-size: 0.85rem;">Paraguay</span>
-            <img src="https://flagcdn.com/w40/py.png" alt="Paraguay" style="width: 20px; height: auto; border-radius: 2px;">
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end; min-width: 0; overflow: hidden;">
+            <span style="font-size: 0.78rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Paraguay</span>
+            <img src="https://flagcdn.com/w40/py.png" alt="Paraguay" style="width: 20px; height: auto; border-radius: 2px; flex-shrink: 0;">
           </div>
         </div>
         <div style="margin-top: auto; display: flex; justify-content: flex-end;">
@@ -735,17 +752,27 @@
           <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">Grupo B</span>
           <span>📅 2026-06-12</span>
         </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <img src="https://flagcdn.com/w40/ca.png" alt="Canadá" style="width: 20px; height: auto; border-radius: 2px;">
-            <span style="font-size: 0.85rem;">Canadá</span>
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: 100%; font-family: var(--font-head); font-weight: 700; color: #fff; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden;">
+            <img src="https://flagcdn.com/w40/ca.png" alt="Canadá" style="width: 20px; height: auto; border-radius: 2px; flex-shrink: 0;">
+            <span style="font-size: 0.78rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Canadá</span>
           </div>
-          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
-            1 - 2
+          <div style="justify-self: center; flex-shrink: 0;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 3px;">
+              <!-- Predicción -->
+              <div style="position: relative; background: rgba(255, 75, 75, 0.08); padding: 2px 6px; border-radius: 4px; color: rgba(255,255,255,0.45); font-size: 0.72rem; font-weight: 700; border: 1px solid rgba(255, 75, 75, 0.2); width: fit-content; line-height: 1;" title="Predicción incorrecta">
+                1 - 2
+                <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(255, 75, 75, 0.95); font-size: 1rem; font-weight: 900; pointer-events: none;">✕</span>
+              </div>
+              <!-- Real -->
+              <div style="background: rgba(0, 230, 118, 0.12); padding: 2px 6px; border-radius: 4px; color: var(--green); font-size: 0.78rem; font-weight: 900; border: 1px solid rgba(0, 230, 118, 0.25); line-height: 1;" title="Resultado Real">
+                1 - 1
+              </div>
+            </div>
           </div>
-          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
-            <span style="font-size: 0.85rem;">Bosnia</span>
-            <img src="https://flagcdn.com/w40/ba.png" alt="Bosnia" style="width: 20px; height: auto; border-radius: 2px;">
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end; min-width: 0; overflow: hidden;">
+            <span style="font-size: 0.78rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Bosnia</span>
+            <img src="https://flagcdn.com/w40/ba.png" alt="Bosnia" style="width: 20px; height: auto; border-radius: 2px; flex-shrink: 0;">
           </div>
         </div>
         <div style="margin-top: auto; display: flex; justify-content: flex-end;">
@@ -759,17 +786,17 @@
           <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">Grupo A</span>
           <span>📅 2026-06-11</span>
         </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <img src="https://flagcdn.com/w40/cz.png" alt="Rep. Checa" style="width: 20px; height: auto; border-radius: 2px;">
-            <span style="font-size: 0.85rem;">Rep. Checa</span>
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: 100%; font-family: var(--font-head); font-weight: 700; color: #fff; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden;">
+            <img src="https://flagcdn.com/w40/cz.png" alt="Rep. Checa" style="width: 20px; height: auto; border-radius: 2px; flex-shrink: 0;">
+            <span style="font-size: 0.78rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Rep. Checa</span>
           </div>
-          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+          <div style="justify-self: center; flex-shrink: 0; background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
             1 - 2
           </div>
-          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
-            <span style="font-size: 0.85rem;">Corea del Sur</span>
-            <img src="https://flagcdn.com/w40/kr.png" alt="Corea del Sur" style="width: 20px; height: auto; border-radius: 2px;">
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end; min-width: 0; overflow: hidden;">
+            <span style="font-size: 0.78rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Corea del Sur</span>
+            <img src="https://flagcdn.com/w40/kr.png" alt="Corea del Sur" style="width: 20px; height: auto; border-radius: 2px; flex-shrink: 0;">
           </div>
         </div>
         <div style="margin-top: auto; display: flex; justify-content: flex-end;">
@@ -783,17 +810,27 @@
           <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; font-weight: 700;">Grupo A</span>
           <span>📅 2026-06-11</span>
         </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <img src="https://flagcdn.com/w40/mx.png" alt="México" style="width: 20px; height: auto; border-radius: 2px;">
-            <span style="font-size: 0.85rem;">México</span>
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: 100%; font-family: var(--font-head); font-weight: 700; color: #fff; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden;">
+            <img src="https://flagcdn.com/w40/mx.png" alt="México" style="width: 20px; height: auto; border-radius: 2px; flex-shrink: 0;">
+            <span style="font-size: 0.78rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">México</span>
           </div>
-          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
-            1 - 0
+          <div style="justify-self: center; flex-shrink: 0;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 3px;">
+              <!-- Predicción -->
+              <div style="position: relative; background: rgba(255, 75, 75, 0.08); padding: 2px 6px; border-radius: 4px; color: rgba(255,255,255,0.45); font-size: 0.72rem; font-weight: 700; border: 1px solid rgba(255, 75, 75, 0.2); width: fit-content; line-height: 1;" title="Predicción incorrecta">
+                1 - 0
+                <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(255, 75, 75, 0.95); font-size: 1rem; font-weight: 900; pointer-events: none;">✕</span>
+              </div>
+              <!-- Real -->
+              <div style="background: rgba(0, 230, 118, 0.12); padding: 2px 6px; border-radius: 4px; color: var(--green); font-size: 0.78rem; font-weight: 900; border: 1px solid rgba(0, 230, 118, 0.25); line-height: 1;" title="Resultado Real">
+                2 - 0
+              </div>
+            </div>
           </div>
-          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
-            <span style="font-size: 0.85rem;">Sudáfrica</span>
-            <img src="https://flagcdn.com/w40/za.png" alt="Sudáfrica" style="width: 20px; height: auto; border-radius: 2px;">
+          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end; min-width: 0; overflow: hidden;">
+            <span style="font-size: 0.78rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">Sudáfrica</span>
+            <img src="https://flagcdn.com/w40/za.png" alt="Sudáfrica" style="width: 20px; height: auto; border-radius: 2px; flex-shrink: 0;">
           </div>
         </div>
         <div style="margin-top: auto; display: flex; justify-content: flex-end;">
@@ -1699,62 +1736,61 @@
     </div>
 
     <div class="content-grid">
-      <!-- Modelo Predictivo / Montecarlo -->
+      <!-- Análisis de Comportamiento Colectivo -->
       <div class="content-card">
         <div class="content-type">
-          <span class="content-tag tag-thread">📊 Modelo Predictivo</span>
-          <span class="ai-badge">⚡ Antigravity AI</span>
+          <span class="content-tag tag-thread">📊 Comportamiento</span>
+          <span class="ai-badge">⚡ Algoritmo</span>
         </div>
-        <div class="content-title">10,000 Simulaciones de Montecarlo: El Pronóstico Maestro del Mundial 2026</div>
-        <div class="content-excerpt">Analizamos el destino de las 48 selecciones del Mundial. ¿Quiénes son los 4 semifinalistas matemáticos? Los datos revelan una sorpresa africana que nadie esperaba en las rondas finales.</div>
+        <div class="content-title">Modelado de Rendimiento y Dinámicas de Equipo</div>
+        <div class="content-excerpt">Analizamos el comportamiento táctico colectivo mediante la distribución espacial de perfiles y la eficiencia en fases de construcción. Esto permite proyectar cómo interactúan los bloques de juego y predecir el rendimiento esperado en competición, superando las valoraciones subjetivas tradicionales.</div>
         <div class="content-footer">
-          <span class="content-meta">Mundial 2026 · Simulación Montecarlo</span>
-          <a href="#" class="content-link">Ver Modelo →</a>
+          <span class="content-meta">Modelos de Comportamiento · DataHacks</span>
+          <a href="#" id="link-metodologia" class="content-link">Ver Metodología →</a>
         </div>
       </div>
 
-      <!-- El Villano -->
+      <!-- Datos e Indicadores -->
       <div class="content-card">
         <div class="content-type">
-          <span class="content-tag tag-podcast">🎥 YouTube</span>
-          <span class="ai-badge">⚡ Antigravity AI</span>
+          <span class="content-tag tag-blog">🛡️ Datos de Entrada</span>
+          <span class="ai-badge">⚡ Métricas Avanzadas</span>
         </div>
-        <div class="content-title">El "Villano" del Grupo K: ¿Por qué su rendimiento es una burbuja de opinión?</div>
-        <div class="content-excerpt">Desmontamos el mito de la prensa y fanaticadas. Analizamos por qué el rendimiento de una de las grandes estrellas del grupo está inflado, mostrando su mapa de calor vacío en peligro.</div>
+        <div class="content-title">Variables Clave: De la Creación a la Finalización</div>
+        <div class="content-excerpt">Registramos y normalizamos métricas por cada 90 minutos para una comparación equitativa. Evaluamos goles esperados (xG), asistencias esperadas (xA), pases clave, y variables avanzadas de flujo de juego como xG Chain (goles en cadena) y xG Buildup (participación en construcción sin el tiro final).</div>
         <div class="content-footer">
-          <span class="content-meta">Mundial 2026 · Grupo K</span>
-          <a href="#" class="content-link">Ver Video →</a>
+          <span class="content-meta">Métricas Tácticas · KPI Primarios</span>
+          <a href="#" id="link-glosario" class="content-link">Glosario de Datos →</a>
         </div>
       </div>
 
-      <!-- Post-Shot xG -->
+      <!-- Algoritmos y Procesamiento -->
       <div class="content-card">
         <div class="content-type">
-          <span class="content-tag tag-blog">✍️ Artículo Técnico</span>
-          <span class="ai-badge">⚡ Antigravity AI</span>
+          <span class="content-tag tag-podcast">🧠 Procesamiento</span>
+          <span class="ai-badge">⚡ Machine Learning</span>
         </div>
-        <div class="content-title">🛡️ Muros Estadísticos: ¿Cómo calculamos el Post-Shot xG en DataHacks?</div>
-        <div class="content-excerpt">Un desglose técnico sobre la métrica que separa a los porteros comunes de los que evitan goles imposibles. Cómo el algoritmo mide la efectividad defensiva bajo los tres palos.</div>
+        <div class="content-title">Procesamiento y Modelado Estadístico de Datos</div>
+        <div class="content-excerpt">Los datos se limpian, se excluyen colineales y se escalan mediante StandardScaler. Usamos clustering K-Means para identificar arquetipos de rendimiento puro de forma natural, Análisis de Componentes Principales (PCA) para visualizar la diversidad de perfiles en el espacio táctico, y distribución de Poisson para proyectar resultados de partidos.</div>
         <div class="content-footer">
-          <span class="content-meta">Mundial 2026 · Data Science</span>
-          <a href="#" class="content-link">Leer Post →</a>
+          <span class="content-meta">Clustering K-Means · PCA · Poisson</span>
+          <a href="#" id="link-algoritmo" class="content-link">Detalles del Algoritmo →</a>
         </div>
       </div>
 
-      <!-- Value Betting -->
-      <div class="content-card">
+      <!-- Caso de Estudio (Ejemplo de éxito del manejo de datos) -->
+      <div class="content-card" style="border: 1px solid rgba(0, 230, 118, 0.4); background: rgba(0, 230, 118, 0.03);">
         <div class="content-type">
-          <span class="content-tag tag-blog">💰 Value Betting</span>
-          <span class="ai-badge">⚡ Antigravity AI</span>
+          <span class="content-tag tag-short">🏆 Caso de Estudio</span>
+          <span class="ai-badge" style="color: var(--green); border-color: rgba(0, 230, 118, 0.4);">Entorno Académico</span>
         </div>
-        <div class="content-title">📈 Matemáticas vs Casas de Apuestas: 3 cuotas con valor para los amistosos</div>
-        <div class="content-excerpt">Aplicamos Poisson Bivariada para encontrar discrepancias de probabilidad entre nuestro algoritmo y las cuotas de mercado de los amistosos previos. Descubre el valor esperado esperado.</div>
-        <div class="content-footer">
-          <span class="content-meta">Mundial 2026 · Sección Premium</span>
-          <a href="#" class="content-link">Ver Cuotas →</a>
+        <div class="content-title" style="color: var(--green);">Arquetipos Ganadores: Real Madrid vs Descendidos La Liga 2023-24</div>
+        <div class="content-excerpt" style="color: rgba(255,255,255,0.85);">Este análisis compara la composición de arquetipos tácticos de un campeón de La Liga frente a los equipos que perdieron la categoría. Mediante K-Means Clustering, se demuestra cómo una distribución equilibrada de perfiles y una ventaja del <strong>+94.7% en la generación de peligro en construcción (xG Buildup/90)</strong> explican el éxito colectivo sobre las individualidades.</div>
+        <div class="content-footer" style="border-top: 1px solid rgba(0, 230, 118, 0.15);">
+          <span class="content-meta" style="color: rgba(255,255,255,0.5);">Investigación Universitaria · Ciencia de Datos</span>
+          <a href="#" id="link-caso-estudio" class="content-link" style="color: var(--green);">Ver Caso Completo →</a>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -2137,6 +2173,198 @@
 
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL GLOSARIO DE DATOS
+     ══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-glosario" aria-hidden="true">
+  <div class="modal-content" style="max-width: 700px;">
+    <button class="modal-close" id="modal-close-glosario-btn" aria-label="Cerrar modal">&times;</button>
+    
+    <div class="modal-header">
+      <span class="badge" style="margin-bottom: 12px; background: rgba(0, 212, 255, 0.15); color: var(--cyan);">🛡️ Glosario de Métricas y Datos</span>
+      <h2 style="font-family: var(--font-head); font-weight: 900; color: #fff; font-size: 1.8rem; margin-bottom: 8px; line-height: 1.2;">
+        Glosario de Datos Avanzados
+      </h2>
+      <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
+        El fútbol analizado mediante datos va más allá de la estadística convencional de pases y goles. Aquí te explicamos los KPIs avanzados de nuestra plataforma:
+      </p>
+    </div>
+
+    <div class="modal-body" style="margin-top: 24px; display: flex; flex-direction: column; gap: 20px;">
+      
+      <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 212, 255, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--cyan);">
+        <strong style="color: var(--cyan); font-size: 0.95rem;">🎯 Goals/90 y xG/90 (Goles Esperados)</strong>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+          El **xG (Expected Goals)** asigna a cada disparo una probabilidad (entre 0 y 1) de terminar en gol, evaluando factores como la distancia al arco, el ángulo de tiro, y si fue de pie o de cabeza. Normalizado a 90 minutos, refleja la efectividad del posicionamiento de un finalizador.
+        </p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--green);">
+        <strong style="color: var(--green); font-size: 0.95rem;">🤝 Assists/90 y xA/90 (Asistencias Esperadas)</strong>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+          El **xA (Expected Assists)** mide la calidad de los pases que terminan en disparo. Evalúa la probabilidad de que el receptor anote tras el pase, independientemente del éxito o fallo final de la definición. Mide la verdadera capacidad creativa.
+        </p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255, 107, 107, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid #ff6b6b;">
+        <strong style="color: #ff6b6b; font-size: 0.95rem;">⛓️ xG Chain (Goles en Cadena)</strong>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+          Mide el xG acumulado de todas las jugadas de posesión en las que el jugador participó en cualquier etapa de la secuencia (incluso si fue un pase simple en la mitad de la cancha). Es ideal para ver la influencia general del juego colectivo.
+        </p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(187, 107, 217, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid #bb6bd9;">
+        <strong style="color: #bb6bd9; font-size: 0.95rem;">🧱 xG Buildup (Goles en Construcción)</strong>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+          Similar a xG Chain, pero excluye de la suma el pase clave final y el tiro del jugador. **Esta métrica aísla el valor de la construcción del juego** para destacar a mediocampistas de contención, distribuidores y defensas centrales que limpian la salida sin llevarse los reflectores de la asistencia o el gol.
+        </p>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r); border-left: 4px solid var(--blue);">
+        <strong style="color: var(--blue); font-size: 0.95rem;">📊 Arquetipos de Jugador</strong>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.5; margin-top: 6px;">
+          Mediante aprendizaje no supervisado (**K-Means**), agrupamos a los jugadores según su comportamiento estadístico en:
+          <br>• <strong>Finalizadores:</strong> Goleadores natos enfocados en la definición.
+          <br>• <strong>Creadores:</strong> Asistidores y extremos con alto volumen de pases clave y regates.
+          <br>• <strong>Distribuidores:</strong> Cerebros del equipo que mantienen fluida la circulación.
+          <br>• <strong>Defensivos/Soporte:</strong> Escudos tácticos con alto enfoque en intercepciones y recuperaciones.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MODAL CASO DE ESTUDIO COMPLETO
+     ══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-caso-estudio" aria-hidden="true">
+  <div class="modal-content" style="max-width: 900px; background: #080f1d; border: 1.5px solid rgba(0, 230, 118, 0.25); box-shadow: 0 20px 80px rgba(0, 230, 118, 0.15);">
+    <button class="modal-close" id="modal-close-caso-btn" aria-label="Cerrar modal">&times;</button>
+    
+    <div class="modal-header">
+      <span class="badge" style="margin-bottom: 12px; background: rgba(0, 230, 118, 0.15); color: var(--green);">🏆 Investigación Avanzada</span>
+      <h2 style="font-family: var(--font-head); font-weight: 900; color: #fff; font-size: 1.8rem; margin-bottom: 8px; line-height: 1.2;">
+        Caso de Estudio: Identificación de Arquetipos de Jugadores Ganadores
+      </h2>
+      <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
+        Un análisis comparativo entre el Campeón y los equipos descendidos de La Liga 2023-24 realizado en un contexto de investigación académica universitaria en Ciencia de Datos.
+      </p>
+    </div>
+
+    <div class="modal-body" style="margin-top: 24px; display: flex; flex-direction: column; gap: 28px;">
+      
+      <!-- Introducción -->
+      <div style="background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.04); padding: 20px; border-radius: var(--r); line-height: 1.6;">
+        <h4 style="font-family: var(--font-head); color: #fff; font-weight: 700; margin-bottom: 10px;">📋 Planteamiento del Problema</h4>
+        <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 10px;">
+          ¿Qué separa realmente a los campeones de los equipos que pierden la categoría? ¿Es la presencia de estrellas individuales o la composición equilibrada de roles? Este análisis estudia 489 jugadores de La Liga con más de 500 minutos, normalizando sus métricas por cada 90 minutos de juego real.
+        </p>
+        <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem;">
+          Mediante aprendizaje no supervisado (**K-Means Clustering**), se aislaron 4 perfiles o arquetipos funcionales complementarios para analizar la estructura colectiva de las plantillas.
+        </p>
+      </div>
+
+      <!-- Gráfico 3: Distribución de Arquetipos en la Liga -->
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center;">
+        <div style="flex: 1; min-width: 280px;">
+          <h4 style="font-family: var(--font-head); color: var(--cyan); font-weight: 700; margin-bottom: 8px;">📊 1. Distribución General de Arquetipos</h4>
+          <p style="color: rgba(255,255,255,0.80); font-size: 0.85rem; line-height: 1.5;">
+            El algoritmo K-Means identificó cuatro grupos claros basados en el desempeño bruto: **Defensivo/Soporte** (198 jugadores), **Distribuidor** (82), **Finalizador** (71) y **Creador** (58). 
+          </p>
+          <p style="color: var(--muted); font-size: 0.8rem; line-height: 1.5; margin-top: 8px;">
+            La mayor parte de los jugadores en la liga pertenecen al perfil defensivo, haciendo que los perfiles ofensivos y creativos (creadores y distribuidores) sean recursos escasos y valiosos en el mercado táctico.
+          </p>
+        </div>
+        <div style="flex: 1.2; min-width: 300px; text-align: center;">
+          <img src="assets/caso_distribucion.png" alt="Distribución de Arquetipos" style="width: 100%; border-radius: var(--r); border: 1px solid rgba(255,255,255,0.08);">
+          <span style="font-size: 0.72rem; color: var(--muted); margin-top: 6px; display: block;">Figura A: Distribución absoluta de arquetipos en La Liga.</span>
+        </div>
+      </div>
+
+      <div style="height: 1px; background: rgba(255,255,255,0.06);"></div>
+
+      <!-- Gráfico 4: Perfil de Características - Heatmap -->
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center; flex-direction: row-reverse;">
+        <div style="flex: 1; min-width: 280px;">
+          <h4 style="font-family: var(--font-head); color: var(--green); font-weight: 700; margin-bottom: 8px;">🧬 2. Perfil de Características (Heatmap)</h4>
+          <p style="color: rgba(255,255,255,0.80); font-size: 0.85rem; line-height: 1.5;">
+            Cada arquetipo exhibe una firma de datos única:
+          </p>
+          <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+            <li><strong>Creador (Asistidor/Winger):</strong> Sobresale en pases clave (1.97/90) y Expected Assists (0.25/90).</li>
+            <li><strong>Finalizador (Goleador):</strong> Concentrado en la definición con xG alto (0.40/90) y baja participación en pases clave.</li>
+            <li><strong>Distribuidor (Build-up/Medio):</strong> Eje en la posesión y pases progresivos (0.43/90 de xG Buildup).</li>
+            <li><strong>Defensivo/Soporte:</strong> Baja aportación en el tercio final, enfocado en el repliegue y seguridad estructural.</li>
+          </ul>
+        </div>
+        <div style="flex: 1.2; min-width: 300px; text-align: center;">
+          <img src="assets/caso_heatmap.png" alt="Perfil Heatmap de Arquetipos" style="width: 100%; border-radius: var(--r); border: 1px solid rgba(255,255,255,0.08);">
+          <span style="font-size: 0.72rem; color: var(--muted); margin-top: 6px; display: block;">Figura B: Matriz de características promedio por perfil.</span>
+        </div>
+      </div>
+
+      <div style="height: 1px; background: rgba(255,255,255,0.06);"></div>
+
+      <!-- Gráfico 1: Probabilidad Condicional -->
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center;">
+        <div style="flex: 1; min-width: 280px;">
+          <h4 style="font-family: var(--font-head); color: var(--blue); font-weight: 700; margin-bottom: 8px;">📈 3. Probabilidad de Jugar en el Campeón</h4>
+          <p style="color: rgba(255,255,255,0.80); font-size: 0.85rem; line-height: 1.5;">
+            Calculando la probabilidad condicional de que un jugador de cada arquetipo resida en el equipo ganador frente a los descendidos, encontramos:
+          </p>
+          <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.8rem; color: var(--muted); margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+            <li>Los **Creadores** tienen un **13.8%** de probabilidad condicional de pertenecer al campeón.</li>
+            <li>Los **Distribuidores** tienen un **9.8%**, reflejando la alta demanda del campeón de dominar la circulación.</li>
+            <li>Los **Defensivos Puros** caen al **1.0%** en el campeón, mientras que representan el **55%** de los planteles descendidos.</li>
+          </ul>
+        </div>
+        <div style="flex: 1.2; min-width: 300px; text-align: center;">
+          <img src="assets/caso_probabilidad.png" alt="Probabilidad de estar en Campeón" style="width: 100%; border-radius: var(--r); border: 1px solid rgba(255,255,255,0.08);">
+          <span style="font-size: 0.72rem; color: var(--muted); margin-top: 6px; display: block;">Figura C: Probabilidad condicional por tipo de arquetipo.</span>
+        </div>
+      </div>
+
+      <div style="height: 1px; background: rgba(255,255,255,0.06);"></div>
+
+      <!-- Gráfico 5 y 2: Espacio Multidimensional PCA -->
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; align-items: center; flex-direction: column;">
+        <div style="width: 100%;">
+          <h4 style="font-family: var(--font-head); color: #fff; font-weight: 700; margin-bottom: 8px;">🌌 4. Espacios Tácticos y Reducción de Varianza (PCA)</h4>
+          <p style="color: rgba(255,255,255,0.80); font-size: 0.85rem; line-height: 1.5; margin-bottom: 12px;">
+            Al mapear a los jugadores en dos componentes principales (PCA), que explican el **81.8% de la varianza total de los datos**, observamos una diferencia estructural contundente: el campeón (estrellas) distribuye sus piezas por todos los cuadrantes del espacio, mostrando una enorme especialización y variedad de herramientas. Los equipos descendidos (cruces) se apelotonan fuertemente en el cuadrante de bajo peligro esperado, revelando plantillas planas y homogéneas con escaso impacto en el juego.
+          </p>
+        </div>
+        
+        <div style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          <div style="text-align: center;">
+            <img src="assets/caso_pca.png" alt="PCA Espacio de Arquetipos" style="width: 100%; border-radius: var(--r); border: 1px solid rgba(255,255,255,0.08);">
+            <span style="font-size: 0.71rem; color: var(--muted); margin-top: 6px; display: block;">Figura D: Gráfico PCA en 2D (Estrellas = Campeón, Cruces = Descendidos).</span>
+          </div>
+          <div style="text-align: center;">
+            <img src="assets/caso_scatter.png" alt="Scatter Plot xG vs xG Buildup" style="width: 100%; border-radius: var(--r); border: 1px solid rgba(255,255,255,0.08);">
+            <span style="font-size: 0.71rem; color: var(--muted); margin-top: 6px; display: block;">Figura E: Scatter Plot de xG vs xG Buildup/90 (Sinergia de juego).</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 1px; background: rgba(255,255,255,0.06);"></div>
+
+      <!-- Conclusiones Organizacionales -->
+      <div style="background: rgba(0, 230, 118, 0.02); border: 1px solid rgba(0, 230, 118, 0.15); padding: 20px; border-radius: var(--r); line-height: 1.6;">
+        <h4 style="font-family: var(--font-head); color: var(--green); font-weight: 700; margin-bottom: 10px;">🎯 Conclusión General de la Investigación</h4>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem; margin-bottom: 10px;">
+          El campeón superó sistemáticamente a los descendidos en todas las métricas colectivas, pero el dato definitivo se halla en la fase de gestación: **generó un 94.7% más de xG Buildup/90** (0.387 frente a 0.198).
+        </p>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.85rem;">
+          Esto demuestra que **los campeonatos se conquistan construyendo sinergias espaciales y de distribución**, y que el análisis científico de arquetipos provee a los clubes un marco de evaluación robusto para optimizar fichajes, alinear tácticamente a las plantillas y encontrar oportunidades de mercado antes de que se inflen los precios.
+        </p>
+      </div>
+
     </div>
   </div>
 </div>
