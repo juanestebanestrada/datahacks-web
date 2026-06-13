@@ -6,9 +6,10 @@ fecha: "2026-06-11"
 hora: "14:00"
 home_team: "México"
 away_team: "Sudáfrica"
-goles_home: 0
+goles_home: 2
 goles_away: 0
 pronostico: "1 - 0"
+finalizado: "true"
 imagenes: "MéxicoMapaDefensivo.png:Mapa Defensivo (México), SudáfricaMapaDefensivo.png:Mapa Defensivo (Sudáfrica), MéxicoExpectedThreatxT.png:Amenaza Esperada xT (México), SudáfricaExpectedThreatxT.png:Amenaza Esperada xT (Sudáfrica), MéxicoCalor.png:Mapa de Calor (México), SudafricaCalor.png:Mapa de Calor (Sudáfrica), ShotMapMéxico.png:Mapa de Tiros (México), ShotMapSudáfrica.png:Mapa de Tiros (Sudáfrica), SudáfricaADNPasesKMeans.png:ADN de Pases de Modiba (Sudáfrica)"
 slug: "mexico_sudafrica"
 poisson: "58-26-16"

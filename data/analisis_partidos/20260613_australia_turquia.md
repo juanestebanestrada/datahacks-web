@@ -8,9 +8,9 @@ home_team: "Australia"
 away_team: "Turquía"
 goles_home: 0
 goles_away: 0
-pronostico: "1 - 1"
+pronostico: "1 - 3"
 finalizado: "false"
-imagenes: "PerfilTacticoAustralia.png:Perfil Táctico (Australia), PerfilTacticoTurquia.png:Perfil Táctico (Turquía)"
+imagenes: "Analisis_Australia_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Australia), Analisis_Turquía_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Turquía), Analisis_Australia_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Australia), Analisis_Turquía_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Turquía), Analisis_Australia_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Australia), Analisis_Turquía_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Turquía), ShotMap_Australia_horizontal_20260613.png:Mapa de Tiros (Australia), ShotMap_Turquía_horizontal_20260613.png:Mapa de Tiros (Turquía), Analisis_Australia_ReddePases_horizontal_20260613.png:Red de Pases (Australia), Analisis_Turquía_ReddePases_horizontal_20260613.png:Red de Pases (Turquía), Analisis_Australia_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Australia), Analisis_Turquía_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Turquía), Analisis_Australia_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Australia), Analisis_Turquía_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Turquía)"
 slug: "australia_turquia"
 poisson: "30-32-38"
 ---
@@ -19,13 +19,13 @@ poisson: "30-32-38"
 
 ### Ventajas
 
-* **Disciplina Colectiva y Orden:** Australia destaca por su bloque defensivo sumamente maduro. El orden táctico y la resistencia física son sus pilares, limitando los espacios para el rival.
-* **Fortaleza Física e Intercepciones:** Son dominantes en el juego aéreo y en los balones divididos, cortando los ataques del adversario en la frontal del área.
-* **Transiciones Simples:** Juego directo buscando segundas jugadas cerca del área contraria.
+* **Intensidad Defensiva Sobresaliente:** El comportamiento defensivo es el mayor activo del equipo. Muestran un volumen altísimo de acciones defensivas, ejerciendo presión desde zonas avanzadas e incomodando la construcción rival mediante un bloque medio-alto sólido y muy ordenado.
+* **Corazón y Resistencia Física:** A pesar de ceder el dominio territorial, el equipo compensa con un esfuerzo colectivo inmenso. Logran sostener los partidos con base en duelos individuales y buscan hacer daño mediante transiciones directas o acciones a balón parado.
 
 ### Desventajas
 
-* **Falta de Pegada y Volumen Creativo:** Les cuesta generar volumen de peligro (xT) constante en el área rival, dependiendo en exceso de la táctica fija.
+* **Pobre Volumen Ofensivo:** Su capacidad de generar oportunidades claras (xT) es esporádica. Tienen severas dificultades para lograr secuencias prolongadas en campo contrario y el balón raramente llega en ventaja a sus delanteros.
+* **Dependencia Extrema de un Eje Central:** La estructura de juego fluye de forma abrumadora a través de Aaron Mooy. Si el adversario logra asfixiarlo, el circuito de pases australiano pierde su conexión principal y se fragmenta con facilidad.
 
 ---
 
@@ -33,32 +33,22 @@ poisson: "30-32-38"
 
 ### Ventajas
 
-* **Control del Ritmo y Calidad Técnica:** Cuenta con centrocampistas asociativos capaces de dominar el balón y dictar el tempo del partido.
-* **Creatividad y Desequilibrio en Tres Cuartos:** Jugadores desequilibrantes en ataque que pueden filtrar pases y buscar remates lejanos con gran acierto.
-* **Organización en Salida de Balón:** Distribución de juego muy coordinada desde la primera línea.
+* **Poderío Ofensivo Multidireccional:** Son una auténtica máquina en ataque, generando peligro de manera sistemática. Su amenaza no se limita a una sola zona: logran profundizar por ambas bandas y desde posiciones interiores, gracias al enorme talento individual de figuras como Güler y Yıldız.
+* **Red de Pases y Conducciones Arrolladoras:** Turquía cuenta con un volumen extraordinario de conducciones progresivas por ambos carriles. Llevan el esférico en velocidad al área contraria y distribuyen su fútbol dinámico a partir de Kökçü en el centro y Kadıoğlu por el perfil izquierdo.
+* **Dominio Territorial Sostenido:** Suelen instalarse cómodamente en campo rival, asediando de forma constante. Este posicionamiento ofensivo viene acompañado de una rápida agresividad sin balón (pressing medio-alto) que les permite interrumpir transiciones.
 
 ### Desventajas
 
-* **Vulnerabilidad Defensiva ante Repliegue Rápido:** Si se vuelcan al ataque y pierden el esférico, sufren ante contraataques veloces.
+* **Exposición Esporádica en Transiciones:** Al vivir tan volcados hacia adelante e invertir tantos efectivos en campo contrario, la línea defensiva puede quedar desprotegida ante contragolpes fulminantes si la presión tras pérdida no surte efecto de manera inmediata.
 
 ---
 
-## ⚔️ ¿Cómo puede superar cada equipo a su adversario?
+## ⚖️ Comparativa y Veredicto
 
-### ¿Qué debe hacer Australia para ganarle a Turquía?
+Nos encontramos ante un clásico duelo entre la solidez de un bloque ordenado (Australia) frente a la inspiración y abundancia ofensiva (Turquía). 
 
-1. **Mantener la disciplina posicional:** Evitar cometer faltas tácticas cerca de su propia área.
-2. **Explotar las segundas jugadas:** Ganar el rebote tras envíos largos para pillar desordenada a la defensa turca.
+Australia buscará ensuciar el partido desde lo físico, forzando un ritmo cortado y tratando de lastimar con envíos largos hacia las bandas. Por otro lado, Turquía impondrá su calidad técnica desde el pitazo inicial, apostando por constantes conducciones verticales y un flujo constante de ataque que agobie a la defensa australiana.
 
-### ¿Qué debe hacer Turquía para ganarle a Australia?
+La enorme diferencia ofensiva entre ambos planteles se vuelve el factor diferencial de la contienda: Turquía triplica el registro de disparos y el volumen de conducciones de Australia. Si bien la férrea disciplina táctica de los *Socceroos* puede lograr contener el daño en los primeros compases, el desgaste de defender tan cerca de su área acabará pasándoles factura.
 
-1. **Circular rápido e interiorizar el juego:** Mover el balón en horizontal para cansar el bloque australiano y buscar desmarques de ruptura interiores.
-2. **Disparar desde media distancia:** Forzar la salida de los centrales australianos ensanchando el tiro exterior.
-
----
-
-## 🏆 Pronóstico: ¿Quién ganaría?
-
-> **Predicción:** Empate **1-1** (con ligera ventaja para Turquía).
-
-El modelo Poisson bivariado otorga a Turquía un **38% de probabilidad de victoria**, frente al **30% de Australia** y un **32% de empate**. La muralla colectiva de Australia y la calidad turca neutralizarán sus fuerzas en un disputado 1-1.
+**El pronóstico apunta a una clara victoria de Turquía por 3 - 1**, materializando su notoria superioridad técnica en el trámite y el marcador, mientras Australia intentará resistir y capitalizar alguna acción aislada en los minutos iniciales.

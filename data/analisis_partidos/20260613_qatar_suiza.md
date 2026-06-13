@@ -14,19 +14,18 @@ imagenes: "Analisis_Qatar_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (
 slug: "qatar_suiza"
 poisson: "25-22-53"
 ---
-
 ## 🇶🇦 Qatar: Análisis Táctico
 
 ### Ventajas
 
-* **Bloque Bajo Altamente Organizado:** Qatar repliega de forma efectiva en un bloque defensivo muy denso. Limitan las incursiones del rival en el área central y fuerzan los ataques hacia las bandas.
-* **Transiciones Directas Rápidas:** Su red de pases es vertical, buscando saltar líneas mediante pases largos de los centrocampistas hacia sus delanteros veloces.
-* **Disciplina Defensiva:** Muestran una buena coordinación en las ayudas y coberturas laterales para evitar superioridades numéricas del rival.
+* **Estructura Defensiva Organizada:** Qatar repliega en un bloque medio-bajo con alta intensidad, priorizando la solidez en su propio campo. El mapa defensivo muestra concentración de acciones, presiones y duelos defensivos en el lado izquierdo y en el mediocampo, forzando al rival a construir lejos del arco.
+* **Transiciones Directas Rápidas:** Su progresión ofensiva recae sobre construcciones verticales. Khoukhi actúa como eje central defensivo en la red de pases, conectando con Madibo y lanzando rápido por las bandas hacia extremos como Ahmed y Fadlalla.
+* **Carril Izquierdo Peligroso:** Las conducciones progresivas muestran que su principal vía de escape es el sector izquierdo, aprovechando los espacios dejados por equipos que se adelantan demasiado.
 
 ### Desventajas
 
-* **Poco Control de Posesión:** Suelen ceder el control del juego, lo que les genera un alto desgaste físico corriendo tras el balón.
-* **Baja Generación de xT:** La amenaza esperada (xT) es muy limitada y se enfoca casi por completo en transiciones esporádicas.
+* **Baja Generación de Peligro (xT):** Su amenaza esperada es muy limitada y esporádica. Tienen una producción ofensiva extremadamente modesta (como evidencia su histórico de 19 tiros con 1 solo gol en torneos de referencia).
+* **Posicionamiento Retrasado:** Al ceder mucha posesión y dominio territorial, el mapa de calor revela que viven replegados. Hay poca presencia y generación de oportunidades en el área contraria.
 
 ---
 
@@ -34,32 +33,20 @@ poisson: "25-22-53"
 
 ### Ventajas
 
-* **Dominio Absoluto en Posesión y Circulación:** Suiza destaca por un excelente trato del balón, estructurando su ataque mediante redes de pases fluidas y pacientes desde la salida de balón.
-* **Generación de Peligro Diversificada (xT):** Amenazan tanto por las bandas tácticas mediante proyecciones de sus laterales como a través de su juego interior con filtraciones constantes.
-* **Presión Tras Pérdida:** Tienen un excelente ritmo de recuperación rápida del balón que les permite ahogar las intenciones de contragolpe del adversario.
+* **Potencia y Eficacia Ofensiva:** Suiza ataca con gran volumen y precisión. Su mapa de tiros revela una fuerte concentración en áreas de alta probabilidad, generando sistemáticamente oportunidades claras (xG) gracias a una circulación de balón agresiva.
+* **Red de Pases Dominante:** Cuentan con el doble pivote Xhaka-Freuler para la gestación del juego. Esta dupla, apoyada por defensores como Akanji, estructura el equipo y conecta fluidamente con las posiciones adelantadas, como la de Vargas.
+* **Ataque Amplio y Progresivo:** Las conducciones progresivas helvéticas muestran incursiones frecuentes y profundas por ambos flancos. La amenaza (xT) es especialmente alta en el carril derecho e interior.
+* **Presión Alta Constante:** Su mapa defensivo exhibe gran intensidad a lo largo y ancho de todo el campo, incluyendo el territorio rival. Asfixian la salida del adversario para recuperar en zonas de peligro.
 
 ### Desventajas
 
-* **Vulnerabilidad ante Balones Largos:** Si su línea de presión alta es superada, su defensa puede sufrir al correr hacia su propio arco ante atacantes veloces.
+* **Espacios a la Espalda:** Al adelantar tanto sus líneas y presionar tan arriba, pueden quedar expuestos a contragolpes letales si el equipo rival (en este caso Qatar con sus pases largos) supera la primera línea de presión.
 
 ---
 
-## ⚔️ ¿Cómo puede superar cada equipo a su adversario?
+## ⚖️ Comparativa y Veredicto
 
-### ¿Qué debe hacer Qatar para ganarle a Suiza?
+El escenario del encuentro se presenta como un claro choque de estilos: el bloque defensivo reactivo de Qatar contra la maquinaria proactiva y estructurada de Suiza.
+Mientras Suiza monopolizará el territorio (mapa de calor concentrado en campo contrario) y el volumen ofensivo con llegadas organizadas, Qatar buscará resistir el asedio helvético e intentará capitalizar alguna transición rápida, especialmente por el sector izquierdo. 
 
-1. **Mantener la compacidad defensiva:** No perder el orden en bloque bajo y bloquear las líneas de pase interior helvéticas.
-2. **Explotar las bandas en velocidad:** Lanzar contragolpes inmediatos hacia la espalda de los laterales suizos proyectados.
-
-### ¿Qué debe hacer Suiza para ganarle a Qatar?
-
-1. **Mover el balón con velocidad:** Desordenar el bloque defensivo catarí mediante una rápida circulación horizontal de lado a lado.
-2. **Aprovechar los disparos de media distancia:** Atraer al bloque defensivo hacia adentro y habilitar remates desde fuera del área.
-
----
-
-## 🏆 Pronóstico: ¿Quién ganaría?
-
-> **Predicción:** Victoria de **Suiza** 2-0.
-
-El modelo Poisson otorga a Suiza un **53% de probabilidad de victoria**, frente al **25% de Qatar** y un **22% de empate**. La capacidad de circulación de Suiza romperá eventualmente el bloque bajo catarí.
+La enorme diferencia en calidad de oportunidades y volumen de ataque sugiere un claro favoritismo para el equipo europeo. **El modelo predictivo coincide con el análisis cualitativo y proyecta un triunfo de Suiza (0-2)**, imponiendo su ritmo frente a una escuadra qatarí que limitará sus opciones a defender cerca de su propia área.

@@ -6,10 +6,11 @@ fecha: "2026-06-11"
 hora: "17:00"
 home_team: "Rep. Checa"
 away_team: "Corea del Sur"
-goles_home: 0
-goles_away: 0
+goles_home: 1
+goles_away: 2
 pronostico: "1 - 2"
-finalizado: "false"
+finalizado: "true"
+
 imagenes: "Rep.ChecaCalor.png:Mapa de Calor (Rep. Checa), CoreaDelSurCalor.png:Mapa de Calor (Corea del Sur), ShotMapRep.Checa.png:Mapa de Tiros (Rep. Checa)"
 slug: "repcheca_coreasur"
 poisson: "58-26-16"

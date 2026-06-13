@@ -517,6 +517,7 @@ def build_all_pages():
                 "titulo": meta.get('titulo', ''),
                 "link": f"analisis/{slug}.html",
                 "display_score": display_score,
+                "pronostico": pronostico_val,
                 "is_finished": is_finished,
                 "grupo": grupo,
                 "poisson": meta.get('poisson', '58-26-16')
@@ -630,11 +631,35 @@ def build_all_pages():
         
         # Generar Tarjetas de Historial HTML
         history_cards = []
-        sorted_matches = sorted(all_compiled_matches, key=lambda x: (x['fecha'], x['hora']), reverse=True)
+        finished_matches = [m for m in all_compiled_matches if m['is_finished']]
+        sorted_matches = sorted(finished_matches, key=lambda x: (x['fecha'], x['hora']), reverse=True)
         
         for m in sorted_matches:
             code_home = FLAGS_MAP.get(m['home'], 'un')
             code_away = FLAGS_MAP.get(m['away'], 'un')
+            
+            # Logic for Red X on prediction if wrong
+            real_score = m['display_score']  # Since it's finished, display_score has real score
+            pronostico = m['pronostico']
+            
+            if pronostico.replace(' ', '') != real_score.replace(' ', ''):
+                score_display_html = f"""
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                  <div style="position: relative; font-size: 0.8rem; color: rgba(255,255,255,0.4);">
+                    <span>{pronostico}</span>
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,0,0,0.6); font-size: 1.2rem; font-weight: 900;">✗</span>
+                  </div>
+                  <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+                    {real_score}
+                  </div>
+                </div>
+                """
+            else:
+                score_display_html = f"""
+                <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+                  {real_score}
+                </div>
+                """
             
             card_hist_html = f"""
       <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
@@ -643,15 +668,13 @@ def build_all_pages():
           <span>📅 {m['fecha']}</span>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-head); font-weight: 700; color: #fff;">
-          <div style="display: flex; align-items: center; gap: 6px;">
+          <div style="display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0;">
             <img src="https://flagcdn.com/w40/{code_home}.png" alt="{m['home']}" style="width: 20px; height: auto; border-radius: 2px;">
-            <span style="font-size: 0.85rem;">{m['home']}</span>
+            <span style="font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{m['home']}</span>
           </div>
-          <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
-            {m['display_score']}
-          </div>
-          <div style="display: flex; align-items: center; gap: 6px; justify-content: flex-end;">
-            <span style="font-size: 0.85rem;">{m['away']}</span>
+          {score_display_html}
+          <div style="display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; justify-content: flex-end;">
+            <span style="font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: right;">{m['away']}</span>
             <img src="https://flagcdn.com/w40/{code_away}.png" alt="{m['away']}" style="width: 20px; height: auto; border-radius: 2px;">
           </div>
         </div>
