@@ -488,6 +488,137 @@ footer {
   .modal-header h2 {
     font-size: 1.35rem !important;
   }
+
+  /* Ajustes de tarjetas de partidos en celular */
+  .match-widget-card {
+    padding: 20px 12px;
+    gap: 15px;
+  }
+  .match-widget-header-row {
+    gap: 6px;
+  }
+  .team-block {
+    gap: 6px;
+  }
+  .team-name {
+    font-size: 1.05rem;
+  }
+  .team-flag {
+    width: 28px;
+  }
+  .digital-scoreboard {
+    gap: 4px;
+    padding: 4px 8px;
+  }
+  .score-box {
+    width: 32px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+  .score-divider {
+    font-size: 1.1rem;
+  }
+  .match-middle-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    justify-items: center;
+    margin: 10px 0;
+  }
+  .tactical-field {
+    margin: 0 auto;
+  }
+  .poisson-title {
+    font-size: 0.75rem;
+    margin-bottom: 6px;
+  }
+  .poisson-labels {
+    font-size: 0.72rem;
+  }
+  .btn-glow-cyan {
+    padding: 8px 18px;
+    font-size: 0.78rem;
+    width: 100%;
+  }
+
+  /* Ajustes de tarjetas de equipos (grupo_*.html) */
+  .team-tactical-card {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  .team-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .team-info {
+    gap: 10px;
+  }
+  .team-info img {
+    width: 36px;
+    height: auto;
+  }
+  .team-name {
+    font-size: 1.3rem;
+  }
+  .tactical-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+  .tactical-details h4 {
+    font-size: 0.95rem;
+  }
+  .tactical-details p {
+    font-size: 0.82rem;
+  }
+  .tactical-bullets li {
+    font-size: 0.82rem;
+  }
+  .grupo-card {
+    padding: 16px 12px;
+  }
+  .grupo-letter {
+    font-size: 1.6rem;
+  }
+  .grupo-teams {
+    font-size: 0.75rem;
+  }
+  .mundial-hero-card {
+    padding: 24px 16px;
+  }
+  .mundial-title {
+    font-size: 1.6rem;
+  }
+  .mundial-dates {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+/* ─── CONTENEDOR FASE FINAL ───────────────── */
+.predictions-frame {
+  background: rgba(13, 31, 53, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(0, 149, 255, 0.25);
+  border-radius: var(--r-lg);
+  padding: 40px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 
+              0 0 30px rgba(0, 149, 255, 0.1), 
+              inset 0 0 20px rgba(0, 149, 255, 0.05);
+}
+@media (max-width: 768px) {
+  .predictions-frame {
+    padding: 20px 12px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
 }
 
 /* ─── MODAL CASO DE ESTUDIO ──────────────── */
@@ -538,27 +669,5 @@ footer {
 }
 .modal-close:hover {
   color: var(--white);
-}
-
-/* ─── CONTENEDOR FASE FINAL ───────────────── */
-.predictions-frame {
-  background: rgba(13, 31, 53, 0.45);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 2px solid rgba(0, 149, 255, 0.25);
-  border-radius: var(--r-lg);
-  padding: 40px;
-  margin-top: 50px;
-  margin-bottom: 60px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 
-              0 0 30px rgba(0, 149, 255, 0.1), 
-              inset 0 0 20px rgba(0, 149, 255, 0.05);
-}
-@media (max-width: 768px) {
-  .predictions-frame {
-    padding: 24px 16px;
-    margin-top: 30px;
-    margin-bottom: 40px;
-  }
 }
 
