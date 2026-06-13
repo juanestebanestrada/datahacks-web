@@ -539,3 +539,26 @@ footer {
 .modal-close:hover {
   color: var(--white);
 }
+
+/* ─── CONTENEDOR FASE FINAL ───────────────── */
+.predictions-frame {
+  background: rgba(13, 31, 53, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(0, 149, 255, 0.25);
+  border-radius: var(--r-lg);
+  padding: 40px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 
+              0 0 30px rgba(0, 149, 255, 0.1), 
+              inset 0 0 20px rgba(0, 149, 255, 0.05);
+}
+@media (max-width: 768px) {
+  .predictions-frame {
+    padding: 24px 16px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+}
+

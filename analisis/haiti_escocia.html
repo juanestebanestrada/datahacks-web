@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haití vs Escocia: Fuerza Física contra Disciplina Táctica // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Haití vs Escocia del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_c.html" class="back-link">← Volver al Grupo C</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo C</span>
+    <h2>Haití vs Escocia</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-13 · 🕒 17:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team">Haití</div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div class="score-box">2 - 1</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team">Escocia</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇭🇹 Haití: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Poderío Goleador y Eficiencia:</strong> Destacan por ser una máquina goleadora con un volumen de remates extraordinario. Generan peligro constante buscando posiciones de alta calidad en el área y convirtiendo con una tasa de acierto muy elevada.</li>
+<li><strong>Juego Directo y Vertical:</strong> No dependen de una red de pases compleja para progresar. Conectan pocas piezas de manera rápida, valiéndose de transiciones largas, pases filtrados desde el mediocampo y conducciones efectivas por el centro y la banda derecha para instalarse en zonas de finalización.</li>
+<li><strong>Bloque Bajo Eficaz:</strong> Defienden muy organizados en su propio campo. Su mapa defensivo muestra concentración total en el mediocampo y carril izquierdo, cediendo terreno para luego contraatacar con velocidad.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Carencia de Elaboración Prolongada:</strong> Su juego se apoya excesivamente en la acción individual y verticalidad. En contextos donde el rival les niegue el espacio para correr, pueden tener dificultades para construir secuencias ofensivas sostenidas desde la posesión.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🏴 Escocia: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Disciplina Estructural y Organización:</strong> Exhiben un sistema táctico sumamente reconocible y estructurado. La conexión entre Robertson, Tierney y Gilmour o McGregor conforma circuitos sólidos que priorizan la posesión y el orden, sobre todo por la franja izquierda.</li>
+<li><strong>Organización Defensiva e Intensidad:</strong> Presentan un volumen considerable de acciones defensivas por todo el campo. Muestran un bloque medio-alto con buena capacidad para presionar e incomodar la salida del oponente, recuperando balones en zonas medias.</li>
+<li><strong>Profundidad por Banda Izquierda:</strong> El carril de Robertson es su vía de ataque más consistente y peligrosa, generando la mayor amenaza esperada (xT) a través de proyecciones ofensivas del lateral.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Limitada Capacidad de Penetración:</strong> Les cuesta enormemente culminar las jugadas. Pese a estructurar bien el juego previo, el balón no llega con facilidad a los atacantes, dejando un volumen ofensivo modesto y concentrado en situaciones aisladas sin amenaza sistemática al área rival.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto</h2>
+<p>Se enfrentan dos equipos con propuestas futbolísticas opuestas: la paciencia y disciplina estructural escocesa frente al juego explosivo y sumamente directo de los caribeños.</p>
+<p>Mientras Escocia intentará adueñarse de la posesión, construyendo mediante el carril izquierdo, Haití apostará por un bloque bajo, invitando al rival a adelantarse para castigarlo en transiciones y con envíos largos de Guerrier hacia atacantes letales como Pierrot y Nazon.</p>
+<p>A pesar de que Escocia cuenta con mayor organización colectiva y experiencia ante rivales de gran jerarquía, su alarmante carencia de profundidad y pegada ofensiva la vuelve vulnerable frente a la tremenda capacidad goleadora haitiana.</p>
+<p>El modelo proyecta que la verticalidad de Haití logrará explotar las espaldas escocesas. <strong>El pronóstico más probable es Haití 2 - Escocia 1</strong>, anticipando un duelo donde los europeos competirán firmemente pero terminarán sufriendo las veloces transiciones caribeñas.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Haití)</h4>
+                      <img src="../assets/Analisis_Haití_MapaDefensivo_Equipo_Completo_horizontal_20260613.png" alt="Mapa Defensivo (Haití)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Escocia)</h4>
+                      <img src="../assets/Analisis_Escocia_MapaDefensivo_horizontal_20260613.png" alt="Mapa Defensivo (Escocia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Haití)</h4>
+                      <img src="../assets/Analisis_Haití_ExpectedThreatxT_Equipo_Completo_horizontal_20260613.png" alt="Amenaza Esperada xT (Haití)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Escocia)</h4>
+                      <img src="../assets/Analisis_Escocia_ExpectedThreatxT_horizontal_20260613.png" alt="Amenaza Esperada xT (Escocia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Haití)</h4>
+                      <img src="../assets/Analisis_Haití_MapadeCalor_Equipo_Completo_horizontal_20260613.png" alt="Mapa de Calor (Haití)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Escocia)</h4>
+                      <img src="../assets/Analisis_Escocia_MapadeCalor_horizontal_20260613.png" alt="Mapa de Calor (Escocia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Haití)</h4>
+                      <img src="../assets/ShotMap_Haití_horizontal_20260613.png" alt="Mapa de Tiros (Haití)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Escocia)</h4>
+                      <img src="../assets/ShotMap_Escocia_horizontal_20260613.png" alt="Mapa de Tiros (Escocia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Haití)</h4>
+                      <img src="../assets/Analisis_Haití_ReddePases_Equipo_Completo_horizontal_20260613.png" alt="Red de Pases (Haití)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Escocia)</h4>
+                      <img src="../assets/Analisis_Escocia_ReddePases_horizontal_20260613.png" alt="Red de Pases (Escocia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Haití)</h4>
+                      <img src="../assets/Analisis_Haití_ConduccionesProgresivas_Equipo_Completo_horizontal_20260613.png" alt="Conducciones Progresivas (Haití)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Escocia)</h4>
+                      <img src="../assets/Analisis_Escocia_ConduccionesProgresivas_horizontal_20260613.png" alt="Conducciones Progresivas (Escocia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Haití)</h4>
+                      <img src="../assets/Analisis_Haití_MapadeAsistencias_Equipo_Completo_horizontal_20260613.png" alt="Mapa de Asistencias (Haití)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Escocia)</h4>
+                      <img src="../assets/Analisis_Escocia_MapadeAsistencias_horizontal_20260613.png" alt="Mapa de Asistencias (Escocia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
