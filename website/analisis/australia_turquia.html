@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Australia vs Turquía: Muralla Oceánica contra Talento Creativo // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Australia vs Turquía del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_d.html" class="back-link">← Volver al Grupo D</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo D</span>
+    <h2>Australia vs Turquía</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-13 · 🕒 20:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team">Australia</div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div class="score-box">1 - 1</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team">Turquía</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇦🇺 Australia: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Disciplina Colectiva y Orden:</strong> Australia destaca por su bloque defensivo sumamente maduro. El orden táctico y la resistencia física son sus pilares, limitando los espacios para el rival.</li>
+<li><strong>Fortaleza Física e Intercepciones:</strong> Son dominantes en el juego aéreo y en los balones divididos, cortando los ataques del adversario en la frontal del área.</li>
+<li><strong>Transiciones Simples:</strong> Juego directo buscando segundas jugadas cerca del área contraria.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Falta de Pegada y Volumen Creativo:</strong> Les cuesta generar volumen de peligro (xT) constante en el área rival, dependiendo en exceso de la táctica fija.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇹🇷 Turquía: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Control del Ritmo y Calidad Técnica:</strong> Cuenta con centrocampistas asociativos capaces de dominar el balón y dictar el tempo del partido.</li>
+<li><strong>Creatividad y Desequilibrio en Tres Cuartos:</strong> Jugadores desequilibrantes en ataque que pueden filtrar pases y buscar remates lejanos con gran acierto.</li>
+<li><strong>Organización en Salida de Balón:</strong> Distribución de juego muy coordinada desde la primera línea.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Vulnerabilidad Defensiva ante Repliegue Rápido:</strong> Si se vuelcan al ataque y pierden el esférico, sufren ante contraataques veloces.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚔️ ¿Cómo puede superar cada equipo a su adversario?</h2>
+<h3>¿Qué debe hacer Australia para ganarle a Turquía?</h3>
+<p><strong>1.</strong> <strong>Mantener la disciplina posicional:</strong> Evitar cometer faltas tácticas cerca de su propia área.</p>
+<p><strong>2.</strong> <strong>Explotar las segundas jugadas:</strong> Ganar el rebote tras envíos largos para pillar desordenada a la defensa turca.</p>
+<h3>¿Qué debe hacer Turquía para ganarle a Australia?</h3>
+<p><strong>1.</strong> <strong>Circular rápido e interiorizar el juego:</strong> Mover el balón en horizontal para cansar el bloque australiano y buscar desmarques de ruptura interiores.</p>
+<p><strong>2.</strong> <strong>Disparar desde media distancia:</strong> Forzar la salida de los centrales australianos ensanchando el tiro exterior.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🏆 Pronóstico: ¿Quién ganaría?</h2>
+<p>> <strong>Predicción:</strong> Empate <strong>1-1</strong> (con ligera ventaja para Turquía).</p>
+<p>El modelo Poisson bivariado otorga a Turquía un <strong>38% de probabilidad de victoria</strong>, frente al <strong>30% de Australia</strong> y un <strong>32% de empate</strong>. La muralla colectiva de Australia y la calidad turca neutralizarán sus fuerzas en un disputado 1-1.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-single" style="width: 100%; max-width: 500px; margin: 0 auto 24px; background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                    <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Perfil Táctico (Australia)</h4>
+                    <img src="../assets/PerfilTacticoAustralia.png" alt="Perfil Táctico (Australia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                  </div>
+
+                  <div class="tactical-single" style="width: 100%; max-width: 500px; margin: 0 auto 24px; background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                    <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Perfil Táctico (Turquía)</h4>
+                    <img src="../assets/PerfilTacticoTurquia.png" alt="Perfil Táctico (Turquía)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -6,10 +6,10 @@ fecha: "2026-06-12"
 hora: "14:00"
 home_team: "Canadá"
 away_team: "Bosnia"
-goles_home: 0
-goles_away: 0
+goles_home: 1
+goles_away: 1
 pronostico: "1 - 2"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Canadá_MapaDefensivo_horizontal_20260612.png:Mapa Defensivo (Canadá), Analisis_Bosnia_MapaDefensivo_Equipo_Completo_horizontal_20260612.png:Mapa Defensivo (Bosnia), Analisis_Canadá_ExpectedThreatxT_horizontal_20260612.png:Amenaza Esperada xT (Canadá), Analisis_Bosnia_ExpectedThreatxT_Equipo_Completo_horizontal_20260612.png:Amenaza Esperada xT (Bosnia), Analisis_Canadá_MapadeCalor_horizontal_20260612.png:Mapa de Calor (Canadá), Mapa_Calor_Bosnia_Equipo_Completo_horizontal_20260612.png:Mapa de Calor (Bosnia), ShotMap_Canadá_horizontal_20260612.png:Mapa de Tiros (Canadá), ShotMap_Bosnia_horizontal_20260612.png:Mapa de Tiros (Bosnia), Analisis_Canadá_ReddePases_horizontal_20260612.png:Red de Pases (Canadá), Analisis_Bosnia_ReddePases_Equipo_Completo_horizontal_20260612.png:Red de Pases (Bosnia), Analisis_Canadá_ConduccionesProgresivas_horizontal_20260612.png:Conducciones Progresivas (Canadá), Analisis_Bosnia_ConduccionesProgresivas_Equipo_Completo_horizontal_20260612.png:Conducciones Progresivas (Bosnia), Analisis_Canadá_MapadeAsistencias_horizontal_20260612.png:Mapa de Asistencias (Canadá), Analisis_Bosnia_MapadeAsistencias_Equipo_Completo_horizontal_20260612.png:Mapa de Asistencias (Bosnia)"
 slug: "canada_bosnia"
 poisson: "20-10-70"

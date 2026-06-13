@@ -6,10 +6,10 @@ fecha: "2026-06-12"
 hora: "17:00"
 home_team: "USA"
 away_team: "Paraguay"
-goles_home: 0
-goles_away: 0
+goles_home: 4
+goles_away: 1
 pronostico: "2 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_USA_MapaDefensivo_horizontal_20260612.png:Mapa Defensivo (USA), Analisis_Paraguay_MapaDefensivo_horizontal_20260612.png:Mapa Defensivo (Paraguay), Analisis_USA_ExpectedThreatxT_horizontal_20260612.png:Amenaza Esperada xT (USA), Analisis_Paraguay_ExpectedThreatxT_horizontal_20260612.png:Amenaza Esperada xT (Paraguay), Analisis_USA_MapadeCalor_horizontal_20260612.png:Mapa de Calor (USA), Analisis_Paraguay_MapadeCalor_horizontal_20260612.png:Mapa de Calor (Paraguay), ShotMap_USA_horizontal_20260612.png:Mapa de Tiros (USA), ShotMap_Paraguay_horizontal_20260612.png:Mapa de Tiros (Paraguay), Analisis_USA_ReddePases_horizontal_20260612.png:Red de Pases (USA), Analisis_Paraguay_ReddePases_horizontal_20260612.png:Red de Pases (Paraguay), Analisis_USA_ConduccionesProgresivas_horizontal_20260612.png:Conducciones Progresivas (USA), Analisis_Paraguay_ConduccionesProgresivas_horizontal_20260612.png:Conducciones Progresivas (Paraguay), Analisis_USA_MapadeAsistencias_horizontal_20260612.png:Mapa de Asistencias (USA), Analisis_Paraguay_MapadeAsistencias_horizontal_20260612.png:Mapa de Asistencias (Paraguay)"
 slug: "usa_paraguay"
 poisson: "42-32-26"
