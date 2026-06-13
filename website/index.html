@@ -421,6 +421,77 @@
       box-shadow: 0 0 25px rgba(0, 240, 255, 0.8);
       transform: translateY(-1px);
     }
+    @media (max-width: 600px) {
+      .match-widget-card {
+        padding: 18px 12px;
+        gap: 12px;
+      }
+      .match-widget-header-row {
+        gap: 4px;
+      }
+      .team-block {
+        gap: 6px;
+      }
+      .team-block.local {
+        justify-content: flex-end;
+      }
+      .team-block.visitor {
+        justify-content: flex-start;
+      }
+      .team-name {
+        font-size: clamp(0.85rem, 3.6vw, 1.15rem) !important;
+      }
+      .team-flag {
+        width: 26px !important;
+        height: auto;
+      }
+      .digital-scoreboard {
+        gap: 4px;
+        padding: 4px 6px;
+      }
+      .score-box {
+        width: 28px !important;
+        height: 36px !important;
+        font-size: 1.3rem !important;
+      }
+      .score-divider {
+        font-size: 1rem !important;
+      }
+      .match-middle-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        margin: 8px 0 !important;
+      }
+      .poisson-section {
+        grid-column: span 2 !important;
+        order: -1 !important;
+      }
+      .tactical-field {
+        width: 90px !important;
+        height: 72px !important;
+        padding: 2px !important;
+        margin: 0 auto !important;
+      }
+      .mini-pitch-svg {
+        width: 80px !important;
+        height: 60px !important;
+      }
+      .poisson-title {
+        font-size: 0.75rem;
+        margin-bottom: 6px;
+      }
+      .poisson-labels {
+        font-size: 0.72rem;
+      }
+      .match-widget-footer {
+        margin-top: 2px;
+      }
+      .btn-glow-cyan {
+        padding: 8px 16px;
+        font-size: 0.75rem;
+        width: 100%;
+      }
+    }
   </style>
 
   <div class="container">
