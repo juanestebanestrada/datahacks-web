@@ -6,10 +6,10 @@ fecha: "2026-06-13"
 hora: "17:00"
 home_team: "Brasil"
 away_team: "Marruecos"
-goles_home: 0
-goles_away: 0
+goles_home: 1
+goles_away: 1
 pronostico: "2 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Brasil_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Brasil), Analisis_Marruecos_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Marruecos), Analisis_Brasil_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Brasil), Analisis_Marruecos_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Marruecos), Analisis_Brasil_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Brasil), Analisis_Marruecos_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Marruecos), ShotMap_Brasil_horizontal_20260613.png:Mapa de Tiros (Brasil), ShotMap_Marruecos_horizontal_20260613.png:Mapa de Tiros (Marruecos), Analisis_Brasil_ReddePases_horizontal_20260613.png:Red de Pases (Brasil), Analisis_Marruecos_ReddePases_horizontal_20260613.png:Red de Pases (Marruecos), Analisis_Brasil_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Brasil), Analisis_Marruecos_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Marruecos), Analisis_Brasil_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Brasil), Analisis_Marruecos_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Marruecos)"
 slug: "brasil_marruecos"
 poisson: "52-28-20"

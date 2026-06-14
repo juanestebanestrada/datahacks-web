@@ -241,6 +241,8 @@ TEMPLATE_HTML = """<!DOCTYPE html>
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
       </div>
       <div class="footer-links">
         <a href="../index.html#plataforma">Plataforma</a>
@@ -576,7 +578,9 @@ def build_all_pages():
             by_date[d].append(m)
             
         latest_date = sorted(by_date.keys(), reverse=True)[0]
-        today_matches = sorted(by_date[latest_date], key=lambda x: x['hora'])
+        # Filtrar para mostrar solo partidos NO finalizados en el Live Match Center
+        active_today_matches = [m for m in by_date[latest_date] if not m['is_finished']]
+        today_matches = sorted(active_today_matches, key=lambda x: x['hora'])
         
         # Generar Tarjetas HTML
         cards_list = []
@@ -677,28 +681,67 @@ def build_all_pages():
         for m in sorted_matches:
             code_home = FLAGS_MAP.get(m['home'], 'un')
             code_away = FLAGS_MAP.get(m['away'], 'un')
-            
-            # Logic for Red X on prediction if wrong
-            real_score = m['display_score']  # Since it's finished, display_score has real score
+            real_score = m['display_score']
             pronostico = m['pronostico']
             
-            if pronostico.replace(' ', '') != real_score.replace(' ', ''):
+            # Evaluar estado de predicción: "exact", "tendency", "miss"
+            pred_status = "miss"
+            try:
+                p_clean = pronostico.replace(' ', '')
+                r_clean = real_score.replace(' ', '')
+                if p_clean == r_clean:
+                    pred_status = "exact"
+                else:
+                    p_parts = p_clean.split('-')
+                    r_parts = r_clean.split('-')
+                    if len(p_parts) == 2 and len(r_parts) == 2:
+                        p_home, p_away = int(p_parts[0]), int(p_parts[1])
+                        r_home, r_away = int(r_parts[0]), int(r_parts[1])
+                        p_diff = p_home - p_away
+                        r_diff = r_home - r_away
+                        if (p_diff > 0 and r_diff > 0) or (p_diff < 0 and r_diff < 0) or (p_diff == 0 and r_diff == 0):
+                            pred_status = "tendency"
+            except Exception as e:
+                pass
+
+            if pred_status == "exact":
+                score_display_html = f"""
+                <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);" title="Predicción Exacta">
+                  {real_score}
+                </div>
+                """
+                prediction_badge = f"""
+                <span style="background: rgba(0, 230, 118, 0.1); color: var(--green); border: 1px solid rgba(0, 230, 118, 0.25); padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; font-family: var(--font-head); letter-spacing: 0.5px;">🎯 EXACTO</span>
+                """
+            elif pred_status == "tendency":
                 score_display_html = f"""
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                  <div style="position: relative; font-size: 0.8rem; color: rgba(255,255,255,0.4);">
+                  <div style="position: relative; font-size: 0.8rem; color: rgba(255,255,255,0.4);" title="Predicción de marcador incorrecta pero ganador acertado">
                     <span>{pronostico}</span>
-                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,0,0,0.6); font-size: 1.2rem; font-weight: 900;">✗</span>
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,179,0,0.85); font-size: 1.2rem; font-weight: 900;">✗</span>
                   </div>
                   <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
                     {real_score}
                   </div>
                 </div>
                 """
+                prediction_badge = f"""
+                <span style="background: rgba(255, 179, 0, 0.1); color: #ffb300; border: 1px solid rgba(255, 179, 0, 0.25); padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; font-family: var(--font-head); letter-spacing: 0.5px;">🔮 GANADOR</span>
+                """
             else:
                 score_display_html = f"""
-                <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
-                  {real_score}
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                  <div style="position: relative; font-size: 0.8rem; color: rgba(255,255,255,0.4);" title="Predicción incorrecta">
+                    <span>{pronostico}</span>
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,75,75,0.85); font-size: 1.2rem; font-weight: 900;">✗</span>
+                  </div>
+                  <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
+                    {real_score}
+                  </div>
                 </div>
+                """
+                prediction_badge = f"""
+                <span style="background: rgba(255, 75, 75, 0.1); color: #ff4b4b; border: 1px solid rgba(255, 75, 75, 0.25); padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; font-family: var(--font-head); letter-spacing: 0.5px;">❌ FALLIDO</span>
                 """
             
             card_hist_html = f"""
@@ -718,7 +761,8 @@ def build_all_pages():
             <img src="https://flagcdn.com/w40/{code_away}.png" alt="{m['away']}" style="width: 20px; height: auto; border-radius: 2px;">
           </div>
         </div>
-        <div style="margin-top: auto; display: flex; justify-content: flex-end;">
+        <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+          {prediction_badge}
           <a href="{m['link']}" style="color: var(--cyan); text-decoration: none; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--cyan)'">Ver Análisis →</a>
         </div>
       </div>
