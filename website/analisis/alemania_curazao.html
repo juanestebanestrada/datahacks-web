@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alemania vs Curazao: Choque de Estilos en el Grupo E // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Alemania vs Curazao del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_e.html" class="back-link">← Volver al Grupo E</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo E</span>
+    <h2>Alemania vs Curazao</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-14 · 🕒 12:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team">Alemania</div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div class="score-box">3 - 1</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team">Curazao</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <p>Con los datos disponibles, la conclusión es bastante clara: Alemania aparece como amplio favorito, y la diferencia de nivel entre ambos combinados se nota en prácticamente todas las métricas.</p>
+<h2>🇩🇪 Alemania: Análisis Táctico</h2>
+<p>El mapa de calor de Alemania muestra un dominio territorial enorme: ocupan casi todo el ancho y largo del campo, con dos núcleos de actividad muy marcados a la altura del círculo central, lo que indica que controlan el balón en zonas de generación de juego y empujan constantemente hacia el área rival. La red de pases confirma esa idea de equipo con el balón: hay una enorme concentración de circulación entre Kimmich, Kroos, Tah y Rüdiger, quienes conectan con jugadores de banda y ataque como Wirtz, Musiala, Groß, Gündoğan, Sané, Havertz y Müller. Es una estructura muy vertical y conectada, propia de un equipo que progresa el balón con criterio.</p>
+<p>El mapa de amenaza esperada (xT) refuerza esto: la mayor generación de peligro aparece concentrada en el último tercio, sobre todo por el costado derecho del ataque, zona desde la que parecen llegar las jugadas más peligrosas. El mapa defensivo es otro punto fuerte: las acciones de presión, recuperación e intercepción están distribuidas por todo el campo, incluso muy adelantadas, señal de un bloque que presiona alto y recupera rápido tras pérdida. El mapa de conducciones progresivas es abrumador en volumen, con decenas de carreras de más de 10 metros que llevan el balón hacia el último tercio, especialmente del centro hacia la derecha.</p>
+<p>En cuanto a finalización, el mapa de tiros y asistencias muestra 84 disparos y 11 goles, con un volumen de remates altísimo concentrado dentro y cerca del área pequeña, además de varias asistencias que llegan desde banda derecha y desde el medio campo.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇨🇼 Curazao: Análisis Táctico</h2>
+<p>El mapa de calor de Curazao cuenta otra historia: la actividad se concentra mucho más en su propio campo y en zonas intermedias, con muy poca presencia en el último tercio rival, lo que sugiere un equipo que pasa gran parte del partido replegado. La red de pases es reveladora por su simplicidad: prácticamente todo pasa por el portero (Boom) lanzando balones largos hacia un grupo reducido de jugadores ofensivos (Bacuna, Janga, Galida), sin apenas circulación intermedia. Es un patrón típico de equipo que renuncia a construir desde atrás y busca el juego directo o las transiciones rápidas.</p>
+<p>El mapa de xT de Curazao muestra muy poca generación de peligro sostenida, salvo un par de zonas puntuales con valores altos —probablemente acciones aisladas de mucho impacto— rodeadas de un mar de celdas prácticamente sin actividad. El mapa defensivo confirma el bloque bajo: la inmensa mayoría de presiones, duelos, entradas e intercepciones ocurren en su propio tercio defensivo y zona central baja, con muy poca actividad en campo rival, y se observan también varias faltas cometidas en zonas peligrosas.</p>
+<p>Lo más llamativo es el mapa de tiros: 83 disparos y 13 goles, una efectividad de conversión incluso superior a la de Alemania (cerca del 15-16% frente al 13% alemán). Esto sugiere que, aunque generan menos volumen de juego elaborado, cuando consiguen llegar al área lo aprovechan bien, incluyendo algún gol desde fuera del área.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<h3>Ventajas y Desventajas</h3>
+<ul>
+<li><strong>A favor de Alemania:</strong> Control absoluto del balón, presión coordinada en todo el campo, calidad individual en el último tercio y gran volumen de llegada.</li>
+<li><strong>En contra de Alemania:</strong> El mapa defensivo muestra acciones muy adelantadas y poca actividad en su propio tercio, lo que podría indicar una línea alta vulnerable a balones en profundidad si Curazao logra robar y salir rápido.</li>
+<li><strong>A favor de Curazao:</strong> Orden y compactación defensiva, disciplina posicional en bloque bajo, y una notable eficacia de cara a gol cuando llegan con peligro real.</li>
+<li><strong>En contra de Curazao:</strong> Dependencia casi total del juego largo desde el portero, escasa circulación de balón, nula presencia ofensiva sostenida en campo rival y faltas cometidas en zonas que pueden dar balones parados peligrosos al rival.</li>
+</ul>
+<h3>Qué podría hacer cada equipo</h3>
+<ul>
+<li><strong>Alemania</strong> debería seguir explotando su dominio por banda derecha (de donde sale buena parte de su xT y asistencias), mantener la presión alta para evitar que Curazao ejecute sus pocas transiciones largas con espacio, y sobre todo mejorar la definición: con 84 disparos para 11 goles hay margen para ser más letales. También conviene vigilar el espacio a la espalda de la defensa, dado lo adelantado de sus acciones defensivas.</li>
+<li><strong>Curazao</strong> tiene pocas opciones realistas de igualar la posesión, así que su mejor plan pasa por mantener el bloque bajo muy junto, evitar las faltas en el borde del área (donde Alemania es letal con balón parado y en el área pequeña), y apostar todo a la transición directa desde Boom hacia Bacuna y Janga, aprovechando cualquier mala salida del bloque alemán. Su buena conversión de tiros indica que, si logran una o dos llegadas claras, tienen capacidad de hacer daño puntual, aunque sostener eso durante 90 minutos contra un rival de este nivel es muy difícil.</li>
+</ul>
+<p>En síntesis, todo apunta a una victoria clara de Alemania por volumen de juego, control y llegada, con Curazao limitado a defender con orden y esperar contadas oportunidades a la contra o de balón parado.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_MapaDefensivo_horizontal_20260614.png" alt="Mapa Defensivo (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Curazao)</h4>
+                      <img src="../assets/Analisis_Curazao_MapaDefensivo_Equipo_Completo_horizontal_20260614.png" alt="Mapa Defensivo (Curazao)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_ExpectedThreatxT_horizontal_20260614.png" alt="Amenaza Esperada xT (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Curazao)</h4>
+                      <img src="../assets/Analisis_Curazao_ExpectedThreatxT_Equipo_Completo_horizontal_20260614.png" alt="Amenaza Esperada xT (Curazao)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_MapadeCalor_horizontal_20260614.png" alt="Mapa de Calor (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Curazao)</h4>
+                      <img src="../assets/Analisis_Curazao_MapadeCalor_Equipo_Completo_horizontal_20260614.png" alt="Mapa de Calor (Curazao)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Alemania)</h4>
+                      <img src="../assets/ShotMap_Alemania_horizontal_20260614.png" alt="Mapa de Tiros (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Curazao)</h4>
+                      <img src="../assets/ShotMap_Curazao_horizontal_20260614.png" alt="Mapa de Tiros (Curazao)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_ReddePases_horizontal_20260614.png" alt="Red de Pases (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Curazao)</h4>
+                      <img src="../assets/Analisis_Curazao_ReddePases_Equipo_Completo_horizontal_20260614.png" alt="Red de Pases (Curazao)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_ConduccionesProgresivas_horizontal_20260614.png" alt="Conducciones Progresivas (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Curazao)</h4>
+                      <img src="../assets/Analisis_Curazao_ConduccionesProgresivas_Equipo_Completo_horizontal_20260614.png" alt="Conducciones Progresivas (Curazao)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_MapadeAsistencias_horizontal_20260614.png" alt="Mapa de Asistencias (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Curazao)</h4>
+                      <img src="../assets/Analisis_Curazao_MapadeAsistencias_Equipo_Completo_horizontal_20260614.png" alt="Mapa de Asistencias (Curazao)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
