@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Países Bajos vs Japón: Pulso Táctico en el Grupo F // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Países Bajos vs Japón del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_f.html" class="back-link">← Volver al Grupo F</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo F</span>
+    <h2>Países Bajos vs Japón</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-14 · 🕒 15:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team">Países Bajos</div>
+      <div style="display:flex; flex-direction:column; align-items:center;">
+        <div class="score-box">2 - 1</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team">Japón</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <p>Este enfrentamiento es más parejo de lo que parece a primera vista, aunque los datos inclinan la balanza ligeramente hacia Países Bajos por volumen ofensivo y profundidad de plantilla.</p>
+<h2>🇳🇱 Países Bajos: Análisis Táctico</h2>
+<p>El mapa de calor neerlandés muestra un control de juego muy amplio: dominan prácticamente todo el campo, con una presencia especialmente fuerte en su lado izquierdo de ataque (zona donde se concentra el área rival en la visualización), además de mantener buena ocupación en ambas bandas y en el medio campo. La red de pases revela una estructura de construcción muy sólida desde atrás, con Van Dijk, Aké y Verbruggen iniciando la circulación, Reijnders y Schouten/Veerman como motores en el medio, y conexiones constantes hacia Simons, Gakpo, Depay, Dumfries y Malen en ataque. Es un equipo que progresa el balón de forma colectiva y con mucha gente involucrada en la creación.</p>
+<p>El mapa de amenaza esperada confirma que generan peligro de forma distribuida por todo el último tercio, con un punto de generación muy alto en una zona intermedia del campo (probablemente fruto de una jugada de banda o un pase filtrado clave) y otro foco muy intenso cerca del borde del área, lo que sugiere llegadas frecuentes con calidad en los metros finales. El mapa de conducciones progresivas es masivo: decenas de carreras con balón que atraviesan el centro y llegan al último tercio, mostrando un equipo muy vertical una vez recuperan la posesión.</p>
+<p>En defensa, el mapa de acciones muestra una presión intensísima y muy bien distribuida por todo el campo, lo que indica que no solo atacan bien, sino que también presionan de forma coordinada para recuperar rápido. En cuanto a definición, acumulan 74 disparos y 9 goles (alrededor de 12% de conversión), con los remates concentrados dentro y cerca del área pequeña, además de un gol llamativo desde fuera del área.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇯🇵 Japón: Análisis Táctico</h2>
+<p>El mapa de calor japonés cuenta una historia distinta: su actividad se concentra mucho más en su propio campo y en el medio campo, con dos núcleos de ocupación bien marcados en zonas intermedias, pero con menos presencia sostenida en el último tercio rival. Esto sugiere un equipo que prioriza el orden y la salida controlada desde atrás antes que el dominio territorial puro.</p>
+<p>La red de pases muestra una estructura compacta con Gonda, Yoshida, Tomiyasu y Taniguchi como base, Morita, Endo y Kamada como enlaces centrales, y salidas hacia Doan e Ito en ataque. Sin embargo, se nota que jugadores ofensivos como Mitoma, Minamino y Maeda aparecen bastante desconectados del resto, con muy pocas conexiones, lo que indica que el ataque japonés depende mucho de transiciones puntuales y menos de una construcción colectiva sostenida.</p>
+<p>El mapa de xT japonés muestra una generación de peligro más concentrada en zonas puntuales cerca del área, destacando una celda con un valor de amenaza muy elevado, posiblemente fruto de una jugada decisiva específica. El mapa defensivo japonés es comparable en intensidad al neerlandés: mucha presión y recuperaciones distribuidas por todo el campo, lo que confirma su reputación de equipo muy trabajador y agresivo sin balón. En definición, con 42 disparos y 6 goles, su tasa de conversión (cerca del 14%) es incluso superior a la de Países Bajos, con los remates muy concentrados cerca del punto de penalti y el área pequeña.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<h3>Ventajas y Desventajas</h3>
+<ul>
+<li><strong>A favor de Países Bajos:</strong> Mayor volumen de juego, más llegadas al área, una red de pases más conectada y profunda, y una presión muy intensa en todo el campo.</li>
+<li><strong>En contra de Países Bajos:</strong> Su tasa de conversión no es espectacular (12%), por lo que dejan escapar ocasiones, y su línea defensiva participa activamente en zonas altas, lo que podría dejar espacios a la espalda ante transiciones rápidas.</li>
+<li><strong>A favor de Japón:</strong> Una eficacia de cara a gol notable, una presión muy alta y organizada que puede incomodar a cualquier rival (algo que ya demostraron históricamente ante selecciones top), y capacidad de generar peligro puntual con pocas transiciones bien ejecutadas.</li>
+<li><strong>En contra de Japón:</strong> Menor presencia territorial en el último tercio, una desconexión visible entre el bloque medio y algunos atacantes en banda, y un volumen de disparos mucho menor, lo que limita sus opciones si el partido se cierra.</li>
+</ul>
+<h3>Qué podría hacer cada equipo</h3>
+<ul>
+<li><strong>Países Bajos</strong> debería aprovechar su superioridad numérica y posicional en el medio campo para generar superioridades constantes por banda, especialmente explotando los carriles donde aparecen Dumfries y Gakpo, y trabajar en mejorar la definición dentro del área, ya que con el volumen de tiros que generan, una mejora en la conversión los haría prácticamente imparables. También deberían tener cuidado con dejar espacios a la espalda de su línea alta, algo que Japón podría aprovechar con su presión y transiciones rápidas.</li>
+<li><strong>Japón</strong>, por su parte, tiene que apostar por lo que mejor le ha funcionado: un bloque compacto y una presión asfixiante para robar el balón en zonas altas, seguido de ataques rápidos y directos hacia el área, buscando conectar mejor a sus extremos (Mitoma, Doan) con el resto del equipo para no depender solo de acciones aisladas. Dada su buena efectividad goleadora, generar pocas pero claras ocasiones podría ser suficiente para inclinar un partido cerrado a su favor, especialmente si logran sorprender con un gol temprano que obligue a Países Bajos a abrirse más.</li>
+</ul>
+<p>En resumen, Países Bajos parte como favorito por volumen, profundidad de plantilla y dominio territorial, pero Japón representa el tipo de rival incómodo que, con su presión y eficacia, podría dar la sorpresa si consigue mantener el partido ajustado y aprovechar sus pocas ocasiones con la contundencia que ya han mostrado.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Países Bajos)</h4>
+                      <img src="../assets/Analisis_Países Bajos_MapaDefensivo_horizontal_20260614.png" alt="Mapa Defensivo (Países Bajos)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Japón)</h4>
+                      <img src="../assets/Analisis_Japón_MapaDefensivo_horizontal_20260614.png" alt="Mapa Defensivo (Japón)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Países Bajos)</h4>
+                      <img src="../assets/Analisis_Países Bajos_ExpectedThreatxT_horizontal_20260614.png" alt="Amenaza Esperada xT (Países Bajos)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Japón)</h4>
+                      <img src="../assets/Analisis_Japón_ExpectedThreatxT_horizontal_20260614.png" alt="Amenaza Esperada xT (Japón)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Países Bajos)</h4>
+                      <img src="../assets/Analisis_Países Bajos_MapadeCalor_horizontal_20260614.png" alt="Mapa de Calor (Países Bajos)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Japón)</h4>
+                      <img src="../assets/Analisis_Japón_MapadeCalor_horizontal_20260614.png" alt="Mapa de Calor (Japón)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Países Bajos)</h4>
+                      <img src="../assets/ShotMap_Países Bajos_horizontal_20260614.png" alt="Mapa de Tiros (Países Bajos)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Japón)</h4>
+                      <img src="../assets/ShotMap_Japón_horizontal_20260614.png" alt="Mapa de Tiros (Japón)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Países Bajos)</h4>
+                      <img src="../assets/Analisis_Países Bajos_ReddePases_horizontal_20260614.png" alt="Red de Pases (Países Bajos)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Japón)</h4>
+                      <img src="../assets/Analisis_Japón_ReddePases_horizontal_20260614.png" alt="Red de Pases (Japón)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Países Bajos)</h4>
+                      <img src="../assets/Analisis_Países Bajos_ConduccionesProgresivas_horizontal_20260614.png" alt="Conducciones Progresivas (Países Bajos)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Japón)</h4>
+                      <img src="../assets/Analisis_Japón_ConduccionesProgresivas_horizontal_20260614.png" alt="Conducciones Progresivas (Japón)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Países Bajos)</h4>
+                      <img src="../assets/Analisis_Países Bajos_MapadeAsistencias_horizontal_20260614.png" alt="Mapa de Asistencias (Países Bajos)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Japón)</h4>
+                      <img src="../assets/Analisis_Japón_MapadeAsistencias_horizontal_20260614.png" alt="Mapa de Asistencias (Japón)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
