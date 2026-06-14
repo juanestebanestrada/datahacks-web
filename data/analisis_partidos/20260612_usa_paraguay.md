@@ -70,3 +70,14 @@ poisson: "42-32-26"
 Será un encuentro de alta intensidad física y táctica. **Estados Unidos parte como favorito moderado** debido a que dispone de una estructura colectiva más equilibrada, mayor volumen en conducciones progresivas y un pressing medio-alto muy coordinado capaz de asfixiar la gestación paraguaya. 
 
 Sin embargo, Paraguay es un rival sumamente peligroso que sabe replegarse y golpear con contundencia a través de su autopista por la banda derecha (xT local de 0.60). Si Paraguay logra replegarse de forma sólida y marcar primero en un contragolpe rápido, el partido se le complicará a los norteamericanos. El escenario más probable de acuerdo con los datos es un triunfo ajustado de USA por 2-1 o 1-0, apoyado en su mayor variedad de rutas de ataque.
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: USA 4 - 1 Paraguay)
+Estados Unidos inició su Copa del Mundo con una contundente victoria de 4-1 frente a Paraguay. La intensidad ofensiva de los norteamericanos desarmó rápidamente la propuesta de fricción defensiva del cuadro guaraní. Con transiciones demoledoras y un juego asociativo de gran nivel en el último tercio, el equipo estadounidense deleitó a su afición y demostró su candidatura a liderar el Grupo D.
+
+### 🔮 Impacto en el Grupo D y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Estados Unidos lidera el grupo con una diferencia de goles muy favorable (+3). Sus valores de probabilidad de victoria se incrementan para los próximos compromisos.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **USA vs Australia:** Un partido decisivo para asegurar el liderato. El modelo Poisson bivariado le otorga a Estados Unidos un **56% de probabilidad de triunfo** ante la férrea defensa australiana.
+  * **Turquía vs Paraguay:** Duelo clave por la supervivencia. Turquía parte como favorita con un **50% de probabilidad de ganar** frente a una Paraguay necesitada de ajustar su bloque defensivo.

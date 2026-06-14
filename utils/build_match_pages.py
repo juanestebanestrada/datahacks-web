@@ -425,6 +425,56 @@ def build_all_pages():
             
             body_html = md_to_html(body)
             
+            # Reubicar clasificación de predicción en el análisis posterior (dentro del cuerpo)
+            if is_finished:
+                pred_status = "miss"
+                try:
+                    p_clean = pronostico_val.replace(' ', '')
+                    r_clean = f"{goles_home}-{goles_away}".replace(' ', '')
+                    if p_clean == r_clean:
+                        pred_status = "exact"
+                    else:
+                        p_parts = p_clean.split('-')
+                        r_parts = r_clean.split('-')
+                        if len(p_parts) == 2 and len(r_parts) == 2:
+                            p_home, p_away = int(p_parts[0]), int(p_parts[1])
+                            r_home, r_away = int(r_parts[0]), int(r_parts[1])
+                            p_diff = p_home - p_away
+                            r_diff = r_home - r_away
+                            if (p_diff > 0 and r_diff > 0) or (p_diff < 0 and r_diff < 0) or (p_diff == 0 and r_diff == 0):
+                                pred_status = "tendency"
+                except Exception:
+                    pass
+                
+                if pred_status == "exact":
+                    label = "🎯 PREDICCIÓN EXACTA"
+                    color = "#00e676"
+                    bg = "rgba(0, 230, 118, 0.1)"
+                    border = "rgba(0, 230, 118, 0.25)"
+                elif pred_status == "tendency":
+                    label = "🔮 GANADOR ACERTADO"
+                    color = "#ffb300"
+                    bg = "rgba(255, 179, 0, 0.1)"
+                    border = "rgba(255, 179, 0, 0.25)"
+                else:
+                    label = "❌ PREDICCIÓN FALLIDA"
+                    color = "#ff4b4b"
+                    bg = "rgba(255, 75, 75, 0.1)"
+                    border = "rgba(255, 75, 75, 0.25)"
+                
+                prediction_result_html = f"""
+                <div style="margin: 16px 0; padding: 12px 16px; border-radius: 8px; background: {bg}; border: 1px solid {border}; display: inline-flex; align-items: center; gap: 8px; color: {color}; font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px;">
+                  {label}
+                </div>
+                """
+                
+                # Inyectar inmediatamente después del encabezado de análisis posterior
+                heading_pattern = r'(<h2>📝 Crónica y Análisis Posterior \(Post-Partido\)</h2>)'
+                if re.search(heading_pattern, body_html):
+                    body_html = re.sub(heading_pattern, r'\1\n' + prediction_result_html, body_html)
+                else:
+                    body_html = re.sub(r'(<h2>.*?Crónica.*?</h2>)', r'\1\n' + prediction_result_html, body_html)
+            
             # Determinar qué marcador mostrar (Real o Proyectado)
             if is_finished:
                 display_score = f"{goles_home} - {goles_away}"
@@ -704,45 +754,18 @@ def build_all_pages():
             except Exception as e:
                 pass
 
-            if pred_status == "exact":
-                score_display_html = f"""
-                <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);" title="Predicción Exacta">
-                  {real_score}
-                </div>
-                """
-                prediction_badge = f"""
-                <span style="background: rgba(0, 230, 118, 0.1); color: var(--green); border: 1px solid rgba(0, 230, 118, 0.25); padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; font-family: var(--font-head); letter-spacing: 0.5px;">🎯 EXACTO</span>
-                """
-            elif pred_status == "tendency":
-                score_display_html = f"""
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                  <div style="position: relative; font-size: 0.8rem; color: rgba(255,255,255,0.4);" title="Predicción de marcador incorrecta pero ganador acertado">
-                    <span>{pronostico}</span>
-                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,179,0,0.85); font-size: 1.2rem; font-weight: 900;">✗</span>
-                  </div>
-                  <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
-                    {real_score}
-                  </div>
-                </div>
-                """
-                prediction_badge = f"""
-                <span style="background: rgba(255, 179, 0, 0.1); color: #ffb300; border: 1px solid rgba(255, 179, 0, 0.25); padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; font-family: var(--font-head); letter-spacing: 0.5px;">🔮 GANADOR</span>
-                """
-            else:
-                score_display_html = f"""
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                  <div style="position: relative; font-size: 0.8rem; color: rgba(255,255,255,0.4);" title="Predicción incorrecta">
-                    <span>{pronostico}</span>
-                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,75,75,0.85); font-size: 1.2rem; font-weight: 900;">✗</span>
-                  </div>
-                  <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--green); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);">
-                    {real_score}
-                  </div>
-                </div>
-                """
-                prediction_badge = f"""
-                <span style="background: rgba(255, 75, 75, 0.1); color: #ff4b4b; border: 1px solid rgba(255, 75, 75, 0.25); padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; font-family: var(--font-head); letter-spacing: 0.5px;">❌ FALLIDO</span>
-                """
+            # Mostrar marcador predicho y real de forma sencilla sin cruces ni badges
+            score_display_html = f"""
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+              <div style="font-size: 0.75rem; color: rgba(255,255,255,0.4);" title="Pronóstico del partido">
+                Predicho: {pronostico}
+              </div>
+              <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--cyan); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);" title="Resultado Real">
+                {real_score}
+              </div>
+            </div>
+            """
+            prediction_badge = ""
             
             card_hist_html = f"""
       <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">

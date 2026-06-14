@@ -50,3 +50,14 @@ El escenario del encuentro se presenta como un claro choque de estilos: el bloqu
 Mientras Suiza monopolizará el territorio (mapa de calor concentrado en campo contrario) y el volumen ofensivo con llegadas organizadas, Qatar buscará resistir el asedio helvético e intentará capitalizar alguna transición rápida, especialmente por el sector izquierdo. 
 
 La enorme diferencia en calidad de oportunidades y volumen de ataque sugiere un claro favoritismo para el equipo europeo. **El modelo predictivo coincide con el análisis cualitativo y proyecta un triunfo de Suiza (0-2)**, imponiendo su ritmo frente a una escuadra qatarí que limitará sus opciones a defender cerca de su propia área.
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Qatar 1 - 1 Suiza)
+En uno de los partidos más vibrantes de la jornada, Qatar logró un agónico empate 1-1 frente a Suiza. Los helvéticos tomaron la iniciativa y generaron múltiples ocasiones a través de su juego ordenado, pero la falta de contundencia y un penal bien ejecutado por Embolo no fueron suficientes. En los últimos minutos, el conjunto qatarí aprovechó una jugada a balón parado para sellar la igualdad y desatar la alegría local.
+
+### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Este empate altera de forma sustancial las proyecciones iniciales del Grupo B. La ineficacia ofensiva suiza reajusta sus probabilidades de clasificación.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Suiza vs Bosnia:** Partido sin margen de error para los suizos, quienes tendrán un duelo sumamente disputado ante Bosnia (probabilidad de victoria de Suiza ajustada al **48%**).
+  * **Qatar vs Canadá:** Qatar buscará aprovechar el envión anímico frente a la velocidad de Canadá, proyectando un partido reñido con ventaja para los norteamericanos (**45%**).

@@ -51,3 +51,14 @@ Mientras Escocia intentará adueñarse de la posesión, construyendo mediante el
 A pesar de que Escocia cuenta con mayor organización colectiva y experiencia ante rivales de gran jerarquía, su alarmante carencia de profundidad y pegada ofensiva la vuelve vulnerable frente a la tremenda capacidad goleadora haitiana. 
 
 El modelo proyecta que la verticalidad de Haití logrará explotar las espaldas escocesas. **El pronóstico más probable es Haití 2 - Escocia 1**, anticipando un duelo donde los europeos competirán firmemente pero terminarán sufriendo las veloces transiciones caribeñas.
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Haití 0 - 1 Escocia)
+Escocia derrotó por la mínima diferencia (1-0) a Haití gracias a un planteamiento táctico sumamente disciplinado. El bloque medio-alto planteado por Steve Clarke anuló con éxito las transiciones rápidas y los pases profundos del conjunto caribeño hacia sus referentes de ataque. Robertson comandó las proyecciones por el costado izquierdo y los europeos supieron cuidar la ventaja para llevarse el triunfo.
+
+### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Con esta victoria, Escocia se posiciona como el sorpresivo líder en solitario del Grupo C con 3 unidades. Su solidez táctica de cara a los octavos de final mejora sustancialmente.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Brasil vs Escocia:** Un reto inmenso para Escocia, que buscará un bloque defensivo extremo ante un Brasil obligado a ganar.
+  * **Marruecos vs Haití:** La urgencia absoluta de sumar forzará a Haití a dejar espacios que la rápida transición de Marruecos intentará capitalizar.

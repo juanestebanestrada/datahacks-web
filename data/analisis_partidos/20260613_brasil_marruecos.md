@@ -52,3 +52,14 @@ Mientras Brasil dominará la posesión y atacará por ambos flancos con conducci
 El partido se prevé muy cerrado y táctico. Brasil parte con una ligera ventaja gracias a su capacidad de presionar alto y sus variadas vías de gol, pero Marruecos tiene el diseño perfecto para neutralizar a selecciones de alto dominio territorial y castigar los espacios.
 
 **El pronóstico apunta a una victoria ajustada: Brasil 2 - Marruecos 1**, en un choque que podría definirse en los últimos minutos o a través de jugadas a balón parado.
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Brasil 1 - 1 Marruecos)
+Brasil y Marruecos protagonizaron un intenso duelo táctico que finalizó 1-1. La escuadra sudamericana controló la posesión y buscó hacer daño mediante conducciones ofensivas por las bandas, pero se topó con el inexpugnable bloque defensivo marroquí, liderado de gran manera por Sofyan Amrabat. Los africanos limitaron el xG brasileño y lograron asustar al contragolpe para rescatar un valioso punto.
+
+### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** La paridad deja a ambos con 1 punto por detrás del líder provisional Escocia. La solidez defensiva de Marruecos recalibra sus expectativas para avanzar de ronda.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Brasil vs Escocia:** Obligación para el pentacampeón, cuyas probabilidades de victoria ante el bloque ordenado escocés se ajustan al **54%**.
+  * **Marruecos vs Haití:** Con el punto sumado, Marruecos parte como favorito con un **58% de probabilidad de triunfo** ante un necesitado Haití.

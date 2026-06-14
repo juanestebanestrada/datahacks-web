@@ -65,3 +65,13 @@ El partido se define por un choque directo de propuestas: **la banda derecha de 
 
 La capacidad de México para presionar alto y recuperar balones en campo contrario probablemente penalice el estilo asociativo y pausado de Sudáfrica en salida. Si México logra corregir ligeramente su mala efectividad de cara al arco, la cantidad de peligro acumulado por su costado derecho debería ser suficiente para inclinar la balanza a su favor.
 
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: México 2 - 0 Sudáfrica)
+En un emocionante debut mundialista, México logró imponerse por 2-0 ante Sudáfrica. El equipo dirigido por Jaime Lozano hizo valer su localía y su asfixiante presión alta para forzar errores en la salida de los "Bafana Bafana". Aunque la falta de contundencia volvió a ser evidente, la insistencia y velocidad por las bandas permitieron abrir el marcador. Sudáfrica intentó reaccionar a través del circuito liderado por Modiba en la banda izquierda, pero la sólida zaga mexicana neutralizó las aproximaciones para sellar los tres primeros puntos del torneo.
+
+### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Tras la victoria, México se posiciona firmemente en el liderato del Grupo A. El modelo Poisson bivariado incrementa las métricas de expectativa ofensiva (xG) para México de cara a la segunda fecha.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **México vs Corea del Sur:** Duelo clave para encaminar la clasificación. El modelo predictivo proyecta un escenario de alta intensidad donde México parte como favorito con un **52% de probabilidad de triunfo**, debiendo cuidar la velocidad en transición de los asiáticos.
+  * **Rep. Checa vs Sudáfrica:** Ambos necesitados de sumar. Los checos son ligeros favoritos con un **45% de probabilidad de victoria** ante un conjunto sudafricano que debe corregir los espacios dejados a la espalda de sus laterales.

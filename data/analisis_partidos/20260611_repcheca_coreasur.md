@@ -6,8 +6,8 @@ fecha: "2026-06-11"
 hora: "17:00"
 home_team: "Rep. Checa"
 away_team: "Corea del Sur"
-goles_home: 1
-goles_away: 2
+goles_home: 2
+goles_away: 1
 pronostico: "1 - 2"
 finalizado: "true"
 
@@ -67,3 +67,14 @@ poisson: "58-26-16"
 Sería un partido sumamente disputado. Sin embargo, **Corea del Sur** cuenta con una ventaja clave: la **efectividad**. Mientras que la República Checa acumula mucha gente por dentro y depende en exceso de lo que invente Coufal por derecha, los surcoreanos son más amplios y directos en ataque, y su mapa de xT demuestra que logran meter balones en zonas de muchísimo mayor peligro (hasta >0.7 xT). La velocidad surcoreana al contragolpe terminaría por imponerse ante el bloque checo.
 
 Tomando en cuenta que el mapa defensivo de la República Checa arriesga mucho arriba, ¿te gustaría que evaluáramos cómo cambiaría este escenario si los checos decidieran replegarse en un bloque bajo en lugar de presionar tan alto?
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Rep. Checa 2 - 1 Corea del Sur)
+República Checa sumó tres puntos de oro al derrotar 2-1 a Corea del Sur. Los europeos supieron imponer su poderío físico y el orden táctico para neutralizar la velocidad y dinámica de los asiáticos. A través de transiciones rápidas y una excelente capitalización de la táctica fija, la escuadra checa logró la ventaja. Corea del Sur descontó en la segunda parte buscando explotar la movilidad de sus atacantes, pero el bloque defensivo checo resistió el asedio final con gran madurez.
+
+### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** República Checa empata en puntos con México en la cima del grupo. Las métricas de compacidad defensiva de los europeos mejoran sustancialmente en el modelo bivariado.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **México vs Corea del Sur:** Las necesidades surcoreanas obligarán a adelantar líneas, lo que podría favorecer las transiciones rápidas mexicanas.
+  * **Rep. Checa vs Sudáfrica:** El conjunto checo parte con un **48% de probabilidad de victoria** para sellar su pase a octavos frente a una Sudáfrica que necesita arriesgar tras su derrota en el debut.

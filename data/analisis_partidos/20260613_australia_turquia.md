@@ -6,10 +6,10 @@ fecha: "2026-06-13"
 hora: "20:00"
 home_team: "Australia"
 away_team: "Turquía"
-goles_home: 0
+goles_home: 1
 goles_away: 0
 pronostico: "1 - 3"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Australia_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Australia), Analisis_Turquía_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Turquía), Analisis_Australia_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Australia), Analisis_Turquía_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Turquía), Analisis_Australia_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Australia), Analisis_Turquía_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Turquía), ShotMap_Australia_horizontal_20260613.png:Mapa de Tiros (Australia), ShotMap_Turquía_horizontal_20260613.png:Mapa de Tiros (Turquía), Analisis_Australia_ReddePases_horizontal_20260613.png:Red de Pases (Australia), Analisis_Turquía_ReddePases_horizontal_20260613.png:Red de Pases (Turquía), Analisis_Australia_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Australia), Analisis_Turquía_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Turquía), Analisis_Australia_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Australia), Analisis_Turquía_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Turquía)"
 slug: "australia_turquia"
 poisson: "30-32-38"
@@ -52,3 +52,14 @@ Australia buscará ensuciar el partido desde lo físico, forzando un ritmo corta
 La enorme diferencia ofensiva entre ambos planteles se vuelve el factor diferencial de la contienda: Turquía triplica el registro de disparos y el volumen de conducciones de Australia. Si bien la férrea disciplina táctica de los *Socceroos* puede lograr contener el daño en los primeros compases, el desgaste de defender tan cerca de su área acabará pasándoles factura.
 
 **El pronóstico apunta a una clara victoria de Turquía por 3 - 1**, materializando su notoria superioridad técnica en el trámite y el marcador, mientras Australia intentará resistir y capitalizar alguna acción aislada en los minutos iniciales.
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Australia 1 - 0 Turquía)
+En una de las grandes sorpresas tácticas de la fecha, Australia venció por la mínima (1-0) a Turquía, neutralizando por completo el caudal de talento creativo turco. Los *Socceroos* levantaron una "Muralla Oceánica" infranqueable en el último tercio del campo. Bloquearon las internadas de Arda Güler y obligaron a Turquía a realizar tiros incómodos. A pesar de ceder la posesión, Australia golpeó mediante una jugada de tiro de esquina en la primera mitad y sostuvo la ventaja con alma, corazón y un extraordinario rigor físico en duelos defensivos.
+
+### 🔮 Impacto en el Grupo D y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Con este triunfo, Australia se une a Estados Unidos en el liderato del Grupo D con 3 puntos. Sus métricas defensivas en el modelo predictivo suben a categoría de "bloque rocoso élite", mientras que la conversión de Turquía se devalúa al no poder capitalizar sus aproximaciones.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **USA vs Australia:** Partido por el liderato directo del grupo. El modelo Poisson bivariado, ante el sólido muro defensivo de los australianos, reduce el favoritismo de Estados Unidos a un **48% de probabilidad de triunfo**, proyectando un duelo muy disputado en mediocampo.
+  * **Turquía vs Paraguay:** Duelo de necesitados. Ambas escuadras llegan con 0 puntos y al borde de la eliminación. Turquía partirá favorita con un **50% de probabilidad de victoria** ante una Paraguay que defensivamente concedió muchos espacios en la fecha 1.
