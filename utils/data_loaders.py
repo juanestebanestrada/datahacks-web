@@ -121,7 +121,12 @@ def cargar_tiros_fotmob(team_id: int):
     """Carga tiros de FotMob (últimos 10 partidos). TTL: 30 min."""
     try:
         fotmob = FotMob()
-        data = fotmob.fotmob_request(f'teams?id={team_id}').json()
+        res = fotmob.fotmob_request(f'teams?id={team_id}')
+        if res is None:
+            return None, "Error de respuesta de FotMob (None)."
+        data = res.json()
+        if not data:
+            return None, "No se encontraron datos en FotMob."
         fixtures_data = data.get('fixtures', {}).get('allFixtures', {}).get('fixtures', [])
         resultados = [f for f in fixtures_data if f.get('status', {}).get('finished')]
 
@@ -167,7 +172,10 @@ def cargar_tiros_sofascore(team_id: int):
     try:
         ss = SofaScore()
         res = ss.sofascore_request(f'https://api.sofascore.com/api/v1/team/{team_id}/events/last/0')
-        events = res.json().get('events', [])
+        if res is None:
+            return pd.DataFrame(), "Error de respuesta de SofaScore (None)."
+        # En LanusStats, sofascore_request devuelve directamente un dict (JSON decodificado)
+        events = res.get('events', []) if isinstance(res, dict) else res.json().get('events', [])
 
         lista_tiros = []
         for event in events[:5]:
@@ -554,7 +562,8 @@ def _intentar_cargar_tiros_fuente(fuente: str, pais: str, cfg: dict):
             return cargar_tiros(sb_name, comp_id, seas_id)
             
         elif fuente == 'fotmob':
-            team_id = cfg.get('team_id')
+            # Solo usar team_id de la configuración si la fuente principal es fotmob
+            team_id = cfg.get('team_id') if cfg.get('fuente') == 'fotmob' else None
             if not team_id:
                 team_id = FOTMOB_FALLBACK_IDS.get(pais)
             if not team_id:
@@ -562,13 +571,15 @@ def _intentar_cargar_tiros_fuente(fuente: str, pais: str, cfg: dict):
             return cargar_tiros_fotmob(team_id)
             
         elif fuente == 'sofascore':
-            team_id = cfg.get('team_id')
+            # Solo usar team_id de la configuración si la fuente principal es sofascore
+            team_id = cfg.get('team_id') if cfg.get('fuente') == 'sofascore' else None
             if not team_id:
                 return None, "No hay ID de SofaScore."
             return cargar_tiros_sofascore(team_id)
             
         elif fuente == '365scores':
-            team_id = cfg.get('team_id')
+            # Solo usar team_id de la configuración si la fuente principal es 365scores
+            team_id = cfg.get('team_id') if cfg.get('fuente') == '365scores' else None
             if not team_id:
                 return None, "No hay ID de 365Scores."
             return cargar_tiros_365scores(team_id)
