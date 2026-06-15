@@ -50,3 +50,17 @@ El mapa de amenaza esperada de Ecuador muestra focos de peligro muy puntuales, c
 * **Ecuador**, por su parte, necesita ser muy disciplinado defensivamente, mantener líneas compactas para no permitir que Costa de Marfil circule con comodidad en el último tercio, y buscar aprovechar al máximo las pocas transiciones que consiga, apuntando a las zonas donde históricamente generan más amenaza. Dado que su conversión de tiros es decente, concentrar sus esfuerzos en pocas pero claras ocasiones, posiblemente desde banda o mediante balones largos hacia espacios dejados por la línea alta marfileña, podría ser su mejor vía para sorprender.
 
 En conjunto, los datos apuntan a una victoria de Costa de Marfil por volumen, dominio y eficacia, aunque Ecuador tiene el perfil de un rival que puede hacer un partido cerrado si logra mantener el orden defensivo y capitalizar sus pocas oportunidades.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Costa de Marfil 1 - 0 Ecuador)
+Costa de Marfil se llevó una ajustada victoria por 1-0 ante Ecuador gracias a su intensidad física y dominio territorial en el último tercio del campo. El bloque alto marfileño asfixió la salida de Ecuador, cortando la conexión de Corozo e impidiendo que los sudamericanos progresaran con claridad. Aunque la defensa de Ecuador se plantó con firmeza y orden en propio campo con un bloque bajo rocoso, la falta de fluidez en la medular y la escasa presencia ofensiva impidieron inquietar al guardameta africano. Un zarpazo marfileño por el sector derecho de su ataque (donde se concentró su mayor xT en la previa) bastó para marcar la diferencia definitiva.
+
+### 🔮 Impacto en el Grupo E y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Con este triunfo de 1-0, Costa de Marfil iguala a Alemania con 3 puntos en el Grupo E, aunque con menor diferencia de goles. Las métricas de presión tras pérdida marfileña aumentan su valor, mientras que el volumen ofensivo de Ecuador sufre una ligera penalización.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Alemania vs Costa de Marfil:** Choque directo por el primer lugar de la zona. Alemania parte como favorita en el modelo con un **52% de probabilidad de victoria**, pero la intensidad defensiva y la velocidad por bandas de "Los Elefantes" representan un obstáculo mayúsculo.
+  * **Ecuador vs Curazao:** Duelo de necesitados en el que el combinado ecuatoriano está obligado a sumar de a tres. El modelo Poisson bivariado le otorga a Ecuador un **64% de probabilidad de triunfo** para enderezar el camino en el certamen.
+

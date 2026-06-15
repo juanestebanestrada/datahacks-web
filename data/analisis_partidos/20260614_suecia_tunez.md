@@ -50,3 +50,17 @@ El dato más llamativo es el de definición: con 31 disparos, Túnez apenas conv
 * **Túnez**, por su parte, necesita resolver urgentemente su problema de definición: de poco sirve dominar el medio campo si no logran transformar esa posesión en ocasiones claras. Deberían buscar conectar mejor a sus jugadores ofensivos aislados con el bloque central, e intentar explotar los espacios que deja Suecia cuando pierde el balón en sus transiciones directas, ya que ahí podrían encontrar las contras más peligrosas. Defensivamente, mantener la intensidad de presión que ya muestran será clave para no permitir que Suecia ejecute sus jugadas directas con comodidad.
 
 En síntesis, Suecia parte como favorito gracias a su mayor eficacia ofensiva y capacidad de generar peligro real, mientras que Túnez tiene el perfil de un equipo que controla el balón pero necesita una mejora drástica en la zona de finalización para representar una amenaza genuina.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Suecia 5 - 1 Túnez)
+Suecia protagonizó una exhibición de verticalidad y contundencia al golear 5-1 a Túnez en el estreno del Grupo F. El cuadro escandinavo hizo pagar caro a Túnez su estilo de posesión pasiva y posesiones largas inofensivas. Aunque Túnez tuvo mayor control del balón en el círculo central gracias a Laïdouni y Skhiri, la falta de profundidad ofensiva y sus pérdidas en la salida fueron letales. Suecia castigó mediante transiciones rápidas y directas dirigidas a Forsberg e Isak, mostrando una efectividad demoledora del 14% que desmanteló por completo la línea defensiva tunecina.
+
+### 🔮 Impacto en el Grupo F y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Suecia toma el liderato del Grupo F con 3 puntos y una holgada diferencia de goles de +4. Sus métricas de ataque vertical y de finalización en el área se disparan en el simulador de pronósticos.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Países Bajos vs Suecia:** El partido más atractivo del grupo que podría definir el primer lugar. Tras la exhibición goleadora sueca, el modelo estima un duelo sumamente parejo, con un ligero favoritismo para los neerlandeses con un **44% de probabilidad de triunfo**.
+  * **Tunisia vs Japón:** Túnez se juega su última carta para mantenerse con opciones en el certamen. Se prevé un duelo complicado, donde Japón parte con un **58% de probabilidad de ganar** debido a la fragilidad defensiva exhibida por las Águilas de Cartago.
+

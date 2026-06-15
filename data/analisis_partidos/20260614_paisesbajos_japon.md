@@ -50,3 +50,17 @@ El mapa de xT japonés muestra una generación de peligro más concentrada en zo
 * **Japón**, por su parte, tiene que apostar por lo que mejor le ha funcionado: un bloque compacto y una presión asfixiante para robar el balón en zonas altas, seguido de ataques rápidos y directos hacia el área, buscando conectar mejor a sus extremos (Mitoma, Doan) con el resto del equipo para no depender solo de acciones aisladas. Dada su buena efectividad goleadora, generar pocas pero claras ocasiones podría ser suficiente para inclinar un partido cerrado a su favor, especialmente si logran sorprender con un gol temprano que obligue a Países Bajos a abrirse más.
 
 En resumen, Países Bajos parte como favorito por volumen, profundidad de plantilla y dominio territorial, pero Japón representa el tipo de rival incómodo que, con su presión y eficacia, podría dar la sorpresa si consigue mantener el partido ajustado y aprovechar sus pocas ocasiones con la contundencia que ya han mostrado.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Países Bajos 2 - 2 Japón)
+Países Bajos y Japón regalaron uno de los encuentros más vistosos de la primera jornada táctica, saldado con un trepidante empate 2-2. La escuadra neerlandesa impuso condiciones territoriales en la primera mitad, haciendo circular el balón con paciencia desde atrás con Virgil van Dijk y Nathan Aké, y encontrando profundidad por su costado izquierdo. No obstante, Japón reaccionó de manera soberbia en el complemento: su asfixiante presión coordinada en bloque medio-alto incomodó la salida de Reijnders y provocó pérdidas clave. El combinado nipón explotó al máximo su letalidad en transición por bandas a través de Ito y Doan, castigando las espaldas de la adelantada línea defensiva neerlandesa para rescatar un valioso punto.
+
+### 🔮 Impacto en el Grupo F y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** El empate deja a ambos seleccionados con 1 punto, escoltando a Suecia en el liderato del Grupo F. El modelo predictivo recalibra la solidez defensiva neerlandesa y premia la fantástica tasa de conversión y presión defensiva de Japón.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Países Bajos vs Suecia:** Clásico europeo por la supremacía del grupo. Suecia llega crecida tras golear, por lo que las probabilidades se equilibran, asignando a los Países Bajos un **42% de probabilidad de triunfo** en lo que se proyecta como una batalla de transiciones verticales.
+  * **Tunisia vs Japón:** Oportunidad inmejorable para los Samuráis Azules de encaminar la clasificación. Japón arranca como claro favorito con un **60% de probabilidad de victoria** ante un cuadro tunecino sumamente castigado en la primera fecha.
+
