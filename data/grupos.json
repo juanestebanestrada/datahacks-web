@@ -6,7 +6,7 @@
     "Corea del Sur": {"comp_id": 43,  "seas_id": 106, "bandera": "🇰🇷", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022",     "statsbomb_name": "South Korea"}
   },
   "Grupo B": {
-    "Bosnia":  {"team_id": 6355, "bandera": "🇧🇦", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
+    "Bosnia":  {"team_id": 10106, "bandera": "🇧🇦", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
     "Canadá":  {"comp_id": 43,  "seas_id": 106, "bandera": "🇨🇦", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022",     "statsbomb_name": "Canada"},
     "Qatar":   {"comp_id": 43,  "seas_id": 106, "bandera": "🇶🇦", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022",     "statsbomb_name": "Qatar"},
     "Suiza":   {"comp_id": 55,  "seas_id": 282, "bandera": "🇨🇭", "fuente": "statsbomb", "disponible": true, "torneo": "Euro 2024",       "statsbomb_name": "Switzerland"}
@@ -30,39 +30,39 @@
     "Ecuador":         {"comp_id": 223, "seas_id": 282, "bandera": "🇪🇨", "fuente": "statsbomb", "disponible": true, "torneo": "Copa América 2024", "statsbomb_name": "Ecuador"}
   },
   "Grupo F": {
-    "Suecia":        {"team_id": 6328, "bandera": "🇸🇪", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
+    "Suecia":        {"team_id": 8520, "bandera": "🇸🇪", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
     "Países Bajos":  {"comp_id": 55,  "seas_id": 282, "bandera": "🇳🇱", "fuente": "statsbomb", "disponible": true, "torneo": "Euro 2024",       "statsbomb_name": "Netherlands"},
     "Japón":         {"comp_id": 43,  "seas_id": 106, "bandera": "🇯🇵", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022",     "statsbomb_name": "Japan"},
     "Túnez":         {"comp_id": 43,  "seas_id": 106, "bandera": "🇹🇳", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022",     "statsbomb_name": "Tunisia"}
   },
   "Grupo G": {
     "Bélgica":      {"comp_id": 55,  "seas_id": 282, "bandera": "🇧🇪", "fuente": "statsbomb", "disponible": true, "torneo": "Euro 2024",   "statsbomb_name": "Belgium"},
-    "Egipto":       {"team_id": 7824, "bandera": "🇪🇬", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
+    "Egipto":       {"team_id": 10255, "bandera": "🇪🇬", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
     "Irán":         {"comp_id": 43,  "seas_id": 106, "bandera": "🇮🇷", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022", "statsbomb_name": "Iran"},
-    "Nueva Zelanda":{"team_id": 6331, "bandera": "🇳🇿", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"}
+    "Nueva Zelanda":{"team_id": 5820, "bandera": "🇳🇿", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"}
   },
   "Grupo H": {
     "España":       {"comp_id": 55,  "seas_id": 282, "bandera": "🇪🇸", "fuente": "statsbomb", "disponible": true, "torneo": "Euro 2024",       "statsbomb_name": "Spain"},
-    "Cabo Verde":   {"team_id": 10255,"bandera": "🇨🇻", "fuente": "fotmob",     "disponible": true, "torneo": "AFCON"},
+    "Cabo Verde":   {"team_id": 5888,"bandera": "🇨🇻", "fuente": "fotmob",     "disponible": true, "torneo": "AFCON"},
     "Arabia Saudí": {"comp_id": 43,  "seas_id": 106, "bandera": "🇸🇦", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022",     "statsbomb_name": "Saudi Arabia"},
     "Uruguay":      {"comp_id": 223, "seas_id": 282, "bandera": "🇺🇾", "fuente": "statsbomb", "disponible": true, "torneo": "Copa América 2024", "statsbomb_name": "Uruguay"}
   },
   "Grupo I": {
-    "Irak":     {"team_id": 6311, "bandera": "🇮🇶", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
+    "Irak":     {"team_id": 5819, "bandera": "🇮🇶", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
     "Francia":  {"comp_id": 43,  "seas_id": 106, "bandera": "🇫🇷", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022", "statsbomb_name": "France"},
     "Senegal":  {"comp_id": 43,  "seas_id": 106, "bandera": "🇸🇳", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022", "statsbomb_name": "Senegal"},
-    "Noruega":  {"team_id": 6326, "bandera": "🇳🇴", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"}
+    "Noruega":  {"team_id": 8492, "bandera": "🇳🇴", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"}
   },
   "Grupo J": {
     "Argentina": {"comp_id": 43,  "seas_id": 106, "bandera": "🇦🇷", "fuente": "statsbomb", "disponible": true, "torneo": "Mundial 2022", "statsbomb_name": "Argentina"},
-    "Argelia":   {"team_id": 8484, "bandera": "🇩🇿", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
+    "Argelia":   {"team_id": 6317, "bandera": "🇩🇿", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
     "Austria":   {"comp_id": 55,  "seas_id": 282, "bandera": "🇦🇹", "fuente": "statsbomb", "disponible": true, "torneo": "Euro 2024",   "statsbomb_name": "Austria"},
-    "Jordania":  {"team_id": 6323, "bandera": "🇯🇴", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"}
+    "Jordania":  {"team_id": 5816, "bandera": "🇯🇴", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"}
   },
   "Grupo K": {
     "RD Congo":   {"team_id": 6000, "bandera": "🇨🇩", "fuente": "365scores",  "disponible": true, "torneo": "Recientes"},
     "Portugal":   {"comp_id": 55,  "seas_id": 282, "bandera": "🇵🇹", "fuente": "statsbomb", "disponible": true, "torneo": "Euro 2024",       "statsbomb_name": "Portugal"},
-    "Uzbekistán": {"team_id": 10214,"bandera": "🇺🇿", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
+    "Uzbekistán": {"team_id": 8700,"bandera": "🇺🇿", "fuente": "fotmob",     "disponible": true, "torneo": "Recientes"},
     "Colombia":   {"comp_id": 223, "seas_id": 282, "bandera": "🇨🇴", "fuente": "statsbomb", "disponible": true, "torneo": "Copa América 2024", "statsbomb_name": "Colombia"}
   },
   "Grupo L": {

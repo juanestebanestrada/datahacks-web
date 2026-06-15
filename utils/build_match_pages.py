@@ -154,6 +154,7 @@ TEMPLATE_HTML = """<!DOCTYPE html>
       .score-team {{
         font-size: 1.4rem;
         text-align: center;
+        justify-content: center !important;
       }}
       .score-box {{
         font-size: 1.8rem;
@@ -218,12 +219,18 @@ TEMPLATE_HTML = """<!DOCTYPE html>
     <p style="color: var(--muted); font-size: 1rem;">📅 {fecha} · 🕒 {hora} (Local)</p>
     
     <div class="scoreboard">
-      <div class="score-team">{home_team}</div>
-      <div style="display:flex; flex-direction:column; align-items:center;">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>{home_team}</span>
+        <img src="https://flagcdn.com/w80/{code_home}.png" alt="{home_team}" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
         <div class="score-box">{display_score}</div>
         {score_label}
       </div>
-      <div class="score-team">{away_team}</div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/{code_away}.png" alt="{away_team}" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>{away_team}</span>
+      </div>
     </div>
   </div>
 </section>
@@ -580,11 +587,15 @@ def build_all_pages():
                 """
             
             grupo_page = GROUP_PAGES.get(grupo, "grupo_a.html")
+            code_home = FLAGS_MAP.get(home_team, 'un')
+            code_away = FLAGS_MAP.get(away_team, 'un')
             
             match_html = TEMPLATE_HTML.format(
                 titulo=meta.get('titulo', f"{home_team} vs {away_team}"),
                 home_team=home_team,
                 away_team=away_team,
+                code_home=code_home,
+                code_away=code_away,
                 grupo=grupo,
                 grupo_page=grupo_page,
                 fecha=fecha,

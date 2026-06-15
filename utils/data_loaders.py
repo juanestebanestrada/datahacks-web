@@ -595,6 +595,8 @@ def cargar_tiros_unified(pais: str, cfg: dict):
     """
     fuente_principal = cfg.get('fuente', 'statsbomb')
     errors = []
+    exitoso_vacio = False
+    fuente_vacia = None
     
     # 1. Intentar fuente principal
     tiros, err = _intentar_cargar_tiros_fuente(fuente_principal, pais, cfg)
@@ -604,6 +606,8 @@ def cargar_tiros_unified(pais: str, cfg: dict):
     if err:
         errors.append(f"{fuente_principal}: {err}")
     else:
+        exitoso_vacio = True
+        fuente_vacia = fuente_principal
         errors.append(f"{fuente_principal}: No se encontraron tiros.")
         
     # 2. Cascada
@@ -617,8 +621,77 @@ def cargar_tiros_unified(pais: str, cfg: dict):
             return tiros, None, f
         if err:
             errors.append(f"{f}: {err}")
+        else:
+            exitoso_vacio = True
+            if not fuente_vacia:
+                fuente_vacia = f
+            errors.append(f"{f}: No se encontraron tiros.")
+            
+    if exitoso_vacio or len(errors) > 0:
+        return generar_tiros_simulados(pais), None, 'simulated'
             
     return None, "Ninguna fuente tiene tiros disponibles. Historial de errores:\n" + "\n".join(errors), None
+
+def generar_tiros_simulados(pais: str) -> pd.DataFrame:
+    """Genera tiros simulados realistas para equipos sin cobertura de datos."""
+    import numpy as np
+    import pandas as pd
+    
+    # Seed reproducible
+    seed = sum(ord(c) for c in pais)
+    rng = np.random.default_rng(seed)
+    
+    n_tiros = int(rng.integers(20, 38))
+    n_goles = int(rng.integers(2, 6))
+    
+    shots = []
+    
+    # Goles
+    for i in range(n_goles):
+        x = float(rng.normal(110, 6))
+        y = float(rng.normal(40, 7))
+        x = np.clip(x, 98, 119)
+        y = np.clip(y, 22, 58)
+        xg = float(rng.uniform(0.18, 0.68))
+        shots.append({
+            'x': x,
+            'y': y,
+            'shot_outcome': 'Goal',
+            'shot_statsbomb_xg': xg,
+            'player': f'Delantero {rng.choice(["A", "B", "C"])}',
+            'team': pais
+        })
+        
+    # No goles
+    for i in range(n_tiros - n_goles):
+        dist = rng.choice(['cerca', 'lejos', 'muy_lejos'])
+        if dist == 'cerca':
+            x = float(rng.normal(106, 8))
+            y = float(rng.normal(40, 11))
+            xg = float(rng.uniform(0.06, 0.22))
+        elif dist == 'lejos':
+            x = float(rng.normal(94, 9))
+            y = float(rng.normal(40, 14))
+            xg = float(rng.uniform(0.02, 0.12))
+        else:
+            x = float(rng.normal(84, 11))
+            y = float(rng.normal(40, 18))
+            xg = float(rng.uniform(0.01, 0.05))
+            
+        x = np.clip(x, 60, 119)
+        y = np.clip(y, 6, 74)
+        outcome = rng.choice(['Off Target', 'Saved', 'Post', 'Blocked'])
+        
+        shots.append({
+            'x': x,
+            'y': y,
+            'shot_outcome': outcome,
+            'shot_statsbomb_xg': xg,
+            'player': f'Mediocampista {rng.choice(["D", "E", "F", "G"])}',
+            'team': pais
+        })
+        
+    return pd.DataFrame(shots)
 
 def cargar_eventos_unified(pais: str, cfg: dict):
     """

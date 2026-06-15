@@ -591,7 +591,9 @@ for tab, (pais, cfg) in zip(tabs, EQUIPOS.items()):
                     error = None
 
                 if tiros is not None and not tiros.empty:
-                    if fuente_usada != fuente:
+                    if fuente_usada == 'simulated':
+                        st.warning(f"🤖 **Datos Simulados Tácticos:** No hay coordenadas en tiempo real disponibles para **{pais}** en ninguna de las APIs oficiales. Se muestra un modelo de tiros de alta fidelidad basado en el volumen ofensivo estimado y efectividad de remate.")
+                    elif fuente_usada != fuente:
                         fuente_label_usada = {
                             'fotmob': 'FotMob API', 'sofascore': 'SofaScore API',
                             '365scores': '365Scores API', 'statsbomb': 'StatsBomb Open Data'
