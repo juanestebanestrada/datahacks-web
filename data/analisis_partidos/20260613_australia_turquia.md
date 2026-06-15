@@ -6,7 +6,7 @@ fecha: "2026-06-13"
 hora: "20:00"
 home_team: "Australia"
 away_team: "Turquía"
-goles_home: 1
+goles_home: 2
 goles_away: 0
 pronostico: "1 - 3"
 finalizado: "true"

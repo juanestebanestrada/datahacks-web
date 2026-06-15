@@ -6,10 +6,10 @@ fecha: "2026-06-14"
 hora: "18:00"
 home_team: "Costa de Marfil"
 away_team: "Ecuador"
-goles_home: 0
+goles_home: 1
 goles_away: 0
 pronostico: "2 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Costa de Marfil_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Costa de Marfil), Analisis_Ecuador_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Ecuador), Analisis_Costa de Marfil_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Costa de Marfil), Analisis_Ecuador_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Ecuador), Analisis_Costa de Marfil_MapadeCalor_horizontal_20260614.png:Mapa de Calor (Costa de Marfil), Analisis_Ecuador_MapadeCalor_horizontal_20260614.png:Mapa de Calor (Ecuador), ShotMap_Costa de Marfil_horizontal_20260614.png:Mapa de Tiros (Costa de Marfil), ShotMap_Ecuador_horizontal_20260614.png:Mapa de Tiros (Ecuador), Analisis_Costa de Marfil_ReddePases_horizontal_20260614.png:Red de Pases (Costa de Marfil), Analisis_Ecuador_ReddePases_horizontal_20260614.png:Red de Pases (Ecuador), Analisis_Costa de Marfil_ConduccionesProgresivas_horizontal_20260614.png:Conducciones Progresivas (Costa de Marfil), Analisis_Ecuador_ConduccionesProgresivas_horizontal_20260614.png:Conducciones Progresivas (Ecuador), Analisis_Costa de Marfil_MapadeAsistencias_horizontal_20260614.png:Mapa de Asistencias (Costa de Marfil), Analisis_Ecuador_MapadeAsistencias_horizontal_20260614.png:Mapa de Asistencias (Ecuador), Analisis_Ecuador_SonardePases_horizontal_20260614.png:Sonar de Pases (Ecuador)"
 slug: "costamarfil_ecuador"
 poisson: "48-28-24"

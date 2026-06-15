@@ -6,10 +6,10 @@ fecha: "2026-06-14"
 hora: "21:00"
 home_team: "Suecia"
 away_team: "Túnez"
-goles_home: 0
-goles_away: 0
+goles_home: 5
+goles_away: 1
 pronostico: "2 - 0"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Suecia_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Suecia), Analisis_Túnez_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Túnez), Analisis_Suecia_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Suecia), Analisis_Túnez_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Túnez), Analisis_Suecia_MapadeCalor_horizontal_20260614.png:Mapa de Calor (Suecia), Analisis_Túnez_MapadeCalor_horizontal_20260614.png:Mapa de Calor (Túnez), ShotMap_Suecia_horizontal_20260614.png:Mapa de Tiros (Suecia), ShotMap_Túnez_horizontal_20260614.png:Mapa de Tiros (Túnez), Analisis_Suecia_ReddePases_horizontal_20260614.png:Red de Pases (Suecia), Analisis_Túnez_ReddePases_horizontal_20260614.png:Red de Pases (Túnez), Analisis_Suecia_ConduccionesProgresivas_horizontal_20260614.png:Conducciones Progresivas (Suecia), Analisis_Túnez_ConduccionesProgresivas_horizontal_20260614.png:Conducciones Progresivas (Túnez), Analisis_Suecia_MapadeAsistencias_horizontal_20260614.png:Mapa de Asistencias (Suecia), Analisis_Túnez_MapadeAsistencias_horizontal_20260614.png:Mapa de Asistencias (Túnez)"
 slug: "suecia_tunez"
 poisson: "52-28-20"

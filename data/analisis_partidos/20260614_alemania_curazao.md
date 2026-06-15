@@ -6,10 +6,10 @@ fecha: "2026-06-14"
 hora: "12:00"
 home_team: "Alemania"
 away_team: "Curazao"
-goles_home: 0
-goles_away: 0
+goles_home: 7
+goles_away: 1
 pronostico: "3 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Alemania_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Alemania), Analisis_Curazao_MapaDefensivo_Equipo_Completo_horizontal_20260614.png:Mapa Defensivo (Curazao), Analisis_Alemania_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Alemania), Analisis_Curazao_ExpectedThreatxT_Equipo_Completo_horizontal_20260614.png:Amenaza Esperada xT (Curazao), Analisis_Alemania_MapadeCalor_horizontal_20260614.png:Mapa de Calor (Alemania), Analisis_Curazao_MapadeCalor_Equipo_Completo_horizontal_20260614.png:Mapa de Calor (Curazao), ShotMap_Alemania_horizontal_20260614.png:Mapa de Tiros (Alemania), ShotMap_Curazao_horizontal_20260614.png:Mapa de Tiros (Curazao), Analisis_Alemania_ReddePases_horizontal_20260614.png:Red de Pases (Alemania), Analisis_Curazao_ReddePases_Equipo_Completo_horizontal_20260614.png:Red de Pases (Curazao), Analisis_Alemania_ConduccionesProgresivas_horizontal_20260614.png:Conducciones Progresivas (Alemania), Analisis_Curazao_ConduccionesProgresivas_Equipo_Completo_horizontal_20260614.png:Conducciones Progresivas (Curazao), Analisis_Alemania_MapadeAsistencias_horizontal_20260614.png:Mapa de Asistencias (Alemania), Analisis_Curazao_MapadeAsistencias_Equipo_Completo_horizontal_20260614.png:Mapa de Asistencias (Curazao)"
 slug: "alemania_curazao"
 poisson: "70-20-10"

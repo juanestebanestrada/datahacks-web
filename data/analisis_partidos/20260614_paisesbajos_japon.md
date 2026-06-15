@@ -6,10 +6,10 @@ fecha: "2026-06-14"
 hora: "15:00"
 home_team: "Países Bajos"
 away_team: "Japón"
-goles_home: 0
-goles_away: 0
+goles_home: 2
+goles_away: 2
 pronostico: "2 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Países Bajos_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Países Bajos), Analisis_Japón_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Japón), Analisis_Países Bajos_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Países Bajos), Analisis_Japón_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Japón), Analisis_Países Bajos_MapadeCalor_horizontal_20260614.png:Mapa de Calor (Países Bajos), Analisis_Japón_MapadeCalor_horizontal_20260614.png:Mapa de Calor (Japón), ShotMap_Países Bajos_horizontal_20260614.png:Mapa de Tiros (Países Bajos), ShotMap_Japón_horizontal_20260614.png:Mapa de Tiros (Japón), Analisis_Países Bajos_ReddePases_horizontal_20260614.png:Red de Pases (Países Bajos), Analisis_Japón_ReddePases_horizontal_20260614.png:Red de Pases (Japón), Analisis_Países Bajos_ConduccionesProgresivas_horizontal_20260614.png:Conducciones Progresivas (Países Bajos), Analisis_Japón_ConduccionesProgresivas_horizontal_20260614.png:Conducciones Progresivas (Japón), Analisis_Países Bajos_MapadeAsistencias_horizontal_20260614.png:Mapa de Asistencias (Países Bajos), Analisis_Japón_MapadeAsistencias_horizontal_20260614.png:Mapa de Asistencias (Japón)"
 slug: "paisesbajos_japon"
 poisson: "45-30-25"

@@ -95,6 +95,50 @@ MATCHES_CONFIG = [
         "away_flag": "🇹🇷",
         "home_img": "ShotMap_Australia_horizontal_20260613.png",
         "away_img": "ShotMap_Turquía_horizontal_20260613.png"
+    },
+    {
+        "match_id": 4667777,
+        "slug": "alemania_curazao",
+        "md_filename": "20260614_alemania_curazao.md",
+        "home_name": "Alemania",
+        "away_name": "Curazao",
+        "home_flag": "🇩🇪",
+        "away_flag": "🇨🇼",
+        "home_img": "ShotMap_Alemania_horizontal_20260614.png",
+        "away_img": "ShotMap_Curazao_horizontal_20260614.png"
+    },
+    {
+        "match_id": 4667783,
+        "slug": "paisesbajos_japon",
+        "md_filename": "20260614_paisesbajos_japon.md",
+        "home_name": "Países Bajos",
+        "away_name": "Japón",
+        "home_flag": "🇳🇱",
+        "away_flag": "🇯🇵",
+        "home_img": "ShotMap_Países Bajos_horizontal_20260614.png",
+        "away_img": "ShotMap_Japón_horizontal_20260614.png"
+    },
+    {
+        "match_id": 4667778,
+        "slug": "costamarfil_ecuador",
+        "md_filename": "20260614_costamarfil_ecuador.md",
+        "home_name": "Costa de Marfil",
+        "away_name": "Ecuador",
+        "home_flag": "🇨🇮",
+        "away_flag": "🇪🇨",
+        "home_img": "ShotMap_Costa de Marfil_horizontal_20260614.png",
+        "away_img": "ShotMap_Ecuador_horizontal_20260614.png"
+    },
+    {
+        "match_id": 4667784,
+        "slug": "suecia_tunez",
+        "md_filename": "20260614_suecia_tunez.md",
+        "home_name": "Suecia",
+        "away_name": "Túnez",
+        "home_flag": "🇸🇪",
+        "away_flag": "🇹🇳",
+        "home_img": "ShotMap_Suecia_horizontal_20260614.png",
+        "away_img": "ShotMap_Túnez_horizontal_20260614.png"
     }
 ]
 
