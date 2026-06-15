@@ -9,7 +9,7 @@ away_team: "Cabo Verde"
 goles_home: 0
 goles_away: 0
 pronostico: "3 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_España_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (España), Analisis_Cabo Verde_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Cabo Verde), Analisis_España_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (España), Analisis_Cabo Verde_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Cabo Verde), Analisis_España_MapadeCalor_horizontal_20260615.png:Mapa de Calor (España), Analisis_Cabo Verde_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Cabo Verde), ShotMap_España_horizontal_20260615.png:Mapa de Tiros (España), ShotMap_Cabo Verde_horizontal_20260615.png:Mapa de Tiros (Cabo Verde), Analisis_España_ReddePases_horizontal_20260615.png:Red de Pases (España), Analisis_Cabo Verde_ReddePases_horizontal_20260615.png:Red de Pases (Cabo Verde), Analisis_España_ConduccionesProgresivas_horizontal_20260615.png:Conducciones Progresivas (España), Analisis_Cabo Verde_ConduccionesProgresivas_horizontal_20260615.png:Conducciones Progresivas (Cabo Verde), Analisis_España_MapadeAsistencias_horizontal_20260615.png:Mapa de Asistencias (España), Analisis_Cabo Verde_MapadeAsistencias_horizontal_20260615.png:Mapa de Asistencias (Cabo Verde)"
 slug: "espana_caboverde"
 poisson: "68-20-12"
@@ -50,3 +50,17 @@ El dato verdaderamente llamativo es el de definición: con solo 32 disparos, Cab
 * **Cabo Verde**, por su parte, tiene que aceptar que no podrá igualar el dominio territorial español, así que su plan debería centrarse en un bloque compacto, ceder el balón con orden, y esperar pacientemente esas pocas transiciones u ocasiones de calidad donde históricamente han demostrado ser letales. Dado su porcentaje de conversión, incluso dos o tres llegadas claras podrían ser suficientes para generar un resultado inesperado, por lo que la paciencia y la disciplina defensiva serán claves para mantenerse con vida en el partido.
 
 En definitiva, España parte como favorito claro por volumen, calidad colectiva y dominio del juego, pero Cabo Verde representa el tipo de rival que, con su altísima eficacia de cara a gol, podría convertir muy pocas ocasiones en un resultado que incomode a un favorito tan superior sobre el papel.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: España 0 - 0 Cabo Verde)
+En una de las grandes sorpresas de la jornada inaugural del Grupo H, España y Cabo Verde empataron sin goles (0-0) en un encuentro marcado por el dominio territorial estéril de "La Roja". La selección española monopolizó la posesión y elaboró interminables circuitos de pases con Cáscante, Laporte y Ramos buscando penetrar el bloque bajo caboverdiano. Sin embargo, Cabo Verde plantó una línea defensiva sumamente disciplinada y compacta, bloqueando la fluidez interior de España y forzando remates incómodos. A pesar del abrumador volumen de juego español, la falta de pegada y la gran actuación colectiva de Cabo Verde en su propia mitad sentenciaron un reparto de puntos histórico.
+
+### 🔮 Impacto en el Grupo H y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** El empate 0-0 deja a ambas escuadras con 1 punto en el Grupo H. En el simulador táctico, las métricas defensivas en bloque bajo de Cabo Verde ascienden significativamente, mientras que el modelo Poisson de España sufre una calibración a la baja en efectividad de finalización tras no poder romper la valla rival.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **España vs Arabia Saudí:** Obligación absoluta para los dirigidos por Luis de la Fuente para encaminar la clasificación. España parte como amplia favorita con un **65% de probabilidad de victoria**, esperando que el volumen de juego finalmente se traduzca en efectividad goleadora.
+  * **Uruguay vs Cabo Verde:** Un enfrentamiento sumamente físico y disputado. Uruguay saldrá como favorito con un **52% de probabilidad de triunfo**, pero el orden defensivo de las "Tiburones Azules" promete un partido incómodo en mediocampo.
+

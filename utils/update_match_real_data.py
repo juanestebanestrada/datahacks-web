@@ -139,6 +139,17 @@ MATCHES_CONFIG = [
         "away_flag": "🇹🇳",
         "home_img": "ShotMap_Suecia_horizontal_20260614.png",
         "away_img": "ShotMap_Túnez_horizontal_20260614.png"
+    },
+    {
+        "match_id": 4667798,
+        "slug": "espana_caboverde",
+        "md_filename": "20260615_espana_caboverde.md",
+        "home_name": "España",
+        "away_name": "Cabo Verde",
+        "home_flag": "🇪🇸",
+        "away_flag": "🇨🇻",
+        "home_img": "ShotMap_España_horizontal_20260615.png",
+        "away_img": "ShotMap_Cabo Verde_horizontal_20260615.png"
     }
 ]
 
