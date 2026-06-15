@@ -109,6 +109,7 @@
       .score-team {
         font-size: 1.4rem;
         text-align: center;
+        justify-content: center !important;
       }
       .score-box {
         font-size: 1.8rem;
@@ -173,12 +174,18 @@
     <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-11 · 🕒 17:00 (Local)</p>
     
     <div class="scoreboard">
-      <div class="score-team">Rep. Checa</div>
-      <div style="display:flex; flex-direction:column; align-items:center;">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Rep. Checa</span>
+        <img src="https://flagcdn.com/w80/cz.png" alt="Rep. Checa" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
         <div class="score-box">2 - 1</div>
         <div style="font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:5px; font-weight:700;">FINALIZADO</div>
       </div>
-      <div class="score-team">Corea del Sur</div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/kr.png" alt="Corea del Sur" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Corea del Sur</span>
+      </div>
     </div>
   </div>
 </section>

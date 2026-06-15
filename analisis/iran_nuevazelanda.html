@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irán vs Nueva Zelanda: Choque de Estilos en el Grupo G // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Irán vs Nueva Zelanda del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_g.html" class="back-link">← Volver al Grupo G</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo G</span>
+    <h2>Irán vs Nueva Zelanda</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-15 · 🕒 20:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Irán</span>
+        <img src="https://flagcdn.com/w80/ir.png" alt="Irán" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">2 - 0</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/nz.png" alt="Nueva Zelanda" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Nueva Zelanda</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <p>Este enfrentamiento presenta dos equipos con perfiles extremadamente similares en eficiencia ofensiva pero dramáticamente diferentes en estructura táctica. Irán (Mundial 2022) registra 29 disparos con 4 goles (13.8%), mientras Nueva Zelanda (recientes) acumula 31 disparos también con 4 goles (12.9%). La paridad estadística oculta diferencias fundamentales en cómo ambos equipos juegan al fútbol. Uno es rudimentario; el otro, aunque no sofisticado, intenta algo más.</p>
+<h2>🇮🇷 Irán: Análisis Táctico</h2>
+<p>Irán despliega una estructura ofensiva distribuida en el mapa de calor, con presencia equilibrada en zonas laterales y área central. Su red de pases revela una construcción con múltiples conexiones entre jugadores, generando complejidad en la circulación. Aunque la eficiencia es baja (4 goles en 29 disparos), el equipo intenta construir juego a través de diferentes vías.</p>
+<p>El xT acumulado de Irán (~0.30) es marginalmente superior al de Nueva Zelanda (~0.25), pero ambos son preocupantemente bajos. Irán distribuye la amenaza en múltiples zonas, indicando al menos intentos de generar peligro desde diferentes ángulos.</p>
+<p>En el mapa defensivo, Irán ejecuta una alta densidad de acciones distribuidas por todo el campo. El equipo defiende mediante presión extendida, recuperando balón en zonas intermedias y avanzadas. Esto sugiere un equipo que busca proactivamente interrumpir el juego rival.</p>
+<p>Asimismo, despliega múltiples líneas de conducción progresiva, con iniciativas desde defensa, medio campo y ataque. Hay variabilidad en las rutas de progresión, indicando un equipo que intenta diversificar sus formas de avanzar. Su red de asistencias distribuye pases desde múltiples ubicaciones, con varios jugadores capaces de crear.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇳🇿 Nueva Zelanda: Análisis Táctico</h2>
+<p>Nueva Zelanda muestra algo casi único en el fútbol moderno: una red de pases con apenas <strong>5-6 jugadores conectados directamente</strong>. Esta es una configuración extremadamente primitiva. Los nodos principales son <strong>Sail</strong>, <strong>Cacace</strong>, <strong>Garbett</strong>, <strong>Waine</strong> y <strong>Wilmes</strong>, funcionando como un corredor directo sin múltiples opciones de circulación. El mapa de calor está concentrado en zonas específicas pero sin el dinamismo que permite Irán. Nueva Zelanda juega <strong>fútbol de puente directo</strong>: recibe en defensa y envía balones largos sin construcción intermedias.</p>
+<p>Genera amenaza (xT) casi exclusivamente desde zonas muy específicas y limitadas. Las áreas de mayor xT se concentran en dos o tres zonas únicamente, reflejando la monotonía táctica. El equipo neozelandés tiene dificultad para crear peligro porque su red de pases limitada no permite la diversidad ofensiva necesaria.</p>
+<p>Defensivamente, Nueva Zelanda mantiene una densidad defensiva significativamente menor. Sus acciones defensivas se concentran principalmente en zona media y defensiva, con presencia escasa en espacios avanzados. Es un equipo que defiende profundo y compacto, esperando contraataques.</p>
+<p>Sus conducciones progresivas son ordenadas pero extremadamente limitadas y predecibles. Las progresiones son lineales e intentan avanzar de forma directa sin variantes significativas. Su red de asistencias es extraordinariamente simple, con apenas 2-3 jugadores actuando como asistentes.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<h3>Ventajas y Desventajas</h3>
+<ul>
+<li><strong>A favor de Irán:</strong></li>
+</ul>
+<p><strong>1.</strong> Estructura táctica superior: Aunque básica, es más compleja que Nueva Zelanda.</p>
+<p><strong>2.</strong> Múltiples opciones ofensivas: Puede atacar desde diferentes zonas.</p>
+<p><strong>3.</strong> Presión defensiva activa: Recupera balón en zonas avanzadas.</p>
+<p><strong>4.</strong> Experiencia en competiciones de élite mundialistas.</p>
+<p><strong>5.</strong> Variabilidad táctica y red de pases más compleja con más opciones de circulación.</p>
+<ul>
+<li><strong>En contra de Irán:</strong></li>
+</ul>
+<p><strong>1.</strong> Eficiencia ofensiva baja (13.8% de conversión).</p>
+<p><strong>2.</strong> xT limitado y falta de un sistema claro de finalización.</p>
+<p><strong>3.</strong> Inconsistencia defensiva si permite transiciones.</p>
+<ul>
+<li><strong>A favor de Nueva Zelanda:</strong></li>
+</ul>
+<p><strong>1.</strong> Compactación defensiva difícil de penetrar en zona baja.</p>
+<p><strong>2.</strong> Claridad táctica: cada jugador sabe exactamente qué hacer en su rol simple.</p>
+<p><strong>3.</strong> Potencial de contraataque si recupera balón con espacios.</p>
+<ul>
+<li><strong>En contra de Nueva Zelanda:</strong></li>
+</ul>
+<p><strong>1.</strong> Estructura táctica primitiva con solo 5-6 jugadores conectados en la red de pases.</p>
+<p><strong>2.</strong> Predecibilidad extrema y ofensiva unidimensional.</p>
+<p><strong>3.</strong> Baja presión defensiva que permite la construcción del rival.</p>
+<p><strong>4.</strong> Red de asistencias limitadísima.</p>
+<h3>Qué podría hacer cada equipo</h3>
+<ul>
+<li><strong>Irán</strong> debe mantener la posesión (>55% de balón) para controlar el ritmo del encuentro, mover la pelota con circulación rápida para abrir la defensa compacta neozelandesa y sostener una presión alta que impida la salida limpia o balones largos cómodos de Nueva Zelanda.</li>
+<li><strong>Nueva Zelanda</strong> debe apostar por un bloque compacto bajo muy profundo, disputar segundas pelotas para dominar duelos físicos y lanzar contraataques verticales e inmediatos tras recuperar balón en zona defensiva sin intentar construir en corto.</li>
+</ul>
+<p>En conclusión, se proyecta una victoria para <strong>Irán por 2 - 0</strong>. Aunque Irán es ofensivamente limitado, su estructura táctica es superior y ofrece más variantes de circulación frente a una Nueva Zelanda tácticamente muy básica y predecible.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Irán)</h4>
+                      <img src="../assets/Analisis_Irán_MapaDefensivo_horizontal_20260615.png" alt="Mapa Defensivo (Irán)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_MapaDefensivo_Equipo_Completo_horizontal_20260615.png" alt="Mapa Defensivo (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Irán)</h4>
+                      <img src="../assets/Analisis_Irán_ExpectedThreatxT_horizontal_20260615.png" alt="Amenaza Esperada xT (Irán)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_ExpectedThreatxT_Equipo_Completo_horizontal_20260615.png" alt="Amenaza Esperada xT (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Irán)</h4>
+                      <img src="../assets/Analisis_Irán_MapadeCalor_horizontal_20260615.png" alt="Mapa de Calor (Irán)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_MapadeCalor_Equipo_Completo_horizontal_20260615.png" alt="Mapa de Calor (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Irán)</h4>
+                      <img src="../assets/ShotMap_Irán_horizontal_20260615.png" alt="Mapa de Tiros (Irán)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Nueva Zelanda)</h4>
+                      <img src="../assets/ShotMap_Nueva Zelanda_horizontal_20260615.png" alt="Mapa de Tiros (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Irán)</h4>
+                      <img src="../assets/Analisis_Irán_ReddePases_horizontal_20260615.png" alt="Red de Pases (Irán)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_ReddePases_Equipo_Completo_horizontal_20260615.png" alt="Red de Pases (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Irán)</h4>
+                      <img src="../assets/Analisis_Irán_ConduccionesProgresivas_horizontal_20260615.png" alt="Conducciones Progresivas (Irán)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_ConduccionesProgresivas_Equipo_Completo_horizontal_20260615.png" alt="Conducciones Progresivas (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Irán)</h4>
+                      <img src="../assets/Analisis_Irán_MapadeAsistencias_horizontal_20260615.png" alt="Mapa de Asistencias (Irán)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_MapadeAsistencias_Equipo_Completo_horizontal_20260615.png" alt="Mapa de Asistencias (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
