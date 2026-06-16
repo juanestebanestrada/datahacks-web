@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irak vs Noruega: Duelo de Estilos en el Grupo I // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Irak vs Noruega del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_i.html" class="back-link">← Volver al Grupo I</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo I</span>
+    <h2>Irak vs Noruega</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-16 · 🕒 22:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Irak</span>
+        <img src="https://flagcdn.com/w80/iq.png" alt="Irak" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">0 - 3</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/no.png" alt="Noruega" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Noruega</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <p>Este enfrentamiento presenta una de las brechas más amplias entre dos equipos analizados. Irak (recientes) registra 21 disparos con 2 goles (9.5% eficiencia), mientras Noruega (recientes) acumula 60 disparos con 22 goles (36.7% eficiencia). Noruega no solo dispara 2.9 veces más, sino que convierte con una efectividad <strong>casi 4 veces superior</strong>. Esta es una diferencia que trasciende lo táctico: es una brecha de competencia absoluta.</p>
+<h2>⚖️ Comparativa General de Desempeño</h2>
+<p>Este enfrentamiento presenta una de las brechas más amplias entre dos equipos analizados, marcando un claro contraste entre la ineficacia goleadora de Irak y la potencia letal de Noruega en el último tercio.</p>
+<h2>🇮🇶 Irak: Análisis Táctico</h2>
+<p>Irak despliega una ofensiva dispersa y poco concentrada. Su mapa de calor muestra una distribución muy extendida por el campo, con presencia en múltiples zonas pero sin la densidad necesaria para generar amenaza consistente. La red de pases es extraordinariamente simple, con solo <strong>4 jugadores clave</strong> (Sirleka, Jasim, Baryesh, Hussain) funcionando como canales principales. No hay diversidad en las opciones de circulación. Con 2 goles en 21 disparos, Irak demuestra carencia ofensiva fundamental: no solo llega poco al área, sino que cuando lo hace, remata con imprecisión.</p>
+<p>Irak genera amenaza esporádica y dispersa, lo que indica que sus oportunidades no son producto de un sistema claro, sino de accidentes tácticos ocasionales. Su xT acumulado (~0.50) es apenas una fracción de lo que genera su rival.</p>
+<p>En defensa, Irak mantiene un mapa defensivo con densidad moderada, principalmente concentrado en zonas media y defensiva. El equipo defiende de forma compacta pero pasiva, permitiendo que los rivales construyan sin presión significativa. Las acciones defensivas están ordenadas pero sin agresividad.</p>
+<p>Irak muestra conducciones progresivas ordenadas pero limitadas. Las líneas de ataque son relativamente pocas y predecibles. Hay poco flujo ofensivo sostenido, indicando un equipo sin capacidad para generar iniciativas múltiples simultáneamente. Su red de asistencias es extremadamente limitada; con solo 2 goles, la red es prácticamente inexistente y solo 2-3 jugadores participan en la creación.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇳🇴 Noruega: Análisis Táctico</h2>
+<p>Noruega presenta una máquina ofensiva concentrada y devastadora. El mapa de calor muestra una saturación absoluta en el área rival, especialmente en zonas de máximo peligro. Aunque la red de pases también es simple (Ryerson, Ødegaard, Haaland como pivotes), la diferencia crítica es que <strong>Noruega convierte constantemente</strong>. Con 22 goles en 60 disparos, Noruega demuestra que su sistema ofensivo es letal: llega frecuentemente al área y remata con una precisión que es característica de un equipo de élite.</p>
+<p>El xT acumulado de Noruega (~1.60) es más de una tercera parte superior al de Irak, reflejando que Noruega no solo genera más oportunidades, sino que las genera en zonas de máximo valor ofensivo. Noruega crea amenaza desde múltiples ángulos y con consistencia sistemática.</p>
+<p>En defensa, Noruega despliega un mapa defensivo compacto pero con densidad menor que la esperada para un equipo ofensivamente tan dominante. Esto sugiere que Noruega confía en su capacidad ofensiva para compensar defensas más débiles. El equipo no presiona alto; juega un fútbol posicional donde confía en su superioridad técnica.</p>
+<p>Noruega ejecuta conducciones progresivas abundantes y variadas. Hay múltiples líneas de ataque simultáneas, con iniciativas desde defensa, medio campo y zonas laterales. La capacidad de avanzar de forma fluida desde cualquier posición refleja un equipo donde la transición es rápida y consistente. Por último, despliega una red de asistencias densa y variada. Con 22 goles, múltiples jugadores actúan como creadores y la densidad de conexiones indica un equipo donde la creatividad está distribuida.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<h3>Ventajas y Desventajas</h3>
+<ul>
+<li><strong>A favor de Noruega:</strong></li>
+</ul>
+<p><strong>1.</strong> Eficiencia ofensiva abrumadora: 36.7% vs 9.5% es una diferencia de clase mundial.</p>
+<p><strong>2.</strong> xT acumulado superior: Noruega genera 3.2x más amenaza.</p>
+<p><strong>3.</strong> Disparos masivos: 60 vs 21; Noruega ataca constantemente.</p>
+<p><strong>4.</strong> Goles en abundancia: 22 goles demuestran letalidad absoluta.</p>
+<p><strong>5.</strong> Mapa de calor concentrado: Presencia constante en área rival.</p>
+<p><strong>6.</strong> Conducciones progresivas variadas: Múltiples formas de avanzar.</p>
+<p><strong>7.</strong> Red de asistencias diversa: Muchas opciones de creación.</p>
+<p><strong>8.</strong> Sistema ofensivo completo: Construcción + transición + remate.</p>
+<ul>
+<li><strong>En contra de Noruega:</strong></li>
+</ul>
+<p><strong>1.</strong> Ninguna significativa contra Irak.</p>
+<p><strong>2.</strong> Potencial vulnerabilidad defensiva si baja concentración, pero improbable.</p>
+<ul>
+<li><strong>A favor de Irak:</strong></li>
+</ul>
+<p><strong>1.</strong> Defensa compacta: Difícil de penetrar en zonas bajas.</p>
+<p><strong>2.</strong> Disciplina táctica: Menos errores por desorganización.</p>
+<p><strong>3.</strong> Potencial sorpresa: Contraataques ocasionales.</p>
+<ul>
+<li><strong>En contra de Irak:</strong></li>
+</ul>
+<p><strong>1.</strong> Eficiencia ofensiva catastrófica: 9.5% es preocupante.</p>
+<p><strong>2.</strong> xT dramáticamente inferior: Genera apenas 1/3 de la amenaza de Noruega.</p>
+<p><strong>3.</strong> Red de pases primitiva: Solo 4 jugadores en circulación.</p>
+<p><strong>4.</strong> Disparos escasos: 21 vs 60 es una disparidad brutal.</p>
+<p><strong>5.</strong> Goles insuficientes: 2 goles contra 22 refleja incapacidad ofensiva.</p>
+<p><strong>6.</strong> Falta de variabilidad táctica: Solo una forma de atacar.</p>
+<p><strong>7.</strong> Conducciones progresivas limitadas: Pocas iniciativas ofensivas.</p>
+<p><strong>8.</strong> Red de asistencias inexistente: Casi ningún jugador crea goles.</p>
+<h3>Qué podría hacer cada equipo</h3>
+<ul>
+<li><strong>Noruega</strong> debe mantener la posesión sostenida (>60% de balón) para dictar el ritmo, circular rápido para abrir el bloque bajo iraquí, y mantener la finalización clínica para traducir su superioridad en el marcador.</li>
+<li><strong>Irak</strong> debe intentar un milagro defensivo replegando sus líneas en un bloque muy bajo y profundo, buscando limitar la expansión ofensiva de Noruega cerrando las bandas, y aprovechar segundas pelotas o jugadas de táctica fija para crear algún peligro.</li>
+</ul>
+<p>En definitiva, Noruega es absolutamente favorita en este choque por su inmensa superioridad categórica. Se proyecta una victoria contundente de <strong>Noruega por 3 - 0</strong>, donde la resistencia de Irak terminará por ceder ante la presión de la delantera nórdica.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Irak)</h4>
+                      <img src="../assets/Analisis_Irak_MapaDefensivo_Equipo_Completo_horizontal_20260616.png" alt="Mapa Defensivo (Irak)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Noruega)</h4>
+                      <img src="../assets/Analisis_Noruega_MapaDefensivo_Equipo_Completo_horizontal_20260616.png" alt="Mapa Defensivo (Noruega)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Irak)</h4>
+                      <img src="../assets/Analisis_Irak_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png" alt="Amenaza Esperada xT (Irak)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Noruega)</h4>
+                      <img src="../assets/Analisis_Noruega_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png" alt="Amenaza Esperada xT (Noruega)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Irak)</h4>
+                      <img src="../assets/Analisis_Irak_MapadeCalor_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Calor (Irak)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Noruega)</h4>
+                      <img src="../assets/Analisis_Noruega_MapadeCalor_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Calor (Noruega)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Irak)</h4>
+                      <img src="../assets/ShotMap_Irak_horizontal_20260616.png" alt="Mapa de Tiros (Irak)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Noruega)</h4>
+                      <img src="../assets/ShotMap_Noruega_horizontal_20260616.png" alt="Mapa de Tiros (Noruega)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Irak)</h4>
+                      <img src="../assets/Analisis_Irak_ReddePases_Equipo_Completo_horizontal_20260616.png" alt="Red de Pases (Irak)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Noruega)</h4>
+                      <img src="../assets/Analisis_Noruega_ReddePases_Equipo_Completo_horizontal_20260616.png" alt="Red de Pases (Noruega)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Irak)</h4>
+                      <img src="../assets/Analisis_Irak_ConduccionesProgresivas_Equipo_Completo_horizontal_20260616.png" alt="Conducciones Progresivas (Irak)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Noruega)</h4>
+                      <img src="../assets/Analisis_Noruega_ConduccionesProgresivas_Equipo_Completo_horizontal_20260616.png" alt="Conducciones Progresivas (Noruega)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Irak)</h4>
+                      <img src="../assets/Analisis_Irak_MapadeAsistencias_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Asistencias (Irak)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Noruega)</h4>
+                      <img src="../assets/Analisis_Noruega_MapadeAsistencias_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Asistencias (Noruega)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Austria vs Jordania: Duelo de Estilos en el Grupo J // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Austria vs Jordania del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_j.html" class="back-link">← Volver al Grupo J</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo J</span>
+    <h2>Austria vs Jordania</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-16 · 🕒 22:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Austria</span>
+        <img src="https://flagcdn.com/w80/at.png" alt="Austria" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">2 - 0</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/jo.png" alt="Jordania" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Jordania</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <p>Austria es claramente el favorito y debería ganar este encuentro. La diferencia en calidad y capacidad ofensiva es de consideración, aunque ambos equipos muestran deficiencias en eficiencia de finalización.</p>
+<h2>⚖️ Comparativa General de Desempeño</h2>
+<p>Este enfrentamiento presenta un claro favorito en la selección europea, cuya complejidad en la circulación y volumen ofensivo debería imponerse frente al compacto pero limitado planteamiento de Jordania.</p>
+<h2>🇦🇹 Austria: Ventajas y Desafíos</h2>
+<h3>Ventajas de Austria</h3>
+<p><strong>1.</strong> <strong>Volumen y Eficiencia Ofensiva</strong></p>
+<p>Austria generó 44 disparos con 6 goles en el período analizado. Aunque su eficiencia no es excepcional (~13.6%), el volumen de intentos es considerablemente superior al de Jordania. El mapa de calor revela concentración en zonas de peligro alrededor del área, especialmente en los flancos y dentro del área pequeña, indicando que los austriacos saben dónde atacar.</p>
+<p><strong>2.</strong> <strong>Distribución y Creatividad</strong></p>
+<p>La red de pases de Austria es compleja y bien distribuida. Múltiples jugadores (Wimmer, Seiwald, Grillitsch, Baumgartner) actúan como creadores, lo que dificulta que un rival marque de forma personal a un único generador de juego. Esta diversidad de amenazas ofensivas es muy difícil de defender.</p>
+<p><strong>3.</strong> <strong>Amenaza Esperada (xT)</strong></p>
+<p>El mapa de xT de Austria muestra valores acumulados significativamente más altos, con concentración especialmente en el tercio derecho y áreas de transición. Esto indica que Austria no solo dispara más, sino que crea oportunidades de mejor calidad.</p>
+<p><strong>4.</strong> <strong>Presión Defensiva Efectiva</strong></p>
+<p>Las acciones defensivas de Austria están ampliamente distribuidas por todo el campo. La predominancia de presión (amarillo) en múltiples zonas sugiere un equipo que trabaja en transiciones cortas y recuperaciones frecuentes, ganando posesión en lugares estratégicos.</p>
+<p><strong>5.</strong> <strong>Progresiones de Juego</strong></p>
+<p>Las conducciones progresivas de Austria son abundantes y variadas, mostrando múltiples vías para avanzar. El equipo tiene opciones desde todas las posiciones, lo que le permite jugar con flexibilidad.</p>
+<h3>Desventajas de Austria</h3>
+<p><strong>1.</strong> <strong>Eficiencia Insuficiente</strong></p>
+<p>Con 44 disparos y solo 6 goles, Austria deja mucho sobre la mesa. Esto sugiere que la definición no es su fortaleza, un problema crítico en partidos cerrados o contra equipos defensivamente sólidos.</p>
+<p><strong>2.</strong> <strong>Dependencia de la Posesión</strong></p>
+<p>El alto volumen de actividad ofensiva podría interpretarse como necesidad de dominio posicional para crear peligro. Si un rival logra bloquear el centro y los laterales, Austria podría experimentar dificultades.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇯🇴 Jordania: Ventajas y Desafíos</h2>
+<h3>Ventajas de Jordania</h3>
+<p><strong>1.</strong> <strong>Compactación Defensiva</strong></p>
+<p>Aunque Jordania genera menos volumen total, sus acciones defensivas están muy concentradas en la zona central. Esta compactación podría servir para bloquear el paso hacia el área y forzar a Austria a resolver desde larga distancia.</p>
+<p><strong>2.</strong> <strong>Simplicidad Táctica</strong></p>
+<p>La red de pases de Jordania, aunque limitada, es directa. Jugadores como Layla, Al-Tasmari y Al-Delemat actúan como ejes centrales. Esta simplicidad podría favorecer la consistencia defensiva.</p>
+<h3>Desventajas de Jordania</h3>
+<p><strong>1.</strong> <strong>Ofensiva Limitada</strong></p>
+<p>Con solo 32 disparos y 3 goles, Jordania tiene una tasa de conversión aún menor que Austria (~9.4%). El mapa de calor es disperso y desordenado, sin concentración clara en áreas de peligro. Esto refleja falta de estructura ofensiva.</p>
+<p><strong>2.</strong> <strong>Creatividad Muy Reducida</strong></p>
+<p>La red de pases muestra solo 4-5 jugadores clave. Esta concentración extrema es vulnerable: si Austria marca a Layla y Al-Delemat, Jordania pierde su capacidad creativa. Falta profundidad y alternativas.</p>
+<p><strong>3.</strong> <strong>Amenaza Esperada Mínima</strong></p>
+<p>El xT acumulado de Jordania es dramáticamente bajo (máximo 0.30), comparado con el 1.5+ de Austria. Esto indica que Jordania no solo dispara menos, sino que sus intentos son de calidad muy inferior.</p>
+<p><strong>4.</strong> <strong>Transiciones Ofensivas Débiles</strong></p>
+<p>Las conducciones progresivas de Jordania son limitadas, especialmente desde líneas defensivas. El equipo lucha para construir ataques desde la defensa hacia el ataque, dependiendo probablemente de recuperaciones en zona media.</p>
+<p><strong>5.</strong> <strong>Falta de Variedad Táctica</strong></p>
+<p>Jordania parece jugar de forma mucho más predecible y lineal, sin opciones alternativas cuando el plan principal falla.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa Táctica (Pre-Partido)</h2>
+<h3>Estadísticas Clave Comparadas</h3>
+<p>| Métrica | Austria | Jordania | Ventaja |</p>
+<p>|---------|---------|----------|---------|</p>
+<p>| Disparos | 44 | 32 | Austria (+37%) |</p>
+<p>| Goles | 6 | 3 | Austria (2x) |</p>
+<p>| Eficiencia | 13.6% | 9.4% | Austria |</p>
+<p>| Jugadores clave en pases | 8-10 | 4-5 | Austria |</p>
+<p>| xT Acumulado | ~1.5 | ~0.3 | Austria (5x) |</p>
+<p>| Conducciones progresivas | Abundantes | Limitadas | Austria |</p>
+<p>| Distribución defensiva | Amplia | Concentrada | Austria |</p>
+<h3>Qué podría hacer cada equipo</h3>
+<ul>
+<li><strong>Austria</strong> debe mejorar la puntería en zona de remate, explotar la banda derecha donde su xT acumulado es sobresaliente, sostener la presión tras pérdida para generar transiciones cortas y crear superioridades numéricas (sobrecargas) con sus numerosos creativos en mediocampo.</li>
+<li><strong>Jordania</strong> debe refugiarse en un bloque medio-bajo compacto bloqueando el embudo central, buscar balones largos y directos hacia transiciones veloces de sus atacantes, y buscar maximizar sus opciones de peligro a través de jugadas a balón parado.</li>
+</ul>
+<p>En conclusión, Austria debería ganar con solvencia si mantiene su ritmo de juego y mejora ligeramente su puntería. Jordania solo tiene opciones de sorpresa jugando físicamente, compactado y buscando velocidad en transición. Sin embargo, la diferencia estadística es tan amplia que Austria partiría como claro favorito.</p>
+<p>Se pronostica una victoria cómoda de <strong>Austria por 2 - 0</strong>, con probabilidad de un resultado más amplio si Jordania no logra organizar su defensa correctamente.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_MapaDefensivo_Equipo_Completo_horizontal_20260616.png" alt="Mapa Defensivo (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png" alt="Amenaza Esperada xT (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_MapadeCalor_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Calor (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Austria)</h4>
+                      <img src="../assets/ShotMap_Austria_horizontal_20260616.png" alt="Mapa de Tiros (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Jordania)</h4>
+                      <img src="../assets/ShotMap_Jordania_horizontal_20260616.png" alt="Mapa de Tiros (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_ReddePases_horizontal_20260616.png" alt="Red de Pases (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_ReddePases_Equipo_Completo_horizontal_20260616.png" alt="Red de Pases (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_ConduccionesProgresivas_horizontal_20260616.png" alt="Conducciones Progresivas (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_ConduccionesProgresivas_Equipo_Completo_horizontal_20260616.png" alt="Conducciones Progresivas (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_MapadeAsistencias_horizontal_20260616.png" alt="Mapa de Asistencias (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_MapadeAsistencias_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Asistencias (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
