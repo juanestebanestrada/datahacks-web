@@ -6,10 +6,10 @@ fecha: "2026-06-15"
 hora: "14:00"
 home_team: "Bélgica"
 away_team: "Egipto"
-goles_home: 0
-goles_away: 0
+goles_home: 1
+goles_away: 1
 pronostico: "2 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Bélgica_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Bélgica), Analisis_Egipto_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Egipto), Analisis_Bélgica_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Bélgica), Analisis_Egipto_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Egipto), Analisis_Bélgica_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Bélgica), Analisis_Egipto_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Egipto), ShotMap_Bélgica_horizontal_20260615.png:Mapa de Tiros (Bélgica), ShotMap_Egipto_horizontal_20260615.png:Mapa de Tiros (Egipto), Analisis_Bélgica_ReddePases_horizontal_20260615.png:Red de Pases (Bélgica), Analisis_Egipto_ReddePases_horizontal_20260615.png:Red de Pases (Egipto), Analisis_Bélgica_ConduccionesProgresivas_horizontal_20260615.png:Conducciones Progresivas (Bélgica), Analisis_Egipto_ConduccionesProgresivas_horizontal_20260615.png:Conducciones Progresivas (Egipto), Analisis_Bélgica_MapadeAsistencias_horizontal_20260615.png:Mapa de Asistencias (Bélgica), Analisis_Egipto_MapadeAsistencias_horizontal_20260615.png:Mapa de Asistencias (Egipto)"
 slug: "belgica_egipto"
 poisson: "48-28-24"
@@ -52,3 +52,16 @@ Egipto presenta un mapa mucho más caótico pero también más prolífero en con
 * **Egipto** debe mantener una presión alta incesante sobre la salida belga, densificar el mediocampo para obstaculizar el flujo de pase de Vertonghen y Theate, y lanzar contraataques verticales en 2 o 3 toques para castigar el bloque defensivo belga antes de que logre ordenarse.
 
 En conclusión, Bélgica parte como **favorita por estructura y control**, pero Egipto tiene herramientas de sobra para ser un rival sumamente peligroso e incómodo. Un resultado proyectado de **2 - 1** a favor de Bélgica es el escenario más viable, dominando el balón pero sufriendo en las transiciones rápidas de los egipcios.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Bélgica 1 - 1 Egipto)
+Bélgica y Egipto firmaron un intenso y disputado empate 1-1 en su debut en el Grupo G, reflejando el choque de estilos previsto en la previa. El conjunto belga tomó la iniciativa y dominó la posesión con su habitual circuito de distribución liderado por Vertonghen y Theate. Sin embargo, la falta de pegada y definición en el último tercio volvió a penalizar a los "Diablos Rojos", quienes no lograron capitalizar su superioridad territorial. Por su parte, los "Faraones" de Egipto plantaron cara gracias a una presión defensiva asfixiante y agresiva en todo el terreno, castigando las transiciones belgas y logrando batir el arco rival mediante una contra vertical y letal. El marcador final premia la combatividad del bloque africano y deja claras tareas pendientes para Bélgica.
+
+### 🔮 Impacto en el Grupo G y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Con este empate, ambas selecciones suman 1 punto en el Grupo G. Las métricas de Bélgica reflejan su superioridad en posesión pero revelan un déficit preocupante en la tasa de conversión. Egipto, por su parte, consolida su reputación como un bloque defensivo sumamente combativo y físico.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Bélgica vs Irán:** Un choque donde Bélgica tendrá la obligación de buscar los tres puntos. El modelo Poisson otorga a Bélgica un **55% de probabilidad de triunfo**, esperando que logren descifrar el bloque defensivo iraní.
+  * **Nueva Zelanda vs Egipto:** Duelo clave para el destino del grupo. Egipto parte como favorito con un **58% de probabilidad de ganar** si logra imponer su intensidad física frente al directo juego neozelandés.

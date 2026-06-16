@@ -6,10 +6,10 @@ fecha: "2026-06-15"
 hora: "17:00"
 home_team: "Arabia Saudí"
 away_team: "Uruguay"
-goles_home: 0
-goles_away: 0
+goles_home: 1
+goles_away: 1
 pronostico: "1 - 3"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Arabia Saudí_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Arabia Saudita), Analisis_Uruguay_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Uruguay), Analisis_Arabia Saudí_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Arabia Saudita), Analisis_Uruguay_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Uruguay), Analisis_Arabia Saudí_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Arabia Saudita), Analisis_Uruguay_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Uruguay), ShotMap_Arabia Saudí_horizontal_20260615.png:Mapa de Tiros (Arabia Saudita), ShotMap_Uruguay_horizontal_20260615.png:Mapa de Tiros (Uruguay), Analisis_Arabia Saudí_ReddePases_horizontal_20260615.png:Red de Pases (Arabia Saudita), Analisis_Uruguay_ReddePases_horizontal_20260615.png:Red de Pases (Uruguay), Analisis_Arabia Saudí_ConduccionesProgresivas_horizontal_20260615.png:Conducciones Progresivas (Arabia Saudita), Analisis_Uruguay_ConduccionesProgresivas_horizontal_20260615.png:Conducciones Progresivas (Uruguay), Analisis_Arabia Saudí_MapadeAsistencias_horizontal_20260615.png:Mapa de Asistencias (Arabia Saudita), Analisis_Uruguay_MapadeAsistencias_horizontal_20260615.png:Mapa de Asistencias (Uruguay)"
 slug: "arabiasaudi_uruguay"
 poisson: "12-20-68"
@@ -52,3 +52,16 @@ En cuanto a progresiones, Uruguay ejecuta un sistema de conduciones progresivas 
 * **Uruguay** debe adueñarse del balón (apuntando a un 65% de posesión), emplear cambios de ritmo y juego interior mediante su distribuidor central, explotar los carriles laterales para lanzar centros al área y mantener la agresividad en la recuperación alta sin caer en la autocomplacencia.
 
 En definitiva, **Uruguay es el favorito abrumador** para llevarse los tres puntos de forma contundente, con un marcador probable situado entre un **3 - 1** o un **2 - 0**, reflejando la considerable brecha táctica y física entre ambos planteles.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Arabia Saudí 1 - 1 Uruguay)
+En uno de los resultados más sorpresivos e inesperados de la jornada, Arabia Saudita y Uruguay empataron 1-1 en el debut del Grupo H. A pesar de que el conjunto charrúa partía como el claro favorito con Susopechu como eje de distribución, la disciplinada disposición táctica de Arabia Saudita neutralizó gran parte de sus ataques. El bloque defensivo bajo y compacto de los saudíes limitó la capacidad de conducción uruguaya. Además, Arabia Saudita aprovechó una desatención en la zaga charrúa tras una contra vertical rápida para golpear primero en el marcador. Uruguay reaccionó con agresividad y adelantó sus líneas, logrando salvar un punto en los minutos finales, pero el empate deja un sabor amargo para el favorito del grupo.
+
+### 🔮 Impacto en el Grupo H y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** El sorpresivo empate 1-1 aprieta el Grupo H. Las métricas ofensivas de Uruguay sufren una calibración a la baja en efectividad (xG vs goles reales), mientras que el bloque defensivo de Arabia Saudí ve incrementada su consistencia en el simulador.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **España vs Arabia Saudí:** España saldrá con la obligación de ganar tras su empate inicial. El modelo Poisson le otorga a España un **60% de probabilidad de victoria**, ante una Arabia Saudí envalentonada.
+  * **Uruguay vs Cabo Verde:** Partido crucial para los celestes. Uruguay es el favorito con un **62% de probabilidad de triunfo**, pero no puede confiarse ante la alta eficacia de finalización del rival africano.

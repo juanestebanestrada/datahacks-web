@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Argentina vs Argelia: Duelo de Estilos en el Grupo J // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Argentina vs Argelia del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_j.html" class="back-link">← Volver al Grupo J</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo J</span>
+    <h2>Argentina vs Argelia</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-16 · 🕒 20:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Argentina</span>
+        <img src="https://flagcdn.com/w80/ar.png" alt="Argentina" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">3 - 0</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/dz.png" alt="Argelia" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Argelia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <p>Este enfrentamiento presenta una superioridad clara de Argentina sobre Argelia. Argentina (Mundial 2022) registra 87 disparos con 23 goles (26.4% eficiencia), mientras Argelia (recientes, AFCON 2023) acumula 47 disparos con 8 goles (17.0% eficiencia). Argentina no solo dispara casi 2x más, sino que convierte con una efectividad <strong>50% superior</strong>. Argentina es un equipo de élite mundial; Argelia es competente pero de segundo nivel.</p>
+<h2>⚖️ Comparativa General de Desempeño</h2>
+<p>Este enfrentamiento presenta un gran contraste táctico, con una Argentina caracterizada por su circulación asociativa fluida y un Argelia ordenado en bloque medio que intentará anular los circuitos creativos de la Albiceleste.</p>
+<h2>🇦🇷 Argentina: Análisis Táctico</h2>
+<p>Argentina despliega una ofensiva sofisticada y multifacética. Su mapa de calor muestra una saturación masiva en el área rival, especialmente en zonas de máximo peligro donde los goles ocurren. La red de pases es extraordinariamente compleja, con <strong>múltiples pivotes</strong> (Tagliafico, Gómez, Fernández, Acuña) funcionando como distribuidores, pero con decenas de conexiones secundarias. Esto permite que Argentina genere ofensivas desde cualquier posición del campo. Con 23 goles en 87 disparos, Argentina demuestra un sistema ofensivo donde la construcción, circulación y remate están perfectamente coordinados.</p>
+<p>El xT acumulado de Argentina (~1.0) <strong>duplica</strong> significativamente el de Argelia (~0.5). Esto refleja que Argentina no solo genera más oportunidades, sino que las genera en zonas de máximo valor. Argentina crea amenaza desde múltiples ángulos de forma consistente y sistemática.</p>
+<p>En defensa, Argentina ejecuta un mapa defensivo de altísima densidad y agresividad. Prácticamente cada zona del campo tiene una saturación de acciones defensivas: presiones, recuperaciones, bloqueos e intercepciones. Argentina <strong>mata el juego antes de que se desarrolle</strong>, recuperando balón en zonas avanzadas constantemente. Este es un sistema que requiere intensidad sostenida y coordinación táctica impecable.</p>
+<p>Argentina despliega un mapa de conducciones progresivas extraordinariamente denso y variado. Las líneas de ataque son múltiples, simultáneas y creativas. Hay conducciones desde defensa profunda que generan superioridad numérica en transición, junto con movimientos de media cancha y ataques laterales. La capacidad de Argentina para avanzar de forma fluida desde cualquier posición refleja un equipo donde la transición es rápida, coordinada y letal. Asimismo, tiene una red de asistencias extraordinariamente densa y variada. Con 23 goles, decenas de jugadores participan en la creación. La red sugiere que Argentina juega un fútbol donde cualquier defensor, centrocampista o extremo puede convertirse en asistente. Esta distribución refleja un equipo donde la creatividad es colectiva y sistemática.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇩🇿 Argelia: Análisis Táctico</h2>
+<p>Argelia presenta una estructura ofensiva ordenada pero básica. Su mapa de calor muestra concentración en el área rival, pero sin la densidad saturada de Argentina. La red de pases es notablemente más simple, con <strong>5-6 jugadores clave</strong> (Mandi, Zerfaoui, Bounedjah) actuando como ejes principales. Sin embargo, las conexiones son menos numerosas que Argentina, sugiriendo un sistema menos flexible. Con 8 goles en 47 disparos (17.0%), Argelia demuestra competencia ofensiva pero falta de la precisión característica de equipos de élite.</p>
+<p>Argelia genera amenaza concentrada en zonas específicas, principalmente a través de ataques laterales coordinados. Sin embargo, la escasez de alternativas (menor variabilidad) hace que el equipo africano sea más predecible y vulnerable a defensas preparadas.</p>
+<p>Defensivamente, Argelia mantiene un mapa defensivo con densidad moderada, principalmente concentrado en zona media y defensiva. El equipo defiende en bloque ordenado, intentando compactar espacios sin presionar agresivamente. Esta decisión táctica (reconocer limitaciones y jugar más defensivamente) es inteligente pero coloca a Argelia en desventaja contra una ofensiva como la de Argentina.</p>
+<p>Argelia muestra conducciones progresivas ordenadas pero menos abundantes. Las progresiones son principalmente laterales y hacia zonas específicas del área rival. Aunque el orden es respetable, las conducciones argelinas son menos variadas y más predecibles para defensores experimentados. Por último, mantiene una red de asistencias más concentrada. Con 8 goles, un número más limitado de jugadores actúa como creadores. La simplicidad de la red refleja que Argelia tiene opciones de creación menos diversas que Argentina.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<h3>Ventajas y Desventajas</h3>
+<ul>
+<li><strong>A favor de Argentina:</strong></li>
+</ul>
+<p><strong>1.</strong> Eficiencia ofensiva abrumadora: 26.4% vs 17.0% es una diferencia de clase.</p>
+<p><strong>2.</strong> xT acumulado superior: Genera casi el doble de amenaza.</p>
+<p><strong>3.</strong> Disparos masivos: 87 vs 47; Argentina ataca constantemente.</p>
+<p><strong>4.</strong> Goles letales: 23 goles demuestran conversión consistente.</p>
+<p><strong>5.</strong> Mapa de calor concentrado: Presencia constante en área rival.</p>
+<p><strong>6.</strong> Conducciones progresivas abundantes: Múltiples formas de avanzar.</p>
+<p><strong>7.</strong> Red de asistencias densa: Muchas opciones de creación.</p>
+<p><strong>8.</strong> Presión defensiva sostenida: Recupera balón constantemente.</p>
+<p><strong>9.</strong> Experiencia de élite: Campeones del Mundial previo.</p>
+<p><strong>10.</strong> Sistema ofensivo completo: Construcción + transición + remate coordinados.</p>
+<ul>
+<li><strong>En contra de Argentina:</strong></li>
+</ul>
+<p><strong>1.</strong> Ninguna significativa contra Argelia.</p>
+<p><strong>2.</strong> Potencial complacencia si se adelanta demasiado, pero improbable contra un rival competente.</p>
+<ul>
+<li><strong>A favor de Argelia:</strong></li>
+</ul>
+<p><strong>1.</strong> Defensa compacta: Difícil de penetrar en zona baja.</p>
+<p><strong>2.</strong> Claridad táctica: Cada jugador sabe su rol.</p>
+<p><strong>3.</strong> Experiencia africana: Ha jugado contra defensas similares en AFCON.</p>
+<p><strong>4.</strong> Cohesión defensiva: Menos amarillas por desorganización.</p>
+<ul>
+<li><strong>En contra de Argelia:</strong></li>
+</ul>
+<p><strong>1.</strong> Eficiencia ofensiva inferior: 17.0% vs 26.4% es una brecha significativa.</p>
+<p><strong>2.</strong> xT limitado: Genera apenas la mitad de la amenaza de Argentina.</p>
+<p><strong>3.</strong> Disparos escasos: 47 vs 87 refleja iniciativa ofensiva limitada.</p>
+<p><strong>4.</strong> Goles insuficientes: 8 goles contra 23 muestra incapacidad ofensiva.</p>
+<p><strong>5.</strong> Mapa de calor menos concentrado: Presencia en área menos densa.</p>
+<p><strong>6.</strong> Conducciones progresivas limitadas: Menos iniciativas de ataque.</p>
+<p><strong>7.</strong> Red de asistencias simple: Pocas opciones de creación.</p>
+<p><strong>8.</strong> Presión defensiva débil: No presiona sostenidamente.</p>
+<p><strong>9.</strong> Falta de variabilidad táctica: Predecible.</p>
+<p><strong>10.</strong> Déficit defensivo: Intensidad inferior a Argentina.</p>
+<h3>Qué podría hacer cada equipo</h3>
+<ul>
+<li><strong>Argentina</strong> debe presionar de forma alta y sostenida para forzar errores en la salida de Argelia, mantener cambios de frente rápidos que desarman el bloque medio argelino, y explotar los costados donde la defensa rival suele dar concesiones.</li>
+<li><strong>Argelia</strong> debe pararse en un bloque defensivo muy bajo y cerrado, explotar las transiciones a máxima velocidad con salidas rápidas, y priorizar la disciplina táctica sin romper la línea para no dar espacios a la movilidad de la Albiceleste.</li>
+</ul>
+<p>En definitiva, Argentina es muy superior y posee las credenciales para comandar el partido de principio a fin. Se pronostica una victoria clara y contundente de <strong>Argentina por 3 - 0</strong>.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Argentina)</h4>
+                      <img src="../assets/ShotMap_Argentina_horizontal_20260616.png" alt="Mapa de Tiros (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Argelia)</h4>
+                      <img src="../assets/ShotMap_Argelia_horizontal_20260616.png" alt="Mapa de Tiros (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_ReddePases_horizontal_20260616.png" alt="Red de Pases (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_ReddePases_horizontal_20260616.png" alt="Red de Pases (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_ConduccionesProgresivas_horizontal_20260616.png" alt="Conducciones Progresivas (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_ConduccionesProgresivas_horizontal_20260616.png" alt="Conducciones Progresivas (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_MapadeAsistencias_horizontal_20260616.png" alt="Mapa de Asistencias (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_MapadeAsistencias_horizontal_20260616.png" alt="Mapa de Asistencias (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

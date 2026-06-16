@@ -6,10 +6,10 @@ fecha: "2026-06-15"
 hora: "20:00"
 home_team: "Irán"
 away_team: "Nueva Zelanda"
-goles_home: 0
-goles_away: 0
+goles_home: 2
+goles_away: 2
 pronostico: "2 - 0"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Irán_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Irán), Analisis_Nueva Zelanda_MapaDefensivo_Equipo_Completo_horizontal_20260615.png:Mapa Defensivo (Nueva Zelanda), Analisis_Irán_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Irán), Analisis_Nueva Zelanda_ExpectedThreatxT_Equipo_Completo_horizontal_20260615.png:Amenaza Esperada xT (Nueva Zelanda), Analisis_Irán_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Irán), Analisis_Nueva Zelanda_MapadeCalor_Equipo_Completo_horizontal_20260615.png:Mapa de Calor (Nueva Zelanda), ShotMap_Irán_horizontal_20260615.png:Mapa de Tiros (Irán), ShotMap_Nueva Zelanda_horizontal_20260615.png:Mapa de Tiros (Nueva Zelanda), Analisis_Irán_ReddePases_horizontal_20260615.png:Red de Pases (Irán), Analisis_Nueva Zelanda_ReddePases_Equipo_Completo_horizontal_20260615.png:Red de Pases (Nueva Zelanda), Analisis_Irán_ConduccionesProgresivas_horizontal_20260615.png:Conducciones Progresivas (Irán), Analisis_Nueva Zelanda_ConduccionesProgresivas_Equipo_Completo_horizontal_20260615.png:Conducciones Progresivas (Nueva Zelanda), Analisis_Irán_MapadeAsistencias_horizontal_20260615.png:Mapa de Asistencias (Irán), Analisis_Nueva Zelanda_MapadeAsistencias_Equipo_Completo_horizontal_20260615.png:Mapa de Asistencias (Nueva Zelanda)"
 slug: "iran_nuevazelanda"
 poisson: "60-25-15"
@@ -71,3 +71,16 @@ Sus conducciones progresivas son ordenadas pero extremadamente limitadas y prede
 * **Nueva Zelanda** debe apostar por un bloque compacto bajo muy profundo, disputar segundas pelotas para dominar duelos físicos y lanzar contraataques verticales e inmediatos tras recuperar balón en zona defensiva sin intentar construir en corto.
 
 En conclusión, se proyecta una victoria para **Irán por 2 - 0**. Aunque Irán es ofensivamente limitado, su estructura táctica es superior y ofrece más variantes de circulación frente a una Nueva Zelanda tácticamente muy básica y predecible.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Irán 2 - 2 Nueva Zelanda)
+En un emocionante y dinámico encuentro, Irán y Nueva Zelanda firmaron un electrizante empate 2-2 en el cierre de la primera jornada del Grupo G. Nueva Zelanda dio la gran sorpresa al adelantarse por partida doble gracias a su fútbol directo y vertical; balones largos lanzados por Sail y Cacace que rompieron el bloque defensivo de contención iraní y se tradujeron en dos goles de gran efectividad física. Sin embargo, la selección de Irán no bajó los brazos y, apoyándose en su estructura de pases más fluida e interconectada, tomó el control de la posesión y elaboró ataques variados. La constancia y variabilidad ofensiva permitieron a los asiáticos marcar dos goles en la segunda mitad para sellar una vibrante igualdad.
+
+### 🔮 Impacto en el Grupo G y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Este empate 2-2 deja el Grupo G completamente abierto con todas las selecciones igualadas en 1 punto y el mismo diferencial de goles. Las métricas ofensivas de Nueva Zelanda suben en peligrosidad por su verticalidad directa, mientras que Irán muestra dudas en la contención de transiciones rápidas.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Bélgica vs Irán:** Partido de alta tensión. Bélgica parte con un **55% de probabilidad de triunfo** según el modelo Poisson, pero la variabilidad ofensiva de Irán representa una seria amenaza a la contra.
+  * **Nueva Zelanda vs Egipto:** Un duelo de estilos contrapuestos. Egipto parte con un **58% de probabilidad de ganar** para imponer su presión alta y ritmo dinámico frente a la zaga neozelandesa.

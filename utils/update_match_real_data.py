@@ -150,6 +150,83 @@ MATCHES_CONFIG = [
         "away_flag": "🇨🇻",
         "home_img": "ShotMap_España_horizontal_20260615.png",
         "away_img": "ShotMap_Cabo Verde_horizontal_20260615.png"
+    },
+    {
+        "match_id": 4667790,
+        "slug": "belgica_egipto",
+        "md_filename": "20260615_belgica_egipto.md",
+        "home_name": "Bélgica",
+        "away_name": "Egipto",
+        "home_flag": "🇧🇪",
+        "away_flag": "🇪🇬",
+        "home_img": "ShotMap_Bélgica_horizontal_20260615.png",
+        "away_img": "ShotMap_Egipto_horizontal_20260615.png"
+    },
+    {
+        "match_id": 4667799,
+        "slug": "arabiasaudi_uruguay",
+        "md_filename": "20260615_arabiasaudi_uruguay.md",
+        "home_name": "Arabia Saudí",
+        "away_name": "Uruguay",
+        "home_flag": "🇸🇦",
+        "away_flag": "🇺🇾",
+        "home_img": "ShotMap_Arabia Saudí_horizontal_20260615.png",
+        "away_img": "ShotMap_Uruguay_horizontal_20260615.png"
+    },
+    {
+        "match_id": 4667791,
+        "slug": "iran_nuevazelanda",
+        "md_filename": "20260615_iran_nuevazelanda.md",
+        "home_name": "Irán",
+        "away_name": "Nueva Zelanda",
+        "home_flag": "🇮🇷",
+        "away_flag": "🇳🇿",
+        "home_img": "ShotMap_Irán_horizontal_20260615.png",
+        "away_img": "ShotMap_Nueva Zelanda_horizontal_20260615.png"
+    },
+    {
+        "match_id": 4667804,
+        "slug": "francia_senegal",
+        "md_filename": "20260616_francia_senegal.md",
+        "home_name": "Francia",
+        "away_name": "Senegal",
+        "home_flag": "🇫🇷",
+        "away_flag": "🇸🇳",
+        "home_img": "ShotMap_Francia_horizontal_20260616.png",
+        "away_img": "ShotMap_Senegal_horizontal_20260616.png"
+    },
+    {
+        "match_id": 4667805,
+        "slug": "irak_noruega",
+        "md_filename": "20260616_irak_noruega.md",
+        "home_name": "Irak",
+        "away_name": "Noruega",
+        "home_flag": "🇮🇶",
+        "away_flag": "🇳🇴",
+        "home_img": "ShotMap_Irak_horizontal_20260616.png",
+        "away_img": "ShotMap_Noruega_horizontal_20260616.png"
+    },
+    {
+        "match_id": 4667812,
+        "slug": "argentina_argelia",
+        "md_filename": "20260616_argentina_argelia.md",
+        "home_name": "Argentina",
+        "away_name": "Argelia",
+        "home_flag": "🇦🇷",
+        "away_flag": "🇩🇿",
+        "home_img": "ShotMap_Argentina_horizontal_20260616.png",
+        "away_img": "ShotMap_Argelia_horizontal_20260616.png"
+    },
+    {
+        "match_id": 4667813,
+        "slug": "austria_jordania",
+        "md_filename": "20260616_austria_jordania.md",
+        "home_name": "Austria",
+        "away_name": "Jordania",
+        "home_flag": "🇦🇹",
+        "away_flag": "🇯🇴",
+        "home_img": "ShotMap_Austria_horizontal_20260616.png",
+        "away_img": "ShotMap_Jordania_horizontal_20260616.png"
     }
 ]
 
