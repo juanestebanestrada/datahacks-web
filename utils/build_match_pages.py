@@ -628,6 +628,62 @@ def build_all_pages():
             
             all_compiled_matches.append(match_data)
             
+    # --- CALCULAR STANDINGS DE LOS GRUPOS ---
+    standings = {}
+    grupos_path = os.path.join(BASE_DIR, 'data', 'grupos.json')
+    if os.path.exists(grupos_path):
+        try:
+            import json
+            with open(grupos_path, 'r', encoding='utf-8') as f:
+                grupos_dict = json.load(f)
+            for grupo, teams in grupos_dict.items():
+                standings[grupo] = {}
+                for team_name in teams.keys():
+                    standings[grupo][team_name] = {
+                        "PJ": 0, "G": 0, "E": 0, "P": 0,
+                        "GF": 0, "GC": 0, "DG": 0, "Pts": 0
+                    }
+            for m in all_compiled_matches:
+                if m['is_finished']:
+                    grupo = m['grupo']
+                    home = m['home']
+                    away = m['away']
+                    if grupo in standings and home in standings[grupo] and away in standings[grupo]:
+                        score_str = m['display_score']
+                        if '-' in score_str:
+                            parts = score_str.split('-')
+                            if len(parts) == 2:
+                                try:
+                                    gh = int(parts[0].strip())
+                                    ga = int(parts[1].strip())
+                                    h_stats = standings[grupo][home]
+                                    a_stats = standings[grupo][away]
+                                    h_stats["PJ"] += 1
+                                    a_stats["PJ"] += 1
+                                    h_stats["GF"] += gh
+                                    h_stats["GC"] += ga
+                                    a_stats["GF"] += ga
+                                    a_stats["GC"] += gh
+                                    h_stats["DG"] = h_stats["GF"] - h_stats["GC"]
+                                    a_stats["DG"] = a_stats["GF"] - a_stats["GC"]
+                                    if gh > ga:
+                                        h_stats["G"] += 1
+                                        h_stats["Pts"] += 3
+                                        a_stats["P"] += 1
+                                    elif ga > gh:
+                                        a_stats["G"] += 1
+                                        a_stats["Pts"] += 3
+                                        h_stats["P"] += 1
+                                    else:
+                                        h_stats["E"] += 1
+                                        h_stats["Pts"] += 1
+                                        a_stats["E"] += 1
+                                        a_stats["Pts"] += 1
+                                except ValueError:
+                                    pass
+        except Exception as e:
+            print(f"Error al calcular standings: {e}")
+
     # --- ACTUALIZACIÓN DE LA HOME PAGE (index.html) ---
     index_path = os.path.join(WEBSITE_DIR, 'index.html')
     if os.path.exists(index_path) and all_compiled_matches:
@@ -645,7 +701,6 @@ def build_all_pages():
         
         # Generar Tarjetas HTML
         cards_list = []
-        
         for idx, m in enumerate(today_matches):
             # Obtener códigos de bandera FlagCDN
             code_home = FLAGS_MAP.get(m['home'], 'un')
@@ -707,7 +762,7 @@ def build_all_pages():
           </div>
           
           <div class="poisson-section">
-            <div class="poisson-title">Poisson probabilites</div>
+            <div class="poisson-title">Poisson probabilities</div>
             <div class="poisson-bar">
               <div class="bar-segment local" style="width: {prob_home}%" title="{m['home']}: {prob_home}%"></div>
               <div class="bar-segment draw" style="width: {prob_draw}%" title="Empate: {prob_draw}%"></div>
@@ -745,26 +800,6 @@ def build_all_pages():
             real_score = m['display_score']
             pronostico = m['pronostico']
             
-            # Evaluar estado de predicción: "exact", "tendency", "miss"
-            pred_status = "miss"
-            try:
-                p_clean = pronostico.replace(' ', '')
-                r_clean = real_score.replace(' ', '')
-                if p_clean == r_clean:
-                    pred_status = "exact"
-                else:
-                    p_parts = p_clean.split('-')
-                    r_parts = r_clean.split('-')
-                    if len(p_parts) == 2 and len(r_parts) == 2:
-                        p_home, p_away = int(p_parts[0]), int(p_parts[1])
-                        r_home, r_away = int(r_parts[0]), int(r_parts[1])
-                        p_diff = p_home - p_away
-                        r_diff = r_home - r_away
-                        if (p_diff > 0 and r_diff > 0) or (p_diff < 0 and r_diff < 0) or (p_diff == 0 and r_diff == 0):
-                            pred_status = "tendency"
-            except Exception as e:
-                pass
-
             # Mostrar marcador predicho y real de forma sencilla sin cruces ni badges
             score_display_html = f"""
             <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
@@ -805,6 +840,159 @@ def build_all_pages():
             
         history_html = "\n        ".join(history_cards)
         
+        # Generar Widget de Standings Dinámico para la Home Page
+        standings_widget_html = ""
+        if standings:
+            widget_html_parts = []
+            widget_html_parts.append("""
+<style>
+  .standings-section {
+    margin: 40px 0;
+    padding: 24px;
+    background: rgba(15, 12, 32, 0.45);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  }
+  .standings-tabs-container {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+  }
+  .standings-tab-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-head);
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+  .standings-tab-btn:hover {
+    background: rgba(0, 149, 255, 0.1);
+    border-color: rgba(0, 149, 255, 0.3);
+    color: var(--cyan);
+  }
+  .standings-tab-btn.active {
+    background: rgba(0, 149, 255, 0.2);
+    border-color: var(--cyan);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 149, 255, 0.25);
+  }
+  .standings-tab-content {
+    display: none;
+    animation: fadeInStandings 0.4s ease;
+  }
+  @keyframes fadeInStandings {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div class="standings-section">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+    <h3 style="font-family: var(--font-head); font-size: 1.3rem; color: #fff; margin: 0; display: flex; align-items: center; gap: 8px;">
+      🏆 Tabla de Posiciones Mundial 2026
+    </h3>
+    <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">
+      Simulación Local (Resultados Oficiales)
+    </span>
+  </div>
+  
+  <div class="standings-tabs-container">""")
+
+            group_keys = sorted(standings.keys())
+            for idx, g in enumerate(group_keys):
+                active_class = " active" if idx == 0 else ""
+                tab_id = f"std-tab-{g.lower().replace(' ', '-')}"
+                widget_html_parts.append(f'    <button class="standings-tab-btn{active_class}" onclick="switchStandingsTab(event, \'{tab_id}\')">{g}</button>')
+                
+            widget_html_parts.append('  </div>')
+
+            for idx, g in enumerate(group_keys):
+                display_style = "display: block;" if idx == 0 else "display: none;"
+                tab_id = f"std-tab-{g.lower().replace(' ', '-')}"
+                
+                sorted_teams = sorted(
+                    standings[g].items(),
+                    key=lambda x: (x[1]['Pts'], x[1]['DG'], x[1]['GF'], x[0]),
+                    reverse=True
+                )
+                
+                rows_list = []
+                for pos, (team_name, stats) in enumerate(sorted_teams, 1):
+                    flag_code = FLAGS_MAP.get(team_name, 'un')
+                    row_html = f"""
+          <tr style="text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td style="text-align: center; font-weight: bold; padding: 12px 8px; width: 50px;">{pos}</td>
+            <td style="text-align: left; padding: 12px 8px; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/{flag_code}.png" alt="{team_name}" style="width: 20px; height: auto; border-radius: 2px;">
+              <span style="font-weight: 600;">{team_name}</span>
+            </td>
+            <td style="text-align: center; padding: 12px 8px; width: 50px;">{stats['PJ']}</td>
+            <td style="text-align: center; padding: 12px 8px; width: 50px;">{stats['G']}</td>
+            <td style="text-align: center; padding: 12px 8px; width: 50px;">{stats['E']}</td>
+            <td style="text-align: center; padding: 12px 8px; width: 50px;">{stats['P']}</td>
+            <td style="text-align: center; padding: 12px 8px; width: 50px;">{stats['GF']}</td>
+            <td style="text-align: center; padding: 12px 8px; width: 50px;">{stats['GC']}</td>
+            <td style="text-align: center; padding: 12px 8px; width: 50px;">{stats['DG']}</td>
+            <td style="text-align: center; padding: 12px 8px; width: 70px; font-weight: 900; color: var(--cyan);">{stats['Pts']}</td>
+          </tr>"""
+                    rows_list.append(row_html)
+                    
+                rows_html = "".join(rows_list)
+                
+                widget_html_parts.append(f"""
+  <div id="{tab_id}" class="standings-tab-content" style="{display_style}">
+    <div style="overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 10px;">
+      <table style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff; font-size: 0.9rem;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="width: 50px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Pos</th>
+            <th style="text-align: left; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Equipo</th>
+            <th style="width: 50px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">PJ</th>
+            <th style="width: 50px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">G</th>
+            <th style="width: 50px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">E</th>
+            <th style="width: 50px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">P</th>
+            <th style="width: 50px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GF</th>
+            <th style="width: 50px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GC</th>
+            <th style="width: 50px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">DG</th>
+            <th style="width: 70px; text-align: center; padding: 12px 8px; color: var(--cyan); font-family: var(--font-head); font-weight: 900;">Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows_html}
+        </tbody>
+      </table>
+    </div>
+  </div>""")
+                
+            widget_html_parts.append("""
+</div>
+
+<script>
+function switchStandingsTab(evt, tabId) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("standings-tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("standings-tab-btn");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  document.getElementById(tabId).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+</script>""")
+            standings_widget_html = "".join(widget_html_parts)
+            
         # Inyectar en index.html
         with open(index_path, 'r', encoding='utf-8') as f:
             index_content = f.read()
@@ -819,10 +1007,107 @@ def build_all_pages():
         replacement_history = f'\\1\n        {history_html}\n        \\3'
         index_content = re.sub(pattern_history, replacement_history, index_content, flags=re.DOTALL)
         
+        # Remplazar el widget de Standings
+        if standings_widget_html:
+            pattern_standings = r'(<!-- STANDINGS_WIDGET_START -->)(.*?)(<!-- STANDINGS_WIDGET_END -->)'
+            replacement_standings = f'\\1\n        {standings_widget_html}\n        \\3'
+            index_content = re.sub(pattern_standings, replacement_standings, index_content, flags=re.DOTALL)
+            
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write(index_content)
-        print(f"Actualizado index.html: Live Match Center ({len(today_matches)} partidos) e Historial ({len(sorted_matches)} partidos)")
+        print(f"Actualizado index.html: Live Match Center ({len(today_matches)} partidos), Historial ({len(sorted_matches)} partidos) y Tabla de Posiciones")
         
+    # --- ACTUALIZACIÓN DE LAS TABLAS DE POSICIONES DE LOS GRUPOS (grupo_a.html a grupo_l.html) ---
+    if standings:
+        try:
+            # Para cada grupo, ordenar standings, generar HTML e inyectar en el respectivo archivo
+            for grupo, table_data in standings.items():
+                grupo_file_name = GROUP_PAGES.get(grupo)
+                if not grupo_file_name:
+                    continue
+                
+                grupo_file_path = os.path.join(WEBSITE_DIR, grupo_file_name)
+                if os.path.exists(grupo_file_path):
+                    with open(grupo_file_path, 'r', encoding='utf-8') as f:
+                        grupo_html_content = f.read()
+                    
+                    # Ordenar equipos: Pts -> DG -> GF -> Nombre
+                    sorted_teams = sorted(
+                        table_data.items(),
+                        key=lambda x: (x[1]['Pts'], x[1]['DG'], x[1]['GF'], x[0]),
+                        reverse=True
+                    )
+                    
+                    # Generar filas de la tabla
+                    rows_list = []
+                    for pos, (team_name, stats) in enumerate(sorted_teams, 1):
+                        flag_code = FLAGS_MAP.get(team_name, 'un')
+                        row_html = f"""
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">{pos}</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/{flag_code}.png" alt="{team_name}" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>{team_name}</span>
+            </td>
+            <td style="text-align: center; width: 60px;">{stats['PJ']}</td>
+            <td style="text-align: center; width: 60px;">{stats['G']}</td>
+            <td style="text-align: center; width: 60px;">{stats['E']}</td>
+            <td style="text-align: center; width: 60px;">{stats['P']}</td>
+            <td style="text-align: center; width: 60px;">{stats['GF']}</td>
+            <td style="text-align: center; width: 60px;">{stats['GC']}</td>
+            <td style="text-align: center; width: 60px;">{stats['DG']}</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">{stats['Pts']}</td>
+          </tr>"""
+                        rows_list.append(row_html)
+                    
+                    rows_html = "".join(rows_list)
+                    
+                    # Generar bloque de standings
+                    placeholder_start = "<!-- STANDINGS_START -->"
+                    placeholder_end = "<!-- STANDINGS_END -->"
+                    
+                    standings_html_block = f"""<!-- STANDINGS_START -->
+  <div class="container" style="margin-bottom: 40px;">
+    <h3 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.5rem; text-align: left;">🏆 Tabla de Posiciones</h3>
+    <div class="comparison-container" style="padding: 20px; margin-bottom: 0px; border-radius: 12px; background: var(--bg-card); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow-x: auto;">
+      <table class="comp-table" style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Pos</th>
+            <th style="text-align: left; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Equipo</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">PJ</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">G</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">E</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">P</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GF</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GC</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">DG</th>
+            <th style="width: 80px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 900;">Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows_html}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- STANDINGS_END -->"""
+                    
+                    # Inyectar el bloque de standings
+                    if placeholder_start in grupo_html_content:
+                        pattern = re.escape(placeholder_start) + r".*?" + re.escape(placeholder_end)
+                        grupo_html_content = re.sub(pattern, standings_html_block, grupo_html_content, flags=re.DOTALL)
+                    else:
+                        target = '<div class="tactical-grid">'
+                        if target in grupo_html_content:
+                            grupo_html_content = grupo_html_content.replace(target, standings_html_block + '\n\n  ' + target)
+                    
+                    with open(grupo_file_path, 'w', encoding='utf-8') as f:
+                        f.write(grupo_html_content)
+                    print(f"   [OK] Tabla de posiciones inyectada en: website/{grupo_file_name}")
+        except Exception as e:
+            print(f"Error al actualizar tablas de posiciones de los grupos: {e}")
+            
     print("Compilación finalizada exitosamente.")
     return True
 

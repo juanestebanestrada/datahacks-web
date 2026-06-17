@@ -1,0 +1,93 @@
+<USER_REQUEST>
+Ahora vamos a evaluar el partido de Qatar vs Suiza. PAra ello, puedes acceder a los recurso graficos  ubicados en la carpeta D:\AntigravityPruebas\Mundial2026\materialData\GrupoB. El analisis basico es el siguiente:
+
+# Análisis Táctico: Qatar vs Suiza 🇶🇦 vs 🇨🇭
+
+> *Nota: Los gráficos corresponden a Qatar (Mundial 2022) y Suiza (Euro 2024), por lo que los datos reflejan contextos competitivos distintos — algo a tener en cuenta al comparar.*
+
+---
+
+## 🇶🇦 QATAR — Perfil del equipo
+
+### Ofensiva limitada pero con intención
+Qatar generó apenas **19 disparos con 1 gol** en su torneo de referencia, lo que evidencia una capacidad ofensiva muy modesta. El shot map muestra que la mayoría de sus remates se concentraron cerca del área, pero con valores de xG bajos — la mayoría de las oportunidades eran de baja probabilidad. El único gol anotado tuvo un xG moderado, lo cual sugiere cierta eficiencia puntual, pero no una amenaza sostenida.
+
+El mapa de amenaza esperada (xT) revela que Qatar generó peligro principalmente por el **carril derecho y en zonas de half-space ofensivo**, con focos concentrados en los carriles exteriores cercanos al área rival. No hay una generación de xT distribuida ni dominante — es selectiva y escasa.
+
+### Estructura de juego y circulación
+La red de pases muestra un equipo que **construye desde atrás con Khoukhi como eje central defensivo**. Las conexiones más fuertes pasan por el pivote (Madibo–Khoukhi) y se proyectan hacia los extremos Ahmed y Fadlalla. Es un sistema donde el juego largo hacia los costados es la principal vía de progresión, más que la combinación interior.
+
+Las conducciones progresivas revelan un equipo que **avanza mucho por el costado izquierdo** en transición, con varios portadores capaces de ganar metros individualmente desde campo propio. Sin embargo, la densidad de conducciones en zonas finales es baja — llegan pocos hasta el área.
+
+El mapa de calor es quizás el dato más revelador: Qatar **tiene presencia en casi todo el campo**, incluyendo su propio tercio defensivo con alta intensidad, lo cual refleja que cedió mucho territorio y jugó frecuentemente replegado. La zona más caliente en campo contrario es el carril derecho, consistente con su red de pases y su xT.
+
+### Comportamiento defensivo
+El mapa defensivo muestra que Qatar realizó **la mayoría de sus acciones defensivas en su propio campo**, especialmente en el lado izquierdo del bloque medio-bajo. Hay abundancia de presiones (amarillo) y duelos (verde oscuro), lo que sugiere un equipo que defiende con intensidad pero en posición retrasada. Las recuperaciones de balón (morado) también ocurren mayoritariamente lejos de la portería rival, lo que limita las transiciones rápidas.
+
+---
+
+## 🇨🇭 SUIZA — Perfil del equipo
+
+### Potencia ofensiva real
+Los números de Suiza son notablemente superiores: **51 disparos y 11 goles** en la Eurocopa 2024. El shot map es elocuente — una nube densa de remates concentrados en el área y semilla del área, con múltiples estrellas doradas (goles) distribuidas en zonas de alta probabilidad. Suiza no solo dispara más, sino que lo hace **desde mejores posiciones**.
+
+El mapa de xT confirma esto: Suiza genera amenaza **en toda la banda derecha de ataque** de forma sistemática, con los valores más altos (amarillo-verde) acumulados en los carriles interiores del tercio final. Hay una estructura ofensiva clara y repetible, no goles de fortuna.
+
+### Organización y estilo de juego
+La red de pases de Suiza es una de sus mayores fortalezas. **Granit Xhaka y Remo Freuler** forman un doble pivote conectado con todos los sectores del equipo — defensas, laterales y mediapuntas. El triángulo Xhaka–Freuler–Akanji es el corazón del build-up. En ataque, **Vargas aparece como el nodo más adelantado** y conectado, con Aebischer como enlace entre líneas.
+
+Las conducciones progresivas muestran un volumen altísimo — mucho mayor que Qatar — con conductores por **ambos flancos** y desde el mediocampo. La combinación de conducciones derechas (más largas, más verticales) e izquierdas indica que Suiza ataca con amplitud real y no depende de un solo corredor.
+
+### Presencia territorial y mapa de calor
+El mapa de calor de Suiza es radicalmente diferente al de Qatar: **el mayor foco de actividad está en el campo contrario, en el carril derecho ofensivo**, con un núcleo blanco-gris de máxima densidad. Suiza vivió en campo rival durante el torneo, lo que es coherente con su dominio estadístico. La zona defensiva propia aparece oscura — señal de que apenas tuvieron que defender en su tercio.
+
+### Intensidad defensiva sin límites
+El mapa defensivo de Suiza es impresionante en volumen — significativamente más acciones que Qatar, distribuidas **por todo el campo incluyendo el campo contrario**. Suiza presiona alto, recupera arriba y bloquea en todas las zonas. La densidad de puntos en campo rival es una evidencia clara de presión alta estructurada (pressing organizado). Esto es una diferencia cualitativa enorme frente a Qatar.
+
+---
+
+## ⚖️ COMPARATIVA Y VEREDICTO
+
+| Dimensión | Qatar 🇶🇦 | Suiza 🇨🇭 |
+|---|---|---|
+| Volumen ofensivo | 19 disparos / 1 gol | 51 disparos / 11 goles |
+| Calidad de oportunidades | xG bajo, disperso | xG alto, concentrado |
+| Generación de xT | Puntual, carril derecho | Sistemática, ambos flancos |
+| Estructura de pases | Vertical y lateral simple | Doble pivote + amplitud |
+| Conducciones progresivas | Moderadas, lateral izquierdo | Altas, ambos flancos |
+| Bloque defensivo | Medio-bajo, reactivo | Pressing alto, proactivo |
+| Territorio dominado | Propio campo | Campo contrario |
+
+### ¿Quién ganaría?
+
+**Suiza ganaría con claridad**, probablemente con una diferencia de 2 o más goles. La brecha entre ambos equipos es amplia en prácticamente todas las métricas analizadas.
+
+---
+
+## 🔍 Ventajas y cómo cada equipo puede aprovecharlas
+
+### Qatar: ¿qué puede hacer para competir?
+- **Defender en bloque bajo y compacto.** Su mapa defensivo muestra que ya tienen esa tendencia, pero deben ser más organizados y evitar los duelos individuales en el medio que Suiza gana con facilidad gracias a Xhaka y Freuler.
+- **Explotar las transiciones.** Su conductor más fiable por el costado izquierdo podría aprovechar los espacios que deja Suiza al presionar alto. Un contragolpe directo podría ser su única vía real de gol.
+- **Defender el carril derecho suizo.** El xT y el mapa de calor de Suiza apuntan a que su flanco derecho (Vargas + Ndoye) es devastador. Qatar debe saturar esa zona con doble cobertura permanente.
+- **Aprovechar el balón parado.** Con tan pocas opciones desde el juego abierto, los set pieces son un recurso clave.
+
+### Suiza: cómo ampliar la diferencia
+- **Presionar alto desde el inicio.** La red de pases de Qatar depende de Khoukhi para iniciar la construcción. Presionando esa salida con Xhaka o Freuler se puede forzar el error y generar recuperaciones en zona peligrosa.
+- **Atacar por el costado derecho con continuidad.** El xT y las conducciones confirman que esa es su autopista al gol. Vargas en profundidad y Aebischer como enlace pueden desbordar al lateral izquierdo qatarí.
+- **Mantener el dominio del balón.** Qatar se fatiga cuando no tiene el balón durante períodos largos. El doble pivote suizo debe mantener la posesión y hacer circular para desgastar al bloque bajo rival.
+- **Combinar por dentro.** La red de pases de Suiza muestra conexiones interiores fuertes (Xhaka–Freuler–Embolo) que pueden romper el bloque medio-bajo de Qatar mediante pases entre líneas.
+
+---
+
+**Conclusión:** Este sería un partido de un equipo dominante contra uno reactivo. Suiza, con más calidad individual, un sistema táctico más sofisticado, mayor intensidad defensiva y una capacidad ofensiva comprobada de alto nivel, tiene todos los argumentos para ganar cómodamente. Qatar solo tendría opciones si el marcador permanece cerrado hasta los últimos minutos y puede ejecutar alguna transición limpia — pero sostener eso durante 90 minutos contra la maquinaria suiza sería enormemente difícil.
+
+
+Modifica lo que consideres de acuerdo al lenguaje utilizado en los anteriores analisis. Y ponlo en el "Análisis Táctico" del partido. Ten presente el resultado que te doy y aun no montes nada a Git
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-13T12:41:42-05:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.5 Flash (High) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>

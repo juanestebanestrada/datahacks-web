@@ -6,10 +6,10 @@ fecha: "2026-06-16"
 hora: "22:00"
 home_team: "Irak"
 away_team: "Noruega"
-goles_home: 0
-goles_away: 0
+goles_home: 1
+goles_away: 4
 pronostico: "0 - 3"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Irak_MapaDefensivo_Equipo_Completo_horizontal_20260616.png:Mapa Defensivo (Irak), Analisis_Noruega_MapaDefensivo_Equipo_Completo_horizontal_20260616.png:Mapa Defensivo (Noruega), Analisis_Irak_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png:Amenaza Esperada xT (Irak), Analisis_Noruega_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png:Amenaza Esperada xT (Noruega), Analisis_Irak_MapadeCalor_Equipo_Completo_horizontal_20260616.png:Mapa de Calor (Irak), Analisis_Noruega_MapadeCalor_Equipo_Completo_horizontal_20260616.png:Mapa de Calor (Noruega), ShotMap_Irak_horizontal_20260616.png:Mapa de Tiros (Irak), ShotMap_Noruega_horizontal_20260616.png:Mapa de Tiros (Noruega), Analisis_Irak_ReddePases_Equipo_Completo_horizontal_20260616.png:Red de Pases (Irak), Analisis_Noruega_ReddePases_Equipo_Completo_horizontal_20260616.png:Red de Pases (Noruega), Analisis_Irak_ConduccionesProgresivas_Equipo_Completo_horizontal_20260616.png:Conducciones Progresivas (Irak), Analisis_Noruega_ConduccionesProgresivas_Equipo_Completo_horizontal_20260616.png:Conducciones Progresivas (Noruega), Analisis_Irak_MapadeAsistencias_Equipo_Completo_horizontal_20260616.png:Mapa de Asistencias (Irak), Analisis_Noruega_MapadeAsistencias_Equipo_Completo_horizontal_20260616.png:Mapa de Asistencias (Noruega)"
 slug: "irak_noruega"
 poisson: "5-15-80"
@@ -80,4 +80,17 @@ Noruega ejecuta conducciones progresivas abundantes y variadas. Hay múltiples l
 * **Noruega** debe mantener la posesión sostenida (>60% de balón) para dictar el ritmo, circular rápido para abrir el bloque bajo iraquí, y mantener la finalización clínica para traducir su superioridad en el marcador.
 * **Irak** debe intentar un milagro defensivo replegando sus líneas en un bloque muy bajo y profundo, buscando limitar la expansión ofensiva de Noruega cerrando las bandas, y aprovechar segundas pelotas o jugadas de táctica fija para crear algún peligro.
 
-En definitiva, Noruega es absolutamente favorita en este choque por su inmensa superioridad categórica. Se proyecta una victoria contundente de **Noruega por 3 - 0**, donde la resistencia de Irak terminará por ceder ante la presión de la delantera nórdica.
+En definitiva, Noruega es muy superior en todas las líneas. Se proyecta una victoria contundente de **Noruega por 3 - 0**.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Irak 1 - 4 Noruega)
+Noruega goleó 1-4 a Irak en una exhibición de contundencia ofensiva. El seleccionado europeo impuso condiciones físicas en el mediocampo y castigó severamente los errores defensivos de Irak en la salida de balón. Aunque Irak anotó un gol histórico para sus aficionados tras una jugada aislada, la superioridad noruega en volumen de disparos y en el juego aéreo fue abrumadora de principio a fin.
+
+### 🔮 Impacto en el Grupo I y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Noruega suma 3 puntos con una diferencia de +3, colocándose al frente del Grupo I junto con Francia. Sus métricas ofensivas y el rendimiento en conducciones progresivas se incrementan en el modelo táctico tras esta goleada.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Francia vs Noruega:** Duelo directo por la punta del grupo. Noruega llega con la moral al tope, pero se medirá ante el coloso del grupo. Se proyecta una probabilidad de victoria sumamente pareja, con leve favoritismo para Francia (**58%**).
+  * **Senegal vs Irak:** Ambos necesitados de puntos para no despedirse temprano. Irak parte como la cenicienta del grupo, teniendo que medirse a un bloque físico que le dará pocas concesiones.
