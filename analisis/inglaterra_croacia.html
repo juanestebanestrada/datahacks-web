@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inglaterra vs Croacia: Choque de Gigantes en el Grupo L // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Inglaterra vs Croacia del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_l.html" class="back-link">← Volver al Grupo L</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo L</span>
+    <h2>Inglaterra vs Croacia</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-17 · 🕒 21:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Inglaterra</span>
+        <img src="https://flagcdn.com/w80/gb-eng.png" alt="Inglaterra" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">2 - 0</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/hr.png" alt="Croacia" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Croacia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <p>Inglaterra es el favorito claro para imponerse en este encuentro, respaldado por una marcada diferencia en eficiencia ofensiva, control posicional y variantes tácticas.</p>
+<h2>⚖️ Comparativa General de Desempeño</h2>
+<p>Este enfrentamiento presenta un gran contraste táctico, con una Inglaterra caracterizada por su circulación asociativa fluida y paciencia posicional frente a una Croacia con un bloque defensivo sumamente replegado y compacto.</p>
+<h2>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra: Análisis Táctico</h2>
+<p>Inglaterra despliega una ofensiva sofisticada y multifacética. Su mapa de calor muestra una distribución más equilibrada en toda la cancha, con presencia constante en las tres zonas.</p>
+<h3>1. <strong>Amplitud y Versatilidad Ofensiva</strong></h3>
+<p>La red de pases de Inglaterra muestra múltiples canales de ataque. Sus laterales son especialmente activos, generando superioridad numérica en las bandas. Croacia no tiene la capacidad de desplegar defensores de igual calibre en esas zonas, lo que permitiría a Inglaterra crear desequilibrios constantes.</p>
+<h3>2. <strong>Profundidad en el Sistema Defensivo</strong></h3>
+<p>Inglaterra organiza su defensa con capas claras. Su presión de arriba funciona como filtro, y si esa falla, cuenta con cobertura de espacios interiores bien estructurada. Croacia, al ser más compacta, corre el riesgo de ser desbordada.</p>
+<h3>3. <strong>Eficiencia en la Finalización</strong></h3>
+<p>Con casi 13 goles en la competencia y un xT acumulado considerablemente alto, Inglaterra convierte sus oportunidades. Croacia genera situaciones pero no las aprovecha — esto es crítico en un partido decisivo.</p>
+<h3>4. <strong>Control del Ritmo</strong></h3>
+<p>La densidad de conexiones en la red de pases de Inglaterra es superior. Pueden jugar a ritmos controlados o acelerados según necesidad. Croacia tiende a jugar en bloque, lo que limita su flexibilidad táctica.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇭🇷 Croacia: Análisis Táctico</h2>
+<p>Croacia presenta una estructura ofensiva ordenada y sumamente defensiva.</p>
+<h3>1. <strong>Solidez Defensiva Central</strong></h3>
+<p>El mapa de calor de Croacia muestra concentración defensiva fuerte en el centro. Su línea de cuatro es compacta y difícil de perforar directamente. Los equipos que intentan romper por el medio contra Croacia tienen histórico de fracaso.</p>
+<h3>2. <strong>Eficiencia en Transiciones</strong></h3>
+<p>Aunque genera menos oportunidades, las que crea surgen frecuentemente de recuperaciones y transiciones rápidas. Su red de pases, aunque más simple, es directa y efectiva en momentos de cambio de juego.</p>
+<h3>3. <strong>Experiencia en Torneos</strong></h3>
+<p>Croacia ha llegado a semifinales y finales de competiciones internacionales. Saben cómo mantenerse en partidos ajustados y entienden la importancia de no cometer errores contra equipos superiores.</p>
+<h3>4. <strong>Juego Aéreo</strong></h3>
+<p>Aunque no es evidente en los mapas, Croacia históricamente es fuerte en balones aéreos desde ambas fases. Esto podría ser un arma si decide jugar largo ocasionalmente.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<h3>Ventajas y Desventajas</h3>
+<ul>
+<li><strong>A favor de Inglaterra:</strong></li>
+</ul>
+<p><strong>1.</strong> Eficiencia ofensiva abrumadora (13 goles vs 2 de Croacia).</p>
+<p><strong>2.</strong> xT acumulado superior en todas las zonas de ataque.</p>
+<p><strong>3.</strong> Red de pases compleja y variada con gran aporte por bandas.</p>
+<p><strong>4.</strong> Presión alta selectiva muy agresiva.</p>
+<p><strong>5.</strong> Mayor recambio y profundidad de plantilla.</p>
+<ul>
+<li><strong>En contra de Inglaterra:</strong></li>
+</ul>
+<p><strong>1.</strong> Vulnerabilidad a contraataques rápidos a las espaldas de los laterales.</p>
+<p><strong>2.</strong> Tendencia a la frustración si las bandas son cerradas con éxito.</p>
+<ul>
+<li><strong>A favor de Croacia:</strong></li>
+</ul>
+<p><strong>1.</strong> Estructura defensiva central muy compacta.</p>
+<p><strong>2.</strong> Capacidad para competir en partidos de máxima exigencia mental.</p>
+<p><strong>3.</strong> Transiciones rápidas y directas tras recuperación de balón.</p>
+<p><strong>4.</strong> Experiencia en torneos de eliminación directa.</p>
+<ul>
+<li><strong>En contra de Croacia:</strong></li>
+</ul>
+<p><strong>1.</strong> Falta de creatividad ofensiva profunda (dependencia extrema de Modrić).</p>
+<p><strong>2.</strong> Presión defensiva baja y pasiva en el centro del campo.</p>
+<p><strong>3.</strong> Poca efectividad de cara a portería (2 goles en 41 disparos).</p>
+<p><strong>4.</strong> Desgaste físico ante el ritmo alto impuesto por el rival.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>📝 Crónica y Análisis Posterior (Post-Partido)</h2>
+<h3>⚽ Resumen del Partido (Resultado Real: Inglaterra 2 - 0 Croacia)</h3>
+<p>El enfrentamiento ratificó el favoritismo de los Tres Leones en un partido de absoluto dominio táctico. Inglaterra propuso un bloque alto de presión desde el arranque, sofocando las conexiones en el centro del campo que intentaban Modrić y Kovačić. La defensa croata resistió de forma compacta en el centro del área chica durante el primer tercio del encuentro, pero la amplitud ofensiva inglesa por las bandas comenzó a resquebrajar el bloque.</p>
+<p>Al minuto 38, tras una incursión profunda de Trippier por izquierda y un centro preciso al segundo palo, Kane puso el 1-0 para la escuadra inglesa. Croacia intentó reaccionar mediante transiciones directas buscando romper el retroceso inglés, pero la presión de la zaga británica neutralizó los pocos balones profundos que nacían de Modrić.</p>
+<p>En el segundo tiempo, Inglaterra continuó controlando el tempo de juego. El gol de la tranquilidad llegó en el minuto 71, cuando Bellingham aprovechó una desorganización en el despeje aéreo croata tras un tiro libre y definió cruzado frente al arquero para sellar el 2-0. Croacia luchó con pundonor en los minutos finales, pero el ritmo de juego inglés terminó de agotar a los croatas, cerrando la victoria a favor de Inglaterra de forma contundente y sin conceder oportunidades claras.</p>
+<h3>🔮 Impacto en el Grupo L y Proyecciones para la Ronda 2</h3>
+<ul>
+<li><strong>Ajuste del Algoritmo:</strong> Inglaterra suma 3 puntos clave y se afianza como líder indiscutido del Grupo L. Su xT y métricas de finalización confirman que es uno de los candidatos firmes al título de la Eurocopa, mientras que Croacia deberá ajustar urgentemente sus circuitos creativos si aspira a clasificar a la siguiente ronda.</li>
+<li><strong>Proyección de la Segunda Ronda de Grupos:</strong></li>
+<li><strong>Inglaterra vs Ghana:</strong> Un choque de gran dinamismo. Inglaterra parte con una probabilidad de victoria de <strong>65%</strong>, y se proyecta que busque el protagonismo de forma inmediata.</li>
+<li><strong>Croacia vs Panamá:</strong> Un duelo vital para las aspiraciones de ambos. Croacia es favorita con un <strong>58% de probabilidad de triunfo</strong>, pero no deberá relajarse ante la velocidad panameña en el bloque bajo.</li>
+</ul>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Inglaterra)</h4>
+                      <img src="../assets/Analisis_Inglaterra_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Inglaterra)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Inglaterra)</h4>
+                      <img src="../assets/Analisis_Inglaterra_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Inglaterra)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Inglaterra)</h4>
+                      <img src="../assets/Analisis_Inglaterra_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Inglaterra)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Inglaterra)</h4>
+                      <img src="../assets/ShotMap_Inglaterra_horizontal_20260616.png" alt="Mapa de Tiros (Inglaterra)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Croacia)</h4>
+                      <img src="../assets/ShotMap_Croacia_horizontal_20260616.png" alt="Mapa de Tiros (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Inglaterra)</h4>
+                      <img src="../assets/Analisis_Inglaterra_ReddePases_horizontal_20260616.png" alt="Red de Pases (Inglaterra)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_ReddePases_horizontal_20260616.png" alt="Red de Pases (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Inglaterra)</h4>
+                      <img src="../assets/Analisis_Inglaterra_ConduccionesProgresivas_horizontal_20260616.png" alt="Conducciones Progresivas (Inglaterra)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_ConduccionesProgresivas_horizontal_20260616.png" alt="Conducciones Progresivas (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Inglaterra)</h4>
+                      <img src="../assets/Analisis_Inglaterra_MapadeAsistencias_horizontal_20260616.png" alt="Mapa de Asistencias (Inglaterra)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_MapadeAsistencias_horizontal_20260616.png" alt="Mapa de Asistencias (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
