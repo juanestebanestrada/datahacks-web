@@ -41,39 +41,6 @@ Sus conducciones progresivas son ordenadas pero extremadamente limitadas y prede
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-### Ventajas y Desventajas
-
-* **A favor de Irán:**
-  1. Estructura táctica superior: Aunque básica, es más compleja que Nueva Zelanda.
-  2. Múltiples opciones ofensivas: Puede atacar desde diferentes zonas.
-  3. Presión defensiva activa: Recupera balón en zonas avanzadas.
-  4. Experiencia en competiciones de élite mundialistas.
-  5. Variabilidad táctica y red de pases más compleja con más opciones de circulación.
-* **En contra de Irán:**
-  1. Eficiencia ofensiva baja (13.8% de conversión).
-  2. xT limitado y falta de un sistema claro de finalización.
-  3. Inconsistencia defensiva si permite transiciones.
-* **A favor de Nueva Zelanda:**
-  1. Compactación defensiva difícil de penetrar en zona baja.
-  2. Claridad táctica: cada jugador sabe exactamente qué hacer en su rol simple.
-  3. Potencial de contraataque si recupera balón con espacios.
-* **En contra de Nueva Zelanda:**
-  1. Estructura táctica primitiva con solo 5-6 jugadores conectados en la red de pases.
-  2. Predecibilidad extrema y ofensiva unidimensional.
-  3. Baja presión defensiva que permite la construcción del rival.
-  4. Red de asistencias limitadísima.
-
-### Qué podría hacer cada equipo
-
-* **Irán** debe mantener la posesión (>55% de balón) para controlar el ritmo del encuentro, mover la pelota con circulación rápida para abrir la defensa compacta neozelandesa y sostener una presión alta que impida la salida limpia o balones largos cómodos de Nueva Zelanda.
-* **Nueva Zelanda** debe apostar por un bloque compacto bajo muy profundo, disputar segundas pelotas para dominar duelos físicos y lanzar contraataques verticales e inmediatos tras recuperar balón en zona defensiva sin intentar construir en corto.
-
-En conclusión, se proyecta una victoria para **Irán por 2 - 0**. Aunque Irán es ofensivamente limitado, su estructura táctica es superior y ofrece más variantes de circulación frente a una Nueva Zelanda tácticamente muy básica y predecible.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Irán 2 - 2 Nueva Zelanda)

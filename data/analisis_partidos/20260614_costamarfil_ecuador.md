@@ -37,22 +37,6 @@ El mapa de amenaza esperada de Ecuador muestra focos de peligro muy puntuales, c
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-### Ventajas y Desventajas
-* **A favor de Costa de Marfil:** Mayor volumen de juego, presión intensa y constante, una red de pases muy conectada que facilita la progresión, y casi el doble de disparos y goles que su rival.
-* **En contra de Costa de Marfil:** Con tanta exposición ofensiva y una presión tan alta en todo el campo, podrían quedar expuestos a transiciones rápidas si Ecuador logra robar el balón en zonas altas.
-* **A favor de Ecuador:** Un bloque defensivo razonablemente ordenado en su propio campo y la capacidad de generar peligro puntual en zonas específicas del último tercio, lo que podría traducirse en goles aislados si aprovechan bien esas oportunidades.
-* **En contra de Ecuador:** Menor dominio territorial, una estructura de pases menos fluida y dependiente de pocos jugadores, y un volumen de tiros considerablemente menor, lo que limita sus opciones de generar peligro constante.
-
-### Qué podría hacer cada equipo
-* **Costa de Marfil** debería seguir apostando por su presión alta para asfixiar la salida de Ecuador, especialmente explotando el costado donde generan más amenaza, y aprovechar su superioridad numérica en la circulación para desgastar al rival. También sería clave no relajar la cobertura defensiva en transición, dado que su línea participa activamente en la presión y podría dejar espacios.
-* **Ecuador**, por su parte, necesita ser muy disciplinado defensivamente, mantener líneas compactas para no permitir que Costa de Marfil circule con comodidad en el último tercio, y buscar aprovechar al máximo las pocas transiciones que consiga, apuntando a las zonas donde históricamente generan más amenaza. Dado que su conversión de tiros es decente, concentrar sus esfuerzos en pocas pero claras ocasiones, posiblemente desde banda o mediante balones largos hacia espacios dejados por la línea alta marfileña, podría ser su mejor vía para sorprender.
-
-En conjunto, los datos apuntan a una victoria de Costa de Marfil por volumen, dominio y eficacia, aunque Ecuador tiene el perfil de un rival que puede hacer un partido cerrado si logra mantener el orden defensivo y capitalizar sus pocas oportunidades.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Costa de Marfil 1 - 0 Ecuador)

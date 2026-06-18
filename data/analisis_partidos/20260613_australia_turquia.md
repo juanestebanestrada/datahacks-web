@@ -43,16 +43,6 @@ poisson: "30-32-38"
 
 ---
 
-## ⚖️ Comparativa y Veredicto
-
-Nos encontramos ante un clásico duelo entre la solidez de un bloque ordenado (Australia) frente a la inspiración y abundancia ofensiva (Turquía). 
-
-Australia buscará ensuciar el partido desde lo físico, forzando un ritmo cortado y tratando de lastimar con envíos largos hacia las bandas. Por otro lado, Turquía impondrá su calidad técnica desde el pitazo inicial, apostando por constantes conducciones verticales y un flujo constante de ataque que agobie a la defensa australiana.
-
-La enorme diferencia ofensiva entre ambos planteles se vuelve el factor diferencial de la contienda: Turquía triplica el registro de disparos y el volumen de conducciones de Australia. Si bien la férrea disciplina táctica de los *Socceroos* puede lograr contener el daño en los primeros compases, el desgaste de defender tan cerca de su área acabará pasándoles factura.
-
-**El pronóstico apunta a una clara victoria de Turquía por 3 - 1**, materializando su notoria superioridad técnica en el trámite y el marcador, mientras Australia intentará resistir y capitalizar alguna acción aislada en los minutos iniciales.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Australia 1 - 0 Turquía)

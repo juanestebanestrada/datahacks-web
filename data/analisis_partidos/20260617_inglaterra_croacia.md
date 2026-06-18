@@ -9,77 +9,13 @@ away_team: "Croacia"
 goles_home: 2
 goles_away: 0
 pronostico: "2 - 0"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Inglaterra_MapaDefensivo_horizontal_20260616.png:Mapa Defensivo (Inglaterra), Analisis_Croacia_MapaDefensivo_horizontal_20260616.png:Mapa Defensivo (Croacia), Analisis_Inglaterra_ExpectedThreatxT_horizontal_20260616.png:Amenaza Esperada xT (Inglaterra), Analisis_Croacia_ExpectedThreatxT_horizontal_20260616.png:Amenaza Esperada xT (Croacia), Analisis_Inglaterra_MapadeCalor_horizontal_20260616.png:Mapa de Calor (Inglaterra), Analisis_Croacia_MapadeCalor_horizontal_20260616.png:Mapa de Calor (Croacia), ShotMap_Inglaterra_horizontal_20260616.png:Mapa de Tiros (Inglaterra), ShotMap_Croacia_horizontal_20260616.png:Mapa de Tiros (Croacia), Analisis_Inglaterra_ReddePases_horizontal_20260616.png:Red de Pases (Inglaterra), Analisis_Croacia_ReddePases_horizontal_20260616.png:Red de Pases (Croacia), Analisis_Inglaterra_ConduccionesProgresivas_horizontal_20260616.png:Conducciones Progresivas (Inglaterra), Analisis_Croacia_ConduccionesProgresivas_horizontal_20260616.png:Conducciones Progresivas (Croacia), Analisis_Inglaterra_MapadeAsistencias_horizontal_20260616.png:Mapa de Asistencias (Inglaterra), Analisis_Croacia_MapadeAsistencias_horizontal_20260616.png:Mapa de Asistencias (Croacia)"
 slug: "inglaterra_croacia"
 poisson: "60-30-10"
 ---
 
 Inglaterra es el favorito claro para imponerse en este encuentro, respaldado por una marcada diferencia en eficiencia ofensiva, control posicional y variantes tácticas.
-
-## ⚖️ Comparativa General de Desempeño
-
-Este enfrentamiento presenta un gran contraste táctico, con una Inglaterra caracterizada por su circulación asociativa fluida y paciencia posicional frente a una Croacia con un bloque defensivo sumamente replegado y compacto.
-
-## 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra: Análisis Táctico
-
-Inglaterra despliega una ofensiva sofisticada y multifacética. Su mapa de calor muestra una distribución más equilibrada en toda la cancha, con presencia constante en las tres zonas.
-
-### 1. **Amplitud y Versatilidad Ofensiva**
-La red de pases de Inglaterra muestra múltiples canales de ataque. Sus laterales son especialmente activos, generando superioridad numérica en las bandas. Croacia no tiene la capacidad de desplegar defensores de igual calibre en esas zonas, lo que permitiría a Inglaterra crear desequilibrios constantes.
-
-### 2. **Profundidad en el Sistema Defensivo**
-Inglaterra organiza su defensa con capas claras. Su presión de arriba funciona como filtro, y si esa falla, cuenta con cobertura de espacios interiores bien estructurada. Croacia, al ser más compacta, corre el riesgo de ser desbordada.
-
-### 3. **Eficiencia en la Finalización**
-Con casi 13 goles en la competencia y un xT acumulado considerablemente alto, Inglaterra convierte sus oportunidades. Croacia genera situaciones pero no las aprovecha — esto es crítico en un partido decisivo.
-
-### 4. **Control del Ritmo**
-La densidad de conexiones en la red de pases de Inglaterra es superior. Pueden jugar a ritmos controlados o acelerados según necesidad. Croacia tiende a jugar en bloque, lo que limita su flexibilidad táctica.
-
----
-
-## 🇭🇷 Croacia: Análisis Táctico
-
-Croacia presenta una estructura ofensiva ordenada y sumamente defensiva.
-
-### 1. **Solidez Defensiva Central**
-El mapa de calor de Croacia muestra concentración defensiva fuerte en el centro. Su línea de cuatro es compacta y difícil de perforar directamente. Los equipos que intentan romper por el medio contra Croacia tienen histórico de fracaso.
-
-### 2. **Eficiencia en Transiciones**
-Aunque genera menos oportunidades, las que crea surgen frecuentemente de recuperaciones y transiciones rápidas. Su red de pases, aunque más simple, es directa y efectiva en momentos de cambio de juego.
-
-### 3. **Experiencia en Torneos**
-Croacia ha llegado a semifinales y finales de competiciones internacionales. Saben cómo mantenerse en partidos ajustados y entienden la importancia de no cometer errores contra equipos superiores.
-
-### 4. **Juego Aéreo**
-Aunque no es evidente en los mapas, Croacia históricamente es fuerte en balones aéreos desde ambas fases. Esto podría ser un arma si decide jugar largo ocasionalmente.
-
----
-
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-### Ventajas y Desventajas
-
-* **A favor de Inglaterra:**
-  1. Eficiencia ofensiva abrumadora (13 goles vs 2 de Croacia).
-  2. xT acumulado superior en todas las zonas de ataque.
-  3. Red de pases compleja y variada con gran aporte por bandas.
-  4. Presión alta selectiva muy agresiva.
-  5. Mayor recambio y profundidad de plantilla.
-* **En contra de Inglaterra:**
-  1. Vulnerabilidad a contraataques rápidos a las espaldas de los laterales.
-  2. Tendencia a la frustración si las bandas son cerradas con éxito.
-* **A favor de Croacia:**
-  1. Estructura defensiva central muy compacta.
-  2. Capacidad para competir en partidos de máxima exigencia mental.
-  3. Transiciones rápidas y directas tras recuperación de balón.
-  4. Experiencia en torneos de eliminación directa.
-* **En contra de Croacia:**
-  1. Falta de creatividad ofensiva profunda (dependencia extrema de Modrić).
-  2. Presión defensiva baja y pasiva en el centro del campo.
-  3. Poca efectividad de cara a portería (2 goles en 41 disparos).
-  4. Desgaste físico ante el ritmo alto impuesto por el rival.
 
 ---
 

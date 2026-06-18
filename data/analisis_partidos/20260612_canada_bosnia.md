@@ -47,30 +47,6 @@ poisson: "20-10-70"
 
 ---
 
-## ⚔️ ¿Cómo puede superar cada equipo a su adversario?
-
-### ¿Qué debe hacer Canadá para ganarle a Bosnia?
-
-1. **Explotar las bandas en transiciones rápidas:** Aprovechar que la defensa bosnia es lenta y desorganizada para lanzar contragolpes veloces por los carriles exteriores usando su alta creatividad (83).
-2. **Asfixiar el circuito Pjanic-Džeko:** Utilizar su presión defensiva masiva para tapar la salida limpia de Pjanic y evitar que Bosnia conecte en largo con su delantero de referencia.
-3. **Calidad sobre cantidad en la definición:** Mitigar su alarmante 2.9% de efectividad buscando mejores posiciones de tiro en lugar de rematar incómodos desde la periferia.
-
-### ¿Qué debe hacer Bosnia para ganarle a Canadá?
-
-1. **Mantener el control a través de la posesión:** Desgastar físicamente a los jugadores canadienses obligándolos a correr tras el balón mediante su circuito de pases liderado por Pjanic y Denic.
-2. **Explotar la espalda del bloque defensivo:** Atraer la presión alta y masiva de Canadá para luego lanzar pases al espacio buscando la potencia de Edin Džeko.
-3. **Evitar la indisciplina táctica:** Cuidar las pérdidas en salida que fuercen faltas y tiros libres en contra, donde la compacidad defensiva de Canadá podría penalizarlos.
-
----
-
-## 🏆 Pronóstico: ¿Quién ganaría?
-
-> **Predicción:** Victoria de **Bosnia** 2-1.
-
-El partido presentará un choque clásico de propuestas: **el bloque defensivo agresivo de Canadá frente a la contundencia goleadora de Bosnia.** 
-
-Las probabilidades del modelo Poisson bivariado otorgan una ventaja del **70% a Bosnia**, frente a un **20% a Canadá** y un **10% de empate**. Aunque Canadá defiende de forma excepcional y compacta, la alarmante ineficacia ofensiva de los norteamericanos (2.9% frente al 13.8% de Bosnia) inclinará la balanza. El control territorial bosnio (79%) y la contundencia para convertir ocasiones en gol terminarán por romper la resistencia defensiva de Canadá para sellar un triunfo ajustado de 2-1 en favor de los europeos.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Canadá 1 - 1 Bosnia)

@@ -43,15 +43,6 @@ poisson: "15-20-65"
 
 ---
 
-## ⚖️ Comparativa y Veredicto
-
-Se enfrentan dos equipos con propuestas futbolísticas opuestas: la paciencia y disciplina estructural escocesa frente al juego explosivo y sumamente directo de los caribeños.
-Mientras Escocia intentará adueñarse de la posesión, construyendo mediante el carril izquierdo, Haití apostará por un bloque bajo, invitando al rival a adelantarse para castigarlo en transiciones y con envíos largos de Guerrier hacia atacantes letales como Pierrot y Nazon.
-
-A pesar de que Escocia cuenta con mayor organización colectiva y experiencia ante rivales de gran jerarquía, su alarmante carencia de profundidad y pegada ofensiva la vuelve vulnerable frente a la tremenda capacidad goleadora haitiana. 
-
-El modelo proyecta que la verticalidad de Haití logrará explotar las espaldas escocesas. **El pronóstico más probable es Haití 2 - Escocia 1**, anticipando un duelo donde los europeos competirán firmemente pero terminarán sufriendo las veloces transiciones caribeñas.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Haití 0 - 1 Escocia)

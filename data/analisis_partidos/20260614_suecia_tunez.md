@@ -37,22 +37,6 @@ El dato más llamativo es el de definición: con 31 disparos, Túnez apenas conv
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-### Ventajas y Desventajas
-* **A favor de Suecia:** Mayor producción goleadora, capacidad de generar peligro real desde transiciones directas, y buen volumen de progresión hacia el área rival.
-* **En contra de Suecia:** Su red de pases poco conectada podría hacerlos predecibles si el rival logra cortar esas líneas de pase largo, dejándolos sin opciones claras de circulación.
-* **A favor de Túnez:** Buena presencia y control en el medio campo, con una presión intensa que puede incomodar la salida rival.
-* **En contra de Túnez:** Una eficacia de cara a gol extremadamente baja (apenas 3%), poca progresión efectiva hacia el último tercio, y varios jugadores ofensivos desconectados del resto del equipo, lo que limita su capacidad de generar ocasiones claras.
-
-### Qué podría hacer cada equipo
-* **Suecia** debería seguir apostando por sus circuitos directos y verticales, especialmente aprovechando las zonas donde históricamente generan más amenaza, y presionar alto para evitar que Túnez controle el medio campo con comodidad. Dado que su conversión ya es decente, mantener la cantidad de remates desde posiciones de calidad debería ser suficiente para inclinar el partido.
-* **Túnez**, por su parte, necesita resolver urgentemente su problema de definición: de poco sirve dominar el medio campo si no logran transformar esa posesión en ocasiones claras. Deberían buscar conectar mejor a sus jugadores ofensivos aislados con el bloque central, e intentar explotar los espacios que deja Suecia cuando pierde el balón en sus transiciones directas, ya que ahí podrían encontrar las contras más peligrosas. Defensivamente, mantener la intensidad de presión que ya muestran será clave para no permitir que Suecia ejecute sus jugadas directas con comodidad.
-
-En síntesis, Suecia parte como favorito gracias a su mayor eficacia ofensiva y capacidad de generar peligro real, mientras que Túnez tiene el perfil de un equipo que controla el balón pero necesita una mejora drástica en la zona de finalización para representar una amenaza genuina.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Suecia 5 - 1 Túnez)

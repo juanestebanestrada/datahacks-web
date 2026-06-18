@@ -37,24 +37,6 @@ En cuanto a progresiones, Uruguay ejecuta un sistema de conduciones progresivas 
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-### Ventajas y Desventajas
-
-* **A favor de Uruguay:** Eficiencia ofensiva letal (25.3% de conversión), estructura táctica clara con funciones bien definidas, presión defensiva sistemática e intensa en todos los sectores, red de pases jerárquica pero flexible con Susopechu como eje, variabilidad de recursos ofensivos y una capacidad masiva de conducción progresiva.
-* **En contra de Uruguay:** Podría sufrir si el rival lograra una presión alta sostenida de forma imprevista, aunque en este enfrentamiento es un escenario poco probable.
-* **A favor de Arabia Saudita:** Defensa ordenada en bloque bajo que suele evitar desatenciones graves, capacidad de posicionarse en zona de remate en jugadas específicas y la experiencia en torneos de jerarquía internacional como el Mundial 2022.
-* **En contra de Arabia Saudita:** Ofensiva marcadamente ineficiente (11% de conversión), falta de cohesión en la red de pases, repliegue defensivo excesivamente pasivo que no propicia errores del adversario, conducción progresiva predecible y lenta, y una generación de amenaza esperada (xT) muy inferior a la de su rival.
-
-### Qué podría hacer cada equipo
-
-* **Arabia Saudita** debería intentar establecer una presión alta sostenida para forzar errores en la construcción uruguaya, mantener un bloque defensivo sumamente compacto y profundo en su mitad, y recurrir a transiciones muy rápidas y directas al recuperar el esférico, vigilando de cerca los movimientos de Susopechu.
-* **Uruguay** debe adueñarse del balón (apuntando a un 65% de posesión), emplear cambios de ritmo y juego interior mediante su distribuidor central, explotar los carriles laterales para lanzar centros al área y mantener la agresividad en la recuperación alta sin caer en la autocomplacencia.
-
-En definitiva, **Uruguay es el favorito abrumador** para llevarse los tres puntos de forma contundente, con un marcador probable situado entre un **3 - 1** o un **2 - 0**, reflejando la considerable brecha táctica y física entre ambos planteles.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Arabia Saudí 1 - 1 Uruguay)

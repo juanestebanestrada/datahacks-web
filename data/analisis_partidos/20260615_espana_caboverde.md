@@ -37,22 +37,6 @@ El dato verdaderamente llamativo es el de definición: con solo 32 disparos, Cab
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-### Ventajas y Desventajas
-* **A favor de España:** Dominio absoluto del balón, una red de pases extremadamente conectada, presión intensa en todo el campo y un volumen de tiros casi tres veces mayor que el de su rival.
-* **En contra de España:** Su conversión, aunque sólida, no es excepcional (12.8%), y con tanta exposición ofensiva, una línea defensiva muy adelantada podría dejar espacios ante una transición bien ejecutada.
-* **A favor de Cabo Verde:** Una eficacia de finalización extraordinaria, capaz de convertir prácticamente uno de cada tres disparos, lo que significa que pocas ocasiones podrían bastar para hacer daño.
-* **En contra de Cabo Verde:** Una diferencia de volumen de juego enorme, mucha menos presencia en el último tercio rival, y una red de pases menos desarrollada que limita su capacidad de sostener ataques prolongados.
-
-### Qué podría hacer cada equipo
-* **España** debería aprovechar su abrumadora superioridad en posesión y circulación para generar la mayor cantidad posible de ocasiones, sabiendo que estadísticamente convertirán un porcentaje similar al habitual; cuantos más disparos generen, más probable será que el marcador refleje su dominio. También sería prudente mantener cierto equilibrio defensivo para no exponerse a las contras de un rival tan letal con pocas oportunidades.
-* **Cabo Verde**, por su parte, tiene que aceptar que no podrá igualar el dominio territorial español, así que su plan debería centrarse en un bloque compacto, ceder el balón con orden, y esperar pacientemente esas pocas transiciones u ocasiones de calidad donde históricamente han demostrado ser letales. Dado su porcentaje de conversión, incluso dos o tres llegadas claras podrían ser suficientes para generar un resultado inesperado, por lo que la paciencia y la disciplina defensiva serán claves para mantenerse con vida en el partido.
-
-En definitiva, España parte como favorito claro por volumen, calidad colectiva y dominio del juego, pero Cabo Verde representa el tipo de rival que, con su altísima eficacia de cara a gol, podría convertir muy pocas ocasiones en un resultado que incomode a un favorito tan superior sobre el papel.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: España 0 - 0 Cabo Verde)

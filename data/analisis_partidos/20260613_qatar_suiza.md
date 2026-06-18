@@ -44,13 +44,6 @@ poisson: "25-22-53"
 
 ---
 
-## ⚖️ Comparativa y Veredicto
-
-El escenario del encuentro se presenta como un claro choque de estilos: el bloque defensivo reactivo de Qatar contra la maquinaria proactiva y estructurada de Suiza.
-Mientras Suiza monopolizará el territorio (mapa de calor concentrado en campo contrario) y el volumen ofensivo con llegadas organizadas, Qatar buscará resistir el asedio helvético e intentará capitalizar alguna transición rápida, especialmente por el sector izquierdo. 
-
-La enorme diferencia en calidad de oportunidades y volumen de ataque sugiere un claro favoritismo para el equipo europeo. **El modelo predictivo coincide con el análisis cualitativo y proyecta un triunfo de Suiza (0-2)**, imponiendo su ritmo frente a una escuadra qatarí que limitará sus opciones a defender cerca de su propia área.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Qatar 1 - 1 Suiza)

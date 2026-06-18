@@ -43,28 +43,6 @@ poisson: "58-26-16"
 
 ---
 
-## ⚔️ ¿Cómo puede superar cada equipo a su adversario?
-
-### ¿Qué debe hacer México para ganarle a Sudáfrica?
-
-1. **Explotar el duelo de "Banda vs Banda":** La máxima virtud de México en ataque es la banda derecha, la cual chocará directamente con la banda izquierda de Sudáfrica, que suele proyectarse mucho al ataque por medio de Modiba. México debe lanzar transiciones rápidas a la espalda de Modiba cuando este suba.
-2. **Activar la presión tras pérdida inmediata:** Utilizar el bloque alto para morder la salida de Sudáfrica antes de que puedan conectar con sus circuitos laterales.
-
-### ¿Qué debe hacer Sudáfrica para ganarle a México?
-
-1. **Atraer y saltar la presión:** Como México presiona de forma muy agresiva en campo rival, Sudáfrica debe usar la buena técnica de Modiba para atraer marcas por izquierda y realizar cambios de orientación rápidos hacia zonas menos congestionadas.
-2. **Forzar el tiro exterior:** Sabiendo que México tiene un volumen alto de disparos pero baja efectividad, Sudáfrica debe cerrar los pasillos internos dentro del área y forzar a los delanteros mexicanos a rematar incómodos o desde larga distancia.
-
----
-
-## 🏆 Pronóstico: ¿Quién ganaría?
-
-El partido se define por un choque directo de propuestas: **la banda derecha de México contra la banda izquierda de Sudáfrica.**
-
-> **Predicción:** Victoria ajustada para **México**.
-
-La capacidad de México para presionar alto y recuperar balones en campo contrario probablemente penalice el estilo asociativo y pausado de Sudáfrica en salida. Si México logra corregir ligeramente su mala efectividad de cara al arco, la cantidad de peligro acumulado por su costado derecho debería ser suficiente para inclinar la balanza a su favor.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: México 2 - 0 Sudáfrica)

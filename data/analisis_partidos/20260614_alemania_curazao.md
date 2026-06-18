@@ -37,22 +37,6 @@ Lo más llamativo es el mapa de tiros: 83 disparos y 13 goles, una efectividad d
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-### Ventajas y Desventajas
-* **A favor de Alemania:** Control absoluto del balón, presión coordinada en todo el campo, calidad individual en el último tercio y gran volumen de llegada.
-* **En contra de Alemania:** El mapa defensivo muestra acciones muy adelantadas y poca actividad en su propio tercio, lo que podría indicar una línea alta vulnerable a balones en profundidad si Curazao logra robar y salir rápido.
-* **A favor de Curazao:** Orden y compactación defensiva, disciplina posicional en bloque bajo, y una notable eficacia de cara a gol cuando llegan con peligro real.
-* **En contra de Curazao:** Dependencia casi total del juego largo desde el portero, escasa circulación de balón, nula presencia ofensiva sostenida en campo rival y faltas cometidas en zonas que pueden dar balones parados peligrosos al rival.
-
-### Qué podría hacer cada equipo
-* **Alemania** debería seguir explotando su dominio por banda derecha (de donde sale buena parte de su xT y asistencias), mantener la presión alta para evitar que Curazao ejecute sus pocas transiciones largas con espacio, y sobre todo mejorar la definición: con 84 disparos para 11 goles hay margen para ser más letales. También conviene vigilar el espacio a la espalda de la defensa, dado lo adelantado de sus acciones defensivas.
-* **Curazao** tiene pocas opciones realistas de igualar la posesión, así que su mejor plan pasa por mantener el bloque bajo muy junto, evitar las faltas en el borde del área (donde Alemania es letal con balón parado y en el área pequeña), y apostar todo a la transición directa desde Boom hacia Bacuna y Janga, aprovechando cualquier mala salida del bloque alemán. Su buena conversión de tiros indica que, si logran una o dos llegadas claras, tienen capacidad de hacer daño puntual, aunque sostener eso durante 90 minutos contra un rival de este nivel es muy difícil.
-
-En síntesis, todo apunta a una victoria clara de Alemania por volumen de juego, control y llegada, con Curazao limitado a defender con orden y esperar contadas oportunidades a la contra o de balón parado.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Alemania 7 - 1 Curazao)

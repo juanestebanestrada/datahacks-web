@@ -37,22 +37,6 @@ El mapa de xT japonés muestra una generación de peligro más concentrada en zo
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-### Ventajas y Desventajas
-* **A favor de Países Bajos:** Mayor volumen de juego, más llegadas al área, una red de pases más conectada y profunda, y una presión muy intensa en todo el campo.
-* **En contra de Países Bajos:** Su tasa de conversión no es espectacular (12%), por lo que dejan escapar ocasiones, y su línea defensiva participa activamente en zonas altas, lo que podría dejar espacios a la espalda ante transiciones rápidas.
-* **A favor de Japón:** Una eficacia de cara a gol notable, una presión muy alta y organizada que puede incomodar a cualquier rival (algo que ya demostraron históricamente ante selecciones top), y capacidad de generar peligro puntual con pocas transiciones bien ejecutadas.
-* **En contra de Japón:** Menor presencia territorial en el último tercio, una desconexión visible entre el bloque medio y algunos atacantes en banda, y un volumen de disparos mucho menor, lo que limita sus opciones si el partido se cierra.
-
-### Qué podría hacer cada equipo
-* **Países Bajos** debería aprovechar su superioridad numérica y posicional en el medio campo para generar superioridades constantes por banda, especialmente explotando los carriles donde aparecen Dumfries y Gakpo, y trabajar en mejorar la definición dentro del área, ya que con el volumen de tiros que generan, una mejora en la conversión los haría prácticamente imparables. También deberían tener cuidado con dejar espacios a la espalda de su línea alta, algo que Japón podría aprovechar con su presión y transiciones rápidas.
-* **Japón**, por su parte, tiene que apostar por lo que mejor le ha funcionado: un bloque compacto y una presión asfixiante para robar el balón en zonas altas, seguido de ataques rápidos y directos hacia el área, buscando conectar mejor a sus extremos (Mitoma, Doan) con el resto del equipo para no depender solo de acciones aisladas. Dada su buena efectividad goleadora, generar pocas pero claras ocasiones podría ser suficiente para inclinar un partido cerrado a su favor, especialmente si logran sorprender con un gol temprano que obligue a Países Bajos a abrirse más.
-
-En resumen, Países Bajos parte como favorito por volumen, profundidad de plantilla y dominio territorial, pero Japón representa el tipo de rival incómodo que, con su presión y eficacia, podría dar la sorpresa si consigue mantener el partido ajustado y aprovechar sus pocas ocasiones con la contundencia que ya han mostrado.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Países Bajos 2 - 2 Japón)

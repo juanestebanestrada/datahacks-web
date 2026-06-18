@@ -47,30 +47,6 @@ poisson: "42-32-26"
 
 ---
 
-## ⚔️ ¿Cómo puede superar cada equipo a su adversario?
-
-### ¿Qué debe hacer Estados Unidos para ganarle a Paraguay?
-
-1. **Doblar marcas y cerrar la banda derecha paraguaya:** Cargar defensivamente su carril izquierdo para anular el tándem Florentín-Acosta y obligar a Paraguay a proponer por su inactiva banda izquierda.
-2. **Circular rápido para explotar el lado débil:** Atraer el bloque paraguayo hacia una zona y realizar cambios de orientación veloces hacia su lateral derecho (Dest) para aprovechar que el sector izquierdo paraguayo es más pasivo y desprotegido.
-3. **Presión asfixiante sobre la salida de Acosta:** Activar un pressing alto coordinado cuando Paraguay intente iniciar el juego desde atrás para forzar el error en zona de peligro.
-
-### ¿Qué debe hacer Paraguay para ganarle a Estados Unidos?
-
-1. **Neutralizar la subida de los laterales estadounidenses:** Mantener ocupados defensivamente a los laterales de USA mediante la proyección constante de su banda derecha, evitando que se sumen al mediocampo.
-2. **Transiciones ofensivas rápidas e hirientes:** Replicar con un bloque medio-bajo compacto para absorber el volumen creativo estadounidense y lanzar contragolpes inmediatos hacia la derecha antes de que el pressing de USA se reorganice.
-3. **Aprovechar el juego directo en segundas jugadas:** Utilizar balones largos al espacio para saltar la intensa línea media americana y buscar faltas tácticas cerca del área para generar peligro en táctica fija.
-
----
-
-## 🏆 Pronóstico: ¿Quién ganaría?
-
-> **Predicción:** Victoria de **Estados Unidos** 2-1 (con alta probabilidad de empate).
-
-Será un encuentro de alta intensidad física y táctica. **Estados Unidos parte como favorito moderado** debido a que dispone de una estructura colectiva más equilibrada, mayor volumen en conducciones progresivas y un pressing medio-alto muy coordinado capaz de asfixiar la gestación paraguaya. 
-
-Sin embargo, Paraguay es un rival sumamente peligroso que sabe replegarse y golpear con contundencia a través de su autopista por la banda derecha (xT local de 0.60). Si Paraguay logra replegarse de forma sólida y marcar primero en un contragolpe rápido, el partido se le complicará a los norteamericanos. El escenario más probable de acuerdo con los datos es un triunfo ajustado de USA por 2-1 o 1-0, apoyado en su mayor variedad de rutas de ataque.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: USA 4 - 1 Paraguay)

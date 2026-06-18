@@ -44,15 +44,6 @@ poisson: "52-28-20"
 
 ---
 
-## ⚖️ Comparativa y Veredicto
-
-Estamos ante un duelo estratégico apasionante: el arte ofensivo y la versatilidad de **Brasil** contra la asombrosa resistencia y letalidad en transición de **Marruecos**. 
-Mientras Brasil dominará la posesión y atacará por ambos flancos con conducciones agresivas, Marruecos apostará por un bloque defensivo compacto, negando espacios y esperando el momento ideal para lanzar conducciones largas lideradas por Amrabat y ejecutadas por su explosiva banda derecha.
-
-El partido se prevé muy cerrado y táctico. Brasil parte con una ligera ventaja gracias a su capacidad de presionar alto y sus variadas vías de gol, pero Marruecos tiene el diseño perfecto para neutralizar a selecciones de alto dominio territorial y castigar los espacios.
-
-**El pronóstico apunta a una victoria ajustada: Brasil 2 - Marruecos 1**, en un choque que podría definirse en los últimos minutos o a través de jugadas a balón parado.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Brasil 1 - 1 Marruecos)

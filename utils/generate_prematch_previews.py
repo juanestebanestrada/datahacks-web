@@ -6,6 +6,12 @@ Usa la API de Football-Data.org para listar los partidos y Gemini para la genera
 """
 import os
 import sys
+import io
+
+# Forzar codificación UTF-8 en consolas Windows
+if sys.platform.startswith('win'):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 import re
 import json
 import requests

@@ -46,28 +46,6 @@ poisson: "58-26-16"
 
 ---
 
-## ⚔️ Estrategias de Superación
-
-### ¿Qué debería hacer la República Checa para superar a Corea del Sur?
-
-1. **Bloquear la salida de los "Kim":** Utilizando la agresividad alta de su mapa defensivo, los checos deben presionar la salida limpia de Corea del Sur para evitar que el balón llegue con comodidad a Son o Lee.
-2. **Explotar el tándem Coufal-Chytil:** Cargar el juego hacia su banda derecha hiperactiva para hundir el bloque surcoreano y lanzar centros al área aprovechando el juego físico.
-
-### ¿Qué debería hacer Corea del Sur para superar a la República Checa?
-
-1. **Explotar la espalda de Coufal:** Como el mapa de calor checo y su xT denotan que Coufal sube constantemente, Corea del Sur debe usar transiciones veloces precisamente por ese costado desprotegido.
-2. **Poblar la zona central defensiva:** Sabiendo que los checos se aglomeran en el pasillo central en tres cuartos de cancha, Jung y los centrales surcoreanos deben cerrar líneas para forzarlos al error o al tiro incómodo de larga distancia.
-
----
-
-## 🏆 Pronóstico: ¿Quién ganaría?
-
-> **Predicción:** Victoria de **Corea del Sur** por la mínima.
-
-Sería un partido sumamente disputado. Sin embargo, **Corea del Sur** cuenta con una ventaja clave: la **efectividad**. Mientras que la República Checa acumula mucha gente por dentro y depende en exceso de lo que invente Coufal por derecha, los surcoreanos son más amplios y directos en ataque, y su mapa de xT demuestra que logran meter balones en zonas de muchísimo mayor peligro (hasta >0.7 xT). La velocidad surcoreana al contragolpe terminaría por imponerse ante el bloque checo.
-
-Tomando en cuenta que el mapa defensivo de la República Checa arriesga mucho arriba, ¿te gustaría que evaluáramos cómo cambiaría este escenario si los checos decidieran replegarse en un bloque bajo en lugar de presionar tan alto?
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
 ### ⚽ Resumen del Partido (Resultado Real: Rep. Checa 2 - 1 Corea del Sur)
