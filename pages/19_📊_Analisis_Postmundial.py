@@ -95,6 +95,10 @@ if selected_file:
     pronostico = meta.get('pronostico', '-')
     titulo = meta.get('titulo', f"{home} vs {away}")
     
+    is_finished = meta.get('finalizado', 'false').lower() == 'true'
+    score_display = f"{goles_h} - {goles_a}" if is_finished else "VS"
+    match_status_label = "FINALIZADO" if is_finished else "PRE-PARTIDO (PRONÓSTICO IA)"
+    
     flag_home = team_flags.get(home.lower(), '🏳️')
     flag_away = team_flags.get(away.lower(), '🏳️')
     
@@ -103,7 +107,7 @@ if selected_file:
     <div style="background-color: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); 
                 border-radius: 16px; padding: 25px; text-align: center; margin-bottom: 25px;">
         <div style="font-size: 0.85rem; color: #888888; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">
-            {grupo} · Copa del Mundo 2026
+            {grupo} · Copa del Mundo 2026 · <b style="color: {'#FFD700' if is_finished else '#00f0ff'};">{match_status_label}</b>
         </div>
         <div style="display: flex; justify-content: center; align-items: center; gap: 30px; margin-bottom: 15px;">
             <div style="text-align: right; min-width: 150px;">
@@ -111,7 +115,7 @@ if selected_file:
                 <span style="font-size: 1.4rem; font-weight: 700; color: white;">{home}</span>
             </div>
             <div style="background-color: rgba(255,255,255,0.07); padding: 10px 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                <span style="font-size: 2.2rem; font-weight: 900; color: #FFD700; font-family: monospace;">{goles_h} - {goles_a}</span>
+                <span style="font-size: 2.2rem; font-weight: 900; color: {'#FFD700' if is_finished else '#00f0ff'}; font-family: monospace;">{score_display}</span>
             </div>
             <div style="text-align: left; min-width: 150px;">
                 <span style="font-size: 3rem; display: block;">{flag_away}</span>
@@ -168,16 +172,22 @@ if selected_file:
                         general_images.append(img_data)
     
     # Pestañas principales
+    tab_cronica_label = "📝 Crónica y Análisis" if is_finished else "📝 Previa y Táctica"
     tab_cronica, tab_home_charts, tab_away_charts, tab_general_charts = st.tabs([
-        "📝 Crónica y Análisis",
+        tab_cronica_label,
         f"{flag_home} Táctica {home}",
         f"{flag_away} Táctica {away}",
         "📊 Gráficos Generales"
     ])
     
     with tab_cronica:
-        st.subheader("Crónica Táctica del Partido")
-        st.markdown(body)
+        st.subheader("Crónica Táctica del Partido" if is_finished else "Análisis Táctico Previo")
+        clean_body = body
+        if not is_finished:
+            cronica_idx = body.find("## 📝 Crónica")
+            if cronica_idx != -1:
+                clean_body = body[:cronica_idx].strip()
+        st.markdown(clean_body)
         
     with tab_home_charts:
         st.subheader(f"Visualizaciones Tácticas: {home}")

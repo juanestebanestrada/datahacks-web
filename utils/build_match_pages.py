@@ -430,7 +430,13 @@ def build_all_pages():
             pronostico_val = meta.get('pronostico', '0 - 0')
             is_finished = meta.get('finalizado', 'false').lower() == 'true'
             
-            body_html = md_to_html(body)
+            clean_body = body
+            if not is_finished:
+                cronica_idx = body.find("## 📝 Crónica")
+                if cronica_idx != -1:
+                    clean_body = body[:cronica_idx].strip()
+            
+            body_html = md_to_html(clean_body)
             
             # Reubicar clasificación de predicción en el análisis posterior (dentro del cuerpo)
             if is_finished:
@@ -694,10 +700,10 @@ def build_all_pages():
             if d not in by_date: by_date[d] = []
             by_date[d].append(m)
             
-        latest_date = sorted(by_date.keys(), reverse=True)[0]
-        # Filtrar para mostrar solo partidos NO finalizados en el Live Match Center
-        active_today_matches = [m for m in by_date[latest_date] if not m['is_finished']]
-        today_matches = sorted(active_today_matches, key=lambda x: x['hora'])
+        # Mostrar todos los partidos no finalizados (predicciones activas / próximos partidos)
+        # ordenados cronológicamente por fecha y hora.
+        active_unfinished_matches = [m for m in all_compiled_matches if not m['is_finished']]
+        today_matches = sorted(active_unfinished_matches, key=lambda x: (x['fecha'], x['hora']))
         
         # Generar Tarjetas HTML
         cards_list = []
@@ -800,14 +806,14 @@ def build_all_pages():
             real_score = m['display_score']
             pronostico = m['pronostico']
             
-            # Mostrar marcador predicho y real de forma sencilla sin cruces ni badges
+            # Mostrar marcador real como principal y predicción de forma secundaria
             score_display_html = f"""
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
-              <div style="font-size: 0.75rem; color: rgba(255,255,255,0.4);" title="Pronóstico del partido">
-                Predicho: {pronostico}
-              </div>
-              <div style="background: rgba(255, 255, 255, 0.04); padding: 3px 8px; border-radius: 6px; color: var(--cyan); font-size: 0.95rem; font-weight: 900; border: 1px solid rgba(255,255,255,0.06);" title="Resultado Real">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+              <div style="background: rgba(0, 240, 255, 0.1); padding: 5px 12px; border-radius: 8px; color: var(--cyan); font-size: 1.15rem; font-weight: 900; border: 1px solid rgba(0, 240, 255, 0.25);" title="Resultado Real">
                 {real_score}
+              </div>
+              <div style="font-size: 0.65rem; color: rgba(255,255,255,0.35);" title="Pronóstico del partido">
+                Pred: {pronostico}
               </div>
             </div>
             """
