@@ -6,10 +6,10 @@ fecha: "2026-06-18"
 hora: "17:00"
 home_team: "Canadá"
 away_team: "Qatar"
-goles_home: 0
+goles_home: 6
 goles_away: 0
 pronostico: "3 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "Analisis_Canadá_MapaDefensivo_horizontal_20260612.png:Mapa Defensivo (Canadá), Analisis_Canadá_ExpectedThreatxT_horizontal_20260612.png:Amenaza Esperada xT (Canadá), Analisis_Canadá_MapadeCalor_horizontal_20260612.png:Mapa de Calor (Canadá), ShotMap_Canadá_horizontal_20260612.png:Mapa de Tiros (Canadá), Analisis_Canadá_ReddePases_horizontal_20260612.png:Red de Pases (Canadá), Analisis_Canadá_ConduccionesProgresivas_horizontal_20260612.png:Conducciones Progresivas (Canadá), Analisis_Canadá_MapadeAsistencias_horizontal_20260612.png:Mapa de Asistencias (Canadá), Analisis_Qatar_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Qatar), Analisis_Qatar_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Qatar), Analisis_Qatar_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Qatar), ShotMap_Qatar_horizontal_20260613.png:Mapa de Tiros (Qatar), Analisis_Qatar_ReddePases_horizontal_20260613.png:Red de Pases (Qatar), Analisis_Qatar_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Qatar), Analisis_Qatar_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Qatar)"
 slug: "canada_catar"
 poisson: "60-25-15"
@@ -39,20 +39,13 @@ poisson: "60-25-15"
 
 ---
 
-## ⚔️ ¿Cómo puede superar cada equipo a su adversario?
+## 📝 Crónica y Análisis Posterior (Post-Partido)
 
-### ¿Qué debe hacer Canadá para ganarle a Qatar?
-1.  **Mantener la intensidad en el pressing alto:** Morder la salida de balón de Qatar para forzar pérdidas en campo contrario y agarrarlos mal parados.
-2.  **Explotar el desborde de Alphonso Davies:** Utilizar el carril izquierdo a máxima velocidad para forzar ayudas y desacomodar la defensa catarí.
+### ⚽ Resumen del Partido (Resultado Real: Canadá 6 - 0 Catar)
+Canadá firmó una histórica goleada de 6-0 sobre Catar en el BC Place de Vancouver. La velocidad desbordante de Alphonso Davies por la izquierda y el pressing alto resultaron insostenibles para el conjunto catarí. Jonathan David fue la gran figura del encuentro al anotar un triplete de goles (hat-trick), castigando reiteradamente la fragilidad física de la defensa rival en el área pequeña.
 
-### ¿Qué debe hacer Qatar para ganarle a Canadá?
-1.  **Transiciones rápidas a la espalda de Davies:** Lanzar contragolpes inmediatos hacia la banda derecha de ataque de Qatar cuando Davies suba.
-2.  **Mantener el orden y escalonamiento:** No salir a presionar a destiempo y doblar las marcas sobre Jonathan David en el área.
-
----
-
-## 🏆 Pronóstico: ¿Quién ganaría?
-
-> **Predicción:** Victoria de **Canadá** 3-1.
-
-Canadá posee un ritmo físico e intensidad muy superior a la plantilla catarí. Si logran presionar alto con éxito y alimentar la velocidad de Davies en ataque, la fragilidad física de la defensa de Qatar acabará concediendo múltiples oportunidades que Jonathan David sabrá capitalizar.
+### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 3
+*   **Ajuste del Algoritmo:** Canadá registra una diferencia de goles arrolladora (+6), colocándose en una posición inmejorable para avanzar.
+*   **Proyección de la Tercera Fecha:**
+    *   **Canadá vs Suiza:** Duelo que definirá la punta del grupo.
+    *   **Catar vs Bosnia:** Partido de supervivencia para ambos planteles.

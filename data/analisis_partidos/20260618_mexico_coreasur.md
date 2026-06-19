@@ -6,10 +6,10 @@ fecha: "2026-06-18"
 hora: "20:00"
 home_team: "México"
 away_team: "Corea del Sur"
-goles_home: 0
+goles_home: 1
 goles_away: 0
 pronostico: "1 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "MéxicoMapaDefensivo.png:Mapa Defensivo (México), MéxicoExpectedThreatxT.png:Amenaza Esperada xT (México), MéxicoCalor.png:Mapa de Calor (México), ShotMapMéxico.png:Mapa de Tiros (México), MéxicoReddePases.png:Red de Pases (México), MéxicoConduccionesProgresivas.png:Conducciones Progresivas (México), MéxicoMapadeAsistencias.png:Mapa de Asistencias (México), CoreaDelSurCalor.png:Mapa de Calor (Corea del Sur), ShotMapCoreaDelSur.png:Mapa de Tiros (Corea del Sur)"
 slug: "mexico_coreasur"
 poisson: "38-32-30"
@@ -39,20 +39,13 @@ poisson: "38-32-30"
 
 ---
 
-## ⚔️ ¿Cómo puede superar cada equipo a su adversario?
+## 📝 Crónica y Análisis Posterior (Post-Partido)
 
-### ¿Qué debe hacer México para ganarle a Corea del Sur?
-1.  **Cerrar las transiciones rápidas:** Mantener marcas atentas en el mediocampo y evitar dejar mano a mano a sus centrales contra Son Heung-min.
-2.  **Mejorar la eficacia en el área:** Aprovechar los desbordes por derecha y los envíos cruzados con remates de primera intención.
+### ⚽ Resumen del Partido (Resultado Real: México 1 - 0 Corea del Sur)
+México consiguió una valiosísima y sufrida victoria de 1-0 ante Corea del Sur en el Estadio Akron. El único gol del encuentro llegó al minuto 50 por conducto de Luis Romo, quien aprovechó un rebote en el área tras una insistente presión por el costado derecho. Corea del Sur buscó el empate con las veloces contras de Son Heung-min, pero una zaga mexicana concentrada y un despeje clave sobre la línea de Edson Álvarez sellaron el triunfo de los locales.
 
-### ¿Qué debe hacer Corea del Sur para ganarle a México?
-1.  **Atraer la presión alta y saltarla:** Utilizar la técnica de Lee Kang-in en salida para atraer la presión mexicana y lanzar balones largos a la espalda de los laterales.
-2.  **Doblar la marca sobre el extremo derecho mexicano:** Neutralizar la banda fuerte de México forzando al Tri a atacar por el centro.
-
----
-
-## 🏆 Pronóstico: ¿Quién ganaría?
-
-> **Predicción:** Empate **1-1**.
-
-Será un encuentro sumamente táctico y de alta tensión. El ímpetu ofensivo y la presión alta de México forzarán algunas pérdidas en la salida de Corea del Sur, pero la velocidad endiablada de Son Heung-min en contragolpe castigará cualquier descuido defensivo de los aztecas, resultando en un reparto de puntos muy probable.
+### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 3
+*   **Ajuste del Algoritmo:** México lidera el Grupo A con 6 puntos y camina firme a la clasificación.
+*   **Proyección de la Tercera Fecha:**
+    *   **México vs Rep. Checa:** Choque final para amarrar la primera posición.
+    *   **Corea del Sur vs Sudáfrica:** Duelo a muerte donde el que pierda quedará eliminado definitivamente.
