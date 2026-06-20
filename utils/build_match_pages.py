@@ -495,15 +495,20 @@ def build_all_pages():
             else:
                 display_score = pronostico_val
                 score_label = '<div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>'
-            
             # Incorporación dinámica de imágenes tácticas de forma escalable
             images_list = []
+            momentum_filename = None
             if 'imagenes' in meta and meta['imagenes'].strip():
                 img_items = meta['imagenes'].split(',')
                 for item in img_items:
                     if ':' in item:
                         filename, caption = item.split(':', 1)
-                        images_list.append((filename.strip(), caption.strip()))
+                        filename_str = filename.strip()
+                        caption_str = caption.strip()
+                        if 'momentum' in filename_str.lower():
+                            momentum_filename = filename_str
+                        else:
+                            images_list.append((filename_str, caption_str))
             
             visuals_html = ""
             if images_list:
@@ -591,6 +596,35 @@ def build_all_pages():
                   </div>
                 </div>
                 """
+            
+            if momentum_filename:
+                # Buscar el final de la sección Crónica para insertar el gráfico
+                cronica_start = body_html.find("<h2>📝 Crónica")
+                if cronica_start == -1:
+                    match_cro = re.search(r'<h2>.*?Crónica.*?</h2>', body_html)
+                    if match_cro:
+                        cronica_start = match_cro.start()
+                
+                if cronica_start != -1:
+                    next_h2 = body_html.find("<h2>", cronica_start + 10)
+                    next_hr = body_html.find("<hr", cronica_start + 10)
+                    
+                    insert_pos = len(body_html)
+                    candidates = []
+                    if next_h2 != -1:
+                        candidates.append(next_h2)
+                    if next_hr != -1:
+                        candidates.append(next_hr)
+                    if candidates:
+                        insert_pos = min(candidates)
+                        
+                    momentum_html = f"""
+              <div class="tactical-single" style="width: 100%; max-width: 650px; margin: 24px auto; background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Gráfico: Match Momentum (Intensidad de Ataque)</h4>
+                <img src="../assets/{momentum_filename}" alt="Match Momentum" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+              </div>
+"""
+                    body_html = body_html[:insert_pos] + momentum_html + body_html[insert_pos:]
             
             grupo_page = GROUP_PAGES.get(grupo, "grupo_a.html")
             code_home = FLAGS_MAP.get(home_team, 'un')
