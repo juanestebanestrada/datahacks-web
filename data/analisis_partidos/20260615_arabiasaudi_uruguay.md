@@ -15,8 +15,6 @@ slug: "arabiasaudi_uruguay"
 poisson: "12-20-68"
 ---
 
-Este enfrentamiento presenta un contraste abismal entre dos equipos de diferentes niveles competitivos. Arabia Saudita en el Mundial 2022 registró 27 disparos con apenas 3 goles, mientras que Uruguay en Copa América 2024 acumuló 75 disparos con 19 goles. La diferencia no es solo numérica; es un abismo en términos de eficiencia, estructura y capacidad ofensiva. Uruguay es claramente superior en casi todas las dimensiones del juego.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Arabia Saudí 1 - 1 Uruguay)
 En uno de los resultados más sorpresivos e inesperados de la jornada, Arabia Saudita y Uruguay empataron 1-1 en el debut del Grupo H. A pesar de que el conjunto charrúa partía como el claro favorito con Susopechu como eje de distribución, la disciplinada disposición táctica de Arabia Saudita neutralizó gran parte de sus ataques. El bloque defensivo bajo y compacto de los saudíes limitó la capacidad de conducción uruguaya. Además, Arabia Saudita aprovechó una desatención en la zaga charrúa tras una contra vertical rápida para golpear primero en el marcador. Uruguay reaccionó con agresividad y adelantó sus líneas, logrando salvar un punto en los minutos finales, pero el empate deja un sabor amargo para el favorito del grupo.
@@ -26,6 +24,10 @@ En uno de los resultados más sorpresivos e inesperados de la jornada, Arabia Sa
 * **Proyección de la Segunda Ronda de Grupos:**
   * **España vs Arabia Saudí:** España saldrá con la obligación de ganar tras su empate inicial. El modelo Poisson le otorga a España un **60% de probabilidad de victoria**, ante una Arabia Saudí envalentonada.
   * **Uruguay vs Cabo Verde:** Partido crucial para los celestes. Uruguay es el favorito con un **62% de probabilidad de triunfo**, pero no puede confiarse ante la alta eficacia de finalización del rival africano.
+
+
+### 📈 Análisis del Match Momentum
+Uruguay manifestó un dominio abrumador en la intensidad de ataque durante el 71.3% del partido, alcanzando su pico máximo en el minuto 21', un período que presumiblemente se correlaciona con su gol inicial. Arabia Saudí, pese a liderar la intensidad solo el 18.1% del tiempo, demostró una eficiencia táctica superior al capitalizar su máxima expresión ofensiva en el minuto 38'. Este momento fue crucial para igualar el marcador, reflejando una letalidad en su limitada, pero impactante, fase ofensiva. La dinámica del 1-1 evidencia que la persistencia y el dominio de Uruguay no se tradujeron en una ventaja decisiva, mientras que Arabia Saudí explotó tácticamente su única ventana de máxima presión para asegurar el empate.
 
 ---
 

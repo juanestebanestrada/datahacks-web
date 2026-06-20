@@ -15,8 +15,6 @@ slug: "alemania_curazao"
 poisson: "70-20-10"
 ---
 
-Con los datos disponibles, la conclusión es bastante clara: Alemania aparece como amplio favorito, y la diferencia de nivel entre ambos combinados se nota en prácticamente todas las métricas.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Alemania 7 - 1 Curazao)
 Alemania firmó un debut arrollador con una goleada histórica de 7-1 sobre Curazao, ratificando su inmensa superioridad táctica y volumen de juego. La red de pases teutona funcionó con precisión quirúrgica, liderada por Toni Kroos y Joshua Kimmich, alimentando a un ataque insaciable que generó 34 disparos frente al arco rival. El extremo derecho y el callejón central fueron avenidas libres para las constantes conducciones progresivas alemanas. A pesar del abrumador dominio germano, Curazao logró un hito al marcar un gol de honor a través de una transición rápida conducida por Bacuna y finalizada en el área, demostrando la eficacia del 16% que el modelo pre-partido ya advertía. Sin embargo, la acumulación de faltas de Curazao cerca de su propia área facilitó el asedio de una Alemania implacable.
@@ -26,6 +24,10 @@ Alemania firmó un debut arrollador con una goleada histórica de 7-1 sobre Cura
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Alemania vs Costa de Marfil:** Un duelo de alta intensidad física y presión. Tras la contundencia de la primera fecha, el modelo Poisson bivariado otorga a Alemania un **58% de probabilidad de triunfo**, proyectando un partido disputado en el que el mediocampo marfileño intentará cortar los circuitos de Kroos.
   * **Ecuador vs Curazao:** Partido de vida o muerte para ambas selecciones. Ecuador parte con un **62% de probabilidad de ganar** para recuperarse de su caída en el debut, mientras que Curazao buscará plantar un bloque bajo más sólido para evitar otra goleada y pescar una contra.
+
+
+### 📈 Análisis del Match Momentum
+La Selección Alemana estableció una dinámica de juego hegemónica desde el pitido inicial, materializando su pico de intensidad ofensiva (100.00 en el minuto 6) en una rápida sucesión de ocasiones claras y goles, asegurando una ventaja temprana. La respuesta de Curazao, limitada a un pico de intensidad de 35.00 en el minuto 19, solo representó un breve respiro sin generar peligro prolongado ni alterar la tendencia del encuentro. El sostenido liderazgo alemán en intensidad (77.7% del partido) frente a la mínima injerencia ofensiva de Curazao (13.8%) subraya un dominio total en la posesión y en los momentos clave de ataque. Esta abrumadora disparidad en el flujo de intensidad y el control táctico constante explican directamente el marcador final de 7-1, reflejo de una superioridad de ejecución y capacidad ofensiva ininterrumpida.
 
 ---
 

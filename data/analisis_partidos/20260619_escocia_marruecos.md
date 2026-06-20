@@ -25,6 +25,10 @@ Marruecos se llevó un vital triunfo por 1-0 ante Escocia en el Lincoln Financia
   * **Marruecos vs Haití:** Duelo directo donde Marruecos es favorito para sellar su clasificación.
   * **Brasil vs Escocia:** Duelo de trámite complejo para los escoceses ante la potencia sudamericana.
 
+
+### 📈 Análisis del Match Momentum
+El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con Escocia dominando el 29.8% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 87'. Por su parte, Marruecos replegó filas intentando contragolpear, logrando su mayor intensidad (87.00) en el minuto 38'. La constancia en la presión de la selección local en las inmediaciones del área rival fue determinante para explicar el triunfo de Marruecos por 0-1 como visitante.
+
 ---
 
 ## 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia: Análisis Táctico

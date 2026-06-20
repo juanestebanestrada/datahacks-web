@@ -25,6 +25,10 @@ Escocia derrotó por la mínima diferencia (1-0) a Haití gracias a un planteami
   * **Brasil vs Escocia:** Un reto inmenso para Escocia, que buscará un bloque defensivo extremo ante un Brasil obligado a ganar.
   * **Marruecos vs Haití:** La urgencia absoluta de sumar forzará a Haití a dejar espacios que la rápida transición de Marruecos intentará capitalizar.
 
+
+### 📈 Análisis del Match Momentum
+El flujo de intensidad del partido evidenció una asimetría táctica en la ejecución ofensiva. Haití impuso una salida enérgica, alcanzando su máxima intensidad en el minuto 12 y dominando la iniciativa ofensiva durante el 51.1% del encuentro, sugiriendo un control extendido de los periodos de ataque, aunque sin éxito en la concreción. En contraste, Escocia, si bien lideró la intensidad en menor medida (39.4%) y su pico máximo de ataque se produjo más tarde (minuto 28), fue clínicamente superior, capitalizando eficientemente sus momentos de mayor presión. Esta disparidad en la efectividad durante los picos de momentum es la correlación directa con el marcador final de 0-1, demostrando que la eficiencia prevaleció sobre el volumen de intensidad generada.
+
 ---
 
 ## 🇭🇹 Haití: Análisis Táctico

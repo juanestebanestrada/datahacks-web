@@ -6,7 +6,7 @@ fecha: "2026-06-17"
 hora: "23:30"
 home_team: "Ghana"
 away_team: "Panamá"
-goles_home: 3
+goles_home: 1
 goles_away: 0
 pronostico: "3 - 0"
 finalizado: "true"
@@ -15,23 +15,22 @@ slug: "ghana_panama"
 poisson: "80-15-5"
 ---
 
-Ghana se presenta como el abrumador favorito en este duelo del Grupo L. La diferencia técnica, posicional y estructural entre ambos combinados deja muy poco margen para una sorpresa panameña.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-### ⚽ Resumen del Partido (Resultado Real: Ghana 3 - 0 Panamá)
+### ⚽ Resumen del Partido (Resultado Real: Ghana 1 - 0 Panamá)
 
-El partido se apegó al guion de absoluto dominio territorial para las Estrellas Negras. Ghana asfixió la salida de Panamá desde el pitazo inicial, impidiendo que Carrasquilla organizara cualquier contragolpe. La resistencia defensiva canalera en bloque bajo aguantó los primeros embates, pero la velocidad ghanesa por las bandas desgastó a la zaga centroamericana. Al minuto 31, Kudus abrió la cuenta con una espléndida definición cruzada tras un pase filtrado de Partey.
-
-Panamá intentó salir de su propio campo, pero su circuito predecible fue fácilmente neutralizado. En el segundo tiempo, Ghana mantuvo el control de la pelota. Al minuto 58, tras un centro preciso de Baba, Samed puso el 2-0 con un remate de cabeza. Con Panamá completamente extenuada físicamente y sin opciones de peso en el banquillo, Ghana decretó el 3-0 definitivo al minuto 79 gracias a una excelente incursión de Sammy en el área.
+El partido se apegó al guion de absoluto dominio territorial para las Estrellas Negras. Ghana asfixió la salida de Panamá desde el pitazo inicial, impidiendo que Carrasquilla organizara cualquier contragolpe. La resistencia defensiva canalera en bloque bajo aguantó los primeros embates de forma heroica, pero el desgaste físico ante la velocidad ghanesa por las bandas comenzó a notarse. Al minuto 31, Kudus abrió la cuenta con una espléndida definición cruzada tras un pase filtrado de Partey, decretando el 1-0 que a la postre sería definitivo. En el segundo tiempo, Ghana mantuvo el control de la pelota sin arriesgar en demasía, administrando el ritmo y neutralizando las tímidas aproximaciones de contragolpe panameñas para asegurar una ajustada pero indiscutible victoria en su debut.
 
 ### 🔮 Impacto en el Grupo L y Proyecciones para la Ronda 2
 
-* **Ajuste del Algoritmo:** Ghana se acomoda en la cima del Grupo L junto a Inglaterra con 3 puntos (+3 de diferencia de goles). Sus métricas ofensivas y su bajo volumen de tiros por gol la perfilan como un rival durísimo. Para Panamá, la derrota expone la urgencia de estructurar una fase defensiva con mayor pressing y buscar alternativas creativas que no sobrecarguen a Carrasquilla.
+* **Ajuste del Algoritmo:** Ghana se acomoda en el segundo puesto del Grupo L con 3 puntos (+1 de diferencia de goles), solo por detrás de Inglaterra por cantidad de goles anotados. Sus métricas ofensivas y su control del ritmo la perfilan como un rival muy ordenado. Para Panamá, la ajustada derrota deja sensaciones de solidez defensiva en bloque bajo, pero expone la urgencia de buscar alternativas creativas en ataque.
+
 * **Proyección de la Segunda Ronda de Grupos:**
   - **Ghana vs Inglaterra:** Un encuentro de alta tensión que definirá el liderato del grupo. Inglaterra parte con una leve ventaja del **55% de probabilidad de triunfo**, pero el orden y contundencia ghanesa auguran un trámite cerrado.
   - **Panamá vs Croacia:** Un duelo de necesitados. Croacia parte como favorita con el **58%**, obligando a Panamá a arriesgar más posicionalmente si desea rescatar unidades.
+
+
+### 📈 Análisis del Match Momentum
+El flujo de intensidad del partido refleja la superioridad de Ghana, que lideró el 34.0% de las fases de ataque sostenido. La selección local alcanzó su mayor pico de peligro ofensivo (87.00) en el minuto 66', logrando vulnerar la defensa de Panamá en momentos clave. Aunque el equipo visitante tuvo reacciones aisladas, personificadas en un pico de 95.00 en el minuto 54', no lograron contrarrestar la dinámica constante del rival, lo que consolida la victoria final de Ghana por 1-0.
 
 ---
 

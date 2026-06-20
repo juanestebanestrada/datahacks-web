@@ -25,6 +25,10 @@ Paraguay dio la sorpresa al derrotar por 1-0 a Turquía en el MetLife Stadium. E
   * **USA vs Turquía:** Duelo directo por el liderato del grupo.
   * **Paraguay vs Australia:** Partido por el segundo o tercer lugar clasificatorio.
 
+
+### 📈 Análisis del Match Momentum
+Durante el transcurso de los 90 minutos, Turquía impuso condiciones tácticas controlando el 83.0% de las acciones de ataque frente al 7.4% de Paraguay. La intensidad ofensiva de Turquía encontró su punto más alto de 100.00 en el minuto 63', traduciéndose en una ventaja constante. Paraguay experimentó momentos de peligro intermitente, registrando un máximo de 100.00 en el minuto 60', pero la falta de constancia ofensiva pavimentó el camino para el triunfo de Paraguay por 0-1 como visitante.
+
 ---
 
 ## 🇹🇷 Turquía: Análisis Táctico

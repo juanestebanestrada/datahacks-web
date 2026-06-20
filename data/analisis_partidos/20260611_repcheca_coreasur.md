@@ -6,8 +6,8 @@ fecha: "2026-06-11"
 hora: "17:00"
 home_team: "Rep. Checa"
 away_team: "Corea del Sur"
-goles_home: 2
-goles_away: 1
+goles_home: 1
+goles_away: 2
 pronostico: "1 - 2"
 finalizado: "true"
 
@@ -18,14 +18,20 @@ poisson: "58-26-16"
 
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-### ⚽ Resumen del Partido (Resultado Real: Rep. Checa 2 - 1 Corea del Sur)
-República Checa sumó tres puntos de oro al derrotar 2-1 a Corea del Sur. Los europeos supieron imponer su poderío físico y el orden táctico para neutralizar la velocidad y dinámica de los asiáticos. A través de transiciones rápidas y una excelente capitalización de la táctica fija, la escuadra checa logró la ventaja. Corea del Sur descontó en la segunda parte buscando explotar la movilidad de sus atacantes, pero el bloque defensivo checo resistió el asedio final con gran madurez.
+### ⚽ Resumen del Partido (Resultado Real: Rep. Checa 1 - 2 Corea del Sur)
+
+Corea del Sur sumó tres puntos de oro al derrotar 2-1 a la República Checa en su debut mundialista. El conjunto asiático supo imponer su velocidad y dinámica en las transiciones ofensivas frente al imponente pero pesado bloque físico europeo. A través de desbordes veloces por las bandas y una gran capacidad de asociación en velocidad liderada por Son Heung-min, la escuadra surcoreana logró golpear en momentos clave para establecer su ventaja. República Checa descontó en la segunda parte mediante el juego aéreo, aprovechando su altura para recortar la diferencia en un tiro de esquina. Sin embargo, el bloque defensivo surcoreano resistió con solvencia el asedio checo en los minutos finales para sellar el triunfo.
 
 ### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** República Checa empata en puntos con México en la cima del grupo. Las métricas de compacidad defensiva de los europeos mejoran sustancialmente en el modelo bivariado.
+* **Ajuste del Algoritmo:** Corea del Sur empata en puntos con México en la cima del grupo, aunque con menor diferencia de goles. Las métricas de progresión rápida de los asiáticos se consolidan en el simulador, mientras que la zaga checa muestra problemas para contener la velocidad en transiciones.
+
 * **Proyección de la Segunda Ronda de Grupos:**
   * **México vs Corea del Sur:** Las necesidades surcoreanas obligarán a adelantar líneas, lo que podría favorecer las transiciones rápidas mexicanas.
   * **Rep. Checa vs Sudáfrica:** El conjunto checo parte con un **48% de probabilidad de victoria** para sellar su pase a octavos frente a una Sudáfrica que necesita arriesgar tras su derrota en el debut.
+
+
+### 📈 Análisis del Match Momentum
+El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con Rep. Checa dominando el 46.8% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 14'. Por su parte, Corea del Sur replegó filas intentando contragolpear, logrando su mayor intensidad (100.00) en el minuto 22'. La constancia en la presión de la selección local en las inmediaciones del área rival fue determinante para explicar el triunfo de Corea del Sur por 1-2 como visitante.
 
 ---
 

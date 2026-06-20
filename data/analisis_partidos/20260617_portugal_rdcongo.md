@@ -6,7 +6,7 @@ fecha: "2026-06-17"
 hora: "15:00"
 home_team: "Portugal"
 away_team: "RD Congo"
-goles_home: 2
+goles_home: 1
 goles_away: 1
 pronostico: "2 - 1"
 finalizado: "true"
@@ -15,23 +15,22 @@ slug: "portugal_rdcongo"
 poisson: "70-20-10"
 ---
 
-Este enfrentamiento presenta una superioridad clara en control táctico de Portugal, pero la RD Congo se presenta como un rival notablemente peligroso. La estructuración táctica portuguesa, su defensa organizada y su experiencia internacional le otorgan una ventaja significativa, aunque la contundencia ofensiva congoleña es un factor de altísimo riesgo que obliga a Portugal a no cometer errores.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-### ⚽ Resumen del Partido (Resultado Real: Portugal 2 - 1 RD Congo)
+### ⚽ Resumen del Partido (Resultado Real: Portugal 1 - 1 RD Congo)
 
-El partido cumplió con las expectativas de tensión y contrastes tácticos. Portugal tomó el control del esférico desde el arranque, moviendo la pelota en territorio congoleño mediante las conexiones fluidas entre Bruno Fernandes y Bernardo Silva. Sin embargo, la agresividad defensiva de la RD Congo puso en aprietos la salida limpia de los lusos. Al minuto 34, una recuperación rápida de Masaku permitió una transición vertical que terminó en gol de Congo, ratificando su letalidad (21.4% de efectividad).
-
-Portugal no entró en pánico y continuó explotando su profundidad posicional por el sector derecho con Cancelo. Al inicio del segundo tiempo (minuto 52), tras una gran sucesión de pases progresivos, Cristiano Ronaldo puso el empate con una definición al primer toque. A partir de allí, Portugal administró la posesión de forma inteligente, desgastando la desorganizada presión congoleña. El gol del triunfo llegó al minuto 78 gracias a una excelente jugada asociativa finalizada por Gonçalves en el borde del área chica. Congo intentó el empate a base de empuje y agresividad física, pero la experiencia defensiva de Portugal selló el marcador final de 2-1.
+El partido cumplió con las expectativas de tensión y contrastes tácticos, finalizando en un luchado empate 1-1. Portugal tomó el control del esférico desde el arranque, moviendo la pelota en territorio congoleño mediante las conexiones entre Bruno Fernandes y Bernardo Silva. Sin embargo, la agresividad defensiva de la RD Congo puso en aprietos la salida limpia de los lusos. Al minuto 34, una recuperación rápida de Masaku permitió una transición vertical que terminó en gol de Congo, adelantando sorpresivamente a los africanos. Portugal no entró en pánico y continuó explotando su profundidad posicional por la banda derecha. Al inicio del segundo tiempo (minuto 52), tras una gran sucesión de pases progresivos, Cristiano Ronaldo puso el empate 1-1 definitivo con una definición al primer toque. A partir de allí, el bloque físico de RD Congo resistió con orden y rigor los embates portugueses para sellar el reparto de puntos.
 
 ### 🔮 Impacto en el Grupo K y Proyecciones para la Ronda 2
 
-* **Ajuste del Algoritmo:** Portugal suma sus primeros 3 puntos, posicionándose favorablemente en el Grupo K. Su xG acumulado valida su supremacía creativa, aunque la tasa de conversión lusa se mantiene bajo observación. Para RD Congo, pese a la derrota, su agresividad defensiva se recalibra como una amenaza latente para el resto de equipos.
+* **Ajuste del Algoritmo:** Portugal y RD Congo suman 1 punto en el Grupo K, quedando detrás de Colombia que lidera la zona tras su victoria ante Uzbekistán. Las métricas ofensivas de Portugal reflejan superioridad en posesión pero un déficit en la contundencia de cara al gol. Para RD Congo, el empate convalida su propuesta física y repliegue ordenado como un factor altamente competitivo frente a los favoritos del grupo.
+
 * **Proyección de la Segunda Ronda de Grupos:**
   - **Portugal vs Uzbekistán:** Portugal parte como favorita con un **68% de probabilidad de triunfo**, esperando aprovechar los espacios concedidos por el bloque uzbeko en transición.
   - **RD Congo vs Colombia:** Un choque físico y de alta intensidad. Las probabilidades estimadas le otorgan a Colombia un ligero favoritismo del **55%**, pero la verticalidad y contundencia congoleña obligan a los cafeteros a extremar cuidados.
+
+
+### 📈 Análisis del Match Momentum
+El flujo de intensidad del partido refleja la superioridad de Portugal, que lideró el 76.6% de las fases de ataque sostenido. La selección local alcanzó su mayor pico de peligro ofensivo (100.00) en el minuto 68', logrando vulnerar la defensa de RD Congo en momentos clave. Aunque el equipo visitante tuvo reacciones aisladas, personificadas en un pico de 100.00 en el minuto 63', no lograron contrarrestar la dinámica constante del rival, lo que consolida el empate definitivo 1-1.
 
 ---
 

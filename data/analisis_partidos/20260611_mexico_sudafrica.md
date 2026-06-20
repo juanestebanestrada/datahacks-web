@@ -25,6 +25,10 @@ En un emocionante debut mundialista, México logró imponerse por 2-0 ante Sudá
   * **México vs Corea del Sur:** Duelo clave para encaminar la clasificación. El modelo predictivo proyecta un escenario de alta intensidad donde México parte como favorito con un **52% de probabilidad de triunfo**, debiendo cuidar la velocidad en transición de los asiáticos.
   * **Rep. Checa vs Sudáfrica:** Ambos necesitados de sumar. Los checos son ligeros favoritos con un **45% de probabilidad de victoria** ante un conjunto sudafricano que debe corregir los espacios dejados a la espalda de sus laterales.
 
+
+### 📈 Análisis del Match Momentum
+México dictó el ritmo del encuentro, evidenciado por su liderazgo en intensidad durante el 66.0% del partido y un pico ofensivo de 92.00 en el minuto 88', reflejando una presión constante y decisiva hasta los compases finales. En contraste, Sudáfrica mostró una capacidad limitada para generar peligro sostenido, dominando la intensidad solo el 20.2% del tiempo y alcanzando un modesto pico de 60.00 en el minuto 34'. Esta disparidad en la magnitud y persistencia de las fases de ataque impactó directamente en el desarrollo, donde los momentos de mayor peligro fueron constantemente generados por el equipo local. La correlación con el marcador 2-0 es clara: México capitalizó su superioridad táctica y ofensiva, manteniendo una amenaza persistente que se tradujo en goles, mientras Sudáfrica no pudo convertir su breve período de mayor empuje en acciones concretas que alteraran el resultado.
+
 ---
 
 ## 🇲🇽 México: Análisis Táctico

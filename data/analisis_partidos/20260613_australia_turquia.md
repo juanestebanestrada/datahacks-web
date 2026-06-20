@@ -25,6 +25,10 @@ En una de las grandes sorpresas tácticas de la fecha, Australia venció por la 
   * **USA vs Australia:** Partido por el liderato directo del grupo. El modelo Poisson bivariado, ante el sólido muro defensivo de los australianos, reduce el favoritismo de Estados Unidos a un **48% de probabilidad de triunfo**, proyectando un duelo muy disputado en mediocampo.
   * **Turquía vs Paraguay:** Duelo de necesitados. Ambas escuadras llegan con 0 puntos y al borde de la eliminación. Turquía partirá favorita con un **50% de probabilidad de victoria** ante una Paraguay que defensivamente concedió muchos espacios en la fecha 1.
 
+
+### 📈 Análisis del Match Momentum
+Turquía dominó ampliamente la intensidad de ataque durante el 72.3% del partido, alcanzando un pico máximo de 100.00 en el minuto 65', lo que denota una fase prolongada de asedio ofensivo y alta presión en campo rival. No obstante, Australia, liderando la intensidad solo un 22.3% y con un pico más modesto de 68.00 en el minuto 54', demostró una eficacia clínica superior en sus escasos momentos de protagonismo ofensivo. Este patrón de intensidad sugiere que Australia capitalizó decisivamente sus transiciones o jugadas estratégicas, posiblemente con la primera anotación coincidiendo con su pico de intensidad. El 2-0 final se correlaciona directamente con la capacidad australiana de convertir oportunidades escasas, neutralizando la abrumadora, pero estéril, superioridad turca en volumen y persistencia de ataque.
+
 ---
 
 ## 🇦🇺 Australia: Análisis Táctico

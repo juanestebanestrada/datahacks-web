@@ -25,6 +25,10 @@ Estados Unidos se impuso con autoridad a Australia por 2-0 en el Mercedes-Benz S
   * **USA vs Turquía:** Duelo directo por el liderato del grupo. El modelo Poisson otorga a Estados Unidos un **52% de probabilidad de triunfo**.
   * **Paraguay vs Australia:** Partido decisivo por el tercer puesto de cara a una posible clasificación.
 
+
+### 📈 Análisis del Match Momentum
+El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con USA dominando el 52.1% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 11'. Por su parte, Australia replegó filas intentando contragolpear, logrando su mayor intensidad (76.00) en el minuto 84'. La constancia en la presión de la selección local en las inmediaciones del área rival fue determinante para explicar la victoria final de USA por 2-0.
+
 ---
 
 ## 🇺🇸 USA: Análisis Táctico

@@ -15,10 +15,6 @@ slug: "colombia_uzbekistan"
 poisson: "85-10-5"
 ---
 
-Este no es un partido parejo; representa un choque entre dos enfoques futbolísticos completamente diferentes: la defensa ultracompacta de Uzbekistán contra la superioridad ofensiva y de control de Colombia. Colombia es el favorito claro con una probabilidad superior al 85% para llevarse el triunfo.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Colombia 3 - 1 Uzbekistán)
 
@@ -34,6 +30,10 @@ En el segundo tiempo, Colombia mantuvo la calma táctica y la paciencia asociati
 * **Proyección de la Segunda Ronda de Grupos:**
   - **Colombia vs RD Congo:** Un encuentro por la clasificación donde Colombia parte con una probabilidad de victoria de **55%**, pero deberá evitar las pérdidas en mitad de campo frente a los veloces extremos congoleños.
   - **Uzbekistán vs Portugal:** Un duelo muy exigente para el cuadro asiático. Portugal parte como favorito con un **68% de probabilidad de triunfo**, y se proyecta que Uzbekistán mantenga un bloque bajo extremo para intentar rasguñar un punto.
+
+
+### 📈 Análisis del Match Momentum
+Durante el transcurso de los 90 minutos, Colombia impuso condiciones tácticas controlando el 17.0% de las acciones de ataque frente al 68.1% de Uzbekistán. La intensidad ofensiva de Colombia encontró su punto más alto de 43.00 en el minuto 90', traduciéndose en una ventaja constante. Uzbekistán experimentó momentos de peligro intermitente, registrando un máximo de 100.00 en el minuto 40', pero la falta de constancia ofensiva pavimentó el camino para la victoria final de Colombia por 3-1.
 
 ---
 

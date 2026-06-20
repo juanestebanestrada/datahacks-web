@@ -25,6 +25,10 @@ Canadá firmó una histórica goleada de 6-0 sobre Catar en el BC Place de Vanco
     *   **Canadá vs Suiza:** Duelo que definirá la punta del grupo.
     *   **Catar vs Bosnia:** Partido de supervivencia para ambos planteles.
 
+
+### 📈 Análisis del Match Momentum
+El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con Canadá dominando el 83.0% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 4'. Por su parte, Qatar replegó filas intentando contragolpear, logrando su mayor intensidad (22.00) en el minuto 11'. La constancia en la presión de la selección local en las inmediaciones del área rival fue determinante para explicar la victoria final de Canadá por 6-0.
+
 ---
 
 ## 🇨🇦 Canadá: Análisis Táctico

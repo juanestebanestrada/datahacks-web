@@ -15,10 +15,6 @@ slug: "austria_jordania"
 poisson: "65-22-13"
 ---
 
-Austria es claramente el favorito y debería ganar este encuentro. La diferencia en calidad y capacidad ofensiva es de consideración, aunque ambos equipos muestran deficiencias en eficiencia de finalización.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Austria 3 - 1 Jordania)
 Austria venció 3-1 a Jordania en un partido donde los europeos impusieron su ritmo y presión alta. Jordania planteó un bloque replegado y físico, logrando descontar mediante una jugada de balón parado, pero el volumen de pases y la consistencia en el último tercio de Austria marcaron la diferencia para sellar el marcador a favor de los europeos.
@@ -28,6 +24,10 @@ Austria venció 3-1 a Jordania en un partido donde los europeos impusieron su ri
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Argentina vs Austria:** Duelo directo por el liderato del Grupo J. Se perfila un encuentro muy disputado tácticamente entre la posesión de la Albiceleste y la intensidad del bloque austríaco.
   * **Argelia vs Jordania:** Ambos equipos están obligados a sumar para mantener vivas sus esperaciones de continuar en carrera en el torneo.
+
+
+### 📈 Análisis del Match Momentum
+Austria dictó un inicio de partido arrollador, alcanzando su pico de intensidad ofensiva máxima al minuto 11 (100.00), lo que generó un dominio temprano y la consecución de una ventaja clave que marcó la dinámica inicial. En contraste, Jordania exhibió un impulso ofensivo considerablemente menor y más tardío (65.00 en el 56'), reflejando una incapacidad para ejercer una presión sostenida comparable. Esta disparidad en la magnitud y temporalidad de las oleadas ofensivas, sumada al control austriaco del 47.9% del tiempo de intensidad, se traduce directamente en los momentos de mayor peligro y la diferencia de goles. El marcador final de 3-1 es la consecuencia táctica de la superioridad austriaca en la creación de situaciones de gol decisivas, especialmente en los compases iniciales, frente a la reacción intermitente de Jordania.
 
 ---
 

@@ -15,10 +15,6 @@ slug: "argentina_argelia"
 poisson: "75-18-7"
 ---
 
-Este enfrentamiento presenta una superioridad clara de Argentina sobre Argelia. Argentina (Mundial 2022) registra 87 disparos con 23 goles (26.4% eficiencia), mientras Argelia (recientes, AFCON 2023) acumula 47 disparos con 8 goles (17.0% eficiencia). Argentina no solo dispara casi 2x más, sino que convierte con una efectividad **50% superior**. Argentina es un equipo de élite mundial; Argelia es competente pero de segundo nivel.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Argentina 3 - 0 Argelia)
 Argentina demostró su jerarquía y dominio absoluto del juego con una victoria contundente por 3-0 frente a una combativa pero replegada selección de Argelia. La Albiceleste monopolizó la posesión desde el pitazo inicial, moviendo el balón con gran fluidez a través de sus mediocampistas creativos. La resistencia argelina en bloque medio-bajo aguantó las primeras embestidas, pero los espacios comenzaron a abrirse gracias a la movilidad constante de los atacantes argentinos. Argentina capitalizó sus llegadas con una alta efectividad frente al arco, confirmando las predicciones tácticas y del modelo Poisson que anticipaban un claro triunfo sudamericano. Argelia intentó contraatacar con transiciones rápidas por las bandas, pero la presión alta argentina sofocó cualquier intento de peligro, dejando el arco albiceleste imbatible.
@@ -28,6 +24,10 @@ Argentina demostró su jerarquía y dominio absoluto del juego con una victoria 
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Argentina vs Austria:** Un duelo crucial por el liderato del grupo. Austria, tras su victoria frente a Jordania, representa una amenaza táctica superior. Argentina parte como favorita con un **62% de probabilidad de victoria**, pero deberá cuidarse de la presión alta y el juego físico de los europeos.
   * **Argelia vs Jordania:** Ambos necesitados de puntos para mantener vivas sus aspiraciones. Se perfila como un encuentro muy cerrado y físico, donde Argelia parte con una leve ventaja del **45% de probabilidad de triunfo** si logra imponer condiciones en el mediocampo.
+
+
+### 📈 Análisis del Match Momentum
+El flujo de intensidad del partido evidenció una clara superioridad ofensiva de Argentina, cuyo pico de 81.00 en el minuto 17' sugirió un arranque fulgurante y una capacidad letal para generar peligro decisivo en la fase inicial del encuentro. Argelia, por su parte, alcanzó su máxima intensidad de ataque en un mucho menor 62.00 en el minuto 42', denotando una reacción tardía y de menor calibre que no logró desestabilizar la defensa local. Aunque Argentina lideró la intensidad solo un 47.9% del tiempo frente al 41.5% de Argelia, la *calidad* y *timing* de sus fases de máxima presión fueron significativamente superiores. Esta disparidad en la eficacia y letalidad de los picos de intensidad se correlaciona directamente con el marcador 3-0, reflejando la capitalización argentina de sus momentos de mayor ímpetu y la incapacidad argelina para generar una amenaza sostenida o transformarla en goles.
 
 ---
 

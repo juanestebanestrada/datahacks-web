@@ -15,8 +15,6 @@ slug: "iran_nuevazelanda"
 poisson: "60-25-15"
 ---
 
-Este enfrentamiento presenta dos equipos con perfiles extremadamente similares en eficiencia ofensiva pero dramáticamente diferentes en estructura táctica. Irán (Mundial 2022) registra 29 disparos con 4 goles (13.8%), mientras Nueva Zelanda (recientes) acumula 31 disparos también con 4 goles (12.9%). La paridad estadística oculta diferencias fundamentales en cómo ambos equipos juegan al fútbol. Uno es rudimentario; el otro, aunque no sofisticado, intenta algo más.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Irán 2 - 2 Nueva Zelanda)
 En un emocionante y dinámico encuentro, Irán y Nueva Zelanda firmaron un electrizante empate 2-2 en el cierre de la primera jornada del Grupo G. Nueva Zelanda dio la gran sorpresa al adelantarse por partida doble gracias a su fútbol directo y vertical; balones largos lanzados por Sail y Cacace que rompieron el bloque defensivo de contención iraní y se tradujeron en dos goles de gran efectividad física. Sin embargo, la selección de Irán no bajó los brazos y, apoyándose en su estructura de pases más fluida e interconectada, tomó el control de la posesión y elaboró ataques variados. La constancia y variabilidad ofensiva permitieron a los asiáticos marcar dos goles en la segunda mitad para sellar una vibrante igualdad.
@@ -26,6 +24,10 @@ En un emocionante y dinámico encuentro, Irán y Nueva Zelanda firmaron un elect
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Bélgica vs Irán:** Partido de alta tensión. Bélgica parte con un **55% de probabilidad de triunfo** según el modelo Poisson, pero la variabilidad ofensiva de Irán representa una seria amenaza a la contra.
   * **Nueva Zelanda vs Egipto:** Un duelo de estilos contrapuestos. Egipto parte con un **58% de probabilidad de ganar** para imponer su presión alta y ritmo dinámico frente a la zaga neozelandesa.
+
+
+### 📈 Análisis del Match Momentum
+El flujo de intensidad en el Irán 2-2 Nueva Zelanda describe un partido de alternancias claras. Nueva Zelanda generó su pico ofensivo en el minuto 54' (84.00), lo que probablemente les permitió tomar o consolidar una ventaja temprana en el marcador. Sin embargo, Irán respondió con un dominio ligeramente superior de la intensidad global (48.9%) y alcanzó su máxima expresión de ataque en el minuto 79' (95.00), evidenciando una fase de asedio crucial en busca del empate o la victoria en el tramo final. Esta dinámica de golpes y contragolpes, con momentos de alto peligro distribuidos en el tiempo y la incapacidad de ambos equipos para mantener su superioridad ofensiva o capitalizarla plenamente, explica el desenlace de un empate 2-2.
 
 ---
 

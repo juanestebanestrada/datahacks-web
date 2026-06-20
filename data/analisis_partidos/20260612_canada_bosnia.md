@@ -25,6 +25,10 @@ Canadá y Bosnia firmaron un reñido empate 1-1 en el debut del Grupo B. La velo
   * **Suiza vs Bosnia:** Un duelo clave para los europeos. El modelo predictivo proyecta un duelo muy cerrado con un **44% de probabilidad de triunfo para Suiza**, un **28% para Bosnia** y un **28% de empate**.
   * **Qatar vs Canadá:** Canadá buscará hacer valer su velocidad para sumar de a tres frente a un conjunto de Qatar motivado. Las proyecciones le dan a Canadá un **50% de probabilidad de victoria**.
 
+
+### 📈 Análisis del Match Momentum
+Canadá impuso una fase ofensiva dominante inicial, reflejada en su intensidad máxima al minuto 30' y liderando el 59.6% del tiempo, lo que sugiere una alta probabilidad de crear sus momentos de mayor peligro en la primera mitad. Bosnia, por su parte, aunque con menor dominio general (29.8%), demostró una capacidad reactiva crítica, alcanzando su pico de intensidad al minuto 59', un instante clave para generar su igualdad o sus oportunidades más claras. Este flujo dinámico, donde Canadá tuvo periodos más extendidos de iniciativa pero Bosnia capitalizó un momento de alta ofensiva concentrada, se correlaciona directamente con el empate 1-1, evidenciando que ambos equipos lograron impactar el marcador en sus respectivas fases de mayor virulencia atacante.
+
 ---
 
 ## 🇨🇦 Canadá: Análisis Táctico

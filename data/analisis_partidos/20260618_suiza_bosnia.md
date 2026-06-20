@@ -25,6 +25,10 @@ Suiza demostró su jerarquía y dominio de posesión al golear 4-1 a Bosnia y He
     *   **Suiza vs Canadá:** Duelo estelar por el liderato del grupo.
     *   **Catar vs Bosnia:** Choque de necesitados para buscar un boleto como mejor tercero.
 
+
+### 📈 Análisis del Match Momentum
+Durante el transcurso de los 90 minutos, Suiza impuso condiciones tácticas controlando el 58.5% de las acciones de ataque frente al 28.7% de Bosnia. La intensidad ofensiva de Suiza encontró su punto más alto de 84.00 en el minuto 84', traduciéndose en una ventaja constante. Bosnia experimentó momentos de peligro intermitente, registrando un máximo de 68.00 en el minuto 43', pero la falta de constancia ofensiva pavimentó el camino para la victoria final de Suiza por 4-1.
+
 ---
 
 ## 🇨🇭 Suiza: Análisis Táctico

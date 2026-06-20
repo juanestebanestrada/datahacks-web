@@ -25,6 +25,10 @@ México consiguió una valiosísima y sufrida victoria de 1-0 ante Corea del Sur
     *   **México vs Rep. Checa:** Choque final para amarrar la primera posición.
     *   **Corea del Sur vs Sudáfrica:** Duelo a muerte donde el que pierda quedará eliminado definitivamente.
 
+
+### 📈 Análisis del Match Momentum
+El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con México dominando el 39.4% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 75'. Por su parte, Corea del Sur replegó filas intentando contragolpear, logrando su mayor intensidad (100.00) en el minuto 72'. La constancia en la presión de la selección local en las inmediaciones del área rival fue determinante para explicar la victoria final de México por 1-0.
+
 ---
 
 ## 🇲🇽 México: Análisis Táctico

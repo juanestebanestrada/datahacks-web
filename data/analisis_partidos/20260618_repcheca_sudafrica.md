@@ -25,6 +25,10 @@ En un duelo sumamente disputado en el Mercedes-Benz Stadium, la República Checa
     *   **Rep. Checa vs México:** Partido definitivo por el liderato o clasificación del grupo.
     *   **Corea del Sur vs Sudáfrica:** Duelo por la supervivencia donde ambos necesitan ganar obligatoriamente.
 
+
+### 📈 Análisis del Match Momentum
+El flujo de intensidad del partido refleja la superioridad de Rep. Checa, que lideró el 31.9% de las fases de ataque sostenido. La selección local alcanzó su mayor pico de peligro ofensivo (87.00) en el minuto 2', logrando vulnerar la defensa de Sudáfrica en momentos clave. Aunque el equipo visitante tuvo reacciones aisladas, personificadas en un pico de 71.00 en el minuto 18', no lograron contrarrestar la dinámica constante del rival, lo que consolida el empate definitivo 1-1.
+
 ---
 
 ## 🇨🇿 Rep. Checa: Análisis Táctico

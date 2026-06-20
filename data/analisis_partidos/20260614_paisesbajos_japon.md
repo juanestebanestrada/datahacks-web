@@ -15,8 +15,6 @@ slug: "paisesbajos_japon"
 poisson: "45-30-25"
 ---
 
-Este enfrentamiento es más parejo de lo que parece a primera vista, aunque los datos inclinan la balanza ligeramente hacia Países Bajos por volumen ofensivo y profundidad de plantilla.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Países Bajos 2 - 2 Japón)
 Países Bajos y Japón regalaron uno de los encuentros más vistosos de la primera jornada táctica, saldado con un trepidante empate 2-2. La escuadra neerlandesa impuso condiciones territoriales en la primera mitad, haciendo circular el balón con paciencia desde atrás con Virgil van Dijk y Nathan Aké, y encontrando profundidad por su costado izquierdo. No obstante, Japón reaccionó de manera soberbia en el complemento: su asfixiante presión coordinada en bloque medio-alto incomodó la salida de Reijnders y provocó pérdidas clave. El combinado nipón explotó al máximo su letalidad en transición por bandas a través de Ito y Doan, castigando las espaldas de la adelantada línea defensiva neerlandesa para rescatar un valioso punto.
@@ -26,6 +24,10 @@ Países Bajos y Japón regalaron uno de los encuentros más vistosos de la prime
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Países Bajos vs Suecia:** Clásico europeo por la supremacía del grupo. Suecia llega crecida tras golear, por lo que las probabilidades se equilibran, asignando a los Países Bajos un **42% de probabilidad de triunfo** en lo que se proyecta como una batalla de transiciones verticales.
   * **Tunisia vs Japón:** Oportunidad inmejorable para los Samuráis Azules de encaminar la clasificación. Japón arranca como claro favorito con un **60% de probabilidad de victoria** ante un cuadro tunecino sumamente castigado en la primera fecha.
+
+
+### 📈 Análisis del Match Momentum
+Países Bajos ejerció un dominio sostenido en el flujo ofensivo, liderando la intensidad el 61.7% del partido y alcanzando su cénit absoluto (100.00) en el minuto 34', lo que indica un fuerte impulso inicial y la probable construcción de una ventaja significativa en ese periodo. Sin embargo, Japón, pese a liderar solo el 33.0% en intensidad, demostró una resiliencia táctica clave, plasmada en su pico de 87.00 en el minuto 80'. Esta tardía pero efectiva ráfaga ofensiva fue crucial para generar las oportunidades que les permitieron igualar la contienda, reflejando cómo la incapacidad neerlandesa para capitalizar su dominio prolongado abrió la puerta a la capitalización nipona de sus momentos de mayor agudeza para el 2-2 final.
 
 ---
 

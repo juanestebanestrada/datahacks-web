@@ -15,8 +15,6 @@ slug: "costamarfil_ecuador"
 poisson: "48-28-24"
 ---
 
-Este análisis enfrenta a dos selecciones con perfiles distintos: una con gran volumen ofensivo y dominio territorial (Costa de Marfil) y otra más compacta y dependiente de jugadas puntuales (Ecuador). Los datos sugieren que Costa de Marfil llega como favorito, aunque Ecuador tiene herramientas para hacer un partido incómodo.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Costa de Marfil 1 - 0 Ecuador)
 Costa de Marfil se llevó una ajustada victoria por 1-0 ante Ecuador gracias a su intensidad física y dominio territorial en el último tercio del campo. El bloque alto marfileño asfixió la salida de Ecuador, cortando la conexión de Corozo e impidiendo que los sudamericanos progresaran con claridad. Aunque la defensa de Ecuador se plantó con firmeza y orden en propio campo con un bloque bajo rocoso, la falta de fluidez en la medular y la escasa presencia ofensiva impidieron inquietar al guardameta africano. Un zarpazo marfileño por el sector derecho de su ataque (donde se concentró su mayor xT en la previa) bastó para marcar la diferencia definitiva.
@@ -26,6 +24,10 @@ Costa de Marfil se llevó una ajustada victoria por 1-0 ante Ecuador gracias a s
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Alemania vs Costa de Marfil:** Choque directo por el primer lugar de la zona. Alemania parte como favorita en el modelo con un **52% de probabilidad de victoria**, pero la intensidad defensiva y la velocidad por bandas de "Los Elefantes" representan un obstáculo mayúsculo.
   * **Ecuador vs Curazao:** Duelo de necesitados en el que el combinado ecuatoriano está obligado a sumar de a tres. El modelo Poisson bivariado le otorga a Ecuador un **64% de probabilidad de triunfo** para enderezar el camino en el certamen.
+
+
+### 📈 Análisis del Match Momentum
+El flujo de intensidad del partido mostró una primera oleada ofensiva de Costa de Marfil, alcanzando su pico máximo en el minuto 18', lo que probablemente generó el momento de mayor peligro y la posterior ventaja en el marcador. Ecuador respondió con su propia fase de máxima intensidad en el minuto 30', reflejando un intento de reequilibrio táctico y búsqueda del empate. No obstante, la superioridad de Costa de Marfil en los minutos de intensidad líder (47.9% frente a 40.4%) sugiere una capacidad más sostenida para imponer su ritmo y generar amenaza ofensiva a lo largo del encuentro. Esta persistencia en el dominio de la iniciativa atacante, pese a los periodos de respuesta de Ecuador, correlaciona directamente con el gol único y la victoria 1-0 del equipo marfileño.
 
 ---
 

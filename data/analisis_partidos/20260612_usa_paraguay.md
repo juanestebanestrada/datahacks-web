@@ -25,6 +25,10 @@ Estados Unidos inició su Copa del Mundo con una contundente victoria de 4-1 fre
   * **USA vs Australia:** Un partido decisivo para asegurar el liderato. El modelo Poisson bivariado le otorga a Estados Unidos un **56% de probabilidad de triunfo** ante la férrea defensa australiana.
   * **Turquía vs Paraguay:** Duelo clave por la supervivencia. Turquía parte como favorita con un **50% de probabilidad de ganar** frente a una Paraguay necesitada de ajustar su bloque defensivo.
 
+
+### 📈 Análisis del Match Momentum
+Paraguay comenzó el partido con una notable explosión de intensidad ofensiva, alcanzando su máximo en el minuto 2', lo que generó un peligro inicial y un claro intento de adelantarse rápidamente. No obstante, Estados Unidos absorbió eficazmente esta embestida temprana y, a partir de ahí, estableció un dominio sostenido, liderando la intensidad de ataque durante el 68.1% del encuentro. Su propio pico de intensidad en el minuto 33' marcó el punto de consolidación de su superioridad ofensiva, generando los momentos de mayor peligro y la base para su alta producción goleadora. Esta marcada disparidad en la capacidad para mantener la presión, con Paraguay liderando la intensidad solo el 20.2% del tiempo, correlaciona directamente con el resultado final de 4-1, reflejando la contundencia estadounidense tras superar el ímpetu inicial rival.
+
 ---
 
 ## 🇺🇸 Estados Unidos: Análisis Táctico

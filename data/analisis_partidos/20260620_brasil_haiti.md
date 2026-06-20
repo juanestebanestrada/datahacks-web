@@ -25,6 +25,10 @@ Brasil se consolidó en la cima del Grupo C al vencer cómodamente por 3-0 a Hai
   * **Brasil vs Escocia:** Duelo clave de trámite para Brasil que buscará amarrar el primer puesto.
   * **Marruecos vs Haití:** Duelo definitorio por la clasificación, donde se espera alta fricción.
 
+
+### 📈 Análisis del Match Momentum
+El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con Brasil dominando el 46.8% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 60.00 ocurrió al minuto 68'. Por su parte, Haití replegó filas intentando contragolpear, logrando su mayor intensidad (98.00) en el minuto 64'. La constancia en la presión de la selección local en las inmediaciones del área rival fue determinante para explicar la victoria final de Brasil por 3-0.
+
 ---
 
 ## 🇧🇷 Brasil: Análisis Táctico

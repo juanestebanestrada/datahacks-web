@@ -25,6 +25,10 @@ Brasil y Marruecos protagonizaron un intenso duelo táctico que finalizó 1-1. L
   * **Brasil vs Escocia:** Obligación para el pentacampeón, cuyas probabilidades de victoria ante el bloque ordenado escocés se ajustan al **54%**.
   * **Marruecos vs Haití:** Con el punto sumado, Marruecos parte como favorito con un **58% de probabilidad de triunfo** ante un necesitado Haití.
 
+
+### 📈 Análisis del Match Momentum
+El encuentro se caracterizó por un inicio de alta vehemencia, con Marruecos alcanzando su intensidad de ataque máxima en el minuto 7' y Brasil respondiendo con su propio pico en el 14', reflejando un temprano intercambio de ofensivas peligrosas. Si bien Brasil lideró en intensidad el 53.2% del partido, lo que indica un mayor volumen de ataque sostenido y presión constante, Marruecos logró capitalizar sus fases de dominio (36.2%) para generar amenazas concretas y romper el control brasileño. Esta distribución de la intensidad, donde ambos equipos fueron capaces de materializar sus momentos de mayor ímpetu ofensivo e impedir la consolidación de un dominio abrumador del rival, explica directamente el ajustado marcador de 1-1.
+
 ---
 
 ## 🇧🇷 Brasil: Análisis Táctico

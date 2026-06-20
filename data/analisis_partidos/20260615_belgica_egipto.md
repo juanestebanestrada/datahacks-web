@@ -15,8 +15,6 @@ slug: "belgica_egipto"
 poisson: "48-28-24"
 ---
 
-Analizando los datos de Bélgica (Euro 2024) frente a Egipto (AFCON 2023), nos encontramos con dos equipos con perfiles muy diferentes. Bélgica ha jugado en una competición de mayor nivel competitivo, mientras que Egipto viene de disputar el torneo africano. Las cifras hablan por sí solas: Bélgica registra 51 disparos contra 66 de Egipto, pero con 2 goles frente a los 14 de los egipcios.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Bélgica 1 - 1 Egipto)
 Bélgica y Egipto firmaron un intenso y disputado empate 1-1 en su debut en el Grupo G, reflejando el choque de estilos previsto en la previa. El conjunto belga tomó la iniciativa y dominó la posesión con su habitual circuito de distribución liderado por Vertonghen y Theate. Sin embargo, la falta de pegada y definición en el último tercio volvió a penalizar a los "Diablos Rojos", quienes no lograron capitalizar su superioridad territorial. Por su parte, los "Faraones" de Egipto plantaron cara gracias a una presión defensiva asfixiante y agresiva en todo el terreno, castigando las transiciones belgas y logrando batir el arco rival mediante una contra vertical y letal. El marcador final premia la combatividad del bloque africano y deja claras tareas pendientes para Bélgica.
@@ -26,6 +24,10 @@ Bélgica y Egipto firmaron un intenso y disputado empate 1-1 en su debut en el G
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Bélgica vs Irán:** Un choque donde Bélgica tendrá la obligación de buscar los tres puntos. El modelo Poisson otorga a Bélgica un **55% de probabilidad de triunfo**, esperando que logren descifrar el bloque defensivo iraní.
   * **Nueva Zelanda vs Egipto:** Duelo clave para el destino del grupo. Egipto parte como favorito con un **58% de probabilidad de ganar** si logra imponer su intensidad física frente al directo juego neozelandés.
+
+
+### 📈 Análisis del Match Momentum
+Bélgica impuso una clara superioridad ofensiva durante gran parte del encuentro, con su intensidad máxima (100.00) en el minuto 40', reflejando un período de alto peligro y control territorial inicial que, sin embargo, no fue capitalizado en un amplio margen. Esta dominancia belga, presente el 62.8% del partido, contrasta con la tardía y menos acentuada reacción de Egipto, cuyo pico de intensidad ofensiva (73.00) en el minuto 86' señala su momento de mayor empuje y la probabilidad de generar la ocasión del empate. La correlación directa con el 1-1 final reside en la ineficacia de Bélgica para convertir su sostenida agresividad ofensiva en una ventaja decisiva, permitiendo que el impulso final de Egipto, a pesar de ser menor en magnitud, fuera suficiente para equilibrar un marcador que la dinámica de intensidad sugirió dominado mayoritariamente por el equipo local.
 
 ---
 

@@ -24,6 +24,10 @@ En uno de los partidos más vibrantes de la jornada, Qatar logró un agónico em
   * **Suiza vs Bosnia:** Partido sin margen de error para los suizos, quienes tendrán un duelo sumamente disputado ante Bosnia (probabilidad de victoria de Suiza ajustada al **48%**).
   * **Qatar vs Canadá:** Qatar buscará aprovechar el envión anímico frente a la velocidad de Canadá, proyectando un partido reñido con ventaja para los norteamericanos (**45%**).
 
+
+### 📈 Análisis del Match Momentum
+Suiza ejerció un dominio táctico sostenido, liderando la intensidad de ataque el 77.7% del tiempo y materializando su máxima expresión ofensiva (100.00) en el minuto 12', lo que indica un inicio arrollador y una presión constante sobre el rival. Qatar, por el contrario, gestionó su caudal ofensivo en momentos más específicos, alcanzando su pico de intensidad (68.00) en el minuto 31', a pesar de haber liderado solo el 13.8% de la posesión/minutos de ataque sostenido. Esta disparidad en el flujo de intensidad subraya la generación superior de oportunidades por parte de Suiza, pero la capacidad qatarí para capitalizar su fase de alta intensidad y la resiliencia defensiva frente a un adversario dominante explican el empate 1-1, donde la eficacia puntual prevaleció sobre el volumen de ataque.
+
 ---
 
 ## 🇶🇦 Qatar: Análisis Táctico

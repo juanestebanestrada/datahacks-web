@@ -15,8 +15,6 @@ slug: "suecia_tunez"
 poisson: "52-28-20"
 ---
 
-Este enfrentamiento presenta a dos selecciones con estilos de juego bastante distintos: Suecia, más directa y vertical, con mejor producción ofensiva; y Túnez, un equipo de bloque compacto y mucha actividad en el medio campo, pero con serias carencias de cara a gol. Los datos apuntan a Suecia como favorito, principalmente por su capacidad goleadora.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Suecia 5 - 1 Túnez)
 Suecia protagonizó una exhibición de verticalidad y contundencia al golear 5-1 a Túnez en el estreno del Grupo F. El cuadro escandinavo hizo pagar caro a Túnez su estilo de posesión pasiva y posesiones largas inofensivas. Aunque Túnez tuvo mayor control del balón en el círculo central gracias a Laïdouni y Skhiri, la falta de profundidad ofensiva y sus pérdidas en la salida fueron letales. Suecia castigó mediante transiciones rápidas y directas dirigidas a Forsberg e Isak, mostrando una efectividad demoledora del 14% que desmanteló por completo la línea defensiva tunecina.
@@ -26,6 +24,10 @@ Suecia protagonizó una exhibición de verticalidad y contundencia al golear 5-1
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Países Bajos vs Suecia:** El partido más atractivo del grupo que podría definir el primer lugar. Tras la exhibición goleadora sueca, el modelo estima un duelo sumamente parejo, con un ligero favoritismo para los neerlandeses con un **44% de probabilidad de triunfo**.
   * **Tunisia vs Japón:** Túnez se juega su última carta para mantenerse con opciones en el certamen. Se prevé un duelo complicado, donde Japón parte con un **58% de probabilidad de ganar** debido a la fragilidad defensiva exhibida por las Águilas de Cartago.
+
+
+### 📈 Análisis del Match Momentum
+La abrumadora ventaja de Suecia en la duración del liderazgo de intensidad (56.4% frente al 31.9% de Túnez) dictaminó una dinámica de dominio sostenido que se correlaciona directamente con el marcador final de 5-1. El pico de intensidad de ataque sueco, casi absoluto con 98.00 en el minuto 37', señala un periodo de presión ofensiva asfixiante y alta probabilidad de conversión, probablemente cimentando una ventaja significativa antes del descanso. Por contra, el pico tunecino de 92.00 en el minuto 57', aunque notable, fue inferior y tardío, evidenciando una reacción en la segunda mitad para generar peligro que, si bien les permitió anotar, fue insuficiente para revertir la dinámica. Esta disparidad temporal y cualitativa en los flujos de intensidad de ataque dictó los momentos de mayor peligro y la capacidad de ambos equipos para capitalizar sus oportunidades, reflejándose en la abultada diferencia goleadora.
 
 ---
 

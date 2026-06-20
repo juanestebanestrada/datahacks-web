@@ -15,10 +15,6 @@ slug: "francia_senegal"
 poisson: "80-15-5"
 ---
 
-Este enfrentamiento es posiblemente el más desigual de todos los analizados. Francia (Mundial 2022) registra 88 disparos con 18 goles (20.5% eficiencia), mientras Senegal (Mundial 2022) acumula 45 disparos con 5 goles (11.1% eficiencia). No es solo una diferencia numérica; es un contraste entre un equipo de élite mundial y un equipo competente pero de segundo nivel. Francia duplica prácticamente a Senegal en disparos y casi cuadruplica su eficiencia de conversión. Esta es una batalla entre campeones y aspirantes.
-
----
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: Francia 3 - 1 Senegal)
 Francia venció 3-1 a Senegal en un duelo donde los "Bleus" impusieron su poderío ofensivo. Desde el inicio, Francia controló los hilos del partido con pases entre líneas y desbordes letales por las bandas. Senegal intentó cerrarse en bloque bajo y sorprendió con un gol en transición rápida, pero la insistencia francesa terminó por romper la resistencia africana con tres anotaciones de gran factura.
@@ -28,6 +24,10 @@ Francia venció 3-1 a Senegal en un duelo donde los "Bleus" impusieron su poder�
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Francia vs Noruega:** Un partidazo por el grupo I. Noruega, tras golear a Irak, será un rival durísimo. Francia es favorita con un **58% de probabilidad**, pero deberá contener la potencia física e intensidad ofensiva de los nórdicos.
   * **Senegal vs Irak:** Duelo directo por la supervivencia. Senegal parte con un **55% de probabilidad de victoria** gracias a su bloque organizado y potencia física frente a un Irak desahuciado.
+
+
+### 📈 Análisis del Match Momentum
+El flujo de intensidad de ataque evidencia un claro dominio francés, liderando el 57.4% del partido y alcanzando un pico ofensivo absoluto de 100.00 en el minuto 66. Senegal, por su parte, impuso su momentum en solo el 28.7% del encuentro, con una intensidad máxima de 41.00 en el minuto 32, señalando fases de peligro más intermitentes y focalizadas en el primer tiempo. Esta disparidad numérica se tradujo en una dinámica donde Francia mantuvo un asedio constante, generando sus momentos de mayor amenaza y probablemente materializando goles alrededor de su punto máximo de presión. La correlación directa entre la intensidad sostenida y los picos ofensivos de Francia explica su contundente victoria 3-1, al capitalizar eficazmente sus periodos de alto dominio para desequilibrar el marcador.
 
 ---
 

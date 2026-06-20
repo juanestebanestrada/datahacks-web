@@ -15,8 +15,6 @@ slug: "espana_caboverde"
 poisson: "68-20-12"
 ---
 
-Este es uno de los enfrentamientos más desequilibrados en términos de volumen de juego, pero con un dato que obliga a no subestimar al rival menor: la eficacia de cara a gol de Cabo Verde es sorprendentemente alta. Aun así, España aparece como claro favorito por la enorme diferencia en dominio territorial y creación de juego.
-
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 ### ⚽ Resumen del Partido (Resultado Real: España 0 - 0 Cabo Verde)
 En una de las grandes sorpresas de la jornada inaugural del Grupo H, España y Cabo Verde empataron sin goles (0-0) en un encuentro marcado por el dominio territorial estéril de "La Roja". La selección española monopolizó la posesión y elaboró interminables circuitos de pases con Cáscante, Laporte y Ramos buscando penetrar el bloque bajo caboverdiano. Sin embargo, Cabo Verde plantó una línea defensiva sumamente disciplinada y compacta, bloqueando la fluidez interior de España y forzando remates incómodos. A pesar del abrumador volumen de juego español, la falta de pegada y la gran actuación colectiva de Cabo Verde en su propia mitad sentenciaron un reparto de puntos histórico.
@@ -26,6 +24,10 @@ En una de las grandes sorpresas de la jornada inaugural del Grupo H, España y C
 * **Proyección de la Segunda Ronda de Grupos:**
   * **España vs Arabia Saudí:** Obligación absoluta para los dirigidos por Luis de la Fuente para encaminar la clasificación. España parte como amplia favorita con un **65% de probabilidad de victoria**, esperando que el volumen de juego finalmente se traduzca en efectividad goleadora.
   * **Uruguay vs Cabo Verde:** Un enfrentamiento sumamente físico y disputado. Uruguay saldrá como favorito con un **52% de probabilidad de triunfo**, pero el orden defensivo de las "Tiburones Azules" promete un partido incómodo en mediocampo.
+
+
+### 📈 Análisis del Match Momentum
+La dinámica del partido exhibió un dominio táctico y territorial casi absoluto de España, liderando la intensidad ofensiva durante el 91.5% del encuentro y alcanzando un pico de 100.00 al minuto 40', lo que subraya una fase de asedio constante y una gran concentración de peligro en campo caboverdiano. Cabo Verde, en contraste, adoptó una estrategia eminentemente defensiva y reactiva, reflejada en su mínima intensidad dominante (2.1%) y un pico ofensivo marginal de 27.00, evidenciando una renuncia casi total a la iniciativa atacante. Los momentos de mayor peligro se gestaron repetidamente en la portería caboverdiana, especialmente en el tramo final del primer tiempo; sin embargo, la incapacidad de España para capitalizar su abrumadora superioridad ofensiva y la extraordinaria resiliencia defensiva de Cabo Verde se correlacionan directamente con el 0-0 final.
 
 ---
 
