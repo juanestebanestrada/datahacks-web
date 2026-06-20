@@ -20,7 +20,6 @@ Este no es un partido parejo; representa un choque entre dos enfoques futbolíst
 ---
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-
 ### ⚽ Resumen del Partido (Resultado Real: Colombia 3 - 1 Uzbekistán)
 
 El encuentro se desarrolló bajo el libreto previsto de dominio territorial absoluto por parte del combinado cafetero. Colombia se adueñó del mediocampo desde el silbatazo inicial, haciendo ancha la cancha con pases rápidos y desdoblamientos constantes por las bandas. Uzbekistán defendió su área chica con uñas y dientes, bloqueando las primeras llegadas del ataque colombiano. Sin embargo, al minuto 28, tras una combinación de pases rápidos por derecha, Montoya venció el cerrojo uzbeko con un remate cruzado.
@@ -35,3 +34,6 @@ En el segundo tiempo, Colombia mantuvo la calma táctica y la paciencia asociati
 * **Proyección de la Segunda Ronda de Grupos:**
   - **Colombia vs RD Congo:** Un encuentro por la clasificación donde Colombia parte con una probabilidad de victoria de **55%**, pero deberá evitar las pérdidas en mitad de campo frente a los veloces extremos congoleños.
   - **Uzbekistán vs Portugal:** Un duelo muy exigente para el cuadro asiático. Portugal parte como favorito con un **68% de probabilidad de triunfo**, y se proyecta que Uzbekistán mantenga un bloque bajo extremo para intentar rasguñar un punto.
+
+---
+

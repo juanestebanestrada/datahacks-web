@@ -15,8 +15,19 @@ slug: "usa_australia"
 poisson: "52-28-20"
 ---
 
-## 🇺🇸 USA: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: USA 2 - 0 Australia)
+Estados Unidos se impuso con autoridad a Australia por 2-0 en el Mercedes-Benz Stadium. Liderados por una actuación descollante de Christian Pulisic, quien anotó el primer gol tras un recorte soberbio en el área al minuto 24, el conjunto local controló el ritmo del juego en todo momento. Folarin Balogun estiró la ventaja al 67' tras capitalizar una asistencia filtrada, sentenciando el partido. La zaga estadounidense, firme en todo momento, anuló por completo las contras de los Socceroos para asegurar un debut perfecto sin recibir goles.
 
+### 🔮 Impacto en el Grupo D y Proyecciones para la Ronda 3
+* **Ajuste del Algoritmo:** Con esta victoria, Estados Unidos llega a 6 puntos y sella virtualmente su clasificación en el Grupo D. El simulador de probabilidades incrementa el estatus ofensivo de los norteamericanos. Australia queda con 0 puntos tras dos derrotas consecutivas.
+* **Proyección de la Tercera Fecha:**
+  * **USA vs Turquía:** Duelo directo por el liderato del grupo. El modelo Poisson otorga a Estados Unidos un **52% de probabilidad de triunfo**.
+  * **Paraguay vs Australia:** Partido decisivo por el tercer puesto de cara a una posible clasificación.
+
+---
+
+## 🇺🇸 USA: Análisis Táctico
 ### Ventajas
 * **Aceleración y Desborde por Bandas:** La velocidad de Christian Pulisic e Timothy Weah por los costados permite al equipo norteamericano superar líneas defensivas con gran rapidez en transición.
 * **Presión Alta Coordinada:** El tridente del mediocampo ejerce una asfixiante presión tras pérdida en campo rival, forzando múltiples errores en la salida adversaria.
@@ -28,7 +39,6 @@ poisson: "52-28-20"
 ---
 
 ## 🇦🇺 Australia: Análisis Táctico
-
 ### Ventajas
 * **Poderío en el Juego Aéreo:** Los australianos dominan las jugadas a balón parado y centros al área gracias a la envergadura de sus centrales y delantero centro.
 * **Orden Defensivo Cohesivo:** Su estructura defensiva en bloque medio-bajo es muy difícil de penetrar cuando logran replegarse a tiempo.
@@ -36,16 +46,3 @@ poisson: "52-28-20"
 ### Desventajas
 * **Poco Volumen de Posesión Creativa:** Tienen dificultades para elaborar jugadas de ataque estático y dependen en demasía de balonazos largos o errores del rival.
 * **Lentitud de los Defensores Centrales:** Los defensores sufren considerablemente cuando deben correr hacia atrás ante atacantes rápidos y dinámicos.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: USA 2 - 0 Australia)
-Estados Unidos se impuso con autoridad a Australia por 2-0 en el Mercedes-Benz Stadium. Liderados por una actuación descollante de Christian Pulisic, quien anotó el primer gol tras un recorte soberbio en el área al minuto 24, el conjunto local controló el ritmo del juego en todo momento. Folarin Balogun estiró la ventaja al 67' tras capitalizar una asistencia filtrada, sentenciando el partido. La zaga estadounidense, firme en todo momento, anuló por completo las contras de los Socceroos para asegurar un debut perfecto sin recibir goles.
-
-### 🔮 Impacto en el Grupo D y Proyecciones para la Ronda 3
-* **Ajuste del Algoritmo:** Con esta victoria, Estados Unidos llega a 6 puntos y sella virtualmente su clasificación en el Grupo D. El simulador de probabilidades incrementa el estatus ofensivo de los norteamericanos. Australia queda con 0 puntos tras dos derrotas consecutivas.
-* **Proyección de la Tercera Fecha:**
-  * **USA vs Turquía:** Duelo directo por el liderato del grupo. El modelo Poisson otorga a Estados Unidos un **52% de probabilidad de triunfo**.
-  * **Paraguay vs Australia:** Partido decisivo por el tercer puesto de cara a una posible clasificación.

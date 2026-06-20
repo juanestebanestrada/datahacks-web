@@ -20,7 +20,6 @@ Este enfrentamiento presenta una superioridad clara de Argentina sobre Argelia. 
 ---
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-
 ### ⚽ Resumen del Partido (Resultado Real: Argentina 3 - 0 Argelia)
 Argentina demostró su jerarquía y dominio absoluto del juego con una victoria contundente por 3-0 frente a una combativa pero replegada selección de Argelia. La Albiceleste monopolizó la posesión desde el pitazo inicial, moviendo el balón con gran fluidez a través de sus mediocampistas creativos. La resistencia argelina en bloque medio-bajo aguantó las primeras embestidas, pero los espacios comenzaron a abrirse gracias a la movilidad constante de los atacantes argentinos. Argentina capitalizó sus llegadas con una alta efectividad frente al arco, confirmando las predicciones tácticas y del modelo Poisson que anticipaban un claro triunfo sudamericano. Argelia intentó contraatacar con transiciones rápidas por las bandas, pero la presión alta argentina sofocó cualquier intento de peligro, dejando el arco albiceleste imbatible.
 
@@ -29,3 +28,6 @@ Argentina demostró su jerarquía y dominio absoluto del juego con una victoria 
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Argentina vs Austria:** Un duelo crucial por el liderato del grupo. Austria, tras su victoria frente a Jordania, representa una amenaza táctica superior. Argentina parte como favorita con un **62% de probabilidad de victoria**, pero deberá cuidarse de la presión alta y el juego físico de los europeos.
   * **Argelia vs Jordania:** Ambos necesitados de puntos para mantener vivas sus aspiraciones. Se perfila como un encuentro muy cerrado y físico, donde Argelia parte con una leve ventaja del **45% de probabilidad de triunfo** si logra imponer condiciones en el mediocampo.
+
+---
+

@@ -14,8 +14,19 @@ imagenes: "Analisis_Qatar_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (
 slug: "qatar_suiza"
 poisson: "25-22-53"
 ---
-## 🇶🇦 Qatar: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Qatar 1 - 1 Suiza)
+En uno de los partidos más vibrantes de la jornada, Qatar logró un agónico empate 1-1 frente a Suiza. Los helvéticos tomaron la iniciativa y generaron múltiples ocasiones a través de su juego ordenado, pero la falta de contundencia y un penal bien ejecutado por Embolo no fueron suficientes. En los últimos minutos, el conjunto qatarí aprovechó una jugada a balón parado para sellar la igualdad y desatar la alegría local.
 
+### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Este empate altera de forma sustancial las proyecciones iniciales del Grupo B. La ineficacia ofensiva suiza reajusta sus probabilidades de clasificación.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Suiza vs Bosnia:** Partido sin margen de error para los suizos, quienes tendrán un duelo sumamente disputado ante Bosnia (probabilidad de victoria de Suiza ajustada al **48%**).
+  * **Qatar vs Canadá:** Qatar buscará aprovechar el envión anímico frente a la velocidad de Canadá, proyectando un partido reñido con ventaja para los norteamericanos (**45%**).
+
+---
+
+## 🇶🇦 Qatar: Análisis Táctico
 ### Ventajas
 
 * **Estructura Defensiva Organizada:** Qatar repliega en un bloque medio-bajo con alta intensidad, priorizando la solidez en su propio campo. El mapa defensivo muestra concentración de acciones, presiones y duelos defensivos en el lado izquierdo y en el mediocampo, forzando al rival a construir lejos del arco.
@@ -30,7 +41,6 @@ poisson: "25-22-53"
 ---
 
 ## 🇨🇭 Suiza: Análisis Táctico
-
 ### Ventajas
 
 * **Potencia y Eficacia Ofensiva:** Suiza ataca con gran volumen y precisión. Su mapa de tiros revela una fuerte concentración en áreas de alta probabilidad, generando sistemáticamente oportunidades claras (xG) gracias a una circulación de balón agresiva.
@@ -41,16 +51,3 @@ poisson: "25-22-53"
 ### Desventajas
 
 * **Espacios a la Espalda:** Al adelantar tanto sus líneas y presionar tan arriba, pueden quedar expuestos a contragolpes letales si el equipo rival (en este caso Qatar con sus pases largos) supera la primera línea de presión.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Qatar 1 - 1 Suiza)
-En uno de los partidos más vibrantes de la jornada, Qatar logró un agónico empate 1-1 frente a Suiza. Los helvéticos tomaron la iniciativa y generaron múltiples ocasiones a través de su juego ordenado, pero la falta de contundencia y un penal bien ejecutado por Embolo no fueron suficientes. En los últimos minutos, el conjunto qatarí aprovechó una jugada a balón parado para sellar la igualdad y desatar la alegría local.
-
-### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** Este empate altera de forma sustancial las proyecciones iniciales del Grupo B. La ineficacia ofensiva suiza reajusta sus probabilidades de clasificación.
-* **Proyección de la Segunda Ronda de Grupos:**
-  * **Suiza vs Bosnia:** Partido sin margen de error para los suizos, quienes tendrán un duelo sumamente disputado ante Bosnia (probabilidad de victoria de Suiza ajustada al **48%**).
-  * **Qatar vs Canadá:** Qatar buscará aprovechar el envión anímico frente a la velocidad de Canadá, proyectando un partido reñido con ventaja para los norteamericanos (**45%**).

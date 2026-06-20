@@ -17,8 +17,19 @@ poisson: "48-28-24"
 
 Analizando los datos de Bélgica (Euro 2024) frente a Egipto (AFCON 2023), nos encontramos con dos equipos con perfiles muy diferentes. Bélgica ha jugado en una competición de mayor nivel competitivo, mientras que Egipto viene de disputar el torneo africano. Las cifras hablan por sí solas: Bélgica registra 51 disparos contra 66 de Egipto, pero con 2 goles frente a los 14 de los egipcios.
 
-## 🇧🇪 Bélgica: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Bélgica 1 - 1 Egipto)
+Bélgica y Egipto firmaron un intenso y disputado empate 1-1 en su debut en el Grupo G, reflejando el choque de estilos previsto en la previa. El conjunto belga tomó la iniciativa y dominó la posesión con su habitual circuito de distribución liderado por Vertonghen y Theate. Sin embargo, la falta de pegada y definición en el último tercio volvió a penalizar a los "Diablos Rojos", quienes no lograron capitalizar su superioridad territorial. Por su parte, los "Faraones" de Egipto plantaron cara gracias a una presión defensiva asfixiante y agresiva en todo el terreno, castigando las transiciones belgas y logrando batir el arco rival mediante una contra vertical y letal. El marcador final premia la combatividad del bloque africano y deja claras tareas pendientes para Bélgica.
 
+### 🔮 Impacto en el Grupo G y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Con este empate, ambas selecciones suman 1 punto en el Grupo G. Las métricas de Bélgica reflejan su superioridad en posesión pero revelan un déficit preocupante en la tasa de conversión. Egipto, por su parte, consolida su reputación como un bloque defensivo sumamente combativo y físico.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Bélgica vs Irán:** Un choque donde Bélgica tendrá la obligación de buscar los tres puntos. El modelo Poisson otorga a Bélgica un **55% de probabilidad de triunfo**, esperando que logren descifrar el bloque defensivo iraní.
+  * **Nueva Zelanda vs Egipto:** Duelo clave para el destino del grupo. Egipto parte como favorito con un **58% de probabilidad de ganar** si logra imponer su intensidad física frente al directo juego neozelandés.
+
+---
+
+## 🇧🇪 Bélgica: Análisis Táctico
 Bélgica presenta una estructura ofensiva más controlada y sofisticada. Su mapa de calor muestra una concentración importante en las bandas y en el área central, con presencia equilibrada en ambas zonas del campo. La red de pases refleja un equipo que circula el balón con una jerarquía clara, siendo **Theate** y **Vertonghen** los pivotes clave en la construcción del juego. Los disparos se concentran principalmente en el área, indicando una capacidad de finalización posicional más refinada, aunque con solo 2 goles, la efectividad ha sido problemática.
 
 En el aspecto defensivo, Bélgica muestra una presión más concentrada y ordenante, con la mayoría de acciones defensivas agrupadas en zonas específicas. El mapa defensivo refleja un equipo que defiende en bloque medio-bajo con recuperaciones y presiones selectivas.
@@ -28,22 +39,8 @@ Las conducciones progresivas de Bélgica muestran patrones claramente definidos:
 ---
 
 ## 🇪🇬 Egipto: Análisis Táctico
-
 Egipto, por su parte, muestra una presencia mucho más distribuida en el mapa de calor, con picos importantes en zonas más periféricas. Su red de pases es más extendida y menos jerárquica, con **Abdelmonem** como figura central pero con múltiples conexiones que sugieren un juego más directo. Con 14 goles, su eficiencia ofensiva es evidentemente superior, aunque sus disparos sugieren más oportunidades de segunda línea y contraataques.
 
 Egipto destaca por una intensidad defensiva mucho mayor, prácticamente cubriendo todo el campo de forma uniforme. Su densidad de presiones, recuperaciones y bloqueos es visiblemente superior. Tienen más amarillas teóricamente por esta agresividad, pero también generan más oportunidades de contraataque. El equipo africano aprovecha su presión alta para recuperar balones en zonas avanzadas.
 
 Egipto presenta un mapa mucho más caótico pero también más prolífero en conducciones progresivas. Hay múltiples líneas de ataque y muchas más iniciativas individuales. Los laterales y centrocampistas avanzan con más libertad, generando un juego menos predecible pero también menos eficaz en términos de control. Distribuye sus asistencias de forma más heterogénea. Prácticamente cualquier jugador puede convertirse en asistente, lo que habla de un equipo más improvisado pero también con mayor capacidad de adaptación en el momento.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Bélgica 1 - 1 Egipto)
-Bélgica y Egipto firmaron un intenso y disputado empate 1-1 en su debut en el Grupo G, reflejando el choque de estilos previsto en la previa. El conjunto belga tomó la iniciativa y dominó la posesión con su habitual circuito de distribución liderado por Vertonghen y Theate. Sin embargo, la falta de pegada y definición en el último tercio volvió a penalizar a los "Diablos Rojos", quienes no lograron capitalizar su superioridad territorial. Por su parte, los "Faraones" de Egipto plantaron cara gracias a una presión defensiva asfixiante y agresiva en todo el terreno, castigando las transiciones belgas y logrando batir el arco rival mediante una contra vertical y letal. El marcador final premia la combatividad del bloque africano y deja claras tareas pendientes para Bélgica.
-
-### 🔮 Impacto en el Grupo G y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** Con este empate, ambas selecciones suman 1 punto en el Grupo G. Las métricas de Bélgica reflejan su superioridad en posesión pero revelan un déficit preocupante en la tasa de conversión. Egipto, por su parte, consolida su reputación como un bloque defensivo sumamente combativo y físico.
-* **Proyección de la Segunda Ronda de Grupos:**
-  * **Bélgica vs Irán:** Un choque donde Bélgica tendrá la obligación de buscar los tres puntos. El modelo Poisson otorga a Bélgica un **55% de probabilidad de triunfo**, esperando que logren descifrar el bloque defensivo iraní.
-  * **Nueva Zelanda vs Egipto:** Duelo clave para el destino del grupo. Egipto parte como favorito con un **58% de probabilidad de ganar** si logra imponer su intensidad física frente al directo juego neozelandés.

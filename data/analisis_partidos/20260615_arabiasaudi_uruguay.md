@@ -17,8 +17,19 @@ poisson: "12-20-68"
 
 Este enfrentamiento presenta un contraste abismal entre dos equipos de diferentes niveles competitivos. Arabia Saudita en el Mundial 2022 registró 27 disparos con apenas 3 goles, mientras que Uruguay en Copa América 2024 acumuló 75 disparos con 19 goles. La diferencia no es solo numérica; es un abismo en términos de eficiencia, estructura y capacidad ofensiva. Uruguay es claramente superior en casi todas las dimensiones del juego.
 
-## 🇸🇦 Arabia Saudita: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Arabia Saudí 1 - 1 Uruguay)
+En uno de los resultados más sorpresivos e inesperados de la jornada, Arabia Saudita y Uruguay empataron 1-1 en el debut del Grupo H. A pesar de que el conjunto charrúa partía como el claro favorito con Susopechu como eje de distribución, la disciplinada disposición táctica de Arabia Saudita neutralizó gran parte de sus ataques. El bloque defensivo bajo y compacto de los saudíes limitó la capacidad de conducción uruguaya. Además, Arabia Saudita aprovechó una desatención en la zaga charrúa tras una contra vertical rápida para golpear primero en el marcador. Uruguay reaccionó con agresividad y adelantó sus líneas, logrando salvar un punto en los minutos finales, pero el empate deja un sabor amargo para el favorito del grupo.
 
+### 🔮 Impacto en el Grupo H y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** El sorpresivo empate 1-1 aprieta el Grupo H. Las métricas ofensivas de Uruguay sufren una calibración a la baja en efectividad (xG vs goles reales), mientras que el bloque defensivo de Arabia Saudí ve incrementada su consistencia en el simulador.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **España vs Arabia Saudí:** España saldrá con la obligación de ganar tras su empate inicial. El modelo Poisson le otorga a España un **60% de probabilidad de victoria**, ante una Arabia Saudí envalentonada.
+  * **Uruguay vs Cabo Verde:** Partido crucial para los celestes. Uruguay es el favorito con un **62% de probabilidad de triunfo**, pero no puede confiarse ante la alta eficacia de finalización del rival africano.
+
+---
+
+## 🇸🇦 Arabia Saudita: Análisis Táctico
 Arabia Saudita muestra una presencia ofensiva distribuida en el mapa de calor, con concentraciones en múltiples zonas sin un patrón claramente dominante. Su red de pases revela una estructura jerárquica donde **Al-Dawsari** y **Al-Jajlani** funcionan como pivotes de distribución, pero sin una claridad de propósito ofensivo. Los disparos están principalmente concentrados en el área, sugiriendo que aunque llegan a zonas de remate, carecen de precisión.
 
 El mapa de amenaza esperada de Arabia Saudita muestra picos dispersos, indicando que su generación de peligro es inconsistente y sin conexión clara. Hay momentos aislados de amenaza pero sin una estructura que los vincule. 
@@ -28,22 +39,8 @@ En defensa, utiliza un mapa uniforme con presión distribuida por todo el campo,
 ---
 
 ## 🇺🇾 Uruguay: Análisis Táctico
-
 Uruguay presenta un mapa de calor extraordinariamente concentrado en el área de remate, especialmente en el lado izquierdo del ataque (su flanco ofensivo preferente). La red de pases muestra una jerarquía clara con **Susopechu** como figura central absoluta, distribuyendo el juego con fluidez hacia múltiples receptores. Con 19 goles, Uruguay convierte sus oportunidades de forma letal. Su estructura ofensiva es profesional, directa y letal. Uruguay genera amenaza de forma masiva y concentrada. Los picos más altos están exactamente donde se necesitan: en y alrededor del área de remate. Esto indica que Uruguay no solo genera amenaza, sino que la concentra donde más importa. Su xT acumulado es visiblemente superior, especialmente en zonas de alto riesgo para la defensa contraria.
 
 Uruguay despliega un mapa defensivo dramáticamente más intenso. Prácticamente cada zona del campo tiene una densidad tremenda de acciones defensivas. Presiona alto, presiona medio, presiona bajo. La agresividad defensiva es sistemática y generalizada. Uruguay **mata el juego antes de que se desarrolle**. 
 
 En cuanto a progresiones, Uruguay ejecuta un sistema de conduciones progresivas que es visiblemente superior. Hay múltiples líneas de ataque simultáneamente, conduciones desde defensa que generan superioridad numérica en transición, y una capacidad para jugar en espacios que Arabia Saudita ni siquiera identifica. El mapa es caótico pero efectivo: hay tantas iniciativas ofensivas que la defensa no puede procesarlas todas. Por último, despliega una red de asistencias densa y variada. Prácticamente cualquier jugador puede convertirse en asistente, lo que sugiere un equipo donde todos entienden su rol ofensivo. Con 19 goles y múltiples rutas de asistencia, Uruguay evidencia un sistema donde la finalización es trabajo colectivo. Los asistentes vienen desde posiciones diversas, indicando polivalencia táctica.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Arabia Saudí 1 - 1 Uruguay)
-En uno de los resultados más sorpresivos e inesperados de la jornada, Arabia Saudita y Uruguay empataron 1-1 en el debut del Grupo H. A pesar de que el conjunto charrúa partía como el claro favorito con Susopechu como eje de distribución, la disciplinada disposición táctica de Arabia Saudita neutralizó gran parte de sus ataques. El bloque defensivo bajo y compacto de los saudíes limitó la capacidad de conducción uruguaya. Además, Arabia Saudita aprovechó una desatención en la zaga charrúa tras una contra vertical rápida para golpear primero en el marcador. Uruguay reaccionó con agresividad y adelantó sus líneas, logrando salvar un punto en los minutos finales, pero el empate deja un sabor amargo para el favorito del grupo.
-
-### 🔮 Impacto en el Grupo H y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** El sorpresivo empate 1-1 aprieta el Grupo H. Las métricas ofensivas de Uruguay sufren una calibración a la baja en efectividad (xG vs goles reales), mientras que el bloque defensivo de Arabia Saudí ve incrementada su consistencia en el simulador.
-* **Proyección de la Segunda Ronda de Grupos:**
-  * **España vs Arabia Saudí:** España saldrá con la obligación de ganar tras su empate inicial. El modelo Poisson le otorga a España un **60% de probabilidad de victoria**, ante una Arabia Saudí envalentonada.
-  * **Uruguay vs Cabo Verde:** Partido crucial para los celestes. Uruguay es el favorito con un **62% de probabilidad de triunfo**, pero no puede confiarse ante la alta eficacia de finalización del rival africano.

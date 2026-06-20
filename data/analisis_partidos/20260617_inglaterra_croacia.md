@@ -20,7 +20,6 @@ Inglaterra es el favorito claro para imponerse en este encuentro, respaldado por
 ---
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-
 ### ⚽ Resumen del Partido (Resultado Real: Inglaterra 2 - 0 Croacia)
 
 El enfrentamiento ratificó el favoritismo de los Tres Leones en un partido de absoluto dominio táctico. Inglaterra propuso un bloque alto de presión desde el arranque, sofocando las conexiones en el centro del campo que intentaban Modrić y Kovačić. La defensa croata resistió de forma compacta en el centro del área chica durante el primer tercio del encuentro, pero la amplitud ofensiva inglesa por las bandas comenzó a resquebrajar el bloque.
@@ -35,3 +34,6 @@ En el segundo tiempo, Inglaterra continuó controlando el tempo de juego. El gol
 * **Proyección de la Segunda Ronda de Grupos:**
   - **Inglaterra vs Ghana:** Un choque de gran dinamismo. Inglaterra parte con una probabilidad de victoria de **65%**, y se proyecta que busque el protagonismo de forma inmediata.
   - **Croacia vs Panamá:** Un duelo vital para las aspiraciones de ambos. Croacia es favorita con un **58% de probabilidad de triunfo**, pero no deberá relajarse ante la velocidad panameña en el bloque bajo.
+
+---
+

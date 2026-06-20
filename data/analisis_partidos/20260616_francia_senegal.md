@@ -20,7 +20,6 @@ Este enfrentamiento es posiblemente el más desigual de todos los analizados. Fr
 ---
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-
 ### ⚽ Resumen del Partido (Resultado Real: Francia 3 - 1 Senegal)
 Francia venció 3-1 a Senegal en un duelo donde los "Bleus" impusieron su poderío ofensivo. Desde el inicio, Francia controló los hilos del partido con pases entre líneas y desbordes letales por las bandas. Senegal intentó cerrarse en bloque bajo y sorprendió con un gol en transición rápida, pero la insistencia francesa terminó por romper la resistencia africana con tres anotaciones de gran factura.
 
@@ -29,4 +28,6 @@ Francia venció 3-1 a Senegal en un duelo donde los "Bleus" impusieron su poder�
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Francia vs Noruega:** Un partidazo por el grupo I. Noruega, tras golear a Irak, será un rival durísimo. Francia es favorita con un **58% de probabilidad**, pero deberá contener la potencia física e intensidad ofensiva de los nórdicos.
   * **Senegal vs Irak:** Duelo directo por la supervivencia. Senegal parte con un **55% de probabilidad de victoria** gracias a su bloque organizado y potencia física frente a un Irak desahuciado.
+
+---
 

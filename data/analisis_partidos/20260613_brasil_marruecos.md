@@ -15,8 +15,19 @@ slug: "brasil_marruecos"
 poisson: "52-28-20"
 ---
 
-## 🇧🇷 Brasil: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Brasil 1 - 1 Marruecos)
+Brasil y Marruecos protagonizaron un intenso duelo táctico que finalizó 1-1. La escuadra sudamericana controló la posesión y buscó hacer daño mediante conducciones ofensivas por las bandas, pero se topó con el inexpugnable bloque defensivo marroquí, liderado de gran manera por Sofyan Amrabat. Los africanos limitaron el xG brasileño y lograron asustar al contragolpe para rescatar un valioso punto.
 
+### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** La paridad deja a ambos con 1 punto por detrás del líder provisional Escocia. La solidez defensiva de Marruecos recalibra sus expectativas para avanzar de ronda.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Brasil vs Escocia:** Obligación para el pentacampeón, cuyas probabilidades de victoria ante el bloque ordenado escocés se ajustan al **54%**.
+  * **Marruecos vs Haití:** Con el punto sumado, Marruecos parte como favorito con un **58% de probabilidad de triunfo** ante un necesitado Haití.
+
+---
+
+## 🇧🇷 Brasil: Análisis Táctico
 ### Ventajas
 
 * **Máquina Ofensiva con Amplitud:** Brasil genera una amenaza constante y variada. Su alto volumen de disparos y goles provienen de múltiples fuentes, destacando un peligro (xT) elevado por ambos flancos del tercio ofensivo y no dependiendo de una sola zona.
@@ -30,7 +41,6 @@ poisson: "52-28-20"
 ---
 
 ## 🇲🇦 Marruecos: Análisis Táctico
-
 ### Ventajas
 
 * **Ataque Inteligente y Profundo:** Pese a jugar más replegado, Marruecos dispara en gran volumen y con eficacia, concentrándose en zonas de alta probabilidad dentro del área. El peligro generado (xT) es notablemente alto, especialmente por el carril derecho con figuras que generan amenaza continua.
@@ -41,16 +51,3 @@ poisson: "52-28-20"
 
 * **Dependencia de un Único Distribuidor:** Todo el juego y la salida limpia pasa por Amrabat. Si es presionado eficazmente por el rival, la circulación y el juego marroquí pueden fragmentarse.
 * **Dominio Territorial Cedido:** Ceden deliberadamente el campo contrario, viviendo gran parte del partido defendiendo en propio campo, lo que requiere un desgaste físico y de concentración extremo durante los 90 minutos.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Brasil 1 - 1 Marruecos)
-Brasil y Marruecos protagonizaron un intenso duelo táctico que finalizó 1-1. La escuadra sudamericana controló la posesión y buscó hacer daño mediante conducciones ofensivas por las bandas, pero se topó con el inexpugnable bloque defensivo marroquí, liderado de gran manera por Sofyan Amrabat. Los africanos limitaron el xG brasileño y lograron asustar al contragolpe para rescatar un valioso punto.
-
-### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** La paridad deja a ambos con 1 punto por detrás del líder provisional Escocia. La solidez defensiva de Marruecos recalibra sus expectativas para avanzar de ronda.
-* **Proyección de la Segunda Ronda de Grupos:**
-  * **Brasil vs Escocia:** Obligación para el pentacampeón, cuyas probabilidades de victoria ante el bloque ordenado escocés se ajustan al **54%**.
-  * **Marruecos vs Haití:** Con el punto sumado, Marruecos parte como favorito con un **58% de probabilidad de triunfo** ante un necesitado Haití.

@@ -15,8 +15,19 @@ slug: "repcheca_sudafrica"
 poisson: "48-28-24"
 ---
 
-## 🇨🇿 Rep. Checa: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Rep. Checa 1 - 1 Sudáfrica)
+En un duelo sumamente disputado en el Mercedes-Benz Stadium, la República Checa y Sudáfrica firmaron un empate 1-1. Michal Sadílek adelantó temprano a los checos mediante un remate tras tiro de esquina, capitalizando la esperada fortaleza en juego aéreo del conjunto europeo. Sin embargo, en los minutos finales, una falta en el área checa concedió un penal a favor de los sudafricanos, el cual fue canjeado por gol por Teboho Mokoena para sentenciar la igualdad.
 
+### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 3
+*   **Ajuste del Algoritmo:** Con este empate, ambos equipos suman 1 punto. República Checa queda obligada a buscar el triunfo en la última jornada para asegurar su pase.
+*   **Proyección de la Tercera Fecha:**
+    *   **Rep. Checa vs México:** Partido definitivo por el liderato o clasificación del grupo.
+    *   **Corea del Sur vs Sudáfrica:** Duelo por la supervivencia donde ambos necesitan ganar obligatoriamente.
+
+---
+
+## 🇨🇿 Rep. Checa: Análisis Táctico
 ### Ventajas
 *   **Fortaleza en el Juego Aéreo y Balón Parado:** La República Checa cuenta con jugadores de gran envergadura física como Patrik Schick y Tomas Soucek. Esto les permite dominar el área rival en saques de esquina y jugadas preparadas.
 *   **Presión Tras Pérdida Organizada:** Su bloque de presión es compacto y coordinado, forzando a los rivales a cometer errores en la gestación en el medio campo.
@@ -28,7 +39,6 @@ poisson: "48-28-24"
 ---
 
 ## 🇿🇦 Sudáfrica: Análisis Táctico
-
 ### Ventajas
 *   **Velocidad y Desborde por Bandas:** Con jugadores como Percy Tau y Modiba, los sudafricanos tienen una capacidad de transición ofensiva muy explosiva.
 *   **Movilidad en el Frente de Ataque:** Su delantera rota constantemente posiciones, dificultando las marcas fijas de la defensa checa.
@@ -36,16 +46,3 @@ poisson: "48-28-24"
 ### Desventajas
 *   **Debilidad en la Defensa de Centros:** Sufren en el área chica ante envíos aéreos y juego físico directo.
 *   **Exposición a Espaldas de los Laterales:** Las constantes proyecciones ofensivas de Modiba dejan carriles libres que pueden ser explotados.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Rep. Checa 1 - 1 Sudáfrica)
-En un duelo sumamente disputado en el Mercedes-Benz Stadium, la República Checa y Sudáfrica firmaron un empate 1-1. Michal Sadílek adelantó temprano a los checos mediante un remate tras tiro de esquina, capitalizando la esperada fortaleza en juego aéreo del conjunto europeo. Sin embargo, en los minutos finales, una falta en el área checa concedió un penal a favor de los sudafricanos, el cual fue canjeado por gol por Teboho Mokoena para sentenciar la igualdad.
-
-### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 3
-*   **Ajuste del Algoritmo:** Con este empate, ambos equipos suman 1 punto. República Checa queda obligada a buscar el triunfo en la última jornada para asegurar su pase.
-*   **Proyección de la Tercera Fecha:**
-    *   **Rep. Checa vs México:** Partido definitivo por el liderato o clasificación del grupo.
-    *   **Corea del Sur vs Sudáfrica:** Duelo por la supervivencia donde ambos necesitan ganar obligatoriamente.

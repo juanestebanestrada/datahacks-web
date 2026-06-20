@@ -15,8 +15,19 @@ slug: "mexico_coreasur"
 poisson: "38-32-30"
 ---
 
-## 🇲🇽 México: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: México 1 - 0 Corea del Sur)
+México consiguió una valiosísima y sufrida victoria de 1-0 ante Corea del Sur en el Estadio Akron. El único gol del encuentro llegó al minuto 50 por conducto de Luis Romo, quien aprovechó un rebote en el área tras una insistente presión por el costado derecho. Corea del Sur buscó el empate con las veloces contras de Son Heung-min, pero una zaga mexicana concentrada y un despeje clave sobre la línea de Edson Álvarez sellaron el triunfo de los locales.
 
+### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 3
+*   **Ajuste del Algoritmo:** México lidera el Grupo A con 6 puntos y camina firme a la clasificación.
+*   **Proyección de la Tercera Fecha:**
+    *   **México vs Rep. Checa:** Choque final para amarrar la primera posición.
+    *   **Corea del Sur vs Sudáfrica:** Duelo a muerte donde el que pierda quedará eliminado definitivamente.
+
+---
+
+## 🇲🇽 México: Análisis Táctico
 ### Ventajas
 *   **Volumen de Ataque por Banda Derecha:** Su juego fluye mucho por el carril derecho ofensivo, generando superioridades numéricas y constantes envíos al área para Santiago Giménez.
 *   **Presión Alta e Intensidad:** Jaime Lozano propone un pressing alto agresivo para forzar pérdidas del rival en su propio campo.
@@ -28,7 +39,6 @@ poisson: "38-32-30"
 ---
 
 ## 🇰🇷 Corea del Sur: Análisis Táctico
-
 ### Ventajas
 *   **Transiciones Ofensivas Letales (Son Heung-min):** Tienen transiciones verticales rapidísimas. Son y Lee Kang-in explotan cualquier espacio dejado por la defensa rival.
 *   **Disciplina y Rigor Táctico:** Su bloque medio es muy ordenado y difícil de penetrar por pasillos internos.
@@ -36,16 +46,3 @@ poisson: "38-32-30"
 ### Desventajas
 *   **Problemas ante Presión Alta:** Les cuesta salir jugando limpio desde atrás si el oponente muerde la salida de sus centrales.
 *   **Dependencia de Sus Figuras:** Si Son Heung-min o Lee Kang-in son neutralizados con marcas dobles, el ataque pierde mucha sorpresa.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: México 1 - 0 Corea del Sur)
-México consiguió una valiosísima y sufrida victoria de 1-0 ante Corea del Sur en el Estadio Akron. El único gol del encuentro llegó al minuto 50 por conducto de Luis Romo, quien aprovechó un rebote en el área tras una insistente presión por el costado derecho. Corea del Sur buscó el empate con las veloces contras de Son Heung-min, pero una zaga mexicana concentrada y un despeje clave sobre la línea de Edson Álvarez sellaron el triunfo de los locales.
-
-### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 3
-*   **Ajuste del Algoritmo:** México lidera el Grupo A con 6 puntos y camina firme a la clasificación.
-*   **Proyección de la Tercera Fecha:**
-    *   **México vs Rep. Checa:** Choque final para amarrar la primera posición.
-    *   **Corea del Sur vs Sudáfrica:** Duelo a muerte donde el que pierda quedará eliminado definitivamente.

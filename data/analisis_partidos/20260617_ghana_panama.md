@@ -20,7 +20,6 @@ Ghana se presenta como el abrumador favorito en este duelo del Grupo L. La difer
 ---
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-
 ### ⚽ Resumen del Partido (Resultado Real: Ghana 3 - 0 Panamá)
 
 El partido se apegó al guion de absoluto dominio territorial para las Estrellas Negras. Ghana asfixió la salida de Panamá desde el pitazo inicial, impidiendo que Carrasquilla organizara cualquier contragolpe. La resistencia defensiva canalera en bloque bajo aguantó los primeros embates, pero la velocidad ghanesa por las bandas desgastó a la zaga centroamericana. Al minuto 31, Kudus abrió la cuenta con una espléndida definición cruzada tras un pase filtrado de Partey.
@@ -33,3 +32,6 @@ Panamá intentó salir de su propio campo, pero su circuito predecible fue fáci
 * **Proyección de la Segunda Ronda de Grupos:**
   - **Ghana vs Inglaterra:** Un encuentro de alta tensión que definirá el liderato del grupo. Inglaterra parte con una leve ventaja del **55% de probabilidad de triunfo**, pero el orden y contundencia ghanesa auguran un trámite cerrado.
   - **Panamá vs Croacia:** Un duelo de necesitados. Croacia parte como favorita con el **58%**, obligando a Panamá a arriesgar más posicionalmente si desea rescatar unidades.
+
+---
+

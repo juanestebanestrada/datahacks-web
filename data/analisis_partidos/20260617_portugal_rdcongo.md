@@ -20,7 +20,6 @@ Este enfrentamiento presenta una superioridad clara en control táctico de Portu
 ---
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-
 ### ⚽ Resumen del Partido (Resultado Real: Portugal 2 - 1 RD Congo)
 
 El partido cumplió con las expectativas de tensión y contrastes tácticos. Portugal tomó el control del esférico desde el arranque, moviendo la pelota en territorio congoleño mediante las conexiones fluidas entre Bruno Fernandes y Bernardo Silva. Sin embargo, la agresividad defensiva de la RD Congo puso en aprietos la salida limpia de los lusos. Al minuto 34, una recuperación rápida de Masaku permitió una transición vertical que terminó en gol de Congo, ratificando su letalidad (21.4% de efectividad).
@@ -33,3 +32,6 @@ Portugal no entró en pánico y continuó explotando su profundidad posicional p
 * **Proyección de la Segunda Ronda de Grupos:**
   - **Portugal vs Uzbekistán:** Portugal parte como favorita con un **68% de probabilidad de triunfo**, esperando aprovechar los espacios concedidos por el bloque uzbeko en transición.
   - **RD Congo vs Colombia:** Un choque físico y de alta intensidad. Las probabilidades estimadas le otorgan a Colombia un ligero favoritismo del **55%**, pero la verticalidad y contundencia congoleña obligan a los cafeteros a extremar cuidados.
+
+---
+

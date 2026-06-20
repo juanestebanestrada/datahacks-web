@@ -15,8 +15,19 @@ slug: "australia_turquia"
 poisson: "30-32-38"
 ---
 
-## 🇦🇺 Australia: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Australia 1 - 0 Turquía)
+En una de las grandes sorpresas tácticas de la fecha, Australia venció por la mínima (1-0) a Turquía, neutralizando por completo el caudal de talento creativo turco. Los *Socceroos* levantaron una "Muralla Oceánica" infranqueable en el último tercio del campo. Bloquearon las internadas de Arda Güler y obligaron a Turquía a realizar tiros incómodos. A pesar de ceder la posesión, Australia golpeó mediante una jugada de tiro de esquina en la primera mitad y sostuvo la ventaja con alma, corazón y un extraordinario rigor físico en duelos defensivos.
 
+### 🔮 Impacto en el Grupo D y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Con este triunfo, Australia se une a Estados Unidos en el liderato del Grupo D con 3 puntos. Sus métricas defensivas en el modelo predictivo suben a categoría de "bloque rocoso élite", mientras que la conversión de Turquía se devalúa al no poder capitalizar sus aproximaciones.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **USA vs Australia:** Partido por el liderato directo del grupo. El modelo Poisson bivariado, ante el sólido muro defensivo de los australianos, reduce el favoritismo de Estados Unidos a un **48% de probabilidad de triunfo**, proyectando un duelo muy disputado en mediocampo.
+  * **Turquía vs Paraguay:** Duelo de necesitados. Ambas escuadras llegan con 0 puntos y al borde de la eliminación. Turquía partirá favorita con un **50% de probabilidad de victoria** ante una Paraguay que defensivamente concedió muchos espacios en la fecha 1.
+
+---
+
+## 🇦🇺 Australia: Análisis Táctico
 ### Ventajas
 
 * **Intensidad Defensiva Sobresaliente:** El comportamiento defensivo es el mayor activo del equipo. Muestran un volumen altísimo de acciones defensivas, ejerciendo presión desde zonas avanzadas e incomodando la construcción rival mediante un bloque medio-alto sólido y muy ordenado.
@@ -30,7 +41,6 @@ poisson: "30-32-38"
 ---
 
 ## 🇹🇷 Turquía: Análisis Táctico
-
 ### Ventajas
 
 * **Poderío Ofensivo Multidireccional:** Son una auténtica máquina en ataque, generando peligro de manera sistemática. Su amenaza no se limita a una sola zona: logran profundizar por ambas bandas y desde posiciones interiores, gracias al enorme talento individual de figuras como Güler y Yıldız.
@@ -40,16 +50,3 @@ poisson: "30-32-38"
 ### Desventajas
 
 * **Exposición Esporádica en Transiciones:** Al vivir tan volcados hacia adelante e invertir tantos efectivos en campo contrario, la línea defensiva puede quedar desprotegida ante contragolpes fulminantes si la presión tras pérdida no surte efecto de manera inmediata.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Australia 1 - 0 Turquía)
-En una de las grandes sorpresas tácticas de la fecha, Australia venció por la mínima (1-0) a Turquía, neutralizando por completo el caudal de talento creativo turco. Los *Socceroos* levantaron una "Muralla Oceánica" infranqueable en el último tercio del campo. Bloquearon las internadas de Arda Güler y obligaron a Turquía a realizar tiros incómodos. A pesar de ceder la posesión, Australia golpeó mediante una jugada de tiro de esquina en la primera mitad y sostuvo la ventaja con alma, corazón y un extraordinario rigor físico en duelos defensivos.
-
-### 🔮 Impacto en el Grupo D y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** Con este triunfo, Australia se une a Estados Unidos en el liderato del Grupo D con 3 puntos. Sus métricas defensivas en el modelo predictivo suben a categoría de "bloque rocoso élite", mientras que la conversión de Turquía se devalúa al no poder capitalizar sus aproximaciones.
-* **Proyección de la Segunda Ronda de Grupos:**
-  * **USA vs Australia:** Partido por el liderato directo del grupo. El modelo Poisson bivariado, ante el sólido muro defensivo de los australianos, reduce el favoritismo de Estados Unidos a un **48% de probabilidad de triunfo**, proyectando un duelo muy disputado en mediocampo.
-  * **Turquía vs Paraguay:** Duelo de necesitados. Ambas escuadras llegan con 0 puntos y al borde de la eliminación. Turquía partirá favorita con un **50% de probabilidad de victoria** ante una Paraguay que defensivamente concedió muchos espacios en la fecha 1.

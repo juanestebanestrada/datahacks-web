@@ -15,8 +15,19 @@ slug: "haiti_escocia"
 poisson: "15-20-65"
 ---
 
-## 🇭🇹 Haití: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Haití 0 - 1 Escocia)
+Escocia derrotó por la mínima diferencia (1-0) a Haití gracias a un planteamiento táctico sumamente disciplinado. El bloque medio-alto planteado por Steve Clarke anuló con éxito las transiciones rápidas y los pases profundos del conjunto caribeño hacia sus referentes de ataque. Robertson comandó las proyecciones por el costado izquierdo y los europeos supieron cuidar la ventaja para llevarse el triunfo.
 
+### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** Con esta victoria, Escocia se posiciona como el sorpresivo líder en solitario del Grupo C con 3 unidades. Su solidez táctica de cara a los octavos de final mejora sustancialmente.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Brasil vs Escocia:** Un reto inmenso para Escocia, que buscará un bloque defensivo extremo ante un Brasil obligado a ganar.
+  * **Marruecos vs Haití:** La urgencia absoluta de sumar forzará a Haití a dejar espacios que la rápida transición de Marruecos intentará capitalizar.
+
+---
+
+## 🇭🇹 Haití: Análisis Táctico
 ### Ventajas
 
 * **Poderío Goleador y Eficiencia:** Destacan por ser una máquina goleadora con un volumen de remates extraordinario. Generan peligro constante buscando posiciones de alta calidad en el área y convirtiendo con una tasa de acierto muy elevada.
@@ -30,7 +41,6 @@ poisson: "15-20-65"
 ---
 
 ## 🏴 Escocia: Análisis Táctico
-
 ### Ventajas
 
 * **Disciplina Estructural y Organización:** Exhiben un sistema táctico sumamente reconocible y estructurado. La conexión entre Robertson, Tierney y Gilmour o McGregor conforma circuitos sólidos que priorizan la posesión y el orden, sobre todo por la franja izquierda.
@@ -40,16 +50,3 @@ poisson: "15-20-65"
 ### Desventajas
 
 * **Limitada Capacidad de Penetración:** Les cuesta enormemente culminar las jugadas. Pese a estructurar bien el juego previo, el balón no llega con facilidad a los atacantes, dejando un volumen ofensivo modesto y concentrado en situaciones aisladas sin amenaza sistemática al área rival.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Haití 0 - 1 Escocia)
-Escocia derrotó por la mínima diferencia (1-0) a Haití gracias a un planteamiento táctico sumamente disciplinado. El bloque medio-alto planteado por Steve Clarke anuló con éxito las transiciones rápidas y los pases profundos del conjunto caribeño hacia sus referentes de ataque. Robertson comandó las proyecciones por el costado izquierdo y los europeos supieron cuidar la ventaja para llevarse el triunfo.
-
-### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** Con esta victoria, Escocia se posiciona como el sorpresivo líder en solitario del Grupo C con 3 unidades. Su solidez táctica de cara a los octavos de final mejora sustancialmente.
-* **Proyección de la Segunda Ronda de Grupos:**
-  * **Brasil vs Escocia:** Un reto inmenso para Escocia, que buscará un bloque defensivo extremo ante un Brasil obligado a ganar.
-  * **Marruecos vs Haití:** La urgencia absoluta de sumar forzará a Haití a dejar espacios que la rápida transición de Marruecos intentará capitalizar.

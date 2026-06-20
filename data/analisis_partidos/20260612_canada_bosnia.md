@@ -15,8 +15,19 @@ slug: "canada_bosnia"
 poisson: "20-10-70"
 ---
 
-## 🇨🇦 Canadá: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Canadá 1 - 1 Bosnia)
+Canadá y Bosnia firmaron un reñido empate 1-1 en el debut del Grupo B. La velocidad canadiense puso en aprietos en varias ocasiones a la zaga europea, pero la falta de definición privó a los norteamericanos de una victoria histórica. Bosnia, con mayor posesión de balón de la mano de su circuito en mediocampo, logró igualar el marcador gracias a su contundencia en el área rival.
 
+### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** El empate deja a ambos equipos con 1 punto, detrás del líder de la jornada. El modelo de Monte Carlo recalibra las opciones de clasificación de ambas selecciones en un grupo sumamente cerrado.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **Suiza vs Bosnia:** Un duelo clave para los europeos. El modelo predictivo proyecta un duelo muy cerrado con un **44% de probabilidad de triunfo para Suiza**, un **28% para Bosnia** y un **28% de empate**.
+  * **Qatar vs Canadá:** Canadá buscará hacer valer su velocidad para sumar de a tres frente a un conjunto de Qatar motivado. Las proyecciones le dan a Canadá un **50% de probabilidad de victoria**.
+
+---
+
+## 🇨🇦 Canadá: Análisis Táctico
 ### Ventajas
 
 * **Estructura y Presión Defensiva de Élite:** Canadá muestra una superioridad defensiva en el radar inicial (78 vs 71). Esto se refleja en su mapa defensivo con una presión masiva, ordenada y agresiva en la zona media y de recuperación, logrando sostener un índice de recuperación de balones (Resco) muy alto (86).
@@ -32,7 +43,6 @@ poisson: "20-10-70"
 ---
 
 ## 🇧🇦 Bosnia: Análisis Táctico
-
 ### Ventajas
 
 * **Contundencia y Efectividad Letal:** Bosnia es letal en el último tercio del campo. Registra una altísima efectividad del 13.8%, acumulando 12 goles en 87 disparos (12 veces más goles que Canadá).
@@ -44,16 +54,3 @@ poisson: "20-10-70"
 * **Fragilidad y Vulnerabilidad Defensiva:** Bosnia muestra una defensa bastante desorganizada en su mapa táctico, con poca densidad de presiones y concesión de espacios en las bandas que un rival veloz podría explotar.
 * **Disciplina Terriblemente Baja:** Su baja puntuación de disciplina (55) se traduce en faltas recurrentes en zonas de transición que cortan el juego y los exponen a amonestaciones tempranas.
 * **Ofensiva Centralizada y Predecible:** La generación de peligro esperado (xT) se concentra casi en su totalidad en el callejón central y el área penal buscando a Džeko, lo que facilita el trabajo si la defensa rival logra anular el juego aéreo.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Canadá 1 - 1 Bosnia)
-Canadá y Bosnia firmaron un reñido empate 1-1 en el debut del Grupo B. La velocidad canadiense puso en aprietos en varias ocasiones a la zaga europea, pero la falta de definición privó a los norteamericanos de una victoria histórica. Bosnia, con mayor posesión de balón de la mano de su circuito en mediocampo, logró igualar el marcador gracias a su contundencia en el área rival.
-
-### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** El empate deja a ambos equipos con 1 punto, detrás del líder de la jornada. El modelo de Monte Carlo recalibra las opciones de clasificación de ambas selecciones en un grupo sumamente cerrado.
-* **Proyección de la Segunda Ronda de Grupos:**
-  * **Suiza vs Bosnia:** Un duelo clave para los europeos. El modelo predictivo proyecta un duelo muy cerrado con un **44% de probabilidad de triunfo para Suiza**, un **28% para Bosnia** y un **28% de empate**.
-  * **Qatar vs Canadá:** Canadá buscará hacer valer su velocidad para sumar de a tres frente a un conjunto de Qatar motivado. Las proyecciones le dan a Canadá un **50% de probabilidad de victoria**.

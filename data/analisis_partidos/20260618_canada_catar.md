@@ -15,8 +15,19 @@ slug: "canada_catar"
 poisson: "60-25-15"
 ---
 
-## 🇨🇦 Canadá: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Canadá 6 - 0 Catar)
+Canadá firmó una histórica goleada de 6-0 sobre Catar en el BC Place de Vancouver. La velocidad desbordante de Alphonso Davies por la izquierda y el pressing alto resultaron insostenibles para el conjunto catarí. Jonathan David fue la gran figura del encuentro al anotar un triplete de goles (hat-trick), castigando reiteradamente la fragilidad física de la defensa rival en el área pequeña.
 
+### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 3
+*   **Ajuste del Algoritmo:** Canadá registra una diferencia de goles arrolladora (+6), colocándose en una posición inmejorable para avanzar.
+*   **Proyección de la Tercera Fecha:**
+    *   **Canadá vs Suiza:** Duelo que definirá la punta del grupo.
+    *   **Catar vs Bosnia:** Partido de supervivencia para ambos planteles.
+
+---
+
+## 🇨🇦 Canadá: Análisis Táctico
 ### Ventajas
 *   **Velocidad por las Bandas (Alphonso Davies):** Canadá explota la velocidad extrema por los costados para romper líneas defensivas y llegar a línea de fondo.
 *   **Pressing Tras Pérdida Agresivo:** Presionan inmediatamente tras perder el balón, recuperando en zonas muy altas para habilitar a Jonathan David.
@@ -28,7 +39,6 @@ poisson: "60-25-15"
 ---
 
 ## 🇶🇦 Qatar: Análisis Táctico
-
 ### Ventajas
 *   **Contragolpes Rápidos con Afif:** Akram Afif es muy inteligente para encontrar espacios a la espalda de mediocampistas adelantados y habilitar a Almoez Ali.
 *   **Organización y Disciplina Táctica:** Suelen mantener un orden defensivo estricto con un bloque medio-bajo muy junto.
@@ -36,16 +46,3 @@ poisson: "60-25-15"
 ### Desventajas
 *   **Fragilidad Física:** Sufren en los duelos individuales de cuerpo a cuerpo y balones divididos ante rivales atléticos.
 *   **Poco Fondo de Armario:** El nivel de juego se resiente notablemente cuando entran los suplentes en la segunda mitad.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Canadá 6 - 0 Catar)
-Canadá firmó una histórica goleada de 6-0 sobre Catar en el BC Place de Vancouver. La velocidad desbordante de Alphonso Davies por la izquierda y el pressing alto resultaron insostenibles para el conjunto catarí. Jonathan David fue la gran figura del encuentro al anotar un triplete de goles (hat-trick), castigando reiteradamente la fragilidad física de la defensa rival en el área pequeña.
-
-### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 3
-*   **Ajuste del Algoritmo:** Canadá registra una diferencia de goles arrolladora (+6), colocándose en una posición inmejorable para avanzar.
-*   **Proyección de la Tercera Fecha:**
-    *   **Canadá vs Suiza:** Duelo que definirá la punta del grupo.
-    *   **Catar vs Bosnia:** Partido de supervivencia para ambos planteles.

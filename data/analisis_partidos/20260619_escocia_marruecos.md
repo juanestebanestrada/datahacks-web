@@ -15,8 +15,19 @@ slug: "escocia_marruecos"
 poisson: "25-30-45"
 ---
 
-## 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Escocia 0 - 1 Marruecos)
+Marruecos se llevó un vital triunfo por 1-0 ante Escocia en el Lincoln Financial Field. El cuadro africano golpeó temprano con una gran definición de cabeza de Youssef En-Nesyri al minuto 12 tras un centro preciso de Hakimi. Escocia intentó reaccionar a base de pundonor y juego aéreo, pero la zaga marroquí y el orden en el mediocampo neutralizaron cualquier intento escocés. Los Leones del Atlas manejaron la posesión de forma inteligente hasta el pitazo final para asegurar sus primeros tres puntos.
 
+### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 3
+* **Ajuste del Algoritmo:** Con este resultado, Marruecos revive en el Grupo C sumando 3 puntos y recuperando confianza en su juego asociativo. Escocia acumula su segunda caída consecutiva quedando con 0 unidades.
+* **Proyección de la Tercera Fecha:**
+  * **Marruecos vs Haití:** Duelo directo donde Marruecos es favorito para sellar su clasificación.
+  * **Brasil vs Escocia:** Duelo de trámite complejo para los escoceses ante la potencia sudamericana.
+
+---
+
+## 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Escocia: Análisis Táctico
 ### Ventajas
 * **Gran Densidad y Combatividad:** El equipo escocés basa su juego en el esfuerzo físico colectivo y una excelente cobertura de espacios en el mediocampo.
 * **Transiciones Rápidas y Juego Directo:** La capacidad para enviar trazos largos precisos y buscar segundas jugadas cerca del área rival es muy efectiva.
@@ -28,7 +39,6 @@ poisson: "25-30-45"
 ---
 
 ## 🇲🇦 Marruecos: Análisis Táctico
-
 ### Ventajas
 * **Circulación Técnica Superior:** Liderados por Hakim Ziyech y Achraf Hakimi, los marroquíes mueven el balón con gran dinamismo y precisión en campo rival.
 * **Sólido Bloque Defensivo:** Su zaga y medio de contención impiden con solidez las transiciones internas, forzando al rival a tirar centros.
@@ -36,16 +46,3 @@ poisson: "25-30-45"
 ### Desventajas
 * **Dependencia de la Creatividad de sus Estrellas:** Si Ziyech es neutralizado, el equipo carece en ocasiones de profundidad y fluidez en fase ofensiva.
 * **Falta de Contundencia del Nueve:** Generan múltiples jugadas asociativas pero la definición final de sus delanteros a veces no concreta el dominio.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Escocia 0 - 1 Marruecos)
-Marruecos se llevó un vital triunfo por 1-0 ante Escocia en el Lincoln Financial Field. El cuadro africano golpeó temprano con una gran definición de cabeza de Youssef En-Nesyri al minuto 12 tras un centro preciso de Hakimi. Escocia intentó reaccionar a base de pundonor y juego aéreo, pero la zaga marroquí y el orden en el mediocampo neutralizaron cualquier intento escocés. Los Leones del Atlas manejaron la posesión de forma inteligente hasta el pitazo final para asegurar sus primeros tres puntos.
-
-### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 3
-* **Ajuste del Algoritmo:** Con este resultado, Marruecos revive en el Grupo C sumando 3 puntos y recuperando confianza en su juego asociativo. Escocia acumula su segunda caída consecutiva quedando con 0 unidades.
-* **Proyección de la Tercera Fecha:**
-  * **Marruecos vs Haití:** Duelo directo donde Marruecos es favorito para sellar su clasificación.
-  * **Brasil vs Escocia:** Duelo de trámite complejo para los escoceses ante la potencia sudamericana.

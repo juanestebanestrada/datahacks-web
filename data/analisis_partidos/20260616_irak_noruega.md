@@ -20,7 +20,6 @@ Este enfrentamiento presenta una de las brechas más amplias entre dos equipos a
 ---
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-
 ### ⚽ Resumen del Partido (Resultado Real: Irak 1 - 4 Noruega)
 Noruega goleó 1-4 a Irak en una exhibición de contundencia ofensiva. El seleccionado europeo impuso condiciones físicas en el mediocampo y castigó severamente los errores defensivos de Irak en la salida de balón. Aunque Irak anotó un gol histórico para sus aficionados tras una jugada aislada, la superioridad noruega en volumen de disparos y en el juego aéreo fue abrumadora de principio a fin.
 
@@ -29,3 +28,6 @@ Noruega goleó 1-4 a Irak en una exhibición de contundencia ofensiva. El selecc
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Francia vs Noruega:** Duelo directo por la punta del grupo. Noruega llega con la moral al tope, pero se medirá ante el coloso del grupo. Se proyecta una probabilidad de victoria sumamente pareja, con leve favoritismo para Francia (**58%**).
   * **Senegal vs Irak:** Ambos necesitados de puntos para no despedirse temprano. Irak parte como la cenicienta del grupo, teniendo que medirse a un bloque físico que le dará pocas concesiones.
+
+---
+

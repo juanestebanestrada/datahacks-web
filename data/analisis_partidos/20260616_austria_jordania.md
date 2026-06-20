@@ -20,7 +20,6 @@ Austria es claramente el favorito y debería ganar este encuentro. La diferencia
 ---
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
-
 ### ⚽ Resumen del Partido (Resultado Real: Austria 3 - 1 Jordania)
 Austria venció 3-1 a Jordania en un partido donde los europeos impusieron su ritmo y presión alta. Jordania planteó un bloque replegado y físico, logrando descontar mediante una jugada de balón parado, pero el volumen de pases y la consistencia en el último tercio de Austria marcaron la diferencia para sellar el marcador a favor de los europeos.
 
@@ -29,3 +28,6 @@ Austria venció 3-1 a Jordania en un partido donde los europeos impusieron su ri
 * **Proyección de la Segunda Ronda de Grupos:**
   * **Argentina vs Austria:** Duelo directo por el liderato del Grupo J. Se perfila un encuentro muy disputado tácticamente entre la posesión de la Albiceleste y la intensidad del bloque austríaco.
   * **Argelia vs Jordania:** Ambos equipos están obligados a sumar para mantener vivas sus esperaciones de continuar en carrera en el torneo.
+
+---
+

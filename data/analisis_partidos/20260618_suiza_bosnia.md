@@ -15,8 +15,19 @@ slug: "suiza_bosnia"
 poisson: "52-30-18"
 ---
 
-## 🇨🇭 Suiza: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Suiza 4 - 1 Bosnia)
+Suiza demostró su jerarquía y dominio de posesión al golear 4-1 a Bosnia y Herzegovina en el SoFi Stadium. La circulación de balón comandada por Granit Xhaka asfixió por completo el repliegue defensivo de Bosnia, que se vio superado físicamente en el mediocampo. Edin Džeko anotó el único gol del honor para los bosnios tras un balón largo aéreo, pero la fluidez ofensiva de los helvéticos marcó la pauta del encuentro con cuatro anotaciones de gran factura colectiva.
 
+### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 3
+*   **Ajuste del Algoritmo:** Suiza se asienta en la parte alta del Grupo B con paso perfecto y diferencia de goles favorable.
+*   **Proyección de la Tercera Fecha:**
+    *   **Suiza vs Canadá:** Duelo estelar por el liderato del grupo.
+    *   **Catar vs Bosnia:** Choque de necesitados para buscar un boleto como mejor tercero.
+
+---
+
+## 🇨🇭 Suiza: Análisis Táctico
 ### Ventajas
 *   **Control del Mediocampo y Distribución:** Con Granit Xhaka como metrónomo, Suiza domina el tempo del partido y tiene secuencias de pases muy prolongadas.
 *   **Solidez Central Defensiva:** Manuel Akanji lidera un bloque defensivo muy compacto que concede pocas ocasiones en transiciones por el centro.
@@ -28,7 +39,6 @@ poisson: "52-30-18"
 ---
 
 ## 🇧🇦 Bosnia: Análisis Táctico
-
 ### Ventajas
 *   **Presencia Física de Edin Džeko:** Su delantero centro de referencia sigue siendo una amenaza constante en el juego directo y juego aéreo.
 *   **Repliegue y Bloque Bajo:** Saben defender en su propia área achicando espacios y obligando al rival a tirar de lejos.
@@ -36,16 +46,3 @@ poisson: "52-30-18"
 ### Desventajas
 *   **Ritmo Lento y Falta de Velocidad:** Su mediocampo tiene problemas para replegarse rápido cuando pierden el balón, facilitando las contras.
 *   **Dependencia Excesiva de Džeko:** Si anulan al atacante central, se quedan sin argumentos para progresar y retener el balón.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Suiza 4 - 1 Bosnia)
-Suiza demostró su jerarquía y dominio de posesión al golear 4-1 a Bosnia y Herzegovina en el SoFi Stadium. La circulación de balón comandada por Granit Xhaka asfixió por completo el repliegue defensivo de Bosnia, que se vio superado físicamente en el mediocampo. Edin Džeko anotó el único gol del honor para los bosnios tras un balón largo aéreo, pero la fluidez ofensiva de los helvéticos marcó la pauta del encuentro con cuatro anotaciones de gran factura colectiva.
-
-### 🔮 Impacto en el Grupo B y Proyecciones para la Ronda 3
-*   **Ajuste del Algoritmo:** Suiza se asienta en la parte alta del Grupo B con paso perfecto y diferencia de goles favorable.
-*   **Proyección de la Tercera Fecha:**
-    *   **Suiza vs Canadá:** Duelo estelar por el liderato del grupo.
-    *   **Catar vs Bosnia:** Choque de necesitados para buscar un boleto como mejor tercero.

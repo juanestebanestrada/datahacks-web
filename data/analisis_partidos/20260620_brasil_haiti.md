@@ -15,8 +15,19 @@ slug: "brasil_haiti"
 poisson: "70-20-10"
 ---
 
-## 🇧🇷 Brasil: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Brasil 3 - 0 Haití)
+Brasil se consolidó en la cima del Grupo C al vencer cómodamente por 3-0 a Haití en el Hard Rock Stadium. La verdeamarela tomó las riendas desde el inicio del silbatazo. Vinícius Jr inauguró la pizarra al minuto 18, tras realizar una diagonal letal desde la izquierda y definir con potencia al poste del guardameta. Rodrygo extendió el marcador antes del descanso (44') tras cazar un rebote en el área chica. En la segunda mitad, Brasil manejó el partido de forma inteligente y el ingresado Endrick sentenció el cotejo al 82' con una sutil definición ante la salida del arquero.
 
+### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 3
+* **Ajuste del Algoritmo:** Brasil suma 6 puntos con una diferencia de goles sobresaliente (+6), asegurando su lugar en la siguiente ronda. Haití se mantiene con 3 puntos en la segunda plaza gracias a su victoria inicial.
+* **Proyección de la Tercera Fecha:**
+  * **Brasil vs Escocia:** Duelo clave de trámite para Brasil que buscará amarrar el primer puesto.
+  * **Marruecos vs Haití:** Duelo definitorio por la clasificación, donde se espera alta fricción.
+
+---
+
+## 🇧🇷 Brasil: Análisis Táctico
 ### Ventajas
 * **Amplitud y Desborde por Bandas:** La presencia de Vinícius Jr y Rodrygo desestabiliza a cualquier zaga defensiva gracias a su alta habilidad en duelos uno contra uno.
 * **Calidad Técnica del Mediocampo:** Bruno Guimarães otorga una salida limpia y distribución fluida, rompiendo líneas con suma facilidad.
@@ -28,7 +39,6 @@ poisson: "70-20-10"
 ---
 
 ## 🇭🇹 Haití: Análisis Táctico
-
 ### Ventajas
 * **Compromiso y Rigor Físico:** Destacan por su capacidad de cobertura y esfuerzo para reducir espacios en las inmediaciones de su área.
 * **Velocidad de Salida:** Sus transiciones tras recuperación son muy veloces y verticales, buscando saltarse líneas.
@@ -36,16 +46,3 @@ poisson: "70-20-10"
 ### Desventajas
 * **Falta de Jerarquía en Fase de Inicio:** Suelen rifar la pelota o cometer imprecisiones ante presiones altas organizadas.
 * **Debilidad en Centros Laterales:** El posicionamiento de los centrales suele sufrir desajustes ante el movimiento constante de los atacantes rivales.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Brasil 3 - 0 Haití)
-Brasil se consolidó en la cima del Grupo C al vencer cómodamente por 3-0 a Haití en el Hard Rock Stadium. La verdeamarela tomó las riendas desde el inicio del silbatazo. Vinícius Jr inauguró la pizarra al minuto 18, tras realizar una diagonal letal desde la izquierda y definir con potencia al poste del guardameta. Rodrygo extendió el marcador antes del descanso (44') tras cazar un rebote en el área chica. En la segunda mitad, Brasil manejó el partido de forma inteligente y el ingresado Endrick sentenció el cotejo al 82' con una sutil definición ante la salida del arquero.
-
-### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 3
-* **Ajuste del Algoritmo:** Brasil suma 6 puntos con una diferencia de goles sobresaliente (+6), asegurando su lugar en la siguiente ronda. Haití se mantiene con 3 puntos en la segunda plaza gracias a su victoria inicial.
-* **Proyección de la Tercera Fecha:**
-  * **Brasil vs Escocia:** Duelo clave de trámite para Brasil que buscará amarrar el primer puesto.
-  * **Marruecos vs Haití:** Duelo definitorio por la clasificación, donde se espera alta fricción.

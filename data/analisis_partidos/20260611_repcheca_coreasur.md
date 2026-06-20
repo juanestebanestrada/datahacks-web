@@ -17,8 +17,19 @@ poisson: "58-26-16"
 ---
 
 
-## 🇨🇿 República Checa: Análisis Táctico
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Rep. Checa 2 - 1 Corea del Sur)
+República Checa sumó tres puntos de oro al derrotar 2-1 a Corea del Sur. Los europeos supieron imponer su poderío físico y el orden táctico para neutralizar la velocidad y dinámica de los asiáticos. A través de transiciones rápidas y una excelente capitalización de la táctica fija, la escuadra checa logró la ventaja. Corea del Sur descontó en la segunda parte buscando explotar la movilidad de sus atacantes, pero el bloque defensivo checo resistió el asedio final con gran madurez.
 
+### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 2
+* **Ajuste del Algoritmo:** República Checa empata en puntos con México en la cima del grupo. Las métricas de compacidad defensiva de los europeos mejoran sustancialmente en el modelo bivariado.
+* **Proyección de la Segunda Ronda de Grupos:**
+  * **México vs Corea del Sur:** Las necesidades surcoreanas obligarán a adelantar líneas, lo que podría favorecer las transiciones rápidas mexicanas.
+  * **Rep. Checa vs Sudáfrica:** El conjunto checo parte con un **48% de probabilidad de victoria** para sellar su pase a octavos frente a una Sudáfrica que necesita arriesgar tras su derrota en el debut.
+
+---
+
+## 🇨🇿 República Checa: Análisis Táctico
 ### Ventajas
 
 * **Peligro masivo por el carril derecho:** Como se aprecia en su mapa de peligro esperado, su mayor índice de Amenaza Esperada (xT), alcanzando valores superiores a 0.6, se genera en la esquina profunda derecha. Esto se complementa a la perfección con su mapa de asistencia y tiros, que muestra una enorme cantidad de pases clave nacidos desde esa misma banda.
@@ -33,7 +44,6 @@ poisson: "58-26-16"
 ---
 
 ## 🇰🇷 Corea del Sur: Análisis Táctico
-
 ### Ventajas
 
 * **Mayor contundencia:** De acuerdo con el mapa de tiros, los surcoreanos muestran una puntería superior, logrando marcar 5 goles con 43 disparos, concentrando gran parte de sus tiros letales en el corazón del área grande.
@@ -43,16 +53,3 @@ poisson: "58-26-16"
 ### Desventajas
 
 * **Salida muy baja y dividida:** En su red de pases, el peso de la salida recae casi en su totalidad en una línea de defensores (los "Kim") y el mediocentro Jung. Si se les presiona esa base, la conexión con Son o Cho queda muy aislada.
-
----
-
-## 📝 Crónica y Análisis Posterior (Post-Partido)
-
-### ⚽ Resumen del Partido (Resultado Real: Rep. Checa 2 - 1 Corea del Sur)
-República Checa sumó tres puntos de oro al derrotar 2-1 a Corea del Sur. Los europeos supieron imponer su poderío físico y el orden táctico para neutralizar la velocidad y dinámica de los asiáticos. A través de transiciones rápidas y una excelente capitalización de la táctica fija, la escuadra checa logró la ventaja. Corea del Sur descontó en la segunda parte buscando explotar la movilidad de sus atacantes, pero el bloque defensivo checo resistió el asedio final con gran madurez.
-
-### 🔮 Impacto en el Grupo A y Proyecciones para la Ronda 2
-* **Ajuste del Algoritmo:** República Checa empata en puntos con México en la cima del grupo. Las métricas de compacidad defensiva de los europeos mejoran sustancialmente en el modelo bivariado.
-* **Proyección de la Segunda Ronda de Grupos:**
-  * **México vs Corea del Sur:** Las necesidades surcoreanas obligarán a adelantar líneas, lo que podría favorecer las transiciones rápidas mexicanas.
-  * **Rep. Checa vs Sudáfrica:** El conjunto checo parte con un **48% de probabilidad de victoria** para sellar su pase a octavos frente a una Sudáfrica que necesita arriesgar tras su derrota en el debut.
