@@ -11,7 +11,7 @@ goles_away: 1
 pronostico: "1 - 2"
 finalizado: "true"
 
-imagenes: "Rep.ChecaCalor.png:Mapa de Calor (Rep. Checa), CoreaDelSurCalor.png:Mapa de Calor (Corea del Sur), ShotMapRep.Checa.png:Mapa de Tiros (Rep. Checa)"
+imagenes: "Rep.ChecaCalor.png:Mapa de Calor (Rep. Checa), CoreaDelSurCalor.png:Mapa de Calor (Corea del Sur), ShotMapRep.Checa.png:Mapa de Tiros (Rep. Checa), Momentum_20260611_repcheca_coreasur.png:Match Momentum"
 slug: "repcheca_coreasur"
 poisson: "58-26-16"
 ---

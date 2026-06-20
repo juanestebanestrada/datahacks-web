@@ -7,10 +7,10 @@ hora: "19:00"
 home_team: "USA"
 away_team: "Australia"
 goles_home: 2
-goles_away: 1
+goles_away: 0
 pronostico: "2 - 1"
-finalizado: "false"
-imagenes: "Analisis_USA_MapaDefensivo_horizontal_20260612.png:Mapa Defensivo (USA), Analisis_USA_ExpectedThreatxT_horizontal_20260612.png:Amenaza Esperada xT (USA), Analisis_USA_MapadeCalor_horizontal_20260612.png:Mapa de Calor (USA), ShotMap_USA_horizontal_20260612.png:Mapa de Tiros (USA), Analisis_USA_ReddePases_horizontal_20260612.png:Red de Pases (USA), Analisis_USA_ConduccionesProgresivas_horizontal_20260612.png:Conducciones Progresivas (USA), Analisis_USA_MapadeAsistencias_horizontal_20260612.png:Mapa de Asistencias (USA), Analisis_Australia_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Australia), Analisis_Australia_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Australia), Analisis_Australia_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Australia), ShotMap_Australia_horizontal_20260613.png:Mapa de Tiros (Australia), Analisis_Australia_ReddePases_horizontal_20260613.png:Red de Pases (Australia), Analisis_Australia_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Australia), Analisis_Australia_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Australia)"
+finalizado: "true"
+imagenes: "Analisis_USA_MapaDefensivo_horizontal_20260612.png:Mapa Defensivo (USA), Analisis_USA_ExpectedThreatxT_horizontal_20260612.png:Amenaza Esperada xT (USA), Analisis_USA_MapadeCalor_horizontal_20260612.png:Mapa de Calor (USA), ShotMap_USA_horizontal_20260612.png:Mapa de Tiros (USA), Analisis_USA_ReddePases_horizontal_20260612.png:Red de Pases (USA), Analisis_USA_ConduccionesProgresivas_horizontal_20260612.png:Conducciones Progresivas (USA), Analisis_USA_MapadeAsistencias_horizontal_20260612.png:Mapa de Asistencias (USA), Analisis_Australia_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Australia), Analisis_Australia_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Australia), Analisis_Australia_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Australia), ShotMap_Australia_horizontal_20260613.png:Mapa de Tiros (Australia), Analisis_Australia_ReddePases_horizontal_20260613.png:Red de Pases (Australia), Analisis_Australia_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Australia), Analisis_Australia_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Australia), Momentum_20260619_usa_australia.png:Match Momentum"
 slug: "usa_australia"
 poisson: "52-28-20"
 ---
@@ -41,8 +41,8 @@ poisson: "52-28-20"
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
-### ⚽ Resumen del Partido (Resultado Real: USA 2 - 1 Australia)
-Estados Unidos se impuso con autoridad a Australia por 2-1 en el Mercedes-Benz Stadium. Liderados por una actuación descollante de Christian Pulisic, quien anotó el primer gol tras un recorte soberbio en el área al minuto 24, el conjunto local controló el ritmo del juego en todo momento. Folarin Balogun estiró la ventaja al 67' tras capitalizar una asistencia filtrada. Australia reaccionó en el tramo final con un gol de cabeza de Mitchell Duke al 81', tras un tiro de esquina ejecutado con precisión, pero la zaga estadounidense supo aguantar los embates finales para asegurar los tres puntos.
+### ⚽ Resumen del Partido (Resultado Real: USA 2 - 0 Australia)
+Estados Unidos se impuso con autoridad a Australia por 2-0 en el Mercedes-Benz Stadium. Liderados por una actuación descollante de Christian Pulisic, quien anotó el primer gol tras un recorte soberbio en el área al minuto 24, el conjunto local controló el ritmo del juego en todo momento. Folarin Balogun estiró la ventaja al 67' tras capitalizar una asistencia filtrada, sentenciando el partido. La zaga estadounidense, firme en todo momento, anuló por completo las contras de los Socceroos para asegurar un debut perfecto sin recibir goles.
 
 ### 🔮 Impacto en el Grupo D y Proyecciones para la Ronda 3
 * **Ajuste del Algoritmo:** Con esta victoria, Estados Unidos llega a 6 puntos y sella virtualmente su clasificación en el Grupo D. El simulador de probabilidades incrementa el estatus ofensivo de los norteamericanos. Australia queda con 0 puntos tras dos derrotas consecutivas.

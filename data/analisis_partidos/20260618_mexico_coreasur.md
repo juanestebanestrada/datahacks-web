@@ -10,7 +10,7 @@ goles_home: 1
 goles_away: 0
 pronostico: "1 - 1"
 finalizado: "true"
-imagenes: "MéxicoMapaDefensivo.png:Mapa Defensivo (México), MéxicoExpectedThreatxT.png:Amenaza Esperada xT (México), MéxicoCalor.png:Mapa de Calor (México), ShotMapMéxico.png:Mapa de Tiros (México), MéxicoReddePases.png:Red de Pases (México), MéxicoConduccionesProgresivas.png:Conducciones Progresivas (México), MéxicoMapadeAsistencias.png:Mapa de Asistencias (México), CoreaDelSurCalor.png:Mapa de Calor (Corea del Sur), ShotMapCoreaDelSur.png:Mapa de Tiros (Corea del Sur)"
+imagenes: "MéxicoMapaDefensivo.png:Mapa Defensivo (México), MéxicoExpectedThreatxT.png:Amenaza Esperada xT (México), MéxicoCalor.png:Mapa de Calor (México), ShotMapMéxico.png:Mapa de Tiros (México), MéxicoReddePases.png:Red de Pases (México), MéxicoConduccionesProgresivas.png:Conducciones Progresivas (México), MéxicoMapadeAsistencias.png:Mapa de Asistencias (México), CoreaDelSurCalor.png:Mapa de Calor (Corea del Sur), ShotMapCoreaDelSur.png:Mapa de Tiros (Corea del Sur), Momentum_20260618_mexico_coreasur.png:Match Momentum"
 slug: "mexico_coreasur"
 poisson: "38-32-30"
 ---

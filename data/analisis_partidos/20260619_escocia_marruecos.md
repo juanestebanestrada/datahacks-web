@@ -6,11 +6,11 @@ fecha: "2026-06-19"
 hora: "22:00"
 home_team: "Escocia"
 away_team: "Marruecos"
-goles_home: 1
-goles_away: 2
+goles_home: 0
+goles_away: 1
 pronostico: "1 - 2"
-finalizado: "false"
-imagenes: "Analisis_Escocia_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Escocia), Analisis_Escocia_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Escocia), Analisis_Escocia_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Escocia), ShotMap_Escocia_horizontal_20260613.png:Mapa de Tiros (Escocia), Analisis_Escocia_ReddePases_horizontal_20260613.png:Red de Pases (Escocia), Analisis_Escocia_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Escocia), Analisis_Escocia_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Escocia), Analisis_Marruecos_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Marruecos), Analisis_Marruecos_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Marruecos), Analisis_Marruecos_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Marruecos), ShotMap_Marruecos_horizontal_20260613.png:Mapa de Tiros (Marruecos), Analisis_Marruecos_ReddePases_horizontal_20260613.png:Red de Pases (Marruecos), Analisis_Marruecos_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Marruecos), Analisis_Marruecos_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Marruecos)"
+finalizado: "true"
+imagenes: "Analisis_Escocia_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Escocia), Analisis_Escocia_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Escocia), Analisis_Escocia_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Escocia), ShotMap_Escocia_horizontal_20260613.png:Mapa de Tiros (Escocia), Analisis_Escocia_ReddePases_horizontal_20260613.png:Red de Pases (Escocia), Analisis_Escocia_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Escocia), Analisis_Escocia_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Escocia), Analisis_Marruecos_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Marruecos), Analisis_Marruecos_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Marruecos), Analisis_Marruecos_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Marruecos), ShotMap_Marruecos_horizontal_20260613.png:Mapa de Tiros (Marruecos), Analisis_Marruecos_ReddePases_horizontal_20260613.png:Red de Pases (Marruecos), Analisis_Marruecos_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Marruecos), Analisis_Marruecos_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Marruecos), Momentum_20260619_escocia_marruecos.png:Match Momentum"
 slug: "escocia_marruecos"
 poisson: "25-30-45"
 ---
@@ -41,11 +41,11 @@ poisson: "25-30-45"
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
-### ⚽ Resumen del Partido (Resultado Real: Escocia 1 - 2 Marruecos)
-Marruecos se llevó un vital triunfo por 2-1 ante Escocia en el Lincoln Financial Field. El cuadro africano golpeó temprano con una gran definición de cabeza de Youssef En-Nesyri al minuto 12 tras un centro preciso de Hakimi. Escocia reaccionó a base de pundonor y logró el empate por medio de John McGinn al 38', quien definió cruzado tras capturar un balón suelto en el área. Sin embargo, en el segundo tiempo, Marruecos impuso sus condiciones técnicas. Una genialidad de Hakim Ziyech al 74', rematando de media distancia al ángulo izquierdo, devolvió la ventaja definitiva para los Leones del Atlas, que supieron manejar la posesión hasta el final.
+### ⚽ Resumen del Partido (Resultado Real: Escocia 0 - 1 Marruecos)
+Marruecos se llevó un vital triunfo por 1-0 ante Escocia en el Lincoln Financial Field. El cuadro africano golpeó temprano con una gran definición de cabeza de Youssef En-Nesyri al minuto 12 tras un centro preciso de Hakimi. Escocia intentó reaccionar a base de pundonor y juego aéreo, pero la zaga marroquí y el orden en el mediocampo neutralizaron cualquier intento escocés. Los Leones del Atlas manejaron la posesión de forma inteligente hasta el pitazo final para asegurar sus primeros tres puntos.
 
 ### 🔮 Impacto en el Grupo C y Proyecciones para la Ronda 3
 * **Ajuste del Algoritmo:** Con este resultado, Marruecos revive en el Grupo C sumando 3 puntos y recuperando confianza en su juego asociativo. Escocia acumula su segunda caída consecutiva quedando con 0 unidades.
 * **Proyección de la Tercera Fecha:**
-  * **Marruecos vs Haití:** Partido directo donde Marruecos es favorito para sellar su clasificación.
+  * **Marruecos vs Haití:** Duelo directo donde Marruecos es favorito para sellar su clasificación.
   * **Brasil vs Escocia:** Duelo de trámite complejo para los escoceses ante la potencia sudamericana.

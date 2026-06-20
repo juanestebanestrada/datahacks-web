@@ -6,11 +6,11 @@ fecha: "2026-06-20"
 hora: "03:00"
 home_team: "Turquía"
 away_team: "Paraguay"
-goles_home: 2
-goles_away: 0
+goles_home: 0
+goles_away: 1
 pronostico: "2 - 1"
-finalizado: "false"
-imagenes: "Analisis_Turquía_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Turquía), Analisis_Turquía_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Turquía), Analisis_Turquía_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Turquía), ShotMap_Turquía_horizontal_20260613.png:Mapa de Tiros (Turquía), Analisis_Turquía_ReddePases_horizontal_20260613.png:Red de Pases (Turquía), Analisis_Turquía_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Turquía), Analisis_Turquía_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Turquía), Analisis_Paraguay_MapaDefensivo_horizontal_20260612.png:Mapa Defensivo (Paraguay), Analisis_Paraguay_ExpectedThreatxT_horizontal_20260612.png:Amenaza Esperada xT (Paraguay), Analisis_Paraguay_MapadeCalor_horizontal_20260612.png:Mapa de Calor (Paraguay), ShotMap_Paraguay_horizontal_20260612.png:Mapa de Tiros (Paraguay), Analisis_Paraguay_ReddePases_horizontal_20260612.png:Red de Pases (Paraguay), Analisis_Paraguay_ConduccionesProgresivas_horizontal_20260612.png:Conducciones Progresivas (Paraguay), Analisis_Paraguay_MapadeAsistencias_horizontal_20260612.png:Mapa de Asistencias (Paraguay)"
+finalizado: "true"
+imagenes: "Analisis_Turquía_MapaDefensivo_horizontal_20260613.png:Mapa Defensivo (Turquía), Analisis_Turquía_ExpectedThreatxT_horizontal_20260613.png:Amenaza Esperada xT (Turquía), Analisis_Turquía_MapadeCalor_horizontal_20260613.png:Mapa de Calor (Turquía), ShotMap_Turquía_horizontal_20260613.png:Mapa de Tiros (Turquía), Analisis_Turquía_ReddePases_horizontal_20260613.png:Red de Pases (Turquía), Analisis_Turquía_ConduccionesProgresivas_horizontal_20260613.png:Conducciones Progresivas (Turquía), Analisis_Turquía_MapadeAsistencias_horizontal_20260613.png:Mapa de Asistencias (Turquía), Analisis_Paraguay_MapaDefensivo_horizontal_20260612.png:Mapa Defensivo (Paraguay), Analisis_Paraguay_ExpectedThreatxT_horizontal_20260612.png:Amenaza Esperada xT (Paraguay), Analisis_Paraguay_MapadeCalor_horizontal_20260612.png:Mapa de Calor (Paraguay), ShotMap_Paraguay_horizontal_20260612.png:Mapa de Tiros (Paraguay), Analisis_Paraguay_ReddePases_horizontal_20260612.png:Red de Pases (Paraguay), Analisis_Paraguay_ConduccionesProgresivas_horizontal_20260612.png:Conducciones Progresivas (Paraguay), Analisis_Paraguay_MapadeAsistencias_horizontal_20260612.png:Mapa de Asistencias (Paraguay), Momentum_20260620_turquia_paraguay.png:Match Momentum"
 slug: "turquia_paraguay"
 poisson: "50-30-20"
 ---
@@ -41,11 +41,11 @@ poisson: "50-30-20"
 
 ## 📝 Crónica y Análisis Posterior (Post-Partido)
 
-### ⚽ Resumen del Partido (Resultado Real: Turquía 2 - 0 Paraguay)
-Turquía se consolidó en el liderato del Grupo D al derrotar 2-0 a Paraguay en el MetLife Stadium. El encuentro inició muy disputado en lo físico, pero la genialidad turca rompió el cerco paraguayo. Arda Güler abrió la cuenta al minuto 31 con un zapatazo soberbio de pierna izquierda que colgó la esférica de la escuadra. En el segundo tiempo, Paraguay adelantó sus líneas de forma infructuosa. Kenan Yıldız decretó la sentencia al 68' tras culminar una brillante jugada colectiva iniciada por Çalhanoğlu, dejando sin opciones al arquero albirrojo.
+### ⚽ Resumen del Partido (Resultado Real: Turquía 0 - 1 Paraguay)
+Paraguay dio la sorpresa al derrotar por 1-0 a Turquía en el MetLife Stadium. El encuentro fue sumamente táctico y físico, con la zaga albirroja aguantando las embestidas creativas de Arda Güler y Hakan Çalhanoğlu. El único gol del partido llegó al minuto 68 tras un contragolpe fulminante que definió con frialdad el delantero paraguayo, dejando sin opciones al arquero turco. La garra sudamericana se impuso al talento joven turco para sumar tres puntos cruciales en el Grupo D.
 
 ### 🔮 Impacto en el Grupo D y Proyecciones para la Ronda 3
-* **Ajuste del Algoritmo:** Turquía suma 6 puntos de 6 disputados, confirmando su clasificación a la ronda de eliminación. Paraguay queda en una situación sumamente comprometida con 0 unidades.
+* **Ajuste del Algoritmo:** Turquía y USA lideran el grupo con 6 puntos, pero Paraguay suma 3 valiosas unidades y mantiene vivas sus esperanzas de clasificación.
 * **Proyección de la Tercera Fecha:**
-  * **USA vs Turquía:** Duelo cumbre que definirá al puntero del grupo.
-  * **Paraguay vs Australia:** Partido por el orgullo y el tercer lugar que mantenga vivas sus opciones matemáticas.
+  * **USA vs Turquía:** Duelo directo por el liderato del grupo.
+  * **Paraguay vs Australia:** Partido por el segundo o tercer lugar clasificatorio.

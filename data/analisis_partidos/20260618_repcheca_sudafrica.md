@@ -10,7 +10,7 @@ goles_home: 1
 goles_away: 1
 pronostico: "2 - 1"
 finalizado: "true"
-imagenes: "Rep.ChecaCalor.png:Mapa de Calor (Rep. Checa), ShotMapRep.Checa.png:Mapa de Tiros (Rep. Checa), SudáfricaMapaDefensivo.png:Mapa Defensivo (Sudáfrica), SudáfricaExpectedThreatxT.png:Amenaza Esperada xT (Sudáfrica), SudafricaCalor.png:Mapa de Calor (Sudáfrica), ShotMapSudáfrica.png:Mapa de Tiros (Sudáfrica), SudáfricaADNPasesKMeans.png:ADN de Pases (Sudáfrica)"
+imagenes: "Rep.ChecaCalor.png:Mapa de Calor (Rep. Checa), ShotMapRep.Checa.png:Mapa de Tiros (Rep. Checa), SudáfricaMapaDefensivo.png:Mapa Defensivo (Sudáfrica), SudáfricaExpectedThreatxT.png:Amenaza Esperada xT (Sudáfrica), SudafricaCalor.png:Mapa de Calor (Sudáfrica), ShotMapSudáfrica.png:Mapa de Tiros (Sudáfrica), SudáfricaADNPasesKMeans.png:ADN de Pases (Sudáfrica), Momentum_20260618_repcheca_sudafrica.png:Match Momentum"
 slug: "repcheca_sudafrica"
 poisson: "48-28-24"
 ---
