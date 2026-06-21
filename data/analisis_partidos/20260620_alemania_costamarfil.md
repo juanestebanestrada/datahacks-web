@@ -6,14 +6,29 @@ fecha: "2026-06-20"
 hora: "20:00"
 home_team: "Alemania"
 away_team: "Costa de Marfil"
-goles_home: 0
-goles_away: 0
+goles_home: 2
+goles_away: 1
 pronostico: "2 - 1"
-finalizado: "false"
-imagenes: "Analisis_Alemania_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Alemania), Analisis_Costa de Marfil_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Costa de Marfil), Analisis_Alemania_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Alemania), Analisis_Costa de Marfil_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Costa de Marfil)"
+finalizado: "true"
+imagenes: "Analisis_Alemania_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Alemania), Analisis_Costa de Marfil_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Costa de Marfil), Analisis_Alemania_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Alemania), Analisis_Costa de Marfil_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Costa de Marfil), ShotMap_Alemania_horizontal_20260620.png:Mapa de Tiros (Alemania), ShotMap_Costa de Marfil_horizontal_20260620.png:Mapa de Tiros (Costa de Marfil), Momentum_20260620_alemania_costamarfil.png:Match Momentum"
 slug: "alemania_costamarfil"
 poisson: "58-26-16"
 ---
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Alemania 2 - 1 Costa de Marfil)
+Costa de Marfil se adelantó mediante Franck Kessié (30'), pero el ingresado Deniz Undav lideró la remontada alemana con un doblete (68', 90+4') para asegurar la victoria teutona por 2-1 en Toronto. Los dirigidos por Julian Nagelsmann reaccionaron a tiempo e impusieron su jerarquía colectiva en el tramo definitivo.
+
+### 🔮 Impacto en el Grupo E y Proyecciones para la Ronda 3
+* **Ajuste del Algoritmo:** Alemania asegura su clasificación a octavos sumando 6 puntos (+3 DG). Costa de Marfil queda eliminada sin puntos (-2 DG).
+* **Proyección de la Tercera Fecha:**
+  * **Alemania vs Ecuador:** Alemania buscará asegurar el liderato del grupo, mientras que Ecuador necesita un empate para asegurar su pase.
+  * **Curazao vs Costa de Marfil:** Curazao buscará una victoria histórica para intentar clasificar como uno de los mejores terceros, contra una Costa de Marfil ya eliminada.
+
+### 📈 Análisis del Match Momentum
+El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con Alemania dominando el 52.2% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 53'. Por su parte, Costa de Marfil replegó filas e intentó contragolpear, logrando su mayor intensidad (100.00) en el minuto 51'. La constancia en la presión de la selección alemana en las inmediaciones del área rival fue determinante para explicar el triunfo por 2-1 de Alemania.
+
+---
+
 
 ## 🇩🇪 Alemania: Análisis Táctico
 

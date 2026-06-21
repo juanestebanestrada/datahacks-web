@@ -6,14 +6,29 @@ fecha: "2026-06-20"
 hora: "17:00"
 home_team: "Países Bajos"
 away_team: "Suecia"
-goles_home: 0
-goles_away: 0
+goles_home: 5
+goles_away: 1
 pronostico: "1 - 1"
-finalizado: "false"
-imagenes: "Analisis_Países Bajos_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Países Bajos), Analisis_Suecia_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Suecia), Analisis_Países Bajos_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Países Bajos), Analisis_Suecia_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Suecia)"
+finalizado: "true"
+imagenes: "Analisis_Países Bajos_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Países Bajos), Analisis_Suecia_MapaDefensivo_horizontal_20260614.png:Mapa Defensivo (Suecia), Analisis_Países Bajos_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Países Bajos), Analisis_Suecia_ExpectedThreatxT_horizontal_20260614.png:Amenaza Esperada xT (Suecia), ShotMap_Países Bajos_horizontal_20260620.png:Mapa de Tiros (Países Bajos), ShotMap_Suecia_horizontal_20260620.png:Mapa de Tiros (Suecia), Momentum_20260620_paisesbajos_suecia.png:Match Momentum"
 slug: "paisesbajos_suecia"
 poisson: "42-30-28"
 ---
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+### ⚽ Resumen del Partido (Resultado Real: Países Bajos 5 - 1 Suecia)
+Brian Brobbey (5', 17') y Cody Gakpo (47', 54') lideraron la goleada por 5-1 de la Oranje sobre Suecia en Houston. Anthony Elanga descontó para los suecos al 59', pero Crysencio Summerville selló el resultado al 89'. La selección neerlandesa mostró una efectividad letal de cara a portería, aprovechando los espacios concedidos por la defensa sueca en transición.
+
+### 🔮 Impacto en el Grupo F y Proyecciones para la Ronda 3
+* **Ajuste del Algoritmo:** Países Bajos escala a la segunda posición del Grupo F con 3 puntos (+3 DG), empatado en unidades con Suecia (-3 DG) pero con mejor diferencia de goles.
+* **Proyección de la Tercera Fecha:**
+  * **Países Bajos vs Túnez:** La Oranje buscará sellar su pase frente a un cuadro tunecino ya eliminado.
+  * **Japón vs Suecia:** Suecia se jugará el todo por el todo frente al líder Japón buscando clasificar como segundo o mejor tercero.
+
+### 📈 Análisis del Match Momentum
+El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con Países Bajos dominando el 53.3% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 17'. Por su parte, Suecia replegó filas intentando contragolpear, logrando su mayor intensidad (84.00) en el minuto 29'. La constancia en la presión de la selección neerlandesa en las inmediaciones del área rival fue determinante para explicar la contundente victoria de Países Bajos por 5-1.
+
+---
+
 
 ## 🇳🇱 Países Bajos: Análisis Táctico
 
