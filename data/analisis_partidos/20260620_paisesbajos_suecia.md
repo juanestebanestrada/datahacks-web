@@ -19,10 +19,10 @@ poisson: "42-30-28"
 Brian Brobbey (5', 17') y Cody Gakpo (47', 54') lideraron la goleada por 5-1 de la Oranje sobre Suecia en Houston. Anthony Elanga descontó para los suecos al 59', pero Crysencio Summerville selló el resultado al 89'. La selección neerlandesa mostró una efectividad letal de cara a portería, aprovechando los espacios concedidos por la defensa sueca en transición.
 
 ### 🔮 Impacto en el Grupo F y Proyecciones para la Ronda 3
-* **Ajuste del Algoritmo:** Países Bajos escala a la segunda posición del Grupo F con 3 puntos (+3 DG), empatado en unidades con Suecia (-3 DG) pero con mejor diferencia de goles.
+* **Ajuste del Algoritmo:** Países Bajos suma 4 puntos (+4 DG) y se posiciona en el primer puesto del grupo (empatado en puntos y diferencia de gol con Japón, pero habiendo anotado un gol más: 7 de la Oranje contra 6 de los nipones). Suecia cae al tercer puesto con 3 puntos (0 DG).
 * **Proyección de la Tercera Fecha:**
-  * **Países Bajos vs Túnez:** La Oranje buscará sellar su pase frente a un cuadro tunecino ya eliminado.
-  * **Japón vs Suecia:** Suecia se jugará el todo por el todo frente al líder Japón buscando clasificar como segundo o mejor tercero.
+  * **Países Bajos vs Túnez:** La Oranje buscará certificar el primer puesto del grupo ante la ya eliminada Túnez.
+  * **Japón vs Suecia:** Suecia se jugará la clasificación directa ante Japón, donde solo le sirve la victoria para no depender de otros resultados.
 
 ### 📈 Análisis del Match Momentum
 El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con Países Bajos dominando el 53.3% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 17'. Por su parte, Suecia replegó filas intentando contragolpear, logrando su mayor intensidad (84.00) en el minuto 29'. La constancia en la presión de la selección neerlandesa en las inmediaciones del área rival fue determinante para explicar la contundente victoria de Países Bajos por 5-1.

@@ -19,10 +19,10 @@ poisson: "58-26-16"
 Costa de Marfil se adelantó mediante Franck Kessié (30'), pero el ingresado Deniz Undav lideró la remontada alemana con un doblete (68', 90+4') para asegurar la victoria teutona por 2-1 en Toronto. Los dirigidos por Julian Nagelsmann reaccionaron a tiempo e impusieron su jerarquía colectiva en el tramo definitivo.
 
 ### 🔮 Impacto en el Grupo E y Proyecciones para la Ronda 3
-* **Ajuste del Algoritmo:** Alemania asegura su clasificación a octavos sumando 6 puntos (+3 DG). Costa de Marfil queda eliminada sin puntos (-2 DG).
+* **Ajuste del Algoritmo:** Alemania asegura su clasificación matemática a octavos de final con 6 puntos y una sólida diferencia de goles (+7 DG). Costa de Marfil se mantiene en el segundo puesto con 3 puntos (0 DG) y dependerá de sí misma en la última jornada.
 * **Proyección de la Tercera Fecha:**
-  * **Alemania vs Ecuador:** Alemania buscará asegurar el liderato del grupo, mientras que Ecuador necesita un empate para asegurar su pase.
-  * **Curazao vs Costa de Marfil:** Curazao buscará una victoria histórica para intentar clasificar como uno de los mejores terceros, contra una Costa de Marfil ya eliminada.
+  * **Alemania vs Ecuador:** Alemania buscará ratificar el primer lugar, mientras que Ecuador (1 punto, -1 DG) necesita una victoria o un empate y esperar resultados para clasificar.
+  * **Curazao vs Costa de Marfil:** Costa de Marfil buscará asegurar su clasificación ante Curazao (1 punto, -6 DG), que aún tiene posibilidades matemáticas si gana.
 
 ### 📈 Análisis del Match Momentum
 El gráfico de Match Momentum muestra cómo el control del juego fluctuó, con Alemania dominando el 52.2% del partido gracias a un bloque ofensivo muy agresivo, cuyo pico máximo de 100.00 ocurrió al minuto 53'. Por su parte, Costa de Marfil replegó filas e intentó contragolpear, logrando su mayor intensidad (100.00) en el minuto 51'. La constancia en la presión de la selección alemana en las inmediaciones del área rival fue determinante para explicar el triunfo por 2-1 de Alemania.
