@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jordania vs Argelia: Duelo de Estilos en el Grupo J // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Jordania vs Argelia del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_j.html" class="back-link">← Volver al Grupo J</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo J</span>
+    <h2>Jordania vs Argelia</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-22 · 🕒 22:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Jordania</span>
+        <img src="https://flagcdn.com/w80/jo.png" alt="Jordania" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">1 - 0</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/dz.png" alt="Argelia" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Argelia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇯🇴 Jordânia: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Alta Intensificación del Juego en la Mediana:</strong> Jordânia tendrá una capacidad excepcional para dominar la posesión y la presión alta, aprovechando la sinergía inherente al talento de sus mediapoles. La inclinación hacia un juego de control del balón, con frecuentes combinaciones desde el centro y laterales, limitará la capacidad de Argelia para crear oportunidades en espacios abiertos. Los jugadores como Musa (en defensa) y Ben Abdi (traslado al ataque) serán vitales en este proceso.</li>
+<li><strong>Uso Estratégico del "Triángulo" Vertical:</strong> El uso inteligente de las líneas de presión, especialmente a través del triángulo vertical, permitirá que la presión alta en el mediocampo no solo desvíe la posesión a favor de ellos, sino también forzar deficiencias de balón en el área defensiva de Argelia. Esta táctica es particularmente efectiva contra equipos con una estructura defensivamente robusta.</li>
+<li><strong>Efectividad de las Transiciones:</strong> Jordânia se beneficiará enormemente al superar rápidamente los retrasos iniciales gracias a la dinámica y rapidez de sus sprints laterales, particularmente David (en ataque). Una correcta incorporación a las líneas se asegura el control del juego y anticipación de cualquier posible error de Argelia.</li>
+<li><strong>El Desafío Defensivo: Estrategia "Defensa de Círculos":</strong>  La capacidad de Jordanía para construir un escudo y defender en cercos es inmensamente peligrosa. La estructura defensiva de Argelia, si se enfrenta la presión alta, será inevitablemente forzando movimientos agresivos. Además, el juego rápido en general de Jordânia permitirá la frustación de posibles ataques ofensivas contra el mediocampo.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Dependencia Excesiva del Traslado del Presioen al Medio:</strong> Si bien las ventajas tácticas mencionadas anteriormente son cruciales, una concentración excesiva en el centro y laterales puede expujar a Jordânia hacia un juego estático, atrayendo a Argelia a jugarse el balón. Esta dependencia podría ser explotada con astucia.</li>
+<li><strong>Vulnerabilidad al Ataque del Centro (si es muy eficiente):</strong> La efectividad del mediocampo de Jordanía se está convirtiendo en una fuente potente de oportunidades y defensa contra el ataque del centro si Argelia logra recuperar la posesión rápidamente, aprovechando las deficiencias en los desplazamientos entre líneas.</li>
+<li><strong>Facilidad para Superar la Presión en Transición:</strong>  Un error incontrolable en la transición puede dejar a Jordânia con un solo defensor en el mediocampo, y ser rápidamente superado por los zancos de Argelia que intentan forzar errores o atrincherados.</li>
+<li><strong>Defensos Bien Formados y Positivos:</strong> La calidad del centro y laterales de Argelia pueden contrastar, poniendo a prueba las defensores de Jordanía  y obligándolos a tomar decisiones difíciles cuando los espacios se presentan.</li>
+</ul>
+<h2>🇩🇿 Argelia: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li><strong>Solidez de la Estructura Defensiva:</strong> Argelia no es un equipo que busque crear oportunidades en los primeros diez minutos, sino que prioriza defender y dificultar el ataque de Jordânia. La dedicación a mantener el control del balón y la organización defensiva son claves.</li>
+<li>  <strong>Fuerza Individual Impactante:</strong> La combinación de velocidad y capacidad de pase y conducción del equipo tendrá un impacto significativo en todo lo que haga. El atacante más importante es Zidine (en ataque), con gran potencial para romper líneas defensivas de Jordanía.</li>
+<li><strong>Resiliencia al Juego Lateral:</strong> Argelia está construida sobre la posibilidad de tener contraataques, al tener una disposición defensiva fuerte, es probable que tengan buenos jugadores en el mediocampo con capacidad de salida</li>
+<li> <strong>Posicionamiento de los Atacantes de los Bandos:</strong> Al crear espacios y atragantando a las líneas defensivas de Jordânia es importante que la estructura del equipo se centre a partir ahí. Los laterales son esenciales para generar problemas y ayudar a la defensa contra el ataque de Jordania en su conjunto.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li><strong>Deficiencias en la Transiciones:</strong> El equipo puede enfrentarse dificultades al reanudar el control después de una situación de desventaja. Su dependencia de la presión alta del mediocampio podría hacerlos vulnerables ante un despliegue ofensivo rápido de Jordânia.</li>
+<li><strong>Abundancia de Defensas Relevantes</strong>:  Argelia necesita ser capaz de generar presión en los laterales y en el centro donde las debilidades se hacen explícitas para ganar los balones por todos lados.</li>
+<li>  <strong>Falta de Creatividad Trasera:</strong> Una estructura defensivamente sólida no es suficiente, una organización de juego que no tenga creatividad trasera puede frustrar la defensa o llevarla al desastre.  Las posiciones pueden ser un problema.</li>
+<li><strong>Sobrecarga del Mediocampo:</strong> A pesar de tener defensores importantes en el mediocampio a veces se vuelve difícil cubrir sus defectos porque hay demasiados jugadores.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto</h2>
+<p>En resumen, este partido se perfila como un enfrentamiento estratégico.  Jordânia, con una sólida base técnica y una mentalidad de control del balón, está muy bien posicionada para dominar el juego y forzar errores en Argelia. El equipo de Argelia, por otro lado, si se anticipan correctamente a los movimientos de Jordania necesitarán buscar estrategias creativas en la transición.  La capacidad individual de Argelia – particularmente del delantero Zidine y los zancos en el mediocampio – podría ser el factor decisivo que les permita explotar las debilidades tácticas de Jordania.  Se espera que la jugada principal se titule a favor de Jordanía; con una superioridad técnica por 2 o 0 al final del partido, la clave no es una victoria, sino un triunfo bien calculado que les brinde una gran valiosa ventaja competitiva que marque al principio. Una victoria de Jordania podría ser con el marcador exacto de "una victoria de 1 - 0" en la mejor situación posible.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_MapaDefensivo_Equipo_Completo_horizontal_20260616.png" alt="Mapa Defensivo (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png" alt="Amenaza Esperada xT (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_MapadeCalor_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Calor (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Jordania)</h4>
+                      <img src="../assets/ShotMap_Jordania_horizontal_20260616.png" alt="Mapa de Tiros (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Argelia)</h4>
+                      <img src="../assets/ShotMap_Argelia_horizontal_20260616.png" alt="Mapa de Tiros (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_ReddePases_Equipo_Completo_horizontal_20260616.png" alt="Red de Pases (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_ReddePases_horizontal_20260616.png" alt="Red de Pases (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_ConduccionesProgresivas_Equipo_Completo_horizontal_20260616.png" alt="Conducciones Progresivas (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_ConduccionesProgresivas_horizontal_20260616.png" alt="Conducciones Progresivas (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_MapadeAsistencias_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Asistencias (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_MapadeAsistencias_horizontal_20260616.png" alt="Mapa de Asistencias (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
