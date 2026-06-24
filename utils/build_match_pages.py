@@ -407,6 +407,9 @@ def build_all_pages():
     os.makedirs(ANALISIS_DIR, exist_ok=True)
     
     all_compiled_matches = []
+    exact_count = 0
+    tendency_count = 0
+    miss_count = 0
     
     if not os.path.exists(DATA_DIR):
         print(f"Directorio de datos {DATA_DIR} no existe.")
@@ -448,6 +451,7 @@ def build_all_pages():
                     r_clean = f"{goles_home}-{goles_away}".replace(' ', '')
                     if p_clean == r_clean:
                         pred_status = "exact"
+                        exact_count += 1
                     else:
                         p_parts = p_clean.split('-')
                         r_parts = r_clean.split('-')
@@ -458,8 +462,13 @@ def build_all_pages():
                             r_diff = r_home - r_away
                             if (p_diff > 0 and r_diff > 0) or (p_diff < 0 and r_diff < 0) or (p_diff == 0 and r_diff == 0):
                                 pred_status = "tendency"
+                                tendency_count += 1
+                            else:
+                                miss_count += 1
+                        else:
+                            miss_count += 1
                 except Exception:
-                    pass
+                    miss_count += 1
                 
                 if pred_status == "exact":
                     label = "🎯 PREDICCIÓN EXACTA"
@@ -1055,9 +1064,53 @@ function switchStandingsTab(evt, tabId) {
             replacement_standings = f'\\1\n        {standings_widget_html}\n        \\3'
             index_content = re.sub(pattern_standings, replacement_standings, index_content, flags=re.DOTALL)
             
+        # Remplazar rendimiento de predicciones
+        total_finished = exact_count + tendency_count + miss_count
+        if total_finished > 0:
+            exact_pct = round((exact_count / total_finished) * 100, 2)
+            tendency_pct = round((tendency_count / total_finished) * 100, 2)
+            miss_pct = round(100.0 - exact_pct - tendency_pct, 2)
+            
+            pred_perf_html = f"""<!-- PREDICTIONS_PERFORMANCE_START -->
+    <div style="max-width: 420px; margin: 35px auto 0; background: rgba(13, 27, 42, 0.45); backdrop-filter: blur(10px); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 10px; padding: 12px 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); text-align: center;">
+      <h4 style="color: var(--cyan); font-family: var(--font-head); font-size: 0.75rem; margin-bottom: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+        📊 RENDIMIENTO DE PREDICCIONES IA
+      </h4>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 6px 4px; border-radius: 6px; border: 1px solid rgba(0, 230, 118, 0.12); transition: transform 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-size: 1rem; margin-bottom: 1px;">🎯</div>
+          <div style="font-size: 1.1rem; font-weight: 800; color: #00e676; font-family: var(--font-head);">{exact_pct:.2f}%</div>
+          <div style="font-size: 0.62rem; color: #00e676; font-weight: 700; text-transform: uppercase; margin-top: 1px; letter-spacing: 0.3px;">Exacta</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 6px 4px; border-radius: 6px; border: 1px solid rgba(255, 179, 0, 0.12); transition: transform 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-size: 1rem; margin-bottom: 1px;">🔮</div>
+          <div style="font-size: 1.1rem; font-weight: 800; color: #ffb300; font-family: var(--font-head);">{tendency_pct:.2f}%</div>
+          <div style="font-size: 0.62rem; color: #ffb300; font-weight: 700; text-transform: uppercase; margin-top: 1px; letter-spacing: 0.3px;">Ganador</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 6px 4px; border-radius: 6px; border: 1px solid rgba(255, 75, 75, 0.12); transition: transform 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-size: 1rem; margin-bottom: 1px;">❌</div>
+          <div style="font-size: 1.1rem; font-weight: 800; color: #ff4b4b; font-family: var(--font-head);">{miss_pct:.2f}%</div>
+          <div style="font-size: 0.62rem; color: #ff4b4b; font-weight: 700; text-transform: uppercase; margin-top: 1px; letter-spacing: 0.3px;">Fallida</div>
+        </div>
+      </div>
+      <!-- Barra de progreso acumulada -->
+      <div style="display: flex; height: 5px; border-radius: 2.5px; overflow: hidden; margin-top: 10px; background: rgba(255,255,255,0.05); width: 100%;">
+        <div style="width: {exact_pct:.2f}%; background: #00e676;" title="Predicción Exacta: {exact_pct:.2f}%"></div>
+        <div style="width: {tendency_pct:.2f}%; background: #ffb300;" title="Ganador Acertado: {tendency_pct:.2f}%"></div>
+        <div style="width: {miss_pct:.2f}%; background: #ff4b4b;" title="Predicción Fallida: {miss_pct:.2f}%"></div>
+      </div>
+      <div style="margin-top: 6px; font-size: 0.65rem; color: var(--muted); display: flex; justify-content: space-between;">
+        <span>Muestra: {total_finished} partidos</span>
+        <span>Modelo: Poisson Bivariado IA</span>
+      </div>
+    </div>
+    <!-- PREDICTIONS_PERFORMANCE_END -->"""
+            pattern_perf = r'(<!-- PREDICTIONS_PERFORMANCE_START -->)(.*?)(<!-- PREDICTIONS_PERFORMANCE_END -->)'
+            index_content = re.sub(pattern_perf, pred_perf_html, index_content, flags=re.DOTALL)
+            
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write(index_content)
-        print(f"Actualizado index.html: Live Match Center ({len(today_matches)} partidos), Historial ({len(sorted_matches)} partidos) y Tabla de Posiciones")
+        print(f"Actualizado index.html: Live Match Center ({len(today_matches)} partidos), Historial ({len(sorted_matches)} partidos), Tabla de Posiciones y Rendimiento de Predicciones")
         
     # --- ACTUALIZACIÓN DE LAS TABLAS DE POSICIONES DE LOS GRUPOS (grupo_a.html a grupo_l.html) ---
     if standings:
