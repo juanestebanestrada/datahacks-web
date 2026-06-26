@@ -125,6 +125,7 @@ TEMPLATE_HTML = """<!DOCTYPE html>
       border-radius: 12px;
       min-width: 100px;
       text-align: center;
+      white-space: nowrap;
     }}
     .tactical-visuals {{
       margin-top: 35px;

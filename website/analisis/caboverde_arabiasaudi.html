@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabo Verde vs Arabia Saudí: Previa Táctica del Grupo H // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Cabo Verde vs Arabia Saudí del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_h.html" class="back-link">← Volver al Grupo H</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo H</span>
+    <h2>Cabo Verde vs Arabia Saudí</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-26 · 🕒 19:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Cabo Verde</span>
+        <img src="https://flagcdn.com/w80/cv.png" alt="Cabo Verde" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">2 - 0</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/sa.png" alt="Arabia Saudí" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Arabia Saudí</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇨🇻 Cabo Verde: Análisis Táctico</h2>
+<p>Cabo Verde llega a este encuentro con un aire de confianza y solidez, forjado en sus impresionantes actuaciones contra dos gigantes del fútbol mundial. Su capacidad para competir y puntuar los posiciona como un rival temible y tácticamente inteligente.</p>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Solidez Defensiva y Eficiencia en Transición:</strong> El empate 0-0 contra España no fue casualidad; fue una obra maestra de disciplina táctica. El equipo exhibió un bloque bajo/medio excepcionalmente organizado, frustrando los intentos de penetración de la Furia Roja. Sus mapas de calor en defensa muestran una ocupación inteligente de las zonas centrales y una gran cohesión para cerrar espacios, limitando el xT de España a mínimos históricos. Esta solidez es la base para sus transiciones rápidas y peligrosas.</li>
+<li>  <strong>Capacidad Ofensiva en Momentos Clave y Resiliencia Mental:</strong> Marcar dos goles a Uruguay, uno de los equipos más férreos defensivamente, demuestra que Cabo Verde no solo defiende. A pesar de posiblemente tener un volumen de juego (posesión, pases progresivos) inferior, su xT por ataque es elevado gracias a la ejecución precisa de sus oportunidades. Su red de pases, aunque no dominante, se acelera inteligentemente en campo rival para buscar finalización, y su moral está por las nubes al haber sumado puntos ante potencias.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Volumen de Juego y Control del Mediocampo:</strong> A pesar de su efectividad, Cabo Verde ha demostrado dificultades para dominar el volumen de juego y dictar el ritmo del partido. Contra equipos que logran asentarse y hacer circular el balón con paciencia, la presión sobre su línea defensiva puede ser sostenida, lo que eventualmente podría llevar a desajustes si no logran recuperar la posesión de forma efectiva.</li>
+<li>  <strong>Vulnerabilidad a la Presión Alta Sostenida:</strong> Aunque han manejado bien la presión intermitente, si un equipo logra establecer una presión alta constante y coordinada, especialmente en la salida de balón desde los centrales o el portero, Cabo Verde podría verse forzado a pases largos imprecisos, perdiendo la posesión en zonas comprometidas y exponiendo su propia estructura defensiva a contraataques rápidos.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇸🇦 Arabia Saudí: Análisis Táctico</h2>
+<p>Arabia Saudí llega al partido con la necesidad imperiosa de sumar puntos, tras un empate valioso contra Uruguay y una dura derrota ante España. Su análisis revela un equipo con destellos de calidad individual, pero con importantes problemas estructurales.</p>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Agilidad Ofensiva y Capacidad para Explotar Espacios:</strong> El gol contra Uruguay y ciertos momentos contra España demostraron que Arabia Saudí posee jugadores rápidos y técnicamente dotados en el tercio final. Son capaces de generar situaciones de 1 contra 1 o 2 contra 1 en los costados y explotar la espalda de la defensa rival si se les concede espacio, especialmente mediante pases filtrados que buscan el xT en profundidad.</li>
+<li>  <strong>Necesidad y Determinación a Proponer:</strong> La situación en el grupo (un punto, 1 gol a favor, 5 en contra) obliga a Arabia Saudí a buscar la victoria. Esta urgencia puede impulsar al equipo a salir con una mentalidad más agresiva y propositiva desde el inicio, intentando dominar la posesión y establecer una red de pases más fluida para cercar el área de Cabo Verde, capitalizando la concentración y el hambre de sus jugadores.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Fragilidad Defensiva y Desequilibrio Táctico:</strong> La goleada 0-4 ante España expuso con crudeza las deficiencias defensivas. El equipo mostró una falta de coordinación en la presión, dejando grandes espacios entre líneas que fueron explotados con facilidad. Sus mapas de calor defensivos revelaron huecos peligrosos en los pasillos interiores y una dificultad para contener las transiciones rápidas rivales, resultando en un xT concedido alarmantemente alto.</li>
+<li>  <strong>Inconsistencia en el Ritmo de Juego y la Intensidad:</strong> Arabia Saudí ha mostrado episodios de bajón físico o de intensidad en sus partidos, especialmente en la segunda mitad. Tras un buen inicio, les cuesta mantener el nivel de presión y concentración, lo que permite al rival retomar el control y generar oportunidades. Esto afecta su volumen de juego y la efectividad de sus redes de pases en fases cruciales del partido.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<p>Este partido se perfila como un choque de estilos y necesidades. Cabo Verde, con su encomiable solidez defensiva y eficiencia en la transición, buscará capitalizar la urgencia y las probables desatenciones defensivas de Arabia Saudí. La capacidad de los "Tiburones Azules" para absorber la presión y lanzar contraataques rápidos será su arma principal, explotando los espacios que los saudíes, forzados a proponer, inevitablemente dejarán. El mediocampo será un teatro clave: la capacidad atlética de Cabo Verde para recuperar balones y romper líneas vs. la búsqueda de Arabia Saudí por la posesión y la creación de juego a través de su agilidad técnica. La eficiencia en el xT por ataque de Cabo Verde, combinada con la alta xT concedida por Arabia Saudí, inclina la balanza hacia los africanos.</p>
+<p>La situación del grupo acentúa estas dinámicas. Cabo Verde, con dos puntos, tiene una posición más cómoda y puede permitirse un enfoque pragmático. Arabia Saudí, con solo un punto y una diferencia de goles negativa, está obligada a buscar la victoria, lo que podría llevarlos a tomar riesgos excesivos y exponer aún más sus vulnerabilidades defensivas. Anticipo que Cabo Verde se sentirá cómodo permitiendo a Arabia Saudí tener la posesión en zonas menos peligrosas, para luego explotar sus transiciones y la desorganización saudí. Es probable que los africanos consigan sus goles a través de jugadas rápidas por las bandas o de balones en profundidad que encuentren a los delanteros en posiciones ventajosas, aprovechando la fragilidad estructural de la defensa saudí.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Cabo Verde)</h4>
+                      <img src="../assets/Analisis_Cabo Verde_MapaDefensivo_horizontal_20260615.png" alt="Mapa Defensivo (Cabo Verde)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Arabia Saudita)</h4>
+                      <img src="../assets/Analisis_Arabia Saudí_MapaDefensivo_horizontal_20260615.png" alt="Mapa Defensivo (Arabia Saudita)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Cabo Verde)</h4>
+                      <img src="../assets/Analisis_Cabo Verde_ExpectedThreatxT_horizontal_20260615.png" alt="Amenaza Esperada xT (Cabo Verde)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Arabia Saudita)</h4>
+                      <img src="../assets/Analisis_Arabia Saudí_ExpectedThreatxT_horizontal_20260615.png" alt="Amenaza Esperada xT (Arabia Saudita)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Cabo Verde)</h4>
+                      <img src="../assets/Analisis_Cabo Verde_MapadeCalor_horizontal_20260615.png" alt="Mapa de Calor (Cabo Verde)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Arabia Saudita)</h4>
+                      <img src="../assets/Analisis_Arabia Saudí_MapadeCalor_horizontal_20260615.png" alt="Mapa de Calor (Arabia Saudita)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Cabo Verde)</h4>
+                      <img src="../assets/Analisis_Cabo Verde_ReddePases_horizontal_20260615.png" alt="Red de Pases (Cabo Verde)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Arabia Saudita)</h4>
+                      <img src="../assets/Analisis_Arabia Saudí_ReddePases_horizontal_20260615.png" alt="Red de Pases (Arabia Saudita)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+        <a href="../politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="../terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nueva Zelanda vs Bélgica: Previa Táctica del Grupo G // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Nueva Zelanda vs Bélgica del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_g.html" class="back-link">← Volver al Grupo G</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo G</span>
+    <h2>Nueva Zelanda vs Bélgica</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-26 · 🕒 22:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Nueva Zelanda</span>
+        <img src="https://flagcdn.com/w80/nz.png" alt="Nueva Zelanda" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">1 - 3</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/be.png" alt="Bélgica" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Bélgica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇳🇿 Nueva Zelanda: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Capacidad de Respuesta Ofensiva en Momentos Clave:</strong> A pesar de sus desafíos defensivos, Nueva Zelanda ha demostrado una sorprendente capacidad para anotar, sumando 3 goles en dos partidos. El empate 2-2 ante Irán sugiere que pueden capitalizar errores o momentos de desorden rival, mostrando resiliencia y una habilidad para golpear en transiciones rápidas o jugadas a balón parado, lo cual podría frustrar a una Bélgica que busca desesperadamente el gol.</li>
+<li>  <strong>Juego Directo y Físico:</strong> Nueva Zelanda se caracteriza por una propuesta de juego más vertical y con énfasis en la fortaleza física. Ante un equipo como Bélgica, que busca controlar el esférico y el espacio, su capacidad para saltar líneas con pases largos hacia delanteros corpulentos o para ganar duelos aéreos en ambas áreas puede generar situaciones de peligro inesperadas, especialmente en jugadas de estrategia o contraataques donde puedan explotar la espalda de los defensores belgas.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Vulnerabilidad Defensiva Estructural y por los Costados:</strong> Con 5 goles encajados en dos partidos (3 vs Egipto, 2 vs Irán), la retaguardia neozelandesa exhibe debilidades significativas. Esto no solo se debe a errores individuales, sino a una falta de coordinación en el bloque defensivo y una exposición excesiva de los laterales, lo que se traduce en una alta tasa de "Expected Goals Conceded" (xGC) que un ataque de la calidad belga, si bien dormido, podría explotar con movimientos entre líneas y desbordes.</li>
+<li>  <strong>Dificultad para Establecer Volumen de Juego y Presión Colectiva:</strong> Los 'All Whites' han mostrado serios problemas para retener la posesión y construir ataques sostenidos. Su "Passing Network" (Red de Pases) tiende a ser dispersa y con pocas conexiones en el mediocampo, lo que les impide dictar el ritmo del partido o ejercer una presión alta efectiva. Esto condena al equipo a largos períodos de defensa pasiva, lo que incrementa el riesgo de fatiga y la probabilidad de errores cerca de su propia área.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇧🇪 Bélgica: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Solidez Defensiva y Control del Espacio:</strong> Bélgica ha demostrado una organización defensiva admirable, concediendo solo 1 gol en dos partidos. Su línea de fondo, bien protegida por el mediocampo, sabe cerrar espacios y negar oportunidades claras al rival, limitando drásticamente el "Expected Goals Against" (xGA) de sus oponentes. Esta solidez será fundamental para neutralizar los intentos directos de Nueva Zelanda y proteger cualquier ventaja que consigan.</li>
+<li>  <strong>Dominio del Volumen de Juego y Construcción Paciente:</strong> Los 'Diablos Rojos' son maestros en el control de la posesión y el ritmo del partido. Su "Mapa de Calor" y "Red de Pases" evidencian una alta densidad en el mediocampo y la capacidad para circular el balón con paciencia, buscando el momento oportuno para desarticular la defensa rival. Contra un equipo que cede la iniciativa como Nueva Zelanda, este dominio les permitirá desgastar al oponente y buscar brechas de manera constante.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Poca Incisividad Ofensiva y Eficiencia en Último Tercio:</strong> El principal talón de Aquiles de Bélgica en este Mundial ha sido su ataque, con un solitario gol en dos partidos. La ausencia de un "Threat Map" (Mapa de Amenazas) elevado en el área rival y un bajo "Expected Goals" (xG) generado, incluso en situaciones de dominio, sugiere problemas para convertir su posesión en ocasiones claras, o bien, una alarmante falta de puntería frente al arco. El 0-0 ante Irán, que concedió 2 goles a Nueva Zelanda, es un claro síntoma.</li>
+<li>  <strong>Lentitud en la Circulación y Falta de Ruptura:</strong> A pesar de su calidad técnica, la circulación de balón belga puede volverse predecible y horizontal, especialmente frente a bloques defensivos bajos y organizados. La falta de desmarques de ruptura, la poca agresividad para superar líneas de presión con pases verticales arriesgados y la escasez de "Transfer of Threat" (xT) en zonas de finalización, permite a los rivales ajustar sus posiciones defensivas, negando espacios para la penetración y el disparo a puerta.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<p>Este enfrentamiento será una prueba de paciencia y contundencia para Bélgica contra la resistencia y el oportunismo de Nueva Zelanda. Los 'Diablos Rojos' ejercerán un dominio abrumador del balón y el territorio, con su "volumen de juego" concentrado en la mitad de campo rival, intentando desarticular la vulnerable defensa neozelandesa a través de la combinación de pases y movimientos entre líneas. La clave para Bélgica residirá en superar su actual "crisis de eficacia ofensiva" y convertir su posesión en un alto "xG" para finalmente romper la telaraña defensiva, que, por historial, se muestra permeable.</p>
+<p>Nueva Zelanda, por su parte, consciente de su inferioridad técnica, adoptará una postura defensiva ultraconservadora, buscando cerrar espacios y frustrar el ataque belga. Sus esperanzas radican en capitalizar cualquier error en la salida de balón de Bélgica o en aprovechar alguna jugada a balón parado para lanzar "transiciones rápidas" que puedan explotar la espalda de los defensores belgas. Sin embargo, su fragilidad defensiva general y la dificultad para mantener una presión sostenida sugieren que, a largo plazo, sucumbirán ante la persistencia belga, aunque no sin intentar dar batalla y buscar un gol de honor que podría cambiar el "momentum" del encuentro. Bélgica, con 2 puntos, necesita imperiosamente la victoria para no complicar su clasificación, mientras que Nueva Zelanda juega por el orgullo y la posibilidad de despedirse con una sorpresa. La necesidad y la calidad de Bélgica deberían imponerse, pero no sin un esfuerzo considerable para romper el cerrojo.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_MapaDefensivo_Equipo_Completo_horizontal_20260615.png" alt="Mapa Defensivo (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_MapaDefensivo_horizontal_20260615.png" alt="Mapa Defensivo (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_ExpectedThreatxT_Equipo_Completo_horizontal_20260615.png" alt="Amenaza Esperada xT (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_ExpectedThreatxT_horizontal_20260615.png" alt="Amenaza Esperada xT (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_MapadeCalor_Equipo_Completo_horizontal_20260615.png" alt="Mapa de Calor (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_MapadeCalor_horizontal_20260615.png" alt="Mapa de Calor (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Nueva Zelanda)</h4>
+                      <img src="../assets/Analisis_Nueva Zelanda_ReddePases_Equipo_Completo_horizontal_20260615.png" alt="Red de Pases (Nueva Zelanda)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_ReddePases_horizontal_20260615.png" alt="Red de Pases (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+        <a href="../politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="../terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
