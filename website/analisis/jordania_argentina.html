@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jordania vs Argentina: Previa Táctica del Grupo J // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Jordania vs Argentina del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_j.html" class="back-link">← Volver al Grupo J</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo J</span>
+    <h2>Jordania vs Argentina</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-27 · 🕒 22:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Jordania</span>
+        <img src="https://flagcdn.com/w80/jo.png" alt="Jordania" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">0 - 4</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/ar.png" alt="Argentina" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Argentina</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇯🇴 Jordania: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Libertad Táctica sin Presión Clasificatoria:</strong> Habiendo sumado 0 puntos y con la eliminación ya consumada, Jordania puede encarar este partido sin la presión asfixiante del resultado. Esto podría traducirse en una mayor audacia táctica, permitiendo probar esquemas o jugadores, o simplemente jugar con más soltura, lo que a veces destapa un rendimiento inesperado y menos predecible para el rival.</li>
+<li>  <strong>Capacidad de Respuesta Ofensiva Ocasional:</strong> A pesar de las derrotas, Jordania logró marcar un gol tanto contra Austria como contra Argelia. Esto indica una capacidad para explotar momentos de desatención defensiva rival o generar transiciones rápidas que, aunque escasas, han sido efectivas. Su eficiencia en la finalización de estas contadas oportunidades podría ser un factor si Argentina baja la guardia.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Fragilidad Defensiva Estructural y xG Concedido Alto:</strong> La concesión de 5 goles en dos partidos (3 vs Austria, 2 vs Argelia) subraya serias deficiencias en la organización defensiva, el posicionamiento zonal y la capacidad para contener ataques elaborados. El volumen de Expected Goals (xG) concedido en ambos encuentros fue probablemente elevado, sugiriendo que los rivales generaron ocasiones de alta calidad con demasiada facilidad.</li>
+<li>  <strong>Bajo Volumen de Juego Ofensivo y Dificultad para Retener Posesión:</strong> Las redes de pases de Jordania en los partidos previos revelaron una dificultad para establecer secuencias largas de posesión y un bajo volumen de progresiones ofensivas efectivas. Esto se traduce en un Expected Threat (xT) reducido, donde la generación de peligro depende más de acciones aisladas o balones largos que de una construcción coherente, limitando severamente su capacidad para amenazar a una defensa organizada.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇦🇷 Argentina: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Dominio Defensivo Absoluto y Baja Concesión de xG:</strong> Argentina llega con un récord impecable de 0 goles en contra en dos partidos, lo que demuestra una solidez defensiva excepcional. Su presión tras pérdida (PPDA bajo) y la eficacia en la recuperación del balón en zonas altas (mapas de calor en campo rival) han desmantelado las intentonas rivales, resultando en un xG contra casi insignificante y una sensación de impenetrabilidad.</li>
+<li>  <strong>Versatilidad Ofensiva y Alta Generación de xT:</strong> Con 5 goles a favor y provenientes de diversas situaciones, Argentina ha exhibido una gran riqueza táctica en ataque. Sus redes de pases muestran una fluidez para progresar por el centro y las bandas, creando un alto volumen de Expected Threat (xT) desde múltiples jugadores y posiciones, lo que dificulta la lectura defensiva y permite explotar cualquier debilidad del rival.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Riesgo de Relajación por Clasificación Anticipada:</strong> Habiendo asegurado ya el pase a la siguiente ronda como primero de grupo, existe la posibilidad de una ligera disminución en la intensidad o concentración. Esta complacencia, aunque mínima, podría generar pequeñas grietas en la presión o la sincronización defensiva, que un rival motivado podría intentar explotar.</li>
+<li>  <strong>Potenciales Desajustes por Rotaciones de Plantilla:</strong> La situación del grupo permite a Argentina realizar rotaciones significativas para gestionar cargas de trabajo y dar minutos a suplentes. Si bien la profundidad de plantilla es notable, la introducción de varias caras nuevas podría afectar temporalmente la química en las redes de pases, la sincronización en la presión o la cohesión defensiva en los primeros minutos de juego.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<p>El encuentro se perfila como un claro contraste de realidades. Argentina, con su dominio integral y solidez defensiva demostrada, dictará el ritmo y la posesión del balón desde el pitido inicial. La capacidad de Jordania para retener la posesión y construir ataques coherentes ha sido su talón de Aquiles en los partidos previos, una debilidad que la presión alta y el control del mediocampo argentino, caracterizado por su alto volumen de recuperaciones y la precisión en las redes de pases, expondrá sin piedad. El combate por el mediocampo se decantará abrumadoramente a favor de la Albiceleste, que utilizará esta ventaja para asfixiar cualquier intento jordano de salir con balón dominado.</p>
+<p>La balanza ofensiva es igualmente desequilibrada. Argentina, con su alta generación de xT y la versatilidad de sus ataques, pondrá a prueba de manera constante la frágil defensa jordana, que ha concedido un alto xG en sus dos encuentros anteriores. La capacidad de Jordania para marcar un gol en cada partido, aunque meritoria, se basó en transiciones rápidas y errores ajenos; contra una defensa argentina que ha mostrado una solidez impenetrable (0 goles en contra), las oportunidades serán mínimas y de bajo xT. La principal incógnita para Argentina radica en mantener la máxima intensidad tras la clasificación, mientras que para Jordania será un ejercicio de resistencia y de orgullo, buscando minimizar los daños y, quizás, aprovechar algún destello aislado.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_MapaDefensivo_Equipo_Completo_horizontal_20260616.png" alt="Mapa Defensivo (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png" alt="Amenaza Esperada xT (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_MapadeCalor_Equipo_Completo_horizontal_20260616.png" alt="Mapa de Calor (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Jordania)</h4>
+                      <img src="../assets/Analisis_Jordania_ReddePases_Equipo_Completo_horizontal_20260616.png" alt="Red de Pases (Jordania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Argentina)</h4>
+                      <img src="../assets/Analisis_Argentina_ReddePases_horizontal_20260616.png" alt="Red de Pases (Argentina)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+        <a href="../politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="../terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

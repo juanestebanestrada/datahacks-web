@@ -6,45 +6,44 @@ fecha: "2026-06-26"
 hora: "22:00"
 home_team: "Egipto"
 away_team: "Irán"
-goles_home: 0
-goles_away: 0
+goles_home: 1
+goles_away: 1
 pronostico: "2 - 1"
-finalizado: "false"
-imagenes: "Analisis_Egipto_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Egipto), Analisis_Irán_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Irán), Analisis_Egipto_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Egipto), Analisis_Irán_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Irán), Analisis_Egipto_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Egipto), Analisis_Irán_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Irán), Analisis_Egipto_ReddePases_horizontal_20260615.png:Red de Pases (Egipto), Analisis_Irán_ReddePases_horizontal_20260615.png:Red de Pases (Irán)"
+finalizado: "true"
+imagenes: "Analisis_Egipto_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Egipto), Analisis_Irán_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Irán), Analisis_Egipto_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Egipto), Analisis_Irán_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Irán), Analisis_Egipto_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Egipto), Analisis_Irán_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Irán), Analisis_Egipto_ReddePases_horizontal_20260615.png:Red de Pases (Egipto), Analisis_Irán_ReddePases_horizontal_20260615.png:Red de Pases (Irán), Momentum_20260626_egipto_iran.png:Match Momentum"
 slug: "egipto_iran"
 poisson: "48-28-24"
 ---
 
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Egipto 1 - 1 Irán)
+
+Egipto e Irán firmaron un vibrante y disputado empate 1-1 en la definición del Grupo G, lo que selló el histórico pase de la selección egipcia a los octavos de final. El cuadro de los Faraones golpeó primero: al minuto 23, Mohamed Salah fabricó una fantástica jugada personal y asistió a Trezeguet, quien definió cruzado para el 1-0. Irán no bajó los brazos y, urgido de la victoria para clasificar, adelantó líneas en el segundo lapso. Sus esfuerzos tuvieron recompensa al minuto 65 por medio de Mehdi Taremi, quien conectó un centro llovido para decretar la paridad. Los minutos finales fueron de drama puro, con Irán asediando la portería egipcia y los Faraones resistiendo con uñas y dientes para asegurar el punto de la clasificación.
+
+### 🔮 Impacto en el Grupo G y Proyecciones para la Siguiente Fase
+
+*   **Ajuste del Algoritmo:** El modelo ajusta ligeramente a la baja las probabilidades de portería a cero de Egipto ante las dificultades mostradas en juego aéreo. El rating defensivo de Irán se consolida tras un torneo sumamente ordenado, aunque el ataque paga caro su baja eficacia.
+*   **Proyección de la Siguiente Fase (Octavos de Final / Clasificación):** Con este empate, Egipto clasifica de manera histórica como líder del Grupo G con 5 puntos (por mejor diferencia de goles que Bélgica). Irán finaliza con 3 puntos en tercer lugar y queda fuera de octavos.
+
+### 📈 Análisis del Match Momentum
+
+El Match Momentum muestra un encuentro sumamente dividido por fases de dominio táctico. Egipto tuvo la hegemonía e intensidad en la primera mitad, registrando su pico de 70.00 en el minuto 23. En el segundo tiempo, Irán asumió el protagonismo del momentum ofensivo (llegando a dominar un 48.3% del partido en total) y alcanzó su pico máximo de 75.00 en el minuto 65 con el gol del empate de Taremi. La paridad final en el marcador hace justicia a las fuerzas equilibradas en campo.
+
+---
+
 ## 🇪🇬 Egipto: Análisis Táctico
 
-Egipto llega a este crucial encuentro con un impulso significativo, tras un empate sólido ante Bélgica y una convincente victoria contra Nueva Zelanda. Su performance sugiere una selección tácticamente flexible y eficiente.
-
-### Ventajas
-*   **Transiciones Ofensivas Letales y Alta Conversión de xG:** Con 4 goles a favor en dos partidos, Egipto ha demostrado una capacidad excepcional para capitalizar sus oportunidades. Su 3-1 contra Nueva Zelanda y el gol ante Bélgica evidencian una red de pases que, aunque no siempre domina la posesión (especialmente ante equipos top), es capaz de generar xT (Expected Threat) significativos, principalmente a través de ataques rápidos por los flancos y una excelente finalización. La velocidad de sus extremos y mediapuntas es clave para desorganizar defensas rivales en pocos toques.
-*   **Solidez Defensiva y Capacidad de Adaptación Táctica:** Encajar solo 2 goles ante rivales de distinto perfil (el poder ofensivo de Bélgica y el pragmatismo de Nueva Zelanda) habla de una estructura defensiva bien aceitada. Su volumen de juego defensivo es notable, con una alta tasa de recuperaciones en el tercio medio y una presión efectiva (PPDA) que varía en intensidad según el rival. Esto les permite replegarse en un bloque bajo compacto cuando es necesario, como contra Bélgica, o presionar más arriba para recuperar rápido y lanzar contragolpes.
-
-### Desventajas
-*   **Vulnerabilidad en la Salida de Balón bajo Presión Alta:** Aunque capaces de adaptarse, la red de pases de Egipto en la zona de creación puede mostrar signos de fractura cuando se enfrentan a una presión alta e intensa. En el partido contra Bélgica, hubo momentos donde la circulación de balón desde la defensa al mediocampo se vio comprometida, resultando en pérdidas peligrosas y un aumento del xT para el rival en zonas sensibles, que no siempre se materializó en gol.
-*   **Dependencia del Rendimiento Individual en el Último Tercio:** Si bien la calidad individual es una ventaja, en ocasiones, la creación de juego ofensivo de Egipto parece recaer excesivamente en la chispa de sus figuras clave, especialmente en situaciones de ataque estático. Cuando estas figuras están bien anuladas o tienen un día menos inspirado, el volumen de juego ofensivo colectivo y la generación de xT desde jugadas elaboradas disminuyen, forzando a tiros menos probables desde fuera del área o centros sin claro destinatario.
+Egipto demostró una gran fluidez ofensiva en la primera mitad, aprovechando la velocidad en las bandas y la lucidez de Salah para romper la sólida estructura iraní. La principal deficiencia se observó en el segundo tiempo, donde el equipo se replegó prematuramente y cedió la iniciativa a Irán, exponiéndose a múltiples centros laterales que finalmente costaron el gol del empate y minutos de sufrimiento extremo sobre el cierre.
 
 ---
 
 ## 🇮🇷 Irán: Análisis Táctico
 
-Irán llega con dos empates, mostrando una resiliencia defensiva encomiable ante Bélgica, pero también una cierta inconsistencia ofensiva. Necesitan una victoria para mantener vivas sus esperanzas de clasificación.
-
-### Ventajas
-*   **Organización Defensiva y Disciplina Táctica:** El 0-0 ante Bélgica es la prueba más fehaciente de la capacidad defensiva iraní. Operan con un bloque bajo compacto y extremadamente disciplinado, cerrando inteligentemente los espacios entre líneas y negando a los rivales penetraciones centrales. Su mapa de calor defensivo muestra una alta concentración de actividad en su propio tercio defensivo, minimizando el xT del oponente desde zonas interiores y forzándolos a disparos de baja probabilidad desde la distancia.
-*   **Amenaza a Balón Parado y Transiciones Rápidas:** A pesar de un volumen ofensivo general bajo, Irán posee jugadores con la capacidad de ser decisivos en jugadas a balón parado y transiciones rápidas. El 2-2 ante Nueva Zelanda probablemente incluyó momentos de alta eficacia en estas fases del juego. Su capacidad para lanzar a jugadores como Taremi o Azmoun con balones largos directos o en contragolpes puede generar xT inesperados y ser una válvula de escape crucial para su enfoque defensivo.
-
-### Desventajas
-*   **Escaso Volumen Ofensivo y Poca Generación en Juego Elaborado:** Con solo 2 goles en 2 partidos (ambos contra Nueva Zelanda y ninguno contra Bélgica), la principal debilidad de Irán es su dificultad para generar un volumen ofensivo consistente y crear oportunidades claras a través del juego elaborado. Su red de pases ofensiva a menudo carece de fluidez y progresión, lo que se traduce en un bajo xG acumulado, obligándolos a depender de destellos individuales, errores del rival o las ya mencionadas jugadas a balón parado.
-*   **Fragilidad Defensiva ante Ataques Prolongados o Desbordes por las Bandas:** Aunque son muy compactos centralmente, el hecho de haber encajado 2 goles ante Nueva Zelanda sugiere que su defensa puede ser superada si el rival logra sostener ataques por los costados o forzar duelos individuales contra sus laterales. La fatiga acumulada en la fase defensiva intensiva o una mala lectura de los movimientos sin balón pueden abrir espacios que, si son explotados con inteligencia, pueden generar un alto xT para el rival.
+Irán exhibió nuevamente su gran orden defensivo y espíritu competitivo. Tras encajar el gol, el conjunto persa no desesperó y se mantuvo en bloque firme hasta adelantar líneas en el segundo tiempo. Destacó el juego aéreo comandado por Taremi y el empuje físico en balones disputados, forzando a Egipto a defender cerca de su propia área. La gran falencia fue la falta de variantes en ataque estático más allá de los centros al área.
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
+## ⚖️ Comparativa y Veredicto
 
-Este encuentro en el Grupo G se presenta como un choque de estilos y necesidades urgentes. Egipto, con 4 puntos, tiene la ventaja y puede permitirse una postura más pragmática, mientras que Irán, con 2 puntos, está obligado a buscar la victoria para tener opciones de clasificación. Esta diferencia en la urgencia será el motor táctico del partido. Egipto intentará capitalizar su solidez defensiva y la velocidad de sus transiciones para castigar cualquier espacio que Irán, en su desesperación, pueda dejar en su retaguardia. La batalla en el mediocampo será crucial; si Egipto logra controlar las segundas jugadas y romper las líneas de presión iraníes con pases verticales, sus atacantes tendrán oportunidades de oro.
-
-Irán, por su parte, buscará replicar la disciplina defensiva que les valió el empate ante Bélgica, pero esta vez necesitará una mayor ambición ofensiva. Su estrategia se centrará probablemente en mantener su bloque compacto, frustrando el juego egipcio, y luego explotar sus fortalezas en las jugadas a balón parado y los contragolpes fulminantes. La clave para Irán será cómo equilibran esta necesidad de atacar con su tendencia natural a defender en bloque. Si se abren demasiado pronto, Egipto, con su eficacia en las transiciones (alto xG_conversion), podría ser letal. Si se mantienen demasiado conservadores, el tiempo se les agotará. Preveo un partido táctico y tenso, donde la paciencia egipcia y la obligatoriedad iraní dictarán el ritmo.
+Un empate que dejó ganadores a los egipcios y eliminados a los iraníes en un choque sumamente disputado. Ambos entrenadores leyeron bien los momentos del encuentro: Egipto sacando provecho de su calidad técnica en la primera mitad, e Irán imponiendo su fortaleza aérea en la segunda. El marcador de 1-1 refleja fielmente la paridad táctica de un duelo que se definió por detalles en las áreas.

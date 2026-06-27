@@ -6,41 +6,44 @@ fecha: "2026-06-26"
 hora: "22:00"
 home_team: "Nueva Zelanda"
 away_team: "Bélgica"
-goles_home: 0
-goles_away: 0
+goles_home: 1
+goles_away: 5
 pronostico: "1 - 3"
-finalizado: "false"
-imagenes: "Analisis_Nueva Zelanda_MapaDefensivo_Equipo_Completo_horizontal_20260615.png:Mapa Defensivo (Nueva Zelanda), Analisis_Bélgica_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Bélgica), Analisis_Nueva Zelanda_ExpectedThreatxT_Equipo_Completo_horizontal_20260615.png:Amenaza Esperada xT (Nueva Zelanda), Analisis_Bélgica_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Bélgica), Analisis_Nueva Zelanda_MapadeCalor_Equipo_Completo_horizontal_20260615.png:Mapa de Calor (Nueva Zelanda), Analisis_Bélgica_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Bélgica), Analisis_Nueva Zelanda_ReddePases_Equipo_Completo_horizontal_20260615.png:Red de Pases (Nueva Zelanda), Analisis_Bélgica_ReddePases_horizontal_20260615.png:Red de Pases (Bélgica)"
+finalizado: "true"
+imagenes: "Analisis_Nueva Zelanda_MapaDefensivo_Equipo_Completo_horizontal_20260615.png:Mapa Defensivo (Nueva Zelanda), Analisis_Bélgica_MapaDefensivo_horizontal_20260615.png:Mapa Defensivo (Bélgica), Analisis_Nueva Zelanda_ExpectedThreatxT_Equipo_Completo_horizontal_20260615.png:Amenaza Esperada xT (Nueva Zelanda), Analisis_Bélgica_ExpectedThreatxT_horizontal_20260615.png:Amenaza Esperada xT (Bélgica), Analisis_Nueva Zelanda_MapadeCalor_Equipo_Completo_horizontal_20260615.png:Mapa de Calor (Nueva Zelanda), Analisis_Bélgica_MapadeCalor_horizontal_20260615.png:Mapa de Calor (Bélgica), Analisis_Nueva Zelanda_ReddePases_Equipo_Completo_horizontal_20260615.png:Red de Pases (Nueva Zelanda), Analisis_Bélgica_ReddePases_horizontal_20260615.png:Red de Pases (Bélgica), Momentum_20260626_nuevazelanda_belgica.png:Match Momentum"
 slug: "nuevazelanda_belgica"
 poisson: "8-22-70"
 ---
 
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Nueva Zelanda 1 - 5 Bélgica)
+
+Bélgica despertó de su letargo goleador con una aplastante victoria por 1-5 sobre Nueva Zelanda, asegurando su billete a la siguiente ronda con autoridad. Los Diablos Rojos disiparon las dudas ofensivas y asediaron sin piedad la zaga neozelandesa desde el inicio. Romelu Lukaku abrió el grifo al 15' de media vuelta, seguido por una gran definición de Kevin De Bruyne al 31' tras un desajuste defensivo. En la segunda parte, Leandro Trossard (48') puso el 0-3. Nueva Zelanda recortó distancias al 59' por medio de Chris Wood en jugada a balón parado, pero Bélgica no quitó el pie del acelerador y sumó dos tantos más por medio de Lukaku al 70' y Jérémy Doku al 82', sellando el definitivo 1-5.
+
+### 🔮 Impacto en el Grupo G y Proyecciones para la Siguiente Fase
+
+*   **Ajuste del Algoritmo:** El algoritmo predictivo eleva fuertemente el rating ofensivo y de efectividad en el último tercio de Bélgica, recuperando su estatus de potencia. Para Nueva Zelanda, sus métricas de solidez defensiva caen severamente tras encajar 10 goles en el certamen.
+*   **Proyección de la Siguiente Fase (Octavos de Final / Clasificación):** Bélgica clasifica en el segundo lugar del Grupo G con 5 puntos, avanzando firmemente a los octavos de final. Nueva Zelanda se despide de la Copa del Mundo en la última plaza del sector con un solo punto.
+
+### 📈 Análisis del Match Momentum
+
+El gráfico del Match Momentum revela el dominio abrumador ejercido por Bélgica (71.2% del partido). Los Diablos Rojos alcanzaron picos de intensidad ofensiva por encima de 90.00 en los minutos 15', 31', 48', 70' y 82'. Nueva Zelanda tuvo una ligera reacción ofensiva tras el descanso, logrando su pico de 68.00 al minuto 59 con el gol de Wood, pero el volumen de ataque belga fue insostenible para su línea defensiva.
+
+---
+
 ## 🇳🇿 Nueva Zelanda: Análisis Táctico
 
-### Ventajas
-*   **Capacidad de Respuesta Ofensiva en Momentos Clave:** A pesar de sus desafíos defensivos, Nueva Zelanda ha demostrado una sorprendente capacidad para anotar, sumando 3 goles en dos partidos. El empate 2-2 ante Irán sugiere que pueden capitalizar errores o momentos de desorden rival, mostrando resiliencia y una habilidad para golpear en transiciones rápidas o jugadas a balón parado, lo cual podría frustrar a una Bélgica que busca desesperadamente el gol.
-*   **Juego Directo y Físico:** Nueva Zelanda se caracteriza por una propuesta de juego más vertical y con énfasis en la fortaleza física. Ante un equipo como Bélgica, que busca controlar el esférico y el espacio, su capacidad para saltar líneas con pases largos hacia delanteros corpulentos o para ganar duelos aéreos en ambas áreas puede generar situaciones de peligro inesperadas, especialmente en jugadas de estrategia o contraataques donde puedan explotar la espalda de los defensores belgas.
-
-### Desventajas
-*   **Vulnerabilidad Defensiva Estructural y por los Costados:** Con 5 goles encajados en dos partidos (3 vs Egipto, 2 vs Irán), la retaguardia neozelandesa exhibe debilidades significativas. Esto no solo se debe a errores individuales, sino a una falta de coordinación en el bloque defensivo y una exposición excesiva de los laterales, lo que se traduce en una alta tasa de "Expected Goals Conceded" (xGC) que un ataque de la calidad belga, si bien dormido, podría explotar con movimientos entre líneas y desbordes.
-*   **Dificultad para Establecer Volumen de Juego y Presión Colectiva:** Los 'All Whites' han mostrado serios problemas para retener la posesión y construir ataques sostenidos. Su "Passing Network" (Red de Pases) tiende a ser dispersa y con pocas conexiones en el mediocampo, lo que les impide dictar el ritmo del partido o ejercer una presión alta efectiva. Esto condena al equipo a largos períodos de defensa pasiva, lo que incrementa el riesgo de fatiga y la probabilidad de errores cerca de su propia área.
+Nueva Zelanda pagó caro su falta de velocidad en el bloque defensivo. Aunque intentaron replegarse en una estructura baja y compacta, el talento técnico belga movió el balón con rapidez, superando con facilidad las marcas de los All Whites. Su principal acierto fue la clásica efectividad en balones parados con Wood, pero la incapacidad para retener la posesión y salir en transición los condenó a un asedio insostenible.
 
 ---
 
 ## 🇧🇪 Bélgica: Análisis Táctico
 
-### Ventajas
-*   **Solidez Defensiva y Control del Espacio:** Bélgica ha demostrado una organización defensiva admirable, concediendo solo 1 gol en dos partidos. Su línea de fondo, bien protegida por el mediocampo, sabe cerrar espacios y negar oportunidades claras al rival, limitando drásticamente el "Expected Goals Against" (xGA) de sus oponentes. Esta solidez será fundamental para neutralizar los intentos directos de Nueva Zelanda y proteger cualquier ventaja que consigan.
-*   **Dominio del Volumen de Juego y Construcción Paciente:** Los 'Diablos Rojos' son maestros en el control de la posesión y el ritmo del partido. Su "Mapa de Calor" y "Red de Pases" evidencian una alta densidad en el mediocampo y la capacidad para circular el balón con paciencia, buscando el momento oportuno para desarticular la defensa rival. Contra un equipo que cede la iniciativa como Nueva Zelanda, este dominio les permitirá desgastar al oponente y buscar brechas de manera constante.
-
-### Desventajas
-*   **Poca Incisividad Ofensiva y Eficiencia en Último Tercio:** El principal talón de Aquiles de Bélgica en este Mundial ha sido su ataque, con un solitario gol en dos partidos. La ausencia de un "Threat Map" (Mapa de Amenazas) elevado en el área rival y un bajo "Expected Goals" (xG) generado, incluso en situaciones de dominio, sugiere problemas para convertir su posesión en ocasiones claras, o bien, una alarmante falta de puntería frente al arco. El 0-0 ante Irán, que concedió 2 goles a Nueva Zelanda, es un claro síntoma.
-*   **Lentitud en la Circulación y Falta de Ruptura:** A pesar de su calidad técnica, la circulación de balón belga puede volverse predecible y horizontal, especialmente frente a bloques defensivos bajos y organizados. La falta de desmarques de ruptura, la poca agresividad para superar líneas de presión con pases verticales arriesgados y la escasez de "Transfer of Threat" (xT) en zonas de finalización, permite a los rivales ajustar sus posiciones defensivas, negando espacios para la penetración y el disparo a puerta.
+El planteamiento belga recuperó la frescura táctica: De Bruyne y Tielemans manejaron los hilos con pases filtrados de alta precisión, y la movilidad de Doku por la banda desquició a la defensa contraria. La principal virtud fue la paciencia asociativa en tres cuartos de cancha combinada con agresividad en los duelos individuales, logrando romper finalmente el cerrojo defensivo y traduciendo la posesión en un volumen alto de goles reales.
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
+## ⚖️ Comparativa y Veredicto
 
-Este enfrentamiento será una prueba de paciencia y contundencia para Bélgica contra la resistencia y el oportunismo de Nueva Zelanda. Los 'Diablos Rojos' ejercerán un dominio abrumador del balón y el territorio, con su "volumen de juego" concentrado en la mitad de campo rival, intentando desarticular la vulnerable defensa neozelandesa a través de la combinación de pases y movimientos entre líneas. La clave para Bélgica residirá en superar su actual "crisis de eficacia ofensiva" y convertir su posesión en un alto "xG" para finalmente romper la telaraña defensiva, que, por historial, se muestra permeable.
-
-Nueva Zelanda, por su parte, consciente de su inferioridad técnica, adoptará una postura defensiva ultraconservadora, buscando cerrar espacios y frustrar el ataque belga. Sus esperanzas radican en capitalizar cualquier error en la salida de balón de Bélgica o en aprovechar alguna jugada a balón parado para lanzar "transiciones rápidas" que puedan explotar la espalda de los defensores belgas. Sin embargo, su fragilidad defensiva general y la dificultad para mantener una presión sostenida sugieren que, a largo plazo, sucumbirán ante la persistencia belga, aunque no sin intentar dar batalla y buscar un gol de honor que podría cambiar el "momentum" del encuentro. Bélgica, con 2 puntos, necesita imperiosamente la victoria para no complicar su clasificación, mientras que Nueva Zelanda juega por el orgullo y la posibilidad de despedirse con una sorpresa. La necesidad y la calidad de Bélgica deberían imponerse, pero no sin un esfuerzo considerable para romper el cerrojo.
+El veredicto final muestra un abismo técnico insalvable en este encuentro. Bélgica impuso sus condiciones con suma comodidad, disipando las dudas de sus primeros encuentros con juego asociativo brillante y pegada. El 1-5 retrata con precisión la enorme superioridad colectiva e individual belga frente a un elenco neozelandés que se vio superado físicamente en los retrocesos defensivos.
