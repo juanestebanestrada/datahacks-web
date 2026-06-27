@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Argelia vs Austria: Previa Táctica del Grupo J // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Argelia vs Austria del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_j.html" class="back-link">← Volver al Grupo J</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo J</span>
+    <h2>Argelia vs Austria</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-27 · 🕒 22:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Argelia</span>
+        <img src="https://flagcdn.com/w80/dz.png" alt="Argelia" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">1 - 2</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/at.png" alt="Austria" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Austria</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇩🇿 Argelia: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Capacidad de Reacción Ofensiva:</strong> Tras la contundente derrota ante Argentina, Argelia mostró resiliencia ofensiva al vencer 2-1 a Jordania. Este partido reveló una capacidad para generar y finalizar ataques, incluso bajo presión, con un xG (Expected Goals) favorable que sugiere no solo suerte sino patrones de ataque bien ejecutados en el último tercio, especialmente por bandas que buscan superioridad numérica para centros peligrosos.</li>
+<li>  <strong>Intensidad en la Presión Tras Pérdida:</strong> Observamos picos de presión alta efectiva contra Jordania, recuperando balones en zonas avanzadas y transformándolos rápidamente en oportunidades de transición. El volumen de duelos defensivos ganados en campo rival fue significativo, indicando una disposición física y táctica a no dejar construir al oponente y a explotar errores en su salida.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Fragilidad Defensiva Estructural:</strong> La derrota 3-0 ante Argentina expuso una vulnerabilidad significativa en la estructura defensiva, especialmente en la defensa de los espacios entre líneas y la cobertura de los carrileros. El mapa de calor defensivo mostró una dispersión excesiva de los centrales cuando el balón se movía rápidamente por los flancos, generando oportunidades de xT (Expected Threat) elevadas para el rival desde el "half-space" y el centro del área.</li>
+<li>  <strong>Poca Eficacia en Salida Bajo Presión:</strong> Ante Argentina, Argelia sufrió para salir con el balón jugado desde atrás, registrando un bajo porcentaje de pases completados en su propio tercio defensivo. Esto forzó balones largos precipitados que se convertían en posesión perdida, entregando el control del juego al oponente y aumentando la carga defensiva, lo que podría ser explotado por la presión austríaca.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇦🇹 Austria: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Estructura Sólida y Transiciones Rápidas:</strong> La victoria 3-1 contra Jordania y, en menor medida, la resistencia ante Argentina, demuestran una organización defensiva compacta que se transforma rápidamente en ataque. Austria exhibe una alta capacidad de xT en transiciones ofensivas, aprovechando la velocidad de sus extremos y la proyección de sus mediocampistas centrales para explotar los espacios dejados por el rival en repliegue.</li>
+<li>  <strong>Eficacia en el Balón Parado y Juego Aéreo:</strong> Dos de los tres goles de Austria en el torneo han provenido de jugadas a balón parado o de segundas jugadas tras centros laterales. Su mapa de calor en ataque revela una fuerte presencia en el área en estas situaciones, capitalizando la altura y el timing de sus jugadores, lo que representa una amenaza constante contra una defensa argelina que mostró cierta desorganización en balones divididos contra Jordania.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Dependencia en la Creación del Mediocampo Central:</strong> Contra Argentina, Austria mostró dificultades para generar juego ofensivo sostenido cuando su mediocampo central era anulado o presionado intensamente. La red de pases reveló una dependencia excesiva en la conexión entre los dos volantes internos y el pivote, haciendo predecible la construcción y reduciendo el volumen de juego en zonas de progresión cruciales, lo que limita su capacidad para romper líneas defensivas organizadas.</li>
+<li>  <strong>Vulnerabilidad a los Contragolpes por Flancos:</strong> Aunque generalmente sólida, la defensa austríaca ha mostrado cierta susceptibilidad a los contragolpes rápidos por las bandas, especialmente cuando sus laterales se proyectan y no hay una cobertura adecuada de los centrales. La derrota ante Argentina vio dos goles originados por ataques rápidos por los costados, explotando los espacios detrás de sus carrileros, lo que Argelia con su velocidad podría buscar replicar.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<p>Este encuentro se presenta como una auténtica final de grupo para ambas selecciones, con la clasificación en juego. Austria llega con una ventaja marginal en la diferencia de goles (+0 vs -2), lo que podría influir sutilmente en su mentalidad, permitiéndoles un margen de error mínimo en caso de empate. Sin embargo, la necesidad de asegurar la clasificación obligará a ambos a buscar la victoria. En el mediocampo, se librará una batalla crucial. Argelia intentará imponer su intensidad en la presión tras pérdida para interrumpir la salida austríaca y generar transiciones rápidas, aprovechando la dependencia de Austria en su eje central para la creación. Si Austria logra superar esa primera línea de presión argelina, su capacidad para activar a sus extremos y proyectar a sus interiores con transiciones rápidas será un factor determinante, explotando las vulnerabilidades defensivas mostradas por Argelia en el espacio entre líneas y la cobertura lateral.</p>
+<p>La clave del partido residirá en la capacidad de Argelia para neutralizar el juego aéreo y las jugadas a balón parado de Austria, mientras intenta explotar los espacios que los laterales austríacos dejan a sus espaldas en sus proyecciones ofensivas. Por su parte, Austria buscará aprovechar la fragilidad defensiva argelina mostrada ante Argentina, atacando los flancos y el corazón del área con combinaciones rápidas o a través de su eficacia en acciones detenidas. Argelia, con su urgencia por ganar debido a su diferencia de goles, podría tomar más riesgos, abriendo el partido y, potencialmente, dejando más espacios atrás. Austria, más pragmática, podría esperar momentos para golpear, capitalizando su solidez defensiva y su eficacia en las transiciones. La balanza se inclina ligeramente hacia el equipo que logre imponer su estructura sin balón y sea más contundente en la finalización.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Argelia)</h4>
+                      <img src="../assets/Analisis_Argelia_ReddePases_horizontal_20260616.png" alt="Red de Pases (Argelia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Austria)</h4>
+                      <img src="../assets/Analisis_Austria_ReddePases_horizontal_20260616.png" alt="Red de Pases (Austria)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+        <a href="../politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="../terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Croacia vs Ghana: Previa Táctica del Grupo L // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Croacia vs Ghana del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_l.html" class="back-link">← Volver al Grupo L</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo L</span>
+    <h2>Croacia vs Ghana</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-27 · 🕒 19:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Croacia</span>
+        <img src="https://flagcdn.com/w80/hr.png" alt="Croacia" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">1 - 0</div>
+        <div style="font-size:0.75rem; color:var(--cyan); margin-top:5px; font-weight:700;">PRONÓSTICO IA</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/gh.png" alt="Ghana" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Ghana</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>🇭🇷 Croacia: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Calidad en la Medular y Volumen de Juego:</strong> A pesar de la derrota ante Inglaterra, Croacia demostró capacidad para generar volumen de juego, especialmente en el centro del campo, donde su red de pases exhibe una alta conectividad y xT (Expected Threat) desde zonas interiores. Contra Panamá, dominaron la posesión (65%+) y los pases en campo rival, generando un xG superior a 1.5, lo que sugiere que pueden desarticular defensas organizadas si mantienen la paciencia y precisión, crucial contra la sólida defensa ghanesa.</li>
+<li>  <strong>Urgencia por la Victoria y Experiencia en Fases Decisivas:</strong> La necesidad imperiosa de ganar para clasificar directamente infundirá una mentalidad ofensiva desde el inicio. Esta presión, combinada con la experiencia de sus jugadores clave en instancias decisivas de Mundiales, puede canalizarse en un aumento de la intensidad en la presión alta y una mayor agresividad en la recuperación de balón, características que se vieron intermitentemente contra Panamá.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Vulnerabilidad Defensiva y Transiciones Defensivas Lentas:</strong> Los 4 goles encajados contra Inglaterra revelaron una fragilidad en las transiciones defensivas y en la cobertura de espacios a la espalda de los laterales, con un mapa de calor defensivo mostrando zonas desguarnecidas. Aunque no recibieron goles de Panamá, la lentitud para replegar o cerrar los carriles centrales ante un equipo más dinámico podría ser explotada por las esporádicas, pero rápidas, salidas de Ghana.</li>
+<li>  <strong>Dificultad en la Finalización ante Bloques Bajos:</strong> A pesar de dominar a Panamá, el equipo croata solo logró un gol, indicando una falta de contundencia o creatividad final en los últimos metros contra un bloque defensivo compacto. Su xG en ese partido no se tradujo en una victoria más cómoda, lo que podría replicarse si Ghana logra mantener su solidez defensiva, exigiendo a Croacia soluciones más ingeniosas para romper líneas.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇬🇭 Ghana: Análisis Táctico</h2>
+<h3>Ventajas</h3>
+<ul>
+<li>  <strong>Solidez Defensiva y Disciplina Táctica:</strong> Ghana ha demostrado ser un muro infranqueable, concediendo 0 goles en dos partidos, incluyendo un empate 0-0 contra Inglaterra donde su bloque medio-bajo fue tácticamente impecable. Su mapa de calor defensivo muestra una ocupación de espacios excelente y una presión coordinada que minimiza los xT de los rivales, haciendo extremadamente difícil generar ocasiones claras contra ellos.</li>
+<li>  <strong>Capacidad de Contraataque y Juego Directo:</strong> Aunque su producción ofensiva es limitada (1 gol), Ghana posee jugadores con velocidad y capacidad para ejecutar transiciones rápidas. El gol contra Panamá provino de una acción directa, y su empate contra Inglaterra evidenció que pueden ser una amenaza en los balones largos y las rupturas por banda, buscando explotar cualquier desequilibrio en el avance croata.</li>
+</ul>
+<h3>Desventajas</h3>
+<ul>
+<li>  <strong>Baja Producción Ofensiva y Falta de Creatividad en Ataque Posicional:</strong> Con solo 1 gol a favor y un xG acumulado muy bajo en dos partidos, Ghana sufre de una evidente falta de chispa ofensiva, especialmente en ataque posicional. Su red de pases muestra poca profundidad y conexión en el último tercio, lo que les obliga a depender excesivamente de errores rivales o jugadas aisladas, un problema serio si Croacia logra mantener la posesión lejos de su área.</li>
+<li>  <strong>Dependencia Excesiva de su Estructura Defensiva:</strong> Si Croacia logra romper la línea defensiva o si Ghana se ve forzada a adelantar sus líneas por el resultado, su sistema podría volverse vulnerable. La presión constante de Croacia podría forzar errores en la salida de balón, y la falta de un plan B ofensivo claro podría dejar al equipo expuesto si su fortaleza defensiva principal es superada o si necesitan buscar activamente un gol.</li>
+</ul>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto (Pre-Partido)</h2>
+<p>Croacia se presenta con la urgencia de la victoria, lo que dictará una postura dominante desde el pitido inicial. Buscará imponer su control en el mediocampo a través de una circulación de balón paciente pero vertical, utilizando la calidad técnica de sus centrocampistas para romper las líneas ghanesas. Sin embargo, su vulnerabilidad en las transiciones defensivas y su dificultad para finalizar ante bloques bajos, vistas contra Inglaterra y Panamá respectivamente, representan desafíos significativos. La capacidad de Croacia para generar volumen de juego y mover el balón con intención será clave, pero deberá mejorar su contundencia en los últimos metros y ser extremadamente cautelosa con las pérdidas de balón en zonas de riesgo, ya que Ghana espera exactamente eso.</p>
+<p>Ghana, por otro lado, se apoyará en su probada solidez defensiva. Su estructura, que ha logrado mantener la portería a cero ante Panamá e Inglaterra, es su mayor activo y buscará frustrar los intentos croatas, acumulando jugadores detrás del balón y cerrando espacios en el centro y las bandas. El duelo se definirá en gran medida por la capacidad de Croacia para desarticular este muro defensivo, y por la disciplina de Ghana para mantener su forma. Si Ghana consigue mantener su portería a cero durante gran parte del encuentro, la desesperación croata podría abrir espacios para sus rápidos contraataques, que, aunque escasos en cantidad, podrían ser letales por la velocidad de sus extremos. La balanza se inclina levemente hacia Croacia por la calidad individual y la necesidad, pero Ghana tiene las herramientas para neutralizarlo y complicar la clasificación.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Ghana)</h4>
+                      <img src="../assets/Analisis_Ghana_MapaDefensivo_horizontal_20260616.png" alt="Mapa Defensivo (Ghana)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Ghana)</h4>
+                      <img src="../assets/Analisis_Ghana_ExpectedThreatxT_horizontal_20260616.png" alt="Amenaza Esperada xT (Ghana)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Ghana)</h4>
+                      <img src="../assets/Analisis_Ghana_MapadeCalor_horizontal_20260616.png" alt="Mapa de Calor (Ghana)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Croacia)</h4>
+                      <img src="../assets/Analisis_Croacia_ReddePases_horizontal_20260616.png" alt="Red de Pases (Croacia)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Ghana)</h4>
+                      <img src="../assets/Analisis_Ghana_ReddePases_horizontal_20260616.png" alt="Red de Pases (Ghana)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+        <a href="../politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="../terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
