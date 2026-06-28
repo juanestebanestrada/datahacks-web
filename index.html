@@ -917,17 +917,27 @@
     from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
   }
+  details.collapsible-standings[open] .collapse-arrow {
+    transform: rotate(180deg);
+  }
+  details.collapsible-standings summary::-webkit-details-marker {
+    display: none;
+  }
 </style>
 
-<div class="standings-section">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
-    <h3 style="font-family: var(--font-head); font-size: 1.3rem; color: #fff; margin: 0; display: flex; align-items: center; gap: 8px;">
+<details class="collapsible-standings" open style="margin: 40px 0; border: 1px solid var(--border); border-radius: var(--r-lg); background: rgba(15, 12, 32, 0.45); box-shadow: 0 15px 35px rgba(0,0,0,0.3); overflow: hidden; transition: all 0.3s ease;">
+  <summary style="font-family: var(--font-head); font-size: 1.25rem; color: #fff; cursor: pointer; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); user-select: none;">
+    <span style="display: flex; align-items: center; gap: 10px; font-weight: 700;">
       🏆 Tabla de Posiciones Mundial 2026
-    </h3>
-    <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">
-      Simulación Local (Resultados Oficiales)
     </span>
-  </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin: 0;">
+        Simulación Local (Resultados Oficiales)
+      </span>
+      <span class="collapse-arrow" style="font-size: 0.85rem; color: var(--muted); transition: transform 0.2s;">▼</span>
+    </div>
+  </summary>
+  <div style="padding: 24px;">
   
   <div class="standings-tabs-container">    <button class="standings-tab-btn active" onclick="switchStandingsTab(event, 'std-tab-grupo-a')">Grupo A</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-b')">Grupo B</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-c')">Grupo C</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-d')">Grupo D</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-e')">Grupo E</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-f')">Grupo F</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-g')">Grupo G</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-h')">Grupo H</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-i')">Grupo I</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-j')">Grupo J</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-k')">Grupo K</button>    <button class="standings-tab-btn" onclick="switchStandingsTab(event, 'std-tab-grupo-l')">Grupo L</button>  </div>
   <div id="std-tab-grupo-a" class="standings-tab-content" style="display: block;">
@@ -1926,7 +1936,8 @@
       </table>
     </div>
   </div>
-</div>
+  </div>
+</details>
 
 <script>
 function switchStandingsTab(evt, tabId) {
