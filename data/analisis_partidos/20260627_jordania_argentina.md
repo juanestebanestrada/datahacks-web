@@ -6,41 +6,40 @@ fecha: "2026-06-27"
 hora: "22:00"
 home_team: "Jordania"
 away_team: "Argentina"
-goles_home: 0
-goles_away: 0
+goles_home: "1"
+goles_away: "3"
 pronostico: "0 - 4"
-finalizado: "false"
-imagenes: "Analisis_Jordania_MapaDefensivo_Equipo_Completo_horizontal_20260616.png:Mapa Defensivo (Jordania), Analisis_Argentina_MapaDefensivo_horizontal_20260616.png:Mapa Defensivo (Argentina), Analisis_Jordania_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png:Amenaza Esperada xT (Jordania), Analisis_Argentina_ExpectedThreatxT_horizontal_20260616.png:Amenaza Esperada xT (Argentina), Analisis_Jordania_MapadeCalor_Equipo_Completo_horizontal_20260616.png:Mapa de Calor (Jordania), Analisis_Argentina_MapadeCalor_horizontal_20260616.png:Mapa de Calor (Argentina), Analisis_Jordania_ReddePases_Equipo_Completo_horizontal_20260616.png:Red de Pases (Jordania), Analisis_Argentina_ReddePases_horizontal_20260616.png:Red de Pases (Argentina)"
+finalizado: "true"
+imagenes: "Analisis_Jordania_MapaDefensivo_Equipo_Completo_horizontal_20260616.png:Mapa Defensivo (Jordania), Analisis_Argentina_MapaDefensivo_horizontal_20260616.png:Mapa Defensivo (Argentina), Analisis_Jordania_ExpectedThreatxT_Equipo_Completo_horizontal_20260616.png:Amenaza Esperada xT (Jordania), Analisis_Argentina_ExpectedThreatxT_horizontal_20260616.png:Amenaza Esperada xT (Argentina), Analisis_Jordania_MapadeCalor_Equipo_Completo_horizontal_20260616.png:Mapa de Calor (Jordania), Analisis_Argentina_MapadeCalor_horizontal_20260616.png:Mapa de Calor (Argentina), Analisis_Jordania_ReddePases_Equipo_Completo_horizontal_20260616.png:Red de Pases (Jordania), Analisis_Argentina_ReddePases_horizontal_20260616.png:Red de Pases (Argentina), Momentum_20260627_jordania_argentina.png:Match Momentum"
 slug: "jordania_argentina"
 poisson: "1-5-94"
 ---
 
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Jordania 1 - 3 Argentina)
+El encuentro en el Grupo J vio a una Argentina dominante imponerse a una combativa Jordania, aunque no sin un susto. Desde el inicio, la Albiceleste tomó el control del balón y del ritmo del juego, buscando abrir espacios en la organizada defensa jordana. El primer gol llegó a los 28 minutos, reflejando la presión constante de Argentina. Sin embargo, Jordania sorprendió con una inesperada igualdad a los 49 minutos, capitalizando una rara desorganización defensiva argentina y elevando la tensión emocional del partido. La reacción argentina no se hizo esperar; el segundo gol, crucial para retomar la ventaja, llegó a los 58 minutos y disipó las dudas, consolidando la superioridad técnica. El tercer tanto, cerca del final, selló un marcador justo que refleja la diferencia de calidad y profundidad entre ambos equipos.
+
+### 🔮 Impacto en el Grupo Grupo J y Proyecciones para la Siguiente Fase
+*   **Ajuste del Algoritmo:** Para Argentina, esta victoria por 1-3 frente a un rival teóricamente inferior pero que mostró resiliencia, refuerza sus métricas de consistencia ofensiva y capacidad de reacción, validando su estatus de favorita y elevando ligeramente su ELO rating. El algoritmo ajustará al alza su probabilidad de avance profundo en el torneo. Para Jordania, a pesar de la derrota, el haber marcado un gol contra una potencia mundial y mostrar picos de intensidad competitiva, podría atenuar la caída de sus métricas, indicando un nivel de combatividad superior al esperado en algunos tramos.
+*   **Proyección de la Siguiente Fase (Octavos de Final / Clasificación):** Argentina cierra la fase de grupos con paso perfecto: 9 puntos de 9 posibles (+7 DG), clasificando líder absoluta a los octavos de final. Austria clasifica 2ª con 4 puntos. Argelia queda 3ª con 4 puntos esperando repesca. Jordania termina última con 0 puntos.
+
+### 📈 Análisis del Match Momentum y Match Point (Punto Crítico)
+El flujo de intensidad del partido fue mayoritariamente favorable a Argentina, quienes dominaron el 68.1% del tiempo. Su intensidad de ataque máxima, alcanzada con un impresionante 100.00 en el minuto 28', culminó de manera casi inmediata en el primer gol, estableciendo la pauta del encuentro. Jordania, por su parte, tuvo sus momentos, dominando la intensidad el 22.3% del partido y alcanzando su pico máximo de 87.00 en el minuto 55'. Este pico estuvo directamente relacionado con su gol de empate a los 49' y el período inmediatamente posterior, donde buscaron aprovechar el impulso anímico.
+
+El Match Point, o punto crítico de inflexión táctica, de este partido fue el segundo gol de Argentina en el minuto 58'. Tras el inesperado empate de Jordania, que generó un período de alta intensidad local (minuto 55'), este tanto fue un golpe psicológico decisivo. No solo restauró la ventaja para Argentina, sino que desarticuló la renovada confianza jordana, forzándolos a un esfuerzo aún mayor para el que no tenían los recursos tácticos o físicos, y permitiendo a la Albiceleste gestionar el resto del partido con mayor calma y control.
+
+---
+
 ## 🇯🇴 Jordania: Análisis Táctico
-
-### Ventajas
-*   **Libertad Táctica sin Presión Clasificatoria:** Habiendo sumado 0 puntos y con la eliminación ya consumada, Jordania puede encarar este partido sin la presión asfixiante del resultado. Esto podría traducirse en una mayor audacia táctica, permitiendo probar esquemas o jugadores, o simplemente jugar con más soltura, lo que a veces destapa un rendimiento inesperado y menos predecible para el rival.
-*   **Capacidad de Respuesta Ofensiva Ocasional:** A pesar de las derrotas, Jordania logró marcar un gol tanto contra Austria como contra Argelia. Esto indica una capacidad para explotar momentos de desatención defensiva rival o generar transiciones rápidas que, aunque escasas, han sido efectivas. Su eficiencia en la finalización de estas contadas oportunidades podría ser un factor si Argentina baja la guardia.
-
-### Desventajas
-*   **Fragilidad Defensiva Estructural y xG Concedido Alto:** La concesión de 5 goles en dos partidos (3 vs Austria, 2 vs Argelia) subraya serias deficiencias en la organización defensiva, el posicionamiento zonal y la capacidad para contener ataques elaborados. El volumen de Expected Goals (xG) concedido en ambos encuentros fue probablemente elevado, sugiriendo que los rivales generaron ocasiones de alta calidad con demasiada facilidad.
-*   **Bajo Volumen de Juego Ofensivo y Dificultad para Retener Posesión:** Las redes de pases de Jordania en los partidos previos revelaron una dificultad para establecer secuencias largas de posesión y un bajo volumen de progresiones ofensivas efectivas. Esto se traduce en un Expected Threat (xT) reducido, donde la generación de peligro depende más de acciones aisladas o balones largos que de una construcción coherente, limitando severamente su capacidad para amenazar a una defensa organizada.
+Jordania presentó una estructura defensiva inicialmente compacta, buscando limitar los espacios y frustrar las combinaciones argentinas en el último tercio. Sus virtudes se centraron en una encomiable disciplina táctica y una capacidad de sacrificio físico notable, logrando contener a Argentina por momentos y capitalizar una rara desconcentración para conseguir el empate. Sin embargo, sus fallas residieron en la transición ofensiva, demasiado dependiente de balones largos que raramente encontraban destino y una incapacidad para sostener la posesión o generar peligro de manera organizada. La presión argentina fue excesiva para su línea defensiva en el largo plazo, y el desgaste físico les impidió mantener la intensidad en la segunda mitad.
 
 ---
 
 ## 🇦🇷 Argentina: Análisis Táctico
-
-### Ventajas
-*   **Dominio Defensivo Absoluto y Baja Concesión de xG:** Argentina llega con un récord impecable de 0 goles en contra en dos partidos, lo que demuestra una solidez defensiva excepcional. Su presión tras pérdida (PPDA bajo) y la eficacia en la recuperación del balón en zonas altas (mapas de calor en campo rival) han desmantelado las intentonas rivales, resultando en un xG contra casi insignificante y una sensación de impenetrabilidad.
-*   **Versatilidad Ofensiva y Alta Generación de xT:** Con 5 goles a favor y provenientes de diversas situaciones, Argentina ha exhibido una gran riqueza táctica en ataque. Sus redes de pases muestran una fluidez para progresar por el centro y las bandas, creando un alto volumen de Expected Threat (xT) desde múltiples jugadores y posiciones, lo que dificulta la lectura defensiva y permite explotar cualquier debilidad del rival.
-
-### Desventajas
-*   **Riesgo de Relajación por Clasificación Anticipada:** Habiendo asegurado ya el pase a la siguiente ronda como primero de grupo, existe la posibilidad de una ligera disminución en la intensidad o concentración. Esta complacencia, aunque mínima, podría generar pequeñas grietas en la presión o la sincronización defensiva, que un rival motivado podría intentar explotar.
-*   **Potenciales Desajustes por Rotaciones de Plantilla:** La situación del grupo permite a Argentina realizar rotaciones significativas para gestionar cargas de trabajo y dar minutos a suplentes. Si bien la profundidad de plantilla es notable, la introducción de varias caras nuevas podría afectar temporalmente la química en las redes de pases, la sincronización en la presión o la cohesión defensiva en los primeros minutos de juego.
+Argentina desplegó su habitual control del juego, dominando la posesión y dictando el ritmo desde el mediocampo. Sus virtudes tácticas se manifestaron en la fluidez de movimientos ofensivos, la capacidad para generar ocasiones desde diferentes sectores y una notable eficacia en la definición. El equipo mostró madurez para reaccionar rápidamente tras el gol del empate jordano, ajustando la presión y volviendo a imponer su jerarquía individual y colectiva. Su principal falla, aunque mínima, fue la desconcentración momentánea que permitió el gol jordano, una señal de alerta sobre la importancia de mantener la intensidad defensiva durante los 90 minutos, incluso ante rivales de menor envergadura.
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-
-El encuentro se perfila como un claro contraste de realidades. Argentina, con su dominio integral y solidez defensiva demostrada, dictará el ritmo y la posesión del balón desde el pitido inicial. La capacidad de Jordania para retener la posesión y construir ataques coherentes ha sido su talón de Aquiles en los partidos previos, una debilidad que la presión alta y el control del mediocampo argentino, caracterizado por su alto volumen de recuperaciones y la precisión en las redes de pases, expondrá sin piedad. El combate por el mediocampo se decantará abrumadoramente a favor de la Albiceleste, que utilizará esta ventaja para asfixiar cualquier intento jordano de salir con balón dominado.
-
-La balanza ofensiva es igualmente desequilibrada. Argentina, con su alta generación de xT y la versatilidad de sus ataques, pondrá a prueba de manera constante la frágil defensa jordana, que ha concedido un alto xG en sus dos encuentros anteriores. La capacidad de Jordania para marcar un gol en cada partido, aunque meritoria, se basó en transiciones rápidas y errores ajenos; contra una defensa argentina que ha mostrado una solidez impenetrable (0 goles en contra), las oportunidades serán mínimas y de bajo xT. La principal incógnita para Argentina radica en mantener la máxima intensidad tras la clasificación, mientras que para Jordania será un ejercicio de resistencia y de orgullo, buscando minimizar los daños y, quizás, aprovechar algún destello aislado.
+## ⚖️ Comparativa y Veredicto
+El duelo táctico entre ambos entrenadores vio la lógica imposición de la propuesta de Lionel Scaloni. Mientras que el técnico jordano logró implementar un plan defensivo valiente y maximizar los recursos de su equipo para sorprender en un momento clave, la calidad individual y la superioridad táctica colectiva de Argentina fueron determinantes. Scaloni demostró la capacidad de su equipo para no solo dominar, sino también para reaccionar ante la adversidad y mantener la calma bajo presión. El marcador final de 1 - 3 es un veredicto justo y lógico, reflejando la diferencia de talento, profundidad de plantilla y capacidad para materializar las oportunidades, dejando claro que Argentina es un serio aspirante a las fases finales.

@@ -6,40 +6,40 @@ fecha: "2026-06-27"
 hora: "22:00"
 home_team: "Argelia"
 away_team: "Austria"
-goles_home: 0
-goles_away: 0
+goles_home: "3"
+goles_away: "3"
 pronostico: "1 - 2"
-finalizado: "false"
-imagenes: "Analisis_Argelia_MapaDefensivo_horizontal_20260616.png:Mapa Defensivo (Argelia), Analisis_Austria_MapaDefensivo_horizontal_20260616.png:Mapa Defensivo (Austria), Analisis_Argelia_ExpectedThreatxT_horizontal_20260616.png:Amenaza Esperada xT (Argelia), Analisis_Austria_ExpectedThreatxT_horizontal_20260616.png:Amenaza Esperada xT (Austria), Analisis_Argelia_MapadeCalor_horizontal_20260616.png:Mapa de Calor (Argelia), Analisis_Austria_MapadeCalor_horizontal_20260616.png:Mapa de Calor (Austria), Analisis_Argelia_ReddePases_horizontal_20260616.png:Red de Pases (Argelia), Analisis_Austria_ReddePases_horizontal_20260616.png:Red de Pases (Austria)"
+finalizado: "true"
+imagenes: "Analisis_Argelia_MapaDefensivo_horizontal_20260616.png:Mapa Defensivo (Argelia), Analisis_Austria_MapaDefensivo_horizontal_20260616.png:Mapa Defensivo (Austria), Analisis_Argelia_ExpectedThreatxT_horizontal_20260616.png:Amenaza Esperada xT (Argelia), Analisis_Austria_ExpectedThreatxT_horizontal_20260616.png:Amenaza Esperada xT (Austria), Analisis_Argelia_MapadeCalor_horizontal_20260616.png:Mapa de Calor (Argelia), Analisis_Austria_MapadeCalor_horizontal_20260616.png:Mapa de Calor (Austria), Analisis_Argelia_ReddePases_horizontal_20260616.png:Red de Pases (Argelia), Analisis_Austria_ReddePases_horizontal_20260616.png:Red de Pases (Austria), Momentum_20260627_argelia_austria.png:Match Momentum"
 slug: "argelia_austria"
 poisson: "30-25-45"
 ---
 
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Argelia 3 - 3 Austria)
+El duelo entre Argelia y Austria fue un auténtico festival de goles y emociones, culminando en un vibrante empate 3-3 que mantuvo a los aficionados al borde de sus asientos. Austria tomó la iniciativa con un gol temprano tras una presión alta asfixiante, pero Argelia demostró su resiliencia al empatar antes del descanso con una jugada individual brillante. La segunda mitad se abrió con un fulgurante ataque austríaco que les devolvió la ventaja, solo para ver cómo Argelia, impulsada por su afición y un espíritu combativo, nivelaba el marcador nuevamente. Cuando parecía que Austria había asestado el golpe definitivo con un tercer tanto a pocos minutos del final, Argelia, en un despliegue de coraje, encontró el gol del empate en el tiempo de descuento, sellando un reparto de puntos que dejó sensaciones encontradas en ambos bandos.
+
+### 🔮 Impacto en el Grupo Grupo J y Proyecciones para la Siguiente Fase
+*   **Ajuste del Algoritmo:** El resultado de 3-3 altera significativamente las métricas de ambos equipos en nuestro simulador. Para Austria, el algoritmo recalibra a la baja su fiabilidad defensiva y su capacidad para cerrar partidos, aunque mejora sus índices de ataque y resiliencia ofensiva. Para Argelia, se potencia su factor de "combatividad" y capacidad de reacción, mientras que su solvencia defensiva sigue siendo un punto de atención crítica, impactando negativamente en su Expected Goals Against (xGA).
+*   **Proyección de la Siguiente Fase (Octavos de Final / Clasificación):** Argentina lidera invicta con 9 puntos. Tras el emocionante empate 3-3, Austria finaliza 2ª del Grupo J con 4 puntos (0 DG) por encima de Argelia debido a su mejor diferencia de goles general (Austria 6-6 vs Argelia 5-7). Austria clasifica directo. Argelia queda 3ª con 4 puntos (-2 DG) y dependerá de otros grupos para pasar como mejor tercero. Jordania queda eliminada con 0 puntos.
+
+### 📈 Análisis del Match Momentum y Match Point (Punto Crítico)
+El flujo del Match Momentum en este encuentro fue un fiel reflejo de su dramatismo. Austria dominó la intensidad de ataque en un 35.1% del partido, alcanzando su pico máximo de 100.00 en el minuto 30', coincidiendo con el momento en que abrieron el marcador y ejercieron una presión abrumadora. Este período de alta intensidad austríaca puso en aprietos a la defensa argelina. Sin embargo, Argelia mostró una increíble capacidad de reacción, dominando la intensidad el 56.4% del partido, con su punto álgido de 100.00 en el minuto 44', justo antes del descanso, momento en que logró el empate y se volcó al ataque.
+
+El Match Point (Punto Crítico) del partido se situó sin duda en el minuto 89', cuando Austria anotó el 3-2, lo que parecía ser el gol de la victoria. Este gol desmoralizador normalmente sentencia un partido, pero la inmediata reacción de Argelia en el descuento para el 3-3 demostró una fortaleza mental excepcional, transformando ese punto crítico de probable derrota en un acto de supervivencia y heroísmo, cambiando el rumbo emocional y el resultado final del encuentro.
+
+---
+
 ## 🇩🇿 Argelia: Análisis Táctico
-
-### Ventajas
-*   **Capacidad de Reacción Ofensiva:** Tras la contundente derrota ante Argentina, Argelia mostró resiliencia ofensiva al vencer 2-1 a Jordania. Este partido reveló una capacidad para generar y finalizar ataques, incluso bajo presión, con un xG (Expected Goals) favorable que sugiere no solo suerte sino patrones de ataque bien ejecutados en el último tercio, especialmente por bandas que buscan superioridad numérica para centros peligrosos.
-*   **Intensidad en la Presión Tras Pérdida:** Observamos picos de presión alta efectiva contra Jordania, recuperando balones en zonas avanzadas y transformándolos rápidamente en oportunidades de transición. El volumen de duelos defensivos ganados en campo rival fue significativo, indicando una disposición física y táctica a no dejar construir al oponente y a explotar errores en su salida.
-
-### Desventajas
-*   **Fragilidad Defensiva Estructural:** La derrota 3-0 ante Argentina expuso una vulnerabilidad significativa en la estructura defensiva, especialmente en la defensa de los espacios entre líneas y la cobertura de los carrileros. El mapa de calor defensivo mostró una dispersión excesiva de los centrales cuando el balón se movía rápidamente por los flancos, generando oportunidades de xT (Expected Threat) elevadas para el rival desde el "half-space" y el centro del área.
-*   **Poca Eficacia en Salida Bajo Presión:** Ante Argentina, Argelia sufrió para salir con el balón jugado desde atrás, registrando un bajo porcentaje de pases completados en su propio tercio defensivo. Esto forzó balones largos precipitados que se convertían en posesión perdida, entregando el control del juego al oponente y aumentando la carga defensiva, lo que podría ser explotado por la presión austríaca.
+Argelia demostró una dualidad táctica fascinante. Ofensivamente, su capacidad de transición rápida y el talento individual de sus extremos y mediapuntas fueron sus mayores virtudes, permitiéndoles generar peligro constante y, lo más importante, empatar el partido en tres ocasiones. Su resiliencia mental es encomiable, negándose a darse por vencidos incluso cuando estaban contra las cuerdas. Sin embargo, defensivamente, mostraron fragilidad, especialmente en la contención de los mediocampistas ofensivos de Austria y en la gestión de las segundas jugadas tras centros laterales. La coordinación en la zaga y la presión en el centro del campo necesitan ajustes urgentes si quieren aspirar a una mejor actuación en el futuro.
 
 ---
 
 ## 🇦🇹 Austria: Análisis Táctico
-
-### Ventajas
-*   **Estructura Sólida y Transiciones Rápidas:** La victoria 3-1 contra Jordania y, en menor medida, la resistencia ante Argentina, demuestran una organización defensiva compacta que se transforma rápidamente en ataque. Austria exhibe una alta capacidad de xT en transiciones ofensivas, aprovechando la velocidad de sus extremos y la proyección de sus mediocampistas centrales para explotar los espacios dejados por el rival en repliegue.
-*   **Eficacia en el Balón Parado y Juego Aéreo:** Dos de los tres goles de Austria en el torneo han provenido de jugadas a balón parado o de segundas jugadas tras centros laterales. Su mapa de calor en ataque revela una fuerte presencia en el área en estas situaciones, capitalizando la altura y el timing de sus jugadores, lo que representa una amenaza constante contra una defensa argelina que mostró cierta desorganización en balones divididos contra Jordania.
-
-### Desventajas
-*   **Dependencia en la Creación del Mediocampo Central:** Contra Argentina, Austria mostró dificultades para generar juego ofensivo sostenido cuando su mediocampo central era anulado o presionado intensamente. La red de pases reveló una dependencia excesiva en la conexión entre los dos volantes internos y el pivote, haciendo predecible la construcción y reduciendo el volumen de juego en zonas de progresión cruciales, lo que limita su capacidad para romper líneas defensivas organizadas.
-*   **Vulnerabilidad a los Contragolpes por Flancos:** Aunque generalmente sólida, la defensa austríaca ha mostrado cierta susceptibilidad a los contragolpes rápidos por las bandas, especialmente cuando sus laterales se proyectan y no hay una cobertura adecuada de los centrales. La derrota ante Argentina vio dos goles originados por ataques rápidos por los costados, explotando los espacios detrás de sus carrileros, lo que Argelia con su velocidad podría buscar replicar.
+Austria presentó un esquema táctico bien estructurado, con una clara intención de presionar alto y explotar las bandas con velocidad y centros precisos. Su intensidad inicial fue notable, permitiéndoles tomar la delantera y dictar el ritmo en ciertos tramos del partido. La creatividad de su mediocampo ofensivo generó constantes rupturas, resultando en tres goles. Sin embargo, su principal falla radicó en la incapacidad de mantener la solidez defensiva y la concentración en momentos clave. La gestión de las ventajas en el marcador fue deficiente, permitiendo a Argelia regresar al partido en repetidas ocasiones, lo que sugiere una vulnerabilidad en la cobertura de espacios centrales y en la anticipación a las transiciones rápidas del rival.
 
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-Este encuentro se presenta como una auténtica final de grupo para ambas selecciones, con la clasificación en juego. Austria llega con una ventaja marginal en la diferencia de goles (+0 vs -2), lo que podría influir sutilmente en su mentalidad, permitiéndoles un margen de error mínimo en caso de empate. Sin embargo, la necesidad de asegurar la clasificación obligará a ambos a buscar la victoria. En el mediocampo, se librará una batalla crucial. Argelia intentará imponer su intensidad en la presión tras pérdida para interrumpir la salida austríaca y generar transiciones rápidas, aprovechando la dependencia de Austria en su eje central para la creación. Si Austria logra superar esa primera línea de presión argelina, su capacidad para activar a sus extremos y proyectar a sus interiores con transiciones rápidas será un factor determinante, explotando las vulnerabilidades defensivas mostradas por Argelia en el espacio entre líneas y la cobertura lateral.
-
-La clave del partido residirá en la capacidad de Argelia para neutralizar el juego aéreo y las jugadas a balón parado de Austria, mientras intenta explotar los espacios que los laterales austríacos dejan a sus espaldas en sus proyecciones ofensivas. Por su parte, Austria buscará aprovechar la fragilidad defensiva argelina mostrada ante Argentina, atacando los flancos y el corazón del área con combinaciones rápidas o a través de su eficacia en acciones detenidas. Argelia, con su urgencia por ganar debido a su diferencia de goles, podría tomar más riesgos, abriendo el partido y, potencialmente, dejando más espacios atrás. Austria, más pragmática, podría esperar momentos para golpear, capitalizando su solidez defensiva y su eficacia en las transiciones. La balanza se inclina ligeramente hacia el equipo que logre imponer su estructura sin balón y sea más contundente en la finalización.
+## ⚖️ Comparativa y Veredicto
+El duelo táctico entre ambos entrenadores fue una montaña rusa de ajustes y contra-ajustes. Mientras el técnico austríaco apostó por un plan de juego agresivo y directo, buscando desestabilizar desde el inicio, su contraparte argelina priorizó la resiliencia y la explosividad en transiciones. Ambos equipos exhibieron sus virtudes ofensivas con claridad, pero también expusieron debilidades significativas en la fase defensiva, incapaces de asegurar sus ventajas. El marcador final de 3-3 es, por tanto, un veredicto justo y lógico. Refleja un partido donde la ambición de ataque superó a la solvencia defensiva de ambos lados, y donde ninguno de los equipos tuvo la autoridad táctica o la sangre fría para cerrar el encuentro, resultando en un reparto de puntos que encapsula perfectamente la naturaleza impredecible y emocionante del fútbol de élite.

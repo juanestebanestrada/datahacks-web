@@ -1050,25 +1050,33 @@ function switchStandingsTab(evt, tabId) {
         with open(index_path, 'r', encoding='utf-8') as f:
             index_content = f.read()
             
-        # Remplazar tarjetas del Live Match Center
+        # Inyectar en analisis_fase_grupos.html
+        fase_grupos_path = os.path.join(WEBSITE_DIR, 'analisis_fase_grupos.html')
+        fase_grupos_content = ""
+        if os.path.exists(fase_grupos_path):
+            with open(fase_grupos_path, 'r', encoding='utf-8') as f:
+                fase_grupos_content = f.read()
+            
+        # Remplazar tarjetas del Live Match Center en index.html
         pattern_cards = r'(<!-- ANALISIS_CARDS_START -->)(.*?)(<!-- ANALISIS_CARDS_END -->)'
         replacement_cards = f'\\1\n        {cards_html}\n        \\3'
         index_content = re.sub(pattern_cards, replacement_cards, index_content, flags=re.DOTALL)
         
-        # Remplazar tarjetas de Historial
-        pattern_history = r'(<!-- HISTORIAL_CARDS_START -->)(.*?)(<!-- HISTORIAL_CARDS_END -->)'
-        replacement_history = f'\\1\n        {history_html}\n        \\3'
-        index_content = re.sub(pattern_history, replacement_history, index_content, flags=re.DOTALL)
+        # Remplazar tarjetas de Historial en analisis_fase_grupos.html
+        if fase_grupos_content:
+            pattern_history = r'(<!-- HISTORIAL_CARDS_START -->)(.*?)(<!-- HISTORIAL_CARDS_END -->)'
+            replacement_history = f'\\1\n        {history_html}\n        \\3'
+            fase_grupos_content = re.sub(pattern_history, replacement_history, fase_grupos_content, flags=re.DOTALL)
         
-        # Remplazar el widget de Standings
+        # Remplazar el widget de Standings en index.html
         if standings_widget_html:
             pattern_standings = r'(<!-- STANDINGS_WIDGET_START -->)(.*?)(<!-- STANDINGS_WIDGET_END -->)'
             replacement_standings = f'\\1\n        {standings_widget_html}\n        \\3'
             index_content = re.sub(pattern_standings, replacement_standings, index_content, flags=re.DOTALL)
             
-        # Remplazar rendimiento de predicciones
+        # Remplazar rendimiento de predicciones en analisis_fase_grupos.html
         total_finished = exact_count + tendency_count + miss_count
-        if total_finished > 0:
+        if total_finished > 0 and fase_grupos_content:
             exact_pct = round((exact_count / total_finished) * 100, 2)
             tendency_pct = round((tendency_count / total_finished) * 100, 2)
             miss_pct = round(100.0 - exact_pct - tendency_pct, 2)
@@ -1105,14 +1113,22 @@ function switchStandingsTab(evt, tabId) {
         <span>Muestra: {total_finished} partidos</span>
         <span>Modelo: Poisson Bivariado IA</span>
       </div>
+      <!-- Gráfico de Evolución de Predicciones -->
+      <div style="margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px;">
+        <img src="assets/evolucion_predicciones.png" alt="Evolución de Predicciones" style="width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(0, 240, 255, 0.15);">
+      </div>
     </div>
     <!-- PREDICTIONS_PERFORMANCE_END -->"""
             pattern_perf = r'(<!-- PREDICTIONS_PERFORMANCE_START -->)(.*?)(<!-- PREDICTIONS_PERFORMANCE_END -->)'
-            index_content = re.sub(pattern_perf, pred_perf_html, index_content, flags=re.DOTALL)
+            fase_grupos_content = re.sub(pattern_perf, pred_perf_html, fase_grupos_content, flags=re.DOTALL)
             
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write(index_content)
-        print(f"Actualizado index.html: Live Match Center ({len(today_matches)} partidos), Historial ({len(sorted_matches)} partidos), Tabla de Posiciones y Rendimiento de Predicciones")
+            
+        if fase_grupos_content:
+            with open(fase_grupos_path, 'w', encoding='utf-8') as f:
+                f.write(fase_grupos_content)
+        print(f"Actualizado index.html: Live Match Center ({len(today_matches)} partidos), Tabla de Posiciones y Peticiones de Fase de Grupos. Actualizado analisis_fase_grupos.html: Historial y Rendimiento de Predicciones.")
         
     # --- ACTUALIZACIÓN DE LAS TABLAS DE POSICIONES DE LOS GRUPOS (grupo_a.html a grupo_l.html) ---
     if standings:
