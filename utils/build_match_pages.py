@@ -946,17 +946,27 @@ def build_all_pages():
     from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
   }
+  details.collapsible-standings[open] .collapse-arrow {
+    transform: rotate(180deg);
+  }
+  details.collapsible-standings summary::-webkit-details-marker {
+    display: none;
+  }
 </style>
 
-<div class="standings-section">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
-    <h3 style="font-family: var(--font-head); font-size: 1.3rem; color: #fff; margin: 0; display: flex; align-items: center; gap: 8px;">
+<details class="collapsible-standings" open style="margin: 40px 0; border: 1px solid var(--border); border-radius: var(--r-lg); background: rgba(15, 12, 32, 0.45); box-shadow: 0 15px 35px rgba(0,0,0,0.3); overflow: hidden; transition: all 0.3s ease;">
+  <summary style="font-family: var(--font-head); font-size: 1.25rem; color: #fff; cursor: pointer; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); user-select: none;">
+    <span style="display: flex; align-items: center; gap: 10px; font-weight: 700;">
       🏆 Tabla de Posiciones Mundial 2026
-    </h3>
-    <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">
-      Simulación Local (Resultados Oficiales)
     </span>
-  </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span class="badge" style="background: rgba(0, 240, 255, 0.08); color: var(--cyan); border: none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin: 0;">
+        Simulación Local (Resultados Oficiales)
+      </span>
+      <span class="collapse-arrow" style="font-size: 0.85rem; color: var(--muted); transition: transform 0.2s;">▼</span>
+    </div>
+  </summary>
+  <div style="padding: 24px;">
   
   <div class="standings-tabs-container">""")
 
@@ -1027,7 +1037,8 @@ def build_all_pages():
   </div>""")
                 
             widget_html_parts.append("""
-</div>
+  </div>
+</details>
 
 <script>
 function switchStandingsTab(evt, tabId) {
