@@ -437,7 +437,13 @@ def build_all_pages():
             is_finished = meta.get('finalizado', 'false').lower() == 'true'
             
             clean_body = body
-            if not is_finished:
+            if is_finished:
+                # Si el partido terminó, ocultar la sección pre-partido
+                veredicto_idx = body.find("## ⚖️ Comparativa")
+                cronica_idx = body.find("## 📝 Crónica")
+                if veredicto_idx != -1 and cronica_idx != -1 and veredicto_idx < cronica_idx:
+                    clean_body = body[:veredicto_idx].strip() + "\n\n" + body[cronica_idx:].strip()
+            else:
                 cronica_idx = body.find("## 📝 Crónica")
                 if cronica_idx != -1:
                     clean_body = body[:cronica_idx].strip()
@@ -843,6 +849,7 @@ def build_all_pages():
         
         # Generar Tarjetas de Historial HTML
         history_cards = []
+        dieciseisavos_cards = []
         finished_matches = [m for m in all_compiled_matches if m['is_finished']]
         sorted_matches = sorted(finished_matches, key=lambda x: (x['fecha'], x['hora']), reverse=True)
         
@@ -865,7 +872,6 @@ def build_all_pages():
             """
             prediction_badge = ""
 
-            
             card_hist_html = f"""
       <div class="history-card" style="background: rgba(15, 12, 32, 0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: all 0.3s; height: 100%;" onmouseover="this.style.borderColor='var(--cyan)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'; this.style.transform='translateY(0)'">
         <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--muted);">
@@ -889,9 +895,13 @@ def build_all_pages():
         </div>
       </div>
 """
-            history_cards.append(card_hist_html)
+            if m['grupo'] == 'Dieciseisavos':
+                dieciseisavos_cards.append(card_hist_html)
+            else:
+                history_cards.append(card_hist_html)
             
         history_html = "\n        ".join(history_cards)
+        dieciseisavos_html = "\n        ".join(dieciseisavos_cards)
         
         # Generar Widget de Standings Dinámico para la Home Page
         standings_widget_html = ""
@@ -1072,6 +1082,11 @@ function switchStandingsTab(evt, tabId) {
         pattern_cards = r'(<!-- ANALISIS_CARDS_START -->)(.*?)(<!-- ANALISIS_CARDS_END -->)'
         replacement_cards = f'\\1\n        {cards_html}\n        \\3'
         index_content = re.sub(pattern_cards, replacement_cards, index_content, flags=re.DOTALL)
+        
+        # Remplazar tarjetas de Dieciseisavos en index.html
+        pattern_dieciseisavos = r'(<!-- DIECISEISAVOS_CARDS_START -->)(.*?)(<!-- DIECISEISAVOS_CARDS_END -->)'
+        replacement_dieciseisavos = f'\\1\n        {dieciseisavos_html}\n        \\3'
+        index_content = re.sub(pattern_dieciseisavos, replacement_dieciseisavos, index_content, flags=re.DOTALL)
         
         # Remplazar tarjetas de Historial en analisis_fase_grupos.html
         if fase_grupos_content:
