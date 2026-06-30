@@ -456,6 +456,7 @@ def build_all_pages():
                 try:
                     p_clean = pronostico_val.replace(' ', '')
                     r_clean = f"{goles_home}-{goles_away}".replace(' ', '')
+                    r_clean = re.sub(r'\(.*?\)', '', r_clean)
                     if p_clean == r_clean:
                         pred_status = "exact"
                         exact_count += 1

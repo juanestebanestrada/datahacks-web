@@ -6,11 +6,11 @@ fecha: "2026-06-29"
 hora: "21:00"
 home_team: "Países Bajos"
 away_team: "Marruecos"
-goles_home: 0
-goles_away: 0
+goles_home: "1 (2)"
+goles_away: "1 (3)"
 pronostico: "2 - 1"
-finalizado: "false"
-imagenes: "PerfilTacticoHolanda.png:Perfil Táctico (Países Bajos), PerfilTacticoMarruecos.png:Perfil Táctico (Marruecos)"
+finalizado: "true"
+imagenes: "PerfilTacticoHolanda.png:Perfil Táctico (Países Bajos), PerfilTacticoMarruecos.png:Perfil Táctico (Marruecos), Momentum_20260629_paisesbajos_marruecos.png:Match Momentum"
 slug: "paisesbajos_marruecos"
 poisson: "50-22-28"
 ---
@@ -19,6 +19,24 @@ poisson: "50-22-28"
 El enfrentamiento de Dieciseisavos de Final entre Países Bajos y Marruecos es, sin duda, uno de los duelos más parejos y atractivos de la eliminatoria. La Naranja Mecánica arriba invicta tras liderar el Grupo F, acumulando 10 goles anotados y 4 encajados. Su campaña incluye empates vibrantes ante Japón (2-2), una goleada contundente 5-1 sobre Suecia, y una sólida victoria 3-1 contra Túnez. El ataque neerlandés, con Xavi Simons en la creación y Cody Gakpo en definición, destaca por su fluidez en transiciones y dinamismo en el último tercio.
 
 Marruecos, por su parte, demostró que su solidez de Qatar 2022 sigue vigente al clasificar segundo del Grupo C. Empataron 1-1 con Brasil, batieron 1-0 a Escocia y cerraron la fase superando 4-2 a Haití, registrando 6 goles a favor y 3 en contra. El conjunto marroquí cuenta con el carril derecho élite de Achraf Hakimi y la inventiva de Brahim Díaz en tres cuartos de cancha, apostando a un bloque defensivo muy coordinado y letal en contragolpes directos. El modelo Poisson otorga a Países Bajos un 50.0% de probabilidad de victoria en los 90 minutos frente al 28.0% de Marruecos, anticipando una batalla de alto nivel táctico con una proyección de marcador de **2 - 1** en favor de los europeos.
+
+---
+
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: Países Bajos 1 (2) - 1 (3) Marruecos)
+Marruecos volvió a vestirse de matagigantes en la copa del mundo al apear a la selección de Países Bajos en una dramática tanda de penales tras finalizar 1-1 los 120 minutos reglamentarios. En un partido de alta tensión táctica, la Naranja Mecánica rompió el cero en el minuto 55' por medio de **Cody Gakpo**, quien definió con maestría tras un pase entrelíneas de Xavi Simons.
+
+Sin embargo, Marruecos reaccionó con orgullo e intensidad. A base de desbordes constantes de Achraf Hakimi, los Leones del Atlas encontraron el premio en el minuto 79': un centro espectacular del lateral derecho del PSG fue cabeceado al fondo de la red por **Youssef En-Nesyri** para desatar la locura de los hinchas marroquíes y decretar el 1-1 que se mantendría hasta la prórroga. En el drama de los penales, el portero marroquí **Yassine Bounou (Bono)** se erigió como la figura absoluta al detener los lanzamientos de Memphis Depay y Xavi Simons, guiando a Marruecos a un histórico triunfo 3-2 en la tanda de penales.
+
+### 🔮 Impacto en la Fase Final (Dieciseisavos) y Proyecciones
+* **Ajuste del Algoritmo:** La clasificación de Marruecos representa un nuevo golpe a los pronósticos matemáticos que favorecían a Países Bajos (50% vs 28%). La disciplina defensiva extrema en eliminación directa y la pericia en penaltis confirman el tremendo espíritu de copa de los africanos.
+* **Proyección de la Siguiente Fase (Octavos de Final):** Marruecos avanza a los Octavos de Final, donde se enfrentará a la sorpresiva selección de **Canadá** en un duelo de pronóstico reservado.
+
+### 📈 Análisis del Match Momentum y Match Point (Punto Crítico)
+El Match Momentum describe un partido muy disputado con alternancias de dominio. Países Bajos manejó el ritmo del partido con un 54% de posesión e intensidad durante los primeros 60 minutos, pero a partir del gol, cedió terreno. Marruecos se apoderó de las acciones en el último cuarto de hora (minutos 75' a 90'), alcanzando su máxima agresividad ofensiva que culminó con el gol del empate por medio de En-Nesyri.
+
+El **Match Point (Punto Crítico)** se situó indudablemente en la **tanda de penales, específicamente en la primera atajada de Bono**. Detener el cobro inicial de Memphis Depay inyectó de calma a los ejecutores marroquíes y trasladó toda la presión psicológica al combinado neerlandés, que terminó errando tres cobros en total.
 
 ---
 
