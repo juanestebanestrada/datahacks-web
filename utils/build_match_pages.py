@@ -51,6 +51,8 @@ TEMPLATE_HTML = """<!DOCTYPE html>
   <title>{titulo} // DataHacks</title>
   <meta name="description" content="Análisis táctico detallado del partido {home_team} vs {away_team} del Mundial 2026." />
   <link rel="stylesheet" href="../css/main.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263725844742178"
+     crossorigin="anonymous"></script>
   <style>
     .match-header {{
       padding: 140px 0 60px;
@@ -411,6 +413,9 @@ def build_all_pages():
     exact_count = 0
     tendency_count = 0
     miss_count = 0
+    exact_count_d = 0
+    tendency_count_d = 0
+    miss_count_d = 0
     
     if not os.path.exists(DATA_DIR):
         print(f"Directorio de datos {DATA_DIR} no existe.")
@@ -457,9 +462,13 @@ def build_all_pages():
                     p_clean = pronostico_val.replace(' ', '')
                     r_clean = f"{goles_home}-{goles_away}".replace(' ', '')
                     r_clean = re.sub(r'\(.*?\)', '', r_clean)
+                    is_d = (grupo == "Dieciseisavos")
                     if p_clean == r_clean:
                         pred_status = "exact"
-                        exact_count += 1
+                        if is_d:
+                            exact_count_d += 1
+                        else:
+                            exact_count += 1
                     else:
                         p_parts = p_clean.split('-')
                         r_parts = r_clean.split('-')
@@ -470,13 +479,25 @@ def build_all_pages():
                             r_diff = r_home - r_away
                             if (p_diff > 0 and r_diff > 0) or (p_diff < 0 and r_diff < 0) or (p_diff == 0 and r_diff == 0):
                                 pred_status = "tendency"
-                                tendency_count += 1
+                                if is_d:
+                                    tendency_count_d += 1
+                                else:
+                                    tendency_count += 1
+                            else:
+                                if is_d:
+                                    miss_count_d += 1
+                                else:
+                                    miss_count += 1
+                        else:
+                            if is_d:
+                                miss_count_d += 1
                             else:
                                 miss_count += 1
-                        else:
-                            miss_count += 1
                 except Exception:
-                    miss_count += 1
+                    if is_d:
+                        miss_count_d += 1
+                    else:
+                        miss_count += 1
                 
                 if pred_status == "exact":
                     label = "🎯 PREDICCIÓN EXACTA"
@@ -1148,6 +1169,54 @@ function switchStandingsTab(evt, tabId) {
     <!-- PREDICTIONS_PERFORMANCE_END -->"""
             pattern_perf = r'(<!-- PREDICTIONS_PERFORMANCE_START -->)(.*?)(<!-- PREDICTIONS_PERFORMANCE_END -->)'
             fase_grupos_content = re.sub(pattern_perf, pred_perf_html, fase_grupos_content, flags=re.DOTALL)
+            
+        # Remplazar rendimiento de predicciones en index.html (Dieciseisavos)
+        total_finished_d = exact_count_d + tendency_count_d + miss_count_d
+        if total_finished_d > 0:
+            exact_pct_d = round((exact_count_d / total_finished_d) * 100, 2)
+            tendency_pct_d = round((tendency_count_d / total_finished_d) * 100, 2)
+            miss_pct_d = round(100.0 - exact_pct_d - tendency_pct_d, 2)
+            
+            pred_perf_d_html = f"""<!-- PREDICTIONS_PERFORMANCE_DIECISEISAVOS_START -->
+    <div style="background: rgba(13, 27, 42, 0.45); backdrop-filter: blur(10px); border: 1px solid rgba(0, 240, 255, 0.15); border-radius: 10px; padding: 12px 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); text-align: center;">
+      <h4 style="color: var(--cyan); font-family: var(--font-head); font-size: 0.75rem; margin-bottom: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+        📊 RENDIMIENTO DE PREDICCIONES IA (DIECISEISAVOS)
+      </h4>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+        <div style="background: rgba(255,255,255,0.02); padding: 6px 4px; border-radius: 6px; border: 1px solid rgba(0, 230, 118, 0.12); transition: transform 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-size: 1rem; margin-bottom: 1px;">🎯</div>
+          <div style="font-size: 1.1rem; font-weight: 800; color: #00e676; font-family: var(--font-head);">{exact_pct_d:.2f}%</div>
+          <div style="font-size: 0.62rem; color: #00e676; font-weight: 700; text-transform: uppercase; margin-top: 1px; letter-spacing: 0.3px;">Exacta</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 6px 4px; border-radius: 6px; border: 1px solid rgba(255, 179, 0, 0.12); transition: transform 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-size: 1rem; margin-bottom: 1px;">🔮</div>
+          <div style="font-size: 1.1rem; font-weight: 800; color: #ffb300; font-family: var(--font-head);">{tendency_pct_d:.2f}%</div>
+          <div style="font-size: 0.62rem; color: #ffb300; font-weight: 700; text-transform: uppercase; margin-top: 1px; letter-spacing: 0.3px;">Ganador</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 6px 4px; border-radius: 6px; border: 1px solid rgba(255, 75, 75, 0.12); transition: transform 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="font-size: 1rem; margin-bottom: 1px;">❌</div>
+          <div style="font-size: 1.1rem; font-weight: 800; color: #ff4b4b; font-family: var(--font-head);">{miss_pct_d:.2f}%</div>
+          <div style="font-size: 0.62rem; color: #ff4b4b; font-weight: 700; text-transform: uppercase; margin-top: 1px; letter-spacing: 0.3px;">Fallida</div>
+        </div>
+      </div>
+      <!-- Barra de progreso acumulada -->
+      <div style="display: flex; height: 5px; border-radius: 2.5px; overflow: hidden; margin-top: 10px; background: rgba(255,255,255,0.05); width: 100%;">
+        <div style="width: {exact_pct_d:.2f}%; background: #00e676;" title="Predicción Exacta: {exact_pct_d:.2f}%"></div>
+        <div style="width: {tendency_pct_d:.2f}%; background: #ffb300;" title="Ganador Acertado: {tendency_pct_d:.2f}%"></div>
+        <div style="width: {miss_pct_d:.2f}%; background: #ff4b4b;" title="Predicción Fallida: {miss_pct_d:.2f}%"></div>
+      </div>
+      <div style="margin-top: 6px; font-size: 0.65rem; color: var(--muted); display: flex; justify-content: space-between;">
+        <span>Muestra: {total_finished_d} partidos</span>
+        <span>Modelo: Poisson Bivariado IA</span>
+      </div>
+      <!-- Gráfico de Evolución de Predicciones -->
+      <div style="margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px;">
+        <img src="assets/evolucion_predicciones_dieciseisavos.png" alt="Evolución de Predicciones Dieciseisavos" style="width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(0, 240, 255, 0.15);">
+      </div>
+    </div>
+    <!-- PREDICTIONS_PERFORMANCE_DIECISEISAVOS_END -->"""
+            pattern_perf_d = r'(<!-- PREDICTIONS_PERFORMANCE_DIECISEISAVOS_START -->)(.*?)(<!-- PREDICTIONS_PERFORMANCE_DIECISEISAVOS_END -->)'
+            index_content = re.sub(pattern_perf_d, pred_perf_d_html, index_content, flags=re.DOTALL)
             
         with open(index_path, 'w', encoding='utf-8') as f:
             f.write(index_content)
