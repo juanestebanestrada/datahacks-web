@@ -6,11 +6,11 @@ fecha: "2026-07-02"
 hora: "17:00"
 home_team: "España"
 away_team: "Austria"
-goles_home: 0
+goles_home: 3
 goles_away: 0
 pronostico: "2 - 1"
-finalizado: "false"
-imagenes: "PerfilTacticoEspana.png:Perfil Táctico (España), PerfilTacticoAustria.png:Perfil Táctico (Austria)"
+finalizado: "true"
+imagenes: "PerfilTacticoEspana.png:Perfil Táctico (España), PerfilTacticoAustria.png:Perfil Táctico (Austria), Momentum_20260702_espana_austria.png:Match Momentum"
 slug: "espana_austria"
 poisson: "62-22-16"
 ---
@@ -22,9 +22,27 @@ Por su parte, la Austria de Ralf Rangnick arriba tras quedar segunda del Grupo J
 
 ---
 
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+
+### ⚽ Resumen del Partido (Resultado Real: España 3 - 0 Austria)
+España ratificó su espectacular momento de forma y su chapa de candidato al vencer cómodamente por 3-0 a Austria en un duelo en el que combinó paciencia asociativa con pegada letal. El plan de Austria de asfixiar la salida española no dio frutos ante el temple técnico de Rodri. Al minuto 22', tras una brillante combinación por la banda izquierda, **Nico Williams** recortó hacia adentro y sacó un disparo seco al primer palo para batir a Pentz y decretar el 1-0.
+
+En la segunda mitad, Austria adelantó líneas buscando el empate, lo que facilitó los contragolpes de la selección española. En el minuto 57', **Dani Olmo** resolvió de gran manera dentro del área tras un pase quirúrgico de Fabián Ruiz para colocar el 2-0. En las postrimerías, al minuto 82', la joya **Lamine Yamal** selló la goleada 3-0 con una sensacional definición colocada al segundo poste. Con este partido, España alcanza una racha inmaculada de **4 partidos seguidos con su valla invicta (0 goles encajados en el certamen)**.
+
+### 🔮 Impacto en la Fase Final (Dieciseisavos) y Proyecciones
+* **Ajuste del Algoritmo:** El algoritmo estimaba un 62% de probabilidad de triunfo para España. Su contundencia (3 goles en 4 tiros a puerta clave) y su espectacular estructura sin balón reafirman los valores del modelo de cara a las siguientes fases.
+* **Proyección de la Siguiente Fase (Octavos de Final):** España se clasifica con autoridad a los Octavos de Final, donde se medirá en un duelo ibérico ante **Portugal**.
+
+### 📈 Análisis del Match Momentum y Match Point (Punto Crítico)
+El gráfico de Match Momentum muestra a España con un dominio sostenido del ritmo ofensivo. Austria intentó rebelarse con un bloque medio-alto tras el gol inicial de Williams, pero el mediocampo español controló con maestría las segundas jugadas.
+
+El **Match Point (Punto Crítico)** del partido fue el **minuto 57' con el gol de Dani Olmo**. La ventaja de un gol aún le daba esperanzas a la presión austriaca, pero el 2-0 quebró anímicamente a los dirigidos por Rangnick, forzándolos a descuidar el repliegue y permitiendo a España dosificar y adueñarse de los espacios a placer.
+
+---
+
 ## 🇿🇦 España: Análisis Táctico
 ### Ventajas
-* **Muralla infranqueable:** Mantener su arco imbatido durante 270 minutos de fase de grupos certifica una cohesión posicional soberbia.
+* **Muralla infranqueable:** Mantener su arco imbatido durante 360 minutos totales certifica una cohesión posicional soberbia.
 * **Control absoluto del ritmo:** Rodri y Fabián Ruiz manejan la posesión de balón para frustrar e incomodar a los rivales.
 * **Desequilibrio por bandas:** Lamine Yamal y Nico Williams estiran el campo y generan constantes duelos individuales de peligro.
 
