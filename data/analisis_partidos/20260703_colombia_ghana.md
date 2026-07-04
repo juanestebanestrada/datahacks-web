@@ -6,19 +6,24 @@ fecha: "2026-07-03"
 hora: "21:00"
 home_team: "Colombia"
 away_team: "Ghana"
-goles_home: 0
+goles_home: 1
 goles_away: 0
 pronostico: "2 - 0"
-finalizado: "false"
-imagenes: "PerfilTacticoColombia.png:Perfil Táctico (Colombia), PerfilTacticoGhana.png:Perfil Táctico (Ghana)"
+finalizado: "true"
+imagenes: "PerfilTacticoColombia.png:Perfil Táctico (Colombia), PerfilTacticoGhana.png:Perfil Táctico (Ghana), Momentum_20260703_colombia_ghana.png:Match Momentum"
 slug: "colombia_ghana"
 poisson: "55-27-18"
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-El enfrentamiento de Dieciseisavos de Final entre Colombia y Ghana promete ser una eliminatoria sumamente física, táctica e intensa en el centro del campo. La selección cafetera arriba como líder invicto de su sector tras completar una fase de grupos excelente: sumó 7 unidades (2 victorias, 1 empate), **anotando 4 goles** y concediendo apenas 1. El elenco dirigido por Néstor Lorenzo destaca por su equilibrio táctico, el liderazgo ofensivo de Luis Díaz y James Rodríguez, y la seguridad defensiva impuesta en su última línea.
+## ⚖️ Comparativa y Veredicto (Post-Partido)
+Colombia ratificó su gran momento colectivo y defensivo al imponerse 1-0 sobre Ghana en un duelo de alta fricción física en el mediocampo. Las Estrellas Negras de Ghana trataron de incomodar con una marca férrea sobre James Rodríguez y explotando la velocidad de Kudus por las bandas. 
 
-Por su parte, las Estrellas Negras de Ghana consiguieron su clasificación como segundos del Grupo L tras cosechar 4 puntos. El cuadro africano es muy aguerrido y vertical, **anotando 2 goles** y encajando 2 en lo que va de torneo. Confiarán en la fortaleza física de Mohammed Kudus en zona de tres cuartos para intentar sorprender a la zaga colombiana. Sin embargo, el modelo Poisson otorga a Colombia un 55.0% de probabilidad de avanzar debido a su consistencia defensiva y mayor orden colectivo, proyectando un veredicto de **2 - 0**.
+No obstante, la zaga colombiana liderada por Davinson Sánchez repelió cada embate. En la segunda mitad, una gran combinación entre James y Luis Díaz culminó con el único gol del partido al minuto 61'. Con este resultado, Colombia se clasifica a la ronda de los 16 mejores del torneo manteniendo su solidez característica.
+
+---
+
+## 🎯 Match Point
+La anotación de **Luis Díaz al minuto 61'**. Ante un bloque ghanés sumamente replegado y agresivo que lograba neutralizar el circuito de juego interior, James Rodríguez habilitó magistralmente a Díaz con un sutil pase filtrado bombeado que el extremo definió con excelsa categoría para romper el cerrojo africano.
 
 ---
 

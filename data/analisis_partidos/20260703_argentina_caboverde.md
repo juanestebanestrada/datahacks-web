@@ -6,19 +6,24 @@ fecha: "2026-07-03"
 hora: "19:00"
 home_team: "Argentina"
 away_team: "Cabo Verde"
-goles_home: 0
-goles_away: 0
+goles_home: 3
+goles_away: 2
 pronostico: "3 - 0"
-finalizado: "false"
-imagenes: "PerfilTacticoArgentina.png:Perfil Táctico (Argentina), PerfilTacticoCaboVerde.png:Perfil Táctico (Cabo Verde)"
+finalizado: "true"
+imagenes: "PerfilTacticoArgentina.png:Perfil Táctico (Argentina), PerfilTacticoCaboVerde.png:Perfil Táctico (Cabo Verde), Momentum_20260703_argentina_caboverde.png:Match Momentum"
 slug: "argentina_caboverde"
 poisson: "75-17-8"
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-El enfrentamiento de Dieciseisavos de Final entre Argentina y Cabo Verde presenta una de las llaves con favoritismo más marcado en la previa del certamen. La Albiceleste completó una fase de grupos perfecta, sumando 9 puntos (3 victorias), **anotando 8 goles** y concediendo apenas 1. El elenco de Lionel Scaloni combina la solvencia y solidez defensiva del "Cuti" Romero con el genio creativo de Lionel Messi y la contundencia goleadora de Lautaro Martínez.
+## ⚖️ Comparativa y Veredicto (Post-Partido)
+Argentina consiguió su boleto a los Octavos de Final en un auténtico partidazo frente a la aguerrida selección de Cabo Verde, imponiéndose por un ajustado 3-2. La Albiceleste parecía encarrilar una cómoda victoria con goles de Lautaro Martínez en los minutos 14' y 55'. No obstante, Cabo Verde dio una muestra de orgullo y acortó distancias con un golazo de Garry Rodrigues en el minuto 38'. 
 
-Por su parte, la cenicienta Cabo Verde arriba con mucha ilusión tras calificar de manera heroica como uno de los mejores terceros del certamen, acumulando 3 unidades en el Grupo H (2 goles a favor, 2 en contra). La escuadra africana apostará por replegar sus líneas en bloque bajo, cerrar los espacios interiores y buscar transiciones milagrosas guiadas por Garry Rodrigues. El modelo Poisson favorece de forma arrolladora a Argentina con un 75.0% de probabilidad de victoria, proyectando un cómodo triunfo albiceleste por **3 - 0**.
+En el segundo tiempo, cuando los africanos apretaban con transiciones veloces, apareció Lionel Messi con una genialidad de tiro libre al 78' para firmar el 3-1 parcial. A pesar de que Ryan Mendes marcó al 89' para revivir el drama, la jerarquía y solidez argentina terminaron sellando el pase a la siguiente fase de eliminación directa.
+
+---
+
+## 🎯 Match Point
+El **golazo de Lionel Messi al minuto 78'**. En momentos en que Cabo Verde ganaba confianza y presionaba con transiciones muy directas buscando la paridad, la sutil pincelada de tiro libre de Messi para poner el 3-1 devolvió la tranquilidad táctica a la Albiceleste y blindó al equipo contra el descuento posterior de Cabo Verde en el último suspiro del encuentro.
 
 ---
 

@@ -6,19 +6,24 @@ fecha: "2026-07-03"
 hora: "17:00"
 home_team: "Australia"
 away_team: "Egipto"
-goles_home: 0
-goles_away: 0
+goles_home: "1 (2)"
+goles_away: "1 (4)"
 pronostico: "1 - 2"
-finalizado: "false"
-imagenes: "PerfilTacticoAustralia.png:Perfil Táctico (Australia), PerfilTacticoEgipto.png:Perfil Táctico (Egipto)"
+finalizado: "true"
+imagenes: "PerfilTacticoAustralia.png:Perfil Táctico (Australia), PerfilTacticoEgipto.png:Perfil Táctico (Egipto), Momentum_20260703_australia_egipto.png:Match Momentum"
 slug: "australia_egipto"
 poisson: "28-27-45"
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-El cruce de Dieciseisavos de Final entre Australia y Egipto en el Mundial 2026 presenta un interesante choque cultural y futbolístico. La selección de Australia clasificó a esta fase tras una campaña sumamente disputada en el Grupo C, donde sumó 4 puntos (1 victoria, 1 empate, 1 derrota), **marcando 2 goles** y encajando 2. El combinado oceánico destaca por su despliegue físico, orden defensivo en bloque medio y peligro a balón parado.
+## ⚖️ Comparativa y Veredicto (Post-Partido)
+El enfrentamiento de Dieciseisavos de Final entre Australia y Egipto cumplió con las expectativas de dramatismo y rigor táctico, definiéndose en una emocionante tanda de penaltis a favor de los Faraones (4-2) tras igualar 1-1 en los 120 minutos. Australia comenzó imponiendo condiciones con su característico juego físico, abriendo el marcador por medio de Harry Souttar (43') con un imponente remate de cabeza tras un tiro de esquina. 
 
-Egipto arriba como segundo lugar del Grupo G, habiendo registrado 5 unidades (1 victoria, 2 empates). Los Faraones han mostrado una interesante fluidez creativa en ataque, **anotando 5 goles** pero concediendo 3 en la fase de grupos. Liderados por su gran referente Riyad y su juego asociativo por bandas, buscarán desgastar el bloque defensivo australiano. El modelo Poisson otorga a Egipto un 45.0% de probabilidad de avanzar debido a su mayor volumen en ofensiva estática, decretando un veredicto de **2 - 1** (marcador en formato local de **1 - 2** a favor de los Faraones).
+Sin embargo, en la segunda mitad, Egipto adelantó líneas y explotó su fluidez creativa. El empate llegó al 67' a través de un cobro magistral de tiro libre ejecutado por Omar Marmoush. En la prórroga prevaleció el cansancio y el orden táctico, obligando a definir el pase en los tiros desde el punto penal, donde el guardameta egipcio El-Shenawy emergió como héroe atajando dos disparos oceánicos.
+
+---
+
+## 🎯 Match Point
+El punto de inflexión absoluto del encuentro fue **la tanda de penaltis**. Tras un partido de desgaste extremo, el guardameta egipcio Mohamed El-Shenawy detuvo consecutivamente los lanzamientos de Australia (el segundo y tercer cobro), inclinando de manera definitiva la balanza psicológica e impulsando a Egipto a avanzar a los Octavos de Final con un contundente 4-2 en la serie.
 
 ---
 

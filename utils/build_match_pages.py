@@ -644,6 +644,14 @@ def build_all_pages():
                     match_cro = re.search(r'<h2>.*?Crónica.*?</h2>', body_html)
                     if match_cro:
                         cronica_start = match_cro.start()
+                if cronica_start == -1:
+                    match_ver = re.search(r'<h2>.*?(?:Veredicto|Comparativa|Match Point).*?</h2>', body_html)
+                    if match_ver:
+                        cronica_start = match_ver.start()
+                if cronica_start == -1:
+                    match_any = re.search(r'<h2>.*?</h2>', body_html)
+                    if match_any:
+                        cronica_start = match_any.start()
                 
                 if cronica_start != -1:
                     next_h2 = body_html.find("<h2>", cronica_start + 10)
@@ -666,7 +674,7 @@ def build_all_pages():
 """
                     body_html = body_html[:insert_pos] + momentum_html + body_html[insert_pos:]
             
-            grupo_page = GROUP_PAGES.get(grupo, "grupo_a.html")
+            grupo_page = GROUP_PAGES.get(grupo, "index.html")
             code_home = FLAGS_MAP.get(home_team, 'un')
             code_away = FLAGS_MAP.get(away_team, 'un')
             
