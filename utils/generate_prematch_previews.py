@@ -147,8 +147,8 @@ def generate_tactical_previews(date_str):
         home_flag = FLAGS_MAP.get(home_es, "🏳️")
         away_flag = FLAGS_MAP.get(away_es, "🏳️")
         
-        group_raw = m.get("group", "GROUP_A")
-        group_es = group_raw.replace("GROUP_", "Grupo ")
+        group_raw = m.get("group") or m.get("stage") or "OCTAVOS"
+        group_es = str(group_raw).replace("GROUP_", "Grupo ").replace("LAST_16", "Octavos de Final").replace("LAST_32", "Dieciseisavos de Final").replace("OCTAVOS", "Octavos de Final")
         
         utc_date_str = m.get("utcDate", "")
         match_time = "14:00"

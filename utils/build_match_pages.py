@@ -462,7 +462,7 @@ def build_all_pages():
                     p_clean = pronostico_val.replace(' ', '')
                     r_clean = f"{goles_home}-{goles_away}".replace(' ', '')
                     r_clean = re.sub(r'\(.*?\)', '', r_clean)
-                    is_d = (grupo == "Dieciseisavos")
+                    is_d = (grupo in ["Dieciseisavos", "Octavos", "Cuartos", "Semifinales", "Final"])
                     if p_clean == r_clean:
                         pred_status = "exact"
                         if is_d:
@@ -925,7 +925,7 @@ def build_all_pages():
         </div>
       </div>
 """
-            if m['grupo'] == 'Dieciseisavos':
+            if m['grupo'] in ['Dieciseisavos', 'Octavos', 'Cuartos', 'Semifinales', 'Final']:
                 dieciseisavos_cards.append(card_hist_html)
             else:
                 history_cards.append(card_hist_html)

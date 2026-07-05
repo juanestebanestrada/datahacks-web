@@ -103,9 +103,15 @@ def _generate(prompt: str, force_ollama: bool = None, model_ollama: str = None) 
     
     # Sincronizar con el Centro de Control Global (Session State) si no se pasan parámetros manuales
     if force_ollama is None:
-        force_ollama = st.session_state.get('force_ollama', False)
+        try:
+            force_ollama = st.session_state.get('force_ollama', False)
+        except Exception:
+            force_ollama = False
     if model_ollama is None:
-        model_ollama = st.session_state.get('model_ollama', 'gemma4:e4b')
+        try:
+            model_ollama = st.session_state.get('model_ollama', 'gemma4:e4b')
+        except Exception:
+            model_ollama = 'gemma4:e4b'
 
     # 1. SI SE FUERZA OLLAMA (MODO LOCAL)
     if force_ollama:

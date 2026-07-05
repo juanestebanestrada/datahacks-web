@@ -26,7 +26,7 @@ for filename in os.listdir(DATA_DIR):
         is_finished = meta.get("finalizado", "false").lower() == "true"
         grupo = meta.get("grupo", "")
         
-        if is_finished and grupo == "Dieciseisavos":
+        if is_finished and grupo in ["Dieciseisavos", "Octavos"]:
             fecha = meta.get("fecha", "2026-06-28")
             home_team = meta.get("home_team", "")
             away_team = meta.get("away_team", "")
@@ -107,7 +107,7 @@ ax.plot(x, tendency_history, color='#ffb300', marker='o', markersize=4, linewidt
 ax.plot(x, miss_history, color='#ff4b4b', marker='o', markersize=4, linewidth=2.0, label='❌ Predicción Fallida')
 
 # Configurar ejes y títulos
-ax.set_title('Evolución del Rendimiento del Algoritmo (Dieciseisavos)', color='white', fontsize=11, fontweight='bold', pad=15)
+ax.set_title('Evolución del Rendimiento del Algoritmo (Fase Eliminatoria)', color='white', fontsize=11, fontweight='bold', pad=15)
 ax.set_xlabel('Partidos Jugados', color='#888888', fontsize=9)
 ax.set_ylabel('Porcentaje Acumulado (%)', color='#888888', fontsize=9)
 
