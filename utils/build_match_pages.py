@@ -691,7 +691,8 @@ def build_all_pages():
                 display_score=display_score,
                 score_label=score_label,
                 body_html=body_html,
-                visuals_html=visuals_html
+                visuals_html=visuals_html,
+                poisson=meta.get('poisson', '58-26-16')
             )
             
             output_file = os.path.join(ANALISIS_DIR, f"{slug}.html")
