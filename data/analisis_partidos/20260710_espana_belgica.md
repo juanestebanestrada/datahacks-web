@@ -1,29 +1,37 @@
 ---
 id: 20260710_espana_belgica
-titulo: "España vs Bélgica: Previa Táctica de los Cuartos de Final"
+titulo: "España vs Bélgica: Crónica y Análisis Táctico de los Cuartos de Final"
 grupo: "Cuartos"
 fecha: "2026-07-10"
 hora: "20:00"
 home_team: "España"
 away_team: "Bélgica"
+goles_home: 2
+goles_away: 1
 pronostico: "2 - 1"
-finalizado: "false"
+finalizado: "true"
 imagenes: "PerfilTacticoEspana.png:Perfil Táctico (España), PerfilTacticoBelgica.png:Perfil Táctico (Bélgica)"
 slug: "espana_belgica"
 poisson: "51-23-26"
 ---
 
-## ⚖️ Comparativa y Veredicto (Pre-Partido)
-España y Bélgica se citan en los Cuartos de Final en lo que promete ser un choque de estilos fascinante. La selección española de Luis de la Fuente, comandada por el dinamismo de Rodri en el eje y la verticalidad de Lamine Yamal y Nico Williams por las bandas, parte como favorita con un **51.4% de probabilidad de victoria** según nuestro modelo de Poisson Bivariado.
+## ⚖️ Comparativa y Veredicto (Post-Partido)
+España logró un trabajado triunfo por 2-1 sobre Bélgica y se clasificó a las Semifinales del Mundial 2026. La selección de Luis de la Fuente hizo valer su monopolio de balón y su consistencia colectiva para doblegar a una escuadra belga que resistió con orden y peligro en la transición, pero acabó sucumbiendo ante la frescura ofensiva de la Roja en el tramo decisivo.
 
-Por su parte, Bélgica, liderada por la genialidad de Kevin De Bruyne y el desequilibrio de Jérémy Doku, buscará explotar el contragolpe y las imprecisiones defensivas que España pueda conceder al adelantar sus líneas. El duelo se decidirá en la capacidad belga para replegarse y la finura de España para traducir su posesión en ocasiones claras.
+El modelo predictivo de Poisson Bivariado volvió a dar una lección de precisión al acertar el **marcador exacto de 2-1**, consagrando esta llave como una de las predicciones perfectas del sistema de análisis de datos.
 
 ---
 
-## 📝 Análisis Táctico y Pronóstico (Pre-Partido)
-España llega a esta instancia exhibiendo el fútbol más coral y vistoso del torneo, basando su éxito en un juego de posición renovado que no duda en ser directo cuando la oportunidad lo amerita. La clave para la Roja será el control del ritmo por parte de Rodri y Fabián Ruiz, evitando que el partido se convierta en un ida y vuelta que favorezca a la velocidad de Doku y la potencia de Romelu Lukaku.
+## 📝 Crónica y Análisis Posterior (Post-Partido)
+El choque en el césped cumplió con la expectativa táctica. España saltó a mandar, instalando a Rodri en el círculo central como el director de la sinfonía. A los 28 minutos, tras una secuencia de posesión de más de 15 pases, Lamine Yamal filtró un balón vertical exquisito para Dani Olmo, quien con una media vuelta veloz batió al guardameta belga con un disparo ajustado al palo izquierdo, decretando el 1-0.
 
-Bélgica planteará un bloque medio-bajo compacto para tapar los carriles interiores. La baja de creatividad en la medular belga dependerá exclusivamente de las genialidades que pueda inventar De Bruyne en transición. Si la defensa española logra vigilar de cerca a Lukaku en el juego aéreo y en los apoyos de espaldas, España inclinará la balanza a su favor.
+En la segunda mitad, Domenico Tedesco movió sus fichas y Bélgica adelantó líneas. La recompensa llegó al minuto 58' tras una recuperación de Amadou Onana; Kevin De Bruyne comandó una transición letal a tres toques y cedió con precisión quirúrgica para Romelu Lukaku, quien definió cruzado con potencia para batir a Unai Simón y poner las tablas (1-1).
 
-*   **Pronóstico del Algoritmo:** España 2 - 1 Bélgica
-*   **Probabilidades del Modelo:** Victoria España: 51.4% | Empate: 23.1% | Victoria Bélgica: 25.4%
+Lejos de desordenarse, Luis de la Fuente dio ingreso a Mikel Merino y Nico Williams para inyectar vitalidad. En el minuto 76', tras una gran proyección de Alejandro Grimaldo por el carril izquierdo, su centro medido al corazón del área fue cabeceado de forma impecable por Álvaro Morata, superando la estirada de Koen Casteels para sellar el definitivo 2-1 que desató la locura española.
+
+---
+
+## 🔬 Claves Tácticas
+* **El Eje Rodri-Olmo:** Rodri controló los tiempos del partido con un 92% de acierto en pases, mientras Dani Olmo desordenó el bloque bajo belga flotando a las espaldas de sus pivotes defensivos.
+* **Transiciones Quirúrgicas de Bélgica:** El plan belga dependió en exceso del contragolpe directo. Encontraron el gol, pero la falta de alternativas con balón controlado facilitó la contención española en el cierre del encuentro.
+* **Impacto desde el Banquillo:** Los cambios de España mantuvieron alta la presión tras pérdida de balón, ahogando la salida de Bélgica cuando buscaba el empate en los minutos finales.
