@@ -10,7 +10,7 @@ goles_home: 3
 goles_away: 2
 pronostico: "2 - 0"
 finalizado: "true"
-imagenes: "PerfilTacticoArgentina.png:Perfil Táctico (Argentina), PerfilTacticoEgipto.png:Perfil Táctico (Egipto)"
+imagenes: "PerfilTacticoArgentina.png:Perfil Táctico (Argentina), PerfilTacticoEgipto.png:Perfil Táctico (Egipto), Momentum_20260707_argentina_egipto.png:Match Momentum"
 slug: "argentina_egipto"
 poisson: "58-22-20"
 ---

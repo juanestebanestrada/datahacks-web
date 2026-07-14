@@ -10,7 +10,7 @@ goles_home: 2
 goles_away: 0
 pronostico: "2 - 0"
 finalizado: "true"
-imagenes: "PerfilTacticoFrancia.png:Perfil Táctico (Francia), PerfilTacticoMarruecos.png:Perfil Táctico (Marruecos)"
+imagenes: "PerfilTacticoFrancia.png:Perfil Táctico (Francia), PerfilTacticoMarruecos.png:Perfil Táctico (Marruecos), Momentum_20260709_francia_marruecos.png:Match Momentum"
 slug: "francia_marruecos"
 poisson: "60-21-19"
 ---

@@ -10,7 +10,7 @@ goles_home: 2
 goles_away: 1
 pronostico: "2 - 1"
 finalizado: "true"
-imagenes: "PerfilTacticoEspana.png:Perfil Táctico (España), PerfilTacticoBelgica.png:Perfil Táctico (Bélgica)"
+imagenes: "PerfilTacticoEspana.png:Perfil Táctico (España), PerfilTacticoBelgica.png:Perfil Táctico (Bélgica), Momentum_20260710_espana_belgica.png:Match Momentum"
 slug: "espana_belgica"
 poisson: "51-23-26"
 ---

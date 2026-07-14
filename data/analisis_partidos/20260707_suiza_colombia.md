@@ -10,7 +10,7 @@ goles_home: "0 (4)"
 goles_away: "0 (3)"
 pronostico: "1 - 2"
 finalizado: "true"
-imagenes: "PerfilTacticoSuiza.png:Perfil Táctico (Suiza), PerfilTacticoColombia.png:Perfil Táctico (Colombia)"
+imagenes: "PerfilTacticoSuiza.png:Perfil Táctico (Suiza), PerfilTacticoColombia.png:Perfil Táctico (Colombia), Momentum_20260707_suiza_colombia.png:Match Momentum"
 slug: "suiza_colombia"
 poisson: "31-27-42"
 ---
