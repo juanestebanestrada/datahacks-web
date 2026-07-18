@@ -26,7 +26,7 @@ for filename in os.listdir(DATA_DIR):
         is_finished = meta.get("finalizado", "false").lower() == "true"
         grupo = meta.get("grupo", "")
         
-        if is_finished and grupo in ["Dieciseisavos", "Octavos", "Cuartos", "Semifinales"]:
+        if is_finished and grupo in ["Dieciseisavos", "Octavos", "Cuartos", "Semifinales", "Tercer Puesto", "Final"]:
             fecha = meta.get("fecha", "2026-06-28")
             home_team = meta.get("home_team", "")
             away_team = meta.get("away_team", "")
