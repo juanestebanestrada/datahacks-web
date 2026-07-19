@@ -31,6 +31,11 @@ En la segunda mitad, el desgaste físico pasó factura al conjunto africano. Fra
 
 ---
 
+## 🎯 Match Point
+El punto de inflexión absoluto del encuentro fue **el gol de Randal Kolo Muani en el minuto 78'**. En momentos en que Marruecos adelantaba todas sus piezas por las bandas buscando desesperadamente la paridad, la jugada individual de Kylian Mbappé para romper tres marcas y asistir a Kolo Muani dictó la sentencia final (2-0), liquidando la resistencia africana y sellando el boleto de Francia a semifinales.
+
+---
+
 ## 🔬 Claves Tácticas
 * **El Orden de Griezmann:** Antoine Griezmann volvió a ser el motor táctico de Francia, actuando como conector entre la línea de mediocampistas y los atacantes, además de aportar un sacrificio defensivo encomiable.
 * **Control de Transiciones:** Francia neutralizó la velocidad marroquí al replegarse rápidamente en cuanto perdía el balón, evitando quedar expuesta.

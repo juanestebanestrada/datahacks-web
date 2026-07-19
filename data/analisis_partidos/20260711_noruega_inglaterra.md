@@ -31,7 +31,11 @@ Sin embargo, el banquillo inglés respondió rápidamente y Southgate introdujo 
 
 ---
 
-## 🔬 Claves Tácticas y Match Point
-* **El Match Point (Punto Crítico):** El punto crítico de inflexión táctica del encuentro ocurrió en el **minuto 72' con el gol de Harry Kane**. Justo cuando Noruega vivía su mejor momento anímico y futbolístico tras el empate de Haaland y una oportunidad clara fallada por el propio delantero al minuto 68', la rápida anotación de Kane destrozó el plan de repliegue nórdico, forzándolos a un desgaste físico que ya no pudieron sostener.
+## 🎯 Match Point
+El punto crítico de inflexión táctica del encuentro ocurrió en el **minuto 72' con el gol de Harry Kane**. Justo cuando Noruega vivía su mejor momento anímico y futbolístico tras el empate de Haaland y una oportunidad clara fallada por el propio delantero al minuto 68', la rápida anotación de Kane destrozó el plan de repliegue nórdico, forzándolos a un desgaste físico que ya no pudieron sostener.
+
+---
+
+## 🔬 Claves Tácticas
 * **Control del Ritmo:** Declan Rice y Bellingham mantuvieron la posesión en el tramo final, anestesiando el partido frente a la fatiga escandinava.
 * **Aislamiento de Ødegaard:** La marca escalonada de Inglaterra redujo las líneas de pase de Ødegaard hacia Haaland durante gran parte del primer tiempo.

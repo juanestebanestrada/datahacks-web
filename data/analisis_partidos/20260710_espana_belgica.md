@@ -31,6 +31,11 @@ Lejos de desordenarse, Luis de la Fuente dio ingreso a Mikel Merino y Nico Willi
 
 ---
 
+## 🎯 Match Point
+El punto de inflexión decisivo del partido fue **el cabezazo de Álvaro Morata en el minuto 76'**. Tras el empate transitorio de Lukaku que había envalentonado al conjunto belga, el milimétrico centro de Grimaldo y el testarazo impecable de Morata devolvieron la ventaja a la Selección Española, permitiendo a la Roja dormir el balón y controlar los minutos finales sin conceder opciones de prórroga.
+
+---
+
 ## 🔬 Claves Tácticas
 * **El Eje Rodri-Olmo:** Rodri controló los tiempos del partido con un 92% de acierto en pases, mientras Dani Olmo desordenó el bloque bajo belga flotando a las espaldas de sus pivotes defensivos.
 * **Transiciones Quirúrgicas de Bélgica:** El plan belga dependió en exceso del contragolpe directo. Encontraron el gol, pero la falta de alternativas con balón controlado facilitó la contención española en el cierre del encuentro.

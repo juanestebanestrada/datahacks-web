@@ -31,7 +31,11 @@ Lejos de venirse abajo, Argentina reaccionó inmediatamente. Al minuto 64', en u
 
 ---
 
-## 🔬 Claves Tácticas y Match Point
-* **El Match Point (Punto Crítico):** El punto crítico de inflexión del partido ocurrió en el **minuto 64' con el gol de Lautaro Martínez (2-1)**, apenas dos minutos después del empate suizo de Embolo. Esta respuesta inmediata de la Albiceleste cortó de raíz el crecimiento anímico de Suiza y destruyó cualquier posibilidad táctica helvética de replegarse para buscar una prórroga, obligándolos a abrir sus líneas y dejarse exponer al contragolpe.
+## 🎯 Match Point
+El punto crítico de inflexión del partido ocurrió en el **minuto 64' con el gol de Lautaro Martínez (2-1)**, apenas dos minutos después del empate suizo de Embolo. Esta respuesta inmediata de la Albiceleste cortó de raíz el crecimiento anímico de Suiza y destruyó cualquier posibilidad táctica helvética de replegarse para buscar una prórroga, obligándolos a abrir sus líneas y dejarse exponer al contragolpe.
+
+---
+
+## 🔬 Claves Tácticas
 * **El Liderazgo de Messi:** Messi volvió a ser el cerebro del mediocampo, asistiendo en los dos primeros goles y regulando las transiciones del equipo.
 * **Profundidad de Plantilla:** El ingreso de Julián Álvarez y Rodrigo De Paul renovó el apartado físico de Argentina y congeló los intentos de presión de Granit Xhaka y compañía.
