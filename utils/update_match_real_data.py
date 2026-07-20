@@ -1,0 +1,395 @@
+# -*- coding: utf-8 -*-
+"""
+utils/update_match_real_data.py
+Actualiza las crónicas y gráficos de tiros (Shot Maps) con datos reales del Mundial 2026
+obtenidos directamente de la API de FotMob.
+"""
+import os
+import sys
+import io
+import re
+import json
+import requests
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Forzar codificación UTF-8 en consolas Windows
+if sys.platform.startswith('win'):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
+# Agregar directorio raíz para importaciones de utils
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
+from utils.visualization import generar_mapa
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+}
+
+# Configuración de partidos y sus IDs reales en FotMob
+MATCHES_CONFIG = [
+    {
+        "match_id": 4667751,
+        "slug": "mexico_sudafrica",
+        "md_filename": "20260611_mexico_sudafrica.md",
+        "home_name": "México",
+        "away_name": "Sudáfrica",
+        "home_flag": "🇲🇽",
+        "away_flag": "🇿🇦",
+        "home_img": "ShotMapMéxico.png",
+        "away_img": "ShotMapSudáfrica.png"
+    },
+    {
+        "match_id": 4667752,
+        "slug": "repcheca_coreasur",
+        "md_filename": "20260611_repcheca_coreasur.md",
+        "home_name": "Rep. Checa",
+        "away_name": "Corea del Sur",
+        "home_flag": "🇨🇿",
+        "away_flag": "🇰🇷",
+        "home_img": "ShotMapRep.Checa.png",
+        "away_img": "ShotMapCoreaDelSur.png"
+    },
+    {
+        "match_id": 4667758,
+        "slug": "qatar_suiza",
+        "md_filename": "20260613_qatar_suiza.md",
+        "home_name": "Qatar",
+        "away_name": "Suiza",
+        "home_flag": "🇶🇦",
+        "away_flag": "🇨🇭",
+        "home_img": "ShotMap_Qatar_horizontal_20260613.png",
+        "away_img": "ShotMap_Suiza_horizontal_20260613.png"
+    },
+    {
+        "match_id": 4667764,
+        "slug": "brasil_marruecos",
+        "md_filename": "20260613_brasil_marruecos.md",
+        "home_name": "Brasil",
+        "away_name": "Marruecos",
+        "home_flag": "🇧🇷",
+        "away_flag": "🇲🇦",
+        "home_img": "ShotMap_Brasil_horizontal_20260613.png",
+        "away_img": "ShotMap_Marruecos_horizontal_20260613.png"
+    },
+    {
+        "match_id": 4667765,
+        "slug": "haiti_escocia",
+        "md_filename": "20260613_haiti_escocia.md",
+        "home_name": "Haití",
+        "away_name": "Escocia",
+        "home_flag": "🇭🇹",
+        "away_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "home_img": "ShotMap_Haití_horizontal_20260613.png",
+        "away_img": "ShotMap_Escocia_horizontal_20260613.png"
+    },
+    {
+        "match_id": 4667772,
+        "slug": "australia_turquia",
+        "md_filename": "20260613_australia_turquia.md",
+        "home_name": "Australia",
+        "away_name": "Turquía",
+        "home_flag": "🇦🇺",
+        "away_flag": "🇹🇷",
+        "home_img": "ShotMap_Australia_horizontal_20260613.png",
+        "away_img": "ShotMap_Turquía_horizontal_20260613.png"
+    },
+    {
+        "match_id": 4667777,
+        "slug": "alemania_curazao",
+        "md_filename": "20260614_alemania_curazao.md",
+        "home_name": "Alemania",
+        "away_name": "Curazao",
+        "home_flag": "🇩🇪",
+        "away_flag": "🇨🇼",
+        "home_img": "ShotMap_Alemania_horizontal_20260614.png",
+        "away_img": "ShotMap_Curazao_horizontal_20260614.png"
+    },
+    {
+        "match_id": 4667783,
+        "slug": "paisesbajos_japon",
+        "md_filename": "20260614_paisesbajos_japon.md",
+        "home_name": "Países Bajos",
+        "away_name": "Japón",
+        "home_flag": "🇳🇱",
+        "away_flag": "🇯🇵",
+        "home_img": "ShotMap_Países Bajos_horizontal_20260614.png",
+        "away_img": "ShotMap_Japón_horizontal_20260614.png"
+    },
+    {
+        "match_id": 4667778,
+        "slug": "costamarfil_ecuador",
+        "md_filename": "20260614_costamarfil_ecuador.md",
+        "home_name": "Costa de Marfil",
+        "away_name": "Ecuador",
+        "home_flag": "🇨🇮",
+        "away_flag": "🇪🇨",
+        "home_img": "ShotMap_Costa de Marfil_horizontal_20260614.png",
+        "away_img": "ShotMap_Ecuador_horizontal_20260614.png"
+    },
+    {
+        "match_id": 4667784,
+        "slug": "suecia_tunez",
+        "md_filename": "20260614_suecia_tunez.md",
+        "home_name": "Suecia",
+        "away_name": "Túnez",
+        "home_flag": "🇸🇪",
+        "away_flag": "🇹🇳",
+        "home_img": "ShotMap_Suecia_horizontal_20260614.png",
+        "away_img": "ShotMap_Túnez_horizontal_20260614.png"
+    },
+    {
+        "match_id": 4667798,
+        "slug": "espana_caboverde",
+        "md_filename": "20260615_espana_caboverde.md",
+        "home_name": "España",
+        "away_name": "Cabo Verde",
+        "home_flag": "🇪🇸",
+        "away_flag": "🇨🇻",
+        "home_img": "ShotMap_España_horizontal_20260615.png",
+        "away_img": "ShotMap_Cabo Verde_horizontal_20260615.png"
+    },
+    {
+        "match_id": 4667790,
+        "slug": "belgica_egipto",
+        "md_filename": "20260615_belgica_egipto.md",
+        "home_name": "Bélgica",
+        "away_name": "Egipto",
+        "home_flag": "🇧🇪",
+        "away_flag": "🇪🇬",
+        "home_img": "ShotMap_Bélgica_horizontal_20260615.png",
+        "away_img": "ShotMap_Egipto_horizontal_20260615.png"
+    },
+    {
+        "match_id": 4667799,
+        "slug": "arabiasaudi_uruguay",
+        "md_filename": "20260615_arabiasaudi_uruguay.md",
+        "home_name": "Arabia Saudí",
+        "away_name": "Uruguay",
+        "home_flag": "🇸🇦",
+        "away_flag": "🇺🇾",
+        "home_img": "ShotMap_Arabia Saudí_horizontal_20260615.png",
+        "away_img": "ShotMap_Uruguay_horizontal_20260615.png"
+    },
+    {
+        "match_id": 4667791,
+        "slug": "iran_nuevazelanda",
+        "md_filename": "20260615_iran_nuevazelanda.md",
+        "home_name": "Irán",
+        "away_name": "Nueva Zelanda",
+        "home_flag": "🇮🇷",
+        "away_flag": "🇳🇿",
+        "home_img": "ShotMap_Irán_horizontal_20260615.png",
+        "away_img": "ShotMap_Nueva Zelanda_horizontal_20260615.png"
+    },
+    {
+        "match_id": 4667804,
+        "slug": "francia_senegal",
+        "md_filename": "20260616_francia_senegal.md",
+        "home_name": "Francia",
+        "away_name": "Senegal",
+        "home_flag": "🇫🇷",
+        "away_flag": "🇸🇳",
+        "home_img": "ShotMap_Francia_horizontal_20260616.png",
+        "away_img": "ShotMap_Senegal_horizontal_20260616.png"
+    },
+    {
+        "match_id": 4667805,
+        "slug": "irak_noruega",
+        "md_filename": "20260616_irak_noruega.md",
+        "home_name": "Irak",
+        "away_name": "Noruega",
+        "home_flag": "🇮🇶",
+        "away_flag": "🇳🇴",
+        "home_img": "ShotMap_Irak_horizontal_20260616.png",
+        "away_img": "ShotMap_Noruega_horizontal_20260616.png"
+    },
+    {
+        "match_id": 4667812,
+        "slug": "argentina_argelia",
+        "md_filename": "20260616_argentina_argelia.md",
+        "home_name": "Argentina",
+        "away_name": "Argelia",
+        "home_flag": "🇦🇷",
+        "away_flag": "🇩🇿",
+        "home_img": "ShotMap_Argentina_horizontal_20260616.png",
+        "away_img": "ShotMap_Argelia_horizontal_20260616.png"
+    },
+    {
+        "match_id": 4667813,
+        "slug": "austria_jordania",
+        "md_filename": "20260616_austria_jordania.md",
+        "home_name": "Austria",
+        "away_name": "Jordania",
+        "home_flag": "🇦🇹",
+        "away_flag": "🇯🇴",
+        "home_img": "ShotMap_Austria_horizontal_20260616.png",
+        "away_img": "ShotMap_Jordania_horizontal_20260616.png"
+    },
+    {
+        "match_id": 4667815,
+        "slug": "argentina_austria",
+        "md_filename": "20260622_argentina_austria.md",
+        "home_name": "Argentina",
+        "away_name": "Austria",
+        "home_flag": "🇦🇷",
+        "away_flag": "🇦🇹",
+        "home_img": "ShotMap_Argentina_horizontal_20260622.png",
+        "away_img": "ShotMap_Austria_horizontal_20260622.png"
+    },
+    {
+        "match_id": 4667807,
+        "slug": "francia_irak",
+        "md_filename": "20260622_francia_irak.md",
+        "home_name": "Francia",
+        "away_name": "Irak",
+        "home_flag": "🇫🇷",
+        "away_flag": "🇮🇶",
+        "home_img": "ShotMap_Francia_horizontal_20260622.png",
+        "away_img": "ShotMap_Irak_horizontal_20260622.png"
+    },
+    {
+        "match_id": 4667806,
+        "slug": "noruega_senegal",
+        "md_filename": "20260622_noruega_senegal.md",
+        "home_name": "Noruega",
+        "away_name": "Senegal",
+        "home_flag": "🇳🇴",
+        "away_flag": "🇸🇳",
+        "home_img": "ShotMap_Noruega_horizontal_20260622.png",
+        "away_img": "ShotMap_Senegal_horizontal_20260622.png"
+    },
+    {
+        "match_id": 4667814,
+        "slug": "jordania_argelia",
+        "md_filename": "20260622_jordania_argelia.md",
+        "home_name": "Jordania",
+        "away_name": "Argelia",
+        "home_flag": "🇯🇴",
+        "away_flag": "🇩🇿",
+        "home_img": "ShotMap_Jordania_horizontal_20260622.png",
+        "away_img": "ShotMap_Argelia_horizontal_20260622.png"
+    }
+]
+
+def fetch_match_details(match_id):
+    url = f"https://www.fotmob.com/api/data/matchDetails?matchId={match_id}"
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
+    return response.json()
+
+def run_update():
+    print("Iniciando actualización de datos reales del Mundial 2026...")
+    
+    for match in MATCHES_CONFIG:
+        match_id = match["match_id"]
+        slug = match["slug"]
+        print(f"\n⚽ Procesando partido: {match['home_name']} vs {match['away_name']} (ID: {match_id})...")
+        
+        try:
+            # 1. Obtener detalles del partido
+            data = fetch_match_details(match_id)
+            
+            general = data.get("general", {})
+            header = data.get("header", {})
+            
+            home_id = general.get("homeTeam", {}).get("id")
+            away_id = general.get("awayTeam", {}).get("id")
+            
+            home_score = None
+            away_score = None
+            for t in header.get("teams", []):
+                t_id = t.get("id")
+                if t_id == home_id:
+                    home_score = t.get("score")
+                elif t_id == away_id:
+                    away_score = t.get("score")
+                    
+            if home_score is None or away_score is None:
+                print(f"⚠️ No se pudieron determinar los goles para {slug}. Saltando.")
+                continue
+                
+            # 2. Obtener goles reales y estado
+            finished = header.get("status", {}).get("finished", False)
+            if home_score is not None and away_score is not None:
+                finished = True
+            finished_str = "true" if finished else "false"
+            
+            print(f"   Resultado Real: {home_score} - {away_score} | Finalizado: {finished}")
+            
+            # 3. Procesar y generar Shot Maps
+            content = data.get("content", {})
+            shotmap_data = content.get("shotmap", {})
+            shots = shotmap_data.get("shots", [])
+            
+            print(f"   Se encontraron {len(shots)} disparos en el shotmap.")
+            
+            # Dividir tiros
+            home_shots = [s for s in shots if s.get("teamId") == home_id]
+            away_shots = [s for s in shots if s.get("teamId") == away_id]
+            
+            # Generar mapa local
+            if home_shots:
+                df_home = pd.DataFrame(home_shots)
+                df_home['shot_outcome'] = df_home['eventType'].apply(lambda x: 'Goal' if 'Goal' in str(x) else x)
+                df_home['x'] = df_home['x'] * 1.2
+                df_home['y'] = df_home['y'] * 0.8
+                df_home['shot_statsbomb_xg'] = pd.to_numeric(df_home['expectedGoals'], errors='coerce').fillna(0.05)
+                
+                fig = generar_mapa(df_home, match["home_name"], "Mundial 2026", match["home_flag"], "horizontal")
+                out_path = os.path.join(BASE_DIR, "website", "assets", match["home_img"])
+                fig.savefig(out_path, dpi=150, bbox_inches='tight', facecolor=fig.get_facecolor())
+                plt.close(fig)
+                print(f"   ✅ Guardado Shot Map local en: website/assets/{match['home_img']}")
+            else:
+                print("   ⚠️ No hay disparos registrados para el equipo local.")
+                
+            # Generar mapa visitante
+            if away_shots:
+                df_away = pd.DataFrame(away_shots)
+                df_away['shot_outcome'] = df_away['eventType'].apply(lambda x: 'Goal' if 'Goal' in str(x) else x)
+                df_away['x'] = df_away['x'] * 1.2
+                df_away['y'] = df_away['y'] * 0.8
+                df_away['shot_statsbomb_xg'] = pd.to_numeric(df_away['expectedGoals'], errors='coerce').fillna(0.05)
+                
+                fig = generar_mapa(df_away, match["away_name"], "Mundial 2026", match["away_flag"], "horizontal")
+                out_path = os.path.join(BASE_DIR, "website", "assets", match["away_img"])
+                fig.savefig(out_path, dpi=150, bbox_inches='tight', facecolor=fig.get_facecolor())
+                plt.close(fig)
+                print(f"   ✅ Guardado Shot Map visitante en: website/assets/{match['away_img']}")
+            else:
+                print("   ⚠️ No hay disparos registrados para el equipo visitante.")
+                
+            # 4. Actualizar archivo markdown
+            md_path = os.path.join(BASE_DIR, "data", "analisis_partidos", match["md_filename"])
+            if os.path.exists(md_path):
+                with open(md_path, "r", encoding="utf-8") as f:
+                    content_md = f.read()
+                    
+                content_md = re.sub(r'goles_home:\s*\d+', f'goles_home: {home_score}', content_md)
+                content_md = re.sub(r'goles_away:\s*\d+', f'goles_away: {away_score}', content_md)
+                content_md = re.sub(r'finalizado:\s*"\w+"', f'finalizado: "{finished_str}"', content_md)
+                
+                with open(md_path, "w", encoding="utf-8") as f:
+                    f.write(content_md)
+                print(f"   ✅ Actualizado archivo Markdown: data/analisis_partidos/{match['md_filename']}")
+            else:
+                print(f"   ❌ No se encontró el archivo Markdown en {md_path}")
+                
+        except Exception as e:
+            print(f"   ❌ Error al procesar {slug}: {e}")
+            
+    # 5. Compilar páginas web
+    print("\n🔨 Iniciando compilación de crónicas y páginas estáticas...")
+    try:
+        import subprocess
+        build_script = os.path.join(BASE_DIR, 'utils', 'build_match_pages.py')
+        subprocess.run([sys.executable, build_script], check=True)
+        print("🎉 Proceso finalizado exitosamente!")
+    except Exception as e:
+        print(f"❌ Error al ejecutar el compilador: {e}")
+
+if __name__ == "__main__":
+    run_update()

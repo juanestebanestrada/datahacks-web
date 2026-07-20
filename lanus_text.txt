@@ -1,0 +1,5092 @@
+Directory structure:
+└── streams-videos/
+├── golesEsperados_video.ipynb
+├── introPythonFutbol.ipynb
+├── script tabla historica.py
+├── similitudes.ipynb
+├── TresSeisCincoScores.py
+├── xGChain-xGBuildup_video.ipynb
+├── xPoints.ipynb
+└── archivos/
+├── modelo_asistencias_esperadas_solo comp.pkl
+├── modelo_goles_esperados.pkl
+└── Wowen Super League 2023-24.csv
+Files Content:
+================================================
+FILE: archivos/streams-videos/golesEsperados_video.ipynb
+================================================
+# Jupyter notebook converted to Python script.
+# https://github.com/statsbomb/open-data
+# https://github.com/wswager/womens_soccer_expected_goals_model/blob/main/data_preprocessing/
+expected_goals_data_preprocessing_notebook.ipynb
+# https://github.com/Friends-of-Tracking-Data-FoTD/SoccermaticsForPython/tree/master
+# https://soccermatics.readthedocs.io/en/latest/gallery/lesson2/plot_xGModelFit.html
+# https://www.youtube.com/watch?v=310_eW0hUqQ&ab_channel=FriendsofTracking
+# https://twitter.com/LanusStats/status/1456381238252605443
+# https://theanalyst.com/eu/2021/06/que-son-los-goles-esperados-xg/
+from statsbombpy import sb
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from mplsoccer import Pitch, VerticalPitch
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
+from sklearn.compose import ColumnTransformer
+from sklearn.metrics import accuracy_score, recall_score, precision_score, roc_auc_score, roc_curve,
+f1_score, classification_report, confusion_matrix
+from sklearn.pipeline import Pipeline
+tiros_statsbomb = pd.read_csv('tirosStatsBomb_modeloxG_v2.csv')
+
+tiros_statsbomb.columns
+# Output:
+# Index(['Unnamed: 0', 'Unnamed: 0.1', 'bad_behaviour_card',
+#
+
+'ball_receipt_outcome', 'ball_recovery_recovery_failure',
+
+#
+
+'block_deflection', 'block_offensive', 'carry_end_location',
+
+#
+
+'clearance_aerial_won', 'clearance_body_part',
+
+#
+
+...
+
+#
+
+'goalkeeper_lost_in_play', 'pass_backheel', 'x', 'y',
+
+#
+
+'player_off_permanent', 'goalkeeper_lost_out', 'goalkeeper_success_out',
+
+#
+
+'half_end_early_video_end', 'goalkeeper_penalty_saved_to_post',
+
+#
+
+'goalkeeper_saved_to_post'],
+
+#
+
+dtype='object', length=119)
+
+tiros_statsbomb.columns.str.contains('shot')
+# Output:
+# array([False, False, False, False, False, False, False, False, False,
+#
+
+False, False, False, False, False, False, False, False, False,
+
+#
+
+False, False, False, False, False, False, False, False, False,
+
+#
+
+False, False, False, False, False, False, False, False, False,
+
+#
+
+False, False, False, False, False, True, False, False, False,
+
+#
+
+False, False, False, False, False, False, False, False, False,
+
+#
+
+True, False, False, False, False, False, False, False, False,
+
+#
+
+False, False, False, False, True, True, True, True, True,
+
+#
+
+True, True, True, True, True, True, True, True, False,
+
+#
+
+False, False, False, False, False, False, False, False, False,
+
+#
+
+False, False, False, False, False, False, False, False, False,
+
+#
+
+False, True, False, True, True, False, True, True, False,
+
+#
+
+True, False, False, False, False, False, False, False, False,
+
+#
+
+False, False])
+
+booleanos = pd.Series(tiros_statsbomb.columns).str.contains('shot')
+df_test = pd.concat([pd.Series(tiros_statsbomb.columns), booleanos], axis=1)
+df_test[df_test.iloc[:,1] == True]
+# Output:
+#
+0 1
+# 41
+
+pass_assisted_shot_id True
+
+# 54
+
+pass_shot_assist True
+
+# 67
+
+shot_aerial_won True
+
+# 68
+
+shot_body_part True
+
+# 69
+
+shot_deflected True
+
+# 70
+
+shot_end_location True
+
+# 71
+
+shot_first_time True
+
+# 72
+
+shot_freeze_frame True
+
+# 73
+
+shot_key_pass_id True
+
+# 74
+
+shot_one_on_one True
+
+# 75
+
+shot_open_goal True
+
+# 76
+
+shot_outcome True
+
+# 77
+
+shot_statsbomb_xg True
+
+# 78
+
+shot_technique True
+
+# 79
+
+shot_type True
+
+# 100
+
+shot_follows_dribble True
+
+# 102
+
+goalkeeper_shot_saved_to_post True
+
+# 103
+
+shot_saved_to_post True
+
+# 105 goalkeeper_shot_saved_off_target True
+# 106
+
+shot_saved_off_target True
+
+# 108
+
+shot_redirect True
+
+tiros_filt = tiros_statsbomb[['shot_aerial_won',
+'shot_body_part',
+'shot_first_time',
+'shot_deflected',
+'shot_one_on_one',
+'shot_open_goal',
+'shot_outcome',
+'shot_technique',
+'shot_type',
+'play_pattern',
+'x',
+'y'
+]].reset_index(drop=True)
+tiros_filt['goal'] = np.where(tiros_filt.shot_outcome == 'Goal', 1,0)
+tiros_filt['Distance'] = np.sqrt(np.square(120-tiros_filt['x']) + np.square(40 - tiros_filt['y']))
+tiros_filt['angulo'] = np.arctan(7.32 *tiros_filt['x'] /(tiros_filt['x']**2 + tiros_filt['y']**2 - (7.32/2)**2))
+tiros_filt.shot_aerial_won = tiros_filt.shot_aerial_won.fillna(False)
+tiros_filt.shot_first_time = tiros_filt.shot_first_time.fillna(False)
+tiros_filt.shot_one_on_one = tiros_filt.shot_one_on_one.fillna(False)
+tiros_filt.shot_open_goal = tiros_filt.shot_open_goal.fillna(False)
+tiros_filt.shot_deflected = tiros_filt.shot_open_goal.fillna(False)
+tiros_filt.head()
+# Output:
+#
+shot_aerial_won shot_body_part shot_first_time shot_deflected \
+# 0
+
+False
+
+Left Foot
+
+True
+
+False
+
+# 1
+
+False
+
+Left Foot
+
+True
+
+False
+
+# 2
+
+False
+
+Right Foot
+
+True
+
+False
+
+# 3
+
+False
+
+Head
+
+False
+
+False
+
+# 4
+
+False
+
+Left Foot
+
+False
+
+False
+
+#
+#
+
+shot_one_on_one shot_open_goal shot_outcome shot_technique shot_type \
+
+# 0
+
+False
+
+False
+
+Blocked
+
+Half Volley Open Play
+
+# 1
+
+False
+
+False
+
+Saved
+
+Half Volley Open Play
+
+# 2
+
+False
+
+False
+
+Saved
+
+Half Volley Open Play
+
+# 3
+
+False
+
+False
+
+Off T
+
+Normal Open Play
+
+# 4
+
+False
+
+False
+
+Post
+
+Normal Open Play
+
+#
+#
+
+play_pattern
+
+x
+
+y goal Distance
+
+angulo
+
+# 0 From Kick Off 96.0 38.8
+
+0 24.029981 0.065531
+
+# 1 From Kick Off 113.1 40.7
+
+0 6.935416 0.057292
+
+# 2 From Kick Off 103.8 41.9
+
+0 16.311039 0.060630
+
+# 3
+
+From Corner 112.2 36.8
+
+0 8.430896 0.058893
+
+# 4 Regular Play 97.8 51.5
+
+0 25.001800 0.058595
+
+tiros_filt.head()
+# Output:
+#
+shot_aerial_won shot_body_part shot_first_time shot_deflected \
+# 0
+
+False
+
+Left Foot
+
+True
+
+False
+
+# 1
+
+False
+
+Left Foot
+
+True
+
+False
+
+# 2
+
+False
+
+Right Foot
+
+True
+
+False
+
+# 3
+
+False
+
+Head
+
+False
+
+False
+
+# 4
+
+False
+
+Left Foot
+
+False
+
+False
+
+#
+#
+
+shot_one_on_one shot_open_goal shot_outcome shot_technique shot_type \
+
+# 0
+
+False
+
+False
+
+Blocked
+
+Half Volley Open Play
+
+# 1
+
+False
+
+False
+
+Saved
+
+Half Volley Open Play
+
+# 2
+
+False
+
+False
+
+Saved
+
+Half Volley Open Play
+
+# 3
+
+False
+
+False
+
+Off T
+
+Normal Open Play
+
+# 4
+
+False
+
+False
+
+Post
+
+Normal Open Play
+
+#
+#
+
+play_pattern
+
+x
+
+y goal Distance
+
+# 0 From Kick Off 96.0 38.8
+
+angulo
+
+0 24.029981 0.065531
+
+# 1 From Kick Off 113.1 40.7
+
+0 6.935416 0.057292
+
+# 2 From Kick Off 103.8 41.9
+
+0 16.311039 0.060630
+
+# 3
+
+From Corner 112.2 36.8
+
+0 8.430896 0.058893
+
+# 4 Regular Play 97.8 51.5
+
+0 25.001800 0.058595
+
+y = tiros_filt['goal']
+X = tiros_filt.drop(columns=['goal', 'shot_outcome'])
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+test_size = 0.2,
+stratify = y,
+random_state = 13)
+preprocessor = ColumnTransformer(
+transformers=[
+('cat', OneHotEncoder(), ['shot_body_part', 'shot_technique', 'shot_type', 'play_pattern'])
+],
+remainder= 'passthrough'
+)
+model = Pipeline([
+('preprocessor', preprocessor),
+('classifier', LogisticRegression())
+])
+model.fit(X_test, y_test)
+# Output:
+# Pipeline(steps=[('preprocessor',
+#
+
+ColumnTransformer(remainder='passthrough',
+
+#
+
+transformers=[('cat', OneHotEncoder(),
+
+#
+
+['shot_body_part',
+
+#
+
+'shot_technique',
+
+#
+
+'shot_type',
+
+#
+
+'play_pattern'])])),
+
+#
+
+('classifier', LogisticRegression())])
+
+y_pred = model.predict(X_test)
+y_pred
+
+# Output:
+# array([0, 0, 0, ..., 0, 0, 0])
+from sklearn.metrics import confusion_matrix
+preds = model.predict(X_test)
+df_cm = pd.DataFrame(confusion_matrix(y_test, preds)) # return tn, fp, fn, tp
+VP = df_cm.iloc[1,1]
+VN = df_cm.iloc[0,0]
+FN = df_cm.iloc[1,0]
+FP = df_cm.iloc[0,1]
+exactitud = accuracy = (VP + VN)/(VP + VN + FN + FP)
+precision = VP/(VP + FP)
+sensibilidad = VP/(VP + FN)
+especifidad = VN/(FP + VN)
+print('La exactitud del modelo elegido es: ' + str(exactitud))
+print('La precision del modelo elegido es: ' + str(precision))
+print('La sensibilidad del modelo elegido es: ' + str(sensibilidad))
+print('La especifidad del modelo elegido es: ' + str(especifidad))
+# Output:
+# La exactitud del modelo elegido es: 0.9009216589861752
+# La precision del modelo elegido es: 0.6691729323308271
+# La sensibilidad del modelo elegido es: 0.1718146718146718
+# La especifidad del modelo elegido es: 0.9896616541353384
+probabilities = model.predict_proba(X)[:,1]
+probabilities = pd.DataFrame(probabilities, columns=['xG'])
+X_with_prob = pd.concat([X.reset_index(drop=True), probabilities], axis=1)
+X_with_prob
+# Output:
+#
+shot_aerial_won shot_body_part shot_first_time shot_deflected \
+# 0
+
+False
+
+Left Foot
+
+True
+
+False
+
+# 1
+
+False
+
+Left Foot
+
+True
+
+False
+
+# 2
+
+False
+
+Right Foot
+
+True
+
+False
+
+# 3
+
+False
+
+Head
+
+False
+
+False
+
+# 4
+
+False
+
+Left Foot
+
+False
+
+False
+
+# ...
+
+...
+
+...
+
+...
+
+...
+
+# 23862
+
+False
+
+Right Foot
+
+False
+
+False
+
+# 23863
+
+False
+
+Right Foot
+
+False
+
+False
+
+# 23864
+
+False
+
+Right Foot
+
+False
+
+False
+
+# 23865
+
+False
+
+Left Foot
+
+False
+
+False
+
+# 23866
+
+False
+
+Right Foot
+
+False
+
+False
+
+#
+#
+
+shot_one_on_one shot_open_goal shot_technique shot_type \
+
+# 0
+
+False
+
+False
+
+Half Volley Open Play
+
+# 1
+
+False
+
+False
+
+Half Volley Open Play
+
+# 2
+
+False
+
+False
+
+Half Volley Open Play
+
+# 3
+
+False
+
+False
+
+Normal Open Play
+
+# 4
+
+False
+
+False
+
+Normal Open Play
+
+# ...
+
+...
+
+...
+
+...
+
+...
+
+# 23862
+
+False
+
+False
+
+Normal Open Play
+
+# 23863
+
+True
+
+False
+
+Normal Open Play
+
+# 23864
+
+False
+
+False
+
+Normal Open Play
+
+# 23865
+
+False
+
+False
+
+Normal Open Play
+
+# 23866
+
+False
+
+False
+
+Normal Open Play
+
+#
+#
+
+play_pattern
+
+x
+
+y Distance
+
+angulo
+
+xG
+
+# 0
+
+From Kick Off 96.0 38.8 24.029981 0.065531 0.037184
+
+# 1
+
+From Kick Off 113.1 40.7 6.935416 0.057292 0.353327
+
+# 2
+
+From Kick Off 103.8 41.9 16.311039 0.060630 0.121333
+
+# 3
+
+From Corner 112.2 36.8 8.430896 0.058893 0.113592
+
+# 4
+
+Regular Play 97.8 51.5 25.001800 0.058595 0.034569
+
+# ...
+
+...
+
+... ...
+
+...
+
+...
+
+...
+
+# 23862 Regular Play 109.1 29.8 14.928161 0.062420 0.131528
+# 23863 From Counter 114.6 51.4 12.614278 0.053172 0.304743
+# 23864 From Throw In 98.3 56.9 27.504545 0.055777 0.024224
+# 23865 Regular Play 102.9 58.1 24.900201 0.053940 0.036927
+# 23866 Regular Play 99.9 37.4 20.267462 0.064253 0.065914
+#
+# [23867 rows x 14 columns]
+X_with_prob[X_with_prob['shot_type'] == 'Penalty']
+# Output:
+#
+shot_aerial_won shot_body_part shot_first_time shot_deflected \
+# 128
+
+False
+
+Right Foot
+
+False
+
+False
+
+# 147
+
+False
+
+Left Foot
+
+False
+
+False
+
+# 161
+
+False
+
+Right Foot
+
+False
+
+False
+
+# 162
+
+False
+
+Left Foot
+
+False
+
+False
+
+# 163
+
+False
+
+Left Foot
+
+False
+
+False
+
+# ...
+
+...
+
+...
+
+...
+
+...
+
+# 23242
+
+False
+
+Right Foot
+
+False
+
+False
+
+# 23269
+
+False
+
+Right Foot
+
+False
+
+False
+
+# 23438
+
+False
+
+Right Foot
+
+False
+
+False
+
+# 23648
+
+False
+
+Left Foot
+
+False
+
+False
+
+# 23857
+
+False
+
+Right Foot
+
+False
+
+False
+
+#
+#
+# 128
+
+shot_one_on_one shot_open_goal shot_technique shot_type play_pattern \
+False
+
+False
+
+Normal Penalty
+
+Other
+
+# 147
+
+False
+
+False
+
+Normal Penalty
+
+Other
+
+# 161
+
+False
+
+False
+
+Normal Penalty
+
+Other
+
+# 162
+
+False
+
+False
+
+Normal Penalty
+
+Other
+
+# 163
+
+False
+
+False
+
+Normal Penalty
+
+Other
+
+# ...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+# 23242
+
+True
+
+False
+
+Normal Penalty
+
+Other
+
+# 23269
+
+False
+
+False
+
+Normal Penalty
+
+Other
+
+# 23438
+
+False
+
+False
+
+Normal Penalty
+
+Other
+
+# 23648
+
+False
+
+False
+
+Normal Penalty
+
+Other
+
+# 23857
+
+False
+
+False
+
+Normal Penalty
+
+Other
+
+y Distance
+
+angulo
+
+xG
+
+#
+#
+
+x
+
+# 128
+
+108.0 40.0 12.000000 0.059592 0.643942
+
+# 147
+
+108.0 40.0 12.000000 0.059592 0.630049
+
+# 161
+
+108.1 40.1 11.900420 0.059514 0.647633
+
+# 162
+
+108.1 40.1 11.900420 0.059514 0.633802
+
+# 163
+
+108.1 40.1 11.900420 0.059514 0.633802
+
+# ...
+
+... ...
+
+...
+
+...
+
+...
+
+# 23242 107.7 39.9 12.300406 0.059753 0.660743
+# 23269 108.3 39.9 11.700427 0.059502 0.654278
+# 23438 108.0 40.0 12.000000 0.059592 0.643942
+# 23648 108.0 40.0 12.000000 0.059592 0.630049
+# 23857 108.1 40.1 11.900420 0.059514 0.647633
+#
+# [344 rows x 14 columns]
+
+================================================
+FILE: archivos/streams-videos/introPythonFutbol.ipynb
+================================================
+# Jupyter notebook converted to Python script.
+import pandas as pd
+from mplsoccer import Pitch, FontManager, VerticalPitch, add_image
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+"""
+*NOCIONES BASICAS*
+"""
+# Nociones basicas
+# Términos estadísticos basicos --> que es un promedio/media, mediana, distribuciones, sesgo,
+varianza, percentiles.
+# Nociones basicas de terminos estadísticos en el fútbol
+# Nociones basicas de analisis de datos.
+# Minimo interes en programar o manejar sheets/excel.
+# Diferencia entre analista de datos y cientifico de datos.
+df = pd.read_csv('archivos/pasesPremier.csv')
+df.columns = df.iloc[0].values
+df = df.drop(0)
+df.Edad = df.Edad.apply(lambda x: x.split('-')[0])
+df.Edad = df.Edad.astype(int)
+df.Edad.mean()
+# Output:
+# 26.276481149012568
+fig, ax = plt.subplots(figsize=(16,9))
+sns.histplot(df.Edad, bins=5)
+plt.axvline(np.percentile(df.Edad, 50), color='r', linestyle='--', label='Mediana')
+plt.axvline(np.percentile(df.Edad, 95), color='green', linestyle='-.', label='Percentil 95')
+plt.legend()
+# Output:
+# <matplotlib.legend.Legend at 0x2253109ac10>
+# <Figure size 1152x648 with 1 Axes>
+fig, ax = plt.subplots(figsize=(16,9))
+df.xA = df.xA.astype(float)
+df.PC = df.PC.astype(float)
+plt.scatter(df.xA, df.PC)
+
+plt.axvline(np.percentile(df.xA, 50), color='r', linestyle='--', label='Mediana')
+plt.axvline(np.percentile(df.xA, 95), color='green', linestyle='-.', label='Percentil 95')
+# Output:
+# <matplotlib.lines.Line2D at 0x225312f7d60>
+# <Figure size 1152x648 with 1 Axes>
+"""
+*FUENTES DE INFORMACIÓN ACCESIBLES*
+"""
+# Información, datos
+# Statsbomb
+# https://github.com/statsbomb/open-data
+# Fotmob, WhoScored, SofaScore, Fbref
+# BDFA, Transfermarkt.
+# Fbref
+# csvs muy faciles de descargar y de usar.
+# https://fbref.com/es/comps/9/Estadisticas-de-Premier-League --> de la premier hay data MUY
+avanzada.
+# No importa a veces que no tengas la info que queres, lo que importa es que cuando la tengas sepas
+que hacer. Practica con lo que haya.
+# Mostrar las estadísticas avanzadas y cuales podrían ser un par (xG (ver la nota que explican), xA,
+etc.)
+"""
+*PYTHON LIBRERIAS Y HERRAMIENTAS PARA APRENDER*
+"""
+# Librerias de Python 100% necesarias
+# Pandas
+# MplSoccer https://mplsoccer.readthedocs.io/en/latest/index.html
+# Herramientas/Repos
+#
+https://docs.google.com/spreadsheets/u/0/d/1LPe8xYduoep9qCrNzBGdJHaHZ8dnmdHNnu7UXZKza
+wU/htmlview#
+# https://github.com/eddwebster/football_analytics
+# Discord de datos.
+
+================================================
+FILE: archivos/streams-videos/script tabla historica.py
+================================================
+#La sheet en la cual está la tabla es esta -->
+https://docs.google.com/spreadsheets/d/15CqzJhJH434Fqno_BSV_QVgsixlr2nM93nzDMOncY5k/
+edit?usp=sharing
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+import pandas as pd
+import pygsheets
+import dataframe_image as dfi
+from datetime import date
+from PIL import Image
+import tweepy
+import imgkit
+equivalenciaNombres = {'Argentinos':'Argentinos Juniors',
+'Velez':'Vélez Sarsfield',
+'Lanus':'Lanús',
+'Central Cba (SdE)': 'Central Córdoba (SdE)',
+'Def y Justicia':'Defensa y Justicia',
+'Colon':'Colón',
+'Huracan':'Huracán',
+'Sarmiento':'Sarmiento (J)',
+'Atl Tucuman': 'Atlético Tucumán',
+'Gimnasia (LP)': 'Gimnasia y Esgrima (LP)',
+'Union': 'Unión',
+"Newells": "Newell's Old Boys"}
+df = pd.read_html('https://www.promiedos.com.ar/primera')
+df_1 = df[0]
+gc = pygsheets.authorize(service_file='C:/Users/Federico Rábanos/Documents/lanus stats/creds.json')
+sheet = gc.open('Tabla Fútbol Argentino desde el 2000')
+data = sheet[1]
+data.set_dataframe(df_1, (968,2))
+df = data.get_as_df()
+df.Equipo.replace(equivalenciaNombres, inplace=True)
+tabla = df.groupby('Equipo',as_index=False).sum()
+tabla_tot = tabla.drop(columns=['',
+'Pos.']).drop(0).set_index('Equipo').drop('Equipo').sort_values(by='Pts.', ascending=False)
+tabla_tot['Dif'] = tabla_tot['GF'] - tabla_tot['GC']
+tabla_sheet = sheet[0]
+tabla_sheet.set_dataframe(tabla_tot, (1,1), copy_index=True)
+print('Actualizado el sheet')
+df_export = sheet[0].get_as_df()
+df_export.index = range(1,df_export.shape[0]+1)
+df_export = df_export.rename(columns={'':'Equipos'}).style.background_gradient()
+hoy = date.today()
+
+dfi.export(df_export, f'C:/Users/Federico Rábanos/Documents/lanus stats/Python/Tablas/Tabla historica
+al {hoy}.png', table_conversion='matplotlib')
+print(f'Guardado el archivo de {hoy}')
+#api_key = "fWQW00ZBiJZ1sjL7mhCkKop40"
+#api_secrets = "gyVY5Dmyn2e0o7lSTRvOeqKXkuqNIGWTu5LpuMUa1K4jXAjBY1"
+#access_token = "1480711421465927688-3hpKYgsbT44DabSdc4D9kdkIPAXzB8"
+#access_secret = "eJEmFzG0mIiyYF8d2Wu7apSwz2amRaHjQqEqLAdD0joFT"
+#auth = tweepy.OAuthHandler(api_key,api_secrets)
+#auth.set_access_token(access_token,access_secret)
+#
+#api = tweepy.API(auth, wait_on_rate_limit=True)
+#print('iniciada la API instance')
+#status = f'Tabla del Fútbol Argentino desde el 2000 al {hoy}'
+#
+#response = api.update_status_with_media(status=status, filename=f'C:/Users/Federico
+Rábanos/Documents/lanus stats/Python/Tablas/Tabla historica al {hoy}.png')
+================================================
+FILE: archivos/streams-videos/similitudes.ipynb
+================================================
+# Jupyter notebook converted to Python script.
+from griffis_soccer_analysis.similarity import *
+available_leagues()
+# Output:
+# ['1. HNL 23-24',
+#
+
+'2. Bundesliga 23-24',
+
+#
+
+'2. HNL 23-24',
+
+#
+
+'3. Liga 23-24',
+
+#
+
+'A-League Men 23-24',
+
+#
+
+'Albanian Kategoria Superiore 23-24',
+
+#
+
+'Allsvenskan 2023',
+
+#
+
+'Andorra Primera Divisió 23-24',
+
+#
+
+'Argentina LPF 2023',
+
+#
+
+'Argentina Primera Nacional 2023',
+
+#
+
+'Argentina Reserve League 2023',
+
+#
+
+'Armenian Premier League 23-24',
+
+#
+
+'Austrian 2. Liga 23-24',
+
+#
+
+'Austrian Bundesliga 23-24',
+
+#
+
+'Azeri Birinci Dasta 23-24',
+
+#
+
+'Azeri Premyer Liqa 23-24',
+
+#
+
+'BRI Liga 1 23-24',
+
+#
+
+'Bahrain Premier League 23-24',
+
+#
+
+'Belgian First Division B 23-24',
+
+#
+
+'Belgian Pro League 23-24',
+
+#
+
+'Besta-deild karla 2023',
+
+#
+
+'Bolivian LFPB 2023',
+
+#
+
+'Bosnian Premier League 23-24',
+
+#
+
+'Botola Pro 23-24',
+
+#
+
+'Brasileirão 2023',
+
+#
+
+'Brazil Serie B 2023',
+
+#
+
+'Brazil Serie C 2023',
+
+#
+
+'Bulgarian First League 23-24',
+
+#
+
+'Bundesliga 23-24',
+
+#
+
+'Cambodian Premier League 23-24',
+
+#
+
+'Campeonato de Portugal 23-24',
+
+#
+
+'Canadian Premier League 2023',
+
+#
+
+'Capital Territory NPL 2023',
+
+#
+
+'Championship 23-24',
+
+#
+
+'Chilean Primera B 2023',
+
+#
+
+'Chilean Primera División 2023',
+
+#
+
+'China League One 2023',
+
+#
+
+'China League Two 2023',
+
+#
+
+'Chinese Super League 2023',
+
+#
+
+'Colombian Primera A 2023',
+
+#
+
+'Colombian Torneo BetPlay 2023',
+
+#
+
+'Costa Rican Primera División 23-24',
+
+#
+
+'Cyprus 1. Division 23-24',
+
+#
+
+'Cyprus 2. Division 23-24',
+
+#
+
+'Czech FNL 23-24',
+
+#
+
+'Czech Fortuna Liga 23-24',
+
+#
+
+'Danish 1. Division 23-24',
+
+#
+
+'Danish 2. Division 23-24',
+
+#
+
+'Danish 3. Division 23-24',
+
+#
+
+'Ecuador Liga Pro 2023',
+
+#
+
+'Eerste Divisie 23-24',
+
+#
+
+'Egyptian Premier League 23-24',
+
+#
+
+'Ekstraklasa 23-24',
+
+#
+
+'El Salvador Primera División 23-24',
+
+#
+
+'Eliteserien 2023',
+
+#
+
+'English National League 23-24',
+
+#
+
+'English National League North South 23-24',
+
+#
+
+'Eredivisie 23-24',
+
+#
+
+'Erovnuli Liga 2 2023',
+
+#
+
+'Erovnuli Liga 2023',
+
+#
+
+'Estonia Meistriliiga 2023',
+
+#
+
+'Estonian Esiliiga A 2023',
+
+#
+
+'Ettan 2023',
+
+#
+
+'French National 1 23-24',
+
+#
+
+'Greek Super League 23-24',
+
+#
+
+'Guatemalan Liga Nacional 23-24',
+
+#
+
+'Honduran Liga Nacional 23-24',
+
+#
+
+'Hong Kong Premier League 23-24',
+
+#
+
+'Iceland 1. Deild 2023',
+
+#
+
+'Indian Super League 23-24',
+
+#
+
+'Irish First Division 2023',
+
+#
+
+'Irish Premier Division 2023',
+
+#
+
+'J1 2023',
+
+#
+
+'J2 2023',
+
+#
+
+'J3 2023',
+
+#
+
+'K League 1 2023',
+
+#
+
+'K League 2 2023',
+
+#
+
+'K3 League 2023',
+
+#
+
+'K4 League 2023',
+
+#
+
+'Kazakh 1. Division 2023',
+
+#
+
+'Kazakh 2. Division 2023',
+
+#
+
+'Kazakh Premier League 2023',
+
+#
+
+'Kazakh U18 League 2023',
+
+#
+
+'Kosovo Superliga 23-24',
+
+#
+
+'Kyrgyz Premier League 2023',
+
+#
+
+'La Liga 2 23-24',
+
+#
+
+'La Liga 23-24',
+
+#
+
+'Latvian 1. Liga 2023',
+
+#
+
+'Latvian Virsliga 2023',
+
+#
+
+'League One 23-24',
+
+#
+
+'League Two 23-24',
+
+#
+
+'Liga Leumit 23-24',
+
+#
+
+'Liga MX 23-24',
+
+#
+
+'Liga de Expansión MX 23-24',
+
+#
+
+"Ligat ha'Al 23-24",
+
+#
+
+'Ligue 1 23-24',
+
+#
+
+'Ligue 2 23-24',
+
+#
+
+'Lithuanian 1 Lyga 2023',
+
+#
+
+'Lithuanian A Lyga 2023',
+
+#
+
+'Luxembourg National Division 23-24',
+
+#
+
+'MLS 2023',
+
+#
+
+'MLS Next Pro 2023',
+
+#
+
+'Malaysian Super League 2023',
+
+#
+
+'Malta Challenge League 23-24',
+
+#
+
+'Malta Premier League 23-24',
+
+#
+
+'Moldovan Super Liga 23-24',
+
+#
+
+'Motenegro First League 23-24',
+
+#
+
+'Motenegro Second League 23-24',
+
+#
+
+'NB I 23-24',
+
+#
+
+'NB II 23-24',
+
+#
+
+'New South Wales NPL 2023',
+
+#
+
+'New Zealand National League 2023',
+
+#
+
+'Nicaragua Primera Division 23-24',
+
+#
+
+'North Macedonia First League 23-24',
+
+#
+
+'Northern Irish Premiership 23-24',
+
+#
+
+'Norwegian 2. Division 2023',
+
+#
+
+'OBOS Ligaen 2023',
+
+#
+
+'Panama LPF 2023',
+
+#
+
+'Paraguay Division Profesional 2023',
+
+#
+
+'Peruvian Liga 1 2023',
+
+#
+
+'Polish I Liga 23-24',
+
+#
+
+'Polish II Liga 23-24',
+
+#
+
+'Portuguese Liga 3 23-24',
+
+#
+
+'Portuguese Segunda Liga 23-24',
+
+#
+
+'Premier League 23-24',
+
+#
+
+'Primeira Liga 23-24',
+
+#
+
+'Primera RFEF 23-24',
+
+#
+
+'Qatari Stars League 23-24',
+
+#
+
+'Queensland NPL 2023',
+
+#
+
+'Regionalliga 23-24',
+
+#
+
+'Romanian Liga II 23-24',
+
+#
+
+'Romanian Superliga 23-24',
+
+#
+
+'Russian First League 23-24',
+
+#
+
+'Russian Premier League 23-24',
+
+#
+
+'Saudi Division 1 23-24',
+
+#
+
+'Saudi Pro League 23-24',
+
+#
+
+'Scottish Championship 23-24',
+
+#
+
+'Scottish League One 23-24',
+
+#
+
+'Scottish League Two 23-24',
+
+#
+
+'Scottish Premiership 23-24',
+
+#
+
+'Segunda RFEF 23-24',
+
+#
+
+'Serbian Prva Liga 23-24',
+
+#
+
+'Serbian Super Liga 23-24',
+
+#
+
+'Serie A 23-24',
+
+#
+
+'Serie B 23-24',
+
+#
+
+'Serie C 23-24',
+
+#
+
+'Singapore Premier League 2023',
+
+#
+
+'Slovak 2. Liga 23-24',
+
+#
+
+'Slovak Super Liga 23-24',
+
+#
+
+'Slovenian 1. SNL 23-24',
+
+#
+
+'Slovenian 2. SNL 23-24',
+
+#
+
+'South Australia NPL 2023',
+
+#
+
+'Superettan 2023',
+
+#
+
+'Superliga 23-24',
+
+#
+
+'Swiss 1. Liga Promotion 23-24',
+
+#
+
+'Swiss Challenge League 23-24',
+
+#
+
+'Swiss Super League 23-24',
+
+#
+
+'Süper Lig 23-24',
+
+#
+
+'Thai League 1 23-24',
+
+#
+
+'Thai League 2 23-24',
+
+#
+
+'Tunisia Ligue 1 23-24',
+
+#
+
+'Turkish 1. Lig 23-24',
+
+#
+
+'Tweede Divisie 23-24',
+
+#
+
+'UAE Pro League 23-24',
+
+#
+
+'USL Championship 2023',
+
+#
+
+'USL League 1 2023',
+
+#
+
+'Ukrainian Persha Liga 23-24',
+
+#
+
+'Ukrainian Premier League 23-24',
+
+#
+
+'Uruguay Primera División 2023',
+
+#
+
+'Uzbek Super League 2023',
+
+#
+
+'V.League 1 23-24',
+
+#
+
+'Veikkausliiga 2023',
+
+#
+
+'Victoria NPL 2023',
+
+#
+
+'Welsh Premier League 23-24',
+
+#
+
+'Ykkönen 2023']
+
+teams_in_league(league='Argentina Reserve League 2023')
+# Output:
+# []
+available_players(
+league = 'Argentina LPF 2023',
+team = 'Lanús'
+)
+# Output:
+#
+Player_Team
+
+Player Age \
+
+# 1783
+
+C. Lema (33, Lanús, Argentina LPF 2023)
+
+C. Lema 33
+
+# 1800
+
+P. de la Vega (22, Lanús, Argentina LPF 2023)
+
+P. de la Vega 22
+
+# 1817
+
+L. Díaz (31, Lanús, Argentina LPF 2023)
+
+L. Díaz 31
+
+# 1837
+
+J. Cáceres (23, Lanús, Argentina LPF 2023)
+
+J. Cáceres 23
+
+# 1861
+
+F. Peña (22, Lanús, Argentina LPF 2023)
+
+F. Peña 22
+
+# 1895
+
+B. Aguirre (23, Lanús, Argentina LPF 2023)
+
+B. Aguirre 23
+
+# 1919
+
+Lucas Acosta (28, Lanús, Argentina LPF 2023)
+
+Lucas Acosta 28
+
+# 1961
+
+L. Boggio (24, Lanús, Argentina LPF 2023)
+
+L. Boggio 24
+
+# 1965
+
+M. Esquivel (24, Lanús, Argentina LPF 2023)
+
+M. Esquivel 24
+
+# 1966
+
+R. Loaiza (29, Lanús, Argentina LPF 2023)
+
+R. Loaiza 29
+
+# 1978
+
+T. Belmonte (25, Lanús, Argentina LPF 2023)
+
+T. Belmonte 25
+
+# 1998
+
+J. Canale (27, Lanús, Argentina LPF 2023)
+
+J. Canale 27
+
+# 2011 J. Sánchez Miño (34, Lanús, Argentina LPF 2023) J. Sánchez Miño 34
+# 2096
+
+F. Watson (21, Lanús, Argentina LPF 2023)
+
+F. Watson 21
+
+# 2097
+
+F. Troyansky (26, Lanús, Argentina LPF 2023)
+
+F. Troyansky 26
+
+# 2100
+
+L. Acosta (35, Lanús, Argentina LPF 2023)
+
+L. Acosta 35
+
+# 2113
+
+J. Fernández (28, Lanús, Argentina LPF 2023)
+
+J. Fernández 28
+
+# 2133
+
+F. Orozco (21, Lanús, Argentina LPF 2023)
+
+F. Orozco 21
+
+# 2229
+
+D. Braghieri (36, Lanús, Argentina LPF 2023)
+
+D. Braghieri 36
+
+# 2237
+
+L. Morales (23, Lanús, Argentina LPF 2023)
+
+L. Morales 23
+
+# 2263
+
+A. Aguerre (33, Lanús, Argentina LPF 2023)
+
+A. Aguerre 33
+
+# 2274
+
+J. Soler (18, Lanús, Argentina LPF 2023)
+
+J. Soler 18
+
+# 2349
+
+J. Torres (26, Lanús, Argentina LPF 2023)
+
+J. Torres 26
+
+# 2365
+
+J. Sand (43, Lanús, Argentina LPF 2023)
+
+J. Sand 43
+
+# 2383
+
+G. Pérez (22, Lanús, Argentina LPF 2023)
+
+G. Pérez 22
+
+#
+
+#
+
+Real Position
+
+# 1783
+
+CB
+
+# 1800
+
+Winger
+
+# 1817
+
+ST
+
+# 1837
+
+FB
+
+# 1861
+
+DM
+
+# 1895
+
+FB
+
+# 1919
+
+GK
+
+# 1961
+
+CM
+
+# 1965
+
+Winger
+
+# 1966
+
+CM
+
+# 1978
+
+DM
+
+# 1998
+
+CB
+
+# 2011
+
+FB
+
+# 2096
+
+CAM
+
+# 2097
+
+Winger
+
+# 2100
+
+CM
+
+# 2113
+
+DM
+
+# 2133
+
+Winger
+
+# 2229
+
+CB
+
+# 2237
+
+GK
+
+# 2263
+
+GK
+
+# 2274
+
+FB
+
+# 2349
+
+ST
+
+# 2365
+
+ST
+
+# 2383
+
+DM
+
+df, info, dist_fig, base = player_similarity(
+player = "C. Lema (33, Lanús, Argentina LPF 2023)",
+position = "CB",
+nplayers = 2000,
+min_age = 16, # Minimum age of similar players (always still inside the top 5%)
+max_age = 22, # Maximum age of similar players (always still inside the top 5%)
+similar_lg_team = False,
+mean_sim = False,
+)
+base
+# Output:
+#
+
+Player \
+
+# 0
+
+C. Faye (24, FK Liepāja, Latvian Virsliga 2023)
+
+# 1
+
+J. Harustak (21, BFC Daugavpils, Latvian Virsliga 2023)
+
+# 2
+
+A. Martina (23, Ancona, Serie C 23-24)
+
+# 3
+
+G. Clemente (27, Ancona, Serie C 23-24)
+
+# 4
+
+M. Fiordeliso (19, Banfield Res., Argentina Reserve League 2023)
+
+# ...
+
+...
+
+# 9843
+
+S. Goglichidze (19, Torpedo Kutaisi, Erovnuli Liga 2023)
+
+# 9844
+
+Rúben Amaral (22, Portosantense, Campeonato de Portugal 23-24)
+
+# 9845
+
+A. Araneda (20, North Texas, MLS Next Pro 2023)
+
+# 9846
+
+J. Hinshelwood (18, Brighton, Premier League 23-24)
+
+# 9847
+
+E. Martínez (0, Atlético Chiriquí, Panama LPF 2023)
+
+#
+#
+
+Similarity
+
+# 0
+
+87.972470
+
+# 1
+
+82.389189
+
+# 2
+
+80.443421
+
+# 3
+
+79.840945
+
+# 4
+
+79.150729
+
+# ...
+
+...
+
+# 9843 -33.670216
+# 9844 -38.774926
+# 9845 -41.215092
+# 9846 -42.803817
+# 9847 -42.899090
+#
+# [9848 rows x 2 columns]
+df_t5, info, dist_fig, base = player_similarity(
+player = "B. Aguirre (23, Lanús, Argentina LPF 2023)",
+position = "FB",
+nplayers = 20,
+similar_lg_team = True,
+min_age = 16, # Minimum age of similar players (always still inside the top 5%)
+max_age = 40, # Maximum age of similar players (always still inside the top 5%)
+mean_sim = False,
+)
+df_t5
+# Output:
+#
+
+Player \
+
+# 0
+
+M. Fiordeliso (19, Banfield Res., Argentina Reserve League 2023)
+
+# 1
+
+I. Rodríguez (21, Banfield Res., Argentina Reserve League 2023)
+
+# 2
+
+E. Matus (21, Audax Italiano, Chilean Primera División 2023)
+
+# 3
+
+F. Maglica (26, Posušje, Bosnian Premier League 23-24)
+
+# 4
+
+G. Soto (29, Huracán, Argentina LPF 2023)
+
+# 5
+
+A. Bindella (22, Quilmes, Argentina Primera Nacional 2023)
+
+# 6
+
+F. Saavedra (27, La Serena, Chilean Primera B 2023)
+
+# 7
+
+M. Benítez (24, Resistencia, Paraguay Division Profesional 2023)
+
+# 8
+
+L. Paredes (21, Deportivo Maipú, Argentina Primera Nacional 2023)
+
+# 9
+
+Zhang Hongjiang (26, Dalian Zhixing, China League Two 2023)
+
+# 10
+
+N. Baeza (26, Huachipato, Chilean Primera División 2023)
+
+# 11
+
+R. Derbali (21, Olympique Béja, Tunisia Ligue 1 23-24)
+
+# 12
+
+O. Ceylan (33, Kocaelispor, Turkish 1. Lig 23-24)
+
+# 13
+
+Pedro Francisco (19, Sporting CP II, Portuguese Liga 3 23-24)
+
+# 14
+
+Aitor Pascual (25, Teruel, Primera RFEF 23-24)
+
+# 15
+
+J. González (26, Chacarita Juniors, Argentina Primera Nacional 2023)
+
+# 16
+
+H. Grana (38, Ferro Carril Oeste, Argentina Primera Nacional 2023)
+
+# 17
+
+A. Quintana (22, Cienciano, Peruvian Liga 1 2023)
+
+# 18 C. Steinmetz (24, Mondorf-les-Bains, Luxembourg National Division 23-24)
+# 19
+
+K. Blaževski (23, Krka, Slovenian 2. SNL 23-24)
+
+#
+#
+
+Player Style Similarity League Style Similarity Team Style Similarity
+
+# 0
+
+79.150729
+
+53.659548
+
+12.597094
+
+# 1
+
+78.994805
+
+53.659548
+
+12.597094
+
+# 2
+
+78.800276
+
+24.100583
+
+36.775420
+
+# 3
+
+77.856654
+
+17.164170
+
+22.989652
+
+# 4
+
+77.363845
+
+100.000000
+
+1.624930
+
+# 5
+
+75.650037
+
+83.003784
+
+19.841651
+
+# 6
+
+75.626330
+
+57.446986
+
+23.238042
+
+# 7
+
+75.606754
+
+37.309990
+
+39.760447
+
+# 8
+
+74.396292
+
+83.003784
+
+25.438747
+
+# 9
+
+74.345681
+
+32.868350
+
+16.581541
+
+# 10
+
+74.327349
+
+24.100583
+
+31.545311
+
+# 11
+
+74.127941
+
+46.999173
+
+10.326910
+
+# 12
+
+73.894369
+
+38.363697
+
+8.715328
+
+# 13
+
+73.773241
+
+51.389982
+
+21.250469
+
+# 14
+
+73.663404
+
+72.296540
+
+5.299345
+
+# 15
+
+73.590287
+
+83.003784
+
+49.824808
+
+# 16
+
+73.264852
+
+83.003784
+
+17.196332
+
+# 17
+
+73.158953
+
+24.265849
+
+30.550249
+
+# 18
+
+73.137548
+
+19.836205
+
+41.313891
+
+# 19
+
+73.129748
+
+1.689380
+
+0.806475
+
+ligas = ['Argentina Primera Nacional 2023',
+'Argentina Reserve League 2023',
+'Argentina LPF 2023',
+'Colombian Primera A 2023',
+'Colombian Torneo BetPlay 2023']
+df[df.Player.str.contains('|'.join(ligas))].head(40)
+# Output:
+#
+Player \
+# 13
+
+L. Suárez (19, Lanús Res., Argentina Reserve League 2023)
+
+# 23 J. Gordon (19, Vélez Sársfield Res., Argentina Reserve League 2023)
+#
+#
+
+Player Style Similarity League Style Similarity Team Style Similarity
+
+# 13
+
+80.714726
+
+53.659548
+
+10.731272
+
+# 23
+
+78.821949
+
+53.659548
+
+14.878322
+
+df
+# Output:
+#
+
+Player \
+
+# 0
+
+A. Frobenius (20, Bærum, Norwegian 2. Division 2023)
+
+# 1
+
+M. Ilić (20, Partizan, Serbian Super Liga 23-24)
+
+# 2
+
+Seo-Joon Byeon (21, Daejeon Citizen II, K4 League 2023)
+
+# 3
+
+L. Trslic (22, Schweinfurt, Regionalliga 23-24)
+
+# 4
+
+W. Fish (20, Hibernian, Scottish Premiership 23-24)
+
+# 5 A. Pantazopoulos (20, Western Sydney Wanderers FC II, New South Wales NPL 2023)
+# 6
+
+R. Hillen (20, De Graafschap, Eerste Divisie 23-24)
+
+# 7
+
+I. Ben Hamo (21, Hapoel Ramat HaSharon, Liga Leumit 23-24)
+
+# 8
+
+F. Román (22, Guaraní, Paraguay Division Profesional 2023)
+
+# 9
+
+S. Askarov (19, Kairat A, Kazakh 1. Division 2023)
+
+# 10
+
+M. Tshibuabua (21, RFC Seraing, Belgian First Division B 23-24)
+
+# 11
+
+N. Dekovic (20, Napredak Kruševac, Serbian Super Liga 23-24)
+
+# 12
+
+V. Paltsev (22, KAMAZ, Russian First League 23-24)
+
+# 13
+
+L. Suárez (19, Lanús Res., Argentina Reserve League 2023)
+
+# 14
+
+E. Tellgren (18, Sylvia, Ettan 2023)
+
+# 15
+
+S. Dweh (22, Viktoria Plzeň, Czech Fortuna Liga 23-24)
+
+# 16
+
+N. Sliede (19, Valmiera FC, Latvian Virsliga 2023)
+
+# 17
+
+K. McClelland (21, Queen of the South, Scottish League One 23-24)
+
+# 18
+
+H. Petrov (21, CSKA Sofia, Bulgarian First League 23-24)
+
+# 19
+
+K. Keršys (20, FK Metta, Latvian Virsliga 2023)
+
+# 20
+
+N. Oularé (21, Boluspor, Turkish 1. Lig 23-24)
+
+# 21
+
+É. Clancy (19, UCD, Irish Premier Division 2023)
+
+# 22
+
+G. Park (22, Goyang Happiness, K4 League 2023)
+
+# 23
+
+J. Gordon (19, Vélez Sársfield Res., Argentina Reserve League 2023)
+
+# 24 F. Cousin-Dawson (21, Blyth Spartans, English National League North South 23-24)
+# 25
+
+M. Sasovskyi (22, Viktoriya Sumy, Ukrainian Persha Liga 23-24)
+
+# 26
+
+P. Álvarez (22, Cerro Porteño, Paraguay Division Profesional 2023)
+
+#
+#
+
+Player Style Similarity League Style Similarity Team Style Similarity
+
+# 0
+
+88.460663
+
+-57.940397
+
+-19.015624
+
+# 1
+
+82.492362
+
+-2.942396
+
+-1.621767
+
+# 2
+
+82.279898
+
+-56.796360
+
+-21.251785
+
+# 3
+
+82.260114
+
+-42.197366
+
+-18.080423
+
+# 4
+
+81.935882
+
+25.094308
+
+-14.143446
+
+# 5
+
+81.820712
+
+-29.849139
+
+43.281778
+
+# 6
+
+81.710781
+
+-42.649724
+
+-4.572563
+
+# 7
+
+81.511878
+
+15.985347
+
+6.751154
+
+# 8
+
+81.495439
+
+37.309990
+
+26.057129
+
+# 9
+
+81.385765
+
+-36.875831
+
+31.275566
+
+# 10
+
+81.275466
+
+-26.417245
+
+5.105933
+
+# 11
+
+81.049006
+
+-2.942396
+
+-4.686872
+
+# 12
+
+81.027763
+
+31.140757
+
+-4.611186
+
+# 13
+
+80.714726
+
+53.659548
+
+10.731272
+
+# 14
+
+80.696865
+
+-47.508323
+
+-34.410741
+
+# 15
+
+80.047718
+
+-27.151392
+
+-3.986263
+
+# 16
+
+79.943467
+
+-19.415113
+
+-7.130052
+
+# 17
+
+79.631152
+
+-16.937363
+
+-13.518936
+
+# 18
+
+79.566579
+
+28.527181
+
+35.552203
+
+# 19
+
+79.518071
+
+-19.415113
+
+1.928861
+
+# 20
+
+79.228777
+
+38.363697
+
+17.868289
+
+# 21
+
+78.996733
+
+48.466146
+
+1.237229
+
+# 22
+
+78.947122
+
+-56.796360
+
+14.621340
+
+# 23
+
+78.821949
+
+53.659548
+
+14.878322
+
+# 24
+
+78.729952
+
+38.942434
+
+-9.189412
+
+# 25
+
+78.574679
+
+29.070012
+
+12.384116
+
+# 26
+
+78.517322
+
+37.309990
+
+29.179011
+
+================================================
+FILE: archivos/streams-videos/TresSeisCincoScores.py
+================================================
+import pandas as pd
+import requests
+import json
+import matplotlib.pyplot as plt
+from PIL import Image
+from urllib.request import urlopen
+from mplsoccer import Pitch, add_image
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+def getImage(path, zoom=1):
+return OffsetImage(path, zoom=zoom)
+class TresSeisCincoScores:
+def parsear_dataframe(self, objeto):
+df = pd.DataFrame(objeto['rows'])
+df_1 = df['entity'].apply(pd.Series)
+df_2 = df['stats'].apply(pd.Series)[0].apply(pd.Series)
+df_concat = pd.concat([df_1, df_2], axis=1)[['id', 'name', 'positionName', 'value']]
+df_concat['estadistica'] = objeto['name']
+return df_concat
+def scrapear_estadisticas_liga(self, league_id):
+response = requests.get(f'https://webws.365scores.com/web/stats/?
+appTypeId=5&langId=29&timezoneName=America/
+Buenos_Aires&userCountryId=382&competitions={league_id}&competitors=&withSeasons=true')
+estadisticas = response.json()
+estadisticas_generales = estadisticas['stats']
+df_total = pd.DataFrame()
+for i in range(len(estadisticas_generales)):
+objeto = estadisticas_generales[i]
+stats_df = self.parsear_dataframe(objeto)
+df_total = pd.concat([df_total, stats_df])
+return df_total
+
+def ids_ligas():
+id_ligas = {
+'Brasileirao': 113,
+'Champions League': 572,
+'Liga BetPlay': 620,
+'Copa de la Liga': 7214
+}
+return id_ligas
+def sacar_data_partido(self, game_id, matchup_id):
+response = requests.get(f'https://webws.365scores.com/web/game/?
+appTypeId=5&langId=29&timezoneName=America/
+Buenos_Aires&userCountryId=382&gameId={game_id}&matchupId={matchup_id}&topBookmaker
+=14')
+data_partido = response.json()['game']
+return data_partido
+def sacar_tiros(self, data_partido):
+json_tiros = data_partido['chartEvents']['events']
+df = pd.DataFrame(json_tiros)
+return df
+def sacar_informacion_jugadores(self, data_partido):
+json_equipos = data_partido['members']
+df_equipos = pd.DataFrame(json_equipos)
+return df_equipos
+def nombres_equipos(self, data_partido):
+valores = ['home', 'away']
+nombres = []
+for valor in valores:
+nombre = data_partido[f'{valor}Competitor']['name']
+nombres.append(nombre)
+local, visitante = nombres[0], nombres[1]
+return local, visitante
+def sacar_estadisticas_partido_generales(self, game_id, matchup_id):
+data_partido = self.sacar_data_partido(game_id, matchup_id)
+valores = ['home', 'away']
+df_total = pd.DataFrame()
+for valor in valores:
+df = pd.DataFrame(data_partido[f'{valor}Competitor']['statistics'])[['name', 'categoryName',
+'value']]
+df['equipo'] = data_partido[f'{valor}Competitor']['name']
+df_total = pd.concat([df_total, df]).reset_index(drop=True)
+return df_total
+def sacar_mapa_calor(self, jugador, game_id, matchup_id):
+
+data_partido = self.sacar_data_partido(game_id, matchup_id)
+jugadores = data_partido['homeCompetitor']['lineups']['members']
+df_jugadores = pd.DataFrame(jugadores)
+jugadores_total = pd.DataFrame(data_partido['members'])
+df_jugadores = df_jugadores.merge(jugadores_total, on='id', how='left')
+heatmap = Image.open(urlopen(df_jugadores[df_jugadores['name'] == jugador].heatMap.iloc[0]))
+return heatmap
+
+================================================
+FILE: archivos/streams-videos/xGChain-xGBuildup_video.ipynb
+================================================
+# Jupyter notebook converted to Python script.
+import pandas as pd
+from statsbombpy import sb
+from mplsoccer import Sbopen
+parser = Sbopen()
+partido = parser.event(match_id=3869685)
+eventos_partido = partido[0]
+eventos_partido.columns
+# Output:
+# Index(['id', 'index', 'period', 'timestamp', 'minute', 'second', 'possession',
+#
+
+'duration', 'match_id', 'type_id', 'type_name', 'possession_team_id',
+
+#
+
+'possession_team_name', 'play_pattern_id', 'play_pattern_name',
+
+#
+
+'team_id', 'team_name', 'tactics_formation', 'player_id', 'player_name',
+
+#
+
+'position_id', 'position_name', 'pass_recipient_id',
+
+#
+
+'pass_recipient_name', 'pass_length', 'pass_angle', 'pass_height_id',
+
+#
+
+'pass_height_name', 'end_x', 'end_y', 'sub_type_id', 'sub_type_name',
+
+#
+
+'body_part_id', 'body_part_name', 'x', 'y', 'pass_switch', 'outcome_id',
+
+#
+
+'outcome_name', 'under_pressure', 'off_camera', 'counterpress',
+
+#
+
+'block_deflection', 'pass_deflected', 'foul_won_defensive', 'out',
+
+#
+
+'pass_cross', 'technique_id', 'technique_name', 'aerial_won',
+
+#
+
+'pass_assisted_shot_id', 'pass_shot_assist', 'shot_statsbomb_xg',
+
+#
+
+'end_z', 'shot_key_pass_id', 'goalkeeper_position_id',
+
+#
+
+'goalkeeper_position_name', 'ball_recovery_recovery_failure',
+
+#
+
+'shot_first_time', 'foul_committed_penalty', 'foul_won_penalty',
+
+#
+
+'dribble_nutmeg', 'dribble_overrun', 'pass_goal_assist',
+
+#
+
+'substitution_replacement_id', 'substitution_replacement_name',
+
+#
+
+'foul_committed_card_id', 'foul_committed_card_name',
+
+#
+
+'ball_recovery_offensive', 'shot_one_on_one',
+
+#
+
+'foul_committed_advantage', 'foul_won_advantage', 'block_offensive',
+
+#
+
+'foul_committed_offensive', 'bad_behaviour_card_id',
+
+#
+
+'bad_behaviour_card_name'],
+
+#
+
+dtype='object')
+
+eventos_partido = eventos_partido[eventos_partido['possession_team_name'] ==
+eventos_partido['team_name']]
+eventos_partido.groupby('possession').sum()['shot_statsbomb_xg']
+# Output:
+# possession
+# 1
+
+0.0000
+
+# 2
+
+0.0000
+
+# 3
+
+0.0000
+
+# 4
+
+0.0000
+
+# 5
+
+0.0000
+
+#
+
+...
+
+# 251
+
+0.7835
+
+# 252
+
+0.7835
+
+# 253
+
+0.7835
+
+# 254
+
+0.7835
+
+# 255
+
+0.7835
+
+# Name: shot_statsbomb_xg, Length: 255, dtype: float64
+#Importante la necesidad de contar bien las posesiones
+#Cuando en el eventing el nombre del equipo cambia (pero considerar que puede haber acciones que
+aparezcan como duelos aereo perdido que deberian desestimarse)
+#Considerar también que las posesiones no siempre cambian cuando un equipo pierde la pelota. Faltas,
+laterales, corners también deberian ser considerados cuando el equipo mismo tiene la pelota
+#para entender si cambia la posesión.
+#Una forma de contar posesiones
+eventos_partido['posesion'] = (eventos_partido['possession_team_name'] !=
+eventos_partido['possession_team_name'].shift()).cumsum()
+"""
+Otra
+df['lag_team'] = df['teamId'].shift(1)
+df['mismo equipo'] = np.where(df['teamId'] == df['lag_team'], True,False)
+df['Posesion'] = 0
+n=0
+for i in range(len(df)):
+if df['mismo equipo'].iloc[i] == True:
+df['Posesion'].iloc[i] = n
+else:
+df['Posesion'].iloc[i] = n+1
+n+=1
+"""
+xg_values_possession = eventos_partido.groupby('possession', as_index=False).sum()
+[['possession','shot_statsbomb_xg']]
+xg_values_possession = xg_values_possession[xg_values_possession['shot_statsbomb_xg'] !=
+0].rename(columns={'shot_statsbomb_xg': 'xGChain'})
+xg_values_possession
+# Output:
+#
+possession xGChain
+# 13
+
+14 0.024542
+
+# 17
+
+18 0.062813
+
+# 26
+
+27 0.106801
+
+# 31
+
+32 0.783500
+
+# 45
+
+46 0.010578
+
+# 51
+
+52 0.303409
+
+# 85
+
+86 0.040216
+
+# 106
+
+107 0.059534
+
+# 115
+
+116 0.115560
+
+# 130
+
+131 0.096184
+
+# 137
+
+138 0.050644
+
+# 138
+
+139 0.041590
+
+# 162
+
+163 0.783500
+
+# 164
+
+165 0.101703
+
+# 166
+
+167 0.030160
+
+# 182
+
+183 0.032449
+
+# 183
+
+184 0.093335
+
+# 190
+
+191 0.043032
+
+# 199
+
+200 0.019259
+
+# 212
+
+213 0.023032
+
+# 217
+
+218 0.253210
+
+# 220
+
+221 0.140292
+
+# 225
+
+226 0.024785
+
+# 227
+
+228 0.592476
+
+# 236
+
+237 0.030757
+
+# 237
+
+238 0.783500
+
+# 244
+
+245 0.277514
+
+# 245
+
+246 0.106550
+
+# 247
+
+248 0.783500
+
+# 248
+
+249 0.783500
+
+# 249
+
+250 0.783500
+
+# 250
+
+251 0.783500
+
+# 251
+
+252 0.783500
+
+# 252
+
+253 0.783500
+
+# 253
+
+254 0.783500
+
+# 254
+
+255 0.783500
+
+xGChain_df = eventos_partido.merge(xg_values_possession, on='possession', how='left')
+xGChain_df = xGChain_df[xGChain_df['possession'] < 247]
+xGChain_df[(xGChain_df['xGChain'] != 0)].drop_duplicates(subset=['player_name',
+'possession']).groupby('player_name').sum()['xGChain'].sort_values(ascending=False)
+# Output:
+# player_name
+# Lionel Andrés Messi Cuccittini
+# Kylian Mbappé Lottin
+
+2.563312
+1.782554
+
+# Enzo Fernandez
+
+1.224668
+
+# Lautaro Javier Martínez
+
+1.092528
+
+# Gonzalo Ariel Montiel
+
+0.996280
+
+# Alexis Mac Allister
+
+0.798650
+
+# Ángel Fabián Di María Hernández
+
+0.698911
+
+# Nicolás Alejandro Tagliafico
+
+0.691139
+
+# Leandro Daniel Paredes
+
+0.592476
+
+# Julián Álvarez
+
+0.565079
+
+# Marcos Javier Acuña
+
+0.527542
+
+# Nahuel Molina Lucero
+
+0.496132
+
+# Randal Kolo Muani
+
+0.373698
+
+# Rodrigo Javier De Paul
+# Hugo Lloris
+
+0.312858
+0.277514
+
+# Ibrahima Konaté
+
+0.277514
+
+# Kingsley Coman
+
+0.248827
+
+# Adrien Rabiot
+
+0.245682
+
+# Eduardo Camavinga
+
+0.227487
+
+# Nicolás Hernán Otamendi
+
+0.190319
+
+# Dayotchanculle Upamecano
+
+0.155492
+
+# Antoine Griezmann
+
+0.146828
+
+# Aurélien Djani Tchouaméni
+
+0.143979
+
+# Paulo Bruno Exequiel Dybala
+
+0.106550
+
+# Marcus Thuram
+# Jules Koundé
+
+0.101703
+0.101703
+
+# Cristian Gabriel Romero
+
+0.080954
+
+# Damián Emiliano Martínez
+
+0.052168
+
+# Theo Bernard François Hernández
+
+0.050644
+
+# Youssouf Fofana
+
+0.023032
+
+# Olivier Giroud
+
+0.000000
+
+# Ousmane Dembélé
+# Raphaël Varane
+
+0.000000
+0.000000
+
+# Germán Alejandro Pezzella
+
+0.000000
+
+# Name: xGChain, dtype: float64
+xGChain_df[(xGChain_df['xGChain'] != 0) & (xGChain_df['type_name'] != 'Shot') &
+(xGChain_df['pass_shot_assist'] != True)].drop_duplicates(subset=['player_name',
+'possession']).groupby('player_name').sum()['xGChain'].sort_values(ascending=False)
+# Output:
+# player_name
+
+# Lionel Andrés Messi Cuccittini
+# Enzo Fernandez
+
+1.779812
+
+1.224668
+
+# Lautaro Javier Martínez
+
+1.092528
+
+# Gonzalo Ariel Montiel
+
+0.971495
+
+# Alexis Mac Allister
+
+0.798650
+
+# Ángel Fabián Di María Hernández
+
+0.698911
+
+# Nicolás Alejandro Tagliafico
+
+0.691139
+
+# Leandro Daniel Paredes
+
+0.592476
+
+# Julián Álvarez
+
+0.540537
+
+# Marcos Javier Acuña
+
+0.527542
+
+# Nahuel Molina Lucero
+
+0.496132
+
+# Randal Kolo Muani
+
+0.373698
+
+# Rodrigo Javier De Paul
+
+0.312858
+
+# Hugo Lloris
+
+0.277514
+
+# Ibrahima Konaté
+
+0.277514
+
+# Kingsley Coman
+
+0.248827
+
+# Adrien Rabiot
+
+0.245682
+
+# Eduardo Camavinga
+
+0.227487
+
+# Kylian Mbappé Lottin
+
+0.215554
+
+# Nicolás Hernán Otamendi
+
+0.190319
+
+# Dayotchanculle Upamecano
+
+0.155492
+
+# Aurélien Djani Tchouaméni
+
+0.143979
+
+# Paulo Bruno Exequiel Dybala
+
+0.106550
+
+# Jules Koundé
+
+0.101703
+
+# Marcus Thuram
+
+0.101703
+
+# Cristian Gabriel Romero
+
+0.080954
+
+# Damián Emiliano Martínez
+
+0.052168
+
+# Antoine Griezmann
+
+0.050644
+
+# Theo Bernard François Hernández
+# Youssouf Fofana
+
+0.050644
+
+0.023032
+
+# Ousmane Dembélé
+
+0.000000
+
+# Germán Alejandro Pezzella
+
+0.000000
+
+# Raphaël Varane
+
+0.000000
+
+# Olivier Giroud
+
+0.000000
+
+# Name: xGChain, dtype: float64
+xGChain_df[(xGChain_df['xGChain'] != 0) & (xGChain_df['type_name'] != 'Shot') &
+(xGChain_df['pass_shot_assist'] != True)]
+# Output:
+#
+id index period
+timestamp \
+# 0
+
+0584ee21-e3dd-4d9f-95a0-5b5e84be25c3
+
+# 1
+
+6404a8e8-afaf-489d-b65e-173a237ffed5
+
+4
+
+1
+
+# 2
+
+f651a6c4-55e3-4e0f-a178-59414ba83d6a
+
+5
+
+1 00:00:00.578000
+
+# 3
+
+97b5dc82-547a-4f93-a632-a2a8daf5ac98
+
+6
+
+1 00:00:01.554000
+
+# 4
+
+9707e590-1d55-4d25-a50f-475019356152
+
+# ...
+
+...
+
+...
+
+...
+
+1
+
+1
+
+7
+
+00:00:00
+00:00:00
+
+1 00:00:01.554000
+
+...
+
+# 3531 7a530d34-8772-465d-957e-e26a59aec795 4350
+
+4 00:17:52.805000
+
+# 3532 494f058f-f207-4eaf-8572-fa8231480ea1 4351
+
+4 00:17:54.818000
+
+# 3533 cbfdc80d-9535-437d-acd3-b0112a420cc9 4353
+
+4 00:17:57.666000
+
+# 3534 7b17edc2-ad6e-4aa5-b978-ec44fd7c31bc 4354
+
+4 00:17:57.666000
+
+# 3536 066be6c1-3cae-4210-bd6d-5482d0598aba 4356
+
+4 00:17:59.834000
+
+#
+#
+
+minute second possession duration match_id type_id ... \
+
+# 0
+
+0
+
+0
+
+1 0.000000 3869685
+
+35 ...
+
+# 1
+
+0
+
+0
+
+1 0.000000 3869685
+
+18 ...
+
+# 2
+
+0
+
+0
+
+2 0.975702 3869685
+
+30 ...
+
+# 3
+
+0
+
+1
+
+2
+
+NaN 3869685
+
+42 ...
+
+# 4
+
+0
+
+1
+
+2 1.170175 3869685
+
+43 ...
+
+# ...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+... ...
+
+# 3531
+
+122
+
+52
+
+246 2.013526 3869685
+
+43 ...
+
+# 3532
+
+122
+
+54
+
+246 2.847939 3869685
+
+30 ...
+
+# 3533
+
+122
+
+57
+
+246
+
+NaN 3869685
+
+42 ...
+
+# 3534
+
+122
+
+57
+
+246 1.110587 3869685
+
+43 ...
+
+# 3536
+
+122
+
+59
+
+246
+
+42 ...
+
+NaN 3869685
+
+#
+#
+
+foul_committed_card_name ball_recovery_offensive shot_one_on_one \
+
+# 0
+
+NaN
+
+NaN
+
+NaN
+
+# 1
+
+NaN
+
+NaN
+
+NaN
+
+# 2
+
+NaN
+
+NaN
+
+NaN
+
+# 3
+
+NaN
+
+NaN
+
+NaN
+
+# 4
+
+NaN
+
+NaN
+
+NaN
+
+# ...
+
+...
+
+...
+
+...
+
+# 3531
+
+NaN
+
+NaN
+
+NaN
+
+# 3532
+
+NaN
+
+NaN
+
+NaN
+
+# 3533
+
+NaN
+
+NaN
+
+NaN
+
+# 3534
+
+NaN
+
+NaN
+
+NaN
+
+# 3536
+
+NaN
+
+NaN
+
+NaN
+
+#
+#
+
+foul_committed_advantage foul_won_advantage block_offensive \
+
+# 0
+
+NaN
+
+NaN
+
+NaN
+
+# 1
+
+NaN
+
+NaN
+
+NaN
+
+# 2
+
+NaN
+
+NaN
+
+NaN
+
+# 3
+
+NaN
+
+NaN
+
+NaN
+
+# 4
+
+NaN
+
+NaN
+
+NaN
+
+# ...
+
+...
+
+...
+
+...
+
+# 3531
+
+NaN
+
+NaN
+
+NaN
+
+# 3532
+
+NaN
+
+NaN
+
+NaN
+
+# 3533
+
+NaN
+
+NaN
+
+NaN
+
+# 3534
+
+NaN
+
+NaN
+
+NaN
+
+# 3536
+
+NaN
+
+NaN
+
+NaN
+
+#
+#
+
+foul_committed_offensive bad_behaviour_card_id bad_behaviour_card_name \
+
+# 0
+
+NaN
+
+NaN
+
+NaN
+
+# 1
+
+NaN
+
+NaN
+
+NaN
+
+# 2
+
+NaN
+
+NaN
+
+NaN
+
+# 3
+
+NaN
+
+NaN
+
+NaN
+
+# 4
+
+NaN
+
+NaN
+
+NaN
+
+# ...
+
+...
+
+...
+
+...
+
+# 3531
+
+NaN
+
+NaN
+
+NaN
+
+# 3532
+
+NaN
+
+NaN
+
+NaN
+
+# 3533
+
+NaN
+
+NaN
+
+NaN
+
+# 3534
+
+NaN
+
+NaN
+
+NaN
+
+# 3536
+
+NaN
+
+NaN
+
+NaN
+
+#
+#
+
+xGChain
+
+# 0
+
+NaN
+
+# 1
+
+NaN
+
+# 2
+
+NaN
+
+# 3
+
+NaN
+
+# 4
+
+NaN
+
+# ...
+
+...
+
+# 3531 0.10655
+# 3532 0.10655
+# 3533 0.10655
+# 3534 0.10655
+# 3536 0.10655
+#
+# [3491 rows x 77 columns]
+
+================================================
+FILE: archivos/streams-videos/xPoints.ipynb
+================================================
+# Jupyter notebook converted to Python script.
+import pandas as pd
+from prettytable import PrettyTable
+import numpy as np
+import time
+import warnings
+
+from pandas.core.common import SettingWithCopyWarning
+warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
+df = pd.read_csv('archivos/premierEventos15-16.csv')
+# Output:
+# c:\Users\Federico Rábanos\AppData\Local\Programs\Python\Python39\lib\site-packages\IPython\
+core\interactiveshell.py:3169: DtypeWarning: Columns
+(10,12,17,18,19,20,23,28,37,45,46,52,73,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,1
+03,104,105,106,107,108,109,110,111,112) have mixed types.Specify dtype option on import or set
+low_memory=False.
+#
+
+has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+
+df_xPoints = df[df.type == 'Shot']
+match_ids = df.match_id.unique()
+df_xGs = df_xPoints.groupby(['match_id', 'team'], as_index=False).sum()
+[['match_id','team','shot_statsbomb_xg']]
+df_xGs
+# Output:
+#
+match_id
+team shot_statsbomb_xg
+# 0
+
+3753972
+
+AFC Bournemouth
+
+# 1
+
+3753972
+
+Swansea City
+
+# 2
+
+3753973
+
+Chelsea
+
+# 3
+
+3753973
+
+West Ham United
+
+# 4
+
+3753974
+
+Everton
+
+# ..
+
+...
+
+...
+
+1.790883
+2.146323
+2.405319
+0.886418
+1.806268
+
+...
+
+# 755 3754349
+
+West Ham United
+
+# 756 3754350
+
+Everton
+
+0.806059
+1.794586
+
+# 757 3754350 West Bromwich Albion
+
+0.987104
+
+# 758 3754351
+
+Crystal Palace
+
+0.575604
+
+# 759 3754351
+
+Liverpool
+
+1.795278
+
+#
+
+# [760 rows x 3 columns]
+df_xGs[df_xGs['match_id'] == match_ids]
+# Output:
+#
+match_id
+team shot_statsbomb_xg
+# 172 3754058 AFC Bournemouth
+# 173 3754058 Leicester City
+
+0.936503
+2.822871
+
+num_simulations = 50000
+df_xpts = pd.DataFrame(columns=['match_id', 'team', 'xPts'])
+n=0
+for match_id in match_ids:
+team1 = df_xGs[df_xGs['match_id'] == match_id]['team'].iloc[0]
+team2 = df_xGs[df_xGs['match_id'] == match_id]['team'].iloc[1]
+#team1 = 'Local'
+#team2 = 'Visitante'
+input_home_team_xg = float(df_xGs[df_xGs['match_id'] == match_id]
+['shot_statsbomb_xg'].iloc[0])
+input_away_team_xg = float(df_xGs[df_xGs['match_id'] == match_id]['shot_statsbomb_xg'].iloc[1])
+#print the simulation table and run simulations
+count_home_wins = 0
+count_home_loss = 0
+count_away_wins = 0
+count_away_loss = 0
+count_draws = 0
+score_mat = []
+tot_sim_time = 0
+#sim_table = PrettyTable(["N de Simulación #", input_home_team, input_away_team, "Loc Ganó",
+"Vis Ganó", "EMPATE", "DIF DE GOLES"])
+for i in range(num_simulations):
+#get simulation start time
+start_time = time.time()
+#run the sim - generate a random Poisson distribution
+target_home_goals_scored = np.random.poisson(input_home_team_xg)
+target_away_goals_scored = np.random.poisson(input_away_team_xg)
+home_win = 0
+away_win = 0
+draw = 0
+margin = 0
+# if more goals for home team => home team wins
+if target_home_goals_scored > target_away_goals_scored:
+count_home_wins += 1
+count_away_loss += 1
+home_win = 1
+margin = target_home_goals_scored - target_away_goals_scored
+# if more goals for away team => away team wins
+
+elif target_home_goals_scored < target_away_goals_scored:
+count_away_wins += 1
+count_home_loss += 1
+away_win = 1
+margin = target_away_goals_scored - target_home_goals_scored
+elif target_home_goals_scored == target_away_goals_scored:
+draw = 1
+count_draws += 1
+margin = target_away_goals_scored - target_home_goals_scored
+# add score to score matrix
+score_mat.append((target_home_goals_scored, target_away_goals_scored))
+#get end time
+end_time = time.time()
+#add the time to the total simulation time
+tot_sim_time += round((end_time - start_time),5)
+#add the info to the simulation table
+#sim_table.add_row([i+1, target_home_goals_scored, target_away_goals_scored, home_win,
+away_win, draw, margin])
+# calculate probabilities to win/lose/draw
+#print(sim_table)
+home_win_probability = round((count_home_wins/num_simulations * 100),2)
+away_win_probability = round((count_away_wins/num_simulations * 100),2)
+draw_probability = round((count_draws/num_simulations * 100),2)
+sim_table_stats = PrettyTable(["Total # de sim", f"{team1} gana", f"{team2} gana", "Empates"])
+sim_table_stats.add_row([num_simulations, count_home_wins, count_away_wins, count_draws])
+sim_table_stats.add_row(["-", str(home_win_probability)+"%", str(away_win_probability)+"%",
+str(draw_probability)+"%"])
+#print(sim_table_stats)
+#print('-'*50)
+#calculate expected Pts and print a summary
+home_xPts = (home_win_probability / 100) * 3.0 + (draw_probability / 100) * 1.0 +
+(away_win_probability / 100) * 0.0
+away_xPts = (away_win_probability / 100) * 3.0 + (draw_probability / 100) * 1.0 +
+(home_win_probability / 100) * 0.0
+#print(team1, "probabilidad de ganar %:", home_win_probability, "|| xPts =", round(home_xPts,2))
+#print(team2, "probabilidad de ganar %:", away_win_probability, "|| xPts =", round(away_xPts,2))
+#print("Probabilidad de empate %:", draw_probability)
+lista = [match_id, team1, home_xPts]
+lista2 = [match_id, team2, away_xPts]
+df_xpts.loc[len(df_xpts)] = lista
+df_xpts.loc[len(df_xpts)] = lista2
+#print(df_xpts)
+#print('-'*50)
+n+=1
+print(match_id, n)
+
+df_xpts.groupby('team').sum().sort_values(by='xPts', ascending=False)
+# Output:
+#
+xPts
+# team
+# Arsenal
+
+71.6698
+
+# Tottenham Hotspur
+
+68.4821
+
+# Manchester City
+
+66.5095
+
+# Leicester City
+
+64.2381
+
+# Liverpool
+
+63.9677
+
+# Southampton
+# Chelsea
+
+61.2183
+55.7765
+
+# Manchester United
+
+54.2786
+
+# West Ham United
+
+51.6456
+
+# Everton
+
+51.0297
+
+# AFC Bournemouth
+# Watford
+
+48.9045
+
+47.4318
+
+# Swansea City
+
+46.3822
+
+# Crystal Palace
+
+45.6734
+
+# Stoke City
+
+45.0282
+
+# West Bromwich Albion 44.8556
+# Newcastle United
+
+43.3264
+
+# Sunderland
+
+41.5977
+
+# Norwich City
+
+40.4972
+
+# Aston Villa
+
+33.0620
+
+total_scores = len(score_mat)
+max_score = 5
+assemble_scores = [[0 for x in range(max_score)] for y in range(max_score)]
+
+for i in range(total_scores):
+if score_mat[i][0] == 0 and score_mat[i][1] == 0:
+assemble_scores[0][0] += 1
+elif score_mat[i][0] == 0 and score_mat[i][1] == 1:
+assemble_scores[0][1] += 1
+elif score_mat[i][0] == 0 and score_mat[i][1] == 2:
+assemble_scores[0][2] += 1
+elif score_mat[i][0] == 0 and score_mat[i][1] == 3:
+assemble_scores[0][3] += 1
+elif score_mat[i][0] == 0 and score_mat[i][1] == 4:
+assemble_scores[0][4] += 1
+elif score_mat[i][0] == 1 and score_mat[i][1] == 0:
+assemble_scores[1][0] += 1
+elif score_mat[i][0] == 1 and score_mat[i][1] == 1:
+assemble_scores[1][1] += 1
+elif score_mat[i][0] == 1 and score_mat[i][1] == 2:
+assemble_scores[1][2] += 1
+elif score_mat[i][0] == 1 and score_mat[i][1] == 3:
+assemble_scores[1][3] += 1
+elif score_mat[i][0] == 1 and score_mat[i][1] == 4:
+assemble_scores[1][4] += 1
+elif score_mat[i][0] == 2 and score_mat[i][1] == 0:
+assemble_scores[2][0] += 1
+elif score_mat[i][0] == 2 and score_mat[i][1] == 1:
+assemble_scores[2][1] += 1
+elif score_mat[i][0] == 2 and score_mat[i][1] == 2:
+assemble_scores[2][2] += 1
+elif score_mat[i][0] == 2 and score_mat[i][1] == 3:
+assemble_scores[2][3] += 1
+elif score_mat[i][0] == 2 and score_mat[i][1] == 4:
+assemble_scores[2][4] += 1
+elif score_mat[i][0] == 3 and score_mat[i][1] == 0:
+assemble_scores[3][0] += 1
+elif score_mat[i][0] == 3 and score_mat[i][1] == 1:
+assemble_scores[3][1] += 1
+elif score_mat[i][0] == 3 and score_mat[i][1] == 2:
+assemble_scores[3][2] += 1
+elif score_mat[i][0] == 3 and score_mat[i][1] == 3:
+assemble_scores[3][3] += 1
+elif score_mat[i][0] == 3 and score_mat[i][1] == 4:
+assemble_scores[3][4] += 1
+elif score_mat[i][0] == 4 and score_mat[i][1] == 0:
+assemble_scores[4][0] += 1
+elif score_mat[i][0] == 4 and score_mat[i][1] == 1:
+assemble_scores[4][1] += 1
+elif score_mat[i][0] == 4 and score_mat[i][1] == 2:
+assemble_scores[4][2] += 1
+elif score_mat[i][0] == 4 and score_mat[i][1] == 3:
+assemble_scores[4][3] += 1
+
+elif score_mat[i][0] == 4 and score_mat[i][1] == 4:
+assemble_scores[4][4] += 1
+#calculate percentages and print the score matrix
+print ("************************************")
+print ("*
+*")
+print ("* MATRIZ DE GOLES (% PROBABILIDAD) *")
+print ("*
+*")
+print ("************************************")
+score_matrix = PrettyTable([" ", 0, 1, 2, 3, 4])
+score_matrix.add_row([0,round(assemble_scores[0][0]/
+num_simulations*100,2),round(assemble_scores[0][1]/
+num_simulations*100,2),round(assemble_scores[0][2]/
+num_simulations*100,2),round(assemble_scores[0][3]/
+num_simulations*100,2),round(assemble_scores[0][4]/num_simulations*100,2)])
+score_matrix.add_row([1,round(assemble_scores[1][0]/
+num_simulations*100,2),round(assemble_scores[1][1]/
+num_simulations*100,2),round(assemble_scores[1][2]/
+num_simulations*100,2),round(assemble_scores[1][3]/
+num_simulations*100,2),round(assemble_scores[1][4]/num_simulations*100,2)])
+score_matrix.add_row([2,round(assemble_scores[2][0]/
+num_simulations*100,2),round(assemble_scores[2][1]/
+num_simulations*100,2),round(assemble_scores[2][2]/
+num_simulations*100,2),round(assemble_scores[2][3]/
+num_simulations*100,2),round(assemble_scores[2][4]/num_simulations*100,2)])
+score_matrix.add_row([3,round(assemble_scores[3][0]/
+num_simulations*100,2),round(assemble_scores[3][1]/
+num_simulations*100,2),round(assemble_scores[3][2]/
+num_simulations*100,2),round(assemble_scores[3][3]/
+num_simulations*100,2),round(assemble_scores[3][4]/num_simulations*100,2)])
+score_matrix.add_row([4,round(assemble_scores[4][0]/
+num_simulations*100,2),round(assemble_scores[4][1]/
+num_simulations*100,2),round(assemble_scores[4][2]/
+num_simulations*100,2),round(assemble_scores[4][3]/
+num_simulations*100,2),round(assemble_scores[4][4]/num_simulations*100,2)])
+print(score_matrix)
+# Output:
+# ************************************
+# *
+
+*
+
+# * MATRIZ DE GOLES (% PROBABILIDAD) *
+# *
+
+*
+
+# ************************************
+# +---+------+------+------+------+------+
+
+# | | 0 | 1 | 2 | 3 | 4 |
+# +---+------+------+------+------+------+
+# | 0 | 2.44 | 6.68 | 9.3 | 8.75 | 6.05 |
+# | 1 | 2.19 | 6.11 | 8.67 | 8.16 | 5.61 |
+# | 2 | 1.03 | 2.97 | 4.11 | 3.89 | 2.81 |
+# | 3 | 0.3 | 0.82 | 1.22 | 1.22 | 0.83 |
+# | 4 | 0.08 | 0.21 | 0.27 | 0.22 | 0.2 |
+# +---+------+------+------+------+------+
+
+================================================
+FILE: archivos/streams-videos/archivos/modelo_asistencias_esperadas_solo comp.pkl
+================================================
+[Binary file]
+================================================
+FILE: archivos/streams-videos/archivos/modelo_goles_esperados.pkl
+================================================
+[Binary file]
+================================================
+FILE: archivos/streams-videos/archivos/Wowen Super League 2023-24.csv
+================================================
+,goals,yellowCards,redCards,groundDuelsWon,groundDuelsWonPercentage,aerialDuelsWon,aerialDue
+lsWonPercentage,successfulDribbles,assists,accuratePassesPercentage,totalDuelsWon,totalDuelsWonP
+ercentage,minutesPlayed,wasFouled,fouls,dispossessed,appearances,saves,savedShotsFromInsideTheB
+ox,savedShotsFromOutsideTheBox,goalsConcededInsideTheBox,goalsConcededOutsideTheBox,high
+Claims,successfulRunsOut,punches,runsOut,accurateFinalThirdPasses,bigChancesCreated,accuratePas
+ses,keyPasses,accurateCrosses,accurateCrossesPercentage,accurateLongBalls,accurateLongBallsPercen
+tage,interceptions,clearances,dribbledPast,bigChancesMissed,totalShots,shotsOnTarget,blockedShots,g
+oalConversionPercentage,hitWoodwork,offsides,expectedGoals,errorLeadToGoal,errorLeadToShot,pas
+sToAssist,player,team
+0,6,0,0,32,49.23,16,51.61,16,2,68.25,48,50.0,500,13,6,16,7,0,0,0,4,0,0,0,0,0,42,1,86,11,0,0.0,3,50.0,2,3
+,1,5,32,14,7,18.75,2,2,0.0,0,0,0,Khadija Shaw,Manchester City W.F.C.
+1,6,2,0,26,55.32,4,57.14,13,1,81.9,30,55.56,492,5,7,8,7,0,0,0,5,1,0,0,0,0,76,2,190,9,3,25.0,21,70.0,1,1,
+1,2,29,13,6,20.69,2,1,0.0,0,0,0,Lauren James,Chelsea FC Women
+2,1,0,0,6,75.0,1,25.0,3,0,68.57,7,58.33,167,3,1,1,2,0,0,0,1,1,0,0,0,0,29,0,48,11,7,35.0,1,33.33,0,2,0,1,3,
+3,0,33.33,0,1,,0,0,0,Guro Reiten,Chelsea FC Women
+
+3,0,0,0,22,73.33,5,50.0,5,1,85.07,27,67.5,458,2,4,0,6,0,0,0,5,0,0,0,0,0,97,3,319,20,19,50.0,19,54.29,9,8
+,2,0,2,1,0,0.0,0,0,0.0,0,1,0,Ève Périsset,Chelsea FC Women
+4,1,3,0,37,67.27,15,60.0,8,2,79.27,52,65.0,720,4,4,4,8,0,0,0,7,2,0,0,0,0,96,3,413,26,19,37.25,24,38.71,
+10,7,9,0,10,5,2,10.0,1,0,0.0,0,0,0,Katie Zelem,Manchester United Women
+5,1,1,0,32,56.14,15,68.18,13,3,81.08,47,59.49,689,1,5,11,8,0,0,0,6,1,0,0,0,0,133,4,377,8,5,21.74,19,59.
+38,11,11,2,0,15,5,6,6.67,0,2,0.0,0,0,0,Niamh Charles,Chelsea FC Women
+6,6,2,0,21,48.84,11,42.31,9,1,71.75,32,46.38,718,6,1,5,8,0,0,0,15,0,0,0,0,0,49,2,127,9,0,0.0,4,44.44,4,3
+,2,3,32,20,3,18.75,1,11,0.0,0,0,0,Martha Thomas,Tottenham FC Women
+7,3,1,0,23,38.98,0,0.0,8,1,84.14,23,34.85,651,8,6,12,8,0,0,0,4,0,0,0,0,0,95,4,191,18,16,21.62,7,70.0,4,2
+,9,2,35,15,11,8.57,1,1,0.0,0,0,0,Chloe Kelly,Manchester City W.F.C.
+8,5,2,0,27,49.09,8,38.1,4,2,86.47,35,46.05,659,8,2,11,8,0,0,0,3,0,0,0,0,0,102,1,262,12,3,75.0,12,80.0,5,
+5,14,2,21,9,8,23.81,0,0,0.0,0,0,0,Jill Roord,Manchester City W.F.C.
+9,3,3,0,34,58.62,1,33.33,7,1,78.55,35,57.38,610,10,3,10,8,0,0,0,7,0,0,0,0,0,96,3,249,15,10,27.78,22,51.
+16,5,8,8,1,15,7,7,20.0,0,0,0.0,0,0,0,Katie McCabe,Arsenal Women
+10,4,0,0,23,56.1,6,66.67,1,1,78.82,29,58.0,384,11,4,5,7,0,0,0,5,0,0,0,0,0,31,2,67,9,2,22.22,0,0.0,2,3,4,1
+,16,9,4,25.0,1,7,0.0,0,0,0,Nikita Parris,Manchester United Women
+11,0,1,0,10,66.67,3,100.0,1,1,81.69,13,72.22,151,3,2,2,3,0,0,0,1,0,0,0,0,0,53,1,116,4,0,0.0,3,33.33,0,5,
+0,0,5,2,1,0.0,0,0,,0,0,0,Melanie Leupolz,Chelsea FC Women
+12,0,0,0,0,0.0,2,100.0,0,0,80.33,2,100.0,90,0,0,0,1,3,2,1,0,0,0,0,3,0,0,0,49,0,0,0.0,9,42.86,0,3,0,0,0,0,0,
+0.0,0,0,0.0,0,0,0,Teagan Micah,Liverpool FC Women
+13,0,1,0,1,100.0,0,0.0,0,0,78.49,1,33.33,540,1,0,0,6,31,23,8,12,0,5,1,2,1,1,0,146,0,0,0.0,28,41.79,0,3,0,
+0,0,0,0,0.0,0,0,0.0,0,0,0,Courtney Brosnan,Everton Women
+14,0,0,0,17,70.83,0,0.0,7,2,88.41,17,68.0,274,5,0,4,4,0,0,0,2,0,0,0,0,0,38,0,145,9,3,50.0,6,60.0,3,2,1,0,
+1,1,0,0.0,0,0,0.0,0,1,0,Kyra Cooney-Cross,Arsenal Women
+15,0,0,0,0,0.0,4,100.0,0,0,79.26,4,100.0,720,0,0,0,8,41,30,11,17,1,2,2,5,2,2,0,256,0,0,0.0,41,42.71,0,8,
+0,0,0,0,0,0.0,0,0,0.0,1,1,0,Janina Leitzig,Leicester City WFC
+16,0,0,0,0,0.0,1,100.0,0,0,60.31,1,100.0,630,0,0,0,7,39,30,9,14,2,6,0,0,0,4,0,158,0,0,0.0,72,44.17,0,1,0,
+0,0,0,0,0.0,0,0,0.0,0,0,0,Sophie Baggaley,Brighton
+17,1,1,1,33,62.26,8,66.67,7,3,88.74,41,63.08,696,9,5,7,8,0,0,0,5,0,0,0,0,0,106,1,449,7,0,0.0,9,36.0,16,1
+3,5,0,4,2,1,25.0,0,0,0.0,0,0,0,Laia Aleixandri,Manchester City W.F.C.
+18,1,0,0,10,76.92,18,85.71,1,0,85.09,28,82.35,528,0,1,1,6,0,0,0,3,1,0,0,0,0,50,1,411,1,0,0.0,31,46.97,1
+2,15,1,1,10,3,2,10.0,1,1,0.0,0,0,0,Millie Bright,Chelsea FC Women
+19,4,1,0,14,42.42,10,66.67,5,1,78.88,24,50.0,433,3,4,8,7,0,0,0,3,0,0,0,0,0,74,1,198,7,0,0.0,5,41.67,6,5,
+5,3,16,8,3,25.0,0,0,0.0,0,0,0,Sjoeke Nüsken,Chelsea FC Women
+20,3,0,0,15,41.67,3,33.33,6,1,71.67,18,40.0,603,1,4,5,8,0,0,0,5,0,0,0,0,0,84,2,215,22,20,41.67,13,50.0,
+4,5,8,0,11,8,2,27.27,0,0,0.0,0,0,0,Marie Theresa Höbinger,Liverpool FC Women
+21,3,0,0,6,35.29,12,70.59,0,3,75.74,18,52.94,435,3,2,7,6,0,0,0,4,0,0,0,0,0,54,3,103,8,2,33.33,0,0.0,1,3,
+0,2,16,6,2,18.75,1,6,0.0,0,0,0,Samantha Kerr,Chelsea FC Women
+22,3,1,1,22,41.51,4,50.0,13,2,71.43,26,42.62,513,4,6,11,7,0,0,0,4,0,0,0,0,0,51,4,110,15,3,27.27,5,71.43
+,1,2,0,1,18,10,2,16.67,2,3,0.0,0,0,0,Lauren Hemp,Manchester City W.F.C.
+23,0,0,0,29,67.44,2,33.33,8,0,87.82,31,63.27,707,6,0,5,8,0,0,0,5,0,0,0,0,0,114,1,440,12,0,0.0,8,44.44,1
+9,5,6,0,3,1,1,0.0,0,0,0.0,0,0,0,Yui Hasegawa,Manchester City W.F.C.
+24,1,1,0,59,62.77,7,70.0,13,0,77.42,66,63.46,720,10,6,6,8,0,0,0,16,0,0,0,0,0,68,1,288,10,4,40.0,14,38.8
+9,18,20,14,0,9,4,2,11.11,0,1,0.0,0,0,0,Ashleigh Neville,Tottenham FC Women
+25,5,0,0,23,48.94,8,36.36,2,0,77.45,31,44.93,556,8,10,11,8,0,0,0,12,1,0,0,0,0,29,1,79,3,0,0.0,6,100.0,0,
+0,2,1,22,10,5,22.73,0,8,0.0,0,0,0,Elisabeth Terland,Brighton
+26,2,0,0,10,37.04,39,66.1,1,2,61.59,49,56.98,484,3,7,5,6,0,0,0,8,0,0,0,0,0,38,2,101,3,1,20.0,7,87.5,2,5,
+6,5,21,8,0,9.52,0,1,0.0,0,0,0,Sophie Haug,Liverpool FC Women
+
+27,1,0,0,17,47.22,1,33.33,9,3,83.78,18,46.15,393,2,0,8,6,0,0,0,3,0,0,0,0,0,57,2,124,12,3,33.33,3,75.0,6,
+0,5,2,10,4,3,10.0,0,1,0.0,0,0,0,Johanna Rytting Kaneryd,Chelsea FC Women
+28,1,0,0,5,50.0,0,0.0,1,0,75.0,5,50.0,50,2,0,3,2,0,0,0,0,0,0,0,0,0,6,0,12,2,1,100.0,1,33.33,0,0,0,0,5,2,1,2
+0.0,2,0,0.0,0,0,0,Lina Hurtig,Arsenal Women
+29,0,0,0,21,72.41,6,42.86,1,1,85.44,27,62.79,715,3,4,1,8,0,0,0,9,0,0,0,0,0,55,1,352,4,0,0.0,29,72.5,8,17
+,3,0,5,0,0,0.0,0,0,0.0,0,0,0,Grace Fisk,Liverpool FC Women
+30,2,2,0,38,43.68,6,54.55,18,2,76.13,44,44.9,637,5,12,14,8,0,0,0,7,0,0,0,0,0,112,2,185,13,2,8.7,3,33.33
+,4,2,7,1,24,7,11,8.33,3,3,0.0,0,0,0,Caitlin Foord,Arsenal Women
+31,1,0,0,7,46.67,28,75.68,0,0,92.87,35,67.31,708,2,4,3,8,0,0,0,7,2,0,0,0,0,27,0,521,1,0,0.0,21,65.63,7,4
+1,0,0,16,4,3,6.25,0,0,0.0,0,0,0,Millie Turner,Manchester United Women
+32,2,1,0,52,48.6,5,71.43,24,1,78.97,57,50.0,645,10,13,21,8,0,0,0,13,0,0,0,0,0,75,0,229,11,1,14.29,12,6
+0.0,9,4,7,0,19,9,6,10.53,0,2,0.0,0,0,0,Grace Clinton,Tottenham FC Women
+33,1,0,0,19,50.0,0,0.0,5,2,86.6,19,44.19,340,3,0,12,8,0,0,0,4,0,0,0,0,0,77,4,168,13,1,20.0,2,50.0,2,0,0,2
+,10,6,0,10.0,3,4,0.0,0,0,0,Francesca Kirby,Chelsea FC Women
+34,1,2,0,18,66.67,22,64.71,2,0,79.13,40,65.57,684,2,7,1,8,0,0,0,8,0,0,0,0,0,19,0,273,2,1,50.0,26,46.43,
+8,39,1,0,9,1,3,11.11,1,0,0.0,0,0,0,Gemma Bonner,Liverpool FC Women
+35,0,0,0,1,33.33,0,0.0,0,1,83.33,1,33.33,13,0,0,0,1,0,0,0,0,0,0,0,0,0,4,1,5,3,0,0.0,2,100.0,0,0,1,0,0,0,0,0
+.0,0,0,0.0,0,0,0,Irene Guerrero,Manchester United Women
+36,0,0,0,29,74.36,11,57.89,1,1,88.71,40,68.97,720,5,4,2,8,0,0,0,6,1,0,0,0,0,66,1,558,2,1,33.33,46,63.89
+,3,26,4,0,4,1,1,0.0,0,1,0.0,0,1,0,Jess Carter,Chelsea FC Women
+37,2,0,0,35,47.95,2,22.22,12,0,79.11,37,45.12,635,4,5,11,8,0,0,0,14,0,0,0,0,0,70,1,178,8,6,22.22,3,50.0
+,10,2,10,1,17,7,5,11.76,1,1,0.0,0,0,0,Celin Bizet Ildhusøy,Tottenham FC Women
+38,4,1,0,24,47.06,21,56.76,2,0,67.77,45,51.14,720,15,5,11,8,0,0,0,16,4,0,0,0,0,49,0,143,2,2,33.33,11,5
+7.89,1,11,4,3,25,9,4,16.0,1,7,0.0,0,0,0,Rachel Daly,Aston Villa WFC
+39,2,2,0,24,38.71,11,36.67,6,2,77.4,35,38.04,679,10,6,20,8,0,0,0,8,0,0,0,0,0,77,3,161,12,3,21.43,6,54.5
+5,2,0,3,1,19,6,6,10.53,1,4,0.0,0,0,1,Alessia Russo,Arsenal Women
+40,0,0,0,8,44.44,1,33.33,1,0,78.39,9,42.86,261,5,1,3,3,0,0,0,3,1,0,0,0,0,54,1,156,9,6,28.57,6,40.0,3,2,1,
+0,4,3,0,0.0,0,0,0.0,0,0,0,Kenza Dali,Aston Villa WFC
+41,1,0,0,25,86.21,13,65.0,6,2,73.58,38,77.55,529,9,0,1,7,0,0,0,6,2,0,0,0,0,63,0,142,9,6,30.0,2,16.67,2,4
+,1,1,13,2,3,7.69,0,5,0.0,0,0,0,Leah Galton,Manchester United Women
+42,0,0,0,17,77.27,10,52.63,2,0,86.84,27,65.85,720,5,0,3,8,0,0,0,5,0,0,0,0,0,56,0,475,0,0,0.0,29,43.28,3,
+38,2,0,5,1,1,0.0,0,0,0.0,0,0,0,Alanna Kennedy,Manchester City W.F.C.
+43,0,1,1,11,64.71,9,47.37,1,1,86.55,20,55.56,488,6,2,2,6,0,0,0,1,0,0,0,0,0,77,1,399,9,5,33.33,23,39.66,
+8,19,2,0,5,1,1,0.0,1,0,0.0,0,0,0,Alex Greenwood,Manchester City W.F.C.
+44,5,0,0,3,27.27,3,42.86,1,0,74.51,6,33.33,146,1,1,3,6,0,0,0,2,0,0,0,0,0,20,0,38,0,0,0.0,1,50.0,0,1,0,0,1
+1,6,2,45.45,0,1,0.0,0,0,0,Agnes Beever-Jones,Chelsea FC Women
+45,0,1,0,1,50.0,3,100.0,0,0,64.96,4,80.0,720,0,1,0,8,25,16,9,5,0,5,2,1,2,4,0,178,1,0,0.0,44,32.84,0,3,0,0
+,0,0,0,0.0,0,0,0.0,1,0,0,Khiara Keating,Manchester City W.F.C.
+46,1,2,0,33,54.1,11,47.83,4,1,64.53,44,52.38,626,6,5,6,7,0,0,0,8,0,0,0,0,0,44,0,151,11,7,41.18,16,41.03
+,2,4,9,0,12,4,2,8.33,2,0,0.0,0,0,0,Ceri Holland,Liverpool FC Women
+47,0,1,0,19,70.37,0,0.0,3,0,67.47,19,63.33,181,4,2,2,3,0,0,0,3,0,0,0,0,0,16,1,56,1,2,20.0,3,42.86,0,0,2,0
+,4,1,0,0.0,0,0,,0,0,0,Lucy Hope,Everton Women
+48,1,1,0,13,30.95,1,50.0,4,3,80.29,14,31.82,630,3,1,11,8,0,0,0,7,1,0,0,0,0,141,3,277,13,1,12.5,12,66.67
+,3,3,6,0,14,6,3,7.14,0,3,0.0,0,0,0,Ella Toone,Manchester United Women
+49,1,0,0,27,64.29,11,64.71,0,1,84.91,38,64.41,709,12,4,4,8,0,0,0,15,0,0,0,0,0,79,0,405,8,5,27.78,21,60.
+0,9,8,7,0,7,3,0,14.29,0,1,0.0,0,0,0,Eveliina Summanen,Tottenham FC Women
+50,2,0,0,12,44.44,2,50.0,3,1,71.58,14,45.16,220,4,2,5,6,0,0,0,1,0,0,0,0,0,27,2,68,5,1,14.29,1,20.0,3,2,4,
+2,8,4,0,25.0,1,1,0.0,0,0,0,Bethany Mead,Arsenal Women
+
+51,0,0,0,24,50.0,3,50.0,15,2,83.62,27,50.0,485,2,2,9,8,0,0,0,3,0,0,0,0,0,92,2,194,6,8,38.1,1,50.0,2,3,5,0
+,8,3,3,0.0,0,3,0.0,0,0,0,Mary Fowler,Manchester City W.F.C.
+52,0,2,0,33,66.0,4,40.0,8,1,76.89,37,61.67,471,7,4,3,6,0,0,0,3,1,0,0,0,0,31,3,173,7,4,36.36,11,40.74,6,5
+,3,0,3,2,0,0.0,0,0,0.0,0,0,0,Jayde Riviere,Manchester United Women
+53,3,0,0,22,59.46,4,80.0,2,2,67.91,26,61.9,559,5,0,8,8,0,0,0,13,0,0,0,0,0,52,1,127,8,6,31.58,6,46.15,1,1
+2,6,0,16,6,5,18.75,0,1,0.0,0,0,1,Jutta Rantala,Leicester City WFC
+54,2,2,0,21,43.75,19,50.0,3,3,67.98,40,46.51,660,4,13,6,8,0,0,0,15,1,0,0,0,0,41,1,138,7,0,0.0,3,100.0,6,
+13,6,2,17,5,5,11.76,0,3,0.0,0,0,0,Lena Petermann,Leicester City WFC
+55,4,0,0,6,40.0,12,70.59,1,0,69.77,18,56.25,161,3,5,1,8,0,0,0,3,1,0,0,0,0,13,0,30,3,0,0.0,0,0.0,0,4,1,1,1
+1,5,3,36.36,1,1,0.0,0,0,0,Rachel Williams,Manchester United Women
+56,1,0,0,15,48.39,2,66.67,3,2,84.42,17,50.0,504,5,4,7,6,0,0,0,8,0,0,0,0,0,57,0,298,12,3,25.0,21,58.33,5,
+6,5,1,4,2,1,25.0,0,0,0.0,0,0,0,Olga Ahtinen,Tottenham FC Women
+57,2,2,0,11,37.93,4,44.44,2,2,76.04,15,39.47,282,3,5,3,7,0,0,0,3,0,0,0,0,0,38,2,73,9,1,14.29,3,75.0,5,3,
+4,1,7,3,3,28.57,0,1,0.0,0,0,0,Cloé Lacasse,Arsenal Women
+58,3,2,0,23,53.49,20,55.56,2,0,71.67,43,54.43,657,12,6,8,8,0,0,0,16,3,0,0,0,0,33,0,129,3,0,0.0,7,87.5,3,
+2,2,2,24,11,7,12.5,1,3,0.0,0,0,0,Riko Ueki,West Ham Women
+59,0,0,0,0,0.0,2,100.0,0,0,80.86,2,100.0,720,0,0,0,8,27,20,7,7,2,2,1,7,1,3,0,262,0,0,0.0,36,37.11,0,12,0,
+0,0,0,0,0.0,0,0,0.0,0,0,0,Mary Earps,Manchester United Women
+60,0,1,0,14,50.0,21,63.64,5,0,85.8,35,57.38,612,3,2,6,8,0,0,0,6,0,0,0,0,0,101,0,453,3,0,0.0,39,59.09,8,2
+0,4,0,6,2,1,0.0,0,0,0.0,0,0,0,Lotte Wubben-Moy,Arsenal Women
+61,0,0,0,30,66.67,1,33.33,7,0,86.69,31,64.58,704,3,2,3,8,0,0,0,7,2,0,0,0,0,93,0,469,5,1,12.5,26,68.42,9,
+12,7,0,5,2,1,0.0,0,0,0.0,0,0,0,Hannah Blundell,Manchester United Women
+62,0,2,0,30,56.6,2,28.57,3,0,80.37,32,53.33,431,10,11,7,7,0,0,0,1,0,0,0,0,0,80,1,172,9,4,33.33,2,15.38,
+2,8,4,1,6,4,1,0.0,0,0,0.0,0,0,0,Filippa Angeldahl,Manchester City W.F.C.
+63,2,1,0,38,59.38,4,44.44,5,1,77.3,42,57.53,653,17,7,11,8,0,0,0,12,3,0,0,0,0,45,0,109,6,0,0.0,7,58.33,5,
+5,2,0,15,3,4,13.33,2,2,0.0,0,0,0,Viviane Asseyi,West Ham Women
+64,1,1,0,19,38.0,2,33.33,6,3,77.43,21,37.5,488,4,8,11,8,0,0,0,4,0,0,0,0,0,81,4,175,10,1,9.09,7,41.18,5,2
+,5,1,10,2,5,10.0,0,0,0.0,0,0,0,Victoria Pelova,Arsenal Women
+65,3,1,0,13,40.63,4,30.77,3,0,75.26,17,37.78,338,4,4,6,7,0,0,0,3,2,0,0,0,0,32,1,73,4,1,50.0,2,66.67,4,0,
+6,0,13,5,5,23.08,1,2,0.0,0,0,0,Melvine Malard,Manchester United Women
+66,1,0,0,9,64.29,4,57.14,1,1,82.31,13,61.9,654,0,1,1,8,0,0,0,8,0,0,0,0,0,129,1,335,10,10,20.83,8,28.57,
+3,11,2,0,5,1,1,20.0,0,1,0.0,0,0,0,Stephanie Catley,Arsenal Women
+67,0,1,0,6,37.5,2,66.67,1,1,76.97,8,42.11,313,2,2,3,5,0,0,0,5,0,0,0,0,0,39,3,117,8,2,100.0,4,57.14,0,2,2,
+0,11,5,1,0.0,1,1,0.0,0,0,0,Drew Spence,Tottenham FC Women
+68,0,0,0,0,0.0,0,0.0,0,0,68.48,0,0.0,360,0,0,0,4,18,9,9,2,1,2,2,2,2,1,0,63,0,0,0.0,18,38.3,0,4,0,0,0,0,0,0.
+0,0,0,0.0,1,0,0,Zećira Mušović,Chelsea FC Women
+69,4,0,0,5,29.41,7,53.85,2,0,70.37,12,40.0,193,1,2,7,6,0,0,0,1,0,0,0,0,0,22,0,38,3,0,0.0,2,66.67,0,2,0,3,
+18,5,5,22.22,1,8,0.0,0,0,0,Stina Blackstenius,Arsenal Women
+70,0,0,0,23,60.53,15,88.24,8,0,85.54,38,69.09,461,2,5,7,6,0,0,0,6,0,0,0,0,0,83,0,213,9,1,20.0,2,25.0,1,2
+,2,1,6,2,3,0.0,1,1,0.0,0,0,0,Kim Little,Arsenal Women
+71,0,1,0,8,47.06,0,0.0,3,1,88.62,8,47.06,183,0,4,2,5,0,0,0,1,0,0,0,0,0,47,2,148,5,2,25.0,11,91.67,1,0,3,0
+,2,0,1,0.0,0,0,0.0,0,0,0,Jelena Čanković,Chelsea FC Women
+72,0,0,0,12,60.0,3,60.0,0,0,86.32,15,60.0,401,1,2,2,5,0,0,0,3,0,0,0,0,0,66,0,202,1,1,50.0,16,61.54,2,13,
+3,0,3,2,0,0.0,0,0,0.0,0,0,0,Esme Morgan,Manchester City W.F.C.
+73,0,1,0,28,54.9,6,66.67,6,1,88.89,34,56.67,458,5,7,3,7,0,0,0,6,0,0,0,0,0,85,0,272,2,1,14.29,10,47.62,3,
+8,11,0,5,0,2,0.0,0,0,0.0,0,0,0,Lia Wälti,Arsenal Women
+74,0,0,0,8,61.54,5,45.45,0,1,80.99,13,54.17,477,1,2,1,7,0,0,0,5,1,0,0,0,0,89,1,277,8,1,100.0,22,62.86,5,
+7,2,1,5,2,2,0.0,0,0,0.0,0,0,0,Sophie Ingle,Chelsea FC Women
+
+75,0,0,0,0,0.0,6,85.71,0,0,67.24,6,85.71,630,0,0,0,7,15,11,4,9,0,2,0,10,0,7,0,234,0,0,0.0,101,48.1,0,14,
+0,0,0,0,0,0.0,0,0,0.0,0,0,0,Rachael Laws,Liverpool FC Women
+76,1,0,0,19,39.58,2,28.57,3,0,82.01,21,38.18,419,8,7,13,6,0,0,0,3,1,0,0,0,0,66,0,237,6,6,50.0,12,42.86,
+10,0,3,0,13,4,5,7.69,1,0,0.0,0,0,0,Erin Cuthbert,Chelsea FC Women
+77,0,1,0,25,54.35,2,40.0,7,1,68.57,27,52.94,259,5,2,9,4,0,0,0,1,1,0,0,0,0,17,0,48,6,1,33.33,2,50.0,2,0,2,
+0,4,1,2,0.0,0,2,0.0,0,0,0,Shannon O'Brien,Leicester City WFC
+78,0,0,0,1,100.0,1,50.0,0,0,74.74,2,66.67,630,1,0,0,7,26,12,13,14,2,4,3,3,3,1,0,219,0,0,0.0,60,48.39,0,7
+,0,0,0,0,0,0.0,0,0,0.0,0,0,0,Mackenzie Arnold,West Ham Women
+79,3,0,0,11,57.89,12,60.0,2,0,86.99,23,58.97,720,0,6,1,8,0,0,0,15,0,0,0,0,0,15,1,361,2,0,0.0,17,41.46,7,
+23,1,0,4,4,0,75.0,0,0,0.0,0,1,0,Megan Finnigan,Everton Women
+80,1,1,0,35,40.7,2,40.0,19,0,63.75,37,40.66,457,7,8,21,6,0,0,0,4,1,0,0,0,0,29,0,51,4,3,21.43,4,80.0,1,0,
+1,2,16,6,4,6.25,1,5,0.0,0,0,0,Geyse Ferreira,Manchester United Women
+81,2,0,0,0,0.0,0,0.0,0,0,66.67,0,0.0,64,0,0,3,3,0,0,0,0,0,0,0,0,0,9,0,18,1,0,0.0,0,0.0,0,0,2,0,4,2,1,50.0,0,
+0,0.0,0,0,0,Laura Coombs,Manchester City W.F.C.
+82,2,1,0,18,60.0,8,88.89,1,0,69.14,26,66.67,516,4,5,2,7,0,0,0,14,1,0,0,0,0,35,1,112,7,0,0.0,5,45.45,4,6,
+2,0,9,4,1,22.22,0,0,0.0,0,0,0,Janice Cayman,Leicester City WFC
+83,0,0,0,0,0.0,0,0.0,0,0,80.0,0,0.0,11,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,4,1,0,0.0,1,100.0,1,1,0,0,0,0,0,0.0,0,0,
+0.0,0,0,0,Aniek Nouwen,Chelsea FC Women
+84,0,0,0,1,100.0,1,100.0,0,0,92.86,2,100.0,45,0,0,0,1,0,0,0,1,0,0,0,0,0,3,0,26,0,0,0.0,1,50.0,1,2,0,0,0,0,
+0,0.0,0,0,0.0,0,0,0,Amy Turner,Tottenham FC Women
+85,1,2,0,21,42.86,4,30.77,7,0,75.76,25,40.32,359,3,5,11,4,0,0,0,7,3,0,0,0,0,25,0,100,5,1,25.0,6,60.0,4,1
+0,8,0,4,1,2,25.0,0,0,0.0,0,0,0,Lucy Parker,Aston Villa WFC
+86,0,0,0,1,50.0,2,100.0,0,0,53.57,3,75.0,315,0,0,0,4,18,11,7,6,2,2,2,2,2,1,0,45,0,0,0.0,17,32.08,0,8,1,0,
+0,0,0,0.0,0,0,0.0,0,0,0,Olivia Clark,Bristol City WFC
+87,2,1,0,21,35.59,0,0.0,12,1,76.47,21,32.81,373,5,7,5,8,0,0,0,3,0,0,0,0,0,41,1,78,9,0,0.0,2,66.67,4,2,3,2
+,17,7,7,11.76,0,3,0.0,0,0,0,Lucía García,Manchester United Women
+88,0,3,0,41,61.19,3,33.33,14,0,74.04,44,57.89,694,5,6,8,8,0,0,0,9,0,0,0,0,0,54,1,231,6,4,17.39,16,50.0,
+6,13,9,0,7,1,1,0.0,0,0,0.0,0,0,0,Taylor Hinds,Liverpool FC Women
+89,1,0,0,9,39.13,3,42.86,2,1,84.62,12,40.0,420,0,3,4,8,0,0,0,2,1,0,0,0,0,39,0,154,5,4,66.67,2,40.0,9,3,3,
+2,14,6,2,7.14,1,0,0.0,0,0,0,Hinata Miyazawa,Manchester United Women
+90,1,2,0,18,75.0,9,47.37,2,0,77.81,27,62.79,720,1,3,1,8,0,0,0,16,3,0,0,0,0,29,0,242,1,0,0.0,17,41.46,11,
+47,2,0,3,1,1,33.33,0,0,0.0,0,0,0,Guro Bergsvand,Brighton
+91,0,0,0,5,71.43,0,0.0,0,1,91.43,5,71.43,107,2,0,0,3,0,0,0,2,1,0,0,0,0,13,1,32,2,0,0.0,2,40.0,2,1,2,0,0,0,
+0,0.0,0,0,0.0,0,0,0,Lisa Naalsund,Manchester United Women
+92,0,0,0,0,0.0,3,100.0,0,0,75.96,3,100.0,315,1,0,0,4,14,7,7,7,3,8,0,4,0,1,0,79,0,0,0.0,18,42.86,0,7,0,0,0,
+0,0,0.0,0,0,0.0,1,0,0,Kaylan Marckese,Bristol City WFC
+93,1,1,0,12,57.14,6,37.5,0,1,84.39,18,48.65,720,4,2,2,8,0,0,0,7,2,0,0,0,0,52,1,492,3,2,100.0,58,49.57,9,
+15,5,0,1,1,0,100.0,0,0,0.0,1,0,0,Maya Le Tissier,Manchester United Women
+94,0,0,0,18,52.94,2,100.0,5,3,76.47,20,55.56,292,4,8,3,8,0,0,0,7,1,0,0,0,0,33,2,104,7,5,33.33,12,57.14,
+2,6,3,0,5,2,1,0.0,0,0,0.0,0,0,0,Maisie Symonds,Brighton
+95,0,0,0,1,100.0,0,0.0,0,0,76.72,1,100.0,720,0,0,0,8,29,19,10,16,4,10,1,5,1,3,0,257,0,0,0.0,45,39.47,0,7
+,0,0,0,0,0,0.0,0,0,0.0,0,0,0,Daphne van Domselaar,Aston Villa WFC
+96,0,0,0,0,0.0,1,100.0,0,0,71.14,1,50.0,360,0,1,0,4,13,8,5,4,0,2,0,1,0,0,0,106,0,0,0.0,23,40.35,0,2,0,0,0,
+0,0,0.0,0,0,0.0,1,0,0,Ann Katrin Berger,Chelsea FC Women
+97,0,1,0,15,45.45,5,55.56,0,0,81.78,20,47.62,715,0,8,1,8,0,0,0,15,0,0,0,0,0,83,0,350,6,2,16.67,22,59.46
+,13,9,7,0,7,2,3,0.0,0,0,0.0,0,0,0,Angharad James,Tottenham FC Women
+98,0,1,0,18,45.0,4,50.0,2,0,72.46,22,45.83,533,5,4,5,7,0,0,0,7,3,0,0,0,0,49,0,171,2,1,14.29,8,42.11,15,5
+,7,0,7,3,1,0.0,0,0,0.0,0,0,0,Julia Zigiotti Olme,Brighton
+
+99,0,1,0,28,60.87,7,53.85,3,0,76.68,35,59.32,570,4,5,5,8,0,0,0,14,2,0,0,0,0,47,0,217,8,6,40.0,18,58.06,
+8,8,5,0,3,0,1,0.0,0,1,0.0,0,0,0,Vicky Losada,Brighton
+0,0,0,0,4,100.0,0,0.0,0,0,87.32,4,100.0,720,3,0,0,8,24,15,9,16,0,4,0,0,0,0,0,248,0,0,0.0,36,52.94,0,3,0,0
+,0,0,0,0.0,0,0,0.0,0,0,0,Rebecca Spencer,Tottenham FC Women
+1,0,0,0,23,57.5,14,60.87,4,0,80.45,37,58.73,717,1,4,6,8,0,0,0,9,0,0,0,0,0,27,0,288,3,0,0.0,17,51.52,6,33
+,5,0,2,0,1,0.0,0,0,0.0,0,0,0,Jenna Clark,Liverpool FC Women
+2,0,3,0,31,67.39,12,63.16,3,0,75.86,43,66.15,628,8,4,4,8,0,0,0,10,0,0,0,0,0,48,0,264,4,0,0.0,15,38.46,1
+0,22,6,3,6,3,0,0.0,1,1,0.0,0,0,0,Justine Vanhaevermaet,Everton Women
+3,2,0,0,7,21.21,2,50.0,1,0,79.71,9,24.32,385,1,3,11,8,0,0,0,6,0,0,0,0,0,66,0,110,6,3,13.64,2,100.0,1,1,7,
+0,20,6,10,10.0,0,5,0.0,0,0,0,Frida Maanum,Arsenal Women
+4,0,0,0,5,83.33,1,100.0,2,0,82.0,6,85.71,90,0,0,0,1,0,0,0,2,0,0,0,0,0,6,0,41,2,0,0.0,2,33.33,1,2,0,0,0,0,0,
+0.0,0,0,,0,0,0,Elise Isolde Stenevik,Everton Women
+5,0,0,0,5,83.33,4,50.0,0,0,89.42,9,64.29,126,1,0,1,2,0,0,0,2,0,0,0,0,0,14,0,93,0,0,0.0,3,60.0,0,5,0,0,1,0,
+0,0.0,0,0,0.0,0,0,0,Laia Codina,Arsenal Women
+6,0,0,0,4,100.0,0,0.0,4,0,91.67,4,100.0,19,0,0,0,2,0,0,0,0,0,0,0,0,0,6,0,11,0,0,0.0,1,100.0,1,0,0,0,0,0,0,0
+.0,0,0,0.0,0,0,0,Kathrine Møller Kühl,Arsenal Women
+7,0,1,0,12,60.0,3,37.5,1,0,91.71,15,53.57,720,3,2,0,8,0,0,0,16,0,0,0,0,0,23,0,487,1,0,0.0,28,53.85,9,27,
+6,0,0,0,0,0.0,0,0,0.0,0,2,0,Molly Bartrip,Tottenham FC Women
+8,1,0,0,20,42.55,17,53.13,5,1,63.64,37,46.84,635,6,4,13,8,0,0,0,12,2,0,0,0,0,43,2,126,7,1,11.11,2,16.67
+,6,6,6,1,9,5,2,11.11,2,0,0.0,0,0,0,Pauline Bremer,Brighton
+9,0,1,0,12,41.38,3,21.43,3,1,80.92,15,34.88,365,0,8,2,8,0,0,0,6,0,0,0,0,0,32,1,106,8,1,12.5,7,63.64,0,2,
+5,0,10,2,0,0.0,0,3,0.0,0,0,0,Missy Bo Kearns,Liverpool FC Women
+10,0,2,0,46,47.42,0,0.0,14,0,69.23,46,46.94,589,12,7,19,8,0,0,0,12,0,0,0,0,0,38,1,144,5,3,13.04,8,47.06
+,7,10,13,0,3,1,1,0.0,0,1,0.0,0,0,0,Heather Payne,Everton Women
+11,1,0,0,5,33.33,4,36.36,4,0,76.19,9,34.62,232,1,0,5,6,0,0,0,2,1,0,0,0,0,23,2,48,4,0,0.0,1,100.0,0,1,2,0,
+9,4,3,11.11,0,1,0.0,0,0,0,Mia Fishel,Chelsea FC Women
+12,1,1,0,12,48.0,4,66.67,4,0,58.62,16,51.61,215,5,0,7,4,0,0,0,4,0,0,0,0,0,17,0,34,1,0,0.0,0,0.0,0,0,1,1,6,
+3,1,16.67,0,2,0.0,0,0,0,Shanice van de Sanden,Liverpool FC Women
+13,1,1,0,17,70.83,10,55.56,5,0,86.52,27,64.29,720,3,3,2,8,0,0,0,16,4,0,0,0,0,58,0,443,3,0,0.0,26,49.06,
+7,34,2,0,5,3,1,20.0,0,0,0.0,0,0,0,Anna Patten,Aston Villa WFC
+14,0,1,0,28,57.14,3,30.0,0,0,81.46,31,52.54,720,7,4,7,8,0,0,0,9,0,0,0,0,0,63,0,268,4,1,25.0,8,38.1,11,10
+,9,0,2,1,0,0.0,0,0,0.0,0,0,0,Fuka Nagano,Liverpool FC Women
+15,1,2,0,22,45.83,3,100.0,6,1,76.92,25,49.02,377,6,3,8,7,0,0,0,7,2,0,0,0,0,25,2,70,6,3,16.67,1,33.33,4,1
+,3,1,4,4,0,25.0,0,2,0.0,0,0,0,Adriana Leon,Aston Villa WFC
+16,0,0,0,7,53.85,6,100.0,2,1,77.08,13,68.42,189,0,2,0,3,0,0,0,2,1,0,0,0,0,19,1,74,3,1,25.0,5,50.0,2,7,2,0
+,1,0,0,0.0,0,0,,0,0,0,Gabrielle George,Manchester United Women
+17,0,0,0,12,41.38,0,0.0,6,2,76.04,12,38.71,270,2,1,8,8,0,0,0,6,0,0,0,0,0,29,2,73,5,2,28.57,2,100.0,1,0,1,
+1,9,5,1,0.0,0,3,0.0,0,0,0,Jessica Naz,Tottenham FC Women
+18,1,1,0,19,50.0,1,25.0,4,1,70.94,20,47.62,630,6,3,9,8,0,0,0,12,3,0,0,0,0,64,1,166,11,8,19.51,2,12.5,4,7
+,5,0,5,2,2,20.0,0,0,0.0,0,0,0,Lisa Evans,West Ham Women
+19,1,0,0,3,33.33,0,0.0,0,0,87.5,3,33.33,88,2,5,0,4,0,0,0,2,0,0,0,0,0,6,0,56,1,1,50.0,2,66.67,1,0,1,0,2,1,0,
+50.0,0,0,0.0,0,0,0,Ria Percival,Tottenham FC Women
+20,0,0,0,0,0.0,0,0.0,0,1,66.67,0,0.0,34,0,0,2,2,0,0,0,1,0,0,0,0,0,5,1,10,2,0,0.0,0,0.0,1,0,1,0,2,1,0,0.0,1,0,
+0.0,0,0,0,Leanne Kiernan,Liverpool FC Women
+21,0,1,1,17,56.67,4,66.67,1,1,86.56,21,58.33,304,0,3,3,4,0,0,0,2,0,0,0,0,0,33,1,161,2,1,50.0,3,21.43,4,9
+,6,0,2,1,1,0.0,0,0,0.0,0,0,0,Leila Ouahabi,Manchester City W.F.C.
+22,0,0,0,16,43.24,9,81.82,3,0,78.62,25,52.08,458,4,5,9,6,0,0,0,5,0,0,0,0,0,33,0,125,4,1,9.09,5,50.0,3,4,
+2,0,5,0,3,0.0,0,1,0.0,0,0,0,Emma Koivisto,Liverpool FC Women
+
+23,0,0,0,21,42.86,2,33.33,4,1,77.91,23,41.82,467,4,5,9,8,0,0,0,14,3,0,0,0,0,61,1,254,11,5,22.73,19,40.4
+3,11,3,8,0,5,3,1,0.0,0,0,0.0,0,0,0,Lucy Staniforth,Aston Villa WFC
+24,0,0,0,10,66.67,8,47.06,0,0,83.8,18,56.25,540,2,4,0,7,0,0,0,6,0,0,0,0,0,28,0,269,2,0,0.0,15,40.54,3,22
+,2,1,3,0,1,0.0,0,0,0.0,0,0,0,Amanda Ilestedt,Arsenal Women
+25,1,1,0,11,57.89,1,14.29,2,2,80.5,12,46.15,291,4,0,4,8,0,0,0,1,1,0,0,0,0,53,2,128,4,0,0.0,6,60.0,2,0,1,2
+,5,2,2,20.0,0,0,0.0,0,1,0,Jessie Fleming,Chelsea FC Women
+26,0,1,0,23,52.27,29,60.42,1,0,76.49,52,56.52,710,4,15,2,8,0,0,0,16,1,0,0,0,0,11,0,296,1,0,0.0,18,32.73
+,14,44,4,0,5,0,1,0.0,0,1,0.0,1,0,0,Sophie Howard,Leicester City WFC
+27,2,2,0,29,49.15,3,25.0,4,1,72.92,32,45.07,720,14,6,3,8,0,0,0,17,1,0,0,0,0,39,1,210,5,0,0.0,11,33.33,1
+9,10,15,1,11,5,4,18.18,1,0,0.0,1,0,0,Samantha Tierney,Leicester City WFC
+28,0,0,0,0,0.0,0,0.0,0,0,83.33,0,0.0,12,0,1,0,2,0,0,0,0,0,0,0,0,0,4,0,5,0,0,0.0,0,0.0,0,0,0,0,3,0,1,0.0,0,0,0
+.0,0,0,0,Vivianne Miedema,Arsenal Women
+29,0,0,0,27,65.85,9,52.94,3,1,63.05,36,62.07,720,3,2,4,8,0,0,0,16,6,0,0,0,0,25,0,157,2,0,0.0,18,31.03,1
+1,50,7,0,5,1,1,0.0,0,1,0.0,0,0,0,Naomi Layzell,Bristol City WFC
+30,0,0,0,12,54.55,0,0.0,3,0,76.34,12,44.44,475,4,2,1,7,0,0,0,9,0,0,0,0,0,40,0,100,4,1,5.0,3,60.0,0,2,4,1,
+11,4,3,0.0,1,5,0.0,0,0,0,Nicoline Sørensen,Everton Women
+31,1,0,0,8,40.0,1,50.0,2,0,81.45,9,40.91,236,1,4,2,6,0,0,0,0,1,0,0,0,0,36,1,101,1,1,14.29,3,75.0,0,1,2,0,
+2,1,1,50.0,0,2,0.0,0,0,0,Ashley Lawrence,Chelsea FC Women
+32,0,0,0,9,56.25,2,28.57,2,0,82.16,11,47.83,399,1,2,2,7,0,0,0,4,0,0,0,0,0,56,0,152,4,2,20.0,3,27.27,4,4,
+2,0,0,0,0,0.0,0,0,0.0,0,0,0,Noelle Maritz,Arsenal Women
+33,0,0,0,9,42.86,4,44.44,0,0,85.71,13,43.33,250,1,4,6,4,0,0,0,2,1,0,0,0,0,11,0,78,3,0,0.0,0,0.0,4,5,1,0,2,
+0,0,0.0,0,0,0.0,0,0,0,Hayley Ladd,Manchester United Women
+34,0,4,0,14,45.16,6,40.0,2,0,81.23,20,43.48,715,2,9,3,8,0,0,0,13,3,0,0,0,0,15,0,238,3,0,0.0,21,58.33,14,
+24,3,0,1,1,0,0.0,0,0,0.0,0,0,0,Hawa Cissoko,West Ham Women
+35,0,2,0,17,60.71,6,100.0,1,0,78.92,23,67.65,399,8,5,0,7,0,0,0,6,0,0,0,0,0,24,0,161,1,0,0.0,12,41.38,7,2
+1,3,0,0,0,0,0.0,0,0,0.0,0,0,0,Josie Green,Leicester City WFC
+36,0,0,0,19,52.78,1,50.0,4,0,68.92,20,52.63,354,7,6,11,7,0,0,0,9,1,0,0,0,0,23,0,51,7,2,28.57,0,0.0,3,2,1,
+1,6,1,1,0.0,0,1,0.0,0,0,0,Emma Harries,West Ham Women
+37,1,1,0,12,25.53,3,23.08,2,0,73.63,15,25.0,355,7,12,15,6,0,0,0,8,0,0,0,0,0,24,1,67,4,0,0.0,0,0.0,1,3,3,3
+,17,7,5,5.88,0,0,0.0,0,0,0,Martina Piemonte,Everton Women
+38,0,0,0,4,66.67,1,33.33,0,0,91.4,5,55.56,190,1,1,1,3,0,0,0,3,0,0,0,0,0,6,0,85,0,0,0.0,12,80.0,1,3,0,0,1,0
+,1,0.0,0,0,0.0,0,0,0,Jennifer Beattie,Arsenal Women
+39,0,0,0,4,50.0,2,100.0,1,0,66.67,6,60.0,190,0,1,1,3,0,0,0,3,0,0,0,0,0,9,0,34,0,1,11.11,3,60.0,5,9,1,0,2,0
+,0,0.0,0,0,0.0,0,0,0,Li Mengwen,Brighton
+40,0,0,0,4,36.36,2,66.67,1,0,73.61,6,42.86,199,1,2,1,3,0,0,0,3,0,0,0,0,0,9,0,53,1,0,0.0,0,0.0,1,3,2,0,3,1,
+0,0.0,0,0,0.0,0,0,0,Sara Holmgaard,Everton Women
+41,1,0,0,19,67.86,3,23.08,6,0,76.03,22,53.66,365,8,0,9,8,0,0,0,9,3,0,0,0,0,44,0,111,3,1,25.0,4,50.0,2,3,
+0,0,2,1,1,50.0,0,2,0.0,0,0,0,Lee Geum-min,Brighton
+42,0,0,0,15,34.88,3,21.43,5,2,72.47,18,31.58,638,5,3,12,8,0,0,0,12,2,0,0,0,0,44,3,129,11,6,23.08,4,50.0
+,5,5,6,0,4,0,1,0.0,1,3,0.0,0,0,0,Katie Robinson,Brighton
+43,0,1,0,38,58.46,5,83.33,11,0,67.21,43,60.56,565,5,9,13,8,0,0,0,16,0,0,0,0,0,23,0,164,2,0,0.0,12,36.36
+,14,16,4,0,0,0,0,0.0,0,0,0.0,0,0,0,Catherine Bott,Leicester City WFC
+44,0,0,1,16,42.11,1,16.67,4,1,69.23,17,38.64,400,4,6,8,5,0,0,0,9,0,0,0,0,0,39,0,99,3,4,17.39,4,30.77,5,1
+,3,0,5,2,0,0.0,0,0,0.0,0,0,0,Kirsty Hanson,Aston Villa WFC
+45,0,0,0,7,36.84,5,33.33,0,0,89.88,12,35.29,363,5,4,3,5,0,0,0,4,0,0,0,0,0,15,0,293,3,3,42.86,7,36.84,5,9
+,3,0,2,1,1,0.0,0,0,0.0,0,0,0,Maren Mjelde,Chelsea FC Women
+46,4,0,0,13,36.11,4,26.67,2,0,70.19,17,33.33,679,4,4,12,8,0,0,0,16,6,0,0,0,0,26,0,73,6,0,0.0,0,0.0,2,2,3,
+1,12,9,2,33.33,0,10,0.0,0,0,0,Amalie Thestrup,Bristol City WFC
+
+47,0,2,0,12,57.14,6,66.67,2,0,84.29,18,60.0,720,2,5,2,8,0,0,0,16,3,0,0,0,0,13,0,236,2,0,0.0,16,47.06,5,4
+5,2,0,0,0,0,0.0,0,0,0.0,0,0,0,Maria Thorisdottir,Brighton
+48,0,1,0,6,37.5,0,0.0,2,0,83.75,6,33.33,163,2,2,6,5,0,0,0,1,0,0,0,0,0,31,0,67,5,1,50.0,2,40.0,1,0,2,1,5,2,
+1,0.0,0,0,0.0,0,0,0,Deyna Castellanos,Manchester City W.F.C.
+49,0,0,0,8,50.0,0,0.0,0,0,68.29,8,50.0,119,2,2,2,5,0,0,0,4,0,0,0,0,0,17,0,28,3,2,22.22,1,50.0,1,0,0,0,3,0,
+2,0.0,0,0,0.0,0,0,0,Rosella Ayane,Tottenham FC Women
+50,0,0,0,14,45.16,2,25.0,3,1,77.64,16,41.03,469,5,4,11,8,0,0,0,8,0,0,0,0,0,36,2,125,5,4,33.33,1,11.11,5,
+2,2,0,5,2,3,0.0,0,0,0.0,0,0,0,Hanna Bennison,Everton Women
+51,0,0,0,25,52.08,2,33.33,6,0,69.29,27,50.0,556,3,9,5,8,0,0,0,12,0,0,0,0,0,31,0,167,3,1,25.0,4,28.57,11,
+12,5,0,2,0,0,0.0,0,2,0.0,0,0,0,Clare Wheeler,Everton Women
+52,0,0,0,11,47.83,10,55.56,0,0,85.07,21,51.22,719,1,3,4,8,0,0,0,16,4,0,0,0,0,46,0,450,2,0,0.0,24,46.15,
+7,42,5,0,5,0,1,0.0,0,0,0.0,1,0,0,Danielle Turner,Aston Villa WFC
+53,1,2,0,19,51.35,12,54.55,2,1,55.45,31,52.54,413,6,5,6,6,0,0,0,10,2,0,0,0,0,13,0,61,1,1,100.0,1,12.5,3,
+12,4,0,5,3,0,20.0,0,2,0.0,0,0,0,Rachel Furness,Bristol City WFC
+54,1,1,0,12,57.14,2,40.0,4,0,86.73,14,53.85,414,2,8,1,6,0,0,0,10,0,0,0,0,0,23,0,255,2,2,66.67,12,34.29,
+3,10,0,0,1,1,0,100.0,0,0,0.0,0,0,0,Nathalie Bjorn,Everton Women
+55,0,0,0,0,0.0,1,50.0,0,0,81.38,1,50.0,630,0,0,0,7,10,7,3,6,0,9,2,0,2,3,0,153,0,0,0.0,29,49.15,0,2,0,0,0,0
+,0,0.0,0,0,0.0,0,2,0,Manuela Zinsberger,Arsenal Women
+56,0,2,0,8,44.44,9,56.25,0,0,86.36,17,50.0,622,2,6,3,8,0,0,0,10,4,0,0,0,0,40,1,361,5,0,0.0,25,53.19,5,17
+,1,2,4,2,0,0.0,0,0,0.0,1,0,0,Rachel Corsie,Aston Villa WFC
+57,1,1,0,9,33.33,0,0.0,6,1,71.43,9,29.03,189,1,3,7,5,0,0,0,2,0,0,0,0,0,15,0,35,6,3,20.0,1,33.33,0,0,4,0,4,
+1,2,25.0,0,1,0.0,0,0,0,Melissa Lawley,Liverpool FC Women
+58,1,0,0,4,30.77,1,12.5,2,0,64.58,5,23.81,175,2,3,4,5,0,0,0,0,0,0,0,0,0,9,0,31,1,1,25.0,4,80.0,1,2,2,0,5,1
+,2,20.0,0,2,0.0,0,0,0,Natasha Flint,Liverpool FC Women
+59,0,0,0,7,53.85,0,0.0,2,1,75.0,7,53.85,103,2,1,2,5,0,0,0,1,0,0,0,0,0,21,0,36,3,0,0.0,1,50.0,0,0,0,1,3,1,1,
+0.0,0,1,0.0,0,0,0,Jessica Park,Manchester City W.F.C.
+60,0,2,0,13,68.42,0,0.0,2,1,50.0,13,65.0,134,6,0,4,6,0,0,0,2,0,0,0,0,0,3,0,7,1,0,0.0,0,0.0,0,0,1,0,2,1,1,0.
+0,0,3,0.0,0,0,0,Mia Enderby,Liverpool FC Women
+61,0,0,0,12,52.17,7,77.78,2,1,83.76,19,59.38,685,2,1,6,8,0,0,0,15,0,0,0,0,0,44,1,392,10,7,41.18,12,38.7
+1,7,7,2,0,1,0,0,0.0,0,0,0.0,0,0,0,Katrine Veje,Everton Women
+62,1,0,0,18,47.37,3,30.0,1,0,68.61,21,43.75,496,5,9,5,7,0,0,0,11,1,0,0,0,0,33,0,94,2,0,0.0,5,45.45,5,3,5,
+0,4,2,0,25.0,0,1,0.0,0,0,0,Aileen Whelan,Leicester City WFC
+63,0,0,0,1,100.0,0,0.0,0,0,100.0,1,100.0,8,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,9,0,0,0.0,0,0.0,1,0,0,0,0,0,0,0.0,0
+,0,0.0,0,0,0,Demi Stokes,Manchester City W.F.C.
+64,0,0,0,2,66.67,0,0.0,1,0,66.67,2,66.67,27,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,6,0,0,0.0,0,0.0,0,3,1,0,0,0,0,0.0,
+0,0,0.0,0,0,0,Shelina Zadorsky,Tottenham FC Women
+65,0,0,0,4,100.0,1,50.0,0,0,71.88,5,83.33,43,1,0,0,3,0,0,0,0,0,0,0,0,0,3,0,23,0,0,0.0,1,25.0,1,1,0,0,0,0,0,
+0.0,0,0,0.0,0,0,0,Gemma Evans,Manchester United Women
+66,0,1,0,5,33.33,1,50.0,1,0,71.3,6,35.29,398,1,1,6,6,0,0,0,8,0,0,0,0,0,23,0,77,4,0,0.0,0,0.0,1,3,2,1,8,4,2,
+0.0,1,0,0.0,0,0,0,Katja Snoeijs,Everton Women
+67,0,0,0,9,52.94,0,0.0,3,0,68.97,9,52.94,115,3,1,3,7,0,0,0,3,0,0,0,0,0,16,0,40,2,0,0.0,3,50.0,2,2,1,0,2,0,
+1,0.0,0,0,0.0,0,0,0,Kit Graham,Tottenham FC Women
+68,0,2,0,13,44.83,1,25.0,2,2,54.64,14,42.42,453,6,3,6,8,0,0,0,12,0,0,0,0,0,24,3,53,6,3,20.0,1,20.0,2,1,2,
+0,3,1,1,0.0,0,1,0.0,0,0,0,Hannah Cain,Leicester City WFC
+69,1,1,0,17,42.5,6,75.0,6,0,77.7,23,47.92,554,1,7,11,7,0,0,0,10,0,0,0,0,0,39,0,209,5,0,0.0,6,28.57,7,3,4,
+0,7,1,4,14.29,0,0,0.0,0,0,0,Aurora Galli,Everton Women
+70,0,0,0,15,46.88,0,0.0,3,1,82.67,15,40.54,530,0,1,9,7,0,0,0,9,3,0,0,0,0,50,0,186,4,0,0.0,12,57.14,4,3,2,
+0,5,0,4,0.0,0,0,0.0,0,0,0,Honoka Hayashi,West Ham Women
+
+71,0,0,0,12,63.16,4,40.0,4,0,71.81,16,55.17,309,0,1,1,8,0,0,0,10,2,0,0,0,0,38,0,107,2,3,50.0,2,22.22,7,2
+,4,0,1,0,0,0.0,0,0,0.0,0,0,0,Charlize Rule,Brighton
+72,0,1,0,5,50.0,2,20.0,2,1,61.11,7,35.0,113,2,2,2,4,0,0,0,1,0,0,0,0,0,7,1,22,1,1,100.0,1,16.67,0,1,0,0,2,1
+,0,0.0,0,0,0.0,0,0,0,Yana Daniels,Liverpool FC Women
+73,0,0,0,4,66.67,0,0.0,1,0,75.0,4,66.67,47,0,0,0,4,0,0,0,2,0,0,0,0,0,4,0,12,1,1,50.0,0,0.0,1,0,1,0,1,1,0,0.
+0,0,0,0.0,0,0,0,Lucy Parry,Liverpool FC Women
+74,0,1,0,23,65.71,4,66.67,4,0,74.45,27,65.85,720,4,3,7,8,0,0,0,16,3,0,0,0,0,52,1,236,4,1,11.11,16,36.36
+,9,14,2,0,2,1,0,0.0,0,0,0.0,0,0,0,Risa Shimizu,West Ham Women
+75,1,0,0,19,43.18,1,33.33,6,0,73.68,20,42.55,401,8,3,12,8,0,0,0,9,1,0,0,0,0,17,0,56,5,2,28.57,0,0.0,3,4,
+4,1,7,3,3,14.29,0,3,0.0,0,0,0,Missy Goodwin,Leicester City WFC
+76,0,0,0,8,40.0,0,0.0,2,0,54.61,8,34.78,644,0,0,5,8,0,0,0,10,6,0,0,0,0,38,1,83,3,4,28.57,2,15.38,13,8,2,0
+,6,5,0,0.0,0,0,0.0,0,0,0,Ffion Morgan,Bristol City WFC
+77,0,0,0,7,100.0,3,42.86,1,0,74.42,10,71.43,142,2,0,0,8,0,0,0,3,0,0,0,0,0,8,0,32,2,0,0.0,2,50.0,2,2,0,0,2,
+0,0,0.0,0,0,0.0,0,0,0,Emily Syme,Bristol City WFC
+78,0,0,0,0,0.0,0,0.0,0,0,82.61,0,0.0,29,0,0,0,2,0,0,0,0,0,0,0,0,0,2,0,19,0,0,0.0,1,33.33,0,2,0,0,0,0,0,0.0,0
+,0,0.0,0,0,0,Stephanie Houghton,Manchester City W.F.C.
+79,0,0,0,4,50.0,0,0.0,1,0,69.23,4,50.0,28,0,2,1,2,0,0,0,0,0,0,0,0,0,3,0,9,0,0,0.0,0,0.0,0,0,1,0,0,0,0,0.0,0,
+0,0.0,0,0,0,Keira Flannery,West Ham Women
+80,0,0,0,3,42.86,5,71.43,1,0,65.0,8,57.14,135,1,1,2,4,0,0,0,2,1,0,0,0,0,7,0,26,1,0,0.0,1,50.0,0,2,1,0,7,2,
+2,0.0,0,0,0.0,0,0,0,Madison Haley,Brighton
+81,1,0,0,6,50.0,4,80.0,0,0,72.0,10,58.82,128,2,2,1,5,0,0,0,5,1,0,0,0,0,14,0,54,0,0,0.0,2,22.22,1,3,3,0,2,2
+,0,50.0,0,1,0.0,0,0,0,Aimee Palmer,Leicester City WFC
+82,1,0,0,8,34.78,0,0.0,4,0,60.38,8,30.77,250,2,1,5,8,0,0,0,7,3,0,0,0,0,18,0,32,2,0,0.0,2,40.0,4,0,1,1,7,3,
+1,14.29,0,0,0.0,0,0,0,Ebony Salmon,Aston Villa WFC
+83,0,1,0,23,52.27,4,50.0,1,0,78.55,27,51.92,626,4,3,6,8,0,0,0,13,3,0,0,0,0,63,0,238,2,4,28.57,11,47.83,
+10,15,7,0,1,1,0,0.0,0,0,0.0,0,0,0,Sarah Mayling,Aston Villa WFC
+84,1,0,0,1,20.0,0,0.0,0,0,64.0,1,10.0,89,0,0,2,3,0,0,0,0,0,0,0,0,0,5,0,16,0,0,0.0,0,0.0,1,0,0,0,1,1,0,100.0,
+0,0,0.0,0,0,0,Miri Taylor,Liverpool FC Women
+85,0,1,0,11,61.11,2,66.67,1,0,84.02,13,61.9,266,2,4,2,6,0,0,0,6,0,0,0,0,0,17,0,142,3,0,0.0,6,37.5,1,4,1,0
+,0,0,0,0.0,0,0,0.0,0,0,0,Karen Holmgaard,Everton Women
+86,0,0,0,21,48.84,1,20.0,2,0,78.86,22,45.83,452,4,3,12,7,0,0,0,10,2,0,0,0,0,33,0,138,4,1,100.0,3,60.0,5,
+0,4,0,3,0,1,0.0,0,1,0.0,0,0,0,Laura Blindkilde,Aston Villa WFC
+87,0,1,0,1,33.33,0,0.0,0,0,58.33,1,20.0,37,0,2,0,4,0,0,0,0,0,0,0,0,0,2,0,7,1,0,0.0,0,0.0,1,0,0,0,2,0,1,0.0,0
+,0,0.0,0,0,0,Sofie Lundgaard,Liverpool FC Women
+88,0,0,0,7,38.89,1,25.0,0,0,82.86,8,36.36,129,1,0,9,4,0,0,0,2,0,0,0,0,0,19,0,58,1,0,0.0,2,40.0,2,1,2,0,1,0
+,1,0.0,0,0,0.0,0,0,0,Julie Blakstad,Manchester City W.F.C.
+89,0,0,0,7,41.18,2,66.67,0,0,62.86,9,45.0,130,1,1,4,4,0,0,0,1,1,0,0,0,0,7,0,22,3,1,16.67,0,0.0,2,1,1,0,2,1
+,1,0.0,0,0,0.0,0,0,0,Simone Magill,Aston Villa WFC
+90,0,0,0,13,65.0,0,0.0,4,0,75.41,13,59.09,124,1,1,0,5,0,0,0,3,0,0,0,0,0,17,0,46,0,0,0.0,0,0.0,0,7,3,0,0,0,
+0,0.0,0,0,0.0,0,0,0,Kerstin Yasmijn Casparij,Manchester City W.F.C.
+91,0,0,0,9,37.5,0,0.0,0,0,82.93,9,36.0,218,4,3,4,6,0,0,0,7,0,0,0,0,0,11,0,34,1,0,0.0,0,0.0,0,1,5,0,6,2,1,0.
+0,0,0,0.0,0,0,0,Alisha Lehmann,Aston Villa WFC
+92,0,2,0,19,55.88,6,40.0,3,0,71.76,25,51.02,429,5,6,5,7,0,0,0,13,1,0,0,0,0,21,0,155,4,0,0.0,7,23.33,17,1
+5,3,0,1,0,0,0.0,0,0,0.0,0,2,0,Julie Thibaud,Leicester City WFC
+93,1,1,0,28,45.9,6,31.58,4,0,73.0,34,42.5,676,3,11,13,8,0,0,0,15,6,0,0,0,0,30,0,146,7,1,33.33,5,33.33,9,
+9,6,0,6,2,3,16.67,0,0,0.0,0,0,0,Amy Rodgers,Bristol City WFC
+94,0,1,0,11,39.29,5,35.71,1,0,72.44,16,38.1,700,2,6,6,8,0,0,0,17,1,0,0,0,0,60,0,205,10,6,31.58,10,31.25
+,13,16,3,0,4,2,1,0.0,0,0,0.0,1,0,0,Courtney Nevin,Leicester City WFC
+
+95,0,1,0,14,40.0,2,33.33,6,1,78.79,16,39.02,106,1,2,9,6,0,0,0,5,1,0,0,0,0,11,0,26,2,2,22.22,0,0.0,0,1,6,0
+,3,1,0,0.0,0,0,0.0,0,0,0,Veatriki Sarri,Brighton
+96,0,0,0,0,0.0,0,0.0,0,0,0.0,0,0.0,11,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0,0.0,0,2,0,0,0,0,0,0.0,0,0,,0,0
+,0,Jess Simpson,Bristol City WFC
+97,0,0,0,1,33.33,1,33.33,0,0,93.1,2,33.33,57,1,0,2,2,0,0,0,1,0,0,0,0,0,2,0,54,0,0,0.0,4,80.0,0,2,0,0,0,0,0,
+0.0,0,0,0.0,0,0,0,Kadeisha Buchanan,Chelsea FC Women
+98,0,0,0,3,60.0,0,0.0,0,0,40.0,3,60.0,31,2,1,1,3,0,0,0,0,0,0,0,0,0,1,0,2,1,2,100.0,0,0.0,0,1,0,0,0,0,0,0.0,0
+,0,0.0,0,0,0,Megan Campbell,Everton Women
+99,0,1,0,7,33.33,1,100.0,2,0,72.5,8,36.36,153,2,3,5,6,0,0,0,6,0,0,0,0,0,12,0,29,0,0,0.0,0,0.0,0,0,3,0,5,2,
+1,0.0,0,0,0.0,0,0,0,Isibeal Atkinson,West Ham Women
+0,0,2,0,21,56.76,0,0.0,2,1,72.41,21,52.5,695,3,9,7,8,0,0,0,16,6,0,0,0,0,18,0,147,5,5,19.23,25,43.1,6,26,
+2,0,0,0,0,0.0,0,0,0.0,0,0,0,Megan Connolly,Bristol City WFC
+1,0,0,0,18,52.94,3,42.86,1,0,71.69,21,51.22,659,2,3,5,8,0,0,0,14,3,0,0,0,0,37,0,195,0,2,28.57,10,40.0,1
+0,11,4,0,1,1,0,0.0,0,0,0.0,0,0,0,Emma Kullberg,Brighton
+2,0,0,0,4,30.77,1,100.0,1,1,61.36,5,35.71,174,0,1,5,6,0,0,0,3,0,0,0,0,0,8,0,27,3,1,50.0,2,66.67,0,2,1,0,1,
+1,0,0.0,0,1,0.0,0,0,0,Deanne Rose,Leicester City WFC
+3,1,2,0,38,47.5,3,23.08,8,0,66.43,41,44.09,656,9,11,14,8,0,0,0,16,6,0,0,0,0,28,0,95,3,0,0.0,3,23.08,5,2,
+5,1,7,3,2,14.29,0,0,0.0,0,0,0,Carrie Jones,Bristol City WFC
+4,0,0,0,11,57.89,5,50.0,1,0,87.03,16,55.17,675,2,2,3,8,0,0,0,15,0,0,0,0,0,21,0,436,0,0,0.0,15,42.86,8,18
+,3,0,2,1,1,0.0,0,0,0.0,0,0,0,Luana Bühler,Tottenham FC Women
+5,0,1,0,9,32.14,1,100.0,0,0,81.98,10,34.48,450,4,10,3,6,0,0,0,11,2,0,0,0,0,27,0,141,2,0,0.0,5,45.45,12,5
+,4,0,1,0,0,0.0,1,0,0.0,0,0,0,Abbey-Leigh Stringer,West Ham Women
+6,1,2,0,7,53.85,8,66.67,0,0,73.89,15,60.0,610,2,6,0,8,0,0,0,15,5,0,0,0,0,9,0,116,1,1,100.0,9,31.03,12,21
+,0,0,3,1,0,33.33,0,0,0.0,0,0,0,Brooke Aspin,Bristol City WFC
+7,0,0,0,1,50.0,0,0.0,0,0,81.82,1,50.0,30,1,0,1,2,0,0,0,1,0,0,0,0,0,5,0,18,1,1,100.0,0,0.0,0,1,0,0,0,0,0,0.0,
+0,0,0.0,0,0,0,Ruby Mace,Manchester City W.F.C.
+8,0,0,0,2,50.0,0,0.0,0,0,75.0,2,50.0,26,1,0,1,2,0,0,0,0,0,0,0,0,0,1,0,6,0,0,0.0,0,0.0,0,0,1,0,0,0,0,0.0,0,0,0
+.0,0,0,0,Princess Ademiluyi,West Ham Women
+9,0,0,0,6,54.55,1,33.33,2,0,74.68,7,50.0,156,2,3,1,4,0,0,0,2,0,0,0,0,0,6,0,59,1,0,0.0,5,50.0,0,3,0,0,0,0,0,
+0.0,0,0,0.0,0,0,0,Jasmine Matthews,Liverpool FC Women
+10,0,1,0,5,38.46,1,50.0,0,0,75.41,6,40.0,322,2,3,3,7,0,0,0,8,2,0,0,0,0,31,0,92,1,1,16.67,7,63.64,2,3,1,0,
+3,1,2,0.0,0,0,0.0,0,0,0,Melisa Filis,West Ham Women
+11,0,1,0,15,45.45,4,30.77,0,0,62.68,19,41.3,360,3,5,4,5,0,0,0,9,2,0,0,0,0,14,0,89,0,0,0.0,6,28.57,8,22,7,
+0,2,1,0,0.0,0,0,0.0,0,0,0,Jorelyn Carabalí,Brighton
+12,0,0,0,2,22.22,2,40.0,0,0,75.0,4,28.57,111,0,1,3,6,0,0,0,3,0,0,0,0,0,11,0,39,1,0,0.0,3,100.0,0,1,3,0,2,0
+,1,0.0,0,0,0.0,0,0,0,Toni Duggan,Everton Women
+13,0,0,0,1,50.0,0,0.0,1,0,64.29,1,50.0,40,0,1,0,3,0,0,0,1,0,0,0,0,0,2,0,9,0,0,0.0,0,0.0,0,1,0,0,0,0,0,0.0,0,
+1,0.0,0,0,0,Ava Baker,Leicester City WFC
+14,0,1,0,2,28.57,2,50.0,1,0,86.21,4,36.36,128,0,3,1,3,0,0,0,3,1,0,0,0,0,0,0,25,0,0,0.0,2,100.0,1,8,1,1,2,0
+,0,0.0,0,0,0.0,0,0,0,Satara Melonie Murray,Bristol City WFC
+15,0,1,0,17,45.95,1,25.0,1,0,78.75,18,43.9,439,2,8,3,6,0,0,0,10,1,0,0,0,0,23,1,126,2,4,57.14,2,28.57,8,4
+,7,0,2,2,0,0.0,0,0,0.0,0,0,0,Anouk Denton,West Ham Women
+16,1,1,0,13,31.71,4,50.0,0,1,82.68,17,34.69,501,0,4,6,7,0,0,0,10,2,0,0,0,0,65,0,253,3,2,28.57,6,46.15,6,
+9,5,0,3,1,2,33.33,0,0,0.0,0,0,0,Mayumi Pacheco,Aston Villa WFC
+17,0,0,0,8,40.0,1,100.0,3,0,55.0,9,42.86,154,1,3,3,7,0,0,0,3,0,0,0,0,0,6,0,22,0,0,0.0,0,0.0,1,2,1,1,2,1,0,0
+.0,0,0,0.0,0,0,0,Mari Ward,Bristol City WFC
+18,1,0,0,27,58.7,3,30.0,5,0,55.56,30,53.57,596,7,2,4,8,0,0,0,11,6,0,0,0,0,21,0,85,1,4,36.36,4,13.33,12,1
+9,12,0,2,2,0,50.0,0,0,0.0,0,0,0,Ella Powell,Bristol City WFC
+
+19,0,0,0,0,0.0,0,0.0,0,0,100.0,0,0.0,8,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0.0,0,0.0,0,1,0,0,0,0,0,0.0,0,0,0.
+0,0,0,0,Niamh Fahey,Liverpool FC Women
+20,0,0,0,0,0.0,1,100.0,0,0,66.67,1,100.0,14,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,2,0,0,0.0,0,0.0,0,0,0,0,0,0,0,0.0,
+0,1,0.0,0,0,0,Remy Siemsen,Leicester City WFC
+21,0,0,0,0,0.0,0,0.0,0,0,100.0,0,0.0,11,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0.0,1,100.0,0,0,0,0,0,0,0,0.0,0,
+0,0.0,0,0,0,Tianna Teisar,Bristol City WFC
+22,0,0,0,12,37.5,3,100.0,3,0,71.79,15,42.86,236,2,4,5,7,0,0,0,8,0,0,0,0,0,20,0,84,3,2,50.0,4,44.44,5,3,6,
+0,0,0,0,0.0,0,0,0.0,0,0,0,Karoline Olesen,Everton Women
+23,0,1,0,9,34.62,3,42.86,0,0,74.42,12,36.36,214,3,6,8,8,0,0,0,7,1,0,0,0,0,29,0,64,3,0,0.0,1,50.0,0,2,2,1,
+3,2,0,0.0,0,1,0.0,1,0,0,Tatiana Pinto,Brighton
+24,0,1,0,3,18.75,1,20.0,1,0,83.23,4,19.05,361,0,3,6,8,0,0,0,11,3,0,0,0,0,44,0,139,4,0,0.0,6,66.67,1,2,4,1
+,5,2,1,0.0,0,1,0.0,0,0,0,Jordan Nobbs,Aston Villa WFC
+25,1,0,0,22,44.0,6,42.86,6,0,65.65,28,43.75,698,2,5,11,8,0,0,0,16,3,0,0,0,0,48,1,172,8,5,20.0,15,37.5,3,
+16,6,1,4,2,1,25.0,0,1,0.0,0,0,0,Kirsty Smith,West Ham Women
+26,0,0,0,1,16.67,0,0.0,0,0,100.0,1,16.67,42,1,1,2,4,0,0,0,0,0,0,0,0,0,5,0,8,1,0,0.0,0,0.0,0,1,0,0,0,0,0,0.0,
+0,0,0.0,0,0,0,Shania Hayles,Bristol City WFC
+27,0,2,0,28,50.91,2,28.57,4,1,61.98,30,48.39,571,10,10,7,7,0,0,0,12,5,0,0,0,0,21,0,75,1,2,28.57,4,26.67
+,8,11,8,0,3,0,2,0.0,0,1,0.0,0,0,0,Jamie-Lee Napier,Bristol City WFC
+28,0,0,0,0,0.0,0,0.0,0,0,78.26,0,0.0,180,0,0,2,2,4,3,1,3,0,0,0,0,0,1,0,54,0,0,0.0,12,50.0,0,2,0,0,0,0,0,0.0,
+0,0,0.0,0,0,0,Emily Ramsey,Everton Women
+29,0,0,0,1,33.33,1,100.0,0,0,75.0,2,50.0,43,1,1,0,2,0,0,0,0,0,0,0,0,0,1,0,12,0,0,0.0,0,0.0,0,1,0,0,0,0,0,0.
+0,0,0,0.0,0,0,0,Jessica Ziu,West Ham Women
+30,0,0,0,0,0.0,0,0.0,0,0,80.0,0,0.0,36,0,0,2,3,0,0,0,1,1,0,0,0,0,2,0,12,0,0,0.0,0,0.0,1,2,0,0,0,0,0,0.0,0,0,0
+.0,0,0,0,Olivia McLoughlin,Aston Villa WFC
+31,0,1,0,4,25.0,4,28.57,0,1,60.0,8,26.67,225,3,1,7,4,0,0,0,3,1,0,0,0,0,10,0,36,3,1,16.67,0,0.0,1,5,0,0,2,0
+,0,0.0,0,2,0.0,0,0,0,Abigail Harrison,Bristol City WFC
+32,0,0,0,7,31.82,0,0.0,1,0,73.85,7,31.82,205,3,3,10,4,0,0,0,5,0,0,0,0,0,11,0,48,1,2,25.0,1,33.33,1,3,1,0,
+1,0,1,0.0,0,0,0.0,0,0,0,Poppy Pattinson,Brighton
+33,0,1,0,11,47.83,9,69.23,0,0,72.61,20,55.56,549,1,8,2,7,0,0,0,11,2,0,0,0,0,26,0,220,0,0,0.0,29,50.88,3,
+29,2,0,4,0,2,0.0,0,0,0.0,1,1,0,Shannon Cooke,West Ham Women
+34,0,0,0,1,25.0,0,0.0,1,0,77.78,1,25.0,28,0,2,1,2,0,0,0,0,0,0,0,0,0,4,0,7,0,0,0.0,0,0.0,0,0,0,1,2,0,1,0.0,0,
+1,0.0,0,0,0,Ellie Brazil,Tottenham FC Women
+35,0,0,0,11,36.67,0,0.0,3,0,77.78,11,34.38,283,1,5,8,8,0,0,0,8,0,0,0,0,0,17,0,42,1,0,0.0,0,0.0,0,2,2,1,6,2
+,3,0.0,0,5,0.0,0,0,0,Emma Bissell,Everton Women
+36,0,0,0,2,22.22,1,50.0,0,0,70.59,3,27.27,136,0,1,0,5,0,0,0,7,0,0,0,0,0,14,0,36,3,1,20.0,4,80.0,3,3,4,0,0,
+0,0,0.0,0,0,0.0,0,0,0,Asmita Ale,Tottenham FC Women
+37,0,0,0,2,40.0,0,0.0,1,0,85.71,2,40.0,46,0,0,1,2,0,0,0,4,0,0,0,0,0,3,0,6,0,0,0.0,0,0.0,0,0,2,0,1,1,0,0.0,0,
+0,0.0,0,0,0,Linyan Zhang,Tottenham FC Women
+38,0,1,0,8,57.14,2,28.57,0,0,87.18,10,47.62,271,2,3,1,4,0,0,0,11,1,0,0,0,0,3,0,68,1,0,0.0,2,33.33,3,5,2,0
+,2,1,0,0.0,0,0,0.0,0,0,0,Amber Tysiak,West Ham Women
+39,0,0,0,0,0.0,1,100.0,0,0,36.36,1,100.0,90,0,0,0,1,4,3,1,3,1,0,1,1,1,0,0,12,0,0,0.0,7,25.93,0,3,0,0,0,0,0,
+0.0,0,0,,0,0,0,Fran Bentley,Bristol City WFC
+40,0,0,0,0,0.0,0,0.0,0,0,81.4,0,0.0,90,0,0,0,1,2,2,0,2,1,0,0,0,0,3,0,35,0,0,0.0,6,42.86,0,0,0,0,0,0,0,0.0,0,
+0,0.0,0,0,0,Nicky Evrard,Brighton
+41,0,0,0,0,0.0,1,100.0,0,0,77.78,1,100.0,90,0,0,0,1,2,1,1,2,0,2,0,0,0,1,0,21,0,0,0.0,5,50.0,0,0,0,0,0,0,0,0
+.0,0,0,0.0,1,0,0,Sabrina D'Angelo,Arsenal Women
+42,0,0,0,0,0.0,0,0.0,0,0,59.46,0,0.0,90,0,0,0,1,3,1,2,2,1,0,0,1,0,1,0,22,0,0,0.0,6,30.0,0,1,0,0,0,0,0,0.0,0,
+0,0.0,0,0,0,Megan Walsh,West Ham Women
+
+43,0,0,0,6,46.15,1,50.0,0,0,58.49,7,46.67,197,1,2,1,3,0,0,0,6,4,0,0,0,0,7,0,31,0,0,0.0,0,0.0,2,5,4,0,0,0,0,
+0.0,0,0,0.0,0,0,0,Chloe Mustaki,Bristol City WFC
+44,0,0,0,0,0.0,0,0.0,0,0,80.0,0,0.0,62,0,0,0,1,0,0,0,5,0,0,0,0,0,0,0,8,0,0,0.0,0,0.0,0,9,0,0,0,0,0,0.0,0,0,0.
+0,0,0,0,Sille Struck,Bristol City WFC
+45,0,0,0,3,100.0,0,0.0,1,0,100.0,3,100.0,3,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0.0,0,0.0,0,1,0,0,0,0,0,0.0,0
+,0,0.0,0,0,0,Denny Draper,Leicester City WFC
+
+

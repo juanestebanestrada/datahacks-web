@@ -1,0 +1,209 @@
+/* ══════════════════════════════════════════════
+   Mundial 2026 · Tactical Dashboard — Global CSS
+   Cargado una sola vez via utils/style_loader.py
+   ══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+*, *::before, *::after { font-family: 'Inter', sans-serif; box-sizing: border-box; }
+
+.stApp { background: #080d1a; color: #fff; }
+#MainMenu, footer, header { visibility: hidden; }
+
+/* ── SIDEBAR ── */
+[data-testid="stSidebar"] {
+    background-color: #050914 !important;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+    color: #ffffff !important;
+}
+[data-testid="stSidebar"] .stRadio > label {
+    color: #FFD700 !important;
+    font-weight: 700 !important;
+}
+[data-testid="stSidebar"] .stRadio div[role="radiogroup"] label {
+    color: #ffffff !important;
+}
+
+/* ── LAYOUT ── */
+.block-container {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    max-width: 1400px;
+}
+
+/* ── HERO ── */
+.hero {
+    background: linear-gradient(135deg, #0b1528 0%, #162347 50%, #0b1528 100%);
+    border: 1px solid rgba(255,215,0,0.15);
+    border-radius: 24px;
+    padding: 44px 40px 36px;
+    text-align: center;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% -20%, rgba(255,215,0,0.08) 0%, transparent 65%);
+    pointer-events: none;
+}
+.hero-tag {
+    display: inline-block;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 18px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #FFD700 20%, #FFF 60%, #FFA500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 10px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+.hero-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ── TEAM CARDS ── */
+.group-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+}
+.team-card {
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 22px 16px 18px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.team-card.active {
+    border-color: rgba(255,215,0,0.5);
+    background: linear-gradient(160deg, rgba(255,215,0,0.07), rgba(255,165,0,0.03));
+    box-shadow: 0 0 24px rgba(255,215,0,0.1);
+}
+.team-flag  { font-size: 3rem; display: block; margin-bottom: 8px; }
+.team-name  { font-size: 1rem; font-weight: 700; color: #fff; }
+.team-label {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.label-available   { background: rgba(46,213,115,0.15); color: #2ed573; border: 1px solid rgba(46,213,115,0.3); }
+.label-unavailable { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.08); }
+
+/* ── STAT BOXES ── */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.stat-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 18px 12px;
+    text-align: center;
+}
+.stat-val  { font-size: 2rem; font-weight: 900; color: #FFD700; line-height: 1; }
+.stat-lbl  { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+/* ── TABS ── */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(255,255,255,0.04);
+    border-radius: 14px;
+    padding: 5px;
+    gap: 4px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.stTabs [data-baseweb="tab"] {
+    border-radius: 10px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 22px;
+    transition: all 0.2s;
+}
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+    color: #000 !important;
+}
+
+/* ── NO DATA ── */
+.no-data {
+    background: rgba(255,255,255,0.02);
+    border: 2px dashed rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 80px 40px;
+    text-align: center;
+}
+.no-data-icon  { font-size: 4rem; display: block; margin-bottom: 16px; opacity: 0.4; }
+.no-data-title { font-size: 1.4rem; font-weight: 700; color: rgba(255,255,255,0.35); margin-bottom: 8px; }
+.no-data-sub   { font-size: 0.9rem; color: rgba(255,255,255,0.2); }
+
+/* ── SECTION HEADER ── */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.section-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    flex-shrink: 0;
+}
+.section-title { font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.85); }
+
+/* ── RESULT CARDS ── */
+.result-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.result-score {
+    color: #FFD700;
+    font-weight: 900;
+    font-size: 1.2rem;
+    background: rgba(255,215,0,0.1);
+    padding: 4px 16px;
+    border-radius: 8px;
+}
+.result-date {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+    text-align: right;
+    margin-bottom: 10px;
+    margin-top: -4px;
+}

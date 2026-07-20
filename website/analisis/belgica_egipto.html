@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bélgica vs Egipto: Duelo de Ritmos en el Grupo G // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Bélgica vs Egipto del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263725844742178"
+     crossorigin="anonymous"></script>
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_g.html" class="back-link">← Volver al Grupo G</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo G</span>
+    <h2>Bélgica vs Egipto</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-15 · 🕒 14:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Bélgica</span>
+        <img src="https://flagcdn.com/w80/be.png" alt="Bélgica" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">1 - 1</div>
+        <div style="font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:5px; font-weight:700;">FINALIZADO</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/eg.png" alt="Egipto" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Egipto</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>📝 Crónica y Análisis Posterior (Post-Partido)</h2>
+
+                <div style="margin: 16px 0; padding: 12px 16px; border-radius: 8px; background: rgba(255, 75, 75, 0.1); border: 1px solid rgba(255, 75, 75, 0.25); display: inline-flex; align-items: center; gap: 8px; color: #ff4b4b; font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px;">
+                  ❌ PREDICCIÓN FALLIDA
+                </div>
+                
+<h3>⚽ Resumen del Partido (Resultado Real: Bélgica 1 - 1 Egipto)</h3>
+<p>Bélgica y Egipto firmaron un intenso y disputado empate 1-1 en su debut en el Grupo G, reflejando el choque de estilos previsto en la previa. El conjunto belga tomó la iniciativa y dominó la posesión con su habitual circuito de distribución liderado por Vertonghen y Theate. Sin embargo, la falta de pegada y definición en el último tercio volvió a penalizar a los "Diablos Rojos", quienes no lograron capitalizar su superioridad territorial. Por su parte, los "Faraones" de Egipto plantaron cara gracias a una presión defensiva asfixiante y agresiva en todo el terreno, castigando las transiciones belgas y logrando batir el arco rival mediante una contra vertical y letal. El marcador final premia la combatividad del bloque africano y deja claras tareas pendientes para Bélgica.</p>
+<h3>🔮 Impacto en el Grupo G y Proyecciones para la Ronda 2</h3>
+<ul>
+<li><strong>Ajuste del Algoritmo:</strong> Con este empate, ambas selecciones suman 1 punto en el Grupo G. Las métricas de Bélgica reflejan su superioridad en posesión pero revelan un déficit preocupante en la tasa de conversión. Egipto, por su parte, consolida su reputación como un bloque defensivo sumamente combativo y físico.</li>
+<li><strong>Proyección de la Segunda Ronda de Grupos:</strong></li>
+<li><strong>Bélgica vs Irán:</strong> Un choque donde Bélgica tendrá la obligación de buscar los tres puntos. El modelo Poisson otorga a Bélgica un <strong>55% de probabilidad de triunfo</strong>, esperando que logren descifrar el bloque defensivo iraní.</li>
+<li><strong>Nueva Zelanda vs Egipto:</strong> Duelo clave para el destino del grupo. Egipto parte como favorito con un <strong>58% de probabilidad de ganar</strong> si logra imponer su intensidad física frente al directo juego neozelandés.</li>
+</ul>
+<h3>📈 Análisis del Match Momentum</h3>
+<p>Bélgica impuso una clara superioridad ofensiva durante gran parte del encuentro, con su intensidad máxima (100.00) en el minuto 40', reflejando un período de alto peligro y control territorial inicial que, sin embargo, no fue capitalizado en un amplio margen. Esta dominancia belga, presente el 62.8% del partido, contrasta con la tardía y menos acentuada reacción de Egipto, cuyo pico de intensidad ofensiva (73.00) en el minuto 86' señala su momento de mayor empuje y la probabilidad de generar la ocasión del empate. La correlación directa con el 1-1 final reside en la ineficacia de Bélgica para convertir su sostenida agresividad ofensiva en una ventaja decisiva, permitiendo que el impulso final de Egipto, a pesar de ser menor en magnitud, fuera suficiente para equilibrar un marcador que la dinámica de intensidad sugirió dominado mayoritariamente por el equipo local.</p>
+
+              <div class="tactical-single" style="width: 100%; max-width: 650px; margin: 24px auto; background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Gráfico: Match Momentum (Intensidad de Ataque)</h4>
+                <img src="../assets/Momentum_20260615_belgica_egipto.png" alt="Match Momentum" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+              </div>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇧🇪 Bélgica: Análisis Táctico</h2>
+<p>Bélgica presenta una estructura ofensiva más controlada y sofisticada. Su mapa de calor muestra una concentración importante en las bandas y en el área central, con presencia equilibrada en ambas zonas del campo. La red de pases refleja un equipo que circula el balón con una jerarquía clara, siendo <strong>Theate</strong> y <strong>Vertonghen</strong> los pivotes clave en la construcción del juego. Los disparos se concentran principalmente en el área, indicando una capacidad de finalización posicional más refinada, aunque con solo 2 goles, la efectividad ha sido problemática.</p>
+<p>En el aspecto defensivo, Bélgica muestra una presión más concentrada y ordenante, con la mayoría de acciones defensivas agrupadas en zonas específicas. El mapa defensivo refleja un equipo que defiende en bloque medio-bajo con recuperaciones y presiones selectivas.</p>
+<p>Las conducciones progresivas de Bélgica muestran patrones claramente definidos: los laterales avanzan con el balón en las bandas (especialmente hacia las zonas de finalización), mientras que el juego interior es más pasista. Los ataques en transición desde defensa muestran movimientos hacia los extremos. La red de asistencias de Bélgica muestra una especialización clara: los asistentes son específicos (especialmente desde las bandas) y hay zonas claras de finalización. Esto indica un equipo que ha trabajado patrones ofensivos definidos.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇪🇬 Egipto: Análisis Táctico</h2>
+<p>Egipto, por su parte, muestra una presencia mucho más distribuida en el mapa de calor, con picos importantes en zonas más periféricas. Su red de pases es más extendida y menos jerárquica, con <strong>Abdelmonem</strong> como figura central pero con múltiples conexiones que sugieren un juego más directo. Con 14 goles, su eficiencia ofensiva es evidentemente superior, aunque sus disparos sugieren más oportunidades de segunda línea y contraataques.</p>
+<p>Egipto destaca por una intensidad defensiva mucho mayor, prácticamente cubriendo todo el campo de forma uniforme. Su densidad de presiones, recuperaciones y bloqueos es visiblemente superior. Tienen más amarillas teóricamente por esta agresividad, pero también generan más oportunidades de contraataque. El equipo africano aprovecha su presión alta para recuperar balones en zonas avanzadas.</p>
+<p>Egipto presenta un mapa mucho más caótico pero también más prolífero en conducciones progresivas. Hay múltiples líneas de ataque y muchas más iniciativas individuales. Los laterales y centrocampistas avanzan con más libertad, generando un juego menos predecible pero también menos eficaz en términos de control. Distribuye sus asistencias de forma más heterogénea. Prácticamente cualquier jugador puede convertirse en asistente, lo que habla de un equipo más improvisado pero también con mayor capacidad de adaptación en el momento.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_MapaDefensivo_horizontal_20260615.png" alt="Mapa Defensivo (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Egipto)</h4>
+                      <img src="../assets/Analisis_Egipto_MapaDefensivo_horizontal_20260615.png" alt="Mapa Defensivo (Egipto)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_ExpectedThreatxT_horizontal_20260615.png" alt="Amenaza Esperada xT (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Egipto)</h4>
+                      <img src="../assets/Analisis_Egipto_ExpectedThreatxT_horizontal_20260615.png" alt="Amenaza Esperada xT (Egipto)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_MapadeCalor_horizontal_20260615.png" alt="Mapa de Calor (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Egipto)</h4>
+                      <img src="../assets/Analisis_Egipto_MapadeCalor_horizontal_20260615.png" alt="Mapa de Calor (Egipto)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Bélgica)</h4>
+                      <img src="../assets/ShotMap_Bélgica_horizontal_20260615.png" alt="Mapa de Tiros (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Egipto)</h4>
+                      <img src="../assets/ShotMap_Egipto_horizontal_20260615.png" alt="Mapa de Tiros (Egipto)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_ReddePases_horizontal_20260615.png" alt="Red de Pases (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Egipto)</h4>
+                      <img src="../assets/Analisis_Egipto_ReddePases_horizontal_20260615.png" alt="Red de Pases (Egipto)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_ConduccionesProgresivas_horizontal_20260615.png" alt="Conducciones Progresivas (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Conducciones Progresivas (Egipto)</h4>
+                      <img src="../assets/Analisis_Egipto_ConduccionesProgresivas_horizontal_20260615.png" alt="Conducciones Progresivas (Egipto)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Bélgica)</h4>
+                      <img src="../assets/Analisis_Bélgica_MapadeAsistencias_horizontal_20260615.png" alt="Mapa de Asistencias (Bélgica)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Asistencias (Egipto)</h4>
+                      <img src="../assets/Analisis_Egipto_MapadeAsistencias_horizontal_20260615.png" alt="Mapa de Asistencias (Egipto)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+        <a href="../politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="../terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

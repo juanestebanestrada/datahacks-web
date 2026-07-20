@@ -1,0 +1,16 @@
+10_🧪_Laboratorio_Deep.py:19:tab_xpts, tab_scouting = st.tabs(["📊 Simulador xPts (Justicia Matemática)", "🔍 Scouting Generativo (Z-Score)"])
+10_🧪_Laboratorio_Deep.py:152:'xA_p90':         [0.40, 0.42, 0.10, 0.05, 0.02, 0.15, 0.30],
+10_🧪_Laboratorio_Deep.py:155:'xg_p90':         [0.20, 0.25, 0.15, 0.05, 0.08, 0.90, 0.45],
+13_🧠_Simulador_WhatIf.py:22:estadio_neutral = st.checkbox("🏟️ Estadio Neutral (Sin ventaja de localía)", value=True)
+13_🧠_Simulador_WhatIf.py:89:home_xg_real = get_team_real_performance_v2(equipo_a)
+13_🧠_Simulador_WhatIf.py:92:# Ajuste dinámico: Si el estadio es neutral no hay ventaja, si no, se da bonus de localía a Selección A
+13_🧠_Simulador_WhatIf.py:94:home_xg = home_xg_real
+13_🧠_Simulador_WhatIf.py:96:home_xg = home_xg_real + 0.15
+13_🧠_Simulador_WhatIf.py:99:res = sim.compute_xpts(home_xg, away_xg)
+13_🧠_Simulador_WhatIf.py:114:*   **Promedio Histórico {equipo_a}:** {home_xg_real} goles/partido.
+13_🧠_Simulador_WhatIf.py:116:*   **Ajuste de Estadio:** {"Sin ventaja de localía (Estadio Neutral)" if estadio_neutral else f"+0.15 xG a {equipo_a} (Ventaja de Local)"}
+13_🧠_Simulador_WhatIf.py:127:estadio_str = "Estadio Neutral (sin ventaja de localía)" if estadio_neutral else f"Estadio de {equipo_a} (con ventaja de localía para {equipo_a})"
+15_🏆_Pronosticos_Mundial.py:12:box-shadow: 0 0 40px rgba(255,215,0,0.15);">
+16_🏆_Visual_Bracket.py:245:edgecolor='none', facecolor=GOLD, alpha=0.15, zorder=2
+16_🏆_Visual_Bracket.py:402:fin_y1 = Y_FIN + GAP/2 + 0.15
+16_🏆_Visual_Bracket.py:403:fin_y2 = Y_FIN - GAP/2 - 0.15

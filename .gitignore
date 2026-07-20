@@ -1,0 +1,21 @@
+# Virtual environments
+venv/
+venv_win/
+env/
+.env
+
+# Python caching
+__pycache__/
+*.pyc
+
+# Local config & secrets
+secrets_local.json
+streamlit.log
+
+# Browser profiles
+chrome_profile/
+chrome_profile_test/
+chrome_profile_test_v2/
+
+# Temporary scratch folder
+scratch/
