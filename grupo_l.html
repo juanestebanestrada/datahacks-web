@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo L — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo L del Mundial 2026: Inglaterra, Croacia, Ghana, Panamá con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263725844742178"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo L</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo L.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <!-- STANDINGS_START -->
+  <div class="container" style="margin-bottom: 40px;">
+    <h3 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.5rem; text-align: left;">🏆 Tabla de Posiciones</h3>
+    <div class="comparison-container" style="padding: 20px; margin-bottom: 0px; border-radius: 12px; background: var(--bg-card); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow-x: auto;">
+      <table class="comp-table" style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Pos</th>
+            <th style="text-align: left; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Equipo</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">PJ</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">G</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">E</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">P</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GF</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GC</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">DG</th>
+            <th style="width: 80px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 900;">Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">1</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/gb-eng.png" alt="Inglaterra" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Inglaterra</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">6</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">4</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">7</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">2</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/hr.png" alt="Croacia" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Croacia</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">5</td>
+            <td style="text-align: center; width: 60px;">5</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">6</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">3</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/gh.png" alt="Ghana" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Ghana</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">4</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">4</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/pa.png" alt="Panamá" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Panamá</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">4</td>
+            <td style="text-align: center; width: 60px;">-4</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- STANDINGS_END -->
+
+  <div class="tactical-grid">
+    
+    <!-- INGLATERRA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/gb-eng.png" width="40" height="25" alt="Inglaterra Flag">
+          <h3 class="team-name">Inglaterra</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoInglaterra.png" alt="Perfil Táctico Inglaterra" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Posesión de control pausada, sobrecarga en zona intermedia con descenso de Kane y amplitud letal por extremos.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1 / 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 2.15 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 8.0)</li>
+          <li><strong>Jugador Clave:</strong> Harry Kane</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CROACIA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/hr.png" width="40" height="25" alt="Croacia Flag">
+          <h3 class="team-name">Croacia</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoCroacia.png" alt="Perfil Táctico Croacia" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Control absoluto del juego por su triángulo de mediocampistas, salida limpia bajo presión extrema y posesión paciente.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 1.65 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio-Alto (PPDA 9.2)</li>
+          <li><strong>Jugador Clave:</strong> Luka Modrić</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GHANA -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/gh.png" width="40" height="25" alt="Ghana Flag">
+          <h3 class="team-name">Ghana</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoGhana.png" alt="Perfil Táctico Ghana" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Transición ofensiva rápida impulsada por mediapuntas habilidosos, juego físico y repliegue rápido.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.35 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio (PPDA 10.2)</li>
+          <li><strong>Jugador Clave:</strong> Mohammed Kudus</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PANAMÁ -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/pa.png" width="40" height="25" alt="Panamá Flag">
+          <h3 class="team-name">Panamá</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoPanama.png" alt="Perfil Táctico Panamá" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Bloque defensivo bajo disciplinado, repliegue ordenado y salida combinada por mediocentro organizador.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 3-4-3 / 5-4-1</li>
+          <li><strong>xG Promedio:</strong> 1.05 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Bajo (PPDA 11.8)</li>
+          <li><strong>Jugador Clave:</strong> Adalberto Carrasquilla</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo L - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo L:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/gb-eng.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Inglaterra</th>
+<th><img src="https://flagcdn.com/w40/hr.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Croacia</th>
+<th><img src="https://flagcdn.com/w40/gh.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Ghana</th>
+<th><img src="https://flagcdn.com/w40/pa.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Panamá</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-high">91</span></td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-low">67</span></td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-low">67</span></td>
+              <td><span class="stat-badge stat-mid">76</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-high">97</span></td>
+              <td><span class="stat-badge stat-high">91</span></td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-low">55</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-mid">75</span></td>
+              <td><span class="stat-badge stat-high">82</span></td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+              <td><span class="stat-badge stat-low">65</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+              <td><span class="stat-badge stat-high">94</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-high">81</span></td>
+              <td><span class="stat-badge stat-low">69</span></td>
+              <td><span class="stat-badge stat-low">62</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- Inglaterra -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>INGLATERRA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Candidato al Título</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Asociación de Kane (87):</strong> Inteligencia para bajar y distribuir juego.</li>
+              <li><strong>Poderío Ofensivo (84):</strong> Extremos desequilibrantes y gran pegada.</li>
+              <li><strong>Fuerza Aérea (82):</strong> Centrales y Kane dominan el balón parado.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Transiciones Lentas (75):</strong> Lentitud en repliegue ante contras ultrasónicas.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Circular el esférico con calma, retrasar a Kane para arrastrar centrales y habilitar rupturas de extremos.</p>
+        </div>
+
+        <!-- Croacia -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>CROACIA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Orden del Mediocampo</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Mediocampo de Élite (88):</strong> Modrić y volantes controlan el juego.</li>
+              <li><strong>Salida Bajo Presión (84):</strong> Limpieza única en la entrega de balón.</li>
+              <li><strong>Experiencia (85):</strong> Gran manejo de los minutos finales del partido.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Volumen Físico (72):</strong> Sufrimiento ante equipos de ritmo y transiciones físicas altas.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Mantener posesión defensiva lenta, desgastar al oponente y filtrar pases precisos a los extremos.</p>
+        </div>
+
+        <!-- Ghana -->
+        <div class="analysis-card">
+          <h4>GHANA</h4>
+          <div class="profile-type">Perfil: Retador Africano / Velocidad y Potencia</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Habilidad de Kudus (83):</strong> Desequilibrio individual y gran pegada.</li>
+              <li><strong>Duelos Físicos (80):</strong> Fuerte marca e intensidad en mediocampo.</li>
+              <li><strong>Velocidad en Transiciones (79):</strong> Contraataques veloces letales.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Organización Defensiva (70):</strong> Tienden a descuidar las coberturas en el carril central.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Establecer bloque medio agresivo, robar mediante Kudus y enfilar directo en velocidad al contraataque.</p>
+        </div>
+
+        <!-- Panamá -->
+        <div class="analysis-card">
+          <h4>PANAMÁ</h4>
+          <div class="profile-type">Perfil: Retador de Concacaf / Orden Asociativo</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Rigor de Repliegue (76):</strong> Defensa con línea de 5 disciplinada.</li>
+              <li><strong>Carrasquilla en Eje (77):</strong> Distribución rápida y limpia de balón.</li>
+              <li><strong>Compromiso Táctico (75):</strong> Trabajo coordinado en la marca posicional.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Definición en el Área (62):</strong> Poca contundencia en las ocasiones generadas.</li>
+              <li><strong>Debilidad Aérea (64):</strong> Sufrimiento en centros altos cruzados.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Mantener las líneas replegadas tapando pasillos centrales y buscar transiciones rápidas dirigidas por Carrasquilla.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">Inglaterra vs Croacia</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> El gran clásico del grupo. El control pausado y pegada de Inglaterra frente al triángulo del mediocampo croata.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Control de Modrić sobre el ritmo de juego.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Inglaterra vs Ghana</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorabilidad a Inglaterra, aunque la velocidad de Kudus al contragolpe será un reto defensivo.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Marca escalonada de Inglaterra sobre Kudus.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Croacia vs Ghana</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorabilidad a Croacia por orden táctico y capacidad de enfriar el partido con la posesión.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Velocidad de repliegue croata ante las contras ghanesas.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Inglaterra/Croacia vs Panamá</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Ventaja para los favoritos, aunque deberán tener paciencia contra la línea de 5 de Panamá.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Rotaciones ofensivas para desordenar el bloque panameño.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Inglaterra</div>
+                <div class="projection-desc">Su volumen ofensivo, pegada de Kane e individualidades les darán el primer puesto.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Croacia</div>
+                <div class="projection-desc">Su tremenda experiencia en torneos y mediocampo de control aseguran el pase.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Ghana</div>
+                <div class="projection-desc">Luchará el puesto con Kudus, pero sufrirá contra el orden y posesión croata y potencia inglesa.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Panamá</div>
+                <div class="projection-desc">Bloque ordenado pero falto de pegada de área para competir.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta un análisis técnico y cuantitativo del **Grupo L** para el Mundial de Fútbol 2026, evaluando las virtudes, debilidades y los enfoques estratégicos de cada selección a partir de sus perfiles estadísticos.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Panamá</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar el archivo `PerfilTacticoPanama.png`, el conjunto canalero se planta en este torneo con una propuesta basada principalmente en el orden defensivo y el despliegue corporal, sacrificando la tenencia de la pelota.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su excelente rendimiento en el plano de la potencia y resistencia (<strong>84</strong> en Físico), bien complementado por una línea defensiva sumamente competitiva (<strong>76</strong>) y un gran sentido del orden colectivo (<strong>77</strong> en Disciplina).</li>
+              <li><strong>Área de mejora:</strong> El control y la elaboración. Su registro de <strong>55</strong> en Posesión (el más bajo del grupo) y <strong>65</strong> en Creatividad delata serias dificultades para construir juego posicional, obligándolos a depender de un bloque bajo compacto y salidas directas.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Croacia</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con los datos del archivo `PerfilTacticoCroacia.png`, la escuadra balcánica mantiene su esencia histórica: un mediocampo de época diseñado para adormecer al rival a través del pase y una última línea sumamente sólida.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Una soberbia fluidez asociativa (<strong>91</strong> en Posesión) respaldada por la mayor inventiva del sector (<strong>82</strong> en Creatividad) y una muralla posterior implacable (<strong>83</strong> en Defensa).</li>
+              <li><strong>Área de mejora:</strong> La contención reglamentaria. Un registro de <strong>69</strong> en Disciplina indica que suelen recurrir con facilidad a las faltas tácticas o a desatenciones por protestas cuando los partidos se tornan demasiado trabados o intensos.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. Ghana</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El desglose analítico del archivo `PerfilTacticoGhana.png` posiciona al combinado africano como una escuadra con un potencial atlético devastador y una aceptable capacidad de circulación.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un despliegue corporal e intensidad en las transiciones extraordinario (<strong>94</strong> en Físico, el más alto del sector). Además, muestran registros bastante aseados en Posesión (<strong>78</strong>) y Ataque (<strong>77</strong>).</li>
+              <li><strong>Área de mejora:</strong> El equilibrio estructural y mental. Al registrar un endeble <strong>67</strong> en Defensa y un bajísimo <strong>62</strong> en Disciplina, se perfilan como un equipo propenso a cometer errores no forzados, descuidos en pelota parada o a sufrir amonestaciones rápidas.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. Inglaterra</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al analizar el archivo `PerfilTacticoInglaterra.png`, los "Three Lions" se consolidan como el gran coloso estadístico y principal candidato del grupo, mostrando un fútbol total de control y pegada.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un monopolio absoluto, casi tiránico, de la circulación del balón (<strong>97</strong> en Posesión), potenciado por un arsenal ofensivo de élite mundial (<strong>91</strong> en Ataque) y una sobria rectitud táctica (<strong>81</strong> en Disciplina).</li>
+              <li><strong>Área de mejora:</strong> El repliegue defensivo. A pesar de su imponente ataque, conceden facilidades atrás con un regular <strong>67</strong> en Defensa, lo que sugiere problemas cuando se les salta la presión alta o se les ataca con balones a la espalda de sus centrales.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">La conformación del Grupo L vaticina partidos de un altísimo ritmo y choques conceptuales sumamente marcados:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El choque por el ritmo absoluto:</strong> Inglaterra y Croacia protagonizarán una batalla de ajedrez por ver quién domina la zona medular con sus brutales registros de posesión (<strong>97</strong> y <strong>91</strong>, respectivamente). La diferencia podría radicar en que Inglaterra ostenta mucha mayor contundencia arriba (<strong>91</strong> frente a <strong>78</strong>), pero Croacia está significativamente mejor protegida atrás (<strong>83</strong> en Defensa contra <strong>67</strong>).
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>La amenaza de las transiciones salvajes:</strong> Tanto Ghana como Panamá cederán la iniciativa ante los gigantes europeos. Sin embargo, el <strong>94</strong> en Físico de Ghana será un dolor de cabeza constante para la frágil retaguardia inglesa (<strong>67</strong>), mientras que Panamá intentará apelar a su disciplina (<strong>77</strong>) para forzar el error y desesperar a una Croacia propensa a perder los papeles (<strong>69</strong> en Disciplina).
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+        <a href="politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

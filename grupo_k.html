@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo K — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo K del Mundial 2026: Portugal, Colombia, Uzbekistán, Congo DR con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263725844742178"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo K</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo K.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <!-- STANDINGS_START -->
+  <div class="container" style="margin-bottom: 40px;">
+    <h3 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.5rem; text-align: left;">🏆 Tabla de Posiciones</h3>
+    <div class="comparison-container" style="padding: 20px; margin-bottom: 0px; border-radius: 12px; background: var(--bg-card); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow-x: auto;">
+      <table class="comp-table" style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Pos</th>
+            <th style="text-align: left; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Equipo</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">PJ</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">G</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">E</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">P</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GF</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GC</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">DG</th>
+            <th style="width: 80px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 900;">Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">1</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/co.png" alt="Colombia" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Colombia</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">4</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">7</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">2</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/pt.png" alt="Portugal" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Portugal</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">6</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">5</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">5</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">3</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/cd.png" alt="RD Congo" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>RD Congo</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">4</td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">4</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">4</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/uz.png" alt="Uzbekistán" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Uzbekistán</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">11</td>
+            <td style="text-align: center; width: 60px;">-9</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- STANDINGS_END -->
+
+  <div class="tactical-grid">
+    
+    <!-- PORTUGAL -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/pt.png" width="40" height="25" alt="Portugal Flag">
+          <h3 class="team-name">Portugal</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoPortugal.png" alt="Perfil Táctico Portugal" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Portugal destaca por una posesión estructurada y transiciones de altísima velocidad. Bajo el análisis de IA, se identifican patrones de sobrecarga en carriles interiores combinados con amplitud máxima generada por sus laterales de corte ofensivo.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3 / 3-4-2-1</li>
+          <li><strong>xG Promedio:</strong> 2.14 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 7.4)</li>
+          <li><strong>Jugador Clave:</strong> Bruno Fernandes</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COLOMBIA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/co.png" width="40" height="25" alt="Colombia Flag">
+          <h3 class="team-name">Colombia</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoColombia.png" alt="Perfil Táctico Colombia" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          La selección colombiana resalta por un bloque medio-alto muy compacto y agresivo tras pérdida de balón. La IA destaca el rol clave de sus extremos que recortan hacia adentro y la alta efectividad en jugadas a balón parado.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.89 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio-Alto (PPDA 8.9)</li>
+          <li><strong>Jugador Clave:</strong> Luis Díaz</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- UZBEKISTÁN -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/uz.png" width="40" height="25" alt="Uzbekistán Flag">
+          <h3 class="team-name">Uzbekistán</h3>
+        </div>
+        <span class="tactical-badge badge-others">DEBUTANTE / RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoUzbekistan.png" alt="Perfil Táctico Uzbekistán" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Uzbekistán muestra una propuesta táctica muy disciplinada y ordenada. Utilizan una defensa de 5 hombres replegada que busca salir rápido mediante juego directo hacia sus delanteros de referencia física, optimizando cada transición.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 5-4-1 / 3-4-3</li>
+          <li><strong>xG Promedio:</strong> 0.98 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Repliegue Medio (PPDA 11.2)</li>
+          <li><strong>Jugador Clave:</strong> Eldor Shomurodov</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONGO DR -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/cd.png" width="40" height="25" alt="Congo DR Flag">
+          <h3 class="team-name">Congo DR</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoCongo.png" alt="Perfil Táctico Congo DR" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          RD Congo basa su juego en la solidez defensiva de su bloque bajo y en transiciones verticales sumamente rápidas. La IA identifica que la mayor parte de su generación de peligro proviene de duelos individuales en bandas y contraataques directos.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-4-2 / 4-1-4-1</li>
+          <li><strong>xG Promedio:</strong> 1.12 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Bajo (PPDA 12.5)</li>
+          <li><strong>Jugador Clave:</strong> Yoane Wissa</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo K - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo K:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/pt.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Portugal</th>
+<th><img src="https://flagcdn.com/w40/co.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Colombia</th>
+<th><img src="https://flagcdn.com/w40/uz.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Uzbekistán</th>
+<th><img src="https://flagcdn.com/w40/cd.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Congo DR</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-mid">73</span></td>
+              <td><span class="stat-badge stat-low">63</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-high">89</span></td>
+              <td><span class="stat-badge stat-mid">73</span></td>
+              <td><span class="stat-badge stat-high">87</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-low">64</span></td>
+              <td><span class="stat-badge stat-low">58</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-high">81</span></td>
+              <td><span class="stat-badge stat-mid">75</span></td>
+              <td><span class="stat-badge stat-low">61</span></td>
+              <td><span class="stat-badge stat-mid">73</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-low">69</span></td>
+              <td><span class="stat-badge stat-mid">71</span></td>
+              <td><span class="stat-badge stat-mid">71</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-low">69</span></td>
+              <td><span class="stat-badge stat-low">66</span></td>
+              <td><span class="stat-badge stat-mid">77</span></td>
+              <td><span class="stat-badge stat-low">66</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- Portugal -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>PORTUGAL</h4>
+          <div class="profile-type">Perfil: Equipo Balanceado y Dominante (Favorito del Grupo)</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Defensa Elite (89):</strong> La mejor línea defensiva del grupo. Sistema robusto y difícil de vulnerar.</li>
+              <li><strong>Ataque Excepcional (83):</strong> Capacidad ofensiva consistente y peligrosa.</li>
+              <li><strong>Posesión Sofisticada (84):</strong> Dominio del balón, control del ritmo del juego.</li>
+              <li><strong>Creatividad (81):</strong> Recursos para generar opciones de ataque variadas.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Disciplina relativamente baja (69):</strong> Posibles inconsistencias en concentración.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Dominio mediante posesión, presión defensiva inteligente y transiciones rápidas.</p>
+        </div>
+
+        <!-- Colombia -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>COLOMBIA</h4>
+          <div class="profile-type">Perfil: Equipo Ofensivo y Creativo (Segundo Favorito)</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Ataque Dinámico (83):</strong> Igual capacidad ofensiva que Portugal.</li>
+              <li><strong>Posesión Control (84):</strong> Domina el balón como Portugal.</li>
+              <li><strong>Creatividad (75):</strong> Buena generación de juego ofensivo.</li>
+              <li><strong>Capacidad de Resco (71):</strong> Recuperación efectiva de balón.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Defensa Vulnerable (73):</strong> La más débil del grupo - Exposición defensiva notable.</li>
+              <li><strong>Disciplina Deficiente (66):</strong> Baja capacidad defensiva organizada.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Ganar basándose en superioridad ofensiva. Requiere tener posesión para no exponerse defensivamente.</p>
+        </div>
+
+        <!-- Uzbekistán -->
+        <div class="analysis-card">
+          <h4>UZBEKISTÁN</h4>
+          <div class="profile-type">Perfil: Defensivo y Disciplinado (Equipo Equilibrado)</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Defensa Sólida (87):</strong> Segunda mejor defensa, muy competitiva.</li>
+              <li><strong>Disciplina (77):</strong> LA MÁS ALTA DEL GRUPO - Estructura táctica ordenada.</li>
+              <li><strong>Ataque Funcional (73):</strong> Capacidad ofensiva decente.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Creatividad Baja (61):</strong> Limitado en generar opciones ofensivas.</li>
+              <li><strong>Posesión Débil (64):</strong> Menor dominio del balón.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Bloque defensivo compacto, buscar efectividad en transiciones directas. Vulnerable ante equipo de mayor posesión.</p>
+        </div>
+
+        <!-- Congo DR -->
+        <div class="analysis-card">
+          <h4>CONGO DR</h4>
+          <div class="profile-type">Perfil: Equipo Desequilibrado (Aspirante Sorpresa)</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Defensa Competitiva (77):</strong> Defensiva respetable.</li>
+              <li><strong>Resco (77):</strong> Buena recuperación de balón.</li>
+              <li><strong>Creatividad (73):</strong> Recursos ofensivos interesantes.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Ataque Débil (63):</strong> LA PEOR CAPACIDAD OFENSIVA - Dificultad para anotar.</li>
+              <li><strong>Posesión Baja (58):</strong> Menor control del juego.</li>
+              <li><strong>Disciplina Deficiente (66):</strong> Falta de organización defensiva.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Depender de juego directo y efectividad. Equipo con mayores dificultades para competir.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">Portugal vs Colombia</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Muy parejo. Defensa de Portugal vs Ataque de Colombia.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Control de posesión (ambos en 84).</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Portugal vs Uzbekistán</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorable a Portugal. Su ataque es superior.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Creatividad de Portugal (81 vs 61).</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Colombia vs Uzbekistán</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Ligera ventaja a Colombia.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Defensa débil de Colombia vs Ataque funcional de Uzbekistán.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Portugal/Colombia vs Congo DR</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Amplia ventaja para ambos.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Ataque débil de Congo DR.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Portugal</div>
+                <div class="projection-desc">Control del grupo, equipo más completo.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Colombia</div>
+                <div class="projection-desc">Rival fuerte, pero defensa vulnerable.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Uzbekistán</div>
+                <div class="projection-desc">Puede sorprender a Congo DR con defensa sólida.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Congo DR</div>
+                <div class="projection-desc">Equipo con limitaciones significativas.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta un análisis técnico y cuantitativo del **Grupo K** para el Mundial de Fútbol 2026, evaluando las virtudes, debilidades y el enfoque estratégico de cada selección a partir de sus perfiles estadísticos.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Uzbekistán</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar su perfil táctico, la selección asiática se estructura a partir del orden y la protección de su propio arco.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su solidez en la última línea, registrando un imponente 87 en Defensa. Esto, sumado a su buen comportamiento táctico marcado por un 77 en Disciplina, los convierte en un rival sumamente difícil de penetrar.</li>
+              <li><strong>Área de mejora:</strong> La elaboración de juego y el volumen ofensivo. Con apenas 64 en Posesión y un 61 en Creatividad, son el equipo al que más le cuesta generar circuitos de pases y proponer el ritmo del partido.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Colombia</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con sus datos, el combinado sudamericano propone un juego muy asociativo, de tenencia y con una alta vocación para mirar al arco rival.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un excelente control del balón avalado por su 84 en Posesión y una ofensiva letal de 83 en Ataque. Es un bloque diseñado para jugar en campo contrario y lastimar a través de secuencias de pases.</li>
+              <li><strong>Área de mejora:</strong> Su estructura defensiva y el control emocional. Su Defensa de 73 es claramente superada por su nivel de ataque, y su baja Disciplina de 66 indica que pueden desordenarse rápidamente o cometer faltas tácticas innecesarias al perder el esférico.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. República Democrática del Congo</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El perfil del conjunto africano muestra una propuesta netamente reactiva, priorizando el despliegue atlético y el rigor en la marca por encima del control.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su capacidad para sostener duelos a través de un destacado apartado Físico de 77 y una Defensa bastante respetable de 77. Mantienen además una Creatividad de 73, lo que les permite trazar contragolpes con cierta inventiva cuando recuperan el balón.</li>
+              <li><strong>Área de mejora:</strong> La contundencia en el área rival y el control de los hilos del partido. Son el equipo con los registros más bajos en Posesión (58) y Ataque (63) de todo el grupo, lo que evidencia grandes dificultades para tomar la iniciativa de forma sostenida.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. Portugal</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              La escuadra europea se presenta como el gigante estadístico indiscutible del grupo, dominando la inmensa mayoría de las métricas fundamentales del juego.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su absoluta superioridad técnica, táctica y estructural. Lideran el grupo en Defensa con 89, en Creatividad con 81, y empatan en la cima de Ataque (83) y Posesión (84). Son un equipo maduro y altamente capacitado en todas las fases con balón.</li>
+              <li><strong>Área de mejora:</strong> El desgaste frente a la fricción. Su registro más bajo es el Físico (69), por lo que un rival que plantee un partido de mucho choque o que imponga un ritmo asfixiante de transiciones podría llegar a incomodar su habitual circulación.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">La configuración del Grupo K plantea un escenario de claro dominio europeo y sudamericano en la tenencia, frente a bloques diseñados para resistir y contraatacar:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El monopolio del balón:</strong> Tanto Portugal como Colombia registrarán un control hegemónico de la posesión en la mayoría de sus partidos, obligando a Uzbekistán y a la RD Congo a atrincherarse cerca de sus áreas. El duelo directo entre europeos y sudamericanos promete ser el más atractivo para definir el liderato del grupo.
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El reto de la resistencia:</strong> Uzbekistán y la RD Congo cederán la posesión y apostarán por su solidez defensiva y despliegue físico para incomodar a los favoritos. La capacidad de Uzbekistán para mantener el orden (77 en Disciplina, 87 en Defensa) y el poder físico de la RD Congo (77) serán determinantes para intentar sumar en las transiciones rápidas.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+        <a href="politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

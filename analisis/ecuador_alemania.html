@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecuador vs Alemania: El Muro Tricolor frente a la Máquina de Posesión // DataHacks</title>
+  <meta name="description" content="Análisis táctico detallado del partido Ecuador vs Alemania del Mundial 2026." />
+  <link rel="stylesheet" href="../css/main.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263725844742178"
+     crossorigin="anonymous"></script>
+  <style>
+    .match-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #0f0c20 0%, #15102a 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .match-container {
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: #fff;
+      line-height: 1.8;
+    }
+    .match-container h1, .match-container h2, .match-container h3 {
+      font-family: var(--font-head);
+      color: var(--cyan);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    .match-container h1 { font-size: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 10px; }
+    .match-container h2 { font-size: 1.5rem; color: var(--green); }
+    .match-container h3 { font-size: 1.2rem; }
+    .match-container p { margin-bottom: 16px; color: #e0e6ed; }
+    .match-container ul { margin-bottom: 20px; padding-left: 20px; list-style-type: square; }
+    .match-container li { margin-bottom: 8px; color: #e0e6ed; }
+    .scoreboard {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 25px 0;
+      font-family: var(--font-head);
+    }
+    .score-team {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .score-box {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      font-size: 2.2rem;
+      font-weight: 900;
+      padding: 10px 24px;
+      border-radius: 12px;
+      min-width: 100px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .tactical-visuals {
+      margin-top: 35px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .tactical-visuals h4 {
+      font-family: var(--font-head);
+      color: var(--green);
+      margin: 0 0 10px;
+    }
+    .tactical-visuals img {
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 600px) {
+      .scoreboard {
+        flex-direction: column;
+        gap: 12px;
+        margin: 15px 0;
+      }
+      .score-team {
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center !important;
+      }
+      .score-box {
+        font-size: 1.8rem;
+        padding: 8px 20px;
+        min-width: 80px;
+      }
+      .match-container {
+        padding: 20px 14px;
+        margin: 20px auto 40px;
+        border-radius: var(--r);
+      }
+      .match-container h1 {
+        font-size: 1.5rem;
+      }
+      .match-container h2 {
+        font-size: 1.25rem;
+      }
+      .match-container h3 {
+        font-size: 1.1rem;
+      }
+      .match-container p, .match-container li {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .match-header {
+        padding: 110px 0 40px;
+      }
+      .match-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#plataforma">Plataforma</a></li>
+        <li><a href="../index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="../index.html#contenido">Contenido</a></li>
+        <li><a href="../index.html#social">Social</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="../index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="match-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="../grupo_e.html" class="back-link">← Volver al Grupo E</a>
+    </div>
+    <span class="badge" style="margin-bottom:16px">Grupo E</span>
+    <h2>Ecuador vs Alemania</h2>
+    <p style="color: var(--muted); font-size: 1rem;">📅 2026-06-25 · 🕒 20:00 (Local)</p>
+    
+    <div class="scoreboard">
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-end; flex: 1;">
+        <span>Ecuador</span>
+        <img src="https://flagcdn.com/w80/ec.png" alt="Ecuador" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; flex-shrink: 0;">
+        <div class="score-box">2 - 1</div>
+        <div style="font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:5px; font-weight:700;">FINALIZADO</div>
+      </div>
+      <div class="score-team" style="display: flex; align-items: center; gap: 12px; justify-content: flex-start; flex: 1;">
+        <img src="https://flagcdn.com/w80/de.png" alt="Alemania" style="height: 28px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+        <span>Alemania</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="match-container">
+    <h2>📝 Crónica y Análisis Posterior (Post-Partido)</h2>
+
+                <div style="margin: 16px 0; padding: 12px 16px; border-radius: 8px; background: rgba(255, 75, 75, 0.1); border: 1px solid rgba(255, 75, 75, 0.25); display: inline-flex; align-items: center; gap: 8px; color: #ff4b4b; font-family: var(--font-head); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px;">
+                  ❌ PREDICCIÓN FALLIDA
+                </div>
+                
+<h3>⚽ Resumen del Partido (Resultado Real: Ecuador 2 - 1 Alemania)</h3>
+<p>El encuentro entre Ecuador y Alemania, correspondiente a la última jornada del Grupo E del Mundial 2026, fue un vibrante choque de estilos que culminó con una sorprendente victoria sudamericana por 2-1. Alemania, fiel a su ADN, intentó imponer su ritmo con una posesión dominante y una búsqueda constante de la portería rival, pero se encontró con una Ecuador férrea y tácticamente disciplinada. El primer gol del partido llegó al minuto 34, cuando Enner Valencia, con una jugada individual de pura potencia, batió al portero alemán, capitalizando una de las pocas incursiones ofensivas ecuatorianas de la primera mitad. Alemania, lejos de desanimarse, respondió con una presión asfixiante y encontró el empate en el minuto 61 gracias a un remate certero de Jamal Musiala tras una combinación rápida. Sin embargo, el ímpetu alemán fue cortado en seco cuando, en el minuto 73, Moisés Caicedo anotó el gol de la victoria para Ecuador, culminando una rápida transición que desarticuló la zaga germana y selló un triunfo histórico.</p>
+<h3>🔮 Impacto en el Grupo E y Proyecciones para la Siguiente Fase</h3>
+<ul>
+<li>  <strong>Ajuste del Algoritmo:</strong> Tras este resultado, las métricas ofensivas de Ecuador experimentan una mejora significativa, especialmente en eficiencia y conversión de oportunidades, mientras que sus métricas defensivas se reafirman en solidez y capacidad de contención. Para Alemania, las métricas ofensivas reflejan una ligera caída en efectividad a pesar de la dominación, y las defensivas muestran vulnerabilidades ante transiciones rápidas que deberán ser corregidas.</li>
+<li>  <strong>Proyección de la Siguiente Fase (Octavos de Final / Clasificación):</strong> Esta victoria permite a Ecuador asegurar el primer puesto del Grupo E, clasificando a Octavos de Final con un envión anímico formidable. Alemania, por su parte, queda en una posición extremadamente delicada, dependiendo de la diferencia de goles para intentar clasificar como segunda del grupo, o incluso como mejor tercera si los resultados de otros grupos lo permiten, enfrentando una eliminación potencial que sería catastrófica para sus aspiraciones mundialistas.</li>
+</ul>
+<h3>📈 Análisis del Match Momentum y Match Point (Punto Crítico)</h3>
+<p>El análisis del Match Momentum revela una dinámica fascinante del partido. Alemania dominó la intensidad de ataque durante el 56.5% del encuentro, reflejando su control habitual de la posesión y la iniciativa. Sin embargo, la eficiencia de Ecuador fue letal. Aunque dominaron solo el 35.9% del partido en intensidad ofensiva, sus picos fueron decisivos. La intensidad máxima de Ecuador se registró en el minuto 73' (100.00), coincidiendo de manera directa con el gol de Moisés Caicedo que otorgó la ventaja definitiva. Este fue un momento de brillantez táctica y ejecución clínica, donde el equipo sudamericano capitalizó su oportunidad de forma contundente. Por otro lado, la intensidad máxima de Alemania se alcanzó en el minuto 87' (100.00), lo que indica una reacción desesperada y tardía para intentar rescatar el partido, pero ya era demasiado tarde. El <strong>Match Point</strong> del encuentro fue innegablemente el minuto 73'. El gol de Caicedo no solo selló la victoria de Ecuador, sino que también desinfló la moral alemana, obligándoles a un ataque final que, a pesar de su vehemencia, careció de la precisión necesaria para revertir el marcador.</p>
+
+              <div class="tactical-single" style="width: 100%; max-width: 650px; margin: 24px auto; background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Gráfico: Match Momentum (Intensidad de Ataque)</h4>
+                <img src="../assets/Momentum_20260625_ecuador_alemania.png" alt="Match Momentum" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+              </div>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇪🇨 Ecuador: Análisis Táctico</h2>
+<p>El planteamiento táctico de Ecuador, bajo un esquema presumiblemente 4-4-2 con fases, fue una lección de pragmatismo y resiliencia. El equipo sudamericano priorizó la solidez defensiva, formando dos líneas compactas que cerraron los espacios interiores y forzaron a Alemania a buscar el juego por las bandas, donde sus centros fueron interceptados con regularidad. El mediocampo, liderado por la incansable labor de Moisés Caicedo, fue clave en la recuperación de balones y en la anulación de la creatividad alemana en la zona central. Ecuador no sufrió en exceso por la falta de posesión, sino que la aceptó como parte de su estrategia, buscando transiciones rápidas y verticales, aprovechando la velocidad de sus extremos y la potencia de su delantero para generar peligro en momentos clave. La capacidad de capitalizar sus oportunidades limitadas fue el pilar de su éxito.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>🇩🇪 Alemania: Análisis Táctico</h2>
+<p>Alemania, por su parte, se presentó con su tradicional 4-3-3 de alta posesión, buscando dominar el esférico y el ritmo del partido. Sus virtudes radicaron en la fluidez de su circulación de balón y la capacidad de sus mediocampistas para encontrar espacios entre líneas. Sin embargo, su principal falla fue la vulnerabilidad defensiva en las transiciones rápidas tras pérdida, dejando amplios espacios a la espalda de sus laterales que Ecuador supo explotar con efectividad. El bloque defensivo alemán, a menudo adelantado para presionar la salida del rival, se vio expuesto ante la velocidad de los contraataques ecuatorianos. A pesar de controlar gran parte del juego en términos de posesión e intensidad, la falta de una definición contundente en el último tercio y la incapacidad para adaptarse rápidamente a la amenaza de los contragolpes fueron los factores decisivos en su derrota.</p>
+<hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 24px 0;">
+<h2>⚖️ Comparativa y Veredicto</h2>
+<p>El duelo táctico fue un claro contraste entre la propuesta dominante y de control de Alemania y la eficacia pragmática de Ecuador. Mientras los alemanes intentaron someter a su rival a través de la posesión y el volumen de ataque, Ecuador demostró que en el fútbol de élite, la capacidad de capitalizar los momentos críticos puede ser más valiosa que el dominio estadístico. La gestión de los picos de intensidad fue clave: Ecuador golpeó en su momento de máxima energía para asegurar la ventaja, mientras que Alemania llegó a su cenit de presión de manera reactiva y sin el tiempo suficiente para cambiar el resultado. El veredicto final es que el marcador de 2-1, aunque estrecho, es un reflejo justo de un partido donde Ecuador, a pesar de una menor cuota de protagonismo, fue el equipo más efectivo y tácticamente astuto en los momentos cruciales, mereciendo plenamente su victoria y la clasificación como líder de grupo.</p>
+    
+    
+                <div class="tactical-visuals" style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; width: 100%;">
+                  <h3 style="font-family: var(--font-head); color: var(--green); text-align: center; margin-bottom: 25px;">📊 Pizarras y Gráficos Tácticos</h3>
+                  <div style="width: 100%;">
+                    
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Ecuador)</h4>
+                      <img src="../assets/Analisis_Ecuador_MapaDefensivo_horizontal_20260614.png" alt="Mapa Defensivo (Ecuador)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa Defensivo (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_MapaDefensivo_horizontal_20260614.png" alt="Mapa Defensivo (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Ecuador)</h4>
+                      <img src="../assets/Analisis_Ecuador_ExpectedThreatxT_horizontal_20260614.png" alt="Amenaza Esperada xT (Ecuador)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Amenaza Esperada xT (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_ExpectedThreatxT_horizontal_20260614.png" alt="Amenaza Esperada xT (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Ecuador)</h4>
+                      <img src="../assets/Analisis_Ecuador_MapadeCalor_horizontal_20260614.png" alt="Mapa de Calor (Ecuador)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Calor (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_MapadeCalor_horizontal_20260614.png" alt="Mapa de Calor (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Ecuador)</h4>
+                      <img src="../assets/Analisis_Ecuador_ReddePases_horizontal_20260614.png" alt="Red de Pases (Ecuador)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Red de Pases (Alemania)</h4>
+                      <img src="../assets/Analisis_Alemania_ReddePases_horizontal_20260614.png" alt="Red de Pases (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  <div class="tactical-pair" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; width: 100%; margin-bottom: 24px;">
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Ecuador)</h4>
+                      <img src="../assets/ShotMap_Ecuador_horizontal_20260625.png" alt="Mapa de Tiros (Ecuador)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                    <div style="background: rgba(15, 12, 32, 0.35); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); text-align: center;">
+                      <h4 style="color: var(--cyan); font-size: 0.85rem; margin: 0 0 12px; font-family: var(--font-head); font-weight: 700;">Mapa de Tiros (Alemania)</h4>
+                      <img src="../assets/ShotMap_Alemania_horizontal_20260625.png" alt="Mapa de Tiros (Alemania)" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+                
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+        <div style="font-size:0.72rem;color:var(--muted);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:4px">Sports Data Analytics // Football Metrics</div>
+        <div style="font-size:0.78rem;margin-top:10px;color:rgba(255,255,255,0.7);font-family:var(--font-body);"><span style="color:var(--cyan);font-weight:600">Contacto:</span> <a href="mailto:data.hacks.sports@gmail.com" style="transition:color 0.2s;text-decoration:none;color:#fff;border-bottom:1px dashed rgba(0,212,255,0.4);padding-bottom:1px" onmouseover="this.style.borderColor='var(--cyan)'; this.style.color='var(--cyan)';" onmouseout="this.style.borderColor='rgba(0,212,255,0.4)'; this.style.color='#fff';">data.hacks.sports@gmail.com</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html#plataforma">Plataforma</a>
+        <a href="../index.html#mundial2026">Mundial</a>
+        <a href="../index.html#contenido">Contenido</a>
+        <a href="../politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="../terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

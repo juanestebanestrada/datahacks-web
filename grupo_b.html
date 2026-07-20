@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo B — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo B del Mundial 2026: Suiza, Canadá, Qatar, Bosnia con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263725844742178"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo B</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo B.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <!-- STANDINGS_START -->
+  <div class="container" style="margin-bottom: 40px;">
+    <h3 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.5rem; text-align: left;">🏆 Tabla de Posiciones</h3>
+    <div class="comparison-container" style="padding: 20px; margin-bottom: 0px; border-radius: 12px; background: var(--bg-card); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow-x: auto;">
+      <table class="comp-table" style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Pos</th>
+            <th style="text-align: left; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Equipo</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">PJ</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">G</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">E</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">P</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GF</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GC</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">DG</th>
+            <th style="width: 80px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 900;">Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">1</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/ch.png" alt="Suiza" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Suiza</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">7</td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">4</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">7</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">2</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/ca.png" alt="Canadá" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Canadá</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">8</td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">5</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">4</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">3</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/ba.png" alt="Bosnia" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Bosnia</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">5</td>
+            <td style="text-align: center; width: 60px;">6</td>
+            <td style="text-align: center; width: 60px;">-1</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">4</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">4</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/qa.png" alt="Qatar" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Qatar</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">10</td>
+            <td style="text-align: center; width: 60px;">-8</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- STANDINGS_END -->
+
+  <div class="tactical-grid">
+    
+    <!-- SUIZA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/ch.png" width="40" height="25" alt="Suiza Flag">
+          <h3 class="team-name">Suiza</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoSuuiza.png" alt="Perfil Táctico Suiza" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Organización táctica impecable, salida limpia con tres centrales, pivotes de control y progresión coordinada en zona de gestación.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 3-4-2-1</li>
+          <li><strong>xG Promedio:</strong> 1.55 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio-Alto (PPDA 9.4)</li>
+          <li><strong>Jugador Clave:</strong> Granit Xhaka</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CANADÁ -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/ca.png" width="40" height="25" alt="Canadá Flag">
+          <h3 class="team-name">Canadá</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoCanada.png" alt="Perfil Táctico Canadá" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Explotación del espacio en transición mediante velocidad de sus carrileros, presión en bloque alto y ataques verticales rápidos.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-4-2 / 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.62 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Alto (PPDA 8.8)</li>
+          <li><strong>Jugador Clave:</strong> Alphonso Davies</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- QATAR -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/qa.png" width="40" height="25" alt="Qatar Flag">
+          <h3 class="team-name">Qatar</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoQatar.png" alt="Perfil Táctico Qatar" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Repliegue defensivo con línea de 5, basculación rápida lateral e intentos de transición combinativa por carril central.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 5-3-2</li>
+          <li><strong>xG Promedio:</strong> 1.10 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Bajo (PPDA 12.2)</li>
+          <li><strong>Jugador Clave:</strong> Akram Afif</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BOSNIA -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/ba.png" width="40" height="25" alt="Bosnia Flag">
+          <h3 class="team-name">Bosnia</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoBosnia.png" alt="Perfil Táctico Bosnia" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Juego directo hacia delantero centro pivotante, segundas jugadas agresivas en mediocampo y solidez defensiva posicional estructurada.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.15 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio-Bajo (PPDA 11.5)</li>
+          <li><strong>Jugador Clave:</strong> Edin Džeko</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo B - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo B:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/ch.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Suiza</th>
+<th><img src="https://flagcdn.com/w40/ca.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Canadá</th>
+<th><img src="https://flagcdn.com/w40/qa.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Qatar</th>
+<th><img src="https://flagcdn.com/w40/ba.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Bosnia</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-high">85</span></td>
+              <td><span class="stat-badge stat-high">80</span></td>
+              <td><span class="stat-badge stat-mid">76</span></td>
+              <td><span class="stat-badge stat-mid">75</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-high">86</span></td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-high">85</span></td>
+              <td><span class="stat-badge stat-mid">71</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-high">82</span></td>
+              <td><span class="stat-badge stat-low">61</span></td>
+              <td><span class="stat-badge stat-low">68</span></td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+              <td><span class="stat-badge stat-high">83</span></td>
+              <td><span class="stat-badge stat-mid">76</span></td>
+              <td><span class="stat-badge stat-low">65</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-mid">70</span></td>
+              <td><span class="stat-badge stat-high">86</span></td>
+              <td><span class="stat-badge stat-high">81</span></td>
+              <td><span class="stat-badge stat-high">87</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-low">69</span></td>
+              <td><span class="stat-badge stat-low">63</span></td>
+              <td><span class="stat-badge stat-low">65</span></td>
+              <td><span class="stat-badge stat-low">55</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- Suiza -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>SUIZA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Orden Europeo</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Organización Táctica (86):</strong> Estructura sólida y coordinada.</li>
+              <li><strong>Distribución en Mediocampo (84):</strong> Manejo del ritmo por Xhaka.</li>
+              <li><strong>Salida Limpia (80):</strong> Transición limpia desde la base de 3.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Falta de Pegada Explosiva (72):</strong> A veces carecen de gol en partidos cerrados.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Control del juego mediante la posesión en mediocampo, progresión asimétrica y amplitud por carrileros.</p>
+        </div>
+
+        <!-- Canadá -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>CANADÁ</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Co-Anfitrión</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Velocidad Extrema (87):</strong> Davies y extremos rompen líneas al espacio.</li>
+              <li><strong>Presión en Bloque Alto (79):</strong> Recuperaciones rápidas en campo rival.</li>
+              <li><strong>Motivación Local (82):</strong> Apoyo del público en estadios canadienses.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Estructura Defensiva (73):</strong> Tiende a desordenarse si la presión alta es superada.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Presión asfixiante inicial para recuperar arriba y contragolpes inmediatos de máxima intensidad vertical.</p>
+        </div>
+
+        <!-- Qatar -->
+        <div class="analysis-card">
+          <h4>QATAR</h4>
+          <div class="profile-type">Perfil: Retador Asiático / Repliegue</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Línea de 5 Compacta (79):</strong> Difícil de penetrar por el centro.</li>
+              <li><strong>Química Colectiva (77):</strong> Años de trabajo con la misma base.</li>
+              <li><strong>Creatividad de Afif (76):</strong> Capacidad para inventar jugadas aisladas.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Debilidad en Duelos Físicos (65):</strong> Sufre contra el ritmo e intensidad europeos y americanos.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Mantener bloque bajo, frustrar al rival acumulando hombres en área y buscar a Afif para contras rápidas.</p>
+        </div>
+
+        <!-- Bosnia -->
+        <div class="analysis-card">
+          <h4>BOSNIA</h4>
+          <div class="profile-type">Perfil: Retador Directo / Físico</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Poderío Físico (80):</strong> Dominio en duelos terrestres y aéreos.</li>
+              <li><strong>Juego Directo Efectivo (75):</strong> Džeko retiene y distribuye balones largos.</li>
+              <li><strong>Disparos de Media Distancia (72):</strong> Peligro desde fuera del área.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Velocidad de Repliegue (64):</strong> Sufre mucho contra extremos veloces al contraataque.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Presionar en bloque medio, forzar el error rival y lanzar pases largos directos al área buscando segundas jugadas.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">Suiza vs Canadá</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Duelo táctico de posesión y orden (Suiza) contra ritmo y verticalidad (Canadá). Muy cerrado.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Control del mediocampo por parte de Suiza.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Suiza vs Qatar</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Favorable a Suiza. El orden defensivo qatarí será puesto a prueba por el juego de posición suizo.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Capacidad suiza para filtrar pases en el bloque bajo qatarí.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Canadá vs Bosnia</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Canadá buscará ritmo alto para cansar a los centrales lentos de Bosnia.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Velocidad de Davies en banda contra el repliegue bosnio.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Bosnia vs Qatar</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Partido físico e intenso. Bosnia atacará con balones al área, Qatar defenderá con línea de 5.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Eficacia de Edin Džeko en el área de Qatar.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Suiza</div>
+                <div class="projection-desc">Su experiencia y solidez táctica europea les dan la primera posición.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Canadá</div>
+                <div class="projection-desc">Clasificará impulsado por su ritmo vertiginoso y apoyo local.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Bosnia</div>
+                <div class="projection-desc">Luchará físicamente pero la falta de velocidad defensiva le costará cara.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Qatar</div>
+                <div class="projection-desc">Dificultades extremas en duelos físicos y dinámicos a este nivel.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta el análisis técnico y cuantitativo del **Grupo B** para el Mundial de Fútbol 2026, evaluando las capacidades tácticas de cada selección a partir de los datos extraídos de sus respectivos perfiles estadísticos.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Bosnia</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar el archivo `PerfilTacticoBosnia.png`, la selección bosnia se presenta como un equipo con un fuerte contraste entre su capacidad atlética y su control emocional.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> El despliegue de su apartado físico (<strong>87</strong>), complementado con una notable fluidez en la distribución y control del balón con un <strong>79</strong> en Posesión. Esto les otorga la capacidad de imponer condiciones en el centro del campo mediante duelos directos.</li>
+              <li><strong>Área de mejora:</strong> Su bajo índice de disciplina (<strong>55</strong>). Este factor representa un riesgo crítico en torneos cortos, donde las tarjetas o las faltas innecesarias en zonas de peligro pueden quebrar un planteamiento defensivo que ya de por sí es regular (<strong>71</strong>).</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Canadá</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Basado en el archivo `PerfilTacticoCanada.png`, la escuadra norteamericana muestra una propuesta altamente dinámica, vertical y propositiva en el frente ofensivo.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> La combinación de una gran inventiva (<strong>83</strong> en Creatividad) junto a una ofensiva letal (<strong>80</strong> en Ataque) y un soporte atlético envidiable (<strong>86</strong> en Físico). Son un equipo capacitado para presionar, romper líneas por velocidad y generar peligro constante.</li>
+              <li><strong>Área de mejora:</strong> Su elaboración a fuego lento. El registro de <strong>61</strong> en Posesión indica que sufren si se les obliga a adormecer el juego o mantener posesiones largas y horizontales; prefieren transiciones explosivas.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. Qatar</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con el archivo `PerfilTacticoQatar.png`, el conjunto catarí apuesta firmemente por un orden táctico ultradefensivo y un juego sumamente pragmático.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Una retaguardia sobresaliente (<strong>85</strong> en Defensa), combinada con niveles muy equilibrados en su respuesta física (<strong>81</strong>) y ataque (<strong>76</strong>). Es un bloque compacto que prioriza mantener el arco en cero antes de tomar riesgos innecesarios.</li>
+              <li><strong>Área de mejora:</strong> La fluidez de juego bajo presión. Con una posesión de <strong>68</strong> y una disciplina de <strong>65</strong>, el equipo puede volverse predecible si el rival logra romper su primera línea de contención o si cae en la frustración táctica.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. Suiza</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El análisis del archivo `PerfilTacticoSuiza.png` revela al equipo teóricamente más fuerte y equilibrado del sector, dominando las métricas clave.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un balance de élite entre su línea defensiva (<strong>86</strong>) y su contundencia en ataque (<strong>85</strong>), todo esto gestionado a través de un extraordinario control de los ritmos del partido con un <strong>82</strong> en Posesión. Es el equipo más completo estructuralmente.</li>
+              <li><strong>Área de mejora:</strong> El desgaste físico frente a rivales más intensos. Su métrica más baja se encuentra en el apartado físico (<strong>70</strong>), lo que podría pasarles factura frente a la intensidad en transiciones de selecciones más atléticas dentro del grupo.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">El Grupo B promete ser una batalla de resistencia y adaptabilidad estratégica debido a la polaridad de sus integrantes:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El claro favorito:</strong> Suiza emerge como el rival a batir gracias a su regularidad en casi todas las facetas del juego. Dominar el balón y las áreas los coloca un escalón por encima en la pizarra.
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>Choque de estilos (Intensidad vs. Control):</strong> Los enfrentamientos de Canadá y Bosnia contra Suiza y Qatar serán fundamentales. El poderío físico bosnio y la creatividad vertical de Canadá pondrán a prueba la resistencia física de los suizos y el cerrojo defensivo de Qatar, configurando un grupo con pronóstico reservado para la segunda plaza.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+        <a href="politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

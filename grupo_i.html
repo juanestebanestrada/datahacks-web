@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo I — Perfiles Tácticos // DataHacks</title>
+  <meta name="description" content="Perfiles tácticos de las selecciones del Grupo I del Mundial 2026: Francia, Senegal, Noruega, Irak con imágenes de análisis." />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* Custom styles for tactical page to enhance premium feel */
+    .tactical-header {
+      padding: 140px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .back-btn-wrap {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .back-link:hover {
+      color: var(--white);
+      transform: translateX(-4px);
+    }
+    .tactical-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: 992px) {
+      .tactical-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .team-tactical-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    .team-tactical-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 149, 255, 0.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--blue-glow);
+    }
+    .team-tactical-card.highlight:hover {
+      border-color: rgba(0, 230, 118, 0.4);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 20px var(--green-glow);
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 16px;
+    }
+    .team-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-info img {
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .team-name {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 1.6rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .tactical-badge {
+      font-size: 0.68rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .badge-pt-co {
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .badge-others {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+    }
+    .tactical-image-container {
+      position: relative;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+    .tactical-image-container:hover {
+      border-color: rgba(0, 149, 255, 0.3);
+    }
+    .tactical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .tactical-image-container:hover .tactical-img {
+      transform: scale(1.03);
+    }
+    .tactical-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tactical-details h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .team-tactical-card.highlight .tactical-details h4 {
+      color: var(--green);
+    }
+    .tactical-details p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .tactical-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    @media (min-width: 576px) {
+      .tactical-bullets {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .tactical-bullets li {
+      font-size: 0.82rem;
+      color: #e0e6ed;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tactical-bullets li::before {
+      content: '⚡';
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+    .team-tactical-card.highlight .tactical-bullets li::before {
+      color: var(--green);
+    }
+
+    /* Technical Analysis Styles */
+    .analysis-section {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      padding-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .analysis-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+    .analysis-subtitle {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .comparison-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow-x: auto;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+      color: #fff;
+    }
+    .comp-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--font-head);
+      color: var(--cyan);
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+    .comp-table tr:hover {
+      background: rgba(0, 149, 255, 0.03);
+    }
+    .comp-table td:first-child {
+      font-weight: 600;
+      color: var(--cyan);
+    }
+    .stat-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-align: center;
+      min-width: 36px;
+    }
+    .stat-high { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+    .stat-mid { background: rgba(0, 149, 255, 0.15); color: var(--cyan); }
+    .stat-low { background: rgba(255, 255, 255, 0.05); color: var(--muted); }
+
+    .team-analysis-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 768px) {
+      .team-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .analysis-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .analysis-card h4 {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .analysis-card .profile-type {
+      font-size: 0.8rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+    .analysis-points {
+      margin-bottom: 16px;
+    }
+    .analysis-points h5 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .analysis-points.weaknesses h5 {
+      color: #ff6b6b;
+    }
+    .analysis-points ul {
+      list-style: none;
+      padding: 0;
+    }
+    .analysis-points li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+    .analysis-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .analysis-points.weaknesses li::before {
+      color: #ff6b6b;
+    }
+
+    .matchups-projection-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .matchups-projection-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+    .matchups-container, .projection-container {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+    .matchups-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .matchup-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 14px;
+    }
+    .matchup-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .matchup-teams {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matchup-pred, .matchup-factor {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .matchup-pred strong { color: var(--white); }
+    .matchup-factor strong { color: var(--green); }
+
+    .projection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .projection-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .projection-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .rank-1 { background: rgba(0, 230, 118, 0.2); color: var(--green); border: 1px solid var(--green); }
+    .rank-2 { background: rgba(0, 149, 255, 0.2); color: var(--cyan); border: 1px solid var(--cyan); }
+    .rank-3 { background: rgba(255, 255, 255, 0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+    .rank-4 { background: rgba(0, 0, 0, 0.3); color: var(--muted); border: 1px solid rgba(255,255,255,0.05); }
+
+    .projection-info {
+      flex: 1;
+    }
+    .projection-team-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+    .projection-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263725844742178"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#plataforma">Plataforma</a></li>
+        <li><a href="index.html#mundial2026">Mundial 2026</a></li>
+        <li><a href="index.html#contenido">Contenido</a></li>
+        <li><a href="index.html#social">Social</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#newsletter" class="btn btn-primary">Suscribirme →</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- TACTICAL CONTENT -->
+<section class="tactical-header">
+  <div class="container">
+    <div class="back-btn-wrap">
+      <a href="index.html#mundial2026" class="back-link">← Volver al Análisis del Mundial</a>
+    </div>
+    
+    <span class="badge" style="margin-bottom:16px">Grupo I</span>
+    <h2>Perfiles <span style="color:var(--green)">Tácticos</span> de las Selecciones</h2>
+    <p style="max-width: 600px; margin: 0 auto; color: var(--muted); font-size: 1rem; line-height: 1.6;">
+      Análisis profundo con Inteligencia Artificial del estilo de juego, posicionamiento y mapa de influencia de las selecciones pertenecientes al Grupo I.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <!-- STANDINGS_START -->
+  <div class="container" style="margin-bottom: 40px;">
+    <h3 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.5rem; text-align: left;">🏆 Tabla de Posiciones</h3>
+    <div class="comparison-container" style="padding: 20px; margin-bottom: 0px; border-radius: 12px; background: var(--bg-card); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow-x: auto;">
+      <table class="comp-table" style="width: 100%; border-collapse: collapse; font-family: var(--font-body); color: #fff;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border);">
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Pos</th>
+            <th style="text-align: left; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">Equipo</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">PJ</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">G</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">E</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">P</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GF</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">GC</th>
+            <th style="width: 60px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 700;">DG</th>
+            <th style="width: 80px; text-align: center; padding: 14px 16px; color: var(--cyan); font-family: var(--font-head); font-weight: 900;">Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">1</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/fr.png" alt="Francia" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Francia</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">10</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">8</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">9</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">2</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/no.png" alt="Noruega" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Noruega</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">8</td>
+            <td style="text-align: center; width: 60px;">7</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">6</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">3</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/sn.png" alt="Senegal" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Senegal</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 60px;">8</td>
+            <td style="text-align: center; width: 60px;">6</td>
+            <td style="text-align: center; width: 60px;">2</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">3</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="text-align: center; font-weight: bold; width: 60px;">4</td>
+            <td style="text-align: left; display: flex; align-items: center; gap: 8px;">
+              <img src="https://flagcdn.com/w40/iq.png" alt="Irak" style="width: 20px; height: auto; border-radius: 2px;">
+              <span>Irak</span>
+            </td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">0</td>
+            <td style="text-align: center; width: 60px;">3</td>
+            <td style="text-align: center; width: 60px;">1</td>
+            <td style="text-align: center; width: 60px;">12</td>
+            <td style="text-align: center; width: 60px;">-11</td>
+            <td style="text-align: center; width: 80px; font-weight: 900; color: var(--cyan);">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- STANDINGS_END -->
+
+  <div class="tactical-grid">
+    
+    <!-- FRANCIA -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/fr.png" width="40" height="25" alt="Francia Flag">
+          <h3 class="team-name">Francia</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoFrancia.png" alt="Perfil Táctico Francia" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Transiciones ultra-rápidas letales por bandas, posesión paciente en gestación y pegada individual insuperable.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 2.28 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio-Alto (PPDA 8.9)</li>
+          <li><strong>Jugador Clave:</strong> Kylian Mbappé</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SENEGAL -->
+    <div class="team-tactical-card highlight">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/sn.png" width="40" height="25" alt="Senegal Flag">
+          <h3 class="team-name">Senegal</h3>
+        </div>
+        <span class="tactical-badge badge-pt-co">FAVORITO IA</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoSenegal.png" alt="Perfil Táctico Senegal" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Potencia física y despliegue defensivo coordinado, superioridad numérica en bandas y rápida aceleración ofensiva.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 1.65 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio-Alto (PPDA 9.2)</li>
+          <li><strong>Jugador Clave:</strong> Sadio Mané</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NORUEGA -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/no.png" width="40" height="25" alt="Noruega Flag">
+          <h3 class="team-name">Noruega</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoNoruega.png" alt="Perfil Táctico Noruega" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Juego directo explotando las rupturas verticales de Haaland, centros potentes al área y presión física.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-3-3</li>
+          <li><strong>xG Promedio:</strong> 1.50 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Medio (PPDA 10.0)</li>
+          <li><strong>Jugador Clave:</strong> Erling Haaland</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- IRAK -->
+    <div class="team-tactical-card">
+      <div class="team-card-header">
+        <div class="team-info">
+          <img src="https://flagcdn.com/w80/iq.png" width="40" height="25" alt="Irak Flag">
+          <h3 class="team-name">Irak</h3>
+        </div>
+        <span class="tactical-badge badge-others">RETADOR</span>
+      </div>
+      
+      <div class="tactical-image-container">
+        <img src="assets/PerfilTacticoIrak.png" alt="Perfil Táctico Irak" class="tactical-img">
+      </div>
+      
+      <div class="tactical-details">
+        <h4>Estilo de Juego e Influencia</h4>
+        <p>
+          Bloque defensivo cerrado, marcas de cobertura estricta y salidas en largo buscando disputar el balón.
+        </p>
+        <ul class="tactical-bullets">
+          <li><strong>Formación Base:</strong> 4-2-3-1</li>
+          <li><strong>xG Promedio:</strong> 1.05 por 90 min</li>
+          <li><strong>Zona de Presión:</strong> Bloque Bajo (PPDA 12.2)</li>
+          <li><strong>Jugador Clave:</strong> Aymen Hussein</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TACTICAL ANALYSIS EXPANSION -->
+  <div class="analysis-section">
+    <h3 class="analysis-title">Análisis Técnico: Grupo I - Mundial 2026</h3>
+    <p class="analysis-subtitle">
+      Basándome en los perfiles tácticos proporcionados, presento un análisis técnico detallado de los equipos del Grupo I:
+    </p>
+
+    <!-- Comparativa General de Atributos -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">📊 Comparativa General de Atributos</h4>
+    <div class="comparison-container">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th><img src="https://flagcdn.com/w40/fr.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Francia</th>
+<th><img src="https://flagcdn.com/w40/sn.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Senegal</th>
+<th><img src="https://flagcdn.com/w40/no.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Noruega</th>
+<th><img src="https://flagcdn.com/w40/iq.png" width="18" height="11" style="vertical-align:middle; margin-right:4px;"> Irak</th>
+
+          </tr>
+        </thead>
+        <tbody>
+                      <tr>
+              <td>Ataque</td>
+              <td><span class="stat-badge stat-mid">70</span></td>
+              <td><span class="stat-badge stat-high">84</span></td>
+              <td><span class="stat-badge stat-high">97</span></td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+            </tr>
+            <tr>
+              <td>Defensa</td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+              <td><span class="stat-badge stat-high">82</span></td>
+              <td><span class="stat-badge stat-mid">74</span></td>
+            </tr>
+            <tr>
+              <td>Posesión</td>
+              <td><span class="stat-badge stat-high">89</span></td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-mid">78</span></td>
+              <td><span class="stat-badge stat-high">86</span></td>
+            </tr>
+            <tr>
+              <td>Creatividad</td>
+              <td><span class="stat-badge stat-mid">75</span></td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+              <td><span class="stat-badge stat-high">81</span></td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+            </tr>
+            <tr>
+              <td>Físico</td>
+              <td><span class="stat-badge stat-mid">75</span></td>
+              <td><span class="stat-badge stat-mid">72</span></td>
+              <td><span class="stat-badge stat-high">81</span></td>
+              <td><span class="stat-badge stat-mid">71</span></td>
+            </tr>
+            <tr>
+              <td>Disciplina</td>
+              <td><span class="stat-badge stat-low">60</span></td>
+              <td><span class="stat-badge stat-low">68</span></td>
+              <td><span class="stat-badge stat-high">82</span></td>
+              <td><span class="stat-badge stat-mid">79</span></td>
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Análisis por Equipo -->
+    <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.3rem;">🔍 Análisis por Equipo</h4>
+    <div class="team-analysis-grid">
+      
+        <!-- Francia -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>FRANCIA</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Contendiente Mundial</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Velocidad con Mbappé (90):</strong> El contraataque más letal del planeta.</li>
+              <li><strong>Pegada Individual (87):</strong> Goles de alta dificultad técnica.</li>
+              <li><strong>Sólida Estructura (84):</strong> Doble pivote defensivo de contención.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Presión Pasiva (76):</strong> Ocasionalmente ceden terreno al oponente sin presionar.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Atracción en bloque medio, salida directa con balones largos al espacio y combinaciones rápidas por fuera.</p>
+        </div>
+
+        <!-- Senegal -->
+        <div class="analysis-card" style="border-color: rgba(0, 230, 118, 0.25);">
+          <h4>SENEGAL</h4>
+          <div class="profile-type">Perfil: Favorito del Grupo / Campeón Africano</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Potencia Física (85):</strong> Dominio en duelos y choques de intensidad.</li>
+              <li><strong>Dinamismo por Banda (81):</strong> Extremos veloces en 1v1.</li>
+              <li><strong>Defensa Coordinada (80):</strong> Línea de 4 muy experimentada.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Ataque contra Bloque Bajo (72):</strong> Falta de fluidez creativa sin espacios.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Presión en bloque medio, forzar la pérdida y explotar la velocidad exterior para desbordar.</p>
+        </div>
+
+        <!-- Noruega -->
+        <div class="analysis-card">
+          <h4>NORUEGA</h4>
+          <div class="profile-type">Perfil: Retador Europeo / Pegada del Delantero</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Definición de Haaland (88):</strong> Letalidad absoluta en el área.</li>
+              <li><strong>Centros al Área (78):</strong> Buenos lanzadores por las bandas.</li>
+              <li><strong>Ataque de Ruptura (77):</strong> Desmarques profundos de Haaland.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Estructura Defensiva (70):</strong> Facilidad para encajar goles si superan su mediocampo.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Presión alta selectiva, envíos verticales rápidos al área buscando la zancada de Haaland y centros rasos.</p>
+        </div>
+
+        <!-- Irak -->
+        <div class="analysis-card">
+          <h4>IRAK</h4>
+          <div class="profile-type">Perfil: Retador Asiático / Resistencia</div>
+          
+          <div class="analysis-points">
+            <h5>Fortalezas</h5>
+            <ul>
+              <li><strong>Combate Físico (79):</strong> Gran entrega en duelos de marca.</li>
+              <li><strong>Fuerza Aérea (77):</strong> Peligrosos en segundas jugadas.</li>
+              <li><strong>Compromiso Defensivo (76):</strong> Mucha gente detrás de la línea de la pelota.</li>
+            </ul>
+          </div>
+          
+          <div class="analysis-points weaknesses">
+            <h5>Debilidades</h5>
+            <ul>
+              <li><strong>Velocidad de Giro (64):</strong> Defensores lentos frente a desmarques ágiles.</li>
+              <li><strong>Pocas Variantes Ofensivas (61):</strong> Poca generación de juego.</li>
+            </ul>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--cyan); margin-top: 8px;"><strong>Estrategia:</strong> Esperar replegados en 4-5-1, evitar tiros directos y buscar faltas tácticas para cortar contragolpes.</p>
+        </div>
+
+    </div>
+
+    <!-- Matchups y Proyección -->
+    <div class="matchups-projection-grid">
+      
+      <!-- Matchups Clave -->
+      <div class="matchups-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">⚔️ Matchups Clave</h4>
+        <div class="matchups-list">
+          
+            <div class="matchup-item">
+              <div class="matchup-teams">Francia vs Senegal</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> El gran duelo físico y técnico. Francia parte favorita por la velocidad de Mbappé, pero Senegal opondrá gran resistencia.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Capacidad de los centrales de Senegal para frenar las contras de Mbappé.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Francia vs Noruega</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Duelo de artilleros: Mbappé contra Haaland. Francia tiene mejor mediocampo para surtir balones.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Marcaje del doble pivote francés sobre el suministro a Haaland.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Senegal vs Noruega</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Choque clave por el segundo puesto. El despliegue de Senegal contra la pegada noruega.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Control del juego aéreo de Haaland por parte de Senegal.</div>
+            </div>
+
+            <div class="matchup-item">
+              <div class="matchup-teams">Francia/Senegal vs Irak</div>
+              <div class="matchup-pred"><strong>Predicción:</strong> Ventaja clara para los favoritos, Irak plantará un bloque bajo defensivo.</div>
+              <div class="matchup-factor"><strong>Factor Decisivo:</strong> Eficacia en romper la línea defensiva iraquí.</div>
+            </div>
+
+        </div>
+      </div>
+
+      <!-- Proyección del Grupo -->
+      <div class="projection-container">
+        <h4 style="font-family: var(--font-head); color: var(--white); margin-bottom: 20px; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🏆 Proyección del Grupo</h4>
+        <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">Clasificación Esperada:</p>
+        <div class="projection-list">
+          
+            <div class="projection-item">
+              <div class="projection-rank rank-1">1</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Francia</div>
+                <div class="projection-desc">Su plantel plagado de estrellas e individualidad de Mbappé aseguran la punta.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-2">2</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Senegal</div>
+                <div class="projection-desc">Su equilibrio físico-táctico y experiencia de grupo les darán la clasificación.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-3">3</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Noruega</div>
+                <div class="projection-desc">Haaland marcará goles pero la inestabilidad defensiva les costará el pase.</div>
+              </div>
+            </div>
+
+            <div class="projection-item">
+              <div class="projection-rank rank-4">4</div>
+              <div class="projection-info">
+                <div class="projection-team-name">Irak</div>
+                <div class="projection-desc">Duro obstáculo defensivo pero sin volumen para competir en puntos.</div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  
+    <!-- ANÁLISIS TÁCTICO AVANZADO (MATERIAL EXTRA) -->
+    <div class="analysis-section" style="margin-top: 60px; padding-top: 60px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <h3 class="analysis-title" style="color: var(--green);">🧠 Análisis Táctico Avanzado</h3>
+      <p class="analysis-subtitle">A continuación, se presenta un análisis técnico y cuantitativo del **Grupo I** para el Mundial de Fútbol 2026, evaluando las virtudes, debilidades y el enfoque estratégico de cada selección a partir de sus perfiles estadísticos.</p>
+      
+      <div style="background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 32px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); color: #fff; line-height: 1.6;">
+        
+        <!-- Perfil por Perfil -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">🔍 Análisis Perfil por Perfil</h4>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">1. Noruega</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al examinar el archivo `PerfilTacticoNoruega.png`, la escuadra escandinava se consolida como el rival más fuerte y el gigante estadístico indiscutible de este sector, liderando casi todas las facetas del juego.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un potencial ofensivo devastador e inigualable (<strong>97</strong> en Ataque), respaldado por un equilibrio perfecto de solidez en su propia área (<strong>82</strong> en Defensa) y un comportamiento ético impecable (<strong>82</strong> en Disciplina). Es un equipo de altísimo nivel competitivo.</li>
+              <li><strong>Área de mejora:</strong> Su menor registro (aunque sigue siendo notable) es la Posesión (<strong>78</strong>), lo que delata una preferencia por transiciones muy verticales y un ataque directo para capitalizar su contundencia antes que posesiones excesivamente lentas.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">2. Senegal</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              De acuerdo con los datos del archivo `PerfilTacticoSenegal.png`, el combinado africano presenta un perfil marcadamente agresivo y punzante en la última línea.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su efectividad e impacto en el último tercio (<strong>84</strong> en Ataque), muy bien complementado por una fluidez constructiva respetable (<strong>79</strong> en Creatividad) y buena gestión del esférico (<strong>78</strong> en Posesión).</li>
+              <li><strong>Área de mejora:</strong> El control emocional y las transiciones defensivas. Su baja puntuación en Disciplina (<strong>68</strong>) combinada con una Defensa regular (<strong>72</strong>) sugiere un equipo propenso a desordenarse o cometer faltas tácticas ante ataques rápidos del rival.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">3. Francia</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              El desglose del archivo `PerfilTacticoFrancia.png` revela a "Les Bleus" con una propuesta táctica orientada casi exclusivamente al control absoluto de los hilos del encuentro mediante la tenencia.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Un dominio total del ritmo de juego a través de la circulación del esférico (<strong>89</strong> en Posesión), complementado por niveles equilibrados en el apartado físico y generativo (<strong>75</strong> tanto en Físico como en Creatividad).</li>
+              <li><strong>Área de mejora:</strong> La falta de contundencia y un serio problema de orden. Sorprende un escaso <strong>70</strong> en Ataque y una alarmante falta de Disciplina (<strong>60</strong>, la más baja del grupo), lo que expone a un equipo que puede volverse predecible con el balón y frustrarse tácticamente con facilidad.</li>
+            </ul>
+          </div>
+
+          <div style="border-left: 3px solid var(--cyan); padding-left: 16px;">
+            <h5 style="font-family: var(--font-head); color: #fff; font-size: 1.1rem; margin-bottom: 8px;">4. Irak</h5>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 8px;">
+              Al analizar el archivo `PerfilTacticoIrak.png`, el conjunto asiático se planta en la cita mundialista como una grata sorpresa competitiva, mostrando un balance colectivo muy aseado.
+            </p>
+            <ul style="list-style-type: disc; margin-left: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.85); display: flex; flex-direction: column; gap: 4px;">
+              <li><strong>Fortaleza principal:</strong> Su gran capacidad para monopolizar y asegurar el balón (<strong>86</strong> en Posesión) respaldada por un sólido sentido del orden y juego limpio (<strong>79</strong> en Disciplina), igualando a Senegal en el volumen creativo (<strong>79</strong>).</li>
+              <li><strong>Área de mejora:</strong> El fondo atlético y los duelos directos. Su registro más bajo se sitúa en el apartado Físico (<strong>71</strong>), lo que podría pasarles factura en las segundas jugadas o ante ritmos de ida y vuelta extenuantes.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <!-- Dinámica Táctica del Grupo -->
+        <h4 style="font-family: var(--font-head); color: var(--cyan); margin-bottom: 20px; font-size: 1.25rem;">⚡ Dinámica Táctica del Grupo</h4>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 20px;">La configuración del Grupo I vaticina una batalla encarnizada por la iniciativa y el espacio:</p>
+        <div style="display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; color: rgba(255,255,255,0.9);">
+          <div style="background: rgba(0, 149, 255, 0.05); border: 1px solid rgba(0, 149, 255, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>El monólogo del balón:</strong> Francia e Irak buscarán adormecer y controlar los partidos mediante secuencias largas de pases (con sus respectivos <strong>89</strong> y <strong>86</strong> en Posesión). Sin embargo, el gran reto para ambos será no quedar mal parados ante Noruega, que con una letal pegada de <strong>97</strong> está diseñada para destrozar cualquier pérdida de balón en la salida mediante contragolpes fulminantes.
+          </div>
+          <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid rgba(0, 230, 118, 0.15); padding: 16px; border-radius: var(--r);">
+            <strong>La disputa por el segundo boleto:</strong> Dejando a un lado el imponente perfil de Noruega, los duelos entre Francia, Senegal e Irak serán de alta escuela estratégica. Senegal intentará imponer su mayor pegada ante la tenencia francesa e iraquí, mientras que Irak apostará por su disciplina posicional para frustrar a una Francia que adolece de gol en su estadística.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="data">Data</span><span class="hack">Hacks</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#plataforma">Plataforma</a>
+        <a href="index.html#mundial2026">Mundial</a>
+        <a href="index.html#contenido">Contenido</a>
+        <a href="politica-privacidad.html" style="margin-left: 10px;">Privacidad</a>
+        <a href="terminos-servicio.html" style="margin-left: 10px;">Términos</a>
+      </div>
+      <div class="footer-domains">
+        Mundial 2026 · Analizado por <span>DataHacks IA</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
