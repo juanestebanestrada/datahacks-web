@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glosario de Datos, Métricas y KPIs — DataHacks</title>
+  <meta name="description" content="Glosario completo de métricas, variables clave y terminología técnica utilizada en nuestros casos de estudio de ciencia de datos: PropTech, seguridad urbana y analítica deportiva." />
+  <link rel="stylesheet" href="css/main.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    .page-header {
+      padding: 130px 0 40px;
+      background: radial-gradient(circle at 50% 20%, rgba(0, 230, 118, 0.1), transparent 70%);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-body {
+      padding: 50px 0 90px;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.88);
+    }
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      box-shadow: 0 4px 15px var(--blue-glow);
+    }
+    .term-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--cyan);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      transition: all 0.25s ease;
+    }
+    .term-card:hover {
+      border-color: var(--green);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .term-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .badge-inmuebles { color: #00e676; }
+    .badge-seguridad { color: #ffb300; }
+    .badge-deportes  { color: #00b0ff; }
+    .badge-churn     { color: #f43f5e; }
+    .badge-general   { color: #ce93d8; }
+
+    .term-title {
+      font-family: var(--font-head);
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .term-desc {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.65;
+    }
+    .term-desc strong {
+      color: rgba(255, 255, 255, 0.95);
+    }
+    .formula-pill {
+      display: inline-block;
+      background: rgba(0, 149, 255, 0.12);
+      border: 1px solid rgba(0, 149, 255, 0.3);
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio / Blog</a></li>
+        <li><a href="casos-estudio.html">Casos de Estudio</a></li>
+        <li><a href="mundial.html">Mundial 2026</a></li>
+        <li><a href="metodologia.html">Metodología</a></li>
+        <li><a href="glosario.html" style="color:var(--green); font-weight:700;">Glosario</a></li>
+        <li><a href="algoritmo.html">Algoritmo</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="mundial.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.82rem;">Ver Mundial 2026 🏆</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container" style="max-width:900px;">
+    <a href="casos-estudio.html" style="color:var(--cyan); font-size:0.9rem; font-weight:600; display:inline-block; margin-bottom:16px;">← Volver a Casos de Estudio</a>
+    <span class="badge" style="margin-bottom:12px;">Data Dictionary & KPIs</span>
+    <h1 style="font-family:var(--font-head); font-size:clamp(1.8rem, 3.5vw, 2.4rem); font-weight:800; margin-bottom:12px;">
+      Glosario de Métricas, KPIs y Conceptos Clave
+    </h1>
+    <p style="color:var(--muted); font-size:1.05rem;">
+      Definición técnica de las variables, indicadores y conceptos aplicados en nuestros casos de estudio de ciencia de datos: mercado inmobiliario, seguridad urbana y analítica de alto rendimiento.
+    </p>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="container" style="max-width:900px;">
+
+    <!-- Filtros de Categoría -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" onclick="filterGlosario('all')">Todos los Términos</button>
+      <button class="filter-btn" onclick="filterGlosario('churn')">Retención & Churn</button>
+      <button class="filter-btn" onclick="filterGlosario('inmobiliario')">Mercado Inmobiliario</button>
+      <button class="filter-btn" onclick="filterGlosario('seguridad')">Seguridad Urbana</button>
+      <button class="filter-btn" onclick="filterGlosario('deportes')">Rendimiento Deportivo</button>
+    </div>
+
+    <div id="termsGrid">
+
+      <!-- ==========================================
+           SECCIÓN RETENCIÓN & CHURN (DECISION SCIENCE)
+           ========================================== -->
+      <div class="term-card" data-category="churn" style="border-left-color: #f43f5e;">
+        <span class="term-badge badge-churn">Retención · Decision Science</span>
+        <div class="term-title">Churn Rate (Tasa de Abandono de Clientes)</div>
+        <p class="term-desc">
+          Proporción de usuarios o suscriptores que cancelan o no renuevan su relación comercial con la empresa durante un periodo de tiempo determinado. En industrias de suscripción recurrente (como telecomunicaciones o SaaS), el churn representa la principal fuga de flujo de caja y rentabilidad acumulada.
+        </p>
+        <div class="formula-pill">
+          \[\text{Churn Rate} = \frac{\text{Clientes Perdidos en el Periodo } T}{\text{Total de Clientes al Inicio del Periodo } T} \times 100\]
+        </div>
+      </div>
+
+      <div class="term-card" data-category="churn" style="border-left-color: #f43f5e;">
+        <span class="term-badge badge-churn">Finanzas Cuantitativas · Customer Analytics</span>
+        <div class="term-title">Customer Lifetime Value (CLV / LTV) & Valor Salvado (\(V\))</div>
+        <p class="term-desc">
+          Valor monetario presente de los ingresos netos futuros que un cliente aportará a la compañía a lo largo de toda su vida útil. En campañas de retención tácticas, el <strong>Valor del Cliente Retenido (\(V\))</strong> se calcula como el cargo mensual facturado multiplicado por el horizonte esperado de permanencia que la oferta logra extender (típicamente 6 a 12 meses):
+        </p>
+        <div class="formula-pill">
+          \[V_i = \text{MonthlyCharges}_i \times H \quad \text{donde } H \text{ es el horizonte de retención en meses}\]
+        </div>
+      </div>
+
+      <div class="term-card" data-category="churn" style="border-left-color: #f43f5e;">
+        <span class="term-badge badge-churn">Machine Learning · Calibración Probabilística</span>
+        <div class="term-title">Calibración de Probabilidades y Brier Score</div>
+        <p class="term-desc">
+          Propiedad fundamental de un clasificador probabilístico en virtud de la cual la probabilidad predicha \(\hat{p}\) coincide exactamente con la frecuencia observada de eventos en el mundo real. Si un modelo no está calibrado, distorsiona los flujos monetarios en decisiones de costo-beneficio. Se evalúa con el <strong>Brier Score</strong> (error cuadrático medio de las probabilidades predichas frente a la verdad binaria):
+        </p>
+        <div class="formula-pill">
+          \[\text{BS} = \frac{1}{N} \sum_{i=1}^{N} (p_i - y_i)^2 \quad \in [0, 1] \quad (\text{menor es mejor})\]
+        </div>
+      </div>
+
+      <div class="term-card" data-category="churn" style="border-left-color: #f43f5e;">
+        <span class="term-badge badge-churn">Evaluación de Modelos · Desbalance de Clases</span>
+        <div class="term-title">AUC-PR (Área bajo la Curva Precision-Recall)</div>
+        <p class="term-desc">
+          Métrica de rendimiento imprescindible cuando la clase de interés es minoritaria (como el abandono con un 26% de prevalencia). A diferencia del ROC-AUC (que puede ser artificialmente optimista al incluir verdaderos negativos masivos), el AUC-PR evalúa de manera estricta el compromiso entre la precisión (de los llamados, cuántos realmente se iban a ir) y la exhaustividad o recall (de los que se iban a ir, cuántos logramos detectar).
+        </p>
+      </div>
+
+      <div class="term-card" data-category="churn" style="border-left-color: #f43f5e;">
+        <span class="term-badge badge-churn">Decision Science · Optimización Financiera</span>
+        <div class="term-title">Beneficio Financiero Neto Esperado (\(E[\text{Beneficio}]\))</div>
+        <p class="term-desc">
+          Ecuación de decisión que pondera la probabilidad individual de fuga \(p_i\), la efectividad de la campaña \(s\), el valor del cliente salvado \(V_i\), el costo fijo de contactar \(c\) y el costo de la oferta promocional \(o\). Permite fijar el corte en función de maximizar dólares y no métricas arbitrarias de clasificación:
+        </p>
+        <div class="formula-pill">
+          \[E[\text{Beneficio}_i] = p_i \cdot s \cdot (V_i - o) - c\]
+        </div>
+      </div>
+
+      <div class="term-card" data-category="churn" style="border-left-color: #f43f5e;">
+        <span class="term-badge badge-churn">Estrategia Comercial · Priorización de Campaña</span>
+        <div class="term-title">Lift y Curva de Ganancia Acumulada (Cumulative Gains)</div>
+        <p class="term-desc">
+          Medida de eficacia comercial que cuantifica cuántas veces es mejor la selección guiada por el modelo predictivo frente a un contacto aleatorio indiscriminado. Un <strong>Lift de \(2.86\times\)</strong> en el decil superior significa que contactar a ese 10% de clientes rinde casi el triple de abandonos detectados que una campaña al azar, permitiendo capturar el \(50.3\%\) de los abandonos contactando solo al \(20\%\) de la base.
+        </p>
+        <div class="formula-pill">
+          \[\text{Lift} = \frac{\text{Tasa de Churn en el Decil Priorizado}}{\text{Tasa de Churn Global de la Población}}\]
+        </div>
+      </div>
+
+      <!-- ==========================================
+           SECCIÓN INMOBILIARIO & PROPTECH
+           ========================================== -->
+      <div class="term-card" data-category="inmobiliario" style="border-left-color: #00e676;">
+        <span class="term-badge badge-inmuebles">PropTech · Finanzas Inmobiliarias</span>
+        <div class="term-title">Cap Rate (Tasa de Capitalización Bruta Anual)</div>
+        <p class="term-desc">
+          Indicador financiero primordial que mide el retorno porcentual bruto anual que genera un inmueble a través de sus rentas por alquiler, en relación directa con su costo de adquisición. Permite comparar la rentabilidad de comprar para alquilar entre distintas zonas geográficas independientemente del tamaño de la propiedad.
+        </p>
+        <div class="formula-pill">
+          \[\text{Cap Rate} = \frac{\text{Canon de Arriendo Anual}}{\text{Precio de Compra}} \times 100 = \frac{\text{Arriendo Mediano } \text{m}^2 \times 12}{\text{Venta Mediana } \text{m}^2} \times 100\]
+        </div>
+      </div>
+
+      <div class="term-card" data-category="inmobiliario" style="border-left-color: #00e676;">
+        <span class="term-badge badge-inmuebles">PropTech · Modelado Predictivo</span>
+        <div class="term-title">Modelo Hedónico de Precio Justo</div>
+        <p class="term-desc">
+          Marco econométrico y de aprendizaje automático que descompone el precio de un bien complejo en función del conjunto de atributos que lo integran (superficie en m², dotación de baños, habitaciones, estrato socioeconómico y localización espacial). El <strong>Precio Justo</strong> es el valor esperado de mercado predicho por el modelo estadístico para esas características objetivas, libre de especulaciones subjetivas del vendedor.
+        </p>
+      </div>
+
+      <div class="term-card" data-category="inmobiliario" style="border-left-color: #00e676;">
+        <span class="term-badge badge-inmuebles">PropTech · Detección de Oportunidades</span>
+        <div class="term-title">Ratio de Valoración (Detección de Gangas vs Sobreprecio)</div>
+        <p class="term-desc">
+          Cociente adimensional entre el precio de oferta pedido en el mercado y el precio justo predicho por el algoritmo. Clasifica cada anuncio en tres estados operativos:
+        </p>
+        <ul style="color:var(--muted); margin: 8px 0 0 20px; font-size: 0.95rem;">
+          <li><strong>Ganga / Oportunidad (\(\text{Ratio} < 0.85\)):</strong> El inmueble se oferta con más del 15% de descuento sobre su valor fundamentado.</li>
+          <li><strong>Precio Justo (\(0.85 \le \text{Ratio} \le 1.15\)):</strong> Cotiza dentro del rango normal de equilibrio de mercado.</li>
+          <li><strong>Sobrevalorado (\(\text{Ratio} > 1.15\)):</strong> Activo con sobreprecio especulativo mayor al 15%.</li>
+        </ul>
+      </div>
+
+      <div class="term-card" data-category="inmobiliario" style="border-left-color: #00e676;">
+        <span class="term-badge badge-inmuebles">PropTech · Alquiler Vacacional</span>
+        <div class="term-title">Yield Turístico (Efecto Inside Airbnb)</div>
+        <p class="term-desc">
+          Rendimiento económico derivado del alquiler de corta estancia (por noche) en plataformas tipo Airbnb frente al contrato de arriendo residencial tradicional de 12 meses. Se calcula proyectando la tarifa media diaria (ADR - Average Daily Rate) sobre una tasa de ocupación efectiva de mercado (típicamente del 60% al 65%), lo que permite medir el <em>Multiplicador Airbnb</em> por zona.
+        </p>
+      </div>
+
+      <div class="term-card" data-category="inmobiliario" style="border-left-color: #00e676;">
+        <span class="term-badge badge-inmuebles">PropTech · Estandarización</span>
+        <div class="term-title">Precio Unitario por Metro Cuadrado (\(\text{COP} / \text{m}^2\))</div>
+        <p class="term-desc">
+          Métrica elemental de normalización que elimina el sesgo del tamaño de la vivienda. Permite comparar si una zona es intrínsecamente más cara que otra aislando si la muestra observada contiene apartamentos pequeños o casas amplias.
+        </p>
+      </div>
+
+      <!-- ==========================================
+           SECCIÓN SEGURIDAD URBANA & CRIMINOLOGÍA
+           ========================================== -->
+      <div class="term-card" data-category="seguridad" style="border-left-color: #ffb300;">
+        <span class="term-badge badge-seguridad">Criminología · Normalización Demográfica</span>
+        <div class="term-title">Tasa Delictiva por 100.000 Habitantes</div>
+        <p class="term-desc">
+          Indicador estándar internacional que expresa la frecuencia de ocurrencia de un delito en relación directa con el volumen poblacional de la unidad territorial. Evita la falacia de calificar a una comuna densamente poblada como "más insegura" simplemente porque registra más denuncias totales en términos absolutos.
+        </p>
+        <div class="formula-pill">
+          \[\text{Tasa}_{i, k} = \frac{\text{Conteo de Hechos}_{i, k}}{\text{Población Residente}_i} \times 100.000\]
+        </div>
+      </div>
+
+      <div class="term-card" data-category="seguridad" style="border-left-color: #ffb300;">
+        <span class="term-badge badge-seguridad">Criminología · Ingeniería de Datos</span>
+        <div class="term-title">Deduplicación por Hecho Único</div>
+        <p class="term-desc">
+          Protocolo de limpieza que unifica registros múltiples generados administrativamente en las bases policiales. Por ejemplo, en un hurto residencial donde se sustraen 3 computadores y joyas, el sistema genera 4 filas idénticas con distintos códigos de bien. La deduplicación agrupa por la clave única <code>dataset + fecha + coordenadas + barrio + modalidad</code> para contabilizar un único evento delictivo real.
+        </p>
+      </div>
+
+      <div class="term-card" data-category="seguridad" style="border-left-color: #ffb300;">
+        <span class="term-badge badge-seguridad">Criminología · Demografía Urbana</span>
+        <div class="term-title">Población Flotante vs Población Residente</div>
+        <p class="term-desc">
+          Fenómeno espacial donde sectores comerciales, universitarios o gubernamentales (como La Candelaria en Medellín o la Candelaria/Santa Fe en Bogotá) concentran a cientos de miles de transeúntes diurnos pero pocos residentes censados. Esto produce una distorsión en el denominador per cápita, inflando artificialmente las tasas de hurto per cápita en zonas céntricas.
+        </p>
+      </div>
+
+      <div class="term-card" data-category="seguridad" style="border-left-color: #ffb300;">
+        <span class="term-badge badge-seguridad">Criminología · Temporalidad</span>
+        <div class="term-title">Shares Temporales (share_noche y share_finde)</div>
+        <p class="term-desc">
+          Proporción porcentual de delitos registrados en franja nocturna (20:00 a 05:59 horas) y durante fines de semana (sábado y domingo). Permite caracterizar si una zona padece delincuencia asociada a la vida nocturna y el ocio o criminalidad diurna de congestión laboral.
+        </p>
+      </div>
+
+      <!-- ==========================================
+           SECCIÓN DEPORTIVA (FÚTBOL & LA LIGA)
+           ========================================== -->
+      <div class="term-card" data-category="deportes" style="border-left-color: #00b0ff;">
+        <span class="term-badge badge-deportes">Fútbol · Finalización</span>
+        <div class="term-title">xG — Goles Esperados (Expected Goals)</div>
+        <p class="term-desc">
+          Probabilidad matemática (entre 0.0 y 1.0) de que un remate termine en gol, calculada con base en la distancia a portería, ángulo de tiro, presión defensiva y tipo de asistencia previa. Permite aislar la calidad de la ocasión de la suerte del disparo.
+        </p>
+      </div>
+
+      <div class="term-card" data-category="deportes" style="border-left-color: #00b0ff;">
+        <span class="term-badge badge-deportes">Fútbol · Creación</span>
+        <div class="term-title">xA — Asistencias Esperadas (Expected Assists)</div>
+        <p class="term-desc">
+          Probabilidad de que un pase se traduzca en gol independientemente de si el receptor concreta la oportunidad. Premia la precisión del pasador sin penalizarlo por la ineficacia del delantero.
+        </p>
+      </div>
+
+      <div class="term-card" data-category="deportes" style="border-left-color: #00b0ff;">
+        <span class="term-badge badge-deportes">Fútbol · KPI Predictivo Primario</span>
+        <div class="term-title">xG Buildup (Participación en Construcción de Juego)</div>
+        <p class="term-desc">
+          Suma del xG de todas las jugadas en las que interviene un jugador, <strong>excluyendo expresamente al autor del tiro y de la asistencia</strong>. Es el KPI por excelencia para medir la influencia de mediocentros y defensas en la elaboración colectiva. En La Liga 2023-24, el Real Madrid superó en un <strong>+94.7%</strong> a los equipos descendidos en esta métrica.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<footer style="background:var(--bg-deep); border-top:1px solid var(--border); padding:40px 0; text-align:center;">
+  <div class="container">
+    <p style="color:var(--muted); font-size:0.85rem;">DataHacks · Métricas, Glosarios e Inteligencia de Datos</p>
+  </div>
+</footer>
+
+<script>
+  function filterGlosario(category) {
+    const cards = document.querySelectorAll('.term-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      if (category === 'all' || cat === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

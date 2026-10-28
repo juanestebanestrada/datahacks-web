@@ -19,3 +19,9 @@ chrome_profile_test_v2/
 
 # Temporary scratch folder
 scratch/
+
+# Data science & local analysis workspaces in repository root
+/Inmobiliario/
+/churn_telco/
+/data_proyecto/
+/salud_reingreso/

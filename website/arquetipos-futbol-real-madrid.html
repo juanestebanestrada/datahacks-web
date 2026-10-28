@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caso de Estudio: Identificación de Arquetipos de Jugadores Ganadores — DataHacks</title>
+  <meta name="description" content="Análisis Comparativo entre Real Madrid (Campeón) y Equipos Descendidos en La Liga 2023-24 mediante K-Means, PCA y métricas avanzadas de fútbol." />
+  <link rel="stylesheet" href="css/main.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263725844742178" crossorigin="anonymous"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    .article-header {
+      padding: 130px 0 50px;
+      background: radial-gradient(circle at 50% 20%, rgba(0, 149, 255, 0.12), transparent 70%);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .academic-meta-card {
+      background: rgba(13, 31, 53, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      margin: 30px 0 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .meta-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--cyan);
+      font-weight: 700;
+    }
+    .meta-val {
+      font-size: 0.95rem;
+      color: #fff;
+      font-weight: 500;
+    }
+    .resource-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .btn-resource {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 149, 255, 0.12);
+      border: 1px solid var(--border);
+      color: var(--cyan);
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .btn-resource:hover {
+      background: var(--blue);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--blue-glow);
+    }
+    .article-body {
+      padding: 50px 0 100px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.88);
+    }
+    .article-body h2 {
+      font-family: var(--font-head);
+      font-size: 1.85rem;
+      color: #fff;
+      margin: 50px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .article-body h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: var(--green);
+      border-radius: 4px;
+      box-shadow: 0 0 12px var(--green);
+    }
+    .article-body h3 {
+      font-family: var(--font-head);
+      font-size: 1.35rem;
+      color: var(--cyan);
+      margin: 32px 0 14px;
+    }
+    .article-body p {
+      margin-bottom: 22px;
+    }
+    .article-body ul {
+      margin: 16px 0 24px 24px;
+    }
+    .article-body li {
+      margin-bottom: 10px;
+    }
+    .figure-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      margin: 40px 0;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+    .figure-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--r);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #091322;
+    }
+    .figure-caption {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 14px;
+      display: block;
+      line-height: 1.5;
+    }
+    .figure-caption strong {
+      color: var(--cyan);
+    }
+    .stat-callout {
+      background: linear-gradient(135deg, rgba(0, 230, 118, 0.08), rgba(0, 149, 255, 0.08));
+      border-left: 4px solid var(--green);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 24px 28px;
+      margin: 35px 0;
+    }
+    .stat-callout-title {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    .kpi-table-wrap {
+      overflow-x: auto;
+      margin: 35px 0;
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+    }
+    .kpi-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+      background: var(--bg-card);
+    }
+    .kpi-table th {
+      background: rgba(0, 149, 255, 0.15);
+      color: var(--cyan);
+      padding: 14px 18px;
+      font-family: var(--font-head);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border);
+    }
+    .kpi-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .kpi-table tr:hover td {
+      background: rgba(0, 149, 255, 0.05);
+    }
+    .kpi-table tr:last-child td {
+      border-bottom: none;
+    }
+    .pill-advantage {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: rgba(0, 230, 118, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(0, 230, 118, 0.3);
+    }
+    .decision-card {
+      background: rgba(13, 31, 53, 0.6);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      margin: 24px 0;
+      transition: all 0.3s ease;
+    }
+    .decision-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .decision-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+      box-shadow: 0 0 12px var(--blue-glow);
+    }
+    .decision-title {
+      font-family: var(--font-head);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .back-btn-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn-top:hover {
+      color: #fff;
+      transform: translateX(-4px);
+    }
+    .references-list {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .references-list li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio / Blog</a></li>
+        <li><a href="casos-estudio.html" style="color: var(--cyan); font-weight:700;">Casos de Estudio</a></li>
+        <li><a href="mundial.html">Mundial 2026</a></li>
+        <li><a href="metodologia.html">Metodología</a></li>
+        <li><a href="glosario.html">Glosario</a></li>
+        <li><a href="algoritmo.html">Algoritmo</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="mundial.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.82rem;">Ver Mundial 2026 🏆</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<header class="article-header">
+  <div class="container">
+    <div class="article-wrap">
+      <a href="casos-estudio.html" class="back-btn-top">← Volver a Casos de Estudio</a>
+      <span class="badge" style="margin-bottom:16px;">Caso de Estudio · Toma de Decisiones Estratégicas</span>
+      <h1 style="font-family:var(--font-head); font-size:clamp(1.9rem, 4vw, 2.7rem); line-height:1.2; font-weight:800; margin-bottom:18px;">
+        Identificación de Arquetipos de Jugadores Ganadores: Análisis Comparativo entre Real Madrid (Campeón) y Equipos Descendidos en La Liga 2023-24
+      </h1>
+      <p style="color:var(--muted); font-size:1.1rem; line-height:1.6; margin-bottom:24px;">
+        Ciencia de datos para la toma de decisiones estratégicas. Un estudio cuantitativo que demuestra cómo una estructura equilibrada de roles y una ventaja de <strong>+94.7% en xG Buildup/90</strong> explican el campeonato frente al descenso.
+      </p>
+
+      <div class="academic-meta-card">
+        <div class="meta-item">
+          <span class="meta-label">Disciplina</span>
+          <span class="meta-val">Ciencia de Datos</span>
+          <span style="font-size:0.8rem; color:var(--muted);">Decisiones Estratégicas Basadas en Datos</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Metodología</span>
+          <span class="meta-val">K-Means & PCA</span>
+          <span style="font-size:0.8rem; color:var(--muted);">Clustering No Supervisado</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Contexto de Aplicación</span>
+          <span class="meta-val">La Liga 2023-24</span>
+          <span style="font-size:0.8rem; color:var(--muted);">Caso de Interés Particular</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Publicación</span>
+          <span class="meta-val">DataHacks Research</span>
+          <span style="font-size:0.8rem; color:var(--green);">Artículo de Investigación</span>
+        </div>
+      </div>
+
+      <div class="resource-btns">
+        <a href="https://colab.research.google.com/drive/1bprhLH7lOvWbYLGvhn10gq-M2iBwAGC7?usp=sharing" target="_blank" rel="noopener" class="btn-resource">
+          🚀 Abrir Google Colaboratory (Código) ↗
+        </a>
+        <a href="https://drive.google.com/file/d/1OVLNrqjY8qP1D1ZK18VUZNyJkIfC-pL8/view?usp=sharing" target="_blank" rel="noopener" class="btn-resource">
+          💾 Descargar Dataset (Google Drive) ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     BODY
+══════════════════════════════════════════ -->
+<main class="article-body">
+  <div class="container">
+    <div class="article-wrap">
+
+      <!-- 1. INTRODUCCIÓN -->
+      <h2>1. Introducción y Planteamiento del Problema</h2>
+      <p>
+        La composición del equipo es un factor crítico para el éxito deportivo en el fútbol profesional. Sin embargo, las organizaciones frecuentemente invierten recursos significativos en jugadores individuales sin comprender realmente qué perfiles o arquetipos de jugadores son los que verdaderamente ganan títulos.
+      </p>
+      <p>
+        La pregunta fundamental a la que nos enfrentamos es: <em>¿Existe un patrón identificable en los tipos de jugadores que poseen los equipos campeones versus los que descienden?</em> En la temporada 2023-24 de La Liga de España, el <strong>Real Madrid conquistó el título</strong>, mientras que <strong>Almería, Cádiz y Granada descendieron</strong>. ¿Cuál fue la diferencia fundamental en la composición de sus plantillas?
+      </p>
+      
+      <div class="stat-callout">
+        <div class="stat-callout-title">Hipótesis Central del Estudio</div>
+        <p style="margin-bottom:0;">
+          Los equipos ganadores no necesariamente tienen jugadores "mejores" de forma individual, sino que poseen una <strong>combinación equilibrada y complementaria de diferentes arquetipos tácticos</strong>. Este enfoque permite a las directivas tomar decisiones objetivas e informadas sobre qué tipos de perfiles se necesitan desarrollar o fichar.
+        </p>
+      </div>
+
+      <p>
+        El objetivo final es proporcionar <strong>recomendaciones estratégicas fundamentadas en datos</strong> que guíen futuras decisiones de transferencias, rotaciones tácticas y construcción de plantilla. Al identificar qué arquetipos están sobrerrepresentados en campeones y cuáles faltan en equipos descendidos, establecemos un marco de referencia de valor estratégico.
+      </p>
+
+      <!-- 2. EXPLORACIÓN DE DATOS -->
+      <h2>2. Exploración de Datos y Análisis</h2>
+      <p>
+        Se analizaron <strong>489 jugadores de La Liga 2023-24</strong> con más de 500 minutos de participación activa. El conjunto de datos incluye 27 jugadores del Real Madrid (Campeón), 74 jugadores de equipos descendidos (Almería, Cádiz, Granada) y 388 jugadores de los restantes equipos del campeonato.
+      </p>
+      <p>
+        Todas las métricas fueron normalizadas a <strong>90 minutos de juego (P90)</strong> para permitir comparaciones equitativas independientemente del volumen de minutos en cancha. Se calcularon variables avanzadas derivadas: <em>Goals por 90 minutos</em>, <em>Expected Goals (xG)</em>, <em>Asistencias (xA)</em>, <em>Expected Assists</em>, <em>Pases Clave (Key Passes)</em>, <em>xG Chain (goles en cadena)</em> y <em>xG Buildup (goles en fase de construcción)</em>.
+      </p>
+
+      <div class="figure-box">
+        <img src="assets/caso_scatter.png" alt="Scatter Plot Goals vs xG Buildup">
+        <span class="figure-caption">
+          <strong>Figura 1:</strong> Scatter Plot: Goals vs xG Buildup normalizado por 90 minutos, coloreado por arquetipo táctico, contrastando marcadores de Campeón (○) vs Descendidos (×).
+        </span>
+      </div>
+
+      <p>
+        El análisis exploratorio reveló patrones categóricos en la distribución de arquetipos. Los equipos ganadores (Real Madrid) exhiben una composición altamente especializada con fuerte peso en arquetipos ofensivos y creativos, mientras que los descendidos padecen una <strong>sobrerrepresentación masiva de defensores puros (270 de 489 jugadores, 55%)</strong> con mínima capacidad de aporte en ataque.
+      </p>
+
+      <div class="figure-box">
+        <img src="assets/caso_radar.png" alt="Perfil Ideal por Arquetipo Radar Chart">
+        <span class="figure-caption">
+          <strong>Figura 2:</strong> Radar Chart multidimensional evaluando el perfil distintivo de cada uno de los 4 arquetipos identificados en 5 métricas clave.
+        </span>
+      </div>
+
+      <div class="figure-box">
+        <img src="assets/caso_distribucion.png" alt="Distribución de Arquetipos en La Liga 2023-24">
+        <span class="figure-caption">
+          <strong>Figura 3:</strong> Distribución poblacional de arquetipos en La Liga 2023-24: Defensivo/Soporte (198), Distribuidor (82), Finalizador (71), Creador (58).
+        </span>
+      </div>
+
+      <div class="figure-box">
+        <img src="assets/caso_probabilidad.png" alt="Probabilidad de estar en Campeón por Arquetipo">
+        <span class="figure-caption">
+          <strong>Figura 4:</strong> Probabilidad condicional de presencia en el equipo campeón por arquetipo.
+        </span>
+      </div>
+
+      <h3>Cuadro 1: Probabilidad de cada Arquetipo en Campeón vs Descendidos</h3>
+      <div class="kpi-table-wrap">
+        <table class="kpi-table">
+          <thead>
+            <tr>
+              <th>Arquetipo</th>
+              <th>Total Muestra</th>
+              <th>En Campeón</th>
+              <th>En Descendidos</th>
+              <th>% en Campeón</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Distribuidor (Build-up / Medio)</strong></td>
+              <td>8</td>
+              <td>8</td>
+              <td>0</td>
+              <td><span class="pill-advantage">100.0%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Creador (Asistidor / Winger)</strong></td>
+              <td>9</td>
+              <td>8</td>
+              <td>1</td>
+              <td><span class="pill-advantage">88.9%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Finalizador (Goleador)</strong></td>
+              <td>2</td>
+              <td>2</td>
+              <td>4</td>
+              <td>33.3%</td>
+            </tr>
+            <tr>
+              <td><strong>Defensivo / Soporte</strong></td>
+              <td>18</td>
+              <td>2</td>
+              <td>16</td>
+              <td>11.1%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="figure-box">
+        <img src="assets/caso_heatmap.png" alt="Matriz de Características por Arquetipo Heatmap">
+        <span class="figure-caption">
+          <strong>Figura 5:</strong> Matriz de características (Heatmap) demostrando perfiles complementarios y disjuntos entre arquetipos tácticos.
+        </span>
+      </div>
+
+      <div class="stat-callout">
+        <div class="stat-callout-title">El Hallazgo Crítico: Peligro en Fase de Construcción</div>
+        <p>
+          Las métricas de construcción de juego resultaron decisivas: el equipo campeón generó <strong>94.7% más xG Buildup por 90 minutos</strong> que los equipos descendidos (0.387 vs 0.198). Esto comprueba que el Real Madrid no se limitaba a convertir ocasiones aisladas, sino que dominaba sistemáticamente la gestación del peligro colectivo.
+        </p>
+      </div>
+
+      <h3>Cuadro 2: Estadísticas Promedio — Campeón vs Descendidos</h3>
+      <div class="kpi-table-wrap">
+        <table class="kpi-table">
+          <thead>
+            <tr>
+              <th>Métrica Normalizada</th>
+              <th>Campeón (Real Madrid)</th>
+              <th>Descendidos (Almería, Cádiz, Granada)</th>
+              <th>Ventaja Competitiva</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>xG Buildup / 90</strong></td>
+              <td>0.521</td>
+              <td>0.147</td>
+              <td><span class="pill-advantage">+252.7%</span></td>
+            </tr>
+            <tr>
+              <td><strong>xG Chain / 90</strong></td>
+              <td>0.741</td>
+              <td>0.254</td>
+              <td><span class="pill-advantage">+191.0%</span></td>
+            </tr>
+            <tr>
+              <td><strong>xA / 90</strong></td>
+              <td>0.153</td>
+              <td>0.072</td>
+              <td><span class="pill-advantage">+111.0%</span></td>
+            </tr>
+            <tr>
+              <td><strong>xG / 90</strong></td>
+              <td>0.189</td>
+              <td>0.108</td>
+              <td><span class="pill-advantage">+74.3%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Key Passes / 90</strong></td>
+              <td>1.173</td>
+              <td>0.673</td>
+              <td><span class="pill-advantage">+74.2%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 3. ESTRATEGIA Y MÉTODOS -->
+      <h2>3. Estrategia y Métodos de Ciencia de Datos</h2>
+      <p>
+        Para descubrir los arquetipos naturales sin introducir sesgos subjetivos de posiciones nominales (e.g. "lateral" o "extremo"), se implementó el algoritmo de aprendizaje no supervisado <strong>K-Means Clustering</strong> sobre 5 variables normalizadas: <em>Goals/90</em>, <em>Assists/90</em>, <em>xG Chain/90</em>, <em>xG Buildup/90</em> y <em>Key Passes/90</em>.
+      </p>
+      <ul>
+        <li><strong>Preprocesamiento:</strong> Escalado con <code>StandardScaler</code> para garantizar varianza unitaria y evitar que métricas con escalas numéricas mayores distorsionen el cálculo de distancias euclidianas.</li>
+        <li><strong>Selección de Clústeres:</strong> Se seleccionaron <code>k = 4</code> clústeres mediante el método del codo (Elbow Method) y el coeficiente Silhouette, equilibrando interpretabilidad y captura de varianza.</li>
+        <li><strong>Reducción de Dimensionalidad:</strong> Se aplicó <strong>PCA (Principal Component Analysis)</strong> para proyectar el espacio vectorial en dos componentes principales, explicando más del 80% de la varianza combinada.</li>
+      </ul>
+
+      <div class="figure-box">
+        <img src="assets/caso_pca.png" alt="PCA Espacios de Arquetipos en 2D">
+        <span class="figure-caption">
+          <strong>Figura 6:</strong> PCA: Espacios de Arquetipos en 2D (● = Otros | ★ = Campeón Real Madrid | × = Descendidos).
+        </span>
+      </div>
+
+      <p>
+        La visualización PCA evidenció que los futbolistas del Real Madrid (★) se dispersan en <strong>todos los cuadrantes del espacio dimensional</strong>, lo que refleja máxima diversidad funcional y complementariedad. Por el contrario, los jugadores de equipos descendidos (×) se concentran densamente en una zona restrictiva de baja creación y baja finalización.
+      </p>
+
+      <!-- 4. RESULTADOS Y EXPLICACIÓN ORGANIZACIONAL -->
+      <h2>4. Resultados y Explicación en Contexto Organizacional</h2>
+      <p>
+        El modelo agrupó a los futbolistas en 4 arquetipos con comportamientos netamente diferenciados:
+      </p>
+      <ul>
+        <li><strong>Finalizadores (Goleadores):</strong> 83 jugadores en la liga (30.1% presentes en el campeón). Especializados en conversión de ocasiones (0.40 Goals/90) con modesta contribución asociativa.</li>
+        <li><strong>Creadores (Asistidores / Wingers):</strong> 109 jugadores (35.8% en el campeón). Generadores de juego decisivo y desequilibrio (0.10 Assists/90, 0.18 xG Buildup/90, 1.97 Key Passes/90).</li>
+        <li><strong>Distribuidores (Build-up / Mediocampistas):</strong> 27 jugadores (18.5% en el campeón). Especialistas en la iniciación progresiva y circulación limpia de la posesión.</li>
+        <li><strong>Defensivos / Soporte:</strong> 270 jugadores (únicamente 16.7% en el campeón). Roles con nulo o mínimo impacto ofensivo. Los descendidos dependieron de ellos en un <strong>55% de sus minutos</strong>.</li>
+      </ul>
+
+      <!-- 5. DISCUSIÓN Y DECISIONES ESTRATÉGICAS -->
+      <h2>5. Discusión y Decisiones Estratégicas para la Organización</h2>
+      <p>
+        A partir de estos hallazgos, se formulan cuatro directrices operativas y estratégicas aplicables a direcciones deportivas y cuerpos técnicos:
+      </p>
+
+      <div class="decision-card">
+        <div class="decision-num">1</div>
+        <div class="decision-title">Reorientar la Filosofía de Fichajes: De la "Superestrella Individual" a la "Composición de Arquetipos"</div>
+        <p>
+          Invertir recursos masivos en un delantero de 30 goles resulta inútil si el equipo no genera volumen de juego. Es sustancialmente más eficiente asegurar una plantilla con 4-5 Finalizadores que sumen colectivamente 2-3 goles/90, 3-4 Creadores que garanticen asistencias y suficientes Distribuidores para sostener la fluidez ofensiva. Los criterios de scouting deben responder a: <em>¿Qué arquetipo específico equilibra nuestra distribución actual?</em>
+        </p>
+      </div>
+
+      <div class="decision-card">
+        <div class="decision-num">2</div>
+        <div class="decision-title">Implementar Rotaciones Estratégicas Basadas en Complementariedad</div>
+        <p>
+          Los Defensivos Puros aportan solidez pero limitan la producción ofensiva si saturan el once inicial. Las alineaciones deben diseñarse para garantizar un umbral mínimo de Creadores y Distribuidores en cancha en todo momento, evitando esquemas sobrepoblados de perfiles no contributivos en construcción.
+        </p>
+      </div>
+
+      <div class="decision-card">
+        <div class="decision-num">3</div>
+        <div class="decision-title">Identificar Ineficiencias de Mercado: "Jugadores Ganadores en Equipos Descendidos"</div>
+        <p>
+          Futbolistas con perfiles cuantitativos de Creador o Distribuidor que militan en equipos que pierden la categoría suelen sufrir depreciación injustificada en su cotización de mercado. Representan oportunidades de adquisición con alto ROI, ya que poseen aptitudes probadas en la máxima categoría a la espera de un contexto colectivo favorable.
+        </p>
+      </div>
+
+      <div class="decision-card">
+        <div class="decision-num">4</div>
+        <div class="decision-title">Instituir Métricas de Construcción (xG Buildup) como KPI Primario de Rendimiento</div>
+        <p>
+          Evaluar el rendimiento exclusivamente por goles o victorias inmediatas conduce a sesgos por varianza de muestra pequeña. El <code>xG Buildup/90</code> precede a las anotaciones y predice la sostenibilidad del modelo de juego a mediano y largo plazo. Los clubes deben establecer metas internas cuantitativas (ej. <em>generar ≥ 0.45 xG Buildup/90 colectivo</em>).
+        </p>
+      </div>
+
+      <!-- 6. CONCLUSIÓN GENERAL -->
+      <h2>6. Conclusión General</h2>
+      <p>
+        El análisis en La Liga 2023-24 concluye que el campeonato no es producto del azar ni exclusivo de individualidades aisladas, sino de una <strong>armonía estructural entre arquetipos complementarios</strong>. Mientras el Real Madrid conjugó una máquina generadora de ocasiones (+94.7% xG Buildup) con finalización distribuida (+68.5% Goals), los equipos descendidos colapsaron bajo una estructura defensiva pasiva que hipotecó su producción ofensiva.
+      </p>
+
+      <!-- 7. REFERENCIAS -->
+      <h2>7. Referencias Bibliográficas</h2>
+      <ol class="references-list">
+        <li><strong>Yoon Hyup Hwang.</strong> (2019). <em>Hands-On Data Science for Marketing: Improve Your Marketing Strategies with Machine Learning Using Python and R</em>. Packt Publishing, pp. 186–417.</li>
+        <li><strong>Kaggle.</strong> (s. f.). Datos abiertos y repositorios comunitarios de fútbol.</li>
+        <li><strong>Ministerio de Tecnologías de la Información y las Comunicaciones.</strong> (2022). <em>Datos abiertos Colombia</em>.</li>
+        <li><strong>Milgram, A.</strong> (2014). <em>Why smart statistics are the key to fighting crime</em>. TED Conferences.</li>
+        <li><strong>Slavin, K.</strong> (2011). <em>How algorithms shape our world</em>. TED Conferences.</li>
+        <li><strong>Webb, A.</strong> (2013). <em>How I hacked online dating</em>. TED Conferences.</li>
+        <li><strong>Franks, I. M., & Hughes, M.</strong> (2016). <em>Soccer Analytics: Successful Coaching Through Match Analysis</em>. Meyer & Meyer Sport.</li>
+        <li><strong>Winston, W. L., Nestler, S., & Pelechrinis, K.</strong> (2022). <em>Mathletics: How Gamblers, Managers, and Fans Use Mathematics in Sports</em>. 2ª ed. Princeton University Press.</li>
+        <li><strong>Sumpter, D.</strong> (2016). <em>Soccermatics: Mathematical Adventures in the Beautiful Game</em>. Bloomsbury Publishing.</li>
+      </ol>
+
+    </div>
+  </div>
+</main>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer style="background:var(--bg-deep); border-top:1px solid var(--border); padding:50px 0 30px;">
+  <div class="container" style="text-align:center;">
+    <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:40px; margin-bottom:16px;">
+    <p style="color:var(--muted); font-size:0.88rem; margin-bottom:12px;">
+      DataHacks · Plataforma de Ciencia de Datos, Modelado Estadístico y Casos de Uso
+    </p>
+    <p style="color:rgba(255,255,255,0.4); font-size:0.78rem;">
+      Investigación cuantitativa aplicada a la toma de decisiones estratégicas.
+    </p>
+    <div style="margin-top:20px; display:flex; justify-content:center; gap:20px; font-size:0.85rem;">
+      <a href="index.html" style="color:var(--cyan);">Inicio / Blog</a>
+      <a href="mundial.html" style="color:var(--cyan);">Mundial 2026</a>
+      <a href="metodologia.html" style="color:var(--cyan);">Metodología</a>
+      <a href="glosario.html" style="color:var(--cyan);">Glosario</a>
+      <a href="algoritmo.html" style="color:var(--cyan);">Algoritmo</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

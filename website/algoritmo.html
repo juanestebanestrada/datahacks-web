@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1C0H54WYE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K1C0H54WYE');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algoritmos, Modelos y Metodología Estadística — DataHacks</title>
+  <meta name="description" content="Detalle técnico de los algoritmos y pipelines matemáticos utilizados en DataHacks: Gradient Boosting para valuación inmobiliaria, K-Means y Ward para clustering territorial, PCA y modelos de Poisson." />
+  <link rel="stylesheet" href="css/main.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    .page-header {
+      padding: 130px 0 40px;
+      background: radial-gradient(circle at 50% 20%, rgba(0, 149, 255, 0.12), transparent 70%);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-body {
+      padding: 50px 0 90px;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.85;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.88);
+    }
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      box-shadow: 0 4px 15px var(--blue-glow);
+    }
+    .algo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px 32px;
+      margin-bottom: 26px;
+      transition: all 0.25s ease;
+    }
+    .algo-card:hover {
+      border-color: var(--cyan);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+      transform: translateY(-2px);
+    }
+    .algo-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .tag-regression { color: #00e676; }
+    .tag-clustering { color: #00b0ff; }
+    .tag-nlp        { color: #ffb300; }
+    .tag-prob       { color: #ce93d8; }
+    .tag-decision   { color: #f43f5e; }
+
+    .algo-title {
+      font-family: var(--font-head);
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .algo-desc {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+    .algo-desc strong {
+      color: rgba(255, 255, 255, 0.95);
+    }
+    .formula-block {
+      background: rgba(13, 31, 53, 0.7);
+      border: 1px solid rgba(0, 149, 255, 0.25);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 14px 0 6px;
+      text-align: center;
+      color: #fff;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo_datahacks.jpg" alt="DataHacks" style="height:48px;">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio / Blog</a></li>
+        <li><a href="casos-estudio.html">Casos de Estudio</a></li>
+        <li><a href="mundial.html">Mundial 2026</a></li>
+        <li><a href="metodologia.html">Metodología</a></li>
+        <li><a href="glosario.html">Glosario</a></li>
+        <li><a href="algoritmo.html" style="color:var(--cyan); font-weight:700;">Algoritmo</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="mundial.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.82rem;">Ver Mundial 2026 🏆</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container" style="max-width:900px;">
+    <a href="casos-estudio.html" style="color:var(--cyan); font-size:0.9rem; font-weight:600; display:inline-block; margin-bottom:16px;">← Volver a Casos de Estudio</a>
+    <span class="badge" style="margin-bottom:12px;">Machine Learning & Pipelines</span>
+    <h1 style="font-family:var(--font-head); font-size:clamp(1.8rem, 3.5vw, 2.4rem); font-weight:800; margin-bottom:12px;">
+      Metodología Algorítmica y Modelado Matemático
+    </h1>
+    <p style="color:var(--muted); font-size:1.05rem;">
+      De los microdatos brutos a la toma de decisiones fundamentadas: arquitectura y formulación matemática de los algoritmos implementados en nuestros casos de estudio.
+    </p>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="container" style="max-width:900px;">
+
+    <!-- Filtros de Procedimiento -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" onclick="filterAlgo('all')">Todos los Algoritmos</button>
+      <button class="filter-btn" onclick="filterAlgo('decision')">Decisión & Optimización</button>
+      <button class="filter-btn" onclick="filterAlgo('supervisado')">Modelado Predictivo & Regresión</button>
+      <button class="filter-btn" onclick="filterAlgo('clustering')">Clustering & Segmentación</button>
+      <button class="filter-btn" onclick="filterAlgo('nlp')">Ingeniería de Datos & NLP</button>
+      <button class="filter-btn" onclick="filterAlgo('probabilistico')">Inferencia Probabilística</button>
+    </div>
+
+    <div id="algoGrid">
+
+      <!-- ==========================================
+           0. DECISION SCIENCE & RETENCIÓN DE CLIENTES
+           ========================================== -->
+      <div class="algo-card" data-category="decision">
+        <span class="algo-tag tag-decision">Optimización Prescriptiva · Decision Science</span>
+        <div class="algo-title">Optimización Financiera de Umbrales de Decisión (Cost-Sensitive Thresholding)</div>
+        <p class="algo-desc">
+          En problemas del mundo real (como retención de clientes en telecomunicaciones), fijar el corte de decisión en \(p = 0.5\) o buscar el punto que maximiza el F1-Score es financieramente subóptimo. La optimización costo-sensible busca el umbral \(p^*\) que maximiza directamente la función de utilidad monetaria:
+        </p>
+        <div class="formula-block">
+          \[p^* = \arg\max_{p_{\text{th}} \in [0, 1]} \sum_{i=1}^{N} \mathbb{I}(p_i \ge p_{\text{th}}) \cdot \left[ p_i \cdot s \cdot (V_i - o) - c \right]\]
+        </div>
+        <p class="algo-desc" style="margin-top:10px;">
+          Donde \(p_i\) es la probabilidad calibrada de fuga, \(s\) la efectividad de la oferta, \(V_i\) el valor retenido a 12 meses, \(o\) el costo de la oferta activada y \(c\) el costo de contacto. Permite establecer el punto exacto donde una llamada deja de generar retorno de inversión positivo.
+        </p>
+      </div>
+
+      <div class="algo-card" data-category="decision">
+        <span class="algo-tag tag-decision">Probabilidad & Calibración · Inferencia Frecuentista</span>
+        <div class="algo-title">Calibración de Probabilidades con Escalado de Platt (Sigmoid Scaling)</div>
+        <p class="algo-desc">
+          Los modelos de árboles ensamblados (Gradient Boosting, Random Forest) generan puntuaciones ordinalmente correctas pero descalibradas numéricamente en los extremos. El <strong>Escalado de Platt</strong> entrena una regresión logística univariada sobre las puntuaciones continuas del modelo \(f(x)\) mediante validación cruzada interna fuera de muestra:
+        </p>
+        <div class="formula-block">
+          \[P(y=1 \mid f(x)) = \frac{1}{1 + \exp(A \cdot f(x) + B)}\]
+        </div>
+        <p class="algo-desc" style="margin-top:10px;">
+          Los parámetros \(A\) y \(B\) se optimizan maximizando la función de log-verosimilitud sobre el conjunto de entrenamiento. En nuestro caso de Telco Churn, redujo el Brier Score a \(0.1360\), garantizando que las probabilidades utilizadas en las decisiones presupuestarias reflejen fielmente el riesgo actuarial.
+        </p>
+      </div>
+
+      <div class="algo-card" data-category="decision">
+        <span class="algo-tag tag-decision">Explicabilidad Algorítmica · Teoría de Juegos</span>
+        <div class="algo-title">Valores SHAP (SHapley Additive exPlanations) & TreeExplainer</div>
+        <p class="algo-desc">
+          Basado en la solución axiomática de Lloyd Shapley (Premio Nobel de Economía) para la distribución equitativa de pagos en juegos cooperativos. Descompone la predicción de cualquier modelo complejo \(f(x)\) en la suma aditiva de los efectos de cada variable más el valor esperado de la población \(\phi_0\):
+        </p>
+        <div class="formula-block">
+          \[f(x) = \phi_0 + \sum_{j=1}^{M} \phi_j(x) \quad \text{donde} \quad \phi_j(x) = \sum_{S \subseteq F \setminus \{j\}} \frac{|S|!(|F| - |S| - 1)!}{|F|!} \left[ f_x(S \cup \{j\}) - f_x(S) \right]\]
+        </div>
+        <p class="algo-desc" style="margin-top:10px;">
+          Con el algoritmo <strong>TreeExplainer</strong> (Lundberg et al., 2020), calculamos las contribuciones en tiempo polinomial \(O(T L D^2)\), permitiendo identificar con precisión clínica si un cliente se marcha por el tipo de contrato, falta de soporte técnico o fricción en el método de facturación.
+        </p>
+      </div>
+
+      <!-- ==========================================
+           1. MODELADO PREDICTIVO HEDÓNICO (GBR)
+           ========================================== -->
+      <div class="algo-card" data-category="supervisado">
+        <span class="algo-tag tag-regression">Supervisado · Valuación Hedónica</span>
+        <div class="algo-title">Gradient Boosting Regressor (GBR) para Precio Justo</div>
+        <p class="algo-desc">
+          En el caso de estudio inmobiliario, la relación entre las características de una vivienda y su valor de mercado no es lineal (existen rendimientos marginales decrecientes del área y fuertes interacciones entre estrato y ubicación). Implementamos <strong>Gradient Tree Boosting</strong>, un método de ensamble donde cada árbol de decisión sucesivo \(h_m(x)\) se ajusta específicamente al pseudorresidual del modelo anterior mediante descenso de gradiente sobre la función de pérdida cuadrática:
+        </p>
+        <div class="formula-block">
+          \[F_m(x) = F_{m-1}(x) + \gamma_m \sum_{j=1}^{J_m} I(x \in R_{jm}) \quad \text{donde} \quad r_{im} = -\left[\frac{\partial L(y_i, F(x_i))}{\partial F(x_i)}\right]_{F=F_{m-1}}\]
+        </div>
+        <p class="algo-desc" style="margin-top:10px;">
+          Entrenado sobre la variable objetivo \(\ln(\text{Precio})\) para estabilizar la varianza, el modelo alcanzó un coeficiente de determinación de <strong>\(R^2 = 0.835\) en Medellín</strong> y <strong>\(0.830\) en Bogotá</strong> con un error porcentual absoluto medio (MAPE) de apenas \(21.6\% - 26.0\%\).
+        </p>
+      </div>
+
+      <div class="algo-card" data-category="supervisado">
+        <span class="algo-tag tag-regression">Supervisado · Validación de Modelos</span>
+        <div class="algo-title">Métricas de Evaluación de Regresión: R², MAE y MAPE</div>
+        <p class="algo-desc">
+          Para garantizar la imparcialidad en predicciones monetarias, se evalúan tres métricas complementarias en particiones ciegas de test (\(20\%\)):
+        </p>
+        <ul style="color:var(--muted); margin: 8px 0 0 20px; font-size:0.95rem;">
+          <li><strong>\(R^2\) (Coeficiente de Determinación):</strong> Proporción de la varianza total de los precios explicada por el modelo (\(1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}\)).</li>
+          <li><strong>MAE (Mean Absolute Error):</strong> Error medio absoluto medido directamente en pesos colombianos (\(\text{COP}\)).</li>
+          <li><strong>MAPE (Mean Absolute Percentage Error):</strong> Error porcentual promedio (\(\frac{1}{n}\sum \left|\frac{y_i - \hat{y}_i}{y_i}\right| \times 100\)), insensible a la escala del inmueble.</li>
+        </ul>
+      </div>
+
+      <!-- ==========================================
+           2. CLUSTERING & ARQUETIPOS
+           ========================================== -->
+      <div class="algo-card" data-category="clustering">
+        <span class="algo-tag tag-clustering">No Supervisado · Segmentación</span>
+        <div class="algo-title">Clustering K-Means con Inicialización k-means++</div>
+        <p class="algo-desc">
+          Utilizado tanto para descubrir los <strong>arquetipos tácticos de futbolistas</strong> (La Liga) como para segmentar las <strong>comunas de Medellín por perfil delictivo</strong>. El algoritmo particiona \(n\) observaciones en \(k\) conglomerados minimizando la suma de distancias euclidianas al cuadrado respecto a los centroides \(\mu_j\):
+        </p>
+        <div class="formula-block">
+          \[J = \sum_{j=1}^{k} \sum_{x_i \in S_j} \|x_i - \mu_j\|^2\]
+        </div>
+        <p class="algo-desc" style="margin-top:10px;">
+          Se aplica inicialización <code>k-means++</code> para dispersar los centroides iniciales según una distribución de probabilidad proporcional al cuadrado de la distancia al centroide más cercano, evitando óptimos locales deficientes.
+        </p>
+      </div>
+
+      <div class="algo-card" data-category="clustering">
+        <span class="algo-tag tag-clustering">No Supervisado · Validación Cruzada</span>
+        <div class="algo-title">Agrupamiento Jerárquico de Ward e Índice de Rand Ajustado (ARI)</div>
+        <p class="algo-desc">
+          Para evitar que los grupos dependan de la naturaleza esférica de K-Means, en el estudio de seguridad de Medellín se implementó agrupamiento aglomerativo jerárquico mediante el criterio de <strong>mínima varianza de Ward</strong>:
+        </p>
+        <div class="formula-block">
+          \[\Delta \text{ESS}_{AB} = \frac{n_A n_B}{n_A + n_B} \|\mu_A - \mu_B\|^2\]
+        </div>
+        <p class="algo-desc" style="margin-top:10px;">
+          La concordancia entre ambos métodos se contrastó con el <strong>Índice de Rand Ajustado (\(\text{ARI}\))</strong>, obteniendo una coincidencia de \(0.50\) que confirma la existencia de agrupaciones naturales sólidas entre zonas de ladera, áreas intermedias y corredores comerciales.
+        </p>
+      </div>
+
+      <div class="algo-card" data-category="clustering">
+        <span class="algo-tag tag-clustering">No Supervisado · Reducción Dimensional</span>
+        <div class="algo-title">PCA — Análisis de Componentes Principales</div>
+        <p class="algo-desc">
+          Descompone matrices de características ortogonales maximizando la varianza proyectada sobre vectores propios de la matriz de covarianza. Permite graficar el espacio multidimensional de 9 variables delictivas o perfiles tácticos en un plano bidimensional interpretable (\(\text{PC}_1\) vs \(\text{PC}_2\)), validando visualmente la separación de clústeres.
+        </p>
+      </div>
+
+      <div class="algo-card" data-category="clustering">
+        <span class="algo-tag tag-clustering">No Supervisado · Calibración de Hiperparámetros</span>
+        <div class="algo-title">Silhouette Score (Coeficiente de Silueta)</div>
+        <p class="algo-desc">
+          Evalúa la calidad de la asignación de cada observación midiendo la diferencia entre la distancia media intra-cluster \(a(i)\) y la distancia al cluster más cercano \(b(i)\):
+        </p>
+        <div class="formula-block">
+          \[s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))} \quad \in [-1, 1]\]
+        </div>
+      </div>
+
+      <!-- ==========================================
+           3. INGENIERÍA DE DATOS & NLP
+           ========================================== -->
+      <div class="algo-card" data-category="nlp">
+        <span class="algo-tag tag-nlp">Procesamiento de Lenguaje Natural · Data Extraction</span>
+        <div class="algo-title">Extracción de Atributos Físicos con Expresiones Regulares (NLP)</div>
+        <p class="algo-desc">
+          En los portales inmobiliarios (Properati), el área física faltaba en el \(94\%\) de los campos estructurados. Implementamos analizadores sintácticos con expresiones regulares precompiladas sobre los textos de título y descripción:
+        </p>
+        <div class="formula-block" style="text-align:left; font-family:monospace; font-size:0.88rem;">
+          re_area = r'(?:area|área|superficie)?\s*(?:de)?\s*(\d{2,4}(?:[.,]\d+)?)\s*(?:m2|mts2|mt2|metros|m²)'<br>
+          re_estrato = r'estrato\s*([1-6])'<br>
+          re_alcobas = r'(\d)\s*(?:alcobas|habitaciones|dormitorios|cuartos)'
+        </div>
+        <p class="algo-desc" style="margin-top:10px;">
+          Esta técnica multiplicó por seis la tasa de registros útiles, recuperando más de <strong>58.982 inmuebles completos</strong> para el entrenamiento del modelo hedónico.
+        </p>
+      </div>
+
+      <div class="algo-card" data-category="nlp">
+        <span class="algo-tag tag-nlp">Preprocesamiento · Estandarización</span>
+        <div class="algo-title">Transformación Logarítmica y Normalización Z-Score</div>
+        <p class="algo-desc">
+          Para mitigar el impacto de asimetrías extremas en variables monetarias (precios) y tasas de delitos per cápita, se aplica \(\ln(1 + x)\) seguido de <code>StandardScaler</code> (\(z = \frac{x - \mu}{\sigma}\)), asegurando que variables en millones de pesos o eventos aislados no monopolicen el cálculo de distancias euclidianas.
+        </p>
+      </div>
+
+      <!-- ==========================================
+           4. INFERENCIA PROBABILÍSTICA
+           ========================================== -->
+      <div class="algo-card" data-category="probabilistico">
+        <span class="algo-tag tag-prob">Probabilidad · Simulación</span>
+        <div class="algo-title">Modelos Bivariados de Poisson y Simulación de Monte Carlo</div>
+        <p class="algo-desc">
+          Para proyectar resultados en enfrentamientos deportivos, modelamos el conteo de goles como variables aleatorias independientes de Poisson parametrizadas por las tasas de ataque y defensa esperadas de cada equipo (\(\lambda_1, \lambda_2\)):
+        </p>
+        <div class="formula-block">
+          \[P(X=k_1, Y=k_2) = \frac{\lambda_1^{k_1} e^{-\lambda_1}}{k_1!} \times \frac{\lambda_2^{k_2} e^{-\lambda_2}}{k_2!}\]
+        </div>
+        <p class="algo-desc" style="margin-top:10px;">
+          A partir de estas probabilidades se ejecutan 10.000 iteraciones de Monte Carlo para obtener intervalos de confianza robustos para la fase de grupos del Mundial y temporadas de liga.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<footer style="background:var(--bg-deep); border-top:1px solid var(--border); padding:40px 0; text-align:center;">
+  <div class="container">
+    <p style="color:var(--muted); font-size:0.85rem;">DataHacks · Metodología Algorítmica y Rigor Científico</p>
+  </div>
+</footer>
+
+<script>
+  function filterAlgo(category) {
+    const cards = document.querySelectorAll('.algo-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      if (category === 'all' || cat === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
